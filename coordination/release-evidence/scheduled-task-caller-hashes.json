@@ -33,6 +33,11 @@
       "sha256": "894feff0bf2ea5c83d7b0a8fec13e3fbda097fbdf459404e24e23bc8dc2c2314"
     },
     {
+      "task_id": "pcd-blog-refresher",
+      "caller_path": "agents/pcd-blog-refresher/SKILL.md",
+      "sha256": "50a1db3f0a8f45a670bfb04ecf6fb08a10cb30bb5e5577ef315fb1d61ac776fa"
+    },
+    {
       "task_id": "pcd-friday-letter-draft",
       "caller_path": "automation/agents/frida/SKILL.md",
       "sha256": "d9c8e326d478ed458ce92bea4ec2650f44ddde221505060ebbc87d28c737fb2f"

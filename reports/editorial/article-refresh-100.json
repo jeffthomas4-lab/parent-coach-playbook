@@ -1,0 +1,3101 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-02",
+  "selection_sha256": "1a7249a4c19b377ef69619bc107b68c65842a4b5155b119c16f1de1835a79f7d",
+  "program": {
+    "name": "highest-value refresh opportunities",
+    "size": 100,
+    "batch_size": 10,
+    "batch_count": 10,
+    "program_started_at": "2026-08-02",
+    "selection_frozen": true
+  },
+  "policy": {
+    "traffic_data_included": false,
+    "traffic_claim": "This is not a top-traffic list. Repository traffic data is too sparse to rank articles reliably.",
+    "eligible_scope": "published, non-draft article collection entries on or before as_of, excluding externalSource BabyLoveGrowth imports",
+    "ordering": "score descending, then source path ascending; selection remains frozen after initialization",
+    "completion_marker": "top-level article frontmatter updatedAt on or after program_started_at",
+    "cannibalization_check_required": true,
+    "automatic_redirects": false,
+    "automatic_deletions": false,
+    "scoring": {
+      "featured": 20,
+      "affiliate_bearing": 12,
+      "literal_incoming_links": "4 each, capped at 16",
+      "commercial_intent": 10,
+      "evergreen_search_intent": 8,
+      "parent_moment_intent": 6,
+      "missing_bluf": 10,
+      "missing_seo_title": 5,
+      "missing_seo_description": 6,
+      "very_thin_body_under_250_words": 12,
+      "thin_body_under_600_words": 8,
+      "short_body_under_900_words": 4,
+      "no_h2_structure": 8,
+      "limited_h2_structure": 4,
+      "limited_contextual_internal_links": 6,
+      "priority_topic": 4
+    }
+  },
+  "summary": {
+    "eligible_articles": 808,
+    "selected_articles": 100,
+    "refreshed": 0,
+    "pending": 100
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 1,
+          "source": "src/content/articles/the-cost-of-travel-ball.md",
+          "route": "/drive-home/the-cost-of-travel-ball/",
+          "title": "The *cost of travel ball*. Actual annual breakdown",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 71,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 4,
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 780,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 2,
+          "source": "src/content/articles/when-you-cant-afford-travel.md",
+          "route": "/drive-home/when-you-cant-afford-travel/",
+          "title": "When you *can't afford travel* but everyone else is going",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 71,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 12,
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 861,
+            "h2_count": 10,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 3,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 3,
+          "source": "src/content/articles/how-to-evaluate-a-summer-camp.md",
+          "route": "/drive-there/how-to-evaluate-a-summer-camp/",
+          "title": "How to evaluate a summer camp in *10 minutes*",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 69,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 4,
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 514,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 4,
+          "source": "src/content/articles/night-before-tryouts.md",
+          "route": "/drive-there/night-before-tryouts/",
+          "title": "The night before *tryouts*",
+          "sport": "multi-sport",
+          "topic": null,
+          "score": 69,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 8,
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "very_thin_body": 12,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 246,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 2,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 5,
+          "source": "src/content/articles/summer-camp-packing-list.md",
+          "route": "/drive-there/summer-camp-packing-list/",
+          "title": "The summer camp *packing list* that actually works",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 67,
+          "score_breakdown": {
+            "featured": 20,
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 4,
+            "commercial_intent": 10,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 721,
+            "h2_count": 5,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 1,
+            "has_bluf": true,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 6,
+          "source": "src/content/articles/15-plus-walking-away.md",
+          "route": "/drive-home/15-plus-walking-away/",
+          "title": "The 15-Plus Walking-Away Decision",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 65,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 361,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 3,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 7,
+          "source": "src/content/articles/13-14-cost-benefit.md",
+          "route": "/drive-there/13-14-cost-benefit/",
+          "title": "The 13-14 Cost-Benefit Conversation",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 63,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 373,
+            "h2_count": 0,
+            "affiliate_links": 2,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 8,
+          "source": "src/content/articles/first-season-coaching.md",
+          "route": "/drive-there/first-season-coaching/",
+          "title": "Your *first season* coaching. What actually matters.",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 63,
+          "score_breakdown": {
+            "featured": 20,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 638,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 9,
+          "source": "src/content/articles/how-to-net-a-soccer-goal.md",
+          "route": "/drive-there/how-to-net-a-soccer-goal/",
+          "title": "How to net a soccer goal",
+          "sport": "soccer",
+          "topic": "equipment",
+          "score": 61,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 563,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 10,
+          "source": "src/content/articles/what-parents-shouldnt-do-at-youth-sports-games.md",
+          "route": "/game/what-parents-shouldnt-do-at-youth-sports-games/",
+          "title": "What parents shouldn't do at youth sports games",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 61,
+          "score_breakdown": {
+            "featured": 20,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 581,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 11,
+          "source": "src/content/articles/when-your-kid-forgets-gear-at-camp.md",
+          "route": "/drive-there/when-your-kid-forgets-gear-at-camp/",
+          "title": "When your kid *forgets gear* at camp",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 61,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 637,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 12,
+          "source": "src/content/articles/the-90-second-rule.md",
+          "route": "/drive-home/the-90-second-rule/",
+          "title": "What you say in the *first 90 seconds*",
+          "sport": "multi-sport",
+          "topic": null,
+          "score": 60,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 16,
+            "missing_bluf": 10,
+            "thin_body": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 507,
+            "h2_count": 4,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 7,
+            "has_bluf": false,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 13,
+          "source": "src/content/articles/the-8-year-olds-glove-that-cost-too-much.md",
+          "route": "/drive-there/the-8-year-olds-glove-that-cost-too-much/",
+          "title": "The *8-year-old's glove* that cost too much",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 59,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 605,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 14,
+          "source": "src/content/articles/varsity-tryouts-how-to-read-the-coach.md",
+          "route": "/drive-home/varsity-tryouts-how-to-read-the-coach/",
+          "title": "Varsity Tryouts at 15+: How to Read the Coach",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 59,
+          "score_breakdown": {
+            "literal_incoming_links": 4,
+            "evergreen_search_intent": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 279,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 15,
+          "source": "src/content/articles/why-kids-quit-sports.md",
+          "route": "/drive-home/why-kids-quit-sports/",
+          "title": "Why kids quit sports",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 58,
+          "score_breakdown": {
+            "featured": 20,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 763,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 16,
+          "source": "src/content/articles/how-to-vet-a-camp-for-safety.md",
+          "route": "/drive-there/how-to-vet-a-camp-for-safety/",
+          "title": "How to *vet a camp for safety*",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 57,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 8,
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 1392,
+            "h2_count": 14,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 2,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 17,
+          "source": "src/content/articles/sideline-etiquette-for-youth-sports-parents.md",
+          "route": "/game/sideline-etiquette-for-youth-sports-parents/",
+          "title": "Sideline etiquette for youth sports parents",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 57,
+          "score_breakdown": {
+            "featured": 20,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 722,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 18,
+          "source": "src/content/articles/basketball-levels-rec-school-club-aau.md",
+          "route": "/drive-there/basketball-levels-rec-school-club-aau/",
+          "title": "Basketball Levels Explained: Rec, School, Club, and AAU",
+          "sport": "basketball",
+          "topic": "rec-vs-travel",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 16,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 554,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 5,
+            "literal_incoming_links": 4,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 19,
+          "source": "src/content/articles/youth-baseball-equipment-guide.md",
+          "route": "/drive-there/youth-baseball-equipment-guide/",
+          "title": "Youth baseball equipment guide: what you actually need",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 376,
+            "h2_count": 0,
+            "affiliate_links": 6,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 20,
+          "source": "src/content/articles/youth-basketball-equipment-guide.md",
+          "route": "/drive-there/youth-basketball-equipment-guide/",
+          "title": "Youth basketball equipment guide: what you actually need",
+          "sport": "basketball",
+          "topic": "equipment",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 348,
+            "h2_count": 0,
+            "affiliate_links": 3,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 21,
+          "source": "src/content/articles/youth-football-equipment-guide.md",
+          "route": "/drive-there/youth-football-equipment-guide/",
+          "title": "Youth football equipment guide",
+          "sport": "football",
+          "topic": "equipment",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 353,
+            "h2_count": 0,
+            "affiliate_links": 5,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 22,
+          "source": "src/content/articles/youth-soccer-equipment-guide.md",
+          "route": "/drive-there/youth-soccer-equipment-guide/",
+          "title": "Youth soccer equipment guide",
+          "sport": "soccer",
+          "topic": "equipment",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 368,
+            "h2_count": 0,
+            "affiliate_links": 8,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 23,
+          "source": "src/content/articles/youth-swimming-gear-guide.md",
+          "route": "/drive-there/youth-swimming-gear-guide/",
+          "title": "Youth swimming gear guide",
+          "sport": "swimming",
+          "topic": "equipment",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 364,
+            "h2_count": 0,
+            "affiliate_links": 3,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 24,
+          "source": "src/content/articles/youth-volleyball-equipment-guide.md",
+          "route": "/drive-there/youth-volleyball-equipment-guide/",
+          "title": "Youth volleyball equipment guide: what you actually need",
+          "sport": "volleyball",
+          "topic": "equipment",
+          "score": 56,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 336,
+            "h2_count": 0,
+            "affiliate_links": 5,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 25,
+          "source": "src/content/articles/tryouts-when-your-kid-has-a-cold.md",
+          "route": "/drive-there/tryouts-when-your-kid-has-a-cold/",
+          "title": "Tryouts when your kid has a *cold*",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 55,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 547,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 26,
+          "source": "src/content/articles/used-gear-rules.md",
+          "route": "/drive-there/used-gear-rules/",
+          "title": "Used Gear: The Insole Rule, The Helmet Rule, The Bat Rule",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 55,
+          "score_breakdown": {
+            "literal_incoming_links": 4,
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 305,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 27,
+          "source": "src/content/articles/used-vs-new-gear-the-actual-math.md",
+          "route": "/drive-there/used-vs-new-gear-the-actual-math/",
+          "title": "Used vs new gear. *The actual math*",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 55,
+          "score_breakdown": {
+            "commercial_intent": 10,
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 613,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 28,
+          "source": "src/content/articles/how-much-does-youth-soccer-cost.md",
+          "route": "/drive-there/how-much-does-youth-soccer-cost/",
+          "title": "How Much Does Youth Soccer Cost?",
+          "sport": "soccer",
+          "topic": "rec-vs-travel",
+          "score": 54,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 12,
+            "commercial_intent": 10,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 427,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 4,
+            "literal_incoming_links": 3,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 29,
+          "source": "src/content/articles/11-12-honest-comparison.md",
+          "route": "/drive-there/11-12-honest-comparison/",
+          "title": "The 11-12 Honest Comparison",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 366,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 30,
+          "source": "src/content/articles/5-year-old-glove.md",
+          "route": "/drive-there/5-year-old-glove/",
+          "title": "What a 5-Year-Old Actually Needs in a Glove",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 332,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 31,
+          "source": "src/content/articles/car-kit.md",
+          "route": "/drive-there/car-kit/",
+          "title": "The Car Kit That Stays in the Trunk",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 316,
+            "h2_count": 0,
+            "affiliate_links": 2,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 32,
+          "source": "src/content/articles/how-to-coach-your-own-child.md",
+          "route": "/team-parent/how-to-coach-your-own-child/",
+          "title": "How to Coach Your Own Child Without Ruining Family Time",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 53,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 631,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 33,
+          "source": "src/content/articles/late-pickup-problem-parent-coach-guide.md",
+          "route": "/team-parent/late-pickup-problem-parent-coach-guide/",
+          "title": "The Late Pickup Problem: A Parent Coach's Guide",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 53,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 773,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 34,
+          "source": "src/content/articles/moving-a-soccer-goal-safely.md",
+          "route": "/drive-there/moving-a-soccer-goal-safely/",
+          "title": "Moving a soccer goal safely",
+          "sport": "soccer",
+          "topic": "equipment",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 522,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 35,
+          "source": "src/content/articles/raking-the-infield.md",
+          "route": "/drive-there/raking-the-infield/",
+          "title": "Raking the infield",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 543,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 36,
+          "source": "src/content/articles/setting-up-a-baseball-field.md",
+          "route": "/drive-there/setting-up-a-baseball-field/",
+          "title": "Setting up a baseball field",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 578,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 37,
+          "source": "src/content/articles/swim-meet-weekend-logistics.md",
+          "route": "/team-parent/swim-meet-weekend-logistics/",
+          "title": "Swim-meet weekend logistics that save the family",
+          "sport": "swimming",
+          "topic": "season-ops",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 4,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 369,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 38,
+          "source": "src/content/articles/tee-ball-strikeouts.md",
+          "route": "/game/tee-ball-strikeouts/",
+          "title": "Why Tee-Ball Doesn't Have Strikeouts",
+          "sport": "baseball",
+          "topic": "rules-of-play",
+          "score": 53,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 352,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 39,
+          "source": "src/content/articles/the-case-for-one-sport-per-season.md",
+          "route": "/drive-home/the-case-for-one-sport-per-season/",
+          "title": "The case for *one sport per season*",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 53,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 1068,
+            "h2_count": 8,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 2,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 40,
+          "source": "src/content/articles/the-night-before-tryouts-5-to-7.md",
+          "route": "/drive-there/the-night-before-tryouts-5-to-7/",
+          "title": "What to Do the Night Before Tryouts at Age 5-7 (Which Is to Say, Almost Nothing)",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 53,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "very_thin_body": 12,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 206,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 41,
+          "source": "src/content/articles/when-the-cuts-list-goes-up.md",
+          "route": "/drive-home/when-the-cuts-list-goes-up/",
+          "title": "When the *cuts list* goes up and your kid isn't on it",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 53,
+          "score_breakdown": {
+            "featured": 20,
+            "literal_incoming_links": 4,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 874,
+            "h2_count": 12,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 42,
+          "source": "src/content/articles/disinfecting-equipment-end-of-season.md",
+          "route": "/drive-there/disinfecting-equipment-end-of-season/",
+          "title": "Disinfecting equipment *end of season*",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 51,
+          "score_breakdown": {
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 500,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 43,
+          "source": "src/content/articles/end-of-season-equipment-cleanup.md",
+          "route": "/drive-home/end-of-season-equipment-cleanup/",
+          "title": "The end-of-season equipment cleanup",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 51,
+          "score_breakdown": {
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 255,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 44,
+          "source": "src/content/articles/quitting-travel-how-to-do-it-cleanly.md",
+          "route": "/drive-home/quitting-travel-how-to-do-it-cleanly/",
+          "title": "Quitting travel. *How to do it cleanly*",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 51,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 704,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 45,
+          "source": "src/content/articles/telling-the-coach-your-kid-is-being-bullied.md",
+          "route": "/drive-home/telling-the-coach-your-kid-is-being-bullied/",
+          "title": "Telling the coach *your kid is being bullied*",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 51,
+          "score_breakdown": {
+            "featured": 20,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 826,
+            "h2_count": 8,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 46,
+          "source": "src/content/articles/the-15-plus-game-day-when-your-kid-is-on-the-bench.md",
+          "route": "/game/the-15-plus-game-day-when-your-kid-is-on-the-bench/",
+          "title": "Game Day When Your Kid Is on the Bench",
+          "sport": "multi-sport",
+          "topic": "game-day",
+          "score": 51,
+          "score_breakdown": {
+            "literal_incoming_links": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "very_thin_body": 12,
+            "limited_h2_structure": 4,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 241,
+            "h2_count": 3,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 2,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 47,
+          "source": "src/content/articles/the-dad-who-corners-coach-in-the-parking-lot.md",
+          "route": "/game/the-dad-who-corners-coach-in-the-parking-lot/",
+          "title": "The *dad who corners coach* in the parking lot",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 51,
+          "score_breakdown": {
+            "literal_incoming_links": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 470,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 2,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 48,
+          "source": "src/content/articles/when-your-kid-doesnt-want-to-go-to-camp.md",
+          "route": "/drive-home/when-your-kid-doesnt-want-to-go-to-camp/",
+          "title": "When your kid *doesn't want to go* to camp",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 51,
+          "score_breakdown": {
+            "featured": 20,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 803,
+            "h2_count": 7,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 49,
+          "source": "src/content/articles/how-much-does-competitive-cheer-cost.md",
+          "route": "/drive-there/how-much-does-competitive-cheer-cost/",
+          "title": "How Much Does Competitive Cheer Cost?",
+          "sport": "cheer",
+          "topic": "rec-vs-travel",
+          "score": 50,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 8,
+            "commercial_intent": 10,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 438,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 5,
+            "literal_incoming_links": 2,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 50,
+          "source": "src/content/articles/how-much-does-travel-softball-cost.md",
+          "route": "/drive-there/how-much-does-travel-softball-cost/",
+          "title": "How Much Does Travel Softball Cost?",
+          "sport": "softball",
+          "topic": "rec-vs-travel",
+          "score": 50,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 8,
+            "commercial_intent": 10,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 493,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 4,
+            "literal_incoming_links": 2,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 6,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 51,
+          "source": "src/content/articles/how-much-does-youth-hockey-cost.md",
+          "route": "/drive-there/how-much-does-youth-hockey-cost/",
+          "title": "How Much Does Youth Hockey Cost?",
+          "sport": "hockey",
+          "topic": "rec-vs-travel",
+          "score": 50,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 8,
+            "commercial_intent": 10,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 446,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 5,
+            "literal_incoming_links": 2,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 52,
+          "source": "src/content/articles/11-12-substitution-rules.md",
+          "route": "/game/11-12-substitution-rules/",
+          "title": "The 11-12 Substitution Rules Every Parent Should Know",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 327,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 53,
+          "source": "src/content/articles/13-14-sportsmanship.md",
+          "route": "/game/13-14-sportsmanship/",
+          "title": "The 13-14 Sportsmanship Rules",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 329,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 54,
+          "source": "src/content/articles/after-the-cut-the-24-hour-rule.md",
+          "route": "/drive-home/after-the-cut-the-24-hour-rule/",
+          "title": "After the cut. *The 24-hour rule*",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 4,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 610,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 1,
+            "has_bluf": true,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 55,
+          "source": "src/content/articles/how-to-read-the-tryout-drill.md",
+          "route": "/drive-there/how-to-read-the-tryout-drill/",
+          "title": "How to *read the tryout drill*",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 561,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 56,
+          "source": "src/content/articles/how-to-tell-if-your-kid-is-on-the-bubble.md",
+          "route": "/drive-there/how-to-tell-if-your-kid-is-on-the-bubble/",
+          "title": "How to tell if your kid is *on the bubble*",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 551,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 57,
+          "source": "src/content/articles/pre-tryout-dinner.md",
+          "route": "/drive-there/pre-tryout-dinner/",
+          "title": "*Pre-tryout dinner*. What works, what doesn''t",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 513,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 58,
+          "source": "src/content/articles/the-15-plus-club-tryout.md",
+          "route": "/drive-there/the-15-plus-club-tryout/",
+          "title": "The *15+ club tryout* is a different beast",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 599,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 59,
+          "source": "src/content/articles/the-4-percent-rule.md",
+          "route": "/drive-home/the-4-percent-rule/",
+          "title": "The 4% rule",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 49,
+          "score_breakdown": {
+            "literal_incoming_links": 16,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 1035,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 6,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 60,
+          "source": "src/content/articles/the-bat-your-kid-begged-for.md",
+          "route": "/drive-there/the-bat-your-kid-begged-for/",
+          "title": "The bat your kid *begged for* (and whether to buy it)",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 49,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 4,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 1036,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 7,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 61,
+          "source": "src/content/articles/the-kid-who-refuses-to-go-to-tryouts.md",
+          "route": "/drive-there/the-kid-who-refuses-to-go-to-tryouts/",
+          "title": "The kid who *refuses* to go to tryouts",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 593,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 62,
+          "source": "src/content/articles/the-night-before-tryouts-at-8-to-10.md",
+          "route": "/drive-there/the-night-before-tryouts-at-8-to-10/",
+          "title": "The night before tryouts at *8 to 10*",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 535,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 63,
+          "source": "src/content/articles/the-post-tryouts-wait.md",
+          "route": "/drive-home/the-post-tryouts-wait/",
+          "title": "The post-tryouts wait",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 265,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 64,
+          "source": "src/content/articles/the-recovery-talk-at-13-14.md",
+          "route": "/drive-home/the-recovery-talk-at-13-14/",
+          "title": "The recovery talk at 13-14",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 49,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 646,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 65,
+          "source": "src/content/articles/the-travel-team-tryout-at-11-to-12.md",
+          "route": "/drive-there/the-travel-team-tryout-at-11-to-12/",
+          "title": "The Travel-Team Tryout at 11-12",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 257,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 66,
+          "source": "src/content/articles/travel-politics.md",
+          "route": "/game/travel-politics/",
+          "title": "Travel-Ball Politics: How to Stay Out",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 355,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 67,
+          "source": "src/content/articles/unwritten-rules.md",
+          "route": "/game/unwritten-rules/",
+          "title": "The Unwritten Rules Every League Has",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 367,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 68,
+          "source": "src/content/articles/what-age-should-kids-start-sports.md",
+          "route": "/drive-there/what-age-should-kids-start-sports/",
+          "title": "What age should kids start sports?",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 49,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 587,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 69,
+          "source": "src/content/articles/what-my-kid-said-in-the-car.md",
+          "route": "/drive-home/what-my-kid-said-in-the-car/",
+          "title": "What my eight-year-old said in *the car last week*",
+          "sport": "soccer",
+          "topic": null,
+          "score": 49,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 272,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 70,
+          "source": "src/content/articles/11-12-helmet-upgrade.md",
+          "route": "/drive-there/11-12-helmet-upgrade/",
+          "title": "The 11-12 Helmet Upgrade Decision",
+          "sport": "football",
+          "topic": "equipment",
+          "score": 47,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 360,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 2,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 8,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 71,
+          "source": "src/content/articles/13-14-bat-drop.md",
+          "route": "/drive-there/13-14-bat-drop/",
+          "title": "The 13-14 Bat Drop Weight Check",
+          "sport": "baseball",
+          "topic": "equipment",
+          "score": 47,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 370,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 2,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 72,
+          "source": "src/content/articles/15-plus-skate-baking.md",
+          "route": "/drive-there/15-plus-skate-baking/",
+          "title": "The 15-Plus Skate-Baking Trip",
+          "sport": "hockey",
+          "topic": "equipment",
+          "score": 47,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 383,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 2,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 73,
+          "source": "src/content/articles/8-10-cleat-conversation.md",
+          "route": "/drive-there/8-10-cleat-conversation/",
+          "title": "The 8-10 Cleat Conversation",
+          "sport": "soccer",
+          "topic": "equipment",
+          "score": 47,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 357,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 2,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 74,
+          "source": "src/content/articles/how-to-handle-overbearing-sports-parent.md",
+          "route": "/team-parent/how-to-handle-overbearing-sports-parent/",
+          "title": "How to Handle an Overbearing Sports Parent Without Starting a War",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 47,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 849,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 75,
+          "source": "src/content/articles/is-this-burnout-or-a-bad-week.md",
+          "route": "/drive-home/is-this-burnout-or-a-bad-week/",
+          "title": "Is this *burnout*, or just a bad week?",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 484,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 76,
+          "source": "src/content/articles/packing-food-for-the-travel-weekend.md",
+          "route": "/drive-there/packing-food-for-the-travel-weekend/",
+          "title": "*Packing food* for the travel weekend",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 47,
+          "score_breakdown": {
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 653,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 77,
+          "source": "src/content/articles/packing-for-tournament-weekend.md",
+          "route": "/team-parent/packing-for-tournament-weekend/",
+          "title": "Packing for a long tournament weekend",
+          "sport": "multi-sport",
+          "topic": "season-ops",
+          "score": 47,
+          "score_breakdown": {
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 358,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 78,
+          "source": "src/content/articles/playing-time-fairness.md",
+          "route": "/game/playing-time-fairness/",
+          "title": "Playing time. The *fairness* question every coach faces.",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 593,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 79,
+          "source": "src/content/articles/texting-the-new-coach.md",
+          "route": "/team-parent/texting-the-new-coach/",
+          "title": "The text to the new coach for next season",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 47,
+          "score_breakdown": {
+            "literal_incoming_links": 4,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 278,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 80,
+          "source": "src/content/articles/the-8-to-10-tryout-the-four-things-coaches-evaluate.md",
+          "route": "/drive-there/the-8-to-10-tryout-the-four-things-coaches-evaluate/",
+          "title": "The 8-10 Tryout: What Coaches Actually Evaluate",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 47,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 262,
+            "h2_count": 5,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 9,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 81,
+          "source": "src/content/articles/the-kid-who-quit-gracefully.md",
+          "route": "/drive-home/the-kid-who-quit-gracefully/",
+          "title": "The kid who quit the team gracefully",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 392,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 82,
+          "source": "src/content/articles/the-parent-thank-you-note.md",
+          "route": "/team-parent/the-parent-thank-you-note/",
+          "title": "The end-of-season *parent thank-you note* to the coach",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 47,
+          "score_breakdown": {
+            "literal_incoming_links": 4,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 407,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 1,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 83,
+          "source": "src/content/articles/tournament-weekend-the-realistic-packing-list.md",
+          "route": "/drive-there/tournament-weekend-the-realistic-packing-list/",
+          "title": "Tournament weekend. *The realistic packing list*",
+          "sport": "multi-sport",
+          "topic": "season-ops",
+          "score": 47,
+          "score_breakdown": {
+            "commercial_intent": 10,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 570,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 84,
+          "source": "src/content/articles/when-a-parent-emails-about-playing-time.md",
+          "route": "/drive-home/when-a-parent-emails-about-playing-time/",
+          "title": "The 8-10 Ages: When a Parent Emails About Playing Time",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "very_thin_body": 12,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 225,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 85,
+          "source": "src/content/articles/when-your-kid-is-the-new-kid.md",
+          "route": "/drive-there/when-your-kid-is-the-new-kid/",
+          "title": "When your kid is the *new kid* on the team",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 434,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 86,
+          "source": "src/content/articles/when-your-kid-isnt-going-to-play-in-college.md",
+          "route": "/drive-home/when-your-kid-isnt-going-to-play-in-college/",
+          "title": "When your kid *isn't going to play* in college (and that's fine)",
+          "sport": "multi-sport",
+          "topic": "rules-of-play",
+          "score": 47,
+          "score_breakdown": {
+            "literal_incoming_links": 8,
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 1054,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 2,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 87,
+          "source": "src/content/articles/when-your-kid-outgrows-cleats-mid-season.md",
+          "route": "/drive-there/when-your-kid-outgrows-cleats-mid-season/",
+          "title": "When your kid *outgrows cleats* mid-season",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 583,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 88,
+          "source": "src/content/articles/when-your-kid-says-theyre-not-as-good-as-their-teammate.md",
+          "route": "/drive-home/when-your-kid-says-theyre-not-as-good-as-their-teammate/",
+          "title": "When your kid says they're *not as good as their teammate*",
+          "sport": "multi-sport",
+          "topic": "the-hard-stuff",
+          "score": 47,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 482,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 89,
+          "source": "src/content/articles/how-much-does-aau-basketball-cost.md",
+          "route": "/drive-there/how-much-does-aau-basketball-cost/",
+          "title": "How Much Does AAU Basketball Cost?",
+          "sport": "basketball",
+          "topic": "rec-vs-travel",
+          "score": 46,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 4,
+            "commercial_intent": 10,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 510,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 5,
+            "literal_incoming_links": 1,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 90,
+          "source": "src/content/articles/how-much-does-youth-baseball-cost.md",
+          "route": "/drive-there/how-much-does-youth-baseball-cost/",
+          "title": "How Much Does Youth Baseball Cost?",
+          "sport": "baseball",
+          "topic": "rec-vs-travel",
+          "score": 46,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "literal_incoming_links": 4,
+            "commercial_intent": 10,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 432,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 5,
+            "literal_incoming_links": 1,
+            "has_bluf": true,
+            "has_seo_title": true,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    },
+    {
+      "batch": 10,
+      "status": "pending",
+      "items": [
+        {
+          "rank": 91,
+          "source": "src/content/articles/60-minute-practice-blueprint.md",
+          "route": "/team-parent/60-minute-practice-blueprint/",
+          "title": "The 60-Minute Practice Blueprint Every Parent Coach Can Use",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 45,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 643,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 92,
+          "source": "src/content/articles/college-id-camp-pitch.md",
+          "route": "/drive-home/college-id-camp-pitch/",
+          "title": "The college *ID camp* pitch at 13–14",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 45,
+          "score_breakdown": {
+            "featured": 20,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 878,
+            "h2_count": 8,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 93,
+          "source": "src/content/articles/comparing-two-summer-camp-options.md",
+          "route": "/drive-there/comparing-two-summer-camp-options/",
+          "title": "How to compare two summer camp options without spending three weekends on it",
+          "sport": "multi-sport",
+          "topic": "summer-camps",
+          "score": 45,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 315,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 94,
+          "source": "src/content/articles/middle-school-tryouts-when-not-making-it-is-best.md",
+          "route": "/drive-home/middle-school-tryouts-when-not-making-it-is-best/",
+          "title": "Middle-School Tryouts (13-14): When Not Making It Is the Best Thing",
+          "sport": "multi-sport",
+          "topic": "tryouts",
+          "score": 45,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "limited_h2_structure": 4,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 327,
+            "h2_count": 2,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 95,
+          "source": "src/content/articles/parents-coaching-from-sideline-what-to-do.md",
+          "route": "/team-parent/parents-coaching-from-sideline-what-to-do/",
+          "title": "What to Do When Parents Coach from the Sideline",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 45,
+          "score_breakdown": {
+            "parent_moment_intent": 6,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "missing_seo_description": 6,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 611,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": false
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 96,
+          "source": "src/content/articles/team-fun-versus-not-doing-things-you-dont-want-to-do.md",
+          "route": "/drive-there/team-fun-versus-not-doing-things-you-dont-want-to-do/",
+          "title": "Team fun *versus not doing things you don't want to do*",
+          "sport": "multi-sport",
+          "topic": "rec-vs-travel",
+          "score": 45,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "short_body": 4,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 688,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 97,
+          "source": "src/content/articles/team-social-media-rules-summer.md",
+          "route": "/team-parent/team-social-media-rules-summer/",
+          "title": "The team's social-media rules for the summer",
+          "sport": "multi-sport",
+          "topic": "communication",
+          "score": 45,
+          "score_breakdown": {
+            "evergreen_search_intent": 8,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 401,
+            "h2_count": 0,
+            "affiliate_links": 0,
+            "contextual_internal_links": 0,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 98,
+          "source": "src/content/articles/the-13-year-olds-i-need-new-everything.md",
+          "route": "/drive-there/the-13-year-olds-i-need-new-everything/",
+          "title": "The 13-year-old's *I need new everything* moment",
+          "sport": "multi-sport",
+          "topic": "equipment",
+          "score": 45,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "no_h2_structure": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 1032,
+            "h2_count": 0,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 99,
+          "source": "src/content/articles/the-5-to-7-lineup-card-fair-rotation-in-three-minutes.md",
+          "route": "/game/the-5-to-7-lineup-card-fair-rotation-in-three-minutes/",
+          "title": "The 5-7 Lineup Card: A Fair Rotation in Three Minutes",
+          "sport": "baseball",
+          "topic": "game-day",
+          "score": 45,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "limited_h2_structure": 4,
+            "limited_contextual_internal_links": 6
+          },
+          "baseline_metrics": {
+            "words": 286,
+            "h2_count": 3,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        },
+        {
+          "rank": 100,
+          "source": "src/content/articles/the-5-to-7-meltdown-after-a-strikeout.md",
+          "route": "/drive-home/the-5-to-7-meltdown-after-a-strikeout/",
+          "title": "The 5-7 Meltdown After a Strikeout",
+          "sport": "baseball",
+          "topic": "the-hard-stuff",
+          "score": 45,
+          "score_breakdown": {
+            "affiliate_bearing": 12,
+            "missing_bluf": 10,
+            "missing_seo_title": 5,
+            "thin_body": 8,
+            "limited_contextual_internal_links": 6,
+            "priority_topic": 4
+          },
+          "baseline_metrics": {
+            "words": 294,
+            "h2_count": 4,
+            "affiliate_links": 1,
+            "contextual_internal_links": 1,
+            "literal_incoming_links": 0,
+            "has_bluf": false,
+            "has_seo_title": false,
+            "has_seo_description": true
+          },
+          "status": "pending",
+          "refreshed_at": null
+        }
+      ]
+    }
+  ]
+}

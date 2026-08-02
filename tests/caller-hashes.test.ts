@@ -16,12 +16,14 @@ const readFile = (relPath: string) => readFileSync(relPath);
 describe('scheduled-task caller-hash reconciliation', () => {
   it('parses one row per scheduled task with at least one committed caller', () => {
     const inventory = parseCallerInventory(markdown);
-    expect(inventory.length).toBe(10);
+    expect(inventory.length).toBe(11);
     expect(inventory.every((row) => row.caller_paths.length >= 1)).toBe(true);
     // Vera's row carries both the pointer and the underlying SKILL.
     const vera = inventory.find((row) => row.task_id === 'pcd-deletion-monitor');
     expect(vera?.caller_paths).toContain('agents/pcd-deletion-monitor/SKILL.md');
     expect(vera?.caller_paths).toContain('automation/agents/vera/SKILL.md');
+    const refresher = inventory.find((row) => row.task_id === 'pcd-blog-refresher');
+    expect(refresher?.caller_paths).toEqual(['agents/pcd-blog-refresher/SKILL.md']);
   });
 
   it('computes a real SHA-256 of each committed caller source', () => {

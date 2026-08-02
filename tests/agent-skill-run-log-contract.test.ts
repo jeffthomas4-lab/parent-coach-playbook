@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 const skills = [
   'agents/pcd-deletion-monitor/SKILL.md',
+  'agents/pcd-blog-refresher/SKILL.md',
   'automation/agents/nora/SKILL.md',
   'automation/agents/ed/SKILL.md',
   'automation/agents/frida/SKILL.md',

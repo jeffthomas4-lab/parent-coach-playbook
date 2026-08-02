@@ -8,6 +8,7 @@ const taskIds = [
   'pcd-link-health-monitor',
   'weekly-gsc-review',
   'pcd-rules-watcher',
+  'pcd-blog-refresher',
   'pcd-friday-letter-draft',
   'pcd-camps-data-steward',
   'pcd-seasonal-content-scheduler',

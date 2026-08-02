@@ -30,6 +30,8 @@ So mail to PCD's public aliases that is neither a deletion request nor spam is c
 
 **Still owed, and it is the thing that actually fixes `/admin/agents`:** the scheduled tasks do not call `POST /api/agent-runs`, so the registry cannot show what ran. `scripts/agent-run-client.mjs` already exists as the caller. Until each task posts a start and a finish, `/admin/agents` will keep showing an empty run list next to a registry full of agents that appear active and idle. `automation/TASK-RUN-LOG-RECONCILIATION.md` tracks this and still marks every PCD task `pending` for run proof.
 
+**Flo source prepared 2026-08-02.** `agents/pcd-blog-refresher/SKILL.md` now contains the safe, git-tracked next version of Flo's caller for one deterministic 10-article Class C staging batch. It logs under the existing `ed` registry identity and cannot push, merge, deploy, or change the live scheduled task. The external scheduled-task copy remains unchanged until a separate deployment approval, so this is repository readiness only, not evidence that the new caller was deployed, enabled, or run.
+
 ## Registry SQL for Jeff (writes — run these yourself)
 
 These correct `agent_registry` in `forge-command` (`747cf988-a557-48bd-9d03-bea09e184f94`) so `/admin/agents` stops implying that four agents are active and merely quiet. Read the map above before running; the retirements are judgment calls, not mechanical.

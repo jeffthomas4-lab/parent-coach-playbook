@@ -121,6 +121,7 @@ const articles = defineCollection({
         .enum(['pre-season', 'early', 'mid', 'playoffs', 'off-season'])
         .optional(),
       publishedAt: z.coerce.date(),
+      updatedAt: z.coerce.date().optional(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
       externalSource: z.object({

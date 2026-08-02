@@ -1,8 +1,7 @@
 # Scheduled-task run-log reconciliation
 
-This inventory reconciles the ten Parent Coach Desk scheduled tasks recorded in
-`PCD-OPERATING-MANUAL.md` section 3.2 with their version-controlled caller
-contracts. It does not claim that the external scheduled-task copies have been
+This inventory reconciles the eleven Parent Coach Desk caller contracts listed
+below with their version-controlled sources. It does not claim that the external scheduled-task copies have been
 updated or that a run occurred. Runtime proof must be added only from the
 scheduled-task system and the protected run registry.
 
@@ -17,6 +16,7 @@ enough when one agent owns multiple cadences.
 | `pcd-link-health-monitor` | Mon 7:04 AM | Hal | `automation/agents/hal/SKILL.md` | protected scheduled-task store | report only | pending | pending | pending | source ready; deployed prompt and runtime secret unverified |
 | `weekly-gsc-review` | Mon 8:08 AM | Nora | `automation/agents/nora/SKILL.md` | protected scheduled-task store | report only | pending | pending | pending | source ready; deployed prompt and runtime secret unverified |
 | `pcd-rules-watcher` | Tue 7:08 AM | Ed | `automation/agents/ed/SKILL.md` | protected scheduled-task store | report only; no editorial writes | pending | pending | pending | source ready; deployed prompt and runtime secret unverified |
+| `pcd-blog-refresher` | Tue 8:15 AM | Ed (Flo task) | `agents/pcd-blog-refresher/SKILL.md` | protected scheduled-task store | hold; no content edits or staging commits | pending | pending | pending | v1.0 source ready; external deployed copy unchanged and runtime receipts unverified |
 | `pcd-friday-letter-draft` | Wed 8:03 AM | Frida | `automation/agents/frida/SKILL.md` | protected scheduled-task store | hold; log no-draft result | pending | pending | pending | source ready; deployed prompt and runtime secret unverified |
 | `pcd-camps-data-steward` | Thu 4:07 AM | Ranger | `automation/agents/ranger/SKILL.md` | protected scheduled-task store | report only; no staging writes | pending | pending | pending | source ready; deployed prompt and runtime secret unverified |
 | `pcd-seasonal-content-scheduler` | Monthly, day 1 | Ed | `automation/agents/ed/SKILL.md` | protected scheduled-task store | hold; no plan or content writes | pending | pending | pending | source ready; deployed prompt and runtime secret unverified |
@@ -45,7 +45,7 @@ Worker scheduler, not a scheduled-task prompt using this bearer contract.
 5. Record the redacted run ID and observed timestamp for one start and matching
    finish receipt. Then exercise the caller's controlled fake/failure path and
    record the redacted failure receipt without causing a production mutation.
-6. Only after the canary is clean, reconcile the remaining nine callers one at
+6. Only after the canary is clean, reconcile the remaining ten callers one at
    a time. Never copy one task's receipt into another row.
 
 The token value is never written here or in a skill. Rotation updates the

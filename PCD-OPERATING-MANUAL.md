@@ -17,7 +17,7 @@ This is a design document. It builds no agents, no automations, and no schedules
 
 ## 0. How to read this manual
 
-The manual has five working phases and a set of reference sections. Phase 1 is the business architecture: what PCD is, what constrains it, and which departments hold the work. Phase 2 is the SOPs: the standing processes, each with a trigger, an owner, steps, and an approval gate. Phase 3 is the workflow map: how work moves, what already runs on a schedule, and what idles during football season. Phase 4 is the prompt architecture: how the ten live agent prompts are named, stored, versioned, owned, tested, evaluated, and retired. Phase 5 is the agent design: the operational org chart, every agent with its skill-template fields, supervisor, human owner, and risk class.
+The manual has five working phases and a set of reference sections. Phase 1 is the business architecture: what PCD is, what constrains it, and which departments hold the work. Phase 2 is the SOPs: the standing processes, each with a trigger, an owner, steps, and an approval gate. Phase 3 is the workflow map: how work moves, what already runs on a schedule, and what idles during football season. Phase 4 is the prompt architecture: how the twelve live agent prompts are named, stored, versioned, owned, tested, evaluated, and retired. Phase 5 is the agent design: the operational org chart, every agent with its skill-template fields, supervisor, human owner, and risk class.
 
 Two rules sit above every design choice here. No agent exists unless it saves real time, improves a decision, reduces risk, or increases revenue (Master Plan section 1). No agent gets built until its recurring task has been done by hand at least three times (decision 6). Every proposed agent below states how it clears both.
 
@@ -179,7 +179,7 @@ Every SOP names its approval gate. The HUMAN GATE rule holds across all of them:
 **Trigger:** quarterly (January, April, July, October).
 **Steps:** Scan the article base for stale facts, dated seasonal references, and dead links. Rank refresh candidates by traffic potential and staleness.
 **Approval gate:** Report and stage. Rewrites route through Editorial and publish only with Jeff.
-**Backing task:** `pcd-freshness-audit` (quarterly, day 5).
+**Backing tasks:** `pcd-freshness-audit` (quarterly report) and `pcd-blog-refresher` (weekly 10-article stage).
 
 ### S12. Inbound triage
 
@@ -202,9 +202,9 @@ Every run should write one row to `agent_runs` in the `forge-command` D1 so the 
 
 ## 3.2 What already runs on a schedule
 
-Jeff asked for this explicitly, and it is the most important correction the manual makes. PCD is not a paused venture waiting for automation. It has ten live scheduled tasks plus two portfolio-level tasks that cover it. This inventory is part of the standing operating picture and should be checked at the top of any PCD session and refreshed whenever a new task is scheduled.
+Jeff asked for this explicitly, and it is the most important correction the manual makes. PCD is not a paused venture waiting for automation. The inventory below now records twelve live PCD scheduled tasks plus two portfolio-level tasks that cover it. This standing operating picture should be checked at the top of any PCD session and refreshed whenever a task is added, removed, or materially changed.
 
-**Refreshed 2026-07-15 against the live task list.** Two changes since v1.3: `pcd-gsc-analytics-report` was deleted in the 2026-07-13 GSC consolidation and is gone from this table, and `pcd-deletion-monitor` is live and running daily. The count is still ten because one left and one arrived. Every task now has a named owner from the roster, which is what the "Owner" column below carries.
+**Refreshed 2026-08-02 against the current task records.** The table retains the July consolidation history and now includes the affiliate replacement sourcer and Flo's weekly blog refresher, for twelve PCD-owned tasks. Every task has a named owner from the roster. Adding the git-tracked Flo caller in this pass did not change or activate its external scheduled-task copy.
 
 | Task ID | Schedule | Owner | Workstream (SOP) | Output type | Writes live? |
 |---|---|---|---|---|---|
@@ -214,6 +214,7 @@ Jeff asked for this explicitly, and it is the most important correction the manu
 | `weekly-gsc-review` | Mon 8:08 AM | Nora | Marketing (S1) | Report | No |
 | `pcd-affiliate-replacement-sourcer` | Tue 7:39 AM | Hal | Affiliate (S5) | Proposal (diff) | No |
 | `pcd-rules-watcher` | Tue 7:08 AM | Ed | Editorial (S9) | Draft | No |
+| `pcd-blog-refresher` | Tue 8:15 AM | Ed (Flo task) | Editorial (S11) | Stage | No |
 | `pcd-friday-letter-draft` | Wed 8:03 AM | Frida | Marketing (S10) | Draft | No |
 | `pcd-camps-data-steward` | Thu 4:07 AM | Ranger | Camp lead gen (S8) | Report or stage | No |
 | `pcd-seasonal-content-scheduler` | Monthly, day 1 | Ed | Editorial (S9) | Plan | No |
@@ -224,7 +225,7 @@ Jeff asked for this explicitly, and it is the most important correction the manu
 
 **One agent on the roster has no task in this table.** Sunny (S12, inbound triage) is built and registered `paused`, with no schedule, because the account guard has to be confirmed against the live connected inbox before an agent starts reading mail on Jeff's behalf. Jeff's switch, named in `automation/agents/sunny/SPEC.md`.
 
-**The owner column is not the same as the wire.** Naming Ranger the owner of `org-discovery-daily-worklist` does not mean that task's deployed prompt calls Ranger's run-log contract yet. Each of the ten still runs its own `SKILL.md` under `Documents\Claude\Scheduled\`, and pointing them at the roster's specs is the Phase 6 work. The owner column says who is accountable; it does not claim the wiring is done.
+**The owner column is not the same as the wire.** Naming Ranger the owner of `org-discovery-daily-worklist` does not mean that task's deployed prompt calls Ranger's run-log contract yet. The deployed tasks still run their own `SKILL.md` copies under `Documents\Claude\Scheduled\`, and pointing them at committed callers is canonical-runtime work. The owner column says who is accountable; it does not claim the wiring is done.
 
 One more task touches PCD files without owning PCD work: `cowork-folder-weekly-scan` (Sun 10 PM) hashes the whole Cowork folder, including the PCD outputs, and stages changed files as Notion Raw Sources for the Second Brain. It is a knowledge-ingest task, not a PCD process, and it is listed here only so its file access is not mistaken for a PCD agent.
 
@@ -263,7 +264,7 @@ Phase 4 governs how PCD's agent prompts are named, stored, versioned, owned, tes
 
 ## 4.1 The current prompt inventory
 
-Every PCD agent is a `SKILL.md` file behind a Cowork scheduled task. There are ten PCD prompts, plus the two Barnabus portfolio prompts that also read PCD state. Each file is YAML frontmatter (name, description) over a prose body; the scheduler injects an autonomous-run preamble and expects a closing `<run-summary>`.
+Every PCD agent is a `SKILL.md` file behind a Cowork scheduled task. The inventory below records twelve PCD prompts, plus the two Barnabus portfolio prompts that also read PCD state. Each file is YAML frontmatter over a prose body; the scheduler injects an autonomous-run preamble and expects a closing `<run-summary>`.
 
 | Task (SKILL.md) | Owner | SOP | Cadence | Action class | Writes live? | Logs to agent_runs? |
 |---|---|---|---|---|---|---|
@@ -273,6 +274,7 @@ Every PCD agent is a `SKILL.md` file behind a Cowork scheduled task. There are t
 | `pcd-link-health-monitor` | Hal | S5 | Mon 7:04 AM | Analyze | No | No |
 | `pcd-affiliate-replacement-sourcer` | Hal | S5 | Tue 7:39 AM | Analyze, Draft | No | No |
 | `pcd-rules-watcher` | Ed | S9 | Tue 7:08 AM | Draft | No | No |
+| `pcd-blog-refresher` | Ed (Flo task) | S11 | Tue 8:15 AM | Stage | No | No |
 | `pcd-friday-letter-draft` | Frida | S10 | Wed 8:03 AM | Draft | No | No |
 | `pcd-camps-data-steward` | Ranger | S8 | Thu 4:07 AM | Stage | No | No |
 | `pcd-seasonal-content-scheduler` | Ed | S9 | Monthly d1 | Draft | No | No |
@@ -281,15 +283,15 @@ Every PCD agent is a `SKILL.md` file behind a Cowork scheduled task. There are t
 | `barnabus-morning-briefing` | Barnabus | portfolio | Daily 6:31 AM | Draft | Log only | Yes |
 | `barnabus-weekly-review` | Barnabus | portfolio | Sun 4:30 PM | Draft | Log only | Yes |
 
-**Updated 2026-07-15.** `pcd-gsc-analytics-report` is off this table because it no longer exists (deleted in the 2026-07-13 GSC consolidation). `pcd-deletion-monitor` is on it because it is live, and it is the first PCD prompt to write an `agent_runs` row on its own, which it does with a direct D1 insert. That column now reads "Yes" once instead of ten "No" answers.
+**Updated 2026-08-02.** `pcd-gsc-analytics-report` remains off this table because it was deleted in the 2026-07-13 GSC consolidation. `pcd-deletion-monitor` remains the deployed caller with run-log wiring. Flo's safe next caller is now committed at `agents/pcd-blog-refresher/SKILL.md`, but its external copy and runtime receipts remain unchanged.
 
-Barnabus is the reference build. It opens a run record, writes exactly one `agent_runs` row even on failure, dedupes before posting, and carries the voice, Red Wall, family, and source rules in the prompt. Vera's prompt is the first PCD one built to that bar. The other nine still do none of it, and that difference is the spine of the gaps below.
+Barnabus is the reference build. It opens a run record, writes exactly one `agent_runs` row even on failure, dedupes before posting, and carries the voice, Red Wall, family, and source rules in the prompt. Vera's prompt is the first PCD one deployed to that bar. The other eleven deployed PCD copies still lack verified start, finish, and failure receipts, and that difference is the spine of the gaps below.
 
-**The wire that closes this column.** `POST /api/agent-runs` went live 2026-07-15 (`automation/RUN-LOG.md`). The reason nothing logged was never the table: PCD's scheduled tasks are Claude tasks with no D1 binding and there was no endpoint to write through. There is one now, bearer-token authed, idempotent on `run_id`, Slack-alerting on failure, CANARY-pausing on a double failure. Each roster agent's `SKILL.md` under `automation/agents/` now calls it. Pointing the ten deployed prompts at those files is the remaining half, and it is Phase 6.
+**The wire that closes this column.** `POST /api/agent-runs` went live 2026-07-15 (`automation/RUN-LOG.md`). The reason nothing logged was never the table: PCD's scheduled tasks are Claude tasks with no D1 binding and there was no endpoint to write through. There is one now, bearer-token authed, idempotent on `run_id`, Slack-alerting on failure, CANARY-pausing on a double failure. The committed callers use that client; deploying and proving each external copy is the remaining half.
 
 ## 4.2 Naming convention
 
-The convention is `pcd-<function>`, and eight of the ten follow it. Two do not: `weekly-gsc-review` predates the prefix (its Monday overlap, `pcd-gsc-analytics-report`, was deleted 2026-07-13, so the name is now the only thing left of that problem), and `org-discovery-daily-worklist` predates the merge and keeps its historical name on purpose, like the `activity-radar` and `parent-coach-playbook` identifiers.
+The convention is `pcd-<function>`, and ten of the twelve follow it. Two do not: `weekly-gsc-review` predates the prefix (its Monday overlap, `pcd-gsc-analytics-report`, was deleted 2026-07-13, so the name is now the only thing left of that problem), and `org-discovery-daily-worklist` predates the merge and keeps its historical name on purpose, like the `activity-radar` and `parent-coach-playbook` identifiers.
 
 A third naming question opened with the roster: the tasks are named for functions and the agents are named for people. `pcd-deletion-monitor` is Vera, `weekly-gsc-review` is Nora. The task ID and the person are the same worker under two names, which is exactly the failure this section exists to prevent. Vera's is the case worth fixing first, because her registry key and her task ID both read `pcd-deletion-monitor` and her spec reads Vera; see `automation/agents/vera/SPEC.md` for why that rename has to land as one commit with the `agent` value her logging writes, and not before. New PCD prompts take the `pcd-` prefix from creation, and renaming the two legacy tasks waits for Phase 7, because a scheduled-task rename changes the stored path in 4.3.
 
@@ -311,7 +313,7 @@ Every prompt maps to one of the five workstreams (section 1.3), and through the 
 
 Two content standards sit inside every prompt. The action class sets output governance, and the six-slot frame sets structure.
 
-The four action classes refine the HUMAN GATE rather than replace it. **Analyze** is read-only and hands back a report. **Draft** produces a document a human may act on, and nothing ships. **Stage** is a fully-formed change set waiting on one approval, which posts to the existing Slack channel with a link to the markdown (Jeff's call, 2026-07-13), not a Notion queue and not scattered files. **Act** is the one autonomous exception, org-discovery writing enrichment inside a confidence threshold. Nine of the ten PCD prompts are Analyze or Draft, `pcd-camps-data-steward` is the Stage case, and org-discovery is the lone Act.
+The four action classes refine the HUMAN GATE rather than replace it. **Analyze** is read-only and hands back a report. **Draft** produces a document a human may act on, and nothing ships. **Stage** is a fully-formed change set waiting on one approval, which posts to the existing Slack channel with a link to the markdown (Jeff's call, 2026-07-13), not a Notion queue and not scattered files. **Act** is the one autonomous exception, org-discovery writing enrichment inside a confidence threshold. Nine of the twelve PCD prompts are Analyze or Draft, `pcd-camps-data-steward` and `pcd-blog-refresher` are Stage, and org-discovery is the lone Act.
 
 The frame is the six things every prompt states: **purpose** (one sentence tied to the SOP), **inputs** (the live source, the prior run, the governing file), **reasoning steps** (the real decision points, not just mechanics), **guardrails** (the manual's thresholds restated so the agent cannot drift: 75 confidence, never store PII, no Amazon links in email, the 30-day SLA), **output shape** (report, draft, or staged set), and **logging** (the `agent_runs` row). Every prompt also carries the VOICE, RED WALL, and FAMILY FIREWALL rules, and any prompt that drafts outbound copy reads `About Me/About Me.txt` and `About Me/Anti AI Writing.txt` first. A review checks a prompt against these six slots plus its class.
 
@@ -323,7 +325,7 @@ The standard before a prompt change ships: run it once by hand against live data
 
 ## 4.8 Evaluation
 
-Evaluation asks whether a prompt still earns its slot, not just whether it ran. The measure is the SOP's success metric read against the run log, once logging exists: did the GSC review catch the real regression, did the Friday Letter draft need heavy editing, did org-discovery's accept rate hold. Until `agent_runs` logging is wired (Open Item 3), evaluation is Jeff reading outputs, which works at ten tasks and will not scale. skill-creator's eval tooling is the Phase 9 anchor for turning this into a repeatable pass.
+Evaluation asks whether a prompt still earns its slot, not just whether it ran. The measure is the SOP's success metric read against the run log, once logging exists: did the GSC review catch the real regression, did the Friday Letter draft need heavy editing, did org-discovery's accept rate hold. Until `agent_runs` logging is wired (Open Item 3), evaluation is Jeff reading outputs, which works at twelve tasks and will not scale. skill-creator's eval tooling is the Phase 9 anchor for turning this into a repeatable pass.
 
 ## 4.9 Lifecycle and approval
 
@@ -345,7 +347,7 @@ Risk is set by what an agent can change without a human in the loop, and it driv
 
 ## 5.2 The org chart
 
-Each row is one agent. The three tags are **live** (one of the ten PCD scheduled tasks running today), **working set** (a shared Forge Command agent PCD draws on: Editorial, Support/Ops, Finance), and **future-menu** (a candidate not yet built, with a decision-6 path). The supervisor for every PCD agent is Barnabus, which carries its state in the briefing from the run log; the human owner is Jeff until a working-set agent takes the workstream.
+Each row is one agent. The three tags are **live** (one of the twelve PCD scheduled tasks running today), **working set** (a shared Forge Command agent PCD draws on: Editorial, Support/Ops, Finance), and **future-menu** (a candidate not yet built, with a decision-6 path). The supervisor for every PCD agent is Barnabus, which carries its state in the briefing from the run log; the human owner is Jeff until a working-set agent takes the workstream.
 
 **Rewritten 2026-07-15, the roster complete.** This table used to key on task IDs, because when it was written no PCD workflow had an owner and the task was the only thing there was to name. All seven agents in `PCD-AUTOMATION-BUILD-PLAN.md` are now built, specced, and registered, so the rows key on people and the tasks sit in the column where they belong.
 
@@ -499,7 +501,7 @@ The rules are the constitution and they hold here without exception. The four th
 2. **Two overlapping GSC tasks (resolved 2026-07-13).** Consolidated in the roster reconciliation: `weekly-gsc-review` kept and rewritten against Nora's SKILL.md, `pcd-gsc-analytics-report` deleted, output path corrected to `reports/seo/gsc-review-YYYY-MM-DD.md`.
 3. **PCD scheduled tasks and `agent_runs`: half closed 2026-07-15.** The logging contract says agents that do not log do not exist. Three things changed since this item was written. The wire exists: `POST /api/agent-runs` on the parentcoachdesk.com Worker, bearer-token authed, idempotent on `run_id`, posting the real error to Slack on a `failed` finish and CANARY-pausing an agent that fails twice in 24 hours (`automation/RUN-LOG.md`). All seven roster agents carry the calls in their `SKILL.md`. And `pcd-deletion-monitor` writes a row on its own today, the first PCD task to do it.
 
-    **Still open:** the other nine deployed prompts under `Documents\Claude\Scheduled\` run their own older text and log nothing. Pointing them at versioned workflow definitions is canonical-runtime work, not merely a prompt-copy step. The production Worker has the `FORGE_DB` binding, but read-only secret-name inspection on 2026-07-16 found only `BULK_IMPORT_TOKEN`, `CRON_KEY`, and `GITHUB_TOKEN`; `AGENT_RUNS_TOKEN` is absent, so the endpoint refuses all writes with 503. Slack and email configuration names are also absent. Adding credentials or deploying configuration requires separate approval and staging evidence.
+    **Still open:** the other eleven deployed prompts under `Documents\Claude\Scheduled\` run their own older text without verified run receipts. Pointing them at versioned workflow definitions is canonical-runtime work, not merely a prompt-copy step. The production Worker has the `FORGE_DB` binding, but read-only secret-name inspection on 2026-07-16 found only `BULK_IMPORT_TOKEN`, `CRON_KEY`, and `GITHUB_TOKEN`; `AGENT_RUNS_TOKEN` is absent, so the endpoint refuses all writes with 503. Slack and email configuration names are also absent. Adding credentials or deploying configuration requires separate approval and staging evidence.
 4. **Camp discovery writes live with no periodic human audit.** S7 pushes enrichment to the parent-facing database daily. Set a cadence for a human to audit its confidence threshold, its accept rate, and its guardrail compliance. All three external reviews (2026-07-13) independently landed on this gap, which raises its priority for the December close.
 5. **Maintenance-mode rule (resolved 2026-07-13).** During the fall idle every PCD scheduled task runs maintenance-only: it pauses or degrades to report-only, with no writes and no active build work, S7's autonomous camp writes included. The only exceptions are the year-round S4 deletion watch and the critical escalations (lapsed domain, failed payment, uptime, security). The mechanism (a global PCD_MAINTENANCE_MODE toggle with an S4 bypass) is a Phase 7 build item; the ChatGPT per-task matrix is kept as reference in the Session Two input file.
 6. **Two D1 database names for what may be one database (resolved 2026-07-15).** There was never a conflict here, only two different kinds of name read as one. `wrangler.jsonc` binds a *database* called `activity-radar`. Deployments.md's `--project-name parent-coach-playbook` names the *Cloudflare Pages project*, which is not a database at all. Both are correct and always were.
@@ -524,6 +526,7 @@ The rules are the constitution and they hold here without exception. The four th
 
 | Date | By | Notes |
 |---|---|---|
+| 2026-08-02 | Codex, article-refresh source pass | Added the git-tracked `agents/pcd-blog-refresher/SKILL.md` caller for one deterministic 10-article Class C staging batch. The source references the canonical article standard and 100-article ledger, uses the protected run-log client under the existing `ed` identity, requires isolated exact-file commits, and forbids push, merge, deploy, and scheduled-task mutation. Updated governance and caller-hash coverage only. The external `Documents\\Claude\\Scheduled\\pcd-blog-refresher` copy was not changed, no task was enabled, and no runtime receipt was manufactured. |
 | 2026-07-15 | Agent-roster lane, PCD full-automation push (PCD Operating Manual v1.4) | Finished the roster the build plan names: Hal (S5, S6), Ranger (S7, S8, backup), Vera (S4), Sunny (S12), each with a spec on the section 7 skill-template fields, a skill file, a run-log wire to `POST /api/agent-runs`, an independent kill switch, a registry row, a Slack staging line, and a maintenance-mode rule. Vera was reconciled against her ancestor `pcd-deletion-monitor` rather than duplicated: same skill file, same registry row, rename deferred to one commit that moves the key and the logged `agent` value together. Fixed the audit's section 10 drift in this manual (2.2, 3.2, 3.3, 4.1, 4.2, 5.2, 5.4, 5.5, Open Item 3) and in `ventures/parentcoachdesk.md`. Wired the three tasks that owed the endpoint a call (Friday Letter, seasonal, freshness) plus Nora's. Nothing scheduled, nothing deployed, no git run. Full report: `reports/ROSTER-LANE-2026-07-15.md`. |
 | 2026-07-13 | Cowork session, Open Item 10 build (PCD Operating Manual v1.3) | Built the Open Item 10 fix: `scripts/backup-activity-radar.ps1` (dated exports, keep-last-8 retention), `scripts/RESTORE-activity-radar.md` (full restore, single-table restore, D1 Time Travel, verification), and retired the old no-retention script. Followed the MedConfRadar D-026 precedent's manual-first pattern under decision 6. Registered `pcd-backup` in `agent_registry` at status paused with the three-runs condition in its purpose, logged one `agent_runs` row for this session's build. Could not execute tonight's first export from the session sandbox (no Cloudflare credentials there); handed Jeff the paste-ready command to run it himself. Open Item 10 marked in-progress, not resolved, until three clean manual runs are on file. |
 | 2026-07-13 | Forge Command design session (PCD Operating Manual v1.0) | First pass. Phases 1 to 3 written; 4 to 10 stubbed with prerequisites. Five workstreams mapped to Blueprint departments; no new departments invented. Org chart tags each function working-set or future-menu with existence test and manual-3x status. Ten live PCD scheduled tasks inventoried in section 3.2 at Jeff's request; discrepancy with the venture file logged as Open Item 1. Maturity roadmap sequences distribution first, football-season idle respected. Decision to adopt per-venture Operating Manuals logged to the Field & Forge Decision Journal. |
