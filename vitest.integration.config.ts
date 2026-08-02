@@ -8,9 +8,9 @@ export default defineConfig({
     include: integrationTests,
     globals: false,
     // The disposable D1 suite owns a Miniflare runtime. Keep the integration
-    // boundary in one thread so a worker-process crash cannot be reported as
-    // a successful partial run on Windows.
-    pool: 'threads',
+    // boundary in one fork so native workerd failures cannot take down the
+    // Vitest coordinator or be reported as a successful partial run on Windows.
+    pool: 'forks',
     maxWorkers: 1,
     fileParallelism: false,
     // Explicit, generous bounds so a hung hook or test (e.g. a workerd

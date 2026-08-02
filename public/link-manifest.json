@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-31T21:52:43.988Z",
-  "count": 689,
+  "generatedAt": "2026-08-02T16:42:09.278Z",
+  "count": 700,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -469,6 +469,12 @@
       ]
     },
     {
+      "url": "https://columbusrecparks.com/wellness/athletics/youth_leagues/",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
       "url": "https://concussionfoundation.org/",
       "sources": [
         "src/content/body/concussion-protocol-basics.md",
@@ -637,6 +643,12 @@
       "url": "https://nccsir.unc.edu/",
       "sources": [
         "src/content/body/youth-cheer-stunt-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://ncys.org/the-hidden-costs-of-youth-sports-financial-strain-and-emotional-toll/",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
       ]
     },
     {
@@ -1488,12 +1500,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B003BSRB3U?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: wrestling-headgear)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B003L23NJ4?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: coach-clipboard-dry-erase)"
@@ -1799,9 +1805,21 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B07GZX6Y6S?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-headgear)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B07HTD6166?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: flag-football-belt-set)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07KFV9MFL?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-pads-starter)"
       ]
     },
     {
@@ -2153,12 +2171,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0CQTM2SBD?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: hockey-pads-starter)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B0CYTHP5JD?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: multi-sport-shoe-bag)"
@@ -2243,6 +2255,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B0DQYG586R?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gymnastics-slippers-youth)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B0DRC1HJN8?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: multi-sport-cleats-youth)"
@@ -2267,7 +2285,7 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0F14NVK54?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B0F14PHJCY?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: basketball-shoes-youth)"
       ]
@@ -2312,12 +2330,6 @@
       "url": "https://www.amazon.com/dp/B0FSMY5J8B?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: xc-trainers-youth)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B0GC3TTFQN?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: gymnastics-slippers-youth)"
       ]
     },
     {
@@ -2574,6 +2586,12 @@
       ]
     },
     {
+      "url": "https://www.aspeninstitute.org/wp-content/uploads/2025/06/National-Youth-Sports-Parent-Survey-FINAL.pdf",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
       "url": "https://www.assh.org/",
       "sources": [
         "src/content/body/hand-finger-fracture-triage.md"
@@ -2630,6 +2648,7 @@
     {
       "url": "https://www.baberuthleague.org/",
       "sources": [
+        "src/content/articles/usa-vs-usssa-bats.md",
         "src/pages/governing-bodies.astro"
       ]
     },
@@ -2766,6 +2785,18 @@
       "sources": [
         "src/content/body/safesport-reporting-walkthrough.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.cityofsacramento.gov/ypce/recreation/YouthSports",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2026/07/12/sport/youth-soccer-costs-united-states",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
       ]
     },
     {
@@ -3065,6 +3096,12 @@
       ]
     },
     {
+      "url": "https://www.kiplinger.com/personal-finance/family-savings/what-families-are-really-spending-to-keep-kids-in-sports",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -3106,6 +3143,12 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/playing-rules/bat-information/",
+      "sources": [
+        "src/content/articles/usa-vs-usssa-bats.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org/playing-rules/pitch-count",
       "sources": [
         "src/content/news/baseball-pitch-count-rule-changes-2026.md"
@@ -3128,6 +3171,12 @@
       "url": "https://www.lung.org/lung-health-diseases/lung-disease-lookup/asthma",
       "sources": [
         "src/content/body/asthma-attack-on-field.md"
+      ]
+    },
+    {
+      "url": "https://www.marketplace.org/story/2026/07/16/youth-sports-in-the-us-grow-prohibitively-expensive",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
       ]
     },
     {
@@ -3640,6 +3689,12 @@
       ]
     },
     {
+      "url": "https://www.phoenix.gov/administration/departments/parks/classes-programs/youth-classes-sports.html",
+      "sources": [
+        "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
       "url": "https://www.plantscience.psu.edu/research/centers/ssrc",
       "sources": [
         "src/content/body/artificial-turf-temperatures-burn-risk.md"
@@ -3663,6 +3718,7 @@
     {
       "url": "https://www.pony.org/",
       "sources": [
+        "src/content/articles/usa-vs-usssa-bats.md",
         "src/pages/governing-bodies.astro"
       ]
     },
@@ -4041,6 +4097,12 @@
         "src/content/body/catchers-gear-safety.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usabaseball.com/bats/about",
+      "sources": [
+        "src/content/articles/usa-vs-usssa-bats.md"
       ]
     },
     {
@@ -4523,6 +4585,12 @@
       "url": "https://www.usssa.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf",
+      "sources": [
+        "src/content/articles/usa-vs-usssa-bats.md"
       ]
     },
     {

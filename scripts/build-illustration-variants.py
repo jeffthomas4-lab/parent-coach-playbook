@@ -27,6 +27,7 @@ from PIL import Image
 
 WIDTHS = (480, 960)
 QUALITY = 78
+ORIGINAL_QUALITY = 74
 ILLUSTRATIONS = Path(__file__).resolve().parent.parent / "public" / "illustrations"
 
 # A variant is itself a .webp in the same folder, so it has to be excluded from
@@ -56,8 +57,17 @@ def build(source: Path, force: bool = False) -> list[str]:
     return written
 
 
+def optimize_original(source: Path) -> None:
+    """Re-encode a source WebP when an audit flags the original as oversized."""
+    temporary = source.with_name(f"{source.stem}.optimized.webp")
+    with Image.open(source) as im:
+        im.convert("RGB").save(temporary, "WEBP", quality=ORIGINAL_QUALITY, method=6)
+    temporary.replace(source)
+
+
 def main(argv: list[str]) -> int:
     force = "--all" in argv
+    optimize = "--optimize-original" in argv
     named = [a for a in argv if not a.startswith("--")]
 
     if named:
@@ -72,6 +82,9 @@ def main(argv: list[str]) -> int:
 
     total = 0
     for source in sources:
+        if optimize:
+            optimize_original(source)
+            print(f"optimized {source.name}")
         for name in build(source, force=force):
             print(f"wrote {name}")
             total += 1

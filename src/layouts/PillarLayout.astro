@@ -14,6 +14,17 @@ interface Props {
 
 const { pillar } = Astro.props;
 const meta = PILLARS[pillar];
+const seoTitles: Record<PillarSlug, string> = {
+  'drive-there': 'Before the Game: Parent Guide',
+  game: 'During the Game: Parent-Coach Guide',
+  'drive-home': 'After the Game: Parent Guide',
+  'team-parent': 'Team Parent Resources and Tools',
+};
+const seoDescriptions: Partial<Record<PillarSlug, string>> = {
+  'drive-there': 'Prepare for youth sports with calmer pregame conversations, practical tryout guidance, family planning, and clear expectations before anyone takes the field.',
+  game: 'Make better in-game coaching decisions with practical guidance on communication, substitutions, officials, pressure, and coaching your own child on a team.',
+  'drive-home': 'Handle the ride home after youth sports with calmer conversations, practical scripts, and relationship-first guidance for wins, losses, mistakes, and silence.',
+};
 
 const articles = (await getCollection('articles', ({ data }) => isLive(data) && data.phase === pillar))
   .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
@@ -29,8 +40,8 @@ const sportsUsed = [...new Set(
 const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as string[];
 ---
 <BaseLayout
-  title={meta.label}
-  description={meta.blurb}
+  title={seoTitles[pillar]}
+  description={seoDescriptions[pillar] ?? meta.blurb}
 >
   <section
     class="border-b border-bone"
@@ -54,8 +65,9 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
           <figure class="mt-10">
             <Illo
               base="pillar-drive-there"
-              alt="Interior of a car at dawn — a parent's hands on the wheel, sport bag and water bottle visible, sunrise through the windshield."
+              alt="Parent driving to youth sports at dawn with a gear bag in the back seat."
               class="w-full max-w-2xl rounded-card border border-line"
+              sizes="(min-width: 1024px) 672px, 100vw"
               eager={true}
             />
           </figure>
@@ -64,8 +76,9 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
           <figure class="mt-10">
             <Illo
               base="pillar-drive-home"
-              alt="Same car interior at dusk — kid asleep in back seat with a helmet in their lap, warm streetlight glow, parent visible only as a shoulder."
+              alt="Parent driving home at dusk while a child sleeps in the back seat."
               class="w-full max-w-2xl rounded-card border border-line"
+              sizes="(min-width: 1024px) 672px, 100vw"
               eager={true}
             />
           </figure>

@@ -21,7 +21,10 @@ export interface Env {
 
 const WORKFLOW_ID = 'pcd-camps-sweep';
 
-export function maintenanceModeActive(env: Pick<Env, 'PCD_MAINTENANCE_MODE'>): boolean {
+export function maintenanceModeActive(
+  env: Pick<Env, 'PCD_MAINTENANCE_MODE'>,
+  _at = Date.now(),
+): boolean {
   const explicit = env.PCD_MAINTENANCE_MODE?.trim().toLowerCase();
   return explicit === 'true' || explicit === '1' || explicit === 'on';
 }

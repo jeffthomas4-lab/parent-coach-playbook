@@ -98,10 +98,13 @@ describe('camps-sweep scheduler', () => {
     expect(prepare).not.toHaveBeenCalled();
   });
 
-  it('supports an operator maintenance switch, with no calendar boundary', async () => {
+  it('supports an operator maintenance switch, with no calendar boundary', () => {
     expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'true' })).toBe(true);
     expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' })).toBe(false);
     expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: undefined })).toBe(false);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 7, 1, 13))).toBe(false);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 10, 30, 13))).toBe(false);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'true' }, Date.UTC(2026, 0, 1))).toBe(true);
   });
 
   it('fails closed before the sweep when the durable ledger is unavailable', async () => {

@@ -183,14 +183,14 @@ describe('POST /api/cron/camps-sweep', () => {
 
   // The August-November calendar auto-freeze was removed 2026-08-01. An August
   // date no longer holds anything on its own; only the operator switch does.
-  it('runs the sweep normally on an August date now that the calendar freeze is gone', async () => {
+  it('keeps sweeping during the former August-November idle', async () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-08-01T13:00:00Z'));
     const ctx = makeContext({ request: cronRequest(CRON_KEY), env: { DB: {}, CRON_KEY } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(200);
-    expect(body.ok).toBe(true);
+    expect(body).toMatchObject({ ok: true, approved_future_count: 10 });
     expect(body.held).toBeUndefined();
     expect(campsDb.listCampsForUrlSweep).toHaveBeenCalled();
   });

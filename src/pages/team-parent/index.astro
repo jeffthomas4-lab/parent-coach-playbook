@@ -30,7 +30,7 @@ const topicData = TEAM_PARENT_TOPICS.map(topic => {
 const recentArticles = teamParentArticles.slice(0, 6);
 ---
 <BaseLayout
-  title="Team Parent"
+  title="Team Parent Resources and Tools"
   description="Practical resources for being the team parent. Templates, scripts, communication norms, fundraising, fair lineups, snack signups that actually fill."
 >
   <!-- Hero -->
@@ -46,9 +46,10 @@ const recentArticles = teamParentArticles.slice(0, 6);
       <figure class="mt-10 max-w-4xl">
         <Illo
           base="pillar-team-parent"
-          alt="A team-parent binder open on a wooden table, surrounded by snack-rotation post-its, a jersey-numbers list, three sharpies, an April calendar, and a mug. Editorial flat-lay."
+          alt="Open team-parent binder with a snack schedule, jersey list, calendar, and markers."
+          sizes="(min-width: 1024px) 896px, 100vw"
           class="w-full border border-bone"
-          eager={true}
+          eager
         />
       </figure>
     </div>

@@ -39,10 +39,18 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
     'COMMUNITY_RATE_LIMITER',
     'DEMAND_RATE_LIMITER',
     'OWNER_RATE_LIMITER',
+    'PUBLIC_READ_RATE_LIMITER',
   ], 'name');
   expectEqual('assets binding', manifest.assets?.binding, 'ASSETS');
   const workerFirst = [...(manifest.assets?.run_worker_first ?? [])].sort();
-  const expectedWorkerFirst = ['/admin', '/admin/*', '/api/admin', '/api/admin/*', '/sitemap-camps.xml'].sort();
+  const expectedWorkerFirst = [
+    '/admin',
+    '/admin/*',
+    '/api/admin',
+    '/api/admin/*',
+    '/api/integrations/babylovegrowth/articles',
+    '/sitemap-camps.xml',
+  ].sort();
   expectEqual('required Worker-first routes', JSON.stringify(workerFirst), JSON.stringify(expectedWorkerFirst));
   expectEqual('site URL', manifest.vars?.SITE_URL, 'https://parentcoachdesk.com');
   expectEqual('observability enabled', manifest.observability?.enabled, true);
@@ -50,7 +58,14 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
   expectEqual(
     'required production secret names',
     JSON.stringify([...(manifest.secrets?.required ?? [])].sort()),
-    JSON.stringify(['AGENT_RUNS_TOKEN', 'BULK_IMPORT_TOKEN', 'CRON_KEY', 'GITHUB_TOKEN']),
+    JSON.stringify([
+      'AGENT_RUNS_TOKEN',
+      'BABYLOVE_API_KEY',
+      'BABYLOVE_WEBHOOK_TOKEN',
+      'BULK_IMPORT_TOKEN',
+      'CRON_KEY',
+      'GITHUB_TOKEN',
+    ]),
   );
 
   for (const key of ['ADMIN_EMAILS', 'ACCESS_TEAM_DOMAIN', 'ACCESS_AUD']) {
