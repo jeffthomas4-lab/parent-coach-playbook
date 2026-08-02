@@ -57,7 +57,7 @@ jobs:
       - name: Classify the immutable release diff
         id: classify
         run: node scripts/classify-babylove-release.mjs --sha "$DEPLOY_SHA" --output babylove-release-classification.json
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pcd-release-classification-${{ env.DEPLOY_SHA }}
           path: babylove-release-classification.json
@@ -85,7 +85,7 @@ jobs:
           tar -czf staging-dist.tgz dist
           sha256sum staging-dist.tgz > staging-dist.tgz.sha256
           printf '%s\n' "$DEPLOY_SHA" > staging-dist.git-sha
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pcd-staging-${{ env.DEPLOY_SHA }}
           path: |
@@ -118,7 +118,7 @@ jobs:
           tar -czf production-dist.tgz dist
           sha256sum production-dist.tgz > production-dist.tgz.sha256
           printf '%s\n' "$DEPLOY_SHA" > production-dist.git-sha
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pcd-production-${{ env.DEPLOY_SHA }}
           path: |
@@ -186,7 +186,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: node scripts/deploy-remediation.mjs --target staging --config wrangler.jsonc
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pcd-staging-smoke-${{ env.DEPLOY_SHA }}
           path: |
@@ -194,7 +194,7 @@ jobs:
             staging-smoke.json.sha256
           if-no-files-found: error
           retention-days: 30
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: needs.classify-release.outputs.eligible == 'true'
         with:
           name: pcd-babylove-staging-smoke-${{ env.DEPLOY_SHA }}
@@ -293,7 +293,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: node scripts/deploy-remediation.mjs --target production --config wrangler.production.jsonc
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pcd-production-smoke-${{ env.DEPLOY_SHA }}
           path: |
@@ -301,7 +301,7 @@ jobs:
             production-smoke.json.sha256
           if-no-files-found: error
           retention-days: 90
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: needs.classify-release.outputs.eligible == 'true'
         with:
           name: pcd-babylove-production-smoke-${{ env.DEPLOY_SHA }}
