@@ -8,6 +8,22 @@ const EVIDENCE_PATH = 'reports/editorial/editorial-refresh-queue.json';
 const ARTICLE_PATH = /^src\/content\/articles\/([a-z0-9]+(?:-[a-z0-9]+)*)\.md$/;
 const PUBLISH_MESSAGE = /^Publish BabyLoveGrowth article ([A-Za-z0-9_-]{1,80}): ([a-z0-9]+(?:-[a-z0-9]+)*)$/;
 
+function denyDecision(reason) {
+  return {
+    eligible: false,
+    reason,
+    articleId: '',
+    slug: '',
+    route: '',
+  };
+}
+
+export function lineageDenialReason(deployParentCount, publishParentCount = 1) {
+  if (deployParentCount !== 1) return 'deploy_commit_not_single_parent';
+  if (publishParentCount !== 1) return 'publish_commit_not_single_parent';
+  return '';
+}
+
 function frontmatterValue(markdown, field) {
   const frontmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
   return frontmatter.match(new RegExp(`^${field}:\\s*["']?([^"'\\n]+)["']?\\s*$`, 'm'))?.[1]?.trim() ?? '';
@@ -20,13 +36,7 @@ function nestedFrontmatterValue(markdown, blockName, field) {
 }
 
 export function classifyBabyLoveRelease(input) {
-  const deny = (reason) => ({
-    eligible: false,
-    reason,
-    articleId: '',
-    slug: '',
-    route: '',
-  });
+  const deny = denyDecision;
 
   if (input.deployMessage.trim() !== NORMALIZE_MESSAGE) return deny('not_normalization_commit');
   const publish = input.parentMessage.trim().match(PUBLISH_MESSAGE);
@@ -79,10 +89,32 @@ function main() {
   const { sha, output } = readArgs(process.argv.slice(2));
   if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error('full immutable SHA required');
   const deployParents = git('show', '-s', '--format=%P', sha).split(/\s+/).filter(Boolean);
-  if (deployParents.length !== 1) throw new Error('deploy commit must have exactly one parent');
+  const deployLineageReason = lineageDenialReason(deployParents.length);
+  if (deployLineageReason) {
+    emitReceipt(output, {
+      schemaVersion: 1,
+      deploySha: sha,
+      publishSha: '',
+      baseSha: '',
+      changedPaths: [],
+      ...denyDecision(deployLineageReason),
+    });
+    return;
+  }
   const parentSha = deployParents[0];
   const parentParents = git('show', '-s', '--format=%P', parentSha).split(/\s+/).filter(Boolean);
-  if (parentParents.length !== 1) throw new Error('publish commit must have exactly one parent');
+  const publishLineageReason = lineageDenialReason(deployParents.length, parentParents.length);
+  if (publishLineageReason) {
+    emitReceipt(output, {
+      schemaVersion: 1,
+      deploySha: sha,
+      publishSha: parentSha,
+      baseSha: '',
+      changedPaths: [],
+      ...denyDecision(publishLineageReason),
+    });
+    return;
+  }
   const baseSha = parentParents[0];
   const changes = git('diff', '--name-status', '--no-renames', baseSha, sha)
     .split(/\r?\n/)
@@ -107,14 +139,18 @@ function main() {
     changedPaths: changes,
     ...decision,
   };
+  emitReceipt(output, receipt);
+}
+
+function emitReceipt(output, receipt) {
   writeFileSync(output, `${JSON.stringify(receipt, null, 2)}\n`, 'utf8');
   if (process.env.GITHUB_OUTPUT) {
     appendFileSync(process.env.GITHUB_OUTPUT, [
-      `eligible=${decision.eligible}`,
-      `article_id=${decision.articleId}`,
-      `article_slug=${decision.slug}`,
-      `article_route=${decision.route}`,
-      `reason=${decision.reason}`,
+      `eligible=${receipt.eligible}`,
+      `article_id=${receipt.articleId}`,
+      `article_slug=${receipt.slug}`,
+      `article_route=${receipt.route}`,
+      `reason=${receipt.reason}`,
       '',
     ].join('\n'), 'utf8');
   }
