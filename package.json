@@ -38,6 +38,7 @@
     "illustrations:wire": "python3 scripts/wire-illustrations.py",
     "illustrations:wire:dry": "python3 scripts/wire-illustrations.py --dry-run",
     "check": "astro check",
+    "check:ai-transparency": "node scripts/check-ai-transparency.mjs",
     "check:workflow-pins": "node scripts/check-workflow-action-pins.mjs",
     "check:release-evidence": "node scripts/check-release-evidence.mjs coordination/release-evidence/rc02.json --structure-only",
     "cut:release-evidence": "node scripts/cut-release-evidence.mjs",
