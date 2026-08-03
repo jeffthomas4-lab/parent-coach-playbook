@@ -2,7 +2,7 @@
 // Drafted 2026-07-20 to close legal Open Item 7. Not attorney-reviewed. Jeff: have counsel review before the reviews feature launches.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../data/site';
-const updated = 'July 20, 2026';
+const updated = 'August 3, 2026';
 ---
 <BaseLayout
   title="Terms of Use and Website Policies"
@@ -15,6 +15,16 @@ const updated = 'July 20, 2026';
         Terms of use.
       </h1>
       <p class="font-display italic text-ink-soft text-sm mt-4">Effective date: {updated}. By using this site you agree to these terms.</p>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4"><p class="t-eyebrow">AI-assisted and synthetic content</p></div>
+      <div class="md:col-span-8 article-body">
+        <p>The site uses AI tools to assist drafting, research organization, data enrichment, and production. Its illustrations include AI-generated or AI-modified images. AI assistance does not guarantee accuracy, completeness, or fitness for a particular decision.</p>
+        <p>Illustrations and AI-assisted editorial material are labeled on the site. Human review status is stated separately and is not implied by an AI label. Parent Coach Desk remains responsible for material it publishes. See <a href="/ai-transparency/" class="text-rust hover:underline">AI transparency</a>.</p>
+      </div>
     </div>
   </section>
 

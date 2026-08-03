@@ -194,7 +194,8 @@ const sidebarLabel = data.sport && sportLabel
   : `More from ${pillar.label.toLowerCase()}`;
 
 // Last reviewed: surface the most recent editorial review date if it exceeds publishedAt.
-const reviewedRaw = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
+const humanReviewedRaw = data.editorial?.jeffReviewedAt;
+const reviewedRaw = humanReviewedRaw ?? data.editorial?.claudeReviewedAt;
 const reviewedDate = reviewedRaw ? new Date(reviewedRaw) : null;
 const showReviewed = reviewedDate !== null && reviewedDate.getTime() > data.publishedAt.getTime();
 // timeZone: 'UTC' is required because publishedAt parses to midnight UTC and
@@ -281,6 +282,10 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
               {' · '}
               {isShort ? 'short read' : 'longer read'}
             </div>
+            <p class="font-body text-muted text-sm mt-3" data-ai-origin="ai_assisted" data-human-review={humanReviewedRaw ? 'recorded' : 'not-recorded'}>
+              {humanReviewedRaw ? 'AI-assisted editorial content; human review is recorded, and Parent Coach Desk assumes editorial responsibility.' : 'AI-assisted editorial content; a human editorial review is not recorded for this article.'}
+              {' '}<a href="/ai-transparency/" class="text-rust hover:underline">AI transparency details</a>
+            </p>
           </div>
         </header>
 

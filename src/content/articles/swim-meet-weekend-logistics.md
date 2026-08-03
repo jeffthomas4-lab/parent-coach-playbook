@@ -2,7 +2,7 @@
 title: Swim-meet weekend logistics that save the family
 dek: Read the meet packet, split the parent jobs, and give each session its own plan.
 seoTitle: Swim Meet Weekend Logistics for Parents
-seoDescription: Plan a two-day swim meet by session: confirm arrival and check-in rules, split parent jobs, stage meals and rides, and leave room for schedule changes.
+seoDescription: "Plan a two-day swim meet by session: confirm arrival and check-in rules, split parent jobs, stage meals and rides, and leave room for schedule changes."
 bluf: "Build the weekend from the meet packet, not from the first event time. Record each session's arrival, warmup, check-in, volunteer, parking, and pickup details. Give one adult each job, pack the swimmer separately from the parent, and decide the ride-home plan before Saturday morning."
 topic: season-ops
 format: note
