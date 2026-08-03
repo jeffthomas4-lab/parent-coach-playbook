@@ -90,7 +90,7 @@
     "@astrojs/markdown-remark": "^7.2.1",
     "@astrojs/rss": "^4.0.19",
     "@fontsource/fraunces": "^5.0.20",
-    "@fontsource/jetbrains-mono": "^5.0.20",
+    "@fontsource/jetbrains-mono": "^5.3.0",
     "@fontsource/mulish": "^5.0.20",
     "@sentry/astro": "^10.66.0",
     "@sentry/cloudflare": "^10.66.0",
