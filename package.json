@@ -94,7 +94,7 @@
     "@fontsource/mulish": "^5.0.20",
     "@sentry/astro": "^10.66.0",
     "@sentry/cloudflare": "^10.66.0",
-    "@tailwindcss/vite": "^4.1.0",
+    "@tailwindcss/vite": "^4.3.3",
     "@workos-inc/node": "10.7.0",
     "@workos/authkit-astro": "0.2.0",
     "astro": "^7.1.6",
