@@ -368,14 +368,12 @@ const websiteSchema = {
               class="card card-hover group block overflow-hidden rounded-card min-h-11"
             >
               {thumb && (
-                <div class="relative aspect-[3/2] overflow-hidden bg-stripe">
+                <div class="aspect-[3/2] overflow-hidden bg-stripe">
                   <Illo
                     base={thumb.base}
                     alt={thumb.alt}
                     sizes="(min-width: 640px) 25vw, 50vw"
                     class="w-full h-full object-cover rounded-t-card group-hover:scale-[1.02] transition-transform duration-500"
-                    detailsLink={false}
-                    disclosure="overlay"
                   />
                 </div>
               )}
@@ -413,14 +411,12 @@ const websiteSchema = {
             href={`/${p.slug}/`}
             class="card card-rule card-hover group block overflow-hidden rounded-card"
           >
-            <div class="relative aspect-[3/2] overflow-hidden bg-stripe">
+            <div class="aspect-[3/2] overflow-hidden bg-stripe">
               <Illo
                 base={driveImages[i].base}
                 alt={driveImages[i].alt}
                 sizes="(min-width: 768px) 33vw, 100vw"
                 class="w-full h-full object-cover rounded-t-card group-hover:scale-[1.02] transition-transform duration-500"
-                detailsLink={false}
-                disclosure="overlay"
               />
             </div>
             <div class="p-6 md:p-8">
@@ -549,14 +545,12 @@ const websiteSchema = {
         <a href={`/${featured.data.phase}/${featured.id}/`} class="block group">
           <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
             <div class="md:col-span-5 md:order-2">
-              <div class="relative aspect-[3/2] overflow-hidden rounded-card bg-stripe">
+              <div class="aspect-[3/2] overflow-hidden rounded-card bg-stripe">
                 <Illo
                   base="bleachers-two-parents-side"
                   alt="Two parents sitting side by side in the bleachers, watching a game."
                   sizes="(min-width: 768px) 40vw, 100vw"
                   class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                  detailsLink={false}
-                  disclosure="overlay"
                 />
               </div>
             </div>
