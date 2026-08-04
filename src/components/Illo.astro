@@ -26,6 +26,13 @@ interface Props {
   class?: string;
   /** Set true only for the LCP image. Everything else stays lazy. */
   eager?: boolean;
+  /**
+   * Suppress the disclosure link when this component is already inside a
+   * linked card. The adjacent label and AI-origin metadata are always kept.
+   */
+  detailsLink?: boolean;
+  /** Position the disclosure over a fixed-aspect card image. */
+  disclosure?: 'below' | 'overlay';
 }
 
 const {
@@ -36,6 +43,8 @@ const {
   height = 1024,
   class: className = '',
   eager = false,
+  detailsLink = true,
+  disclosure = 'below',
 } = Astro.props;
 
 const src = `/illustrations/${base}.webp`;
@@ -61,8 +70,29 @@ const disclosureId = `ai-illustration-${base.replace(/[^a-z0-9-]/gi, '-')}`;
   data-ai-origin="ai_generated"
   data-ai-disclosure-id="pcd-illustration-2026-08-03"
 />
-<span id={disclosureId} class="ai-illustration-disclosure">AI-generated illustration. <a href="/ai-transparency/">Details</a></span>
+<span
+  id={disclosureId}
+  class:list={[
+    'ai-illustration-disclosure',
+    { 'ai-illustration-disclosure--overlay': disclosure === 'overlay' },
+  ]}
+>
+  AI-generated illustration. {detailsLink && <a href="/ai-transparency/">Details</a>}
+</span>
 <style>
   .ai-illustration-disclosure { display:block; padding:.35rem .1rem; color:var(--ink-soft); font-size:.78rem; line-height:1.35; }
   .ai-illustration-disclosure a { color:var(--rust); text-decoration:underline; }
+  .ai-illustration-disclosure--overlay {
+    position:absolute;
+    left:.5rem;
+    bottom:.5rem;
+    z-index:1;
+    width:max-content;
+    max-width:calc(100% - 1rem);
+    padding:.25rem .45rem;
+    border:1px solid var(--line);
+    border-radius:.25rem;
+    background:var(--surface);
+    box-shadow:0 1px 3px rgb(4 30 66 / .15);
+  }
 </style>
