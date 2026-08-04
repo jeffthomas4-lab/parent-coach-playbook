@@ -81,6 +81,10 @@ Both checked against the anti-AI writing guide before saving.
 
 ---
 
+## Run logging
+
+Could not POST start/finish to `/api/agent-runs`: `PCD_AGENT_RUNS_TOKEN` was not present in this session's environment, so `scripts/agent-run-client.mjs` refused before making a network call (credential check fails closed, by design). This run is not reflected in the `agent_runs` table. Worth checking whether the token needs provisioning for on-demand runs specifically, separate from the scheduled Wednesday task.
+
 ## Next run
 
 Pitch the 3 remaining researched WA/national governing-body and nonprofit targets (Washington Youth Soccer, USA Football, Adaptive Sports NW). Find named contacts for the two pitches drafted this run. Consider adding Tacoma Public Schools' Unified Sports page. Re-check GSC External links to see if the 7 from parentcoachplaybook.com holds, grows, or is a migration artifact that settles back toward zero.
