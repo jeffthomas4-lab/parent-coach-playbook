@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "description": "Babylove articles the daily affiliate-insert pass (Arnie) looked at and did NOT link, because no existing src/data/affiliates.json slug was a confident single-product match. Logged here so the pass doesn't re-consider the same article every day, and so Jeff or the weekly Arnie sourcing run can decide whether a new affiliates.json entry is worth adding. Adding to this file never touches affiliates.json or article content.",
+  "entries": [
+    {
+      "articleId": "674264",
+      "slug": "youth-sports-costs",
+      "title": "Youth Sports Costs for Parents: How to Plan and Save",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "Gear nouns (bat, cleats, gloves) appear only inside a used/secondhand-equipment tip ('Borrow or buy used equipment... A $400 bat used twice is still a $400 bat'). Inserting a new-product affiliate link into advice to buy used would contradict the article's own point. No single specific product is being recommended anywhere else in the piece. Skipped, not a confident match.",
+      "loggedAt": "2026-08-04",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    }
+  ]
+}

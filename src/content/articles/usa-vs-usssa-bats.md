@@ -22,10 +22,11 @@ editorial:
   status: published
   citationCheckPassed: false
   factCheckGoodThrough: 2027-01-01
-  reviewerNotes: "Imported from authenticated BabyLoveGrowth publishing; normalized and source-reviewed by Codex on 2026-08-02. Citation follow-up remains queued for unsupported price and performance ranges."
+  affiliateDisclosurePresent: true
+  reviewerNotes: "Imported from authenticated BabyLoveGrowth publishing; normalized and source-reviewed by Codex on 2026-08-02. Citation follow-up remains queued for unsupported price and performance ranges. Arnie (babylove affiliate pass, 2026-08-04): inserted 2 existing-catalog links, baseball-bat-youth on the USA Baseball-certified bat mention and baseball-bat-bbcor on the BBCOR requirement mention, plus the required FTC affiliate disclosure sentence in the body. No new affiliates.json entries created; both slugs pre-existed and were already approved for the site."
 ---
 
-For most families playing recreational ball, a **USA Baseball-certified bat** is the right first buy. It covers Little League, Cal Ripken, PONY, Babe Ruth, and Diamond Youth, and one bat can legally travel with your child from rec games to many USSSA events. If your child plays travel-only and tournament performance is the priority, a **[USSSA (1.15 BPF)](https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf)** bat may be the better fit. BBCOR requirements vary by age, division, and event, so verify the current rule before buying.
+For most families playing recreational ball, a **[USA Baseball-certified bat](/go/baseball-bat-youth/)** is the right first buy. It covers Little League, Cal Ripken, PONY, Babe Ruth, and Diamond Youth, and one bat can legally travel with your child from rec games to many USSSA events. If your child plays travel-only and tournament performance is the priority, a **[USSSA (1.15 BPF)](https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf)** bat may be the better fit. [BBCOR](/go/baseball-bat-bbcor/) requirements vary by age, division, and event, so verify the current rule before buying.
 
 Here is the short version of how the three certifications stack up:
 
@@ -34,6 +35,8 @@ Here is the short version of how the three certifications stack up:
 - **BBCOR:** Required at high school and most 14U national events; mimics wood performance most closely
 
 **Pro Tip:** *Before your child's first game of the season, physically flip the bat and look at the taper above the grip. The certification stamp is right there. Do not rely on a product photo or a teammate's word.*
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 

@@ -62,6 +62,24 @@
     "direct_merchant_url_in_content_allowed": false,
     "automatic_recommendation_publication_allowed": false,
     "automatic_recommendation_retirement_allowed": false,
-    "affiliate_compensation_may_change_recommendation": false
+    "affiliate_compensation_may_change_recommendation": false,
+    "exceptions": ["babylove_auto_insert"]
+  },
+  "babylove_auto_insert": {
+    "enabled": true,
+    "added": "2026-08-04",
+    "added_by": "Jeff Thomas, via Claude/Cowork session",
+    "description": "Narrow, explicit exception to publication_gates.automatic_recommendation_publication_allowed=false. The daily babylove-affiliate-insert pass (run under the Arnie persona) may commit a /go/<slug>/ link into a newly-published BabyLoveGrowth article WITHOUT a Jeff review step, but ONLY when every constraint below holds. Anything outside this scope reverts to the normal human_editorial_approval_required gate.",
+    "scope": "existing_affiliates_json_slugs_only",
+    "constraints": {
+      "no_new_affiliate_entries": "May never add a key to src/data/affiliates.json. May only link to a slug that already exists.",
+      "no_destination_edits": "May never change an existing slug's destination, retailer, or campaign.",
+      "no_new_merchants": "May only use slugs already on an approved merchant from the merchants[] list above.",
+      "existing_slug_match_required": "Only auto-inserts when a specific, nameable product is discussed substantively and an existing slug is a confident single match. Ambiguous or generic gear mentions are logged to reports/affiliate/babylove-gap-queue.json instead of guessed.",
+      "max_links_per_article": 2,
+      "disclosure_sentence_required_in_body": "The FTC disclosure sentence from AFFILIATES.md must be present in the visible body (not just editorial.affiliateDisclosurePresent) whenever a link is inserted.",
+      "no_links_in_used_or_secondhand_context": "Never inserts a new-product affiliate link into a sentence recommending buying used, borrowed, or secondhand gear."
+    },
+    "still_requires_jeff": "Production deploy approval on parentcoachdesk.com (the protected GitHub Actions `production` environment) is unaffected by this exception. Arnie's babylove-affiliate-insert commits push to main like any other content edit and still wait for Jeff's normal environment approval, except for BabyLoveGrowth's own original publish commit, which has its own separate, narrower auto-approval classifier (scripts/classify-babylove-release.mjs) that this exception does not touch or extend."
   }
 }
