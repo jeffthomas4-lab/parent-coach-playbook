@@ -5,4 +5,10 @@ const baseLayout=await readFile(new URL('../src/layouts/BaseLayout.astro',import
 if(baseLayout.includes('AIContentNotice'))throw new Error('BaseLayout still mounts the removed general AI notice');
 const register=await readFile(new URL('../AI-CONTENT-REGISTER.json',import.meta.url),'utf8');
 if(register.includes('pcd-sitewide'))throw new Error('AI content register still claims a removed sitewide notice');
-console.log(`AI transparency contract verified (${checks.length+2} checks).`);
+const illo=await readFile(new URL('../src/components/Illo.astro',import.meta.url),'utf8');
+if(!illo.includes('AI-generated illustration.'))throw new Error('Illo is missing the adjacent AI illustration label');
+if(!illo.includes('detailsLink &&'))throw new Error('Illo cannot safely suppress its nested Details link inside linked cards');
+const homepage=await readFile(new URL('../src/pages/index.astro',import.meta.url),'utf8');
+if((homepage.match(/detailsLink=\{false\}/g)??[]).length!==3)throw new Error('Homepage linked illustration cards must suppress nested Details links at all three call sites');
+if((homepage.match(/disclosure="overlay"/g)??[]).length!==3)throw new Error('Homepage linked illustration cards must keep all three adjacent labels visibly overlaid');
+console.log(`AI transparency contract verified (${checks.length+6} checks).`);
