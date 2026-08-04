@@ -17,7 +17,7 @@
     "build:og:safe": "python3 scripts/build-og-images.py || echo 'OG image build skipped (python/Pillow unavailable). Existing committed cards in public/og/ will ship.'",
     "check:content-lengths": "node scripts/check-content-field-lengths.mjs --check",
     "clean": "node scripts/clean-build-cache.mjs",
-    "build": "npm run check:content-lengths && npm run build:manifest && npm run build:og:safe && astro build",
+    "build": "npm run check:content-lengths && npm run build:manifest && npm run build:og:safe && astro build && node scripts/normalize-generated-wrangler.mjs",
     "build:clean": "npm run clean && npm run build",
     "build:production": "node scripts/build-production.mjs",
     "deploy:staging:verified": "node scripts/deploy-staging-verified.mjs",
