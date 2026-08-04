@@ -44,6 +44,7 @@ const srcset = [
   `/illustrations/${base}-960.webp 960w`,
   `${src} ${width}w`,
 ].join(', ');
+const disclosureId = `ai-illustration-${base.replace(/[^a-z0-9-]/gi, '-')}`;
 ---
 <img
   src={src}
@@ -56,4 +57,12 @@ const srcset = [
   loading={eager ? 'eager' : 'lazy'}
   fetchpriority={eager ? 'high' : 'auto'}
   decoding="async"
+  aria-describedby={disclosureId}
+  data-ai-origin="ai_generated"
+  data-ai-disclosure-id="pcd-illustration-2026-08-03"
 />
+<span id={disclosureId} class="ai-illustration-disclosure">AI-generated illustration. <a href="/ai-transparency/">Details</a></span>
+<style>
+  .ai-illustration-disclosure { display:block; padding:.35rem .1rem; color:var(--ink-soft); font-size:.78rem; line-height:1.35; }
+  .ai-illustration-disclosure a { color:var(--rust); text-decoration:underline; }
+</style>
