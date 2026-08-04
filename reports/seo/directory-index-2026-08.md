@@ -1,8 +1,8 @@
 # Directory index policy, 2026-08
 
 **Agent:** Dex (`pcd-directory-index-policy`)
-**Run date:** 2026-08-03
-**Prior Dex report:** none. This is run 1, so every trend below is measured against Nora's GSC reviews, not against me.
+**Run date:** 2026-08-03 (preview pass, ahead of the scheduled cron), with a verification addendum from the actual scheduled fire on 2026-08-04. See the addendum at the bottom for what changed between the two (short answer: nothing in the data, GSC is still frozen).
+**Prior Dex report:** none. This is run 1 for the August cycle, so every trend below is measured against Nora's GSC reviews, not against me.
 **Raw capture:** `reports/seo/data/2026-08-03-dex-gsc-capture.json`, `reports/seo/data/2026-08-03-dex-camp-differentiation-sample.json`
 **Data source:** Google Search Console UI via Claude in Chrome. `scripts/seo/pull-gsc.mjs` still does not exist, so the fallback path in my task prompt is the path I took.
 
@@ -210,3 +210,26 @@ I am flagging this rather than deciding it. It is decision 5 in `SEO-OS-ARCHITEC
 1. The camps publish threshold, split commercial vs community. Section 6.
 2. `/adaptive/` is orphaned from site navigation. One nav entry fixes three months of invisibility.
 3. GSC Page Indexing has been frozen for eleven days. Worth a look at whether that is a Google-side processing delay or something about the property, and worth knowing that the escalation thresholds in the SEO OS design cannot fire while it stays frozen.
+
+---
+
+## Addendum: Run 2, 2026-08-04 (the actual scheduled cron fire)
+
+**Run date:** 2026-08-04, 7:51 AM Pacific. Triggered by the real `pcd-directory-index-policy` cron (day 4, 7:45 AM), not a manual invocation. Everything above this line ran the night before, 2026-08-03 at 8:55 PM, ahead of the scheduled fire — `SEO-OS-ARCHITECTURE.md` line 466 says "Dex fires first, on August 4," so that Aug 3 pass was an early/preview run of this same monthly cycle, not a prior month's report.
+
+**What I checked before deciding whether to redo the full pass:**
+
+- Nora's GSC review dated 2026-08-03, 8:48 PM (`reports/seo/gsc-review-2026-08-03.md`, filed after my Aug 3 run) — Page Indexing is still the frozen 7/23 snapshot: 90 indexed, 2.88K not indexed, same eight-reason breakdown to the number. No new data exists to pull.
+- `.env` — `PCD_AGENT_RUNS_TOKEN` still absent. Run logging still can't POST to `/api/agent-runs`, same gap noted in section 7 above and in `SEO-OS-ARCHITECTURE.md` section 12 item 5.
+- `git log` since my Aug 3 commit (`2b576e00`) — four commits landed (a BabyLoveGrowth cleanup, a Penny publish/hold batch, an Arnie affiliate pass, a Sasha social-draft batch). None touch `NavBar.astro`, `Footer.astro`, `CAMPS_QUALITY_FRAMEWORK.md`, `CAMPS_APPROVAL_THRESHOLD.md`, or anything under `src/pages/camps`.
+- `NavBar.astro` / `Footer.astro` directly — re-grepped for `adaptive`, zero matches, same as the finding in section 3. Still orphaned.
+
+**Decision: no second 50-page scrape this run.** The charter asks for a rotating slice each monthly run so coverage builds over time, but rotating implies each pass should land on a different month's cron fire, not two passes nineteen hours apart against a site and a GSC snapshot that have not changed. Re-scraping the same 218-URL camp sitemap today would either re-sample overlapping URLs or burn a chunk of the rotation early for no new signal, and the underlying index numbers Google would score it against are still the same frozen 7/23 read. Nothing in section 1 through 6 above needs revision. The next rotating slice is scheduled for the September 4 run, drawing from the roughly 168 camp URLs not already sampled in the August batch (`reports/seo/data/2026-08-03-dex-camp-differentiation-sample.json` has the 50 already covered).
+
+**Ratio, re-confirmed, not re-measured:** still 90 / 2,310, still frozen at the 7/23 snapshot. No change to report.
+
+**Open items, unchanged:** the three corrections owed to other files (section 7 above) are still owed — I have not applied them, since editing `SEO-OS-ARCHITECTURE.md` or `reports/seo/gsc-review-2026-07-28.md` is outside what this run's charter asks me to do (recommend, don't act on files outside my own reports). Flagging again rather than re-flagging as new: this is the same three items, not additional ones.
+
+**Agent run logging:** attempted, same failure as Aug 3 — `scripts/agent-run-client.mjs` needs `PCD_AGENT_RUNS_TOKEN`, not present in this runtime. Logged as failed in the commit message instead, per instruction 8's "log failures as failed."
+
+**Slack:** none. Nothing moved, no new decision is ready for Jeff beyond what's already sitting in section 6 and this addendum from a run less than a day old. Per the maintenance-mode instruction, staying quiet.
