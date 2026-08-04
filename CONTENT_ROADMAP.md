@@ -32,7 +32,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | Why SafeSport training is non-negotiable | Editorial | Foundations short read | drafted 2026-07-28 (src/content/articles/why-safesport-training-is-non-negotiable.md) |
 | The one-day coaching clinic: what to look for | Editorial | Team Parent · Tech setup | drafted 2026-07-29 (src/content/articles/one-day-coaching-clinic-what-to-look-for.md) |
 | Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | drafted 2026-07-30 (src/content/articles/the-concussion-call-is-not-yours-to-make.md) |
-| Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | PIPELINE |
+| Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | drafted 2026-08-03 (src/content/articles/heat-lightning-decision-trees.md) |
 | First-aid kit for the dugout (what's in it) | Editorial | Team Parent · Game day | PIPELINE |
 | The pre-season parent meeting agenda | Editorial | Lead magnet (PDF) | PIPELINE |
 | What to email parents on day one | Editorial | Team Parent · Communication | PIPELINE |
