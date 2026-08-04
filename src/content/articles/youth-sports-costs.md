@@ -13,11 +13,6 @@ hero: "/illustrations/receipts-on-counter.webp"
 heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
 publishedAt: 2026-08-02
 draft: false
-externalSource:
-  provider: "babylovegrowth"
-  articleId: "674264"
-  payloadSha256: "46337f55294412500fe8d50a0a7ea1dcf243d4545233034394d36e6e8996837b"
-  importedAt: "2026-08-02T04:17:07.009Z"
 editorial:
   status: published
   citationCheckPassed: false

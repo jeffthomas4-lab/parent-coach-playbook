@@ -13,11 +13,6 @@ hero: "/illustrations/guide-baseball-gear.webp"
 heroAlt: "Youth baseball glove, bat, helmet, and ball arranged for a pre-season equipment check."
 publishedAt: 2026-08-01
 draft: false
-externalSource:
-  provider: "babylovegrowth"
-  articleId: "674263"
-  payloadSha256: "f5e0eea5dbe4d0476091d2dfd2b98f83581d2727bcee61dba52896a8ada26760"
-  importedAt: "2026-08-01T23:33:55.661Z"
 editorial:
   status: published
   citationCheckPassed: false
