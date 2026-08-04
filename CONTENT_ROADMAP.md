@@ -33,9 +33,9 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | The one-day coaching clinic: what to look for | Editorial | Team Parent · Tech setup | drafted 2026-07-29 (src/content/articles/one-day-coaching-clinic-what-to-look-for.md) |
 | Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | drafted 2026-07-30 (src/content/articles/the-concussion-call-is-not-yours-to-make.md) |
 | Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | drafted 2026-08-03 (src/content/articles/heat-lightning-decision-trees.md) |
-| First-aid kit for the dugout (what's in it) | Editorial | Team Parent · Game day | PIPELINE |
+| First-aid kit for the dugout (what's in it) | Editorial | Team Parent · Game day | covered (src/content/guides/first-aid-kit.md and src/content/body/sideline-first-aid-kit.md already cover kit contents in detail; checked 2026-08-03) |
 | The pre-season parent meeting agenda | Editorial | Lead magnet (PDF) | PIPELINE |
-| What to email parents on day one | Editorial | Team Parent · Communication | PIPELINE |
+| What to email parents on day one | Editorial | Team Parent · Communication | covered (src/content/articles/the-first-parent-email-of-the-season.md; checked 2026-08-03) |
 
 ---
 
@@ -44,7 +44,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
 | How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | drafted 2026-07-24 (src/content/articles/laundry-stripping-sports-gear.md) |
-| Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | PIPELINE |
+| Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | drafted 2026-08-03 (src/content/articles/helmet-care-without-wrecking-it.md) |
 | Cleat care that triples the lifespan | Editorial | Team Parent · Equipment | PIPELINE |
 | Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | PIPELINE |
 | The car kit: what stays in the trunk all season | Editorial | Team Parent · Game day | PIPELINE |
