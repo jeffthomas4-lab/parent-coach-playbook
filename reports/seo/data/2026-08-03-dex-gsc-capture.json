@@ -1,0 +1,119 @@
+{
+  "captured_on": "2026-08-03",
+  "agent": "dex",
+  "source": "Google Search Console UI via Claude in Chrome (scripts/seo/pull-gsc.mjs does not exist yet)",
+  "property": "sc-domain:parentcoachdesk.com",
+  "gsc_last_update_stamp": "2026-07-23",
+  "page_indexing": {
+    "indexed": 90,
+    "not_indexed_total": 2880,
+    "reasons": {
+      "not_found_404": 100,
+      "alternate_page_proper_canonical": 72,
+      "blocked_by_robots": 31,
+      "page_with_redirect": 4,
+      "soft_404": 1,
+      "crawled_not_indexed": 1429,
+      "discovered_not_indexed": 1208,
+      "duplicate_google_chose_different_canonical": 31
+    }
+  },
+  "sitemaps_gsc": {
+    "last_read": "2026-07-31",
+    "sitemap_xml_index_discovered": 2310,
+    "sitemap_camps_discovered": 311,
+    "status": "Success"
+  },
+  "sitemaps_live_today": {
+    "fetched_on": "2026-08-03",
+    "sitemap_content_urls": 2002,
+    "sitemap_camps_urls": 218,
+    "total": 2220
+  },
+  "crawled_not_indexed_sample": {
+    "bucket_total": 1429,
+    "gsc_example_cap": 1000,
+    "sample_n": 493,
+    "sort": "last crawled, descending",
+    "first_detected": "2026-06-08",
+    "by_first_segment": {
+      "/camps/": 215,
+      "/coaching-tips/": 99,
+      "/body/": 64,
+      "/drive-home/": 30,
+      "/drive-there/": 20,
+      "/team-parent/": 20,
+      "/game/": 9,
+      "/what-to-buy/": 8,
+      "/sports/": 6,
+      "/scripts/": 6,
+      "/decisions/": 3,
+      "/rules/": 3,
+      "/pathways/": 3,
+      "/recruiting/": 2,
+      "/adaptive/": 2,
+      "/cost-calculator/": 1,
+      "/resources/": 1,
+      "/season-calendar/": 1
+    },
+    "camps_shape": {
+      "listing": 195,
+      "state_hub": 18,
+      "deeper": 1
+    }
+  },
+  "discovered_not_indexed_sample": {
+    "bucket_total": 1208,
+    "gsc_example_cap": 1000,
+    "sample_n": 500,
+    "sort": "URL, ascending (alphabetical) - slice is biased to a-d, NOT extrapolable",
+    "first_detected": "2026-06-12",
+    "by_first_segment": {
+      "/coaching-tips/": 323,
+      "/drive-home/": 85,
+      "/drive-there/": 48,
+      "/body/": 23,
+      "/adaptive/": 10,
+      "/decisions/": 9,
+      "/camps/": 1,
+      "/disclosure/": 1
+    }
+  },
+  "adaptive_silo": {
+    "content_files": 18,
+    "sitemap_urls": 19,
+    "first_commits": {
+      "2026-05-03": 4,
+      "2026-06-12": 14
+    },
+    "batch_commit": "a12f542d Add 250 batch content files and 60 parent-coach cornerstone articles",
+    "in_sitemap": true,
+    "in_navbar_or_footer": false,
+    "referencing_files": [
+      "src/content.config.ts",
+      "src/lib/publish.ts",
+      "src/pages/adaptive/index.astro",
+      "src/pages/adaptive/[slug].astro",
+      "src/pages/admin/editorial/index.astro",
+      "src/pages/admin/preview/[collection]/[slug].astro",
+      "src/pages/search.astro",
+      "src/pages/sitemap-content.xml.ts"
+    ]
+  },
+  "content_collection_counts": {
+    "articles": 816,
+    "coachingTips": 577,
+    "body": 177,
+    "scripts": 53,
+    "guides": 37,
+    "recruiting": 29,
+    "seasonCalendars": 28,
+    "decisions": 26,
+    "pathways": 26,
+    "news": 22,
+    "rules": 22,
+    "adaptive": 18,
+    "resources": 18,
+    "pillar": 17
+  }
+}
