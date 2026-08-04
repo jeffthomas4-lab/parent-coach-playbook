@@ -12,7 +12,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-08-03
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -24,8 +24,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-03
-  status: draft
-  reviewerNotes: "Evergreen pull from CONTENT_ROADMAP.md, Equipment maintenance strand. Verified via live web search: Schutt's official care instructions (support.schuttsports.com) limit cleaning to non-citrus dish soap and water and warn that commercial cleaners/polishes can void the warranty; Riddell's instructions likewise call for mild detergent and water only, no solvents. NOCSAE and NAERA guidance on reconditioning cadence (annual, minimum every other year) and the roughly ten-year helmet age ceiling for recertification confirmed via NOCSAE recertification FAQ pages and NAERA FAQ. No overlap with disinfecting-equipment-end-of-season.md (that piece is general end-of-season washing across all gear); this piece is the in-season, don't-damage-the-shell angle specific to helmets, plus the reconditioning fact that piece doesn't cover."
+  status: published
+  reviewerNotes: "PASS. Facts verified via live web search: Schutt's official care instructions (support.schuttsports.com) limit cleaning to non-citrus dish soap and water and warn that commercial cleaners/polishes can void the warranty; Riddell's instructions likewise call for mild detergent and water only, no solvents. NOCSAE and NAERA guidance on reconditioning cadence (annual, minimum every other year) and the roughly ten-year helmet age ceiling for recertification confirmed via NOCSAE recertification FAQ pages and NAERA FAQ. No overlap with disinfecting-equipment-end-of-season.md (general end-of-season washing across all gear); this piece is the in-season, don't-damage-the-shell angle specific to helmets, plus the reconditioning fact that piece doesn't cover. Sections A-D independently re-checked this run: no paragraph over 3 sentences, zero em dashes/double-hyphens, opens on a concrete fact, closes on a practical next step not empowerment language, zero banned words, zero hedge words, no reframe/triplet/concession patterns. Dek 13 words, seoTitle 51 chars, seoDescription ~148 chars, all within schema range. No hero image: no OPENAI_API_KEY available this run, publishing without one per the no-hero-hostage rule. Flagged for pcd-hero-image-backfill."
+  factCheckGoodThrough: 2027-08-03
 ---
 
 Most helmet damage doesn't come from the season. It comes from the garage sink.
