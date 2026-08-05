@@ -43,3 +43,4 @@ Checked 2026-08-03 and not queued: NFHS's 2026 girls lacrosse rule changes (draw
 | 2026-07-31 | What has to be turned in before the first day of football practice | Date lane, target 2026-08-03 | drafted, awaiting review, no hero (no OpenAI API key available this run, queued for pcd-hero-image-backfill) |
 | 2026-08-03 | The heat and lightning rules that make the call for you | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
 | 2026-08-03 | Clean the helmet without wrecking it | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review, no hero (no OpenAI API key available this run, queued for pcd-hero-image-backfill) |
+| 2026-08-04 | Cleat care that triples the lifespan | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review, no hero (no OpenAI API key available this run, queued for pcd-hero-image-backfill) |
