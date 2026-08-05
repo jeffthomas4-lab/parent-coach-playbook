@@ -14,12 +14,12 @@ commonCalls:
   - "Holding: offensive lineman grabs a defender to block. 10-yard penalty."
   - "Offsides/false start: pre-snap movement violations. 5-yard penalty."
   - "Pass interference: defender prevents the receiver from catching the ball before it arrives. Spot foul (HS); 15 yards (college/NFL varies)."
-  - "Personal foul: late hit, helmet-to-helmet, unnecessary roughness. 15 yards. Targeting in college/HS = ejection."
+  - "Personal foul: late hit, helmet-to-helmet, unnecessary roughness. 15 yards. Targeting is a 15-yard penalty at HS; college and NFL also eject the player, HS currently does not."
   - "Roughing the passer: hit on the QB after the throw or low/high in the helmet. 15 yards + automatic first down."
   - "Intentional grounding: QB throws to nowhere to avoid sack. Loss of down + spot of foul."
 thingsParentsGetWrong:
   - "Pass interference is judgment. The contact has to happen while the ball is in the air and the receiver has a play on it. Refs call this differently at every level."
-  - "Targeting at HS and college means ejection. The rule is strict: any contact above the shoulders to a defenseless player. Can be reviewed and overturned."
+  - "Targeting is judged the same way at every level, contact above the shoulders (or leading with the crown of the helmet) to a defenseless player, but the penalty differs. College and NFL eject the player on top of the 15 yards. NFHS high school rules do not eject for targeting, it's a 15-yard penalty only."
   - "Roughing the kicker is real. Touching the punter or kicker after the kick is a 5-yard penalty (running into) or 15 yards (roughing)."
 governingBody:
   name: "NFHS (National Federation of State High School Associations)"
@@ -35,9 +35,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-03
+  claudeReviewedAt: 2026-08-04
   status: claude-reviewed
-  reviewerNotes: "Pass interference and targeting rules are the most-confused. Concussion-related rules (targeting, helmet-to-helmet) are the most-evolving."
+  reviewerNotes: "Pass interference and targeting rules are the most-confused. Concussion-related rules (targeting, helmet-to-helmet) are the most-evolving. 2026-08-04 refresh: corrected targeting penalty, NFHS does not eject (NCAA/NFL do), was previously stated as ejection at all levels."
+  factCheckGoodThrough: 2027-05-01
 ---
 
 A few youth-specific notes.

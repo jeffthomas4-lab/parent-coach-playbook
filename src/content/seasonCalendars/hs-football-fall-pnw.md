@@ -6,7 +6,13 @@ region: "PNW"
 durationLabel: "Aug–Nov, with off-season strength Dec–Jul"
 summary: "Washington and Oregon high school football. Aug practice opens, Week 1 is the Friday after Labor Day, playoffs run November. The off-season is where the next year is built."
 publishedAt: 2026-05-03
+updatedAt: 2026-08-04
 featured: true
+editorial:
+  claudeReviewedAt: 2026-08-04
+  status: claude-reviewed
+  reviewerNotes: "2026-08-04 Flo refresh: verified clean. WIAA practice-opening structure and heat/pads progression match current NFHS/WIAA guidance, no changes needed."
+  factCheckGoodThrough: 2027-08-04
 months:
   - key: jan
     intensity: rest

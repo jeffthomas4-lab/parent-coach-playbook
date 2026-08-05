@@ -6,7 +6,13 @@ region: "National"
 durationLabel: "Aug–Nov, with summer base miles Jun–Jul"
 summary: "High school cross country under NFHS rules. Official practice opens in August, invitationals run September and October, league and district meets in late October, state in early November. The season is won with summer miles in June and July."
 publishedAt: 2026-06-10
+updatedAt: 2026-08-04
 featured: false
+editorial:
+  claudeReviewedAt: 2026-08-04
+  status: claude-reviewed
+  reviewerNotes: "2026-08-04 Flo refresh: verified clean, no dead links, no rule changes affecting this calendar."
+  factCheckGoodThrough: 2027-08-04
 months:
   - key: jan
     intensity: rest

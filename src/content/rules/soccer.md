@@ -34,9 +34,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-03
+  claudeReviewedAt: 2026-08-04
   status: claude-reviewed
-  reviewerNotes: "Offside explanation is the most-confused rule in youth soccer parenting. The handball clarification is also frequently misunderstood."
+  reviewerNotes: "Offside explanation is the most-confused rule in youth soccer parenting. The handball clarification is also frequently misunderstood. 2026-08-04 refresh: verified clean, no changes needed (heading rules, game lengths, governing body links all current)."
+  factCheckGoodThrough: 2027-05-01
 ---
 
 A few things worth knowing.

@@ -1,6 +1,6 @@
 ---
 title: "Wrestling headgear and skin infections: *the gear and the protocol*"
-summary: "HECC ear protection. Impetigo, ringworm, herpes gladiatorum, MRSA. The pre-match skin check, the team-wide protocol, and what gets a kid out for the season."
+summary: "NFHS-legal ear protection. Impetigo, ringworm, herpes gladiatorum, MRSA. The pre-match skin check, the team-wide protocol, and what gets a kid out for the season."
 subhub: "safety"
 safetyCategory: "equipment-certification"
 format: "topic"
@@ -25,9 +25,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-10
+  claudeReviewedAt: 2026-08-04
   status: claude-reviewed
-  reviewerNotes: "USA Wrestling, NFHS, NATA, CDC cited. Companion to the youth-wrestling sport briefing."
+  reviewerNotes: "USA Wrestling, NFHS, NATA, CDC cited. Companion to the youth-wrestling sport briefing. 2026-08-04 refresh: corrected headgear certification claim, HECC certifies hockey equipment, not wrestling; NFHS Rule 4-1-4 governs wrestling ear guards with no separate certification sticker. Herpes gladiatorum 120-hour and heat/skin protocols re-verified against NFHS and NATA, still current."
+  factCheckGoodThrough: 2027-08-04
 ---
 
 Wrestling has the highest rate of skin infections in youth sport. The combination of direct skin contact, sweaty mats, shared environments, and high training volume produces outbreaks every season. The protocol that contains them is published and not always followed.
@@ -38,7 +39,7 @@ Headgear is the other equipment piece worth getting right. The two are related: 
 
 USA Wrestling and National Federation of State High School Associations (NFHS) require ear protection (headgear) in scholastic and collegiate competition. Youth USA Wrestling tournaments vary in headgear enforcement.
 
-The HECC-certified headgear standard ensures the ear cups absorb impact and stay positioned during competition. Look for the HECC sticker on the back or inside the headgear.
+NFHS Rule 4-1-4 sets the standard: ear guards have to be rigid and padded, built for wrestling specifically (not a repurposed helmet piece), and have an adjustable locking device so they can't come off or spin during a match. There's no separate certification sticker to look for the way there is with football helmets (NOCSAE) or hockey helmets (HECC) — check the fit and the lock, not a logo.
 
 What headgear protects: cauliflower ear from repetitive trauma to the ear cartilage. Cauliflower ear is real, irreversible without drainage, and develops fast in unprotected wrestlers.
 

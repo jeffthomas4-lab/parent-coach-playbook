@@ -6,6 +6,12 @@ region: "National"
 durationLabel: "Aug–Nov, with off-season Dec–Jul"
 summary: "Boys high school soccer in fall. Practice opens mid-August, district games run September through October, playoffs and state through November. The off-season is club ball for most kids."
 publishedAt: 2026-04-12
+updatedAt: 2026-08-04
+editorial:
+  claudeReviewedAt: 2026-08-04
+  status: claude-reviewed
+  reviewerNotes: "2026-08-04 Flo refresh: verified clean, heat-acclimatization and dual-track club/school structure still current."
+  factCheckGoodThrough: 2027-08-04
 months:
   - key: jan
     intensity: build

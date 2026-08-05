@@ -6,7 +6,13 @@ region: "National"
 durationLabel: "Sep–Nov, with registration Jun–Aug"
 summary: "Fall rec flag football on the NFL Flag model: 5-on-5, no contact, one practice and one game a week. Register in summer, play September through November, league tournament at the end. Many operators run a spring season too."
 publishedAt: 2026-06-10
+updatedAt: 2026-08-04
 featured: false
+editorial:
+  claudeReviewedAt: 2026-08-04
+  status: claude-reviewed
+  reviewerNotes: "2026-08-04 Flo refresh: verified clean, NFL Flag registration/season pattern still current."
+  factCheckGoodThrough: 2027-08-04
 months:
   - key: jan
     intensity: off

@@ -6,7 +6,13 @@ region: "National"
 durationLabel: "Sep–Mar, with tryouts in late Aug"
 summary: "USA Hockey travel season at the 12U level. Tryouts in late August, practices and league games September through February, district and state playoffs in March. Spring 3-on-3 and summer camps are optional add-ons, not the season."
 publishedAt: 2026-06-10
+updatedAt: 2026-08-04
 featured: false
+editorial:
+  claudeReviewedAt: 2026-08-04
+  status: claude-reviewed
+  reviewerNotes: "2026-08-04 Flo refresh: verified clean. Cost range ($3,000-$8,000) checked against current regional data, still plausible, left as-is."
+  factCheckGoodThrough: 2027-08-04
 months:
   - key: jan
     intensity: peak

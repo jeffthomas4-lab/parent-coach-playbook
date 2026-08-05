@@ -9,7 +9,7 @@ ageBands: ["11-12", "13-14", "15-plus"]
 publishedAt: 2026-01-10
 governingBodies:
   - name: "Meta: Safety Center"
-    url: "https://about.meta.com/safety/"
+    url: "https://www.meta.com/safety/"
   - name: "Federal Trade Commission (FTC): COPPA"
     url: "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa"
   - name: "National Center for Missing & Exploited Children (NCMEC)"
@@ -25,9 +25,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-10
+  claudeReviewedAt: 2026-08-04
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. Meta safety, FTC COPPA, NCMEC, Common Sense cited. Concrete configuration instructions."
+  reviewerNotes: "Sensitive flagged. Meta safety, FTC COPPA, NCMEC, Common Sense cited. Concrete configuration instructions. 2026-08-04 refresh: Meta Safety Center link moved from about.meta.com to meta.com, updated. Default-settings section updated, Teen Accounts protections now apply to all under-18 automatically rather than varying by the 13-15/16-17 split described previously."
+  factCheckGoodThrough: 2027-08-04
 ---
 
 Instagram is one of the most-used social platforms among adolescent athletes, particularly those building visibility for recruiting purposes. The default privacy settings have evolved over the past several years; Meta has tightened defaults for younger users while still leaving meaningful exposure for older teens.
@@ -36,9 +37,7 @@ Most parents have not walked through the settings with their kid. This piece is 
 
 **The default state.**
 
-For accounts of users 13 to 15: account is private by default per Meta's stated policy. Direct messages limited to people already connected. Account-suggestion features restricted.
-
-For accounts of users 16 to 17: defaults vary; some restrictions remain. Account is sometimes private by default, sometimes public.
+For accounts of users under 18: Meta's Teen Accounts protections now apply automatically. Private by default, DMs limited to people already connected, sensitive content restricted, Sleep Mode and time-limit reminders on. Kids under 16 need a parent's approval to loosen any of it. Kids 16 to 17 can change the settings themselves unless a parent has already turned on parental supervision.
 
 For accounts of users 18+: full default settings, generally public.
 

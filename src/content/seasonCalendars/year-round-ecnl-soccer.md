@@ -6,6 +6,12 @@ region: "National"
 durationLabel: "Year-round, Aug–Jul"
 summary: "ECNL (Elite Clubs National League) girls soccer. Year-round commitment with regional league play, national showcase events, and ECNL Playoffs/National Championship. The standard pre-college pipeline for girls soccer in the US."
 publishedAt: 2026-04-12
+updatedAt: 2026-08-04
+editorial:
+  claudeReviewedAt: 2026-08-04
+  status: claude-reviewed
+  reviewerNotes: "2026-08-04 Flo refresh: verified clean. Cost ranges ($4,500-$7,000 team fee, $9,000-$14,000 total) checked against current club fee data, still within a plausible band, left as-is."
+  factCheckGoodThrough: 2027-08-04
 months:
   - key: jan
     intensity: build
