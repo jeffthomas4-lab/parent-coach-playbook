@@ -78,14 +78,19 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
       import { affiliateClickEvent, affiliateSlugFromHref } from '../lib/affiliate-analytics';
       import { newsletterCtaFromHref, newsletterSignupIntentEvent } from '../lib/newsletter-analytics';
 
-      const GA_ID = 'G-B69068KJKL';
+      const GA_ID = 'G-SCSWJZBR79';
       const EU = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR',
                   'HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK',
                   'SI','ES','SE','IS','LI','NO','GB','CH'];
 
       function initGtag() {
         (window as any).dataLayer = (window as any).dataLayer || [];
-        const gtag = (...args: unknown[]) => { (window as any).dataLayer.push(args); };
+        // Must push the `arguments` object, not a rest-parameter array.
+        // gtag.js only reads dataLayer entries that are `[object Arguments]`;
+        // a real Array is silently ignored, so `config` never applies and no
+        // hit is ever sent. This is why the official snippet uses a function
+        // declaration instead of an arrow function.
+        function gtag() { (window as any).dataLayer.push(arguments); }
         (window as any).gtag = gtag;
         gtag('js', new Date());
         gtag('config', GA_ID, {
