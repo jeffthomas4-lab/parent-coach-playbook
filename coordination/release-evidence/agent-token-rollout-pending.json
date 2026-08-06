@@ -5,7 +5,7 @@
   "caller_secret_name": "PCD_AGENT_RUNS_TOKEN",
   "worker_secret_name": "AGENT_RUNS_TOKEN",
   "canary_task_id": "weekly-gsc-review",
-  "expected_caller_count": 10,
+  "expected_caller_count": 11,
   "observed_at": null,
   "preflight_status": null,
   "canary_start_ref": null,

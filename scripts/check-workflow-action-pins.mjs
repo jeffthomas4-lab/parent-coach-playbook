@@ -3,9 +3,27 @@
 import { readdir, readFile } from 'node:fs/promises';
 
 const workflowDirectory = new URL('../.github/workflows/', import.meta.url);
-const workflowFiles = (await readdir(workflowDirectory))
-  .filter((name) => name.endsWith('.yml') || name.endsWith('.yaml'))
-  .sort();
+
+// GitHub Actions was removed from this repo on 2026-08-05 (it burned the
+// monthly allotment in four days), so .github/workflows/ no longer exists.
+// Zero workflows is a passing state, not an error: there is nothing unpinned.
+// The check stays wired into ci:release on purpose, so that if workflows ever
+// come back the pinning requirement is enforced from the first one.
+let workflowFiles = [];
+try {
+  workflowFiles = (await readdir(workflowDirectory))
+    .filter((name) => name.endsWith('.yml') || name.endsWith('.yaml'))
+    .sort();
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+  console.log('No .github/workflows directory: GitHub Actions is disabled for this repo. Nothing to pin.');
+  process.exit(0);
+}
+
+if (workflowFiles.length === 0) {
+  console.log('No workflow files found: GitHub Actions is disabled for this repo. Nothing to pin.');
+  process.exit(0);
+}
 
 const unpinned = [];
 for (const file of workflowFiles) {

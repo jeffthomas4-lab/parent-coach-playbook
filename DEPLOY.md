@@ -11,7 +11,10 @@ are obsolete. Do not use them to configure, rebuild, or release the site.
 ## Current authorities
 
 - Normal staging and production release: `DEPLOYMENT-RUNBOOK.md`
-- Exact workflow implementation: `.github/workflows/deploy-workers.yml`
+- Exact deploy commands: the "Normal path" section of `DEPLOYMENT-RUNBOOK.md`,
+  and the parentcoachdesk.com block in `About Me/Deployments.md`. GitHub Actions
+  was removed from this repo on 2026-08-05, so there is no workflow file to read
+  and no merge-to-`main` auto-deploy; production ships from a local shell.
 - Current verified runtime state: `coordination/CURRENT_STATE.md`
 - Approval boundaries: `automation/APPROVAL-MATRIX.md` and
   `coordination/LAUNCH-AUTHORIZATION-MATRIX.md`

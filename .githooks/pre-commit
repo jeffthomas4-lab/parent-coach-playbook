@@ -9,8 +9,14 @@
 staged=$(git diff --cached --name-only)
 
 # 1) Editorial refresh queue is fully generated from src/. Whenever any source
-#    file is staged, regenerate it and re-stage so the committed snapshot always
-#    matches what CI's `check:editorial-refresh` will regenerate.
+#    file is staged, regenerate it so the working copy on disk matches src/.
+#
+#    It is NO LONGER staged or committed (untracked as of 2026-08-05, see the
+#    .gitignore entry). Tracking it meant every merge of two branches that both
+#    touched src/ conflicted on its `as_of` and `inventory_sha256` lines, and
+#    the conflict markers made it invalid JSON — which broke the build in
+#    src/pages/admin/editorial/index.astro with an opaque vite-json error
+#    instead of an obvious merge failure. The build regenerates it now.
 case "$staged" in
   *src/*)
     if ! node scripts/editorial-refresh-queue.mjs >/dev/null 2>&1; then
@@ -18,7 +24,6 @@ case "$staged" in
       echo "           run 'node scripts/editorial-refresh-queue.mjs' and fix the error before committing." >&2
       exit 1
     fi
-    git add reports/editorial/editorial-refresh-queue.json
     ;;
 esac
 

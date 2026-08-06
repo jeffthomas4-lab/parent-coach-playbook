@@ -6,31 +6,54 @@ describe('deployment authority', () => {
     const legacy = await readFile('DEPLOY.md', 'utf8');
     expect(legacy).toContain('Historical deployment guide — retired');
     expect(legacy).toContain('DEPLOYMENT-RUNBOOK.md');
-    expect(legacy).toContain('.github/workflows/deploy-workers.yml');
     expect(legacy).not.toMatch(/Remove-Item[^\n]*\.git|rm\s+-rf\s+\.git|wrangler\s+pages\s+deploy|Connect Cloudflare Pages to the repo/i);
   });
 
-  it('keeps one generated-manifest, same-SHA, protected production workflow', async () => {
-    const workflow = await readFile('.github/workflows/deploy-workers.yml', 'utf8');
-    expect(workflow).toContain('group: parent-coach-desk-production');
-    expect(workflow).toContain('cancel-in-progress: false');
-    expect(workflow).toContain('DEPLOY_SHA: ${{ inputs.commit_sha || github.sha }}');
-    expect(workflow).toContain('git merge-base --is-ancestor "$DEPLOY_SHA" origin/main');
-    expect(workflow).toContain('name: production');
-    expect(workflow).toContain('npm run check:access-evidence:production');
-    expect(workflow).toContain('name: pcd-production-${{ env.DEPLOY_SHA }}');
-    expect(workflow).toContain('test "$(cat production-dist.git-sha)" = "$DEPLOY_SHA"');
-    expect(workflow).toContain('deploy --config dist/server/wrangler.json --keep-vars --dry-run');
-    expect(workflow).toContain('build-static-asset-proof.mjs --sha "$DEPLOY_SHA" --output production-static-asset.json');
-    expect(workflow).toContain('--target production --asset-proof production-static-asset.json --report production-smoke.json');
-    expect(workflow).toContain('sha256sum production-smoke.json > production-smoke.json.sha256');
-    expect(workflow).toContain('sha256sum -c production-smoke.json.sha256');
-    expect(workflow).toContain('sha256sum staging-smoke.json > staging-smoke.json.sha256');
-    expect(workflow).toContain('sha256sum -c staging-smoke.json.sha256');
-    expect(workflow).toContain('production-smoke.json.sha256');
-    expect(workflow).toContain('staging-smoke.json.sha256');
-    expect(workflow).toContain('pcd-production-smoke-${{ env.DEPLOY_SHA }}');
-    expect(workflow).not.toMatch(/wrangler\s+pages|git\s+add\s+-A|checkout[^\n]*refs\/heads\/main/i);
+  // GitHub Actions was removed from every repo on 2026-08-05 after it burned the
+  // monthly allotment in four days. deploy-workers.yml, ci.yml, babylove-normalize.yml
+  // and the protected `production` environment are gone; production ships from a
+  // local shell. These assertions replace the workflow contract that used to live
+  // here, and they encode the failure that removal caused the same night: a plain
+  // `npm run build` produces a manifest named parent-coach-desk-staging, and
+  // wrangler will deploy the STAGING worker and report success.
+  it('keeps GitHub Actions disabled so nothing silently re-enables CI deploys', async () => {
+    await expect(readFile('.github/workflows/deploy-workers.yml', 'utf8')).rejects.toThrow();
+    await expect(readFile('.github/workflows/ci.yml', 'utf8')).rejects.toThrow();
+  });
+
+  it('separates the staging build from the production build', async () => {
+    const pkg = JSON.parse(await readFile('package.json', 'utf8'));
+    const buildProduction = await readFile('scripts/build-production.mjs', 'utf8');
+
+    // Plain `build` must never be the production path.
+    expect(pkg.scripts.build).not.toContain('wrangler.production.jsonc');
+    expect(pkg.scripts['build:production']).toBe('node scripts/build-production.mjs');
+
+    // The production build is only "production" because of this env var.
+    expect(buildProduction).toContain("WRANGLER_CONFIG_PATH: 'wrangler.production.jsonc'");
+  });
+
+  it('documents the local production deploy with a manifest-name assertion', async () => {
+    const runbook = await readFile('DEPLOYMENT-RUNBOOK.md', 'utf8');
+
+    expect(runbook).toContain('npm run build:production');
+    expect(runbook).toContain('deploy --config dist/server/wrangler.json --keep-vars --dry-run');
+    expect(runbook).toContain('build-static-asset-proof.mjs');
+    expect(runbook).toContain('--target production --asset-proof');
+
+    // The guard against deploying the staging worker by accident.
+    expect(runbook).toContain('parent-coach-desk-staging');
+    expect(runbook).toMatch(/must print `parent-coach-desk`/);
+
+    // The retired Pages path must never come back: it reports success without
+    // changing the live site (confirmed 2026-07-22).
+    expect(runbook).not.toMatch(/wrangler\s+pages\s+deploy\s+\S+\s+--project-name/i);
+  });
+
+  it('requires the asset proof argument the smoke test cannot run without', async () => {
+    const smoke = await readFile('scripts/smoke-worker-deployment.mjs', 'utf8');
+    expect(smoke).toContain("valueAfter(argv, '--asset-proof')");
+    expect(smoke).toMatch(/usage: smoke-worker-deployment\.mjs/);
   });
 
   it('declares production runtime secret names without values and keeps staging optional', async () => {

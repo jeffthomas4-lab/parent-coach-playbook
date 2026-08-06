@@ -67,3 +67,16 @@ coordination/release-evidence/logs/
 # Scoped to the root on purpose: two intentional logs are tracked deeper in the
 # tree (buildout/, imports/) and a blanket *.log would shadow that pattern.
 /*.log
+
+# Generated editorial refresh queue. Fully derived from src/ by
+# scripts/editorial-refresh-queue.mjs, regenerated at the top of every build and
+# on npm install, and imported by src/pages/admin/editorial/index.astro.
+#
+# Untracked on 2026-08-05 because tracking it was a merge landmine. Two branches
+# that both touch src/ each regenerate it with a different `as_of` and
+# `inventory_sha256`, so EVERY merge conflicted on those two lines, and the
+# conflict markers turned it into invalid JSON. Because the admin page imports
+# it, the resulting failure surfaced as an opaque vite-json parse error
+# ("key must be a string at line 3 column 1") rather than as a merge problem.
+# That cost an evening on 2026-08-05. Do not re-track it.
+reports/editorial/editorial-refresh-queue.json

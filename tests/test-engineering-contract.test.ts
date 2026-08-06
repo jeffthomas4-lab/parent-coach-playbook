@@ -21,12 +21,21 @@ describe('test engineering contract', () => {
     expect(config).toContain("reportsDirectory: 'coverage/unit'");
   });
 
-  it('runs unit coverage on every push and integration on PRs or main merges', async () => {
-    const workflow = await read('.github/workflows/ci.yml');
-    expect(workflow).toContain("branches: ['**']");
-    expect(workflow).toContain('npm run test:unit:coverage');
-    expect(workflow).toContain("github.event_name == 'pull_request' || github.ref == 'refs/heads/main'");
-    expect(workflow).toContain('npm run test:integration');
+  // ci.yml ran unit coverage on every push and integration on PRs and main merges.
+  // It was deleted with the rest of GitHub Actions on 2026-08-05; the replacement
+  // is a local pre-push run, per Outputs/_system/GITHUB-ACTIONS-REPLACEMENT.md
+  // section 3d. The commands must therefore still exist and still be reachable
+  // from one entry point, because there is no runner to fall back on.
+  it('keeps unit coverage and integration runnable locally from ci:release', async () => {
+    const pkg = JSON.parse(await read('package.json'));
+
+    expect(pkg.scripts['test:unit:coverage']).toContain('vitest.unit.config.ts');
+    expect(pkg.scripts['test:unit:coverage']).toContain('--coverage');
+    expect(pkg.scripts['test:integration']).toContain('vitest.integration.config.ts');
+
+    // ci:release is the single local gate now. It must still reach integration.
+    expect(pkg.scripts['ci:release']).toContain('npm run test:integration');
+    expect(pkg.scripts['ci:release']).toContain('npm run audit:gate');
   });
 
   it('runs disposable-D1 integration tests in one deterministic worker fork', async () => {

@@ -24,14 +24,23 @@
 #   not permitted") even though `mv` works fine, so this script clears locks
 #   by renaming them aside rather than deleting them.
 #
+#   STALE LOCKS ARE NOT COSMETIC (learned 2026-08-05). A leftover
+#   `.git/HEAD.lock` blocks every operation that updates HEAD, including
+#   `git merge` — which then fails with a one-line error that is easy to miss
+#   in a long paste. That lock sat from a 21:15 commit until it was found
+#   hours later, and it is why a merge "succeeded" three separate times
+#   without ever producing a commit. An audit that day found 61 leftover
+#   lock corpses in .git going back to 2026-07-28: every agent had cleared
+#   one silently, with its own suffix, and none had ever reported it. So this
+#   script now records every clear to reports/ops/stale-locks.log and prints
+#   a line agents are required to surface. See "REPORT THIS" below.
+#
 # WHAT THIS SKIPS:
-#   Runs no git hooks (equivalent to `commit --no-verify`). In particular,
-#   `.githooks/pre-commit` regenerates reports/editorial/editorial-refresh-queue.json
-#   whenever src/ changes are staged — this script does NOT do that. If you
-#   commit src/ changes this way, that queue file goes stale until someone runs
-#   `node scripts/editorial-refresh-queue.mjs` by hand (that script has the
-#   same working-tree-scan cost, so run it with a longer budget, not inside a
-#   single 45s tool call).
+#   Runs no git hooks (equivalent to `commit --no-verify`). The pre-commit
+#   hook's only commit-affecting job used to be regenerating and staging
+#   reports/editorial/editorial-refresh-queue.json; that file is untracked as
+#   of 2026-08-05 and is regenerated at the top of every build, so skipping
+#   the hook no longer leaves anything stale in a commit.
 #
 # USAGE:
 #   sh scripts/safe-commit.sh "commit message" path/one path/two ...
@@ -62,20 +71,59 @@ fi
 
 GIT="git -c core.fsync=none -c core.fsyncMethod=none"
 
-# Clear stale lock files left by a previous killed/timed-out git process.
-# rm fails with "Operation not permitted" on this filesystem; mv works.
-for lock in .git/index.lock .git/HEAD.lock; do
-  if [ -e "$lock" ]; then
-    mv "$lock" "$lock.stale.$$" 2>/dev/null || true
-    echo "safe-commit: cleared stale lock $lock" >&2
+BRANCH=$($GIT symbolic-ref --short HEAD)
+
+# ---------------------------------------------------------------------------
+# Stale lock preflight.
+#
+# rm fails with "Operation not permitted" on this filesystem; mv works. A lock
+# younger than STALE_AFTER_MIN might belong to a git process that is genuinely
+# still running, so we refuse rather than race it. Anything older is a corpse.
+# ---------------------------------------------------------------------------
+STALE_AFTER_MIN=2
+LOCK_LOG="reports/ops/stale-locks.log"
+CLEARED_LOCKS=""
+LIVE_LOCKS=""
+
+for lock in \
+  .git/index.lock \
+  .git/HEAD.lock \
+  .git/ORIG_HEAD.lock \
+  .git/packed-refs.lock \
+  .git/config.lock \
+  ".git/refs/heads/$BRANCH.lock"
+do
+  [ -e "$lock" ] || continue
+  if [ -n "$(find "$lock" -maxdepth 0 -mmin "+$STALE_AFTER_MIN" 2>/dev/null)" ]; then
+    stamp=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+    if mv "$lock" "$lock.stale.$$" 2>/dev/null; then
+      CLEARED_LOCKS="$CLEARED_LOCKS $lock"
+      mkdir -p "$(dirname "$LOCK_LOG")" 2>/dev/null || true
+      printf '%s\tsafe-commit\t%s\tcleared\t%s\n' "$stamp" "$BRANCH" "$lock" >>"$LOCK_LOG" 2>/dev/null || true
+    fi
+  else
+    LIVE_LOCKS="$LIVE_LOCKS $lock"
   fi
 done
-BRANCH=$($GIT symbolic-ref --short HEAD)
-BRANCH_LOCK=".git/refs/heads/$BRANCH.lock"
-if [ -e "$BRANCH_LOCK" ]; then
-  mv "$BRANCH_LOCK" "$BRANCH_LOCK.stale.$$" 2>/dev/null || true
-  echo "safe-commit: cleared stale lock $BRANCH_LOCK" >&2
+
+if [ -n "$LIVE_LOCKS" ]; then
+  echo "safe-commit: ABORTING — lock file(s) newer than ${STALE_AFTER_MIN}m:$LIVE_LOCKS" >&2
+  echo "             Another git process may be running. Wait and retry; do not clear these by hand." >&2
+  exit 1
 fi
+
+if [ -n "$CLEARED_LOCKS" ]; then
+  echo "===============================================================" >&2
+  echo "REPORT THIS: safe-commit cleared stale git lock(s):$CLEARED_LOCKS" >&2
+  echo "A stale lock silently blocks merges and HEAD updates. Put this" >&2
+  echo "line in your Slack run summary so it stops going unnoticed." >&2
+  echo "Logged to $LOCK_LOG" >&2
+  echo "===============================================================" >&2
+fi
+
+# Prune old corpses so they stop accumulating (61 had piled up by 2026-08-05).
+# Keeps anything from the last day in case a post-mortem needs it.
+find .git -maxdepth 3 -name '*.lock.stale.*' -mtime +1 -exec mv {} /tmp/ \; 2>/dev/null || true
 
 PARENT=$($GIT rev-parse HEAD)
 
@@ -83,11 +131,14 @@ PARENT=$($GIT rev-parse HEAD)
 # another task left staged (and never committed) rides along in this commit.
 $GIT read-tree HEAD
 
-# Warn if this commit touches src/ — the pre-commit hook's queue regeneration
-# is being skipped.
+# Refuse to stage the generated editorial refresh queue. It is untracked as of
+# 2026-08-05 (see .gitignore); an explicit attempt to commit it means a caller
+# is working from stale instructions.
 case " $* " in
-  *" src/"*|*"src/"*)
-    echo "safe-commit: WARNING — staging src/ paths. reports/editorial/editorial-refresh-queue.json will NOT be auto-regenerated (hooks skipped). Flag this in your run summary." >&2
+  *"reports/editorial/editorial-refresh-queue.json"*)
+    echo "safe-commit: ABORTING — reports/editorial/editorial-refresh-queue.json is generated and untracked." >&2
+    echo "             Drop it from your path list. The build regenerates it." >&2
+    exit 1
     ;;
 esac
 

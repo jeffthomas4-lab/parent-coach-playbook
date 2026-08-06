@@ -3,7 +3,59 @@
 Production is Cloudflare Worker `parent-coach-desk`. The Pages project is a
 separately governed rollback target, not the normal deployment path.
 
-## Normal path
+## Normal path (current, local — as of 2026-08-05)
+
+GitHub Actions was removed from every repo on 2026-08-05 after it burned the
+monthly allotment in four days. `.github/workflows/deploy-workers.yml`, the
+protected `production` Environment gate, and the BabyLove release classifier's
+auto-approval path are all gone. There is no merge-to-`main` auto-deploy. The
+CI path is preserved below under "Retired CI path" for whoever restores it.
+
+Production ships from a local shell:
+
+```powershell
+cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\Field and Forge\parent-coach-desk"
+npm ci
+npm run build:production
+(Get-Content dist\server\wrangler.json -Raw | ConvertFrom-Json).name
+```
+
+**The fourth line must print `parent-coach-desk`.** If it prints
+`parent-coach-desk-staging`, stop — the build did not pick up
+`wrangler.production.jsonc` and the deploy below would ship the staging Worker.
+
+```powershell
+npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
+npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars
+node scripts/build-static-asset-proof.mjs --sha (git rev-parse HEAD) --output coordination/release-evidence/asset-proof-prod.json
+node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production --asset-proof coordination/release-evidence/asset-proof-prod.json
+```
+
+### Two traps this path has already hit
+
+**Plain `npm run build` deploys to staging and reports success.** The build
+generates `dist/server/wrangler.json`, and plain `build` stamps it
+`"name": "parent-coach-desk-staging"`. Only `npm run build:production` sets
+`WRANGLER_CONFIG_PATH=wrangler.production.jsonc`. Wrangler gives no warning; the
+single tell is the closing `Uploaded parent-coach-desk-staging` line under a
+128-row module table. Hence the name assertion above.
+
+**An empty `node_modules` fails without halting the build.** `npm run build`
+chains `check:content-lengths && build:manifest && build:og:safe && astro build`.
+The first two are plain node scripts and pass with no dependencies installed;
+`build:og:safe` swallows its own failure by design. `astro build` then dies with
+`'astro' is not recognized` at the end of the chain, and wrangler deploys
+whatever stale `dist/` is still on disk. On 2026-08-05 that shipped a day-old
+staging build. Hence `npm ci` leading the block.
+
+The smoke script requires `--asset-proof <file>`; it throws a usage error
+without it. Generate the proof with `scripts/build-static-asset-proof.mjs`
+against the same `dist/client` that was just deployed.
+
+Staging is the same flow with plain `npm run build` and
+`--target staging --origin https://parent-coach-desk-staging.eepskalla.workers.dev`.
+
+## Retired CI path (Actions removed 2026-08-05 — historical)
 
 1. Merge a reviewed, green pull request to `main`.
 2. `.github/workflows/deploy-workers.yml` builds separate staging and production
@@ -48,7 +100,7 @@ restriction and appropriate reviewer policy have been verified. The workflow
 fails closed when that marker is absent. Changes to the classifier, deploy
 workflow, or smoke scripts require review as production authorization code.
 
-## Emergency path
+## Emergency path (retired with the CI path above)
 
 Use the workflow's `workflow_dispatch` entry with a full commit SHA. The
 workflow refuses commits not already contained in `main` and uses the same

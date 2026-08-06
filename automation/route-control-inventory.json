@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 164,
+  "route_count": 174,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -180,6 +180,16 @@
         "GET"
       ],
       "source": "admin/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/intel",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/intel.astro",
       "cache_class": "admin_preview",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -550,6 +560,98 @@
         "POST"
       ],
       "source": "api/admin/editorial/sources/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/competitors",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": "api/admin/intel/competitors.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/opportunities",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/admin/intel/opportunities.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/rescore",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/intel/rescore.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/review",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/admin/intel/review.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/review/:id",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/intel/review/[id].ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/runs",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": "api/admin/intel/runs.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/runs/:id/approve",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/intel/runs/[id]/approve.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/stack",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/admin/intel/stack.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/intel/summary",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/admin/intel/summary.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
