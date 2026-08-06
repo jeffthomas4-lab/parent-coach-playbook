@@ -14,6 +14,8 @@ import {
   type WithSentryFn,
   type WorkerHandler,
 } from './lib/sentry-worker';
+import { isFeatureEnabled } from './lib/intel/config';
+import { runOrgSweep } from './lib/intel/pipeline';
 
 type AstroWorkerEnv = Parameters<typeof astroWorker.fetch>[1];
 type PcdWorkerEnv = AstroWorkerEnv & AdminAuthEnv & SentryWorkerEnv;
@@ -62,7 +64,60 @@ export async function scheduledBabyLoveReconciliation(
   }));
 }
 
+// Competitor-intelligence sweep: prospect organization websites only. A
+// competitor_property run requires two separate human admin calls (propose,
+// then approve) — see src/pages/api/admin/intel/runs.ts and
+// runs/[id]/approve.ts. The scheduled path never calls runApprovedRun and
+// never touches a competitor-owned property; it calls runOrgSweep only, and
+// only when the feature is turned on for this environment.
+export async function runIntelOrgSweep(env: PcdIntegrationEnv, context: ExecutionContext): Promise<void> {
+  if (!isFeatureEnabled(env)) return;
+  // The ambient Cloudflare `Env` type this repo's tsconfig pulls in is
+  // deliberately empty (no project augments it — every route casts its own
+  // local env shape from `cfEnv` instead), so PcdIntegrationEnv carries no
+  // typed `DB` field at all. runOrgSweep needs the whole env (not just DB)
+  // to read its own policy vars, so this is a plain runtime-env assertion,
+  // not a narrowing of anything guarded above — this function is the
+  // Worker's real scheduled handler, so DB is always bound in practice.
+  const intelEnv = env as unknown as { DB: D1Database } & Record<string, unknown>;
+  context.waitUntil(runOrgSweep(intelEnv).catch((error) => {
+    console.error(JSON.stringify({
+      event: 'intel_org_sweep_failed',
+      code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
+    }));
+    throw error;
+  }));
+}
+
+// The Worker's real scheduled handler: runs the existing BabyLove
+// reconciliation and the intel org sweep on every cron tick, each in its own
+// try/catch so a failure (or an unconfigured environment) in one can never
+// stop the other from firing.
+export async function scheduledReconciliationAndIntelSweep(
+  controller: ScheduledController,
+  env: PcdIntegrationEnv,
+  context: ExecutionContext,
+): Promise<void> {
+  try {
+    await scheduledBabyLoveReconciliation(controller, env, context);
+  } catch (error) {
+    console.error(JSON.stringify({
+      event: 'babylove_reconciliation_dispatch_failed',
+      code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
+    }));
+  }
+
+  try {
+    await runIntelOrgSweep(env, context);
+  } catch (error) {
+    console.error(JSON.stringify({
+      event: 'intel_org_sweep_dispatch_failed',
+      code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
+    }));
+  }
+}
+
 export default {
   fetch: (request: Request, env: PcdIntegrationEnv, context: ExecutionContext) => instrumentedHandler.fetch(request, env, context),
-  scheduled: scheduledBabyLoveReconciliation,
+  scheduled: scheduledReconciliationAndIntelSweep,
 };

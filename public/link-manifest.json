@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-02T16:42:09.278Z",
-  "count": 700,
+  "generatedAt": "2026-08-06T23:31:29.369Z",
+  "count": 761,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -93,12 +93,6 @@
       "url": "https://aausports.org/aau-youth-protection-policy/",
       "sources": [
         "src/content/body/volunteer-vs-paid-coach-vetting.md"
-      ]
-    },
-    {
-      "url": "https://about.meta.com/safety/",
-      "sources": [
-        "src/content/body/instagram-privacy-settings.md"
       ]
     },
     {
@@ -432,6 +426,12 @@
       ]
     },
     {
+      "url": "https://bugawaygear.com/families",
+      "sources": [
+        "src/content/articles/best-kids-shin-guards.md"
+      ]
+    },
+    {
       "url": "https://calmatters.org/environment/climate-change/2026/07/california-school-heat-illness-laws/",
       "sources": [
         "src/content/news/california-heat-safety-law-deadline-2026.md"
@@ -466,6 +466,12 @@
       "url": "https://civilrights.justice.gov/",
       "sources": [
         "src/content/body/religious-accommodations-team-culture.md"
+      ]
+    },
+    {
+      "url": "https://coachjeffthomas.com/about/",
+      "sources": [
+        "src/pages/about.astro"
       ]
     },
     {
@@ -505,6 +511,12 @@
       ]
     },
     {
+      "url": "https://cronkitenews.azpbs.org/2025/12/04/rising-youth-soccer-costs-u-s/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
       "url": "https://diabetes.org/health-wellness/fitness",
       "sources": [
         "src/content/body/diabetic-emergency-on-field.md"
@@ -520,6 +532,18 @@
       "url": "https://discord.com/safety",
       "sources": [
         "src/content/body/discord-servers-youth-teams.md"
+      ]
+    },
+    {
+      "url": "https://dt5602vnjxv0c.cloudfront.net/portals/28638/docs/travel/2022-23%20financial%20policy%202.5.22.pdf",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
+      "url": "https://g-form.com/products/v2-soccer-shin-guard-youth",
+      "sources": [
+        "src/content/articles/best-kids-shin-guards.md"
       ]
     },
     {
@@ -640,6 +664,37 @@
       ]
     },
     {
+      "url": "https://learning.ussoccer.com/articles/hip/article/field-conditions",
+      "sources": [
+        "src/content/articles/how-to-net-a-soccer-goal.md",
+        "src/content/articles/moving-a-soccer-goal-safely.md"
+      ]
+    },
+    {
+      "url": "https://maapp.uscenterforsafesport.org/",
+      "sources": [
+        "src/content/articles/how-to-vet-a-camp-for-safety.md"
+      ]
+    },
+    {
+      "url": "https://maapp.uscenterforsafesport.org/2025-maapp/",
+      "sources": [
+        "src/content/articles/late-pickup-problem-parent-coach-guide.md"
+      ]
+    },
+    {
+      "url": "https://middleboroyouthsoccer.com/is-travel-soccer-right-for-your-family-a-clear-decision-guide/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
+      "url": "https://mlsnext.com/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
       "url": "https://nccsir.unc.edu/",
       "sources": [
         "src/content/body/youth-cheer-stunt-safety-briefing.md"
@@ -683,6 +738,26 @@
         "src/content/body/youth-softball-safety-briefing.md",
         "src/content/guides/football-7v7.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://nocsae.org/general-recertification-requirements-and-recommendations/",
+      "sources": [
+        "src/content/articles/used-gear-rules.md",
+        "src/content/articles/used-vs-new-gear-the-actual-math.md",
+        "src/content/articles/youth-football-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://nocsae.org/nd022-standard-performance-specification-for-newly-manufactured-baseball-softball-batters-helmets/",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://nocsae.org/nocsae-issues-clarification-about-football-helmet-certification-to-nocsae-standards/",
+      "sources": [
+        "src/content/articles/youth-football-equipment-guide.md"
       ]
     },
     {
@@ -803,6 +878,12 @@
       ]
     },
     {
+      "url": "https://production.rawlings.com/information-sizing.html",
+      "sources": [
+        "src/content/articles/5-year-old-glove.md"
+      ]
+    },
+    {
       "url": "https://projectplay.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -814,6 +895,13 @@
         "src/content/recruiting/scholarship-odds-the-honest-math.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://projectplay.org/news/2025/2/24/project-play-survey-family-spending-on-youth-sports-rises-46-over-five-years",
+      "sources": [
+        "src/content/articles/how-much-does-youth-soccer-cost.md",
+        "src/content/articles/the-cost-of-travel-ball.md"
       ]
     },
     {
@@ -841,6 +929,12 @@
       "sources": [
         "src/content/body/cold-weather-practice.md",
         "src/content/body/youth-hockey-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://publications.aap.org/pediatrics/article-abstract/143/6/e20190997/37135",
+      "sources": [
+        "src/content/articles/the-case-for-one-sport-per-season.md"
       ]
     },
     {
@@ -891,6 +985,12 @@
       ]
     },
     {
+      "url": "https://publications.aap.org/pediatrics/article/144/1/e20191355/37095/Improving-Health-and-Safety-at-Camp",
+      "sources": [
+        "src/content/articles/how-to-vet-a-camp-for-safety.md"
+      ]
+    },
+    {
       "url": "https://publications.aap.org/pediatrics/article/144/4/e20192528/81590",
       "sources": [
         "src/content/adaptive/adhd-athlete.md"
@@ -900,6 +1000,13 @@
       "url": "https://publications.aap.org/pediatrics/article/145/1/e20193447/36917",
       "sources": [
         "src/content/adaptive/autistic-athlete.md"
+      ]
+    },
+    {
+      "url": "https://publications.aap.org/pediatrics/article/153/2/e2023065129/196435/Overuse-Injuries-Overtraining-and-Burnout-in-Young",
+      "sources": [
+        "src/content/articles/the-case-for-one-sport-per-season.md",
+        "src/content/articles/why-kids-quit-sports.md"
       ]
     },
     {
@@ -945,7 +1052,13 @@
       ]
     },
     {
-      "url": "https://squareup.com/us/en/hardware/readers",
+      "url": "https://sports.yahoo.com/worth-10-questions-athletes-consider-120952288.html",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
+      "url": "https://squareup.com/us/en/hardware",
       "sources": [
         "src/data/affiliates.json (slug: square-card-reader)"
       ]
@@ -957,9 +1070,21 @@
       ]
     },
     {
+      "url": "https://tiemposoccer.com/is-my-kid-ready-for-travel-soccer/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
       "url": "https://tools.google.com/dlpage/gaoptout",
       "sources": [
         "src/pages/disclosure.astro"
+      ]
+    },
+    {
+      "url": "https://tools.nfhs.org/AuthenticatingMark/Authenticating_Mark_Manual_2025.pdf",
+      "sources": [
+        "src/content/articles/youth-basketball-equipment-guide.md"
       ]
     },
     {
@@ -1058,6 +1183,12 @@
       ]
     },
     {
+      "url": "https://usavolleyball.org/resources-for-officials/rulebooks-and-interpretations/",
+      "sources": [
+        "src/content/articles/youth-volleyball-equipment-guide.md"
+      ]
+    },
+    {
       "url": "https://usavolleyball.org/safesport/",
       "sources": [
         "src/content/body/youth-volleyball-safety-briefing.md"
@@ -1115,6 +1246,12 @@
       ]
     },
     {
+      "url": "https://uscenterforsafesport.org/response-and-resolution/safesport-code/",
+      "sources": [
+        "src/content/articles/telling-the-coach-your-kid-is-being-bullied.md"
+      ]
+    },
+    {
       "url": "https://usrowing.org/",
       "sources": [
         "src/content/body/youth-crew-rowing-safety-briefing.md",
@@ -1132,6 +1269,12 @@
       "url": "https://usrowing.org/sports/2017/12/4/rules-of-rowing.aspx",
       "sources": [
         "src/content/rules/crew.md"
+      ]
+    },
+    {
+      "url": "https://ussoccerfoundation.org/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
       ]
     },
     {
@@ -1291,6 +1434,12 @@
       ]
     },
     {
+      "url": "https://www.aausports.org/boys-basketball/2026-aau-boys-basketball-eligibility",
+      "sources": [
+        "src/content/articles/basketball-levels-rec-school-club-aau.md"
+      ]
+    },
+    {
       "url": "https://www.abt.org/",
       "sources": [
         "src/content/guides/ballet.md"
@@ -1307,6 +1456,37 @@
       "sources": [
         "src/content/body/camp-counselor-vetting.md",
         "src/content/body/camping-outdoor-team-trips.md"
+      ]
+    },
+    {
+      "url": "https://www.acacamps.org/accreditation/overview/standards-glance",
+      "sources": [
+        "src/content/articles/how-to-vet-a-camp-for-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.acacamps.org/parents-families/fun-safety-aca-accredited-camps-set-standard",
+      "sources": [
+        "src/content/articles/how-to-evaluate-a-summer-camp.md",
+        "src/content/articles/how-to-vet-a-camp-for-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.acacamps.org/press-room/how-to-choose-camp/preparing-for-camp",
+      "sources": [
+        "src/content/articles/how-to-evaluate-a-summer-camp.md"
+      ]
+    },
+    {
+      "url": "https://www.acacamps.org/staff-professionals/accreditation-standards/accreditation/about-aca-accreditation",
+      "sources": [
+        "src/content/articles/how-to-vet-a-camp-for-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.academy.com/expert-advice/baseball-softball-glove-differences",
+      "sources": [
+        "src/content/articles/best-youth-softball-gloves.md"
       ]
     },
     {
@@ -1392,6 +1572,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B0000BY937?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: scrimmage-pennies)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B0000E2E9U?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: volleyball-ankle-brace)"
@@ -1428,6 +1614,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B000UVXVG4?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-knee-pad)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B00114T938?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: volleyball-knee-pads-lr6)"
@@ -1449,12 +1641,6 @@
       "url": "https://www.amazon.com/dp/B001C3O8O8?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: soccer-ball-size3)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B001LJ4IQO?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: wrestling-knee-pad)"
       ]
     },
     {
@@ -1500,21 +1686,9 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B003L23NJ4?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: coach-clipboard-dry-erase)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B004DGO3WS?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: antihistamine-child)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B004MJ0Y2Y?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: scrimmage-pennies)"
       ]
     },
     {
@@ -1569,12 +1743,6 @@
       "url": "https://www.amazon.com/dp/B00AVQ0J2C?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: scissors-blunt-tip)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B00BXJXO8I?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: speed-ladder-agility)"
       ]
     },
     {
@@ -1666,12 +1834,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B00Y1XJYJY?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: coach-stopwatch)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B011PM4IRC?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: swim-goggles-youth)"
@@ -1696,9 +1858,9 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B01BKIQJAY?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B01HZE9DRY?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: agility-cones-set)"
+        "src/data/affiliates.json (slug: speed-ladder-agility)"
       ]
     },
     {
@@ -1723,6 +1885,12 @@
       "url": "https://www.amazon.com/dp/B071P2MQ5D?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: foam-roller-medium)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B071YKBLVQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: coach-clipboard-dry-erase)"
       ]
     },
     {
@@ -1781,15 +1949,15 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B07BFKRX3Y?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: jump-rope-speed)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B07C2GYJ1V?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: portable-pa-speaker)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07DDFQHVP?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: cash-box-lockable)"
       ]
     },
     {
@@ -1829,21 +1997,21 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B07MYF9QVV?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ball-pump-with-gauge)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B07Q5V12XY?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: xc-running-gloves)"
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B07QYJB3GS?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B07XNBTY5V?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: portable-whiteboard)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B07R7D49LX?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: cash-box-lockable)"
+        "src/data/affiliates.json (slug: pickleball-balls-outdoor)"
       ]
     },
     {
@@ -1856,18 +2024,6 @@
       "url": "https://www.amazon.com/dp/B07YNSRY9Y?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: lacrosse-goggles-youth)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B07YRJPQVB?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: ball-pump-with-gauge)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B07ZDJB1TY?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: lacrosse-stick-girls-youth)"
       ]
     },
     {
@@ -1925,21 +2081,15 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B08B4HLQDH?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B08BJY3KV8?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: rebounder-net-baseball)"
+        "src/data/affiliates.json (slug: first-aid-fanny-pack)"
       ]
     },
     {
       "url": "https://www.amazon.com/dp/B08F7ZY72S?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: baseball-sliding-mitt)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B08HSJ6DNL?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: softball-pitching-jacket)"
       ]
     },
     {
@@ -1985,9 +2135,21 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B09BZZDC3D?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B09BG3GVBN?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: pickleball-balls-outdoor)"
+        "src/data/affiliates.json (slug: softball-pitching-jacket)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09DF9NWC7?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: jump-rope-speed)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09FXVSMSD?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: portable-whiteboard)"
       ]
     },
     {
@@ -2015,9 +2177,9 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B09Q3P2ZJN?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B09QLB2M2Z?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: first-aid-fanny-pack)"
+        "src/data/affiliates.json (slug: coach-stopwatch)"
       ]
     },
     {
@@ -2042,6 +2204,12 @@
       "url": "https://www.amazon.com/dp/B09S3452MM?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: band-practice-pad)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09T56VFQ5?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-stick-girls-youth)"
       ]
     },
     {
@@ -2153,9 +2321,9 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0CLSHQW2F?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B0CLNGGXBC?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: pickleball-paddle-youth)"
+        "src/data/affiliates.json (slug: agility-cones-set)"
       ]
     },
     {
@@ -2168,6 +2336,12 @@
       "url": "https://www.amazon.com/dp/B0CPLCVK6N?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: soccer-cones-12pk)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CQP9RR81?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: pickleball-paddle-youth)"
       ]
     },
     {
@@ -2234,6 +2408,12 @@
       "url": "https://www.amazon.com/dp/B0DHRCRTY5?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: basketball-ball-rubber)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DJ8BWRYC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: rebounder-net-baseball)"
       ]
     },
     {
@@ -2694,6 +2874,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/early-care/communication-resources/outdoor-play-and-safety-for-children-in-ece.html",
+      "sources": [
+        "src/content/articles/summer-camp-packing-list.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/easternequineencephalitis/",
       "sources": [
         "src/content/body/mosquito-borne-illness.md"
@@ -2757,6 +2943,18 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/respiratory-viruses/about/index.html",
+      "sources": [
+        "src/content/articles/tryouts-when-your-kid-has-a-cold.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html",
+      "sources": [
+        "src/content/articles/tryouts-when-your-kid-has-a-cold.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/ticks/",
       "sources": [
         "src/content/body/tick-prevention-lyme-disease.md"
@@ -2785,6 +2983,12 @@
       "sources": [
         "src/content/body/safesport-reporting-walkthrough.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.childwelfare.gov/resources/mandatory-reporting-child-abuse-and-neglect/",
+      "sources": [
+        "src/content/articles/how-to-vet-a-camp-for-safety.md"
       ]
     },
     {
@@ -2821,6 +3025,13 @@
       ]
     },
     {
+      "url": "https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Bicycle-Helmets",
+      "sources": [
+        "src/content/articles/used-gear-rules.md",
+        "src/content/articles/used-vs-new-gear-the-actual-math.md"
+      ]
+    },
+    {
       "url": "https://www.cpsc.gov/Safety",
       "sources": [
         "src/content/body/soccer-goalpost-anchoring.md",
@@ -2831,6 +3042,13 @@
       "url": "https://www.cpsc.gov/Safety-Education/Safety-Guides/sports-fitness-and-recreation",
       "sources": [
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.cpsc.gov/safety-education/safety-guides/sports-fitness-and-recreation/guidelines-movable-soccer-goals",
+      "sources": [
+        "src/content/articles/how-to-net-a-soccer-goal.md",
+        "src/content/articles/moving-a-soccer-goal-safely.md"
       ]
     },
     {
@@ -2845,6 +3063,12 @@
         "src/content/body/caffeine-youth-athletes.md",
         "src/content/body/pre-game-nutrition.md",
         "src/content/body/rdn-vs-nutritionist-credentials.md"
+      ]
+    },
+    {
+      "url": "https://www.ecnlgirls.com/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
       ]
     },
     {
@@ -2870,6 +3094,12 @@
       "sources": [
         "src/content/body/severe-posterior-nosebleed.md",
         "src/content/body/swim-ear-infection-prevention.md"
+      ]
+    },
+    {
+      "url": "https://www.epa.gov/insect-repellents/using-insect-repellents-safely-and-effectively",
+      "sources": [
+        "src/content/articles/summer-camp-packing-list.md"
       ]
     },
     {
@@ -3017,6 +3247,12 @@
       ]
     },
     {
+      "url": "https://www.hackksoccer.com/products/hackk-soccer-shin-guards",
+      "sources": [
+        "src/content/articles/best-kids-shin-guards.md"
+      ]
+    },
+    {
       "url": "https://www.healthychildren.org/",
       "sources": [
         "src/pages/about/sources.astro"
@@ -3116,6 +3352,30 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/associated-terms-of-little-league/",
+      "sources": [
+        "src/content/articles/tee-ball-strikeouts.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/help-center/what-equipment-does-our-league-need-to-provide-for-regular-season/",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/league-officials/field-specifications/",
+      "sources": [
+        "src/content/articles/setting-up-a-baseball-field.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/play-little-league/league-finder/",
+      "sources": [
+        "src/content/articles/tee-ball-strikeouts.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org/play-little-league/softball/",
       "sources": [
         "src/content/body/youth-softball-safety-briefing.md",
@@ -3162,6 +3422,24 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/university/articles/field-maintenance-tips-what-you-can-do-to-improve-the-playability-durability-of-your-little-league-field/",
+      "sources": [
+        "src/content/articles/raking-the-infield.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/university/articles/mandatory-play-what-parents-need-to-know/",
+      "sources": [
+        "src/content/articles/tee-ball-strikeouts.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/university/articles/playing-equipment-inspection-baseball-softball-bats/",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md"
+      ]
+    },
+    {
       "url": "https://www.lung.org/clean-air/indoor-air",
       "sources": [
         "src/content/body/chlorine-asthma-swimmers.md"
@@ -3177,6 +3455,12 @@
       "url": "https://www.marketplace.org/story/2026/07/16/youth-sports-in-the-us-grow-prohibitively-expensive",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://www.meta.com/safety/",
+      "sources": [
+        "src/content/body/instagram-privacy-settings.md"
       ]
     },
     {
@@ -3560,6 +3844,12 @@
       ]
     },
     {
+      "url": "https://www.nfhs.org/stories/nfhs-adds-resource-for-parent-behavior-at-events-with-the-parent-seat",
+      "sources": [
+        "src/content/articles/sideline-etiquette-for-youth-sports-parents.md"
+      ]
+    },
+    {
       "url": "https://www.nfhs.org/who-we-are/our-members",
       "sources": [
         "src/pages/governing-bodies.astro"
@@ -3601,6 +3891,12 @@
       "url": "https://www.niams.nih.gov/health-topics/sports-injuries",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://www.nike.com/t/charge-kids-soccer-shin-guards-HhL7nH",
+      "sources": [
+        "src/content/articles/best-kids-shin-guards.md"
       ]
     },
     {
@@ -3743,6 +4039,19 @@
       ]
     },
     {
+      "url": "https://www.rawlings.com/sizing-gloves.html",
+      "sources": [
+        "src/content/articles/best-youth-softball-gloves.md",
+        "src/content/articles/the-8-year-olds-glove-that-cost-too-much.md"
+      ]
+    },
+    {
+      "url": "https://www.rawlings.com/softball-and-baseball-glove-differences.html",
+      "sources": [
+        "src/content/articles/best-youth-softball-gloves.md"
+      ]
+    },
+    {
       "url": "https://www.ready.gov/earthquakes",
       "sources": [
         "src/content/body/earthquake-protocol-outdoor.md"
@@ -3845,6 +4154,12 @@
       ]
     },
     {
+      "url": "https://www.soccerwithborders.org/",
+      "sources": [
+        "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
       "url": "https://www.spdstar.org/",
       "sources": [
         "src/content/adaptive/sensory-processing-and-youth-sports.md"
@@ -3920,9 +4235,27 @@
       ]
     },
     {
+      "url": "https://www.stopbullying.gov/bullying/other-types-of-aggressive-behavior",
+      "sources": [
+        "src/content/articles/telling-the-coach-your-kid-is-being-bullied.md"
+      ]
+    },
+    {
+      "url": "https://www.stopbullying.gov/bullying/what-is-bullying",
+      "sources": [
+        "src/content/articles/telling-the-coach-your-kid-is-being-bullied.md"
+      ]
+    },
+    {
       "url": "https://www.stopbullying.gov/cyberbullying",
       "sources": [
         "src/content/body/cyberbullying-team-apps.md"
+      ]
+    },
+    {
+      "url": "https://www.stopbullying.gov/resources/get-help-now",
+      "sources": [
+        "src/content/articles/telling-the-coach-your-kid-is-being-bullied.md"
       ]
     },
     {
@@ -3994,6 +4327,12 @@
       "url": "https://www.theifab.com/laws-of-the-game-documents/",
       "sources": [
         "src/content/rules/soccer.md"
+      ]
+    },
+    {
+      "url": "https://www.theifab.com/laws/latest/the-players-equipment/",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md"
       ]
     },
     {
@@ -4079,6 +4418,12 @@
       ]
     },
     {
+      "url": "https://www.usab.com/news/2026/04/play/player-resources",
+      "sources": [
+        "src/content/articles/basketball-levels-rec-school-club-aau.md"
+      ]
+    },
+    {
       "url": "https://www.usab.com/youth/",
       "sources": [
         "src/content/body/youth-basketball-safety-briefing.md"
@@ -4102,7 +4447,10 @@
     {
       "url": "https://www.usabaseball.com/bats/about",
       "sources": [
-        "src/content/articles/usa-vs-usssa-bats.md"
+        "src/content/articles/usa-vs-usssa-bats.md",
+        "src/content/articles/used-gear-rules.md",
+        "src/content/articles/used-vs-new-gear-the-actual-math.md",
+        "src/content/articles/youth-baseball-equipment-guide.md"
       ]
     },
     {
@@ -4366,6 +4714,18 @@
       ]
     },
     {
+      "url": "https://www.usaswimming.org/about-usas/governance/rules-policies",
+      "sources": [
+        "src/content/articles/youth-swimming-gear-guide.md"
+      ]
+    },
+    {
+      "url": "https://www.usaswimming.org/coaches-leaders/coaches/american-development-model",
+      "sources": [
+        "src/content/articles/swim-meet-weekend-logistics.md"
+      ]
+    },
+    {
       "url": "https://www.usaswimming.org/docs/default-source/governance/governance-lsc-resources/rules_policies/105-open-water.pdf",
       "sources": [
         "src/content/news/usa-swimming-open-water-safety-2026.md"
@@ -4576,6 +4936,12 @@
       ]
     },
     {
+      "url": "https://www.ussoccer.com/rap",
+      "sources": [
+        "src/content/articles/what-parents-shouldnt-do-at-youth-sports-games.md"
+      ]
+    },
+    {
       "url": "https://www.ussoccer.com/soccer-forward/resource-hub/the-concussion-initiative-and-reducing-heading",
       "sources": [
         "src/content/body/youth-soccer-safety-briefing.md"
@@ -4630,6 +4996,7 @@
     {
       "url": "https://www.usyouthsoccer.org/",
       "sources": [
+        "src/content/articles/travel-soccer-costs.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -4687,6 +5054,13 @@
       ]
     },
     {
+      "url": "https://www.wilson.com/en-us/blog/baseball/how-tos/how-to-choose-a-glove",
+      "sources": [
+        "src/content/articles/5-year-old-glove.md",
+        "src/content/articles/the-8-year-olds-glove-that-cost-too-much.md"
+      ]
+    },
+    {
       "url": "https://www.worldaquatics.com/",
       "sources": [
         "src/content/body/water-polo-specific-safety.md"
@@ -4708,6 +5082,12 @@
       "url": "https://ymca.net/",
       "sources": [
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://youthguidelines.nba.com/",
+      "sources": [
+        "src/content/articles/youth-basketball-equipment-guide.md"
       ]
     }
   ]

@@ -1,0 +1,457 @@
+---
+// /admin/intel — competitor intelligence review.
+//
+// Server-rendered read of the current state (summary tiles, review queue,
+// detected stack, runs) at request time, same pattern as
+// /admin/data-quality and /admin/link-health. All mutations (accept/reject a
+// review item, propose an org_sweep run, approve a proposed run) go through
+// the /api/admin/intel/* routes from client-side JS — this page never writes
+// to D1 directly.
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { requireAdmin } from '../../lib/admin-auth';
+import { getIntelSummary, listReviewQueue, listRuns, listStack } from '../../lib/intel/store';
+import { fetchCompetitorNames, fetchOrgSummaries } from '../../lib/intel-admin-http';
+import { env as cfEnv } from 'cloudflare:workers';
+
+export const prerender = false;
+
+const env = cfEnv as
+  | { DB?: D1Database; ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string }
+  | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+
+let loadError: string | null = null;
+let summary: Awaited<ReturnType<typeof getIntelSummary>> | null = null;
+let reviewItems: Array<{
+  id: string;
+  org_name: string | null;
+  domain: string;
+  competitor_name: string | null;
+  category: string;
+  confidence: number;
+  reason: string;
+  evidence_json: string | null;
+}> = [];
+let stackItems: Array<{
+  id: string;
+  org_name: string | null;
+  org_state: string | null;
+  category: string;
+  competitor_id: string | null;
+  competitor_name: string | null;
+  confidence: number;
+  status: string;
+}> = [];
+let runs: Array<{
+  id: string;
+  run_type: string;
+  status: string;
+  requested_by: string | null;
+  approved_by: string | null;
+  targets_planned: number;
+  targets_fetched: number;
+  signals_found: number;
+  notes: string | null;
+  created_at: string;
+}> = [];
+let byCompetitorEntries: Array<{ label: string; count: number }> = [];
+
+if (!env?.DB) {
+  loadError = 'Database not bound.';
+} else {
+  try {
+    const [summaryResult, reviewRows, stackRows, runRows] = await Promise.all([
+      getIntelSummary(env.DB),
+      listReviewQueue(env.DB, { status: 'pending', limit: 100 }),
+      listStack(env.DB, { limit: 200 }),
+      listRuns(env.DB, { limit: 50 }),
+    ]);
+    summary = summaryResult;
+    runs = runRows;
+
+    // listStack already joins organizations (org_name/org_state); listReviewQueue
+    // does not, so that one still needs a batch org lookup. Neither joins
+    // competitors, so display names come from one shared lookup below.
+    const competitorIds = [
+      ...reviewRows.map((r) => r.competitor_id),
+      ...stackRows.map((r) => r.competitor_id),
+      ...(summary.byCompetitor ?? []).map((r) => r.competitor_id),
+    ];
+    const [orgSummaries, competitorNames] = await Promise.all([
+      fetchOrgSummaries(env.DB, reviewRows.map((r) => r.org_id)),
+      fetchCompetitorNames(env.DB, competitorIds),
+    ]);
+
+    reviewItems = reviewRows.map((row) => ({
+      id: row.id,
+      org_name: row.org_id ? orgSummaries.get(row.org_id)?.name ?? null : null,
+      domain: row.domain,
+      competitor_name: competitorNames.get(row.competitor_id) ?? row.competitor_id,
+      category: row.category,
+      confidence: row.confidence,
+      reason: row.reason,
+      evidence_json: row.evidence_json,
+    }));
+
+    stackItems = stackRows.map((row) => ({
+      id: row.id,
+      org_name: row.org_name ?? null,
+      org_state: row.org_state ?? null,
+      category: row.category,
+      competitor_id: row.competitor_id,
+      competitor_name: row.competitor_id ? competitorNames.get(row.competitor_id) ?? row.competitor_id : null,
+      confidence: row.confidence,
+      status: row.status,
+    }));
+
+    byCompetitorEntries = (summary.byCompetitor ?? []).map((row) => ({
+      label: competitorNames.get(row.competitor_id) ?? row.competitor_id,
+      count: Number(row.count ?? 0),
+    }));
+  } catch (err) {
+    console.error('intel dashboard query failed', err);
+    loadError = 'Competitor intelligence query failed.';
+  }
+}
+
+const fmtDate = (s: string | null | undefined) =>
+  s ? new Date(s).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' }) : '—';
+
+const stateOptions = Array.from(new Set(stackItems.map((r) => r.org_state).filter((s): s is string => Boolean(s)))).sort();
+const competitorOptions = Array.from(
+  new Map(stackItems.filter((r) => r.competitor_id).map((r) => [r.competitor_id as string, r.competitor_name ?? r.competitor_id as string])),
+).sort((a, b) => a[1].localeCompare(b[1]));
+---
+<AdminLayout title="Competitor intelligence" description="Detected competitor tech stack, review queue, and sweep runs." email={auth.email}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="t-eyebrow mb-2">Admin · Competitor intelligence</p>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">Competitor intelligence</h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Which club-management, registration, and website tools each organization is running, and how confident the
+        detector is. Scheduled sweeps crawl prospect organization websites only — a competitor-owned property needs
+        an explicitly proposed AND approved run below, by a human, every time.
+      </p>
+    </div>
+  </section>
+
+  {loadError ? (
+    <section><div class="container-px py-10"><p class="font-display italic text-ink-soft font-medium">{loadError}</p></div></section>
+  ) : (
+    <>
+      <section class="border-b border-bone">
+        <div class="container-px py-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-bone">
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Orgs with a detected stack</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{summary?.orgsWithStack ?? 0}</p>
+            </div>
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Pending review</p>
+              <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${(summary?.pendingReview ?? 0) > 0 ? 'var(--rust)' : '#5F7075'};`}>
+                {summary?.pendingReview ?? 0}
+              </p>
+            </div>
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Signals, last 30 days</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{summary?.signalsLast30d ?? 0}</p>
+            </div>
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Last run</p>
+              <p class="font-display text-ink text-sm mt-1 font-medium">{fmtDate(summary?.lastRunAt)}</p>
+            </div>
+          </div>
+
+          {byCompetitorEntries.length > 0 && (
+            <div class="mt-4 flex flex-wrap gap-2">
+              {byCompetitorEntries.map((entry) => (
+                <span class="font-display italic text-xs px-2 py-1 border border-bone bg-paper text-ink-soft font-medium">
+                  {entry.label}: {entry.count}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section class="border-b border-bone">
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="t-h2 font-display text-ink font-medium">Review queue</h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
+              {reviewItems.length} pending
+            </span>
+          </div>
+          {reviewItems.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">Nothing waiting on review.</p>
+          ) : (
+            <ul class="grid gap-4" data-review-list>
+              {reviewItems.map((item) => (
+                <li class="border border-bone p-4 bg-paper" data-review-row data-id={item.id}>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="font-display text-ink font-medium">
+                      {item.org_name ?? 'Unmatched organization'} <span class="text-ink-soft font-normal">· {item.domain}</span>
+                    </p>
+                    <span class="font-display italic text-xs px-2 py-0.5 border border-bone bg-paper-warm text-ink-soft font-medium">
+                      confidence {item.confidence}
+                    </span>
+                  </div>
+                  <p class="font-display italic text-ink-soft text-sm mt-1 font-medium">
+                    {item.competitor_name} · {item.category} · flagged: {item.reason.replace(/_/g, ' ')}
+                  </p>
+                  {item.evidence_json && (
+                    <details class="mt-2">
+                      <summary class="font-display italic text-rust text-xs font-medium cursor-pointer hover:underline">Evidence</summary>
+                      <pre class="font-mono text-xs text-ink-soft mt-1 whitespace-pre-wrap break-all bg-paper-warm p-2 border border-bone">{item.evidence_json}</pre>
+                    </details>
+                  )}
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-ink bg-ink text-paper text-xs font-medium hover:opacity-90" data-decision="accepted">
+                      Accept
+                    </button>
+                    <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-rust bg-paper text-rust text-xs font-medium hover:bg-rust hover:text-paper" data-decision="rejected">
+                      Reject
+                    </button>
+                  </div>
+                  <div class="status-message text-xs font-display italic mt-2" style="display: none;" aria-live="polite"></div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      <section class="border-b border-bone">
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-4">
+            <h2 class="t-h2 font-display text-ink font-medium">Detected stack</h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
+              {stackItems.length}
+            </span>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mb-4 font-display italic text-sm font-medium" data-stack-filters>
+            <label class="flex items-center gap-1">
+              <span class="text-ink-soft text-xs">Competitor</span>
+              <select data-filter="competitor" class="min-h-11 border border-bone bg-paper px-2 py-1 text-ink text-xs">
+                <option value="">All</option>
+                {competitorOptions.map(([id, label]) => <option value={id}>{label}</option>)}
+              </select>
+            </label>
+            <label class="flex items-center gap-1">
+              <span class="text-ink-soft text-xs">State</span>
+              <select data-filter="state" class="min-h-11 border border-bone bg-paper px-2 py-1 text-ink text-xs">
+                <option value="">All</option>
+                {stateOptions.map((s) => <option value={s}>{s}</option>)}
+              </select>
+            </label>
+            <button type="button" data-sort-confidence class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">
+              Sort by confidence ↓
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm min-w-[640px]" data-stack-table>
+              <thead>
+                <tr class="border-b border-bone">
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Organization</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">State</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Category</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Competitor</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Confidence</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stackItems.length === 0 && (
+                  <tr><td colspan="6" class="py-6 font-display italic text-ink-soft font-medium">No detections yet.</td></tr>
+                )}
+                {stackItems.map((row) => (
+                  <tr class="border-b border-bone hover:bg-paper-warm" data-competitor={row.competitor_id ?? ''} data-state={row.org_state ?? ''} data-confidence={row.confidence}>
+                    <td class="py-2 pr-3 align-top font-display text-ink font-medium">{row.org_name ?? row.id}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.org_state ?? '—'}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.category}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.competitor_name ?? '—'}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink font-medium">{row.confidence}</td>
+                    <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs font-medium">{row.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="t-h2 font-display text-ink font-medium">Runs</h2>
+            <button type="button" id="propose-org-sweep" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-ink bg-ink text-paper text-xs font-medium hover:opacity-90">
+              Propose org_sweep run
+            </button>
+          </div>
+          <div class="status-message text-xs font-display italic mb-4" id="propose-status" style="display: none;" aria-live="polite"></div>
+
+          {runs.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">No runs yet.</p>
+          ) : (
+            <ul class="grid gap-3" data-runs-list>
+              {runs.map((run) => (
+                <li class="border border-bone p-4 bg-paper" data-run-row data-id={run.id} data-run-type={run.run_type}>
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="font-display text-ink font-medium">
+                      {run.run_type} <span class="text-ink-soft font-normal">· {run.status}</span>
+                    </p>
+                    <span class="font-display italic text-ink-soft text-xs font-medium">{fmtDate(run.created_at)}</span>
+                  </div>
+                  <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">
+                    requested by {run.requested_by ?? '—'}{run.approved_by ? ` · approved by ${run.approved_by}` : ''}
+                    {' '}· planned {run.targets_planned} · fetched {run.targets_fetched} · signals {run.signals_found}
+                  </p>
+                  {run.notes && <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">{run.notes}</p>}
+                  {run.status === 'proposed' && (
+                    <div class="mt-3">
+                      {run.run_type === 'competitor_property' && (
+                        <p class="font-display italic text-rust text-xs font-medium mb-2">
+                          Warning: this run targets competitor-owned properties, not just prospect org sites. Approving it will be recorded, but it will NOT execute — there is no reviewed target-list mechanism for competitor properties yet, so the run is marked failed immediately after approval.
+                        </p>
+                      )}
+                      <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-ink bg-ink text-paper text-xs font-medium hover:opacity-90" data-action="approve-run">
+                        Approve {run.run_type} run
+                      </button>
+                    </div>
+                  )}
+                  <div class="status-message text-xs font-display italic mt-2" style="display: none;" aria-live="polite"></div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+    </>
+  )}
+
+  <script>
+  function postJson(endpoint: string, payload?: unknown) {
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload ?? {}),
+    }).then((res) =>
+      res
+        .json()
+        .then((data) => ({ ok: res.ok, data }))
+        .catch(() => ({ ok: false, data: { error: 'invalid response' } })),
+    );
+  }
+
+  function showStatus(el: Element | null, message: string) {
+    if (!el) return;
+    el.textContent = message;
+    (el as HTMLElement).style.display = 'block';
+  }
+
+  // Review queue: Accept / Reject.
+  document.querySelectorAll('[data-review-row]').forEach((row) => {
+    const id = row.getAttribute('data-id');
+    const statusEl = row.querySelector('.status-message');
+    if (!id) return;
+    row.querySelectorAll('[data-decision]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const decision = btn.getAttribute('data-decision');
+        const buttons = row.querySelectorAll('button');
+        buttons.forEach((b) => ((b as HTMLButtonElement).disabled = true));
+        postJson(`/api/admin/intel/review/${encodeURIComponent(id)}`, { decision }).then((r) => {
+          if (!r.ok || !(r.data as any)?.ok) {
+            showStatus(statusEl, 'Failed: ' + ((r.data as any)?.error || 'unknown error'));
+            buttons.forEach((b) => ((b as HTMLButtonElement).disabled = false));
+            return;
+          }
+          showStatus(statusEl, decision === 'accepted' ? 'Accepted.' : 'Rejected.');
+          (row as HTMLElement).style.opacity = '0.5';
+          setTimeout(() => row.remove(), 300);
+        });
+      });
+    });
+  });
+
+  // Detected stack: client-side filter + sort over the already-rendered rows.
+  const stackTable = document.querySelector('[data-stack-table]');
+  const filters = document.querySelector('[data-stack-filters]');
+  let sortDescending = true;
+
+  function applyStackFilters() {
+    if (!stackTable) return;
+    const competitorSel = filters?.querySelector('[data-filter="competitor"]') as HTMLSelectElement | null;
+    const stateSel = filters?.querySelector('[data-filter="state"]') as HTMLSelectElement | null;
+    const competitor = competitorSel?.value ?? '';
+    const state = stateSel?.value ?? '';
+    stackTable.querySelectorAll('tbody tr[data-competitor]').forEach((tr) => {
+      const rowCompetitor = tr.getAttribute('data-competitor') ?? '';
+      const rowState = tr.getAttribute('data-state') ?? '';
+      const show = (!competitor || competitor === rowCompetitor) && (!state || state === rowState);
+      (tr as HTMLElement).style.display = show ? '' : 'none';
+    });
+  }
+
+  filters?.querySelectorAll('select').forEach((sel) => sel.addEventListener('change', applyStackFilters));
+
+  document.querySelector('[data-sort-confidence]')?.addEventListener('click', (e) => {
+    if (!stackTable) return;
+    const tbody = stackTable.querySelector('tbody');
+    if (!tbody) return;
+    const rows = Array.from(tbody.querySelectorAll('tr[data-competitor]'));
+    rows.sort((a, b) => {
+      const av = Number(a.getAttribute('data-confidence') ?? 0);
+      const bv = Number(b.getAttribute('data-confidence') ?? 0);
+      return sortDescending ? bv - av : av - bv;
+    });
+    rows.forEach((r) => tbody.appendChild(r));
+    sortDescending = !sortDescending;
+    const btn = e.currentTarget as HTMLButtonElement;
+    btn.textContent = `Sort by confidence ${sortDescending ? '↓' : '↑'}`;
+  });
+
+  // Runs: propose an org_sweep, approve a proposed run.
+  document.getElementById('propose-org-sweep')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget as HTMLButtonElement;
+    const statusEl = document.getElementById('propose-status');
+    btn.disabled = true;
+    postJson('/api/admin/intel/runs', { runType: 'org_sweep' }).then((r) => {
+      btn.disabled = false;
+      if (!r.ok || !(r.data as any)?.ok) {
+        showStatus(statusEl, 'Failed: ' + ((r.data as any)?.error || 'unknown error'));
+        return;
+      }
+      showStatus(statusEl, 'Proposed. Reload to see it in the list below.');
+    });
+  });
+
+  document.querySelectorAll('[data-run-row]').forEach((row) => {
+    const id = row.getAttribute('data-id');
+    const runType = row.getAttribute('data-run-type');
+    const statusEl = row.querySelector('.status-message');
+    if (!id) return;
+    row.querySelector('[data-action="approve-run"]')?.addEventListener('click', (e) => {
+      const btn = e.currentTarget as HTMLButtonElement;
+      if (runType === 'competitor_property') {
+        const confirmed = window.confirm(
+          'This run targets competitor-owned properties, not just prospect org sites. Approving it will be recorded, but it will NOT execute — there is no reviewed target-list mechanism yet. Approve anyway?',
+        );
+        if (!confirmed) return;
+      }
+      btn.disabled = true;
+      postJson(`/api/admin/intel/runs/${encodeURIComponent(id)}/approve`).then((r) => {
+        if (!r.ok || !(r.data as any)?.ok) {
+          showStatus(statusEl, 'Failed: ' + ((r.data as any)?.error || 'unknown error'));
+          btn.disabled = false;
+          return;
+        }
+        showStatus(statusEl, 'Approved. Execution started.');
+        btn.remove();
+      });
+    });
+  });
+</script>
+</AdminLayout>

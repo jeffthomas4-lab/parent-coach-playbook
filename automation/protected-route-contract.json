@@ -235,6 +235,46 @@
     {
       "source": "src/pages/api/admin/camps/[id]/request-info.ts",
       "control": "mutation"
+    },
+    {
+      "source": "src/pages/admin/intel.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/intel/summary.ts",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/intel/stack.ts",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/intel/review.ts",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/intel/review/[id].ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/intel/opportunities.ts",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/intel/runs.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/intel/runs/[id]/approve.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/intel/rescore.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/intel/competitors.ts",
+      "control": "mutation"
     }
   ]
 }

@@ -51,11 +51,24 @@ Every session that changes a file in this repo ends with this PowerShell block:
 npm run build
 git add -A
 git commit -m "ONE-LINE SUMMARY"
-npx wrangler pages deploy dist --project-name parent-coach-playbook --branch main
+npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
+npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars
+node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production
 git push
 ```
 
 Build before commit. Commit before deploy. Specific commit message, not "update files."
+
+⚠️ **Two corrections, 2026-08-05.** Production is the Cloudflare **Worker** `parent-coach-desk`, not
+a Pages project. `wrangler pages deploy dist --project-name parent-coach-playbook` targets the
+RETIRED Pages project and does **not** reach the live site — a Pages deploy reported success on
+2026-07-22 while production stayed unchanged. And GitHub Actions was removed from every repo on
+2026-08-05 after it burned the monthly allotment in four days, so `deploy-workers.yml` and its
+protected `production` approval gate are gone. Deploy runs locally now. Keep the `--dry-run` line;
+it is the cheapest surviving piece of the old gate. See
+`Outputs/_system/GITHUB-ACTIONS-REPLACEMENT.md`.
+
+The stack line above also says Cloudflare Pages. It is a Worker (`src/worker.ts`).
 
 ## Agents and commands available
 

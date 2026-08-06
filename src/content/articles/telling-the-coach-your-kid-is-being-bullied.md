@@ -1,7 +1,9 @@
 ---
 title: "Telling the coach *your kid is being bullied*"
-dek: "Without making it bigger. Without making it smaller. The conversation that protects your kid and the team."
-seoDescription: "Your daughter is nine. She tells you Tuesday night, in a quiet voice, that two girls on the team have been excluding her at practice."
+dek: "Name what happened, use the program's safeguarding route, and ask who owns the next step."
+seoTitle: "How to Tell a Coach Your Kid Is Being Bullied"
+seoDescription: "Report bullying in youth sports with specific facts, distinguish peer conflict from a harmful pattern, and use the program's safeguarding escalation route."
+bluf: "Tell the coach what your child reported using dates, places, actions, and exact words when possible. Separate ordinary peer conflict from repeated targeting or a power imbalance. For threats, assault, abuse, or immediate danger, skip the routine coach conversation and use the program's safeguarding and emergency routes."
 topic: "communication"
 format: "essay"
 phase: "drive-home"
@@ -10,89 +12,72 @@ age: "8-10"
 hero: "/illustrations/rearview-hands-wheel.webp"
 heroAlt: "An adult's hands rest on a steering wheel at dusk, the rearview mirror showing only the top of a child's head as the road blurs ahead."
 publishedAt: 2026-04-08
+updatedAt: 2026-08-02
 featured: true
 editorial:
-  qualityGrade: 8
+  qualityGrade: 9
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
-  flagSensitiveTopic: false
+  flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Rebuilt as a safeguarding report and escalation guide. Removed promises about coach response, investigation, confidentiality, two-week resolution, parent contact, leaving the team, and future social outcomes."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-Your daughter is nine. She tells you Tuesday night, in a quiet voice, that two girls on the team have been excluding her at practice. They turn their backs when she walks up. They whisper. They don't pass her the ball in drills.
+**Last reviewed:** August 2026 | **Reviewed by:** Parent Coach Playbook Editorial
 
-You are furious. You are also clear that the way you handle this conversation with the coach will determine whether your daughter ever tells you something hard again.
+When a child says, "They are bullying me," believe that something needs attention without deciding the label or outcome on the spot. Your first job is to understand what happened and whether the child is safe for the next practice.
 
-Here is how to do it.
+Do not promise secrecy. Say, "I will only tell the people who need to help, and I will tell you before I do it when I can."
 
-## Start with your daughter
+## Separate the label from the immediate need
 
-Before you talk to the coach, talk to your daughter again. Not to interrogate. To clarify.
+Ask the child to describe one or two moments in their own words. Record the date, location, people present, what was said or done, and whether it has happened before. Avoid repeated questioning or asking the child to prove another child's motive.
 
-*Tell me one specific moment from this week.* Get a real example. *Tuesday at practice, when we were doing the passing drill, they didn't pass it to me three times in a row.*
+StopBullying.gov defines [bullying](https://www.stopbullying.gov/bullying/what-is-bullying) as unwanted aggressive behavior involving a real or perceived power imbalance that is repeated or could be repeated. Its current guidance distinguishes that pattern from a disagreement between peers with no power imbalance, while noting that other aggressive behavior can still require adult attention.
 
-You need a specific moment because you are about to ask another adult to act on what you say. Specifics are how you stay credible.
+That distinction changes the response, not whether you care. A mutual argument may call for conflict support. Repeated exclusion, threats, humiliation, or physical targeting calls for a safeguarding and conduct response.
 
-Ask your daughter what she wants to happen. *Do you want me to talk to coach? Do you want me to do nothing? Do you want me to talk to the other girls' moms?*
+If this sounds like a teammate dispute rather than targeting, the coach-facing guide to [player conflict](/coaches/when-players-have-conflict-with-each-other/) explains why mediation belongs only in the mutual-conflict lane.
 
-She will probably say *I don't know.* Press a little. Most kids at nine want the coach to know but don't want to be the one to tell. That's where you come in.
+## Send facts through the safeguarding route
 
-## Email the coach. Not text.
+Find the program's current code of conduct, reporting policy, and safeguarding contact. The coach may be the first contact, but should not be assumed to be the only or final contact.
 
-Email creates a paper trail. Coaches treat email more seriously than texts. The format is short.
+Use a short written report:
 
-*Hi Coach. Mia mentioned something this week that I wanted to share. She's been feeling left out by Avery and Sophie at practice. She mentioned three specific moments in the last week where she felt excluded. I'm not asking for anything specific. I just wanted you to know, in case you're seeing it too. Happy to talk in person at practice Tuesday.*
+"My child reported that on Tuesday during the passing drill, two teammates called her ___ and blocked her from joining the group. She reports similar conduct on Thursday. She is worried about returning Saturday. Please confirm who owns this report, what immediate safety plan applies, and how I should send any additional information."
 
-That's the whole email. No accusations. Three sentences of facts. An offer to talk.
+Use the child's exact words only when needed. Do not send the report to the team chat, question other children yourself, or contact the other family before the program explains its process.
 
-## What the coach will do
+Ask for receipt and the next contact point. Do not demand private discipline details about another child or a guaranteed investigation timeline.
 
-Most coaches handle this well. The coach will watch practice closely the next session. He will notice the pattern if it's there. He will probably restructure drills to mix groups differently. He may have a quiet word with the two girls.
+## Make a plan for the next team contact
 
-He will not call you back with a play-by-play. That is fine. Your daughter is a kid on his team. He is handling it.
+Before the next practice or game, confirm where your child checks in, which adult they can approach, how they can leave an unsafe interaction, and how you will be reached. If the program cannot provide a workable immediate plan, pause attendance while you escalate through its published route.
 
-## Two weeks later
+Tell the child what you reported and what will happen next in plain language. Do not ask them to confront the other child, gather evidence, or monitor whether the coach is doing enough.
 
-Watch for changes. Ask your daughter, casually, whether things at practice feel different. If the answer is *a little better,* the coach handled it. Move on.
+At home, keep the door open without turning every ride into an interview. [When she says everyone hates me](/drive-home/when-she-says-everyone-hates-me/) offers a listening script; [when your kid is the new kid](/drive-there/when-your-kid-is-the-new-kid/) covers ordinary belonging work outside a safeguarding report.
 
-If the answer is *no,* you go back to the coach. *Hey coach, two weeks ago I mentioned the situation with Mia. She's still feeling pretty left out. Wondering if we can talk through what you've seen.*
+## Escalate danger, abuse, and unresolved risk
 
-The second conversation is in person, not by email. Five minutes after practice. Calm.
+Threats, assault, sexual conduct, adult misconduct, hazing, stalking, or suspected abuse are not routine playing-time or teammate issues. Use the program's emergency and safeguarding policy, the facility or governing body's reporting channel, and the appropriate local authority.
 
-## When it's not just exclusion
+StopBullying.gov's [Get Help Now](https://www.stopbullying.gov/resources/get-help-now) directs people to call 911 when a crime has occurred or someone faces immediate risk of harm, and to call or text 988 for suicide or mental-health crisis support. Those are United States resources; use the local emergency and crisis services where the child is located.
 
-If your daughter is being physically intimidated, deliberately tripped, hit, or threatened, that is a different conversation. That conversation involves the coach, the team manager, and possibly the league. It happens within 48 hours.
+If the program is part of the U.S. Olympic and Paralympic Movement, the [2026 SafeSport Code](https://uscenterforsafesport.org/response-and-resolution/safesport-code/) defines that system's jurisdiction and misconduct process. Do not assume SafeSport covers every youth team.
 
-The script is direct. *Coach, this isn't about exclusion anymore. Mia was tripped on purpose Tuesday. She has the bruise. We need a plan.*
+An adult response cannot promise a particular finding. It can document the report, protect the child from immediate exposure, use the correct channel, and keep escalating when the stated safety plan does not match the risk.
 
-A coach who can't act on that is a coach you leave the team over. Most coaches act on it.
+### Sources reviewed
 
-## What you don't do
-
-You don't text the other girls' parents. That escalates the situation in ways that go bad fast.
-
-You don't talk to your daughter about *those mean girls* at home. That gives the bullying more space in her head.
-
-You don't pull her from the team unless the coach can't fix it. Pulling her teaches her that the answer to social difficulty is to leave. That is sometimes the right answer at fifteen. It is rarely the right answer at nine.
-
-## What you do at home
-
-You make home a place where she can talk about the team without it being a crisis. Ask about practice the way you'd ask about school. Listen for what she volunteers. Don't probe.
-
-You praise her for telling you. *I'm glad you said something. That was brave.* Once. Not a speech.
-
-## The longer arc
-
-The girls excluding her are nine years old. They are bad at being friends because they are nine. By eleven and twelve, the social dynamics will have shifted three times. The exclusion of October is rarely the exclusion of February.
-
-Your daughter telling you about it Tuesday night is the part that matters most. That she trusted you with a hard thing. That trust is the thing you protect by handling the conversation with the coach calmly, briefly, and without making her feel like the problem grew.
-
-By the time she's fifteen, she will be dealing with social dynamics that are harder than this one. She will tell you about those too, if you handle this one well.
-
-The coach will solve the practice problem. Your job is the longer one.
+- StopBullying.gov, [What Is Bullying](https://www.stopbullying.gov/bullying/what-is-bullying), reviewed October 2024.
+- StopBullying.gov, [Other Types of Aggressive Behavior](https://www.stopbullying.gov/bullying/other-types-of-aggressive-behavior), reviewed May 2026.
+- StopBullying.gov, [Get Help Now](https://www.stopbullying.gov/resources/get-help-now), reviewed February 2025.
+- U.S. Center for SafeSport, [2026 SafeSport Code](https://uscenterforsafesport.org/response-and-resolution/safesport-code/), 2026.

@@ -157,4 +157,56 @@ describe('runApprovedRun', () => {
     const after = await db.prepare(`SELECT status FROM intel_runs WHERE id = ?`).bind(run.id).first<any>();
     expect(after.status).toBe('complete');
   });
+
+  it('refuses to execute an approved competitor_property run: returns null, marks the run failed with error_code competitor_targets_not_implemented, and never fetches anything', async () => {
+    const fetchMock = vi.fn();
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const run = await createRun(db, { runType: 'competitor_property' });
+    await approveRun(db, run.id, 'jeff@parentcoachdesk.com');
+
+    const result = await runApprovedRun({ DB: db, ...ENV_BASE }, run.id);
+    expect(result).toBeNull();
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    const after = await db.prepare(`SELECT status, error_code, finished_at FROM intel_runs WHERE id = ?`).bind(run.id).first<any>();
+    expect(after.status).toBe('failed');
+    expect(after.error_code).toBe('competitor_targets_not_implemented');
+    expect(after.finished_at).toBeTruthy();
+  });
+
+  it('an approved org_sweep run always runs with allowCompetitorProperties: false, even for a prospect org sitting on a tracked competitor\'s own canonical domain', async () => {
+    // sportsgravy.com is the canonical domain of the seeded SportsGravy
+    // CompetitorDefinition. If runApprovedRun ever unlocked
+    // allowCompetitorProperties for an org_sweep run, this target would be
+    // fetched instead of skipped -- asserting on the skip, the skip reason,
+    // and the absence of any fetch call is a check on the policy actually
+    // handed to the fetch layer, not just on a mock's call arguments.
+    await insertOrg(db, 'org-comp', 'https://sportsgravy.com/');
+    const fetchMock = vi.fn().mockImplementation(async (url: string) => {
+      throw new Error(`should never fetch a competitor-owned property: ${url}`);
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+
+    const run = await createRun(db, { runType: 'org_sweep' });
+    await approveRun(db, run.id, 'jeff@parentcoachdesk.com');
+
+    const result = await runApprovedRun({ DB: db, ...ENV_BASE }, run.id);
+    expect(result).not.toBeNull();
+    expect(result!.fetched).toBe(0);
+    expect(result!.skipped).toBe(1);
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    const skipTallyLine = logSpy.mock.calls.map((call) => call[0] as string).find((line) => line.includes('sweep_skip_tally'));
+    expect(skipTallyLine).toBeTruthy();
+    expect(JSON.parse(skipTallyLine!).skipTally).toEqual({ competitor_property: 1 });
+    logSpy.mockRestore();
+
+    const signals = await db.prepare(`SELECT COUNT(*) AS n FROM org_tech_signals WHERE org_id = ?`).bind('org-comp').first<{ n: number }>();
+    expect(signals!.n).toBe(0);
+
+    const after = await db.prepare(`SELECT status FROM intel_runs WHERE id = ?`).bind(run.id).first<any>();
+    expect(after.status).toBe('complete');
+  });
 });

@@ -95,8 +95,33 @@ describe('intel fetcher', () => {
   it('isAllowedByRobots honors a path-specific Disallow prefix', async () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response('User-agent: *\nDisallow: /admin\n', { status: 200, headers: { 'content-type': 'text/plain' } }));
     global.fetch = fetchMock as unknown as typeof fetch;
-    const allowedRoot = await isAllowedByRobots(db, 'https://path-test.example.org/', POLICY);
+    const allowedRoot = await isAllowedByRobots(db, 'https://path-test.example.org/', POLICY, DEFINITIONS);
     expect(allowedRoot).toBe(true);
+  });
+
+  it('a robots.txt that redirects to a competitor-owned host is treated as disallowed, and the competitor URL is never fetched', async () => {
+    const fetchMock = vi.fn().mockImplementation(async (url: string) => {
+      if (url === 'https://redirect-robots.example.org/robots.txt') {
+        return new Response(null, { status: 302, headers: { location: 'https://sportsgravy.com/robots.txt' } });
+      }
+      throw new Error(`should never fetch a competitor-owned property: ${url}`);
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+    const outcome = await fetchPublicPage(db, 'https://redirect-robots.example.org/', POLICY, DEFINITIONS);
+    expect(outcome.skippedReason).toBe('robots_disallowed');
+  });
+
+  it('a robots.txt larger than the cap is treated as disallowed and does not buffer the whole body', async () => {
+    const fetchMock = vi.fn().mockImplementation(async (url: string) => {
+      if (url.includes('robots.txt')) {
+        // Well over the 128 KB robots.txt cap.
+        return new Response('Disallow: /\n'.repeat(20_000), { status: 200, headers: { 'content-type': 'text/plain' } });
+      }
+      throw new Error(`should never fetch the page when robots.txt is oversized: ${url}`);
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+    const outcome = await fetchPublicPage(db, 'https://huge-robots.example.org/', POLICY, DEFINITIONS);
+    expect(outcome.skippedReason).toBe('robots_disallowed');
   });
 
   it('rate limits a second fetch of the same domain inside the window', async () => {
