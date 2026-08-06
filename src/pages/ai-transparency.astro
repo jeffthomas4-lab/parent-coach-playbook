@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout title="AI Transparency" description="How Parent Coach Desk labels and reviews AI-assisted editorial content.">
+  <section class="section-band"><div class="container-px py-12 md:py-16 max-w-4xl"><p class="t-eyebrow mb-3">AI transparency</p><h1 class="t-h1 font-display text-ink">How AI is used here.</h1><p class="t-dek mt-5">Last updated August 4, 2026.</p></div></section>
+  <section class="section-band section-band-sunken"><div class="container-px py-10 max-w-4xl article-body">
+    <h2>What is AI-assisted</h2><p>Editorial content may use AI for drafting, outlining, editing, summarization, or research organization and carries an AI-assistance statement.</p>
+    <h2>What the notice means</h2><p><strong>AI-assisted editorial content</strong> means AI contributed to production. A separate statement says whether review by Jeff Thomas is recorded in article metadata.</p>
+    <h2>Responsibility and corrections</h2><p>{SITE.name} and Field &amp; Forge Ventures remain responsible for published content. AI output can be wrong. Do not use it as medical, legal, safeguarding, or eligibility advice. Report a problem through the <a href="/trust/">corrections and removals page</a> or email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+    <h2>Scope</h2><p>These notices are a technical transparency control, not a certification of legal compliance. They do not replace review by qualified counsel for a particular jurisdiction or use case.</p>
+  </div></section>
+</BaseLayout>

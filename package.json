@@ -17,7 +17,7 @@
     "build:og:safe": "python3 scripts/build-og-images.py || echo 'OG image build skipped (python/Pillow unavailable). Existing committed cards in public/og/ will ship.'",
     "check:content-lengths": "node scripts/check-content-field-lengths.mjs --check",
     "clean": "node scripts/clean-build-cache.mjs",
-    "build": "npm run check:content-lengths && npm run build:manifest && npm run build:og:safe && astro build",
+    "build": "npm run check:content-lengths && npm run build:manifest && npm run build:og:safe && astro build && node scripts/normalize-generated-wrangler.mjs",
     "build:clean": "npm run clean && npm run build",
     "build:production": "node scripts/build-production.mjs",
     "deploy:staging:verified": "node scripts/deploy-staging-verified.mjs",
@@ -38,6 +38,7 @@
     "illustrations:wire": "python3 scripts/wire-illustrations.py",
     "illustrations:wire:dry": "python3 scripts/wire-illustrations.py --dry-run",
     "check": "astro check",
+    "check:ai-transparency": "node scripts/check-ai-transparency.mjs",
     "check:workflow-pins": "node scripts/check-workflow-action-pins.mjs",
     "check:release-evidence": "node scripts/check-release-evidence.mjs coordination/release-evidence/rc02.json --structure-only",
     "cut:release-evidence": "node scripts/cut-release-evidence.mjs",
@@ -110,7 +111,8 @@
     "sharp": "^0.35.0",
     "fast-uri": "^3.1.4",
     "svgo": "^4.0.2",
-    "brace-expansion": "^5.0.8"
+    "brace-expansion": "^5.0.9",
+    "undici": "7.29.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -123,6 +125,6 @@
     "linkinator": "^7.6.1",
     "typescript": "^5.6.3",
     "vitest": "^4.1.10",
-    "wrangler": "^4.88.0"
+    "wrangler": "^4.118.0"
   }
 }

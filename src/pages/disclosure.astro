@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../data/site';
-const updated = 'July 30, 2026';
+const updated = 'August 4, 2026';
 ---
 <BaseLayout
   title="Privacy and Editorial Disclosure"
@@ -14,6 +14,16 @@ const updated = 'July 30, 2026';
         Privacy, affiliates, and how this site is funded.
       </h1>
       <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}.</p>
+    </div>
+  </section>
+
+  <section class="section-band section-band-sunken">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4"><p class="t-eyebrow">AI transparency</p></div>
+      <div class="md:col-span-8 article-body">
+        <p>We identify AI-assisted editorial content with the affected article. A recorded human review is identified separately; we do not treat an automated review as human review.</p>
+        <p>Our current categories, review rules, and correction path are described on the <a href="/ai-transparency/" class="text-rust hover:underline">AI transparency page</a>.</p>
+      </div>
     </div>
   </section>
 
