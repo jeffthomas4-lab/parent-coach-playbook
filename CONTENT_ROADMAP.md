@@ -46,7 +46,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | drafted 2026-07-24 (src/content/articles/laundry-stripping-sports-gear.md) |
 | Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | drafted 2026-08-03 (src/content/articles/helmet-care-without-wrecking-it.md) |
 | Cleat care that triples the lifespan | Editorial | Team Parent · Equipment | drafted 2026-08-04 (src/content/articles/cleat-care-that-triples-the-lifespan.md) |
-| Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | PIPELINE |
+| Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | drafted 2026-08-05 (src/content/articles/glove-break-in-the-right-way-and-the-wrong-way.md; water temp not cited as a specific number, Wilson and Rawlings give technique but no verifiable degree figure, so the piece says "warm, not boiling" instead) |
 | The car kit: what stays in the trunk all season | Editorial | Team Parent · Game day | PIPELINE |
 | The ski-boot dryer hack and other gear-drying tricks | Editorial | Team Parent · Equipment | PIPELINE |
 | Color-coded bin system for households with multiple sports | Editorial | Team Parent · Communication | PIPELINE |
