@@ -12,9 +12,9 @@ sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/sideline-first-aid-kit-bench.webp"
 heroAlt: "An open first aid kit, a water bottle, athletic tape, and an ice pack sit on a folding sideline chair, two kids blurred in the background beyond a chain-link fence."
-publishedAt: 2026-07-30
+publishedAt: 2026-08-07
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -24,10 +24,16 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-07-30
-  status: ready-for-jeff
+  claudeReviewedAt: 2026-08-07
+  jeffReviewedAt: 2026-08-07
+  status: published
   reviewerNotes: "HOLD: flagSensitiveTopic is true (concussion/head injury is health and safety guidance), routing to Jeff per the hard-holds list. Voice/rubric scoring (Sections A-D) not run since the hold stops further judging beyond field validation, per file instructions. Facts verified live this run, independently re-confirmed today via web search: CDC HEADS UP 'Responding to a Sports-related Concussion' (remove immediately, check danger signs, no return same day, medical clearance required, coach should not judge severity themselves - cdc.gov/heads-up/response). Washington's Zackery Lystedt law, RCW 28A.600.190, confirmed via app.leg.wa.gov and independently re-verified via UW newsroom and Sports Litigation Alert coverage: named for a real 2006 case (13-year-old, hit to the head, returned to play, collapsed after the game), first state youth concussion law (enacted May 2009), requires an annual signed information sheet, immediate removal when a concussion is suspected, and written return-to-play clearance from a licensed healthcare provider. Cross-checked against a 2026 50-state concussion law review confirming all states now require removal and medical clearance, with variability remaining in coach-training mandates. Cross-checked src/content/articles for coverage: football-concussion-what-parents-need-to-know.md covers symptoms and general parent-facing return-to-play info; this piece is angled at the coach's specific procedural duty and the dual-role tension of being both parent and coach, which that piece does not cover. No coverage overlap found beyond the shared underlying facts. Mechanical checks (Section E): dek 14 words, under the 15-word cap, pass. seoTitle 40 chars, seoDescription 148 chars, bluf 265 chars, all within schema min/max. No em dashes anywhere in the file. Frontmatter schema-complete for the articles collection. Not yet independently checked: whether flagResolutions needs an entry once Jeff clears the hold."
-  factCheckGoodThrough: 2027-07-30
+  factCheckGoodThrough: 2027-08-07
+  flagResolutions:
+    - flag: "SENS"
+      reason: "Head injury is health and safety guidance, but the piece points to the existing legal standard (immediate removal, written medical clearance) and tells the coach not to judge severity himself, which is the conservative call rather than a substitute for medical advice. Jeff cleared it for publication 2026-08-07."
+      date: "2026-08-07"
+      admin: "jeff@coachjeffthomas.com"
 ---
 
 Zackery Lystedt was thirteen years old when he took a hit to the head in a middle school football game in Washington in 2006. He went to the sideline, came out for a few plays, told his coach he felt fine, and went back in. He collapsed at the end of the game.
