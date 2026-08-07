@@ -217,3 +217,6 @@
 2026-08-07T17:17:09.953Z	git:unlock	manual	evacuated	.git\_stray_junk\.git_refs_heads_claude-build-slices.lock.old2	age=unknown
 2026-08-07T17:17:09.953Z	git:unlock	manual	evacuated	.git\_stray_junk\.git_refs_heads_fix-camps-cluster-centering.lock.old1	age=unknown
 2026-08-07T17:17:09.953Z	git:unlock	manual	evacuated	.git\_stray_junk\.git_refs_heads_migration_pages-to-workers-staging.lock.old1	age=unknown
+2026-08-07T19:06:44.335Z	git:unlock	manual	cleared	.git/HEAD.lock	age=0m
+2026-08-07T19:21:24.220Z	git:unlock	manual	cleared	.git/HEAD.lock	age=3m
+2026-08-07T21:16:01.137Z	git:unlock	manual	cleared	.git/index.lock	age=1m
