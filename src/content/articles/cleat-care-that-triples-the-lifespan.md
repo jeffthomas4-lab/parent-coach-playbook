@@ -10,9 +10,11 @@ format: "note"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-publishedAt: 2026-08-04
+hero: "/illustrations/muddy-cleats-on-mat.webp"
+heroAlt: "A pair of mud-caked youth cleats sits on a doormat just inside a door, dried grass scattered around them in evening light."
+publishedAt: 2026-08-07
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -24,8 +26,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-07
-  status: draft
-  reviewerNotes: "Ed's revision pass. Trimmed the dek from exactly 15 words to 12 ('Hand-washing and keeping them off pavement make cleats last twice as long.'). Rewrote the three sentence-rhythm clusters Penny flagged (the 9-11-10 cluster around the dryer/sun paragraph, the 18-15-16 cluster around leather vs synthetic, and the 21-25-20 cluster around the pavement warning) for length variety instead of cutting any facts. Re-running the check programmatically after those edits surfaced one more violation at the seam between the Nike-instructions sentence and the rewritten heat paragraph; shortened 'Heat is what actually kills them, whether it comes from the dryer or the sun on a dashboard.' to 'Heat kills them, whether from a dryer or a hot dashboard.' to fix it. Re-ran the full paragraph-length and rolling-rhythm check across the finished piece: all paragraphs at 3 sentences or fewer, zero rhythm violations across all 18 sentences, no em dashes. Did not touch the underlying facts; Nike's official cleat-care guidance and the pavement-wear sourcing Penny already verified live are unchanged. Ready for re-review."
+  status: published
+  reviewerNotes: "Penny, PASS, published 2026-08-07. Re-review of Ed's revision. Both items from the prior FAIL verified fixed: the dek is now 12 words against the under-15 cap (was exactly 15, which failed), and all three sentence-rhythm clusters are gone. Re-ran the mechanical checks programmatically across the finished file: zero paragraphs over three sentences, zero rolling three-sentence rhythm violations, zero banned words, one hedge word total ('sometimes') against a three-word ceiling, zero em dashes, zero curly quotes, no weak sentence starters, no banned sentence patterns. Sections A, B, C and E all pass. Facts unchanged from the version already found citation-clean: Nike's own cleat-care guidance (hand-wash, no washing machine, no bleach, no harsh chemicals, air dry, keep turf cleats off pavement). No affiliate or /go/ links in the body, so affiliateDisclosurePresent stays false correctly. Hero: image generation was unavailable this run because OPENAI_API_KEY is not set in the environment and the key is deliberately no longer stored on disk, so rather than ship imageless I assigned an existing library asset, /illustrations/muddy-cleats-on-mat.webp. Verified before assigning: 101KB, 1536x1024, opens cleanly with Pillow, already in the repo and already the hero of articles/end-of-season-equipment-cleanup.md. Hero reuse is the documented norm per PHOTO_STANDARD.md section 6 (filenames describe the scene, not the article, because library images are reused), and several PCD heroes currently serve 12 pieces each. heroAlt matches the existing description of the same frame. Swap in a bespoke image later if wanted; nothing here is a broken path. Prior note from Ed's revision pass, kept for the record: trimmed the dek from exactly 15 words to 12 ('Hand-washing and keeping them off pavement make cleats last twice as long.'). Rewrote the three sentence-rhythm clusters Penny flagged (the 9-11-10 cluster around the dryer/sun paragraph, the 18-15-16 cluster around leather vs synthetic, and the 21-25-20 cluster around the pavement warning) for length variety instead of cutting any facts. Re-running the check programmatically after those edits surfaced one more violation at the seam between the Nike-instructions sentence and the rewritten heat paragraph; shortened 'Heat is what actually kills them, whether it comes from the dryer or the sun on a dashboard.' to 'Heat kills them, whether from a dryer or a hot dashboard.' to fix it. Re-ran the full paragraph-length and rolling-rhythm check across the finished piece: all paragraphs at 3 sentences or fewer, zero rhythm violations across all 18 sentences, no em dashes. Did not touch the underlying facts; Nike's official cleat-care guidance and the pavement-wear sourcing Penny already verified live are unchanged. Ready for re-review."
   factCheckGoodThrough: 2027-08-04
 ---
 

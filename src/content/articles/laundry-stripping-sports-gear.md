@@ -10,9 +10,9 @@ sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/shared-gear-bin.webp"
 heroAlt: "A communal mesh bag of plain unbranded balls sits on grass at a practice field's edge with cones stacked beside it in morning light."
-publishedAt: 2026-07-24
+publishedAt: 2026-08-07
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -21,10 +21,12 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-07
-  status: draft
-  reviewerNotes: "Ed's revision pass, fixing the three items from Penny's 2026-07-28 FAIL. Trimmed the dek from 20 words to 14 ('Borax and an overnight soak work on cotton sheets. They wreck a jersey's stretch.'). Fixed the back-to-back 'It's' starters: 'It's not detergent residue. Bacteria living in the polyester weave, feeding on sweat, is the actual cause.' leaves exactly one 'It's' opener in the whole piece, not first paragraph, well under the one-per-300-words cap (body is 333 words). Fixed the four-sentence paragraph by merging the two softener sentences into one ('Skip the softener sheet and the liquid softener too.'), now three sentences. Also found and fixed one more rhythm violation while re-running the check programmatically that wasn't in Penny's notes: three short sentences in a row across the temperature section ('Regular detergent doesn't touch that layer.' / 'Cold or warm.' / 'Not hot.') fell within a 5-word band; merged 'Cold or warm. Not hot.' into 'Cold or warm, never hot.' Re-ran the full paragraph-length and rolling-rhythm check programmatically after all edits: zero paragraphs over three sentences, zero rhythm violations across all sentences in the body. No em dashes. Facts untouched from the version Penny already found citation-clean (elastane/polyester chemistry, vinegar and baking soda odor treatment, cold/warm wash temperature). Ready for re-review."
+  status: published
+  factCheckGoodThrough: 2027-08-07
+  reviewerNotes: "Penny, PASS, published 2026-08-07. Re-review of Ed's revision. All three items from the 2026-07-28 FAIL verified fixed: dek is now 14 words (was 20), exactly one weak 'It's' sentence starter remains in a 333-word body and it is not in the first paragraph, and the four-sentence paragraph is now three. Re-ran paragraph-length, rolling three-sentence rhythm, banned-word, hedge-count and em-dash checks programmatically across the finished file: zero paragraphs over three sentences, zero rhythm violations, zero banned words, zero hedge words, zero em dashes, zero curly quotes. Sections A, B, C and E all pass. Facts unchanged from the version already found citation-clean (elastane and polyester chemistry, vinegar and baking soda for odor, cold or warm wash never hot), and none of them are date-sensitive. Set sportLanguageCheckPassed true: sport is multi-sport and the body uses only generic laundry and fabric vocabulary, no borrowed sport-specific terms. Did not re-litigate anything that passed the first pass. Prior note from Ed's revision pass, kept for the record: trimmed the dek, merged the two softener sentences, and merged 'Cold or warm. Not hot.' into one sentence to break a rhythm cluster. Trimmed the dek from 20 words to 14 ('Borax and an overnight soak work on cotton sheets. They wreck a jersey's stretch.'). Fixed the back-to-back 'It's' starters: 'It's not detergent residue. Bacteria living in the polyester weave, feeding on sweat, is the actual cause.' leaves exactly one 'It's' opener in the whole piece, not first paragraph, well under the one-per-300-words cap (body is 333 words). Fixed the four-sentence paragraph by merging the two softener sentences into one ('Skip the softener sheet and the liquid softener too.'), now three sentences. Also found and fixed one more rhythm violation while re-running the check programmatically that wasn't in Penny's notes: three short sentences in a row across the temperature section ('Regular detergent doesn't touch that layer.' / 'Cold or warm.' / 'Not hot.') fell within a 5-word band; merged 'Cold or warm. Not hot.' into 'Cold or warm, never hot.' Re-ran the full paragraph-length and rolling-rhythm check programmatically after all edits: zero paragraphs over three sentences, zero rhythm violations across all sentences in the body. No em dashes. Facts untouched from the version Penny already found citation-clean (elastane/polyester chemistry, vinegar and baking soda odor treatment, cold/warm wash temperature). Ready for re-review."
 ---
 
 Everyone's stripping their laundry right now. Borax, washing soda, a scoop of powder detergent, an overnight soak in the hottest water your machine can pull. It works great on white cotton sheets that have ten years of fabric softener buildup.
