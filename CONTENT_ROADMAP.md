@@ -47,8 +47,8 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | drafted 2026-08-03 (src/content/articles/helmet-care-without-wrecking-it.md) |
 | Cleat care that triples the lifespan | Editorial | Team Parent · Equipment | drafted 2026-08-04 (src/content/articles/cleat-care-that-triples-the-lifespan.md) |
 | Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | drafted 2026-08-05 (src/content/articles/glove-break-in-the-right-way-and-the-wrong-way.md; water temp not cited as a specific number, Wilson and Rawlings give technique but no verifiable degree figure, so the piece says "warm, not boiling" instead) |
-| The car kit: what stays in the trunk all season | Editorial | Team Parent · Game day | PIPELINE |
-| The ski-boot dryer hack and other gear-drying tricks | Editorial | Team Parent · Equipment | PIPELINE |
+| The car kit: what stays in the trunk all season | Editorial | Team Parent · Game day | covered (src/content/articles/car-kit.md already covers the trunk-kit contents and refresh cadence; checked 2026-08-06) |
+| The ski-boot dryer hack and other gear-drying tricks | Editorial | Team Parent · Equipment | drafted 2026-08-06 (src/content/articles/dry-the-gear-without-warping-it.md; broadened from ski boots specifically to gear-drying generally since skiing is not in the site's sport enum, using boot dryers and heat-molded skates/liners as the hook) |
 | Color-coded bin system for households with multiple sports | Editorial | Team Parent · Communication | PIPELINE |
 
 ---
@@ -73,8 +73,8 @@ The hardest emotional terrain. Cornerstone-quality essays under the Editorial by
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| Your kid is the best on the team. Now what. | Editorial | The Game (cornerstone) | PIPELINE |
-| Your kid is the worst on the team. Now what. | Editorial | The Game (cornerstone) | PIPELINE |
+| Your kid is the best on the team. Now what. | Editorial | The Game (cornerstone) | covered (src/content/articles/when-your-kid-is-the-best-player-on-the-team.md; checked 2026-08-06) |
+| Your kid is the worst on the team. Now what. | Editorial | The Game (cornerstone) | covered (src/content/articles/your-kid-is-the-worst-on-the-team.md; checked 2026-08-06) |
 | Tempering a top kid's hunger for growth without crushing the team | Editorial | The Game | PIPELINE |
 | Making it fun for everyone when your own kid is struggling | Editorial | The Game | PIPELINE |
 | The "playing time" email from another parent | Editorial | Team Parent · Communication | covered (when-a-parent-emails-about-playing-time.md, how-to-talk-to-the-coach-about-playing-time.md, playing-time-fairness.md) |
