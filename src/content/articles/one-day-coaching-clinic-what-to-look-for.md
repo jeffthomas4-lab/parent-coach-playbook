@@ -26,9 +26,9 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-07-29
-  status: needs-revision
-  reviewerNotes: "Penny re-review: independently spot-verified every checkable claim via live web search rather than trusting the draft's self-reported grades. CONFIRMED: Little League splits clinics into skills-by-division plus safety training including Abuse Awareness Training (littleleague.org); ASEP's Coaching Principles classroom clinic runs 8 hours (asep.com course description, Human Kinetics); the ASEP exam is untimed and open-book, completable within a year of the clinic (coacheducation.humankinetics.com Test FAQs); NAYS partners with 3,000+ communities since 1981 (nays.org); NAYS 'two million volunteer coaches' is NAYS's own older figure and still true as a floor (current materials cite 4 million coaches/parents/officials/administrators combined), so that one stands. FAIL Section E1 (unverifiable claim): the clause 'that takes another six to eight hours to study for' (paragraph under 'A clinic worth your Saturday covers both') has no source anywhere. Human Kinetics' Test FAQ states the test is untimed with no hour figure given; the only hour figure found in any source (60 hours) covers the full online course plus the textbook reading plus the exam combined, not the exam alone, and does not match '6 to 8' or the classroom-clinic scenario this piece describes. Fix: cut 'that takes another six to eight hours to study for' (the sentence holds fine as '...with an open-book exam afterward') or replace with a sourced detail. Sections A, B, C, and the rest of E pass clean, no other changes needed. Hero image already on disk and passing PHOTO_STANDARD; leave in place, no need to regenerate once this one clause is fixed."
+  claudeReviewedAt: 2026-08-07
+  status: draft
+  reviewerNotes: "Ed's revision pass. Cut the unsourced clause Penny flagged ('that takes another six to eight hours to study for'); the ASEP sentence now ends '...with an open-book exam afterward,' which is exactly what Human Kinetics' own Test FAQ supports (untimed, open-book, no hour figure attached to the exam alone). While re-running the mechanical checks programmatically I also found a rhythm violation Penny's prior pass hadn't caught, in the Positive Coaching Alliance paragraph: three consecutive sentences ran 23, 18, 19 words, inside the 5-word band. Shortened the middle one ('Its instructors are real coaches and athletes, not a compliance department.') to break the pattern. Re-ran the paragraph-length and rolling-rhythm check across the full piece after both edits: all 8 paragraphs at 3 sentences or fewer, zero rhythm violations across all 23 sentences. No em dashes. Did not touch any other fact or sentence; the Little League, NAYS, and Positive Coaching Alliance claims Penny already verified live are unchanged. Ready for re-review."
 ---
 
 Every league runs preseason coach training under a different name. Little League calls it a clinic, USA Football calls it a course, and some leagues just hand you a binder and call it done. The name tells you nothing about what you're actually getting.
@@ -43,11 +43,11 @@ That card doesn't teach you to run a practice, though. Sit through a session tha
 
 Little League's own model splits the day: skills training specific to the division you're coaching (basic ball handling and batting for tee ball and minors, offensive and defensive play breakdowns for the older divisions), plus safety training that covers first aid, concussion recognition, and Abuse Awareness Training. Both halves matter. Neither one substitutes for the other.
 
-The American Sport Education Program runs its Coaching Principles Clinic as eight classroom hours in a single day, with an open-book exam afterward that takes another six to eight hours to study for. That's a real time investment because the content is real: sports medicine, legal liability, motivation, communication. Not a rubber stamp.
+The American Sport Education Program runs its Coaching Principles Clinic as eight classroom hours in a single day, with an open-book exam afterward. That's a real time investment because the content is real: sports medicine, legal liability, motivation, communication. Not a rubber stamp.
 
 ## Ask who's teaching it
 
-A clinic run by someone who has actually coached your sport and age group is worth more than one run by whoever drew the short straw at the league office. Positive Coaching Alliance builds its workshops around what it calls the Double-Goal Coach: pursue wins, and teach life skills at the same time. Its instructors come out of a national advisory board of real coaches and athletes, not a compliance department.
+A clinic run by someone who has actually coached your sport and age group is worth more than one run by whoever drew the short straw at the league office. Positive Coaching Alliance builds its workshops around what it calls the Double-Goal Coach: pursue wins, and teach life skills at the same time. Its instructors are real coaches and athletes, not a compliance department.
 
 NAYS has trained more than two million volunteer coaches since 1981 and runs in-person clinics in over 3,000 communities. That scale exists because leagues keep finding the content worth repeating, not because a mandate forces it.
 

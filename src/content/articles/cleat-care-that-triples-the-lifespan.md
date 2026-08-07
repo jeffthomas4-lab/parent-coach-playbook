@@ -2,7 +2,7 @@
 title: "Cleat care that *triples* the lifespan"
 seoTitle: "How to Care for Cleats So They Actually Last"
 seoDescription: "Hand-wash cleats, skip the dryer, and keep them off pavement. Small habits that make a pair last a full season longer."
-dek: "Hand-washing and keeping them off pavement make a pair of cleats last twice as long."
+dek: "Hand-washing and keeping them off pavement make cleats last twice as long."
 bluf: "Hand-wash cleats after every game with mild detergent and water, skip the washing machine and dryer, and let them air dry stuffed with newspaper. Keep turf cleats off pavement, since hard surfaces wear down the studs fast. These small habits double or triple how long a pair actually lasts."
 topic: "equipment"
 teamParentTopic: "tools"
@@ -23,9 +23,9 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-04
-  status: needs-revision
-  reviewerNotes: "Penny, FAIL. Picked up an incomplete prior pass on this file: reviewerNotes described fact verification and mechanical checks but the verdict was never written (status was left at 'draft', not one of the four real outcomes), so nothing had actually been decided. Re-ran the checks independently rather than trusting the prior note. FAIL Section A item 6 (sentence rhythm), confirmed programmatically by counting words per sentence: three separate rolling triples of consecutive sentences fall within a 5-word band. 1) 'The dryer and the sun do the same damage.' (9) / 'Heat breaks down the glue and the upper material either way.' (11) / 'Skip the dryer, skip the car dashboard, skip direct sunlight.' (10). 2) 'Air dry indoors instead, and stuff the toe with newspaper to pull moisture out and hold the shape.' (18) / 'Leather uppers need a conditioner every few weeks to stay supple and keep from cracking.' (15) / 'Synthetic uppers skip the conditioner entirely, since a damp cloth and mild detergent do the job.' (16). 3) 'Synthetic molds to the foot over time, so stuffing them while they dry matters even more than it does for leather.' (21) / 'Wearing turf cleats on pavement or for a parking-lot warmup wears down the rubber nubs and degrades the footplate fast, straight from Nike's own guidance.' (25) / 'If practice starts on blacktop, pack a second pair of shoes for the walk over and switch at the field.' (20). FAIL Section E item 5 (dek under 15 words): the dek is exactly 15 words, not under 15 ('Hand-washing and keeping them off pavement make a pair of cleats last twice as long.'), confirmed by direct word count; the prior note's '13 words' was wrong. Facts independently re-verified live this run and check out clean regardless: Nike's official cleat care guide (nike.com/a/how-to-clean-soccer-cleats) confirms hand-wash only, no dryer or direct sun, air dry stuffed with newspaper; multiple independent sources (aapsm.org, prodirectsport.us, myshoesreview.com) confirm wearing cleats on pavement accelerates stud and footplate wear versus grass or turf. Sections B and C pass clean: zero banned words, one hedge word total ('sometimes,' under the 3-word cap), zero em dashes, no reframe/triplet/empowerment-close/concession patterns, opens inside the problem, closes on a fact not a feeling. Fix: trim the dek by one word minimum, and break up or re-vary the two 9-11-10 and 18-15-16 sentence clusters plus the 21-25-20 cluster so no three consecutive sentences land within 5 words of each other. This is Ed's structural pass, not a mechanical one. Hero image was never generated (no OPENAI_API_KEY in a prior run's environment) but that is moot until the piece passes; do not generate one for a needs-revision piece."
+  claudeReviewedAt: 2026-08-07
+  status: draft
+  reviewerNotes: "Ed's revision pass. Trimmed the dek from exactly 15 words to 12 ('Hand-washing and keeping them off pavement make cleats last twice as long.'). Rewrote the three sentence-rhythm clusters Penny flagged (the 9-11-10 cluster around the dryer/sun paragraph, the 18-15-16 cluster around leather vs synthetic, and the 21-25-20 cluster around the pavement warning) for length variety instead of cutting any facts. Re-running the check programmatically after those edits surfaced one more violation at the seam between the Nike-instructions sentence and the rewritten heat paragraph; shortened 'Heat is what actually kills them, whether it comes from the dryer or the sun on a dashboard.' to 'Heat kills them, whether from a dryer or a hot dashboard.' to fix it. Re-ran the full paragraph-length and rolling-rhythm check across the finished piece: all paragraphs at 3 sentences or fewer, zero rhythm violations across all 18 sentences, no em dashes. Did not touch the underlying facts; Nike's official cleat-care guidance and the pavement-wear sourcing Penny already verified live are unchanged. Ready for re-review."
   factCheckGoodThrough: 2027-08-04
 ---
 
@@ -37,17 +37,17 @@ Hand-wash only. Knock the mud off sole-to-sole right after the game, then scrub 
 
 ## What wrecks them fast
 
-The dryer and the sun do the same damage. Heat breaks down the glue and the upper material either way.
+Heat kills them, whether from a dryer or a hot dashboard. It breaks down the glue and the upper material either way, so skip all three: the dryer, the car dashboard, direct sunlight.
 
-Skip the dryer, skip the car dashboard, skip direct sunlight. Air dry indoors instead, and stuff the toe with newspaper to pull moisture out and hold the shape.
+Air dry indoors instead, and stuff the toe with newspaper to pull moisture out and hold the shape.
 
 ## Leather vs synthetic
 
-Leather uppers need a conditioner every few weeks to stay supple and keep from cracking. Synthetic uppers skip the conditioner entirely, since a damp cloth and mild detergent do the job. Synthetic molds to the foot over time, so stuffing them while they dry matters even more than it does for leather.
+Leather uppers need conditioning every few weeks so they stay supple instead of cracking, while synthetic uppers skip that step entirely since a damp cloth and mild detergent already do the job. Synthetic also molds to the foot over time, which is one more reason stuffing them while they dry matters.
 
 ## The surface mistake that eats studs
 
-Wearing turf cleats on pavement or for a parking-lot warmup wears down the rubber nubs and degrades the footplate fast, straight from Nike's own guidance. If practice starts on blacktop, pack a second pair of shoes for the walk over and switch at the field.
+Wearing turf cleats on pavement, even just for a parking-lot warmup, wears down the rubber nubs and degrades the footplate fast, straight from Nike's own guidance. Pack a second pair of shoes for the walk over if practice starts on blacktop, and switch at the field.
 
 ## Studs
 
