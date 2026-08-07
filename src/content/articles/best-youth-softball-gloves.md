@@ -21,7 +21,8 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 1 existing-catalog link(s), softball-glove-11in on the best-overall 10U-12U Rawlings fastpitch pick, plus the required FTC affiliate disclosure sentence in the body. No new affiliates.json entries created; slug pre-existed and was already approved for the site."
 ---
 
 The best youth softball gloves are the ones sized correctly for *right now*, not for next season. Parentcoachdesk's top picks prioritize correct sizing and hand-friendly break-in over price or brand prestige. Here's the short version for parents who need to buy this week:
@@ -35,6 +36,8 @@ The best youth softball gloves are the ones sized correctly for *right now*, not
 - **Best tee ball glove (6U and under):** Any soft synthetic in the 9"–10" range — the brand matters far less than the fit and weight
 
 **The single most important rule:** Buy for the current season. A glove with "growing room" is a glove your child cannot close properly, and that harms their development faster than any other gear mistake you can make.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ## Table of Contents
 
@@ -107,7 +110,7 @@ For a full step-by-step sizing walkthrough, the Parentcoachdesk [softball sizing
 
 These picks are organized by category, not by brand loyalty. Every recommendation below is matched to a specific age range and playing level.
 
-**Best overall (10U–12U): Rawlings youth fastpitch series, 11"–11.5"**
+**Best overall (10U–12U): [Rawlings youth fastpitch series, 11"–11.5"](/go/softball-glove-11in/)**
 Rawlings has been the standard in youth softball for decades, and their youth fastpitch line earns that reputation. The finger stalls are narrower than baseball glove equivalents, which improves fit and control for smaller hands. Break-in is moderate, not punishing. Available at most major sporting goods retailers and on the Rawlings website. *Best for:* 10U–12U rec and competitive play. *Watch out for:* Confirm you're buying a fastpitch model, not a baseball glove that looks similar.
 
 **Best budget pick (8U–10U rec): Wilson youth synthetic, $40–$80**

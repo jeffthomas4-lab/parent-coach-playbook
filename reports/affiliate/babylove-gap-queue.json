@@ -11,6 +11,16 @@
       "reason": "Gear nouns (bat, cleats, gloves) appear only inside a used/secondhand-equipment tip ('Borrow or buy used equipment... A $400 bat used twice is still a $400 bat'). Inserting a new-product affiliate link into advice to buy used would contradict the article's own point. No single specific product is being recommended anywhere else in the piece. Skipped, not a confident match.",
       "loggedAt": "2026-08-04",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "679124",
+      "slug": "travel-soccer-costs",
+      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
+      "sport": "soccer",
+      "topic": "rec-vs-travel",
+      "reason": "Gear nouns (cleats, turf shoes, shin guards, ball) appear only in passing checklist/packing-list mentions ('Equipment replacement (cleats, shin guards, ball)' in the annual cost checklist, and a tournament-weekend packing list). No specific product is discussed substantively anywhere in the piece, which is a budgeting and cost-planning guide, not a gear guide. No confident match, skipped.",
+      "loggedAt": "2026-08-06",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }

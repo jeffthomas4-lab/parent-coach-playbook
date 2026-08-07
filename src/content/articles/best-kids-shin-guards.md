@@ -21,7 +21,8 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 2 existing-catalog link(s), soccer-shin-guards-youth on the slip-in shields category description, soccer-shin-guards-ankle-youth on the ankle guards with stirrups category description, plus the required FTC affiliate disclosure sentence in the body. No new affiliates.json entries created; slug(s) pre-existed and were already approved for the site."
 ---
 
 The **[G-Form V2 Soccer Shin Guard (Youth)](https://g-form.com/products/v2-soccer-shin-guard-youth)** is the best overall pick for most kids, balancing certified impact protection with a slim, comfortable fit that children actually keep on. For parents who need a quick shortlist right now:
@@ -35,6 +36,8 @@ The **[G-Form V2 Soccer Shin Guard (Youth)](https://g-form.com/products/v2-socce
 Under FIFA Law 4, shin guards must be covered by socks and provide reasonable protection. Lower-leg injuries in youth soccer can sideline a child for anywhere from two days to four weeks, so the right guard matters. The size rule that cuts through all the confusion: measure from the top of the ankle bone to about 2 inches below the knee, then match that length to the brand's size chart.
 
 **Pro Tip:** *Let your child pick the color or style. A kid who chose their own gear is far more likely to put it on without a fight before every game.*
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -148,8 +151,8 @@ The type of guard matters as much as the brand, and for younger players, choosin
 
 - **Hard-shell guards** (Nike Youth Charge, adidas Youth Tiro, PUMA youth options): a rigid polypropylene or plastic shell over foam backing. Maximum localized impact resistance. Best for defenders and physical players. Slightly heavier and less flexible.
 - **Flexible impact-absorbing guards** (G-Form V2, G-Form Pro-S Youth): materials like G-Form's SmartFlex stay pliable during normal movement and harden on impact to absorb force. Slim profile, low bulk, machine-washable sleeve. Best for midfielders and speed-focused players.
-- **Slip-in shields** (Vizari, Northdeer, Airsfish): basic hard or semi-rigid panels that slide under the sock with no integrated sleeve. Lightest option. Require a compression sleeve or tape to stay put. Best for older, experienced players who know how to keep them in place.
-- **Ankle guards with stirrups** (adidas Kids' Performance Youth Sock Shin Guards, Toddler Shin Pads Set): include a padded ankle wrap and a stirrup that loops under the foot. DICK'S Sporting Goods recommends ankle guards for younger and intermediate players because the stirrup prevents mid-game slippage without any extra effort from the child.
+- **[Slip-in shields](/go/soccer-shin-guards-youth/)** (Vizari, Northdeer, Airsfish): basic hard or semi-rigid panels that slide under the sock with no integrated sleeve. Lightest option. Require a compression sleeve or tape to stay put. Best for older, experienced players who know how to keep them in place.
+- **[Ankle guards with stirrups](/go/soccer-shin-guards-ankle-youth/)** (adidas Kids' Performance Youth Sock Shin Guards, Toddler Shin Pads Set): include a padded ankle wrap and a stirrup that loops under the foot. DICK'S Sporting Goods recommends ankle guards for younger and intermediate players because the stirrup prevents mid-game slippage without any extra effort from the child.
 - **Sock-integrated guards** (Nike Kids' Soccer Shin Guards sock design): the guard is built into the sock itself. Simplest to put on, especially for toddlers. Limited size adjustment.
 
 **Matching type to player:**
