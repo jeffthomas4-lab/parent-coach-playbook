@@ -155,6 +155,7 @@ export const READS_NAV = [
   { slug: 'decisions',    label: 'Decisions',         href: '/decisions/',    blurb: 'Travel ball or rec. Specialize or stay multi-sport. Quit or push through.' },
   { slug: 'body',         label: 'The Sideline File', href: '/body/',         blurb: 'Concussion, arm care, sleep, burnout. What parents Google at 11pm.' },
   { slug: 'parent-coach', label: 'Parent-coach',      href: '/parent-coach/', blurb: 'The lineup at midnight. Coaching your own kid in front of the team.' },
+  { slug: 'adaptive',     label: 'Adaptive athletes',  href: '/adaptive/',     blurb: 'ADHD, autism, sensory needs, physical and intellectual disability. Real programs, real accommodations.' },
 ] as const;
 
 // Items inside the Tools dropdown. By sport removed (now its own top-level nav item).

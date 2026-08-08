@@ -1,0 +1,2 @@
+UPDATE organizations SET website_url='https://www.ghfysa.com', last_verified_at='2026-08-08T07:14:02Z', updated_at='2026-08-08T07:14:02Z' WHERE id='org-2d0110ac-5817-540f-9a1c-adac465f64c0' AND (website_url IS NULL OR website_url='');
+INSERT OR IGNORE INTO camp_scan_queue (id, org_id, website_url, status, created_at) SELECT 'csq-org-2d0110ac-5817-540f-9a1c-adac465f64c0', 'org-2d0110ac-5817-540f-9a1c-adac465f64c0', 'https://www.ghfysa.com', 'pending', '2026-08-08T07:14:02Z' WHERE EXISTS (SELECT 1 FROM organizations WHERE id='org-2d0110ac-5817-540f-9a1c-adac465f64c0');

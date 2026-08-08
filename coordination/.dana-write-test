@@ -1,0 +1,3 @@
+Scratch file left by the Dana auto-deploy run on 2026-08-07. The sandbox mount allows
+file creation but denies unlink, so this could not be cleaned up automatically.
+Safe to delete: git rm --cached is not needed, it was never committed.
