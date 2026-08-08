@@ -37,7 +37,7 @@ Under FIFA Law 4, shin guards must be covered by socks and provide reasonable pr
 
 **Pro Tip:** *Let your child pick the color or style. A kid who chose their own gear is far more likely to put it on without a fight before every game.*
 
-*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+*This post contains affiliate links. If you buy through them, Parent Coach Desk earns a small commission at no extra cost to you.*
 
 ***
 

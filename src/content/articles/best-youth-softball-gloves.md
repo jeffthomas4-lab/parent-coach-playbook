@@ -37,7 +37,7 @@ The best youth softball gloves are the ones sized correctly for *right now*, not
 
 **The single most important rule:** Buy for the current season. A glove with "growing room" is a glove your child cannot close properly, and that harms their development faster than any other gear mistake you can make.
 
-*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+*This post contains affiliate links. If you buy through them, Parent Coach Desk earns a small commission at no extra cost to you.*
 
 ## Table of Contents
 

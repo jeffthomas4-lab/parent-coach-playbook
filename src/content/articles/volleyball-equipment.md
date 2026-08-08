@@ -21,19 +21,22 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Affiliate backfill 2026-08-08 (Claude/Cowork, on Jeff's instruction to monetize all BabyLove product mentions): inserted 7 existing-catalog links (volleyball-ball-youth-light, volleyball-volley-lite, volleyball-shoes-upcourt, volleyball-knee-pads-youth, volleyball-knee-pads-lr6, volleyball-net, volleyball-ankle-brace). No new affiliates.json entries; every slug pre-existed and was already approved, so no ASIN was sourced or guessed. Unlinked three competitor storefront links (BSN Sports, Gopher Sport, All Volleyball) in the comparison table rather than substituting products, since those rows compare suppliers and have no Amazon equivalent. All governing-body and reference links left intact: USAV rules book, USAV simplified youth rules, USAV uniform requirements, SCSN equipment, Volleyball Canada LTAD, and the sources table at the foot. Disclosure sentence uses the BabyLove-accurate wording, not the standard AFFILIATES.md line, because that line claims 'we only recommend products we use ourselves' and this is AI-generated content with algorithmically matched products; claiming personal use would misstate a material connection under the FTC endorsement guides."
 ---
 
 Start with the three things that actually matter: court shoes, knee pads, and a ball sized for your child's age. Everything else, from nets to training carts, comes after those three are right. For most families, that means a youth light ball for players under 12 (per [USAV's simplified youth rules](https://usavolleyball.org/resource/simplified-youth-rules/)), a pair of court shoes with lateral support, and a low-profile kneepad. Brands like Mikasa, Tachikara, and Wilson cover those bases at every price point. Parentcoachdesk's [youth volleyball gear list](/what-to-buy/volleyball/) walks you through exactly what to buy by age so you don't overbuy on the first trip.
 
+*This post contains affiliate links. If you buy through them, Parent Coach Desk earns a small commission at no extra cost to you.*
+
 **Quick shortlist before you read further:**
 
-- **Youth light ball (U12 and younger):** Mikasa MVA-Lite or Tachikara youth series; lighter materials build contact confidence
-- **Indoor club ball (U14 and up):** Molten or Mikasa USAV-approved match ball
-- **Court shoes:** Any volleyball-specific shoe with gum rubber sole; biggest performance impact for young players
-- **Knee pads:** Low-profile, age-appropriate density; skip the bulky adult versions for kids under 10
-- **Adjustable net system:** [Gopher Sport](https://gophersport.com/sports/volleyball?p=10\&srsltid=AfmBOook8qorswEmdYOzCx5Nj5hv0I6YC5ZdvF5vAcGV3x3fqeGjssn5) or Gold Medal portable systems for practice and backyard play
-- **Starter team kit:** [BSN SPORTS](https://www.bsnsports.com/c/equipment/sports/volleyball/) bulk orders for school and club programs
+- **Youth light ball (U12 and younger):** a [youth light volleyball](/go/volleyball-ball-youth-light/) or the [Mikasa Volley Lite](/go/volleyball-volley-lite/); lighter materials build contact confidence
+- **Indoor club ball (U14 and up):** a USAV-approved match ball once the lighter ball stops challenging them
+- **Court shoes:** a [volleyball court shoe](/go/volleyball-shoes-upcourt/) with a gum rubber sole; biggest performance impact for young players
+- **Knee pads:** [low-profile youth knee pads](/go/volleyball-knee-pads-youth/), age-appropriate density; skip the bulky adult versions for kids under 10
+- **Adjustable net system:** a [portable net system](/go/volleyball-net/) for practice and backyard play
+- **Starter team kit:** bulk team orders run through a school supplier rather than a single retailer
 
 ## Table of Contents
 
@@ -62,9 +65,9 @@ The table below maps the nine major brands and supplier categories across the di
 | **Tachikara** | Recreation & training | — | Standard adult and youth sizes | Durable synthetic; multi-surface | Ball only | All ages; beginner to intermediate |
 | **Molten** | Indoor competition/club | — | FIVB-style panels; USAV approved | Premium composite; distinctive panel design | Ball only | U14 through adult club |
 | **Wilson** | Recreation & school programs | — | Standard adult size | Synthetic composite; broad availability | Ball only | Beginner to recreational adult |
-| **[BSN SPORTS](https://www.bsnsports.com/c/equipment/sports/volleyball/)** | Bulk team orders & school/club kits | Varies; bulk pricing | Full team kit options | Full catalog: balls, nets, apparel | Catalog ordering | All levels; school and club |
-| **[Gopher Sport](https://gophersport.com/sports/volleyball)** | Training aids & school programs | — | Portable net systems; adjustable heights | Durable steel/aluminum frames | High; portable systems | Youth programs through adult rec |
-| **[All Volleyball](https://www.allvolleyball.com/blogs/news/choosing-the-best-volleyball-gear-for-your-child)** | Individual buyers & curated gear | Varies by product | Wide selection; buyer guides included | Mixed; curated for quality | Retail shipping | All ages |
+| **BSN SPORTS** | Bulk team orders & school/club kits | Varies; bulk pricing | Full team kit options | Full catalog: balls, nets, apparel | Catalog ordering | All levels; school and club |
+| **Gopher Sport** | Training aids & school programs | — | Portable net systems; adjustable heights | Durable steel/aluminum frames | High; portable systems | Youth programs through adult rec |
+| **All Volleyball** | Individual buyers & curated gear | Varies by product | Wide selection; buyer guides included | Mixed; curated for quality | Retail shipping | All ages |
 | **Gold Medal** | Facility net systems & gym installation | — | Competition-quality; fixed/portable | Heavy-duty steel; long-term durability | Low; facility-grade | Club through competitive |
 | **Under Armour** | Performance apparel & training wear | — | Team apparel; technical fabrics | Moisture-wicking synthetic | Apparel only | Youth through adult |
 
@@ -158,8 +161,8 @@ Print this or screenshot it before the season starts.
 **Tournament-day additions** (per the All Volleyball bag checklist):
 
 - Extra pair of socks
-- Backup knee pads
-- Ankle brace (if worn regularly)
+- Backup [knee pads](/go/volleyball-knee-pads-lr6/)
+- [Ankle brace](/go/volleyball-ankle-brace/) (if worn regularly)
 - Snacks and electrolyte drink
 - Foam roller or massage ball for recovery
 - Extra laces

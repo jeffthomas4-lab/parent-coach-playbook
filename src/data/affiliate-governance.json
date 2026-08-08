@@ -9,9 +9,17 @@
       "display_name": "Amazon",
       "program": "Amazon Associates US",
       "account_state": "active_evidenced_by_existing_special_links",
-      "hosts": ["amazon.com", "www.amazon.com", "amzn.to"],
+      "hosts": [
+        "amazon.com",
+        "www.amazon.com",
+        "amzn.to"
+      ],
       "tracking_mode": "preserve_special_link",
-      "required_query": { "host": "www.amazon.com", "key": "tag", "value": "parentcoachpl-20" },
+      "required_query": {
+        "host": "www.amazon.com",
+        "key": "tag",
+        "value": "parentcoachpl-20"
+      },
       "external_account_action": "owner_only",
       "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
     },
@@ -20,7 +28,10 @@
       "display_name": "Bookshop.org",
       "program": "Bookshop.org Affiliates",
       "account_state": "destination_present_account_status_unverified",
-      "hosts": ["bookshop.org", "www.bookshop.org"],
+      "hosts": [
+        "bookshop.org",
+        "www.bookshop.org"
+      ],
       "tracking_mode": "append_first_party_utm",
       "external_account_action": "owner_only",
       "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
@@ -30,7 +41,16 @@
       "display_name": "SoccerGarage",
       "program": "CJ publisher link",
       "account_state": "destination_present_account_status_unverified",
-      "hosts": ["tkqlhce.com", "www.tkqlhce.com", "anrdoezrs.net", "www.anrdoezrs.net", "jdoqocy.com", "www.jdoqocy.com", "kqzyfj.com", "www.kqzyfj.com"],
+      "hosts": [
+        "tkqlhce.com",
+        "www.tkqlhce.com",
+        "anrdoezrs.net",
+        "www.anrdoezrs.net",
+        "jdoqocy.com",
+        "www.jdoqocy.com",
+        "kqzyfj.com",
+        "www.kqzyfj.com"
+      ],
       "tracking_mode": "preserve_special_link",
       "external_account_action": "owner_only",
       "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
@@ -40,7 +60,10 @@
       "display_name": "Shutterfly",
       "program": "Unverified destination relationship",
       "account_state": "destination_present_program_status_unverified",
-      "hosts": ["shutterfly.com", "www.shutterfly.com"],
+      "hosts": [
+        "shutterfly.com",
+        "www.shutterfly.com"
+      ],
       "tracking_mode": "append_first_party_utm",
       "external_account_action": "owner_only",
       "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
@@ -50,7 +73,10 @@
       "display_name": "Square",
       "program": "Unverified destination relationship",
       "account_state": "destination_present_program_status_unverified",
-      "hosts": ["squareup.com", "www.squareup.com"],
+      "hosts": [
+        "squareup.com",
+        "www.squareup.com"
+      ],
       "tracking_mode": "append_first_party_utm",
       "external_account_action": "owner_only",
       "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
@@ -63,23 +89,33 @@
     "automatic_recommendation_publication_allowed": false,
     "automatic_recommendation_retirement_allowed": false,
     "affiliate_compensation_may_change_recommendation": false,
-    "exceptions": ["babylove_auto_insert"]
+    "exceptions": [
+      "babylove_auto_insert"
+    ]
   },
   "babylove_auto_insert": {
     "enabled": true,
     "added": "2026-08-04",
     "added_by": "Jeff Thomas, via Claude/Cowork session",
-    "description": "Narrow, explicit exception to publication_gates.automatic_recommendation_publication_allowed=false. The daily babylove-affiliate-insert pass (run under the Arnie persona) may commit a /go/<slug>/ link into a newly-published BabyLoveGrowth article WITHOUT a Jeff review step, but ONLY when every constraint below holds. Anything outside this scope reverts to the normal human_editorial_approval_required gate.",
-    "scope": "existing_affiliates_json_slugs_only",
+    "description": "Explicit exception to publication_gates.automatic_recommendation_publication_allowed=false. The daily babylove-affiliate-insert pass (run under the Arnie persona) may monetize BabyLoveGrowth articles WITHOUT a Jeff review step. Widened 2026-08-08 on Jeff's instruction: Arnie may now source NEW Amazon products, add them to affiliates.json, replace non-Amazon retailer product links, and lightly rewrite surrounding copy so a link reads naturally. The constraints below still bind. Anything outside this scope reverts to the normal human_editorial_approval_required gate.",
+    "scope": "amazon_product_links_including_newly_sourced",
     "constraints": {
-      "no_new_affiliate_entries": "May never add a key to src/data/affiliates.json. May only link to a slug that already exists.",
-      "no_destination_edits": "May never change an existing slug's destination, retailer, or campaign.",
-      "no_new_merchants": "May only use slugs already on an approved merchant from the merchants[] list above.",
-      "existing_slug_match_required": "Only auto-inserts when a specific, nameable product is discussed substantively and an existing slug is a confident single match. Ambiguous or generic gear mentions are logged to reports/affiliate/babylove-gap-queue.json instead of guessed.",
-      "max_links_per_article": 2,
-      "disclosure_sentence_required_in_body": "The FTC disclosure sentence from AFFILIATES.md must be present in the visible body (not just editorial.affiliateDisclosurePresent) whenever a link is inserted.",
-      "no_links_in_used_or_secondhand_context": "Never inserts a new-product affiliate link into a sentence recommending buying used, borrowed, or secondhand gear."
+      "new_affiliate_entries_allowed": "May add new keys to src/data/affiliates.json. Every new entry must use retailer 'Amazon' and the destination form https://www.amazon.com/dp/<ASIN>?tag=parentcoachpl-20 with the real associate tag.",
+      "asin_must_be_browser_verified": "HARD RULE. Never write an ASIN that has not been loaded in a real browser this run. Open the product page, confirm it resolves to a live listing, confirm the product title matches the product the article is actually discussing, and confirm it is not out of stock or a dead listing. A guessed, remembered, or pattern-generated ASIN is a fabrication and is never acceptable. If the browser is unavailable, log to the gap queue and insert nothing.",
+      "no_destination_edits": "May never change an EXISTING slug's destination, retailer, or campaign. Adding new slugs is allowed; rewriting curated ones is not. Retiring a dead link stays Linda and Arnie's weekly replacement flow.",
+      "amazon_only_for_new_entries": "New entries are Amazon only. Other approved merchants in merchants[] remain usable through their existing slugs but Arnie may not add new non-Amazon entries.",
+      "competitor_product_links_replaced": "Retailer links BabyLoveGrowth wrote to non-Amazon storefronts (Gopher Sport, BSN Sports, All Volleyball, ChalkTalk, Dick's, Academy, Target, Walmart and similar) that point at a BUYABLE PRODUCT are replaced with a /go/<slug>/ link. See reference_links_protected for what must survive.",
+      "reference_links_protected": "Never replace a link that is doing sourcing rather than selling: governing-body pages (USAV, NFHS, Little League, USA Baseball, NOCSAE, state associations), .gov and .edu, medical and safety guidance, news and research citations, rules PDFs, and sizing charts cited as evidence. Stripping these breaks the article's credibility and its fact-check trail. When a link is genuinely both, keep the source and add a separate product link.",
+      "light_rewrite_allowed": "May reword the sentence around a link so it reads naturally and the anchor text names the product. Rewriting is limited to phrasing. Never invent a spec, price, size, certification, rating, or claim of superiority that the article did not already support, and never change a safety or rules statement. Honor About Me/Anti AI Writing.txt and VOICE-RUBRIC.md.",
+      "max_links_per_article": 8,
+      "max_links_rationale": "Raised from 2 on 2026-08-08. A BabyLove gear guide can name a dozen products and a 2-link cap left most of them unmonetized. 8 is high enough to cover a real buying guide and low enough that a piece does not read as a link farm. A costs or advice article that names no products still gets zero links; the cap is a ceiling, not a target.",
+      "disclosure_sentence_required_in_body": "The FTC disclosure sentence from AFFILIATES.md must be present in the VISIBLE BODY, near the top and before the first affiliate link, whenever any link is inserted. Setting editorial.affiliateDisclosurePresent alone is not compliance. This is required by the FTC endorsement guides and by the Amazon Associates operating agreement; a link without it is a program violation, so if the disclosure cannot be placed, insert no links.",
+      "no_links_in_used_or_secondhand_context": "Never inserts a new-product affiliate link into a sentence recommending buying used, borrowed, or secondhand gear, or into a passage whose point is spending less.",
+      "no_links_in_safety_directives": "Never turns a safety instruction into a purchase prompt. A sentence telling a parent to replace a cracked helmet or pull a kid from play is not a link target.",
+      "audit_log_required": "Every insertion, replacement, new catalog entry, and rewrite is appended to reports/affiliate/babylove-insert-log.json with the article slug, the before and after text, the ASIN, and the browser verification result."
     },
-    "still_requires_jeff": "Production deploy approval on parentcoachdesk.com (the protected GitHub Actions `production` environment) is unaffected by this exception. Arnie's babylove-affiliate-insert commits push to main like any other content edit and still wait for Jeff's normal environment approval, except for BabyLoveGrowth's own original publish commit, which has its own separate, narrower auto-approval classifier (scripts/classify-babylove-release.mjs) that this exception does not touch or extend."
+    "still_requires_jeff": "Production deploy. GitHub Actions and the protected `production` environment were removed 2026-08-05, so Arnie commits and pushes to main and the nightly pcd-auto-deploy task (Dana) ships it. Arnie itself never runs wrangler and never deploys.",
+    "revised": "2026-08-08",
+    "revised_by": "Jeff Thomas, via Claude/Cowork session"
   }
 }

@@ -31,7 +31,7 @@ Here is the short version of how the three certifications stack up:
 
 **Pro Tip:** *Before your child's first game of the season, physically flip the bat and look at the taper above the grip. The certification stamp is right there. Do not rely on a product photo or a teammate's word.*
 
-*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+*This post contains affiliate links. If you buy through them, Parent Coach Desk earns a small commission at no extra cost to you.*
 
 ***
 
