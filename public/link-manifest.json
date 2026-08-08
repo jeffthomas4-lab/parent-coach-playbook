@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-07T20:24:05.564Z",
-  "count": 761,
+  "generatedAt": "2026-08-08T15:29:52.699Z",
+  "count": 772,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -544,6 +544,18 @@
       "url": "https://g-form.com/products/v2-soccer-shin-guard-youth",
       "sources": [
         "src/content/articles/best-kids-shin-guards.md"
+      ]
+    },
+    {
+      "url": "https://gophersport.com/sports/volleyball",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://gophersport.com/sports/volleyball?p=10",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
       ]
     },
     {
@@ -1183,6 +1195,12 @@
       ]
     },
     {
+      "url": "https://usavolleyball.org/resource/simplified-youth-rules/",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
       "url": "https://usavolleyball.org/resources-for-officials/rulebooks-and-interpretations/",
       "sources": [
         "src/content/articles/youth-volleyball-equipment-guide.md"
@@ -1192,6 +1210,24 @@
       "url": "https://usavolleyball.org/safesport/",
       "sources": [
         "src/content/body/youth-volleyball-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://usavolleyball.org/scsn/scsn-officials/scsn-uniforms-and-equipment/",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://usavolleyball.org/wp-content/uploads/2023/03/2025-2027-USAV-Indoor-Rules-Book_FINAL.pdf",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://usavolleyball.org/wp-content/uploads/2025/03/2024-2025-USAV_Uniforms_Requirements.pdf",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
       ]
     },
     {
@@ -1287,6 +1323,12 @@
       "url": "https://usssa.com/fastpitch/",
       "sources": [
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://volleyball.ca/uploads/About/LTAD/How_it_works_Stage_Appropriate_Volleyball_June_21_EN.pdf",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
       ]
     },
     {
@@ -1569,6 +1611,18 @@
         "src/content/body/weight-loss-aids-wrestlers-dancers.md",
         "src/content/body/youth-cross-country-safety-briefing.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.allvolleyball.com/blogs/news/choosing-the-best-volleyball-gear-for-your-child",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://www.allvolleyball.com/blogs/news/volleyball-bag-checklist-essential-equipment-gear-guide",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
       ]
     },
     {
@@ -2852,6 +2906,12 @@
       ]
     },
     {
+      "url": "https://www.bsnsports.com/c/equipment/sports/volleyball/",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
       "url": "https://www.cbp.gov/travel",
       "sources": [
         "src/content/body/international-tournament-passports-visas.md"
@@ -2970,6 +3030,12 @@
       "url": "https://www.cdrnet.org/",
       "sources": [
         "src/content/body/rdn-vs-nutritionist-credentials.md"
+      ]
+    },
+    {
+      "url": "https://www.chalktalksports.com/blogs/volleyball-guide/essential-volleyball-gear-for-kids-a-parents-guide",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
       ]
     },
     {
