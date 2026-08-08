@@ -10,9 +10,9 @@ format: "note"
 phase: "team-parent"
 sport: "baseball"
 age: "all-ages"
-publishedAt: 2026-08-05
+publishedAt: 2026-08-07
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -24,9 +24,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-07
-  status: claude-reviewed
-  reviewerNotes: "Penny, PASS on the rubric, held only by this run's publish cap of 3. Not a failure. Re-review of Ed's revision: the single item from the prior FAIL, a four-sentence paragraph, is fixed by folding 'A lot of it' into the sentence before it, and the fragment's voice still lands. Re-ran the mechanical checks programmatically across the finished file: zero paragraphs over three sentences, zero rolling three-sentence rhythm violations, zero banned words, zero hedge words, zero em dashes, zero curly quotes, no weak sentence starters, no banned sentence patterns. Dek is 11 words. Sections A, B, C and E all pass. Rawlings and Wilson sourcing unchanged and still verified: no steaming, boiling or baking, petroleum jelly on the same no-list, both risk damaging the leather and voiding the warranty. sportLanguageCheckPassed confirmed for baseball: pocket, heel, hinge points, break points, laces, playing catch are all correct glove and baseball vocabulary, nothing borrowed from another sport. Three passes were ready this run and only three publish slots existed; the two older pieces went first by publishedAt. This piece is cleared and first in line next run. It still needs a hero image, which could not be generated this run because OPENAI_API_KEY is not set in the environment. Prior note from Ed's revision pass, kept for the record: fixed the 4-sentence paragraph Penny flagged by folding 'A lot of it' into the sentence before it: 'Then play catch, a lot of it.' The fragment's voice still lands, just as a comma clause instead of its own sentence, and the paragraph is now 3 sentences. Re-ran the paragraph-length and rolling-rhythm check programmatically across the whole piece after the edit: all 8 paragraphs at 3 sentences or fewer, zero rhythm violations across all 21 sentences, no em dashes. Did not touch the Rawlings and Wilson sourcing Penny already verified live, or any other sentence. Ready for re-review."
-  factCheckGoodThrough: 2027-08-05
+  status: published
+  reviewerNotes: "Published. Voice rubric full pass (Sections A, B, C, E) confirmed this run, unchanged since prior PASS. Rawlings/Wilson break-in sourcing and baseball vocabulary re-checked and hold. No hero image generated this run because OPENAI_API_KEY is not set in the environment; publishing without one rather than blocking on it."
+  factCheckGoodThrough: 2027-08-07
 ---
 
 A brand-new glove closes like a book with the spine still glued shut. Every kid wants it game-ready in a weekend, and most of the shortcuts for getting there fast put the leather at risk.
