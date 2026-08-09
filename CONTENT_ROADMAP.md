@@ -49,7 +49,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | drafted 2026-08-05 (src/content/articles/glove-break-in-the-right-way-and-the-wrong-way.md; water temp not cited as a specific number, Wilson and Rawlings give technique but no verifiable degree figure, so the piece says "warm, not boiling" instead) |
 | The car kit: what stays in the trunk all season | Editorial | Team Parent · Game day | covered (src/content/articles/car-kit.md already covers the trunk-kit contents and refresh cadence; checked 2026-08-06) |
 | The ski-boot dryer hack and other gear-drying tricks | Editorial | Team Parent · Equipment | drafted 2026-08-06 (src/content/articles/dry-the-gear-without-warping-it.md; broadened from ski boots specifically to gear-drying generally since skiing is not in the site's sport enum, using boot dryers and heat-molded skates/liners as the hook) |
-| Color-coded bin system for households with multiple sports | Editorial | Team Parent · Communication | PIPELINE |
+| Color-coded bin system for households with multiple sports | Editorial | Team Parent · Communication | drafted 2026-08-08 (src/content/articles/color-coded-bin-system-for-multi-sport-families.md) |
 
 ---
 

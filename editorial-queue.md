@@ -47,3 +47,4 @@ Checked 2026-08-03 and not queued: NFHS's 2026 girls lacrosse rule changes (draw
 | 2026-08-05 | Glove break-in: what actually works, and what wrecks the leather | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review, no hero (no OpenAI API key available this run, queued for pcd-hero-image-backfill) |
 | 2026-08-06 | Dry the gear without warping it | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review, no hero (no OpenAI API key available this run, queued for pcd-hero-image-backfill) |
 | 2026-08-07 | The heat-acclimatization rule your soccer program has to follow the first two weeks | Date lane, target 2026-08-10 | drafted, awaiting review, hero generated (water-jugs-sideline-table-soccer-evening.webp) |
+| 2026-08-08 | One bin per kid, color-coded by sport | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review, hero generated (gear-bins-by-back-door.webp) |
