@@ -10,9 +10,9 @@ format: "note"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-publishedAt: 2026-08-06
+publishedAt: 2026-08-09
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -23,10 +23,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-08
-  status: claude-reviewed
-  reviewerNotes: "Ed's revision (2026-08-08): fixed the flagged sentence. Fetched peetdryer.com's FAQ directly this run: PEET Original dryers have no fan and no moving parts, rely on thermal convection, reach operating temperature in about 15 to 20 minutes, and get warm but never hot to the touch. Rewrote 'Peet's dryers skip the fan and heating coil entirely and still finish the job overnight using nothing but warmed air' to 'Peet's dryers skip the fan entirely and rely on convection heat instead: no moving parts, warm to the touch within fifteen to twenty minutes, and never hot enough to worry about.' No other sentence touched. Ready for re-review. Prior note from Penny, kept for the record: FAIL. Section E1 (facts) fails: the sentence 'Peet's dryers skip the fan and heating coil entirely and still finish the job overnight using nothing but warmed air' misstates how the product works. Peet's own product-instructions and FAQ pages (peetdryer.com, fetched direct) confirm 'no fans or moving parts' but never claim no heating coil, and state the dryer 'will get warm, reaching its maximum temperature in 10 minutes' through thermal convection, meaning it has an internal heat source. The accurate differentiator against DryGuy's forced-air units is no fan, not no heating coil. The sentence is also internally inconsistent as written: it claims to skip the heating coil, then says the unit finishes the job 'using nothing but warmed air' without saying what warms the air. Fix: cut 'and heating coil' from that sentence, or replace with the accurate distinction (no fan, gentle internal heat that reaches operating temperature in about 10 minutes and never gets hot to the touch). Other facts verified independently this run and check out clean: DryGuy's convection and forced-air dryers run in the roughly 99 to 105 degree range depending on model (dryguy.com, Tractor Supply, Sportsman's Warehouse listings), consistent with the piece's '105 degrees' figure. General hockey-skate care guidance confirms heat sources (dryers, dashboards, space heaters) risk warping a boot that was heat-molded once at the shop, matching the piece's core claim about skates and ski boots. Mechanical checks run programmatically: all 9 paragraphs are 3 sentences or fewer, no rolling 3-sentence window falls within a 5-word band, zero em dashes anywhere in the file, dek is 13 words under the 15-word cap. Opens inside the problem in the first two sentences, closes on a specific instruction rather than empowerment language. Manual pass of Sections B and C found zero banned words, zero hedge-word stacking, and none of the seven banned patterns. Frontmatter is schema-complete for the articles collection; no hero is set yet, which is fine since heroAlt is only required once hero is set. This is a single-sentence fact trim, not a structural rewrite. Do not generate a hero image for a needs-revision piece."
-  factCheckGoodThrough: 2027-08-08
+  claudeReviewedAt: 2026-08-09
+  status: published
+  reviewerNotes: "Penny, PASS, round 2. Verified the Peet's convection claim live against peetdryer.com's FAQ 2026-08-09: no fan or moving parts, warm to the touch within 15-20 minutes, never hot, matches the current sentence exactly. DryGuy's ~105-degree range and the heat-molded skate/ski-boot claims were previously verified live and unchanged. Mechanical checks (paragraph length, sentence rhythm, banned words/phrases, em dashes, weak starters) clean across all 9 paragraphs. Published with no hero: OPENAI_API_KEY was not available in this run's environment, so imagegen could not run. Not held for that reason per instruction; needs an image, backfill agent is disabled."
+  factCheckGoodThrough: 2027-08-09
 ---
 
 A radiator dries a cleat faster than a fan. It also melts the glue holding the sole to the boot before the cleat ever plays a game. The fast way always costs something.

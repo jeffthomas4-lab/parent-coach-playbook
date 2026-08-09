@@ -12,9 +12,9 @@ sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/gear-bins-by-back-door.webp"
 heroAlt: "Three color-coded storage bins, blue, red, and green, lined up by a back door, each holding cleats, a shirt, or a water bottle."
-publishedAt: 2026-08-08
+publishedAt: 2026-08-09
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -25,9 +25,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-08
-  status: draft
-  reviewerNotes: "Ed's first draft, 2026-08-08. Evergreen pick from CONTENT_ROADMAP.md, Equipment maintenance strand ('Color-coded bin system for households with multiple sports', PIPELINE). Checked src/content/ first: nothing covers household-wide gear organization across multiple kids/sports specifically. Adjacent pieces (shared-calendar, packing lists for single events, specialization articles) cover scheduling or single-trip packing, not this. No governing-body or verifiable factual claims in the piece, so citationCheckPassed is true on the basis that there is nothing here to cite, not an outside source verified. Mechanical checks run programmatically: 8 paragraphs, all 3 sentences or fewer. Sentence-starter scan: zero uses of This is/It's/There are/There is anywhere in the piece. Rolling 3-sentence rhythm check (word-count range per trio) found two early clusters within 5 words of each other and one sentence rewritten twice more to clear it; final pass has zero violations across all 20 sentences. Zero em dashes, zero banned words from Anti AI Writing.txt, zero curly quotes. Word count 310, inside the 200-500 note range. dek is 14 words against the under-15 cap, 79 characters. Field-length check run via scripts/check-content-field-lengths.mjs: clean, no build-breaking entries. No hero yet; imagegen run follows this draft."
+  claudeReviewedAt: 2026-08-09
+  status: published
+  reviewerNotes: "Penny, PASS, first review. No checkable facts (household organization piece, nothing to cite). Mechanical checks (paragraph length, sentence rhythm, banned words/phrases, em dashes, weak starters) clean across all 8 paragraphs and 20 sentences, dek 14 words. No brand names, no IP risk. Hero verified on disk, opens clean, 1536x1024, 91KB."
+  factCheckGoodThrough: 2027-08-09
 ---
 
 Three kids, three sports, one hallway by the back door. Cleats end up in the goalie bag. A swim cap turns up in the baseball bag two weeks later, dried stiff and forgotten.
