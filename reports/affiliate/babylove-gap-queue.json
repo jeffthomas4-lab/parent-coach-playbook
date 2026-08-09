@@ -21,6 +21,36 @@
       "reason": "Gear nouns (cleats, turf shoes, shin guards, ball) appear only in passing checklist/packing-list mentions ('Equipment replacement (cleats, shin guards, ball)' in the annual cost checklist, and a tournament-weekend packing list). No specific product is discussed substantively anywhere in the piece, which is a budgeting and cost-planning guide, not a gear guide. No confident match, skipped.",
       "loggedAt": "2026-08-06",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "679124",
+      "slug": "travel-soccer-costs",
+      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
+      "sport": "soccer",
+      "topic": "rec-vs-travel",
+      "reason": "Re-checked on the 2026-08-09 backfill pass. No change since the 2026-08-06 entry: still no substantive single-product recommendation, gear nouns still only appear in checklist item 10 and the tournament packing note. Confirms prior skip rather than re-linking.",
+      "loggedAt": "2026-08-09",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "674264",
+      "slug": "youth-sports-costs",
+      "title": "Youth Sports Costs for Parents: How to Plan and Save",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "Re-checked on the 2026-08-09 backfill pass. This file no longer carries an externalSource marker (Codex normalized/source-reviewed it 2026-08-02), but it is the same BabyLove-origin article referenced in the 2026-08-04 gap entry above and stays in the BabyLove backlog. Gear nouns still appear only inside a used/secondhand-equipment tip ('Borrow or buy used equipment... A $400 bat used twice is still a $400 bat', a no-link context per the used/secondhand rule) and a generic 'cleats, bats, and gloves' mention in an end-of-season-sale Pro Tip with no brand or model named. No confident single-product match, skipped.",
+      "loggedAt": "2026-08-09",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "677111",
+      "slug": "best-youth-softball-gloves",
+      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
+      "sport": "softball",
+      "topic": "game-day",
+      "reason": "Partial-article gap, not skipped entirely (article carries 2 links as of 2026-08-09: softball-glove-11in and baseball-glove-breakin-kit). Two other product mentions checked and left unlinked. (1) 'Best budget pick (rec play, 8U-10U): Entry-level synthetic glove from Wilson or Rawlings, $40-80 range' names two brands with no single model; searched Amazon for a Wilson youth synthetic softball glove in that price/age band and found only adult slowpitch (A360, $43.73) or a competitive 11.75-12.5in fastpitch model (A500 Siren, $67.40) that doesn't match the 10U-age sizing the text implies, so no confident single-product match. (2) 'Best for travel/competitive 12U+: Louisville Slugger LXT series' could not be sourced: Louisville Slugger's LXT line is a fastpitch bat, not a glove (confirmed via Amazon search, top result 'Louisville Slugger 2025 LXT' bat, $353.83); no Louisville Slugger glove called LXT exists to link, and the article's own product name appears to be in error. Not linking a bat under a sentence about gloves, and not guessing a substitute glove the article didn't name.",
+      "loggedAt": "2026-08-09",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }

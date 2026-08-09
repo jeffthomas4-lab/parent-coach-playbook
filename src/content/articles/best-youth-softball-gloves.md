@@ -22,7 +22,7 @@ editorial:
   status: published
   citationCheckPassed: false
   affiliateDisclosurePresent: true
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 1 existing-catalog link(s), softball-glove-11in on the best-overall 10U-12U Rawlings fastpitch pick, plus the required FTC affiliate disclosure sentence in the body. No new affiliates.json entries created; slug pre-existed and was already approved for the site."
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 1 existing-catalog link(s), softball-glove-11in on the best-overall 10U-12U Rawlings fastpitch pick, plus the required FTC affiliate disclosure sentence in the body. No new affiliates.json entries created; slug pre-existed and was already approved for the site. Arnie (babylove backfill, 2026-08-09): added 1 more existing-catalog link, baseball-glove-breakin-kit (Rawlings Glove Break-In Kit, browser-verified live listing) on the glove-conditioner mention in the break-in steps; reused the baseball slug since the product is a generic leather-glove conditioner, not sport-specific. Left two other product mentions unlinked: the 'Wilson or Rawlings entry-level synthetic, $40-80' budget pick names two brands with no single model, not a confident match; the 'Louisville Slugger LXT series' travel/competitive pick could not be sourced because Louisville Slugger's LXT line is a bat, not a glove, so no real product matches that description. Both logged, not guessed."
 ---
 
 The best youth softball gloves are the ones sized correctly for *right now*, not for next season. Parentcoachdesk's top picks prioritize correct sizing and hand-friendly break-in over price or brand prestige. Here's the short version for parents who need to buy this week:
@@ -149,7 +149,7 @@ A new glove that's too stiff is one of the most common reasons young players str
 
 **Step-by-step break-in process:**
 
-1. Apply a small amount of glove conditioner (Rawlings Glovolium or a comparable product) to the palm and pocket. Less is more; too much conditioner softens the leather excessively and shortens the glove's life.
+1. Apply a small amount of [glove conditioner](/go/baseball-glove-breakin-kit/) (Rawlings Glovolium or a comparable product) to the palm and pocket. Less is more; too much conditioner softens the leather excessively and shortens the glove's life.
 2. Place a softball in the pocket and fold the glove closed around it. Secure it with a rubber band or glove wrap overnight.
 3. The next day, have your child wear the glove and open and close it repeatedly by hand for 10–15 minutes. This works the hinge at the palm.
 4. Play catch at moderate intensity for 20–30 minutes. Real catches do more than any tool or technique.
