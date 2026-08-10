@@ -1,6 +1,6 @@
 {
-  "consecutiveHeldNights": 1,
-  "firstHeldDate": "2026-08-07",
-  "lastReason": "Diverged from origin/main (8 ahead, 1 behind, fast-forward not possible) and dirty working tree. 1 published BabyLoveGrowth article (volleyball-equipment) is on origin/main and missing from the local clone.",
+  "consecutiveHeldNights": 0,
+  "firstHeldDate": null,
+  "lastReason": "Cleared 2026-08-09. Jeff pushed the 4 stranded commits (a116e243..4855b4b3) and moved pcd-deployed to 4855b4b3. Content parity confirmed live before and after. No deploy was needed: the 2026-08-09 manual deploy had already shipped the content, only the marker was stale. Working tree left dirty at clear time, git add/commit blocked by a stale .git/index.lock.",
   "lastBranch": "main"
 }
