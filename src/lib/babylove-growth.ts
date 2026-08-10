@@ -564,28 +564,91 @@ async function fetchApiJson(url: string, apiKey: string): Promise<unknown> {
   return response.json();
 }
 
+// The provider has never committed to one envelope shape, and a shape we did
+// not recognize used to throw `api_list_invalid` before a single article was
+// examined. That is exactly how "Youth Basketball Drills: A Parent Coach's
+// Ready-to-Run Guide" was lost: the webhook for it never landed, and the
+// six-hourly reconciliation that exists to catch missed webhooks had never
+// published anything in its life (zero `api_reconciliation` rows in
+// external_article_receipts as of 2026-08-10). Accept every list-shaped
+// envelope the provider plausibly returns, and when none of them match, log
+// the top-level keys we actually got so the next failure is one query away
+// instead of another silent week.
+const LISTING_KEYS = ['articles', 'data', 'items', 'results', 'records'] as const;
+
+function extractListing(payload: unknown): { listing: unknown[] | null; envelopeKeys: string[] } {
+  if (Array.isArray(payload)) return { listing: payload, envelopeKeys: [] };
+  const envelope = objectValue(payload);
+  if (!envelope) return { listing: null, envelopeKeys: [] };
+  const envelopeKeys = Object.keys(envelope).slice(0, 20);
+  for (const key of LISTING_KEYS) {
+    if (Array.isArray(envelope[key])) return { listing: envelope[key] as unknown[], envelopeKeys };
+  }
+  // One level of nesting, e.g. { data: { articles: [...] } }.
+  for (const key of LISTING_KEYS) {
+    const nested = objectValue(envelope[key]);
+    if (!nested) continue;
+    for (const inner of LISTING_KEYS) {
+      if (Array.isArray(nested[inner])) return { listing: nested[inner] as unknown[], envelopeKeys };
+    }
+  }
+  return { listing: null, envelopeKeys };
+}
+
+const RECONCILE_BATCH = 50;
+
 export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ scanned: number; published: number; skipped: number; failed: number }> {
   if (!enabled(env.BABYLOVE_AUTOPUBLISH_ENABLED)) return { scanned: 0, published: 0, skipped: 0, failed: 0 };
-  if (!env.BABYLOVE_API_KEY || !env.PCD_OPS_DB || !env.GITHUB_TOKEN) throw new BabyLoveFailure('reconciliation_unavailable');
-  const listingPayload = await fetchApiJson(API_BASE, env.BABYLOVE_API_KEY);
-  const listingEnvelope = objectValue(listingPayload);
-  const listing = Array.isArray(listingPayload)
-    ? listingPayload
-    : Array.isArray(listingEnvelope?.articles)
-      ? listingEnvelope.articles
-      : null;
-  if (!listing) throw new BabyLoveFailure('api_list_invalid');
+  const missing = [
+    !env.BABYLOVE_API_KEY && 'BABYLOVE_API_KEY',
+    !env.PCD_OPS_DB && 'PCD_OPS_DB',
+    !env.GITHUB_TOKEN && 'GITHUB_TOKEN',
+  ].filter(Boolean) as string[];
+  if (missing.length) {
+    // Name the binding. `reconciliation_unavailable` on its own sent us looking
+    // at the provider API when the answer may simply be an unset Worker secret.
+    console.error(JSON.stringify({ event: 'babylove_reconciliation_unavailable', missing }));
+    throw new BabyLoveFailure('reconciliation_unavailable', `reconciliation_unavailable: ${missing.join(',')}`);
+  }
+  const listingPayload = await fetchApiJson(API_BASE, env.BABYLOVE_API_KEY!);
+  const { listing, envelopeKeys } = extractListing(listingPayload);
+  if (!listing) {
+    console.error(JSON.stringify({
+      event: 'babylove_reconciliation_list_invalid',
+      envelope_keys: envelopeKeys,
+      payload_type: Array.isArray(listingPayload) ? 'array' : typeof listingPayload,
+    }));
+    throw new BabyLoveFailure('api_list_invalid');
+  }
+  if (listing.length > RECONCILE_BATCH) {
+    console.warn(JSON.stringify({
+      event: 'babylove_reconciliation_truncated',
+      returned: listing.length,
+      batch: RECONCILE_BATCH,
+    }));
+  }
   let scanned = 0;
   let published = 0;
   let skipped = 0;
   let failed = 0;
-  for (const summary of listing.slice(0, 20)) {
+  const apiKey = env.BABYLOVE_API_KEY!;
+  for (const summary of listing.slice(0, RECONCILE_BATCH)) {
     const record = objectValue(summary);
-    const id = idValue(record?.id);
-    if (!id) { failed += 1; continue; }
+    const id = idValue(record?.id)
+      || idValue(record?.article_id)
+      || idValue(record?.articleId)
+      || idValue(record?.uuid);
+    if (!id) {
+      failed += 1;
+      console.error(JSON.stringify({
+        event: 'babylove_reconciliation_item_unidentified',
+        item_keys: record ? Object.keys(record).slice(0, 20) : [],
+      }));
+      continue;
+    }
     scanned += 1;
     try {
-      const detail = await fetchApiJson(`${API_BASE}/${encodeURIComponent(id)}`, env.BABYLOVE_API_KEY);
+      const detail = await fetchApiJson(`${API_BASE}/${encodeURIComponent(id)}`, apiKey);
       const article = parseBabyLoveArticle(detail);
       const accepted = await acceptArticle(env, article, 'api_reconciliation');
       if (accepted.receipt.status === 'published') {
@@ -600,6 +663,13 @@ export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ sca
       console.error(JSON.stringify({ event: 'babylove_reconciliation_item_failed', article_id: id, code }));
     }
   }
-  console.log(JSON.stringify({ event: 'babylove_reconciliation_completed', scanned, published, skipped, failed }));
+  console.log(JSON.stringify({
+    event: 'babylove_reconciliation_completed',
+    listing_size: listing.length,
+    scanned,
+    published,
+    skipped,
+    failed,
+  }));
   return { scanned, published, skipped, failed };
 }

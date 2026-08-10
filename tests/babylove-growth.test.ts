@@ -346,4 +346,84 @@ describe('BabyLoveGrowth API reconciliation', () => {
       && call.params[3] === 'slug_collision'
     )).toBe(true);
   });
+
+  // Regression: reconciliation had never published a single article in its
+  // life (zero source='api_reconciliation' rows in production as of
+  // 2026-08-10) while six arrived by webhook. It accepted only a bare array or
+  // { articles: [...] }, so any other envelope threw api_list_invalid before
+  // it examined anything. That is how "Youth Basketball Drills: A Parent
+  // Coach's Ready-to-Run Guide" sat in the provider dashboard and never
+  // reached the repo.
+  it.each([
+    ['data', { data: [{ id: PAYLOAD.id }] }],
+    ['items', { items: [{ id: PAYLOAD.id }] }],
+    ['results', { results: [{ id: PAYLOAD.id }] }],
+    ['records', { records: [{ id: PAYLOAD.id }] }],
+    ['nested data.articles', { data: { articles: [{ id: PAYLOAD.id }] } }],
+  ])('imports a missed article when the provider list arrives as %s', async (_label, listing) => {
+    const fake = makeFakeD1();
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify(listing), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ article: PAYLOAD }), { status: 200 }))
+      .mockResolvedValueOnce(new Response('not found', { status: 404 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'commit-123' } }), { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+
+    const result = await reconcileBabyLoveArticles(env(fake.db, {
+      BABYLOVE_AUTOPUBLISH_ENABLED: 'true',
+      BABYLOVE_API_KEY: 'api-test-key',
+      GITHUB_TOKEN: 'github-test-token',
+    }));
+
+    expect(result).toEqual({ scanned: 1, published: 1, skipped: 0, failed: 0 });
+  });
+
+  it.each([
+    ['article_id', { articles: [{ article_id: PAYLOAD.id }] }],
+    ['articleId', { articles: [{ articleId: PAYLOAD.id }] }],
+    ['uuid', { articles: [{ uuid: PAYLOAD.id }] }],
+  ])('identifies a listing item keyed by %s', async (_label, listing) => {
+    const fake = makeFakeD1();
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify(listing), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ article: PAYLOAD }), { status: 200 }))
+      .mockResolvedValueOnce(new Response('not found', { status: 404 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'commit-123' } }), { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+
+    const result = await reconcileBabyLoveArticles(env(fake.db, {
+      BABYLOVE_AUTOPUBLISH_ENABLED: 'true',
+      BABYLOVE_API_KEY: 'api-test-key',
+      GITHUB_TOKEN: 'github-test-token',
+    }));
+
+    expect(result).toEqual({ scanned: 1, published: 1, skipped: 0, failed: 0 });
+  });
+
+  it('names the missing binding rather than reporting reconciliation_unavailable bare', async () => {
+    const fake = makeFakeD1();
+    await expect(reconcileBabyLoveArticles(env(fake.db, {
+      BABYLOVE_AUTOPUBLISH_ENABLED: 'true',
+      GITHUB_TOKEN: 'github-test-token',
+    }))).rejects.toThrow(/BABYLOVE_API_KEY/);
+  });
+
+  it('logs the envelope keys when no shape matches, instead of failing blind', async () => {
+    const fake = makeFakeD1();
+    const errors: string[] = [];
+    vi.spyOn(console, 'error').mockImplementation((line: unknown) => { errors.push(String(line)); });
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce(
+      new Response(JSON.stringify({ payload: { nested: [] }, page: 1 }), { status: 200 }),
+    ));
+
+    await expect(reconcileBabyLoveArticles(env(fake.db, {
+      BABYLOVE_AUTOPUBLISH_ENABLED: 'true',
+      BABYLOVE_API_KEY: 'api-test-key',
+      GITHUB_TOKEN: 'github-test-token',
+    }))).rejects.toThrow('api_list_invalid');
+
+    const logged = errors.find((line) => line.includes('babylove_reconciliation_list_invalid'));
+    expect(logged).toBeDefined();
+    expect(JSON.parse(logged as string).envelope_keys).toEqual(['payload', 'page']);
+  });
 });

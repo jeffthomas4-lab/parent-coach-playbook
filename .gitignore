@@ -80,3 +80,8 @@ coordination/release-evidence/logs/
 # ("key must be a string at line 3 column 1") rather than as a merge problem.
 # That cost an evening on 2026-08-05. Do not re-track it.
 reports/editorial/editorial-refresh-queue.json
+
+# Build stamp written by scripts/write-build-info.mjs at the top of every build
+# and served at /build-info.json. Derived from the commit, so tracking it would
+# conflict on every branch for the same reason the file above does.
+public/build-info.json

@@ -122,6 +122,98 @@ export async function fireCampsSweep(env: Env, source: string): Promise<SweepMet
   };
 }
 
+// ---------------------------------------------------------------------------
+// Deploy-lag monitor
+//
+// WHY THIS EXISTS. On 2026-08-05 every GitHub Actions workflow was deleted,
+// and `deploy-workers.yml` was the only thing that turned a commit on `main`
+// into a live site. Both publishing pipelines (Ed/Penny, and BabyLoveGrowth's
+// webhook) kept committing correctly, and nothing noticed that "published"
+// had quietly stopped meaning "live" — it now meant "sitting in git until Jeff
+// runs wrangler by hand."
+//
+// Cloudflare Workers Builds closes that gap, but a CI system that silently
+// stops firing looks exactly like one that has nothing to do. So this checks
+// the fact that actually matters: is the commit the live site was built from
+// the same one that is on the tip of `main`?
+//
+// Deliberately unauthenticated on both ends. It reads the site's own public
+// /build-info.json and GitHub's public commits API, so it needs no token and
+// cannot leak anything. Never throws: a monitor that fails the invocation
+// would mask the camps sweep in the same tick.
+// ---------------------------------------------------------------------------
+
+const REPO = 'jeffthomas4-lab/parent-coach-playbook';
+const BUILD_INFO_URL = 'https://parentcoachdesk.com/build-info.json';
+const LAG_ALERT_HOURS = 12;
+
+export async function checkDeployLag(fetchImpl: typeof fetch = fetch): Promise<void> {
+  const headers = { 'User-Agent': 'pcd-deploy-lag-monitor/1.0' };
+  let liveCommit: string;
+  let builtAt: string;
+  try {
+    const response = await fetchImpl(BUILD_INFO_URL, {
+      headers: { ...headers, 'Cache-Control': 'no-cache' },
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!response.ok) throw new Error(`http_${response.status}`);
+    const body = await response.json() as { commit?: unknown; builtAt?: unknown };
+    liveCommit = typeof body.commit === 'string' ? body.commit : '';
+    builtAt = typeof body.builtAt === 'string' ? body.builtAt : '';
+    if (!liveCommit) throw new Error('no_commit');
+  } catch (error) {
+    // Before the first Workers Builds run there is no /build-info.json, so this
+    // is expected exactly once. After that it means the site is down or a
+    // deploy shipped without the build stamp.
+    console.warn(JSON.stringify({ event: 'deploy_lag_build_info_unavailable', code: String(error).slice(0, 80) }));
+    return;
+  }
+
+  let headCommit: string;
+  let headDate: string;
+  try {
+    const response = await fetchImpl(`https://api.github.com/repos/${REPO}/commits/main`, {
+      headers: { ...headers, Accept: 'application/vnd.github+json' },
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!response.ok) throw new Error(`http_${response.status}`);
+    const body = await response.json() as { sha?: unknown; commit?: { committer?: { date?: unknown } } };
+    headCommit = typeof body.sha === 'string' ? body.sha : '';
+    headDate = typeof body.commit?.committer?.date === 'string' ? body.commit.committer.date : '';
+    if (!headCommit) throw new Error('no_sha');
+  } catch (error) {
+    console.warn(JSON.stringify({ event: 'deploy_lag_github_unavailable', code: String(error).slice(0, 80) }));
+    return;
+  }
+
+  if (liveCommit === headCommit) {
+    console.log(JSON.stringify({ event: 'deploy_lag_ok', commit: liveCommit.slice(0, 8) }));
+    return;
+  }
+
+  // Behind is normal for a few minutes after a push, and normal indefinitely
+  // for a code-only push the deploy guard deliberately refused. Only shout
+  // once it has been behind long enough that nobody is coming.
+  const hoursBehind = headDate
+    ? (Date.now() - Date.parse(headDate)) / 3_600_000
+    : Number.POSITIVE_INFINITY;
+
+  const payload = {
+    event: 'deploy_lag',
+    live_commit: liveCommit.slice(0, 8),
+    head_commit: headCommit.slice(0, 8),
+    live_built_at: builtAt,
+    head_committed_at: headDate,
+    hours_behind: Number.isFinite(hoursBehind) ? Math.round(hoursBehind * 10) / 10 : null,
+  };
+
+  if (hoursBehind >= LAG_ALERT_HOURS) {
+    console.error(JSON.stringify({ ...payload, severity: 'alert' }));
+  } else {
+    console.log(JSON.stringify({ ...payload, severity: 'info' }));
+  }
+}
+
 export async function runScheduledSweep(env: Env, scheduledTime: number): Promise<void> {
   if (maintenanceModeActive(env)) {
     console.log(JSON.stringify({
@@ -198,7 +290,12 @@ export default {
     );
   },
 
-  async scheduled(event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
+  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
+    // The lag monitor rides along rather than getting its own cron: it is two
+    // GETs, and putting it first would delay the sweep. waitUntil so a slow
+    // GitHub response cannot hold the invocation open, and checkDeployLag
+    // swallows its own errors so it can never fail the sweep's tick.
+    ctx.waitUntil(checkDeployLag());
     await runScheduledSweep(env, event.scheduledTime);
   },
 };

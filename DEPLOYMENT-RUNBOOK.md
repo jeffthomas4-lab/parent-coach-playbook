@@ -3,15 +3,29 @@
 Production is Cloudflare Worker `parent-coach-desk`. The Pages project is a
 separately governed rollback target, not the normal deployment path.
 
-## Normal path (current, local — as of 2026-08-05)
+## Content ships automatically (as of 2026-08-10)
+
+**Content no longer ships from this runbook.** Cloudflare Workers Builds picks
+up any push to `main` that touches `src/content/`, the illustration and OG
+directories, `editorial-queue.md`, or `CONTENT_ROADMAP.md`, and deploys it.
+Ed, Penny, and BabyLoveGrowth articles go live on their own. Setup, watch
+paths, the deploy guard, and the failure modes live in `PUBLISH-PIPELINE.md`.
+
+Between 2026-08-05 and 2026-08-10 there was no automatic path at all, and
+"published" meant "committed to git." That is what `PUBLISH-PIPELINE.md`
+section 1 is about.
+
+## Normal path for code (local)
 
 GitHub Actions was removed from every repo on 2026-08-05 after it burned the
 monthly allotment in four days. `.github/workflows/deploy-workers.yml`, the
 protected `production` Environment gate, and the BabyLove release classifier's
-auto-approval path are all gone. There is no merge-to-`main` auto-deploy. The
-CI path is preserved below under "Retired CI path" for whoever restores it.
+auto-approval path are all gone. The CI path is preserved below under "Retired
+CI path" for whoever restores it.
 
-Production ships from a local shell:
+Anything outside the content allowlist still ships from a local shell, by
+design. `scripts/ci-deploy-guard.mjs` refuses to auto-deploy a diff carrying
+code, so this sequence is the only way code reaches production:
 
 ```powershell
 cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\Field and Forge\parent-coach-desk"
