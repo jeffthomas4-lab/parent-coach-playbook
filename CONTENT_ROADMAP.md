@@ -59,9 +59,9 @@ A new sub-category under Team Parent · Coaching tips.
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| How to chalk a foul line (string-line method, inside edge of the line) | Editorial | Team Parent · Coaching tips | PIPELINE |
+| How to chalk a foul line (string-line method, inside edge of the line) | Editorial | Team Parent · Coaching tips | covered (chalking-the-lines.md covers general chalk-line technique; setting-up-a-baseball-field.md covers running foul lines from the diagram's home-plate reference point; checked 2026-08-10) |
 | The 3-4-5 method for soccer field corners | Editorial | Team Parent · Coaching tips | drafted 2026-08-09 (src/content/articles/squaring-soccer-field-corners-with-the-3-4-5-method.md; no hero, no OpenAI API key available this run) |
-| Setting up the soccer center circle (10-yard radius, twine and a stake) | Editorial | Team Parent · Coaching tips | PIPELINE |
+| Setting up the soccer center circle (10-yard radius, twine and a stake) | Editorial | Team Parent · Coaching tips | drafted 2026-08-10 (src/content/articles/setting-up-the-soccer-center-circle.md; no hero, no OpenAI API key available this run) |
 | Infield maintenance: watering, raking, the "lip" you don't want | Editorial | Team Parent · Coaching tips | PIPELINE |
 | Field break-down checklist for the post-game crew | Editorial | Team Parent · Game day | PIPELINE |
 
