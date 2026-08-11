@@ -23,6 +23,16 @@
       "after": "Apply a small amount of [glove conditioner](/go/baseball-glove-breakin-kit/) (Rawlings Glovolium or a comparable product) to the palm and pocket.",
       "asin": "B0034WKNH6 (pre-existing catalog entry, reused, not re-sourced)",
       "browserVerification": "Opened https://amzn.to/4wazlny in Chrome this run to confirm what the existing slug points to before reusing it in a new article. Resolved to Amazon.com: Rawlings Glove Break-In Kit, $11.01, 4.5 stars/1,315 ratings, in stock, Amazon's Choice. Title and contents (conditioner, break-in ball, mallet, wrap) match the article's 'Rawlings Glovolium or a comparable product' description. No destination edit made; existing slug destination is untouched per the no-destination-edits rule."
+    },
+    {
+      "date": "2026-08-10",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Daily babylove pass. No new BabyLoveGrowth article published since the 2026-08-08 volleyball-equipment restore (checked git log for 'Publish BabyLoveGrowth article' commits and externalSource frontmatter; nothing new). Worked the stated backfill queue in order. volleyball-equipment: already at 7/8 links from the 2026-08-08 session; re-read the file, confirmed the 3 unlinked brand mentions are a supplier-comparison table (Mikasa/Tachikara/Molten/Wilson/BSN SPORTS/Gopher Sport/All Volleyball/Gold Medal/Under Armour with no single model named), which the governance rule explicitly excludes ('a brand named in passing inside a comparison table is not the same as a product the article tells a parent to buy'); no action needed. best-kids-shin-guards and usa-vs-usssa-bats (both BabyLove-origin but outside the stated backfill list) were already monetized in prior sessions with disclosure present; spot-checked both, no open competitor-storefront product links found, left untouched. best-youth-softball-gloves: re-ran live Amazon browser searches on both previously-gapped mentions (Wilson budget synthetic glove, Louisville Slugger LXT glove); both confirmed still unmatchable for the same reasons as 2026-08-09 (Wilson $40-80 fastpitch models all run 11-12in, not the article's own 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat line, no LXT glove exists). Logged to gap queue, no links inserted. youth-sports-costs and travel-soccer-costs: confirmed no file changes since 2026-08-09, gap-queue re-check entries added, nothing to link. Net result: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites today. No ASIN fabricated.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Chrome used to re-search Amazon for 'Wilson youth softball glove synthetic', 'Wilson youth fastpitch softball glove 10 inch', and 'Louisville Slugger LXT softball glove'. All listings reviewed live; none matched the article's stated size band or product category. No product page ASIN was written to affiliates.json this run."
     }
   ]
 }

@@ -51,6 +51,36 @@
       "reason": "Partial-article gap, not skipped entirely (article carries 2 links as of 2026-08-09: softball-glove-11in and baseball-glove-breakin-kit). Two other product mentions checked and left unlinked. (1) 'Best budget pick (rec play, 8U-10U): Entry-level synthetic glove from Wilson or Rawlings, $40-80 range' names two brands with no single model; searched Amazon for a Wilson youth synthetic softball glove in that price/age band and found only adult slowpitch (A360, $43.73) or a competitive 11.75-12.5in fastpitch model (A500 Siren, $67.40) that doesn't match the 10U-age sizing the text implies, so no confident single-product match. (2) 'Best for travel/competitive 12U+: Louisville Slugger LXT series' could not be sourced: Louisville Slugger's LXT line is a fastpitch bat, not a glove (confirmed via Amazon search, top result 'Louisville Slugger 2025 LXT' bat, $353.83); no Louisville Slugger glove called LXT exists to link, and the article's own product name appears to be in error. Not linking a bat under a sentence about gloves, and not guessing a substitute glove the article didn't name.",
       "loggedAt": "2026-08-09",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "677111",
+      "slug": "best-youth-softball-gloves",
+      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
+      "sport": "softball",
+      "topic": "game-day",
+      "reason": "Re-checked on the 2026-08-10 run with a fresh live Amazon browser search on both remaining gaps; no change. (1) Searched 'Wilson youth softball glove synthetic' and 'Wilson youth fastpitch softball glove 10 inch'. Every Wilson fastpitch softball model in the $40-80 band runs 11\"-12\" (A440, A500, A550 Siren), which is the article's own 12U+ size band, not the 10\"-10.5\" band its sizing table assigns to 8U-10U. Linking an 11\"-12\" glove under an 8U-10U budget-pick sentence would misstate the fit the article itself promises, so still no confident single-product match. (2) Re-searched 'Louisville Slugger LXT softball glove'; Amazon returns only 'Louisville Slugger 2025 LXT' and '2024 LXT Fastpitch Bats' ($189-354, bats) plus a separate 'Louisville Slugger Omaha Baseball Gloves' line the article never named. LXT remains a bat-only line at Louisville Slugger; the article's glove claim is still unsupported by any real product. Confirms prior skip, nothing new committed.",
+      "loggedAt": "2026-08-10",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "674264",
+      "slug": "youth-sports-costs",
+      "title": "Youth Sports Costs for Parents: How to Plan and Save",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "Re-checked on the 2026-08-10 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
+      "loggedAt": "2026-08-10",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "679124",
+      "slug": "travel-soccer-costs",
+      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
+      "sport": "soccer",
+      "topic": "rec-vs-travel",
+      "reason": "Re-checked on the 2026-08-10 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
+      "loggedAt": "2026-08-10",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }
