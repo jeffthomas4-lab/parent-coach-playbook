@@ -1,6 +1,6 @@
 {
-  "consecutiveHeldNights": 0,
-  "firstHeldDate": null,
-  "lastReason": "Cleared 2026-08-09. Jeff pushed the 4 stranded commits (a116e243..4855b4b3) and moved pcd-deployed to 4855b4b3. Content parity confirmed live before and after. No deploy was needed: the 2026-08-09 manual deploy had already shipped the content, only the marker was stale. Working tree left dirty at clear time, git add/commit blocked by a stale .git/index.lock.",
+  "consecutiveHeldNights": 1,
+  "firstHeldDate": "2026-08-10",
+  "lastReason": "Held 2026-08-10: diff pcd-deployed..HEAD (5 commits, bb494a0e) contains code/config paths (package.json, scripts/ci-deploy-guard.mjs, scripts/write-build-info.mjs, src/lib/babylove-growth.ts, tests/babylove-growth.test.ts, worker-cron/src/index.ts), not content-only. Gate blocks. Also: git status/diff against the working tree would not complete inside this run's tool timeout (repo sits on the Windows-mounted volume; full tree stat is slow), so working-tree cleanliness could not be confirmed this run. Ref-level git ops (rev-parse, log, diff between commits) worked fine and are what this report is based on. .git/HEAD.lock and 3 lock corpses were found and cleared via npm run git:unlock before any of this ran.",
   "lastBranch": "main"
 }
