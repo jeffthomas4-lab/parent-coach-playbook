@@ -14,7 +14,7 @@ sport: "soccer"
 age: "all-ages"
 publishedAt: 2026-08-10
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -25,9 +25,9 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-07
-  status: claude-reviewed
-  reviewerNotes: "Penny, PASS. Sections A, B, C and E all pass; mechanical checks re-run programmatically (paragraph lengths, rolling-window sentence rhythm, em dashes, weak starters, banned words/phrases, hedge count) came back clean across all 7 paragraphs and 19 sentences, dek is 14 words. Fact-checked the core claims direct against primary sources: the NATA 2009 Preseason Heat-Acclimatization Guidelines for Secondary School Athletics consensus statement (14-day period, days 1-5 one practice per day capped at 3 hours, double-practice days starting day 6 capped at 5 hours with a 3-hour separation) confirmed against NATA's own site and the NCBI-hosted paper. The Maryland claim is a verbatim match: MPSSAA's Model Policy for Preseason-Practice Heat-Acclimatization Guidelines (mpssaa.org, fetched direct) states under Equipment Restrictions, 'Soccer - Shin guards and goalie gloves can be worn beginning day 1.' The New Jersey half is a sourced inference rather than a direct quote: I fetched NJSIAA's actual Pre-season Heat Acclimatization Policy PDF (njsiaa.org) and its equipment-restriction clause (Core Principle 4) only limits 'sports requiring helmets or shoulder pads,' with soccer never mentioned; that structure supports the piece's claim that soccer isn't equipment-restricted under NJ's policy, but the document doesn't use the words 'permitted from day one' for soccer the way Maryland's does. Flagging that distinction here for the record since it's the one claim in the piece that isn't a literal quote match, but it does not misstate what the source says. Hero image verified: public/illustrations/water-jugs-sideline-table-soccer-evening.webp exists, opens clean with Pillow, 1536x1024. publishedAt is 2026-08-10, three days out from this review, so left as a scheduled draft rather than published today."
+  claudeReviewedAt: 2026-08-10
+  status: published
+  reviewerNotes: "Penny, PASS, published on schedule. Full rubric pass recorded 2026-08-07 (all sections A/B/C/E, facts verified against NATA 2009 consensus statement, MPSSAA and NJSIAA source docs). Held as scheduled draft since publishedAt was 3 days out. Today is the target date: re-verified hero image before flipping live (public/illustrations/water-jugs-sideline-table-soccer-evening.webp still on disk, 1536x1024, 54.8KB, opens clean with Pillow). No content changes since the 08-07 review. Flipping draft:false."
   factCheckGoodThrough: 2027-08-10
 ---
 
