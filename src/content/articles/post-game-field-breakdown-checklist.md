@@ -11,7 +11,7 @@ sport: "soccer"
 age: "all-ages"
 publishedAt: 2026-08-11
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -23,8 +23,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  status: published
+  reviewerNotes: "Penny: rubric-clean, A/B/C/E pass. All paragraphs 2-3 sentences, zero em dashes, dek 11 words, opens on the CPSC death count not a windup, closes on a fact not an empowerment line, zero banned words/hedge words, no rolling 3-sentence rhythm violation across all 19 sentences, no unsolicited bullets. Fact-verified independently this run against CPSC's own published guidance (cpsc.gov, Guidelines for Movable Soccer Goals): confirmed at least 21 deaths 1979-1994 tied to unanchored movable soccer goals, confirmed most incidents happened when goals were unattended rather than during a match, confirmed the crossbar-climbing mechanism. Sport-vocab checked against sport-vocab/soccer.md (goal, crossbar, net all correct soccer terms). No hero image generated this run: OPENAI_API_KEY was not available in this run's environment. Publishing without hero per PHOTO_STANDARD.md fallback; needs an image, backfill agent is disabled."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 CPSC's own guidelines document counts at least 21 deaths tied to unanchored soccer goals between 1979 and 1994, most of them not during a game. The goal was standing unattended when someone climbed it or leaned on the crossbar. That's the exact moment a post-game breakdown crew walks away from every week: net still on, goal still upright, nobody watching it.
