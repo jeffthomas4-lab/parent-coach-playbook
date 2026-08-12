@@ -33,6 +33,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "Chrome used to re-search Amazon for 'Wilson youth softball glove synthetic', 'Wilson youth fastpitch softball glove 10 inch', and 'Louisville Slugger LXT softball glove'. All listings reviewed live; none matched the article's stated size band or product category. No product page ASIN was written to affiliates.json this run."
+    },
+    {
+      "date": "2026-08-11",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Daily babylove pass. Confirmed no new BabyLoveGrowth article since the 2026-08-07 volleyball-equipment publish (git log for 'Publish BabyLoveGrowth article' commits and externalSource frontmatter markers across src/content/articles, nothing new). Checked git history for all 6 known BabyLove-origin articles (volleyball-equipment, best-youth-softball-gloves, best-kids-shin-guards, usa-vs-usssa-bats, youth-sports-costs, travel-soccer-costs): zero commits touching any of them since the 2026-08-10 pass, so content is byte-identical to what was verified yesterday. Given no textual change, today's check was a structural re-verification rather than a full live Amazon re-search: (1) counted /go/ links in each file and confirmed every slug resolves in affiliates.json (volleyball-equipment 7, best-youth-softball-gloves 2, best-kids-shin-guards 2, usa-vs-usssa-bats 2, youth-sports-costs 0, travel-soccer-costs 0 -- 13/13 resolved); (2) confirmed the FTC disclosure sentence ('This post contains affiliate links. If you buy through them, Parent Coach Desk earns a small commission at no extra cost to you.') is present in the visible body of all 4 monetized articles, positioned before their first affiliate link; (3) scanned all 6 files for competitor storefront domains (Gopher Sport, BSN Sports, All Volleyball, ChalkTalk, Dick's, Academy, Target, Walmart). Found All Volleyball and ChalkTalk Sports mentions in volleyball-equipment's Sources table (lines 248-250) and an Academy Sports mention in best-youth-softball-gloves (line 105, ball-size sizing citation, and line 239, a sizing-chart Sources entry) -- all four are blog/expert-advice pages cited as evidence, not buyable-product pages, so they stay protected under reference_links_protected and were left untouched. affiliates.json still parses as valid JSON (245 entries, unchanged). node scripts/check-content-field-lengths.mjs --check returned zero BUILD-BREAKING entries. Net result: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites, no gap-queue changes today (both softball-glove gaps and both zero-product articles unchanged from 2026-08-10, no fresh live search needed since no content changed). No ASIN fabricated.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No new product sourcing needed this run (no content changes since 2026-08-10 live-verified state). Verification limited to link-resolution and disclosure/competitor-domain text scans, not a live browser Amazon check."
     }
   ]
 }
