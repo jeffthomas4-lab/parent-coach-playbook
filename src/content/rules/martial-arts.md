@@ -31,9 +31,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Martial arts is too varied for one rules summary. This piece tries to cover the shared structure across major disciplines while acknowledging each is its own sport."
+  reviewerNotes: "Martial arts is too varied for one rules summary. This piece tries to cover the shared structure across major disciplines while acknowledging each is its own sport. 2026-08-11 Flo refresh: verified clean. USA Taekwondo, USA Karate, USA Judo, and IBJJF confirmed as current governing bodies; usatkd.org link live. No changes needed."
+  factCheckGoodThrough: 2027-05-11
 ---
 
 A few specifics.

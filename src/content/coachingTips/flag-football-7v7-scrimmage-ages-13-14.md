@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Fixed 'No tackles' and 'Flag pull is the tackle' to flag-pull language. Affiliate disclosure present."
+  reviewerNotes: "Fixed 'No tackles' and 'Flag pull is the tackle' to flag-pull language. Affiliate disclosure present. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 At this age, kids can run plays and react to defense. A 7v7 scrimmage with a few rules keeps the game moving and forces decision-making without chaos.

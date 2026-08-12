@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Bag-only tackling progression for ages 8-10; Hawk Tackle citation included. Sensitive flagged for tackle instruction."
+  reviewerNotes: "Bag-only tackling progression for ages 8-10; Hawk Tackle citation included. Sensitive flagged for tackle instruction. 2026-08-11 Flo refresh: corrected attribution line, Hawk Tackle and USA Football's Heads Up Football are related but distinct techniques (Hawk Tackle brings the head down as part of the shoulder wrap, Heads Up Football teaches a double-uppercut that lifts the head up and away) released alongside each other, not one folded into the other. Drill steps unaffected."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 A heavy bag teaches the Hawk Tackle motion without the risk of head-to-head contact. Kids get to feel what it's like to Profile, Sink, and Wrap. Cue: Profile, Sink, Near, Wrap.
@@ -45,7 +46,7 @@ A heavy bag teaches the Hawk Tackle motion without the risk of head-to-head cont
 
 **If they've got it:** Speed it up. Now they're sprinting full speed and need to keep low and under control.
 
-Based on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program.
+Based on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, part of the shoulder-leverage tackling system the Seahawks released alongside USA Football's Heads Up Football safety campaign.
 
 ---
 

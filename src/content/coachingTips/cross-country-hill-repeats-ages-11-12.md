@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Hill training builds confidence for racing,'. Sensitive flag on hill effort retained."
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Hill training builds confidence for racing,'. Sensitive flag on hill effort retained. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 Hill repeats teach young runners to maintain effort on challenging terrain. They build strength and confidence for racing over varied ground.

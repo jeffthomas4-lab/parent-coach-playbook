@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Clean pass."
+  reviewerNotes: "Clean pass. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 A channel narrows the attacker's options. They can only go forward or stop. The defender's job is to force them one way and win the ball. This teaches directional defense.

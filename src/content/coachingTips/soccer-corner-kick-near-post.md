@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Drill mentions heading or volley as finishing options at 11-12 (compliant with US Soccer 11+ heading guidance), but doesn't include rule note about heading restrictions. Volley is the safer default for younger groups."
+  reviewerNotes: "Drill mentions heading or volley as finishing options at 11-12 (compliant with US Soccer 11+ heading guidance), but doesn't include rule note about heading restrictions. Volley is the safer default for younger groups. 2026-08-11 Flo refresh: re-verified against current US Soccer guidance. U12-U13 heading is permitted but capped (max ~30 min/week, 15-20 headers/session in training, no game limit). Drill's heads-or-volley option at ages 11-12 still holds. No changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 Corner kicks are set-piece scoring opportunities. The near-post corner is the simplest: kick it to the near post, attacker finishes. This teaches timing and finishing under pressure.

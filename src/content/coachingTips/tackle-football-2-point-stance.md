@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Clean stance teaching with cue mnemonic. No contact."
+  reviewerNotes: "Clean stance teaching with cue mnemonic. No contact. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 DBs, receivers, and running backs don't need a hand on the ground. The 2-point stance gives them more freedom to move in any direction. The key is balance.

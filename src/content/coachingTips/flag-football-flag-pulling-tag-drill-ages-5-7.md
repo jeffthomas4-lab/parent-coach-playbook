@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Completed truncated variation. Clean flag-pull language throughout."
+  reviewerNotes: "Completed truncated variation. Clean flag-pull language throughout. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 Pulling a flag is different than tackling. Kids need to understand where the flag is, how to reach it, and how to pull with intent. This game makes it fun while building the skill.

@@ -21,9 +21,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-12
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
+  reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 The bow-in isn't ceremony. It's the switch from playground to dojo. Sixty seconds of focus before anything else.

@@ -20,9 +20,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
-  claudeReviewedAt: 2026-05-09
+  claudeReviewedAt: 2026-08-11
   status: claude-reviewed
-  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'fatigue is setting in, bu'. Sensitive flag on mile-repeat load retained."
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'fatigue is setting in, bu'. Sensitive flag on mile-repeat load retained. 2026-08-11 Flo refresh: verified clean, no changes needed."
+  factCheckGoodThrough: 2027-08-11
 ---
 
 Intervals at this age build the fitness needed for racing. This structured workout teaches pacing and effort management.
