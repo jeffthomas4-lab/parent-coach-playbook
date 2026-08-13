@@ -1,7 +1,8 @@
 # Donny upgrade — audit, source registry, pilot, and approval gate
 
 **Date:** 2026-08-08 · **Status:** dry run complete, nothing applied to production
-**Task:** `org-discovery-daily-worklist` (unchanged and still running the old prompt)
+**Approved:** 2026-08-11 — Jeff cleared the gate. `org-discovery-daily-worklist` now runs `buildout/donny/PROPOSED-TASK-PROMPT.md` (installed via scheduled-task update, same task id, next run 2026-08-12 ~9 PM local).
+**Task:** `org-discovery-daily-worklist` (updated 2026-08-11, no longer running the old prompt)
 
 ---
 

@@ -4,10 +4,12 @@ description: "Donny. Two-lane organization discovery for the shared activity-rad
 ---
 
 <!--
-HOLD FOR JEFF APPROVAL. This file is the PROPOSED replacement for
-C:\Users\jeffthomas\Documents\Claude\Scheduled\org-discovery-daily-worklist\SKILL.md
-It has NOT been installed and the task has NOT been changed. Copy it into place
-only after the approval gate in buildout/donny/PILOT-REPORT.md is cleared.
+APPROVED AND INSTALLED 2026-08-11. Jeff cleared the gate in
+buildout/donny/PILOT-REPORT.md. This content is now live as the
+org-discovery-daily-worklist scheduled task (installed via scheduled-task
+update, not a file copy). This file is kept as the source copy for reference;
+edit it and re-run the scheduled-task update together if the task needs to
+change again.
 -->
 
 This is an automated run of a scheduled task. The user is not present. Execute autonomously, make reasonable choices, note them in your output. Take a write action only if this file asks for that specific action. When in doubt, produce a report. End with <run-summary>one or two sentences on what you found and whether anything changed since last run</run-summary>.

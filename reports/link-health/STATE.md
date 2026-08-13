@@ -12,55 +12,55 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 
 | slug | last checked |
 |---|---|
-| baseball-glove-youth | 2026-07-20 |
+| baseball-glove-youth | 2026-08-10 |
 | baseball-glove-9in-youth | 2026-07-20 |
 | baseball-bat-teeball | 2026-08-03 |
 | baseball-helmet-youth | 2026-07-20 |
 | baseball-balls-teeball | 2026-08-03 |
 | baseball-bases-rubber | 2026-08-03 |
-| baseball-balls-wiffle | 2026-07-19 |
-| baseball-blitzball-set | 2026-07-19 |
+| baseball-balls-wiffle | 2026-08-10 |
+| baseball-blitzball-set | 2026-08-10 |
 | baseball-glove-breakin-kit | 2026-07-20 |
 | baseball-glove-laces | 2026-07-20 |
 | baseball-pants-youth | 2026-07-20 |
-| baseball-belt-youth | 2026-07-19 |
+| baseball-belt-youth | 2026-08-10 |
 | baseball-catchers-mitt-32in | 2026-08-03 |
 | baseball-batting-gloves-youth | 2026-08-03 |
 | baseball-cup-youth | 2026-07-20 |
 | baseball-catchers-gear-youth | 2026-08-03 |
-| baseball-catchers-bag | 2026-07-19 |
+| baseball-catchers-bag | 2026-08-10 |
 | baseball-sliding-mitt | 2026-07-20 |
-| baseball-arm-sleeve | 2026-07-19 |
+| baseball-arm-sleeve | 2026-08-10 |
 | baseball-bat-28in | 2026-08-03 |
 | baseball-trainer | 2026-07-20 |
 | baseball-throwback-net | 2026-07-20 |
-| softball-glove-11in | 2026-07-20 |
+| softball-glove-11in | 2026-08-10 |
 | softball-face-mask | 2026-07-20 |
-| lacrosse-ball | 2026-07-20 |
+| lacrosse-ball | 2026-08-10 |
 | lacrosse-goggles-youth | 2026-07-20 |
-| lacrosse-starter-kit-youth | 2026-07-20 |
-| soccer-cones-12pk | 2026-07-20 |
+| lacrosse-starter-kit-youth | 2026-08-10 |
+| soccer-cones-12pk | 2026-08-10 |
 | soccer-rebound-net | 2026-07-20 |
 | soccer-cleats-youth | 2026-07-20 |
 | multi-sport-cleats-youth | 2026-07-20 |
-| basketball-ball-rubber | 2026-07-20 |
+| basketball-ball-rubber | 2026-08-10 |
 | basketball-ball-forge | 2026-07-20 |
 | basketball-ball-authentic | 2026-07-20 |
 | multi-sport-sunglasses-youth | 2026-07-20 |
 | multi-sport-socks-crew | 2026-07-20 |
-| baseball-batting-gloves-adult | 2026-07-19 |
+| baseball-batting-gloves-adult | 2026-08-10 |
 | agility-cones | 2026-08-03 |
-| agility-training-pole | 2026-07-19 |
-| football-rubber-youth | 2026-07-20 |
+| agility-training-pole | 2026-08-10 |
+| football-rubber-youth | 2026-08-10 |
 | football-leather-youth | 2026-07-20 |
 | football-leather-college | 2026-07-20 |
 | football-qb-wristbands | 2026-07-20 |
 | football-qb-throwing-net | 2026-07-20 |
 | hockey-helmet-youth | 2026-07-20 |
-| hockey-puck | 2026-07-20 |
-| hockey-stick-youth | 2026-07-20 |
+| hockey-puck | 2026-08-10 |
+| hockey-stick-youth | 2026-08-10 |
 | swim-goggles-youth | 2026-07-20 |
-| volleyball-net | 2026-07-20 |
+| volleyball-net | 2026-08-10 |
 | tennis-racquet-junior | 2026-07-20 |
 | tennis-balls-orange | 2026-07-20 |
 | tennis-net | 2026-07-20 |
@@ -71,11 +71,11 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 | football-cup-shorts-youth | 2026-07-20 |
 | football-mouthguard-sisu | 2026-07-20 |
 | multi-sport-duffle-bag | 2026-07-20 |
-| flag-football-belt-set | 2026-07-20 |
+| flag-football-belt-set | 2026-08-10 |
 | soccer-shin-guards-youth | 2026-07-20 |
 | soccer-shin-guards-ankle-youth | 2026-07-20 |
-| soccer-ball-size3 | 2026-07-20 |
-| soccer-ball-size4 | 2026-07-20 |
+| soccer-ball-size3 | 2026-08-10 |
+| soccer-ball-size4 | 2026-08-10 |
 | soccer-ball-size5 | 2026-07-20 |
 | soccer-ball-size5-match | 2026-07-27 |
 | soccer-socks-youth | 2026-07-20 |
@@ -86,11 +86,11 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 | multi-sport-shoe-bag | 2026-07-27 |
 | volleyball-knee-pads-youth | 2026-07-20 |
 | volleyball-shoes-upcourt | 2026-07-20 |
-| volleyball-volley-lite | 2026-07-20 |
+| volleyball-volley-lite | 2026-08-10 |
 | volleyball-flistatec | 2026-07-27 |
 | volleyball-spandex-youth | 2026-07-27 |
 | volleyball-ankle-brace | 2026-07-20 |
-| xc-trainers-youth | 2026-07-20 |
+| xc-trainers-youth | 2026-08-10 |
 | xc-spikes-kilkenny | 2026-07-27 |
 | xc-base-layer-set-youth | 2026-07-27 |
 | xc-running-gloves | 2026-07-27 |
@@ -207,56 +207,56 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 | lacrosse-shoulder-pads-youth | 2026-07-27 |
 | lacrosse-stick-girls-youth | 2026-08-03 |
 | book-changing-the-game | 2026-08-03 |
-| book-whose-game-is-it-anyway | 2026-07-19 |
-| book-beyond-winning | 2026-07-19 |
-| book-positive-coaching | 2026-07-19 |
+| book-whose-game-is-it-anyway | 2026-08-10 |
+| book-beyond-winning | 2026-08-10 |
+| book-positive-coaching | 2026-08-10 |
 | book-mindset | 2026-08-03 |
-| book-grit | 2026-07-19 |
-| book-mind-gym | 2026-07-19 |
-| book-champions-mind | 2026-07-19 |
-| book-talent-code | 2026-07-19 |
+| book-grit | 2026-08-10 |
+| book-mind-gym | 2026-08-10 |
+| book-champions-mind | 2026-08-10 |
+| book-talent-code | 2026-08-10 |
 | book-range | 2026-08-03 |
-| book-peak | 2026-07-19 |
-| book-inner-game-of-tennis | 2026-07-19 |
-| book-little-book-of-talent | 2026-07-19 |
-| script-binder-1inch | 2026-07-19 |
-| theater-monologue-book | 2026-07-19 |
-| music-folder-performance | 2026-07-19 |
-| music-stand-foldable | 2026-07-19 |
-| gymnastics-grips-youth | 2026-07-19 |
-| martial-arts-sparring-gear-youth | 2026-07-19 |
+| book-peak | 2026-08-10 |
+| book-inner-game-of-tennis | 2026-08-10 |
+| book-little-book-of-talent | 2026-08-10 |
+| script-binder-1inch | 2026-08-10 |
+| theater-monologue-book | 2026-08-10 |
+| music-folder-performance | 2026-08-10 |
+| music-stand-foldable | 2026-08-10 |
+| gymnastics-grips-youth | 2026-08-10 |
+| martial-arts-sparring-gear-youth | 2026-08-10 |
 | swim-cap-silicone-youth | 2026-08-03 |
 | swimsuit-training-youth | 2026-08-03 |
-| tennis-shoes-court-youth | 2026-07-19 |
-| tennis-balls-standard | 2026-07-19 |
+| tennis-shoes-court-youth | 2026-08-10 |
+| tennis-balls-standard | 2026-08-10 |
 | athletic-shorts-black-youth | 2026-08-03 |
-| foam-roller-triggerpoint-13 | 2026-07-19 |
-| foam-roller-basics-24 | 2026-07-19 |
-| percussion-massager-renpho-r3 | 2026-07-19 |
-| theragun-relief | 2026-07-19 |
-| resistance-bands-loop-fit-simplify | 2026-07-19 |
-| theraband-flat-band-light-medium | 2026-07-19 |
-| ice-pack-arctic-flex-gel | 2026-07-19 |
-| ace-bandage-3inch-set | 2026-07-19 |
-| blackout-curtains-nicetown | 2026-07-19 |
-| white-noise-lectrofan-classic | 2026-07-19 |
+| foam-roller-triggerpoint-13 | 2026-08-10 |
+| foam-roller-basics-24 | 2026-08-10 |
+| percussion-massager-renpho-r3 | 2026-08-10 |
+| theragun-relief | 2026-08-10 |
+| resistance-bands-loop-fit-simplify | 2026-08-10 |
+| theraband-flat-band-light-medium | 2026-08-10 |
+| ice-pack-arctic-flex-gel | 2026-08-10 |
+| ace-bandage-3inch-set | 2026-08-10 |
+| blackout-curtains-nicetown | 2026-08-10 |
+| white-noise-lectrofan-classic | 2026-08-10 |
 | ballet-slippers-canvas-youth | 2026-08-03 |
 | ballet-tights-youth | 2026-08-03 |
-| dance-jazz-shoes-youth | 2026-07-19 |
-| dance-tap-shoes-youth | 2026-07-19 |
-| dance-character-shoes-youth | 2026-07-19 |
-| dance-bun-kit | 2026-07-19 |
-| dance-leg-warmers | 2026-07-19 |
-| stage-makeup-kit | 2026-07-19 |
-| band-reeds-clarinet | 2026-07-19 |
-| band-valve-oil | 2026-07-19 |
-| band-practice-pad | 2026-07-19 |
-| band-marching-shoes | 2026-07-19 |
-| football-helmet-youth | 2026-07-19 |
-| football-shoulder-pads-youth | 2026-07-19 |
-| lacrosse-arm-pads-youth | 2026-07-19 |
-| baseball-bat-backpack | 2026-07-19 |
-| cheer-poms | 2026-07-19 |
+| dance-jazz-shoes-youth | 2026-08-10 |
+| dance-tap-shoes-youth | 2026-08-10 |
+| dance-character-shoes-youth | 2026-08-10 |
+| dance-bun-kit | 2026-08-10 |
+| dance-leg-warmers | 2026-08-10 |
+| stage-makeup-kit | 2026-08-10 |
+| band-reeds-clarinet | 2026-08-10 |
+| band-valve-oil | 2026-08-10 |
+| band-practice-pad | 2026-08-10 |
+| band-marching-shoes | 2026-08-10 |
+| football-helmet-youth | 2026-08-10 |
+| football-shoulder-pads-youth | 2026-08-10 |
+| lacrosse-arm-pads-youth | 2026-08-10 |
+| baseball-bat-backpack | 2026-08-10 |
+| cheer-poms | 2026-08-10 |
 
 ## Run log
 
@@ -269,9 +269,12 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 | 2026-07-20 | 65 (remaining 50 oldest-dated 07-08 + 15 highest-traffic 07-13) | LINK_HEALTH_2026-07-20.md | 2 confirmed: soccer-ball-size4 (out-of-stock, high priority — 66 placements), soccer-shin-guards-ankle-youth (degraded buy box — "See All Buying Options" only, low priority). 0 false positives, 0 unconfirmed. foam-roller-medium (flagged 07-13) confirmed resolved/back in stock. |
 | 2026-07-27 | 65 (remaining 50 oldest-dated 07-13 + 15 highest-traffic 07-18) | LINK_HEALTH_2026-07-27.md | 5 confirmed: wrestling-headgear (dead ASIN/404), hockey-pads-starter (mismatch + out-of-stock), basketball-shoes-youth (out-of-stock, 3 placements), gymnastics-slippers-youth (mismatch), lacrosse-shoulder-pads-youth (mismatch). 5 false positives dismissed (Amazon bot-detection page via curl pre-screen, all confirmed clean in-browser). 0 unconfirmed. |
 | 2026-08-03 | 65 (remaining 50 oldest-dated 07-18 + 15 highest-traffic 07-19) | LINK_HEALTH_2026-08-03.md | 18 confirmed (13 dead ASINs, 1 OOS, 3 mismatches, 1 non-Amazon 404) — all but 1 are unresolved carry-overs from the original 07-18 findings on this same slug pool (foam-roller-standard self-resolved via restock). 0 false positives, 0 unconfirmed. |
+| 2026-08-10 | 65 (remaining 50 oldest-dated 07-19 + 15 highest-traffic 07-20) | LINK_HEALTH_2026-08-10.md | 10 confirmed (2 non-Amazon 404 on Bookshop.org, 8 Amazon out-of-stock/unbuyable) — 8/10 are unresolved carry-overs from 07-19 (football-helmet-youth, lacrosse-arm-pads-youth, dance-jazz-shoes-youth, dance-tap-shoes-youth, band-valve-oil, band-practice-pad, book-positive-coaching, book-talent-code), 2 newly discovered (football-shoulder-pads-youth OOS, soccer-ball-size3 no new-condition offer). soccer-ball-size4 (flagged 07-20) confirmed resolved/back in stock. 0 false positives, 0 unconfirmed. |
 
 ## Next run
 
-Pick the ~65 slugs with the oldest last-checked date. As of 2026-08-03, the 07-08, 07-13, and 07-18 pools are fully cleared (all now dated 2026-08-03 or later). The 07-19 pool has 50 slugs remaining (dated 2026-07-19; 15 of its 65 were pulled forward this run for traffic weighting via `placementCount` in `reports/affiliate/lifecycle.json`). Next run should pick the remaining **50 slugs still dated 2026-07-19** (oldest remaining), then move to the 07-20 pool. Continue the ~monthly cadence.
+Pick the ~65 slugs with the oldest last-checked date. As of 2026-08-10, the 07-08 through 07-19 pools are fully cleared (all now dated 2026-08-10 or later). The 07-20 pool has 50 slugs remaining (dated 2026-07-20; 15 of its 65 were pulled forward this run for traffic weighting via `placementCount` in `reports/affiliate/lifecycle.json`). Next run should pick the remaining **50 slugs still dated 2026-07-20** (oldest remaining), then move to the 07-27 pool. Continue the ~monthly cadence.
 
-**Important for next run:** this run's 18 confirmed issues were nearly all (17/18) unresolved carry-overs from 2026-07-18 — the fixes recommended two cycles ago never landed. Recommend checking whether the replacement-sourcer (Arnie) actually picked up `replacement-queue.json` from this run before the next monthly cycle rolls around, rather than assuming the queue is being worked.
+**Important for next run:** 8 of this run's 10 confirmed issues are unresolved carry-overs from 2026-07-19 (3+ weeks broken with zero action, same pattern flagged in the 08-03 run notes below). Recommend checking whether the replacement-sourcer (Arnie) is actually working `replacement-queue.json` before assuming the backlog is shrinking — it does not appear to be.
+
+**Note carried from 2026-08-03:** this run's 18 confirmed issues were nearly all (17/18) unresolved carry-overs from 2026-07-18 — the fixes recommended two cycles ago never landed. Recommend checking whether the replacement-sourcer (Arnie) actually picked up `replacement-queue.json` from this run before the next monthly cycle rolls around, rather than assuming the queue is being worked.

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-09T15:59:10.878Z",
-  "count": 769,
+  "generatedAt": "2026-08-12T18:58:10.326Z",
+  "count": 773,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -852,6 +852,12 @@
       ]
     },
     {
+      "url": "https://pitchmark.com/support/how-to-mark-a-pitch/",
+      "sources": [
+        "src/content/articles/squaring-soccer-field-corners-with-the-3-4-5-method.md"
+      ]
+    },
+    {
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2729972/",
       "sources": [
         "src/content/body/acl-prevention-warmup.md"
@@ -1067,6 +1073,12 @@
       "url": "https://teammanager.zendesk.com/hc/en-us",
       "sources": [
         "src/content/resources/setting-up-gamechanger.md"
+      ]
+    },
+    {
+      "url": "https://theifab.com/laws/latest/the-field-of-play",
+      "sources": [
+        "src/content/articles/setting-up-the-soccer-center-circle.md"
       ]
     },
     {
@@ -3096,7 +3108,8 @@
       "url": "https://www.cpsc.gov/safety-education/safety-guides/sports-fitness-and-recreation/guidelines-movable-soccer-goals",
       "sources": [
         "src/content/articles/how-to-net-a-soccer-goal.md",
-        "src/content/articles/moving-a-soccer-goal-safely.md"
+        "src/content/articles/moving-a-soccer-goal-safely.md",
+        "src/content/articles/post-game-field-breakdown-checklist.md"
       ]
     },
     {
@@ -4384,6 +4397,12 @@
       ]
     },
     {
+      "url": "https://www.theifab.com/laws/latest/the-start-and-restart-of-play",
+      "sources": [
+        "src/content/articles/setting-up-the-soccer-center-circle.md"
+      ]
+    },
+    {
       "url": "https://www.themat.com/",
       "sources": [
         "src/content/body/wrestling-headgear-skin-infections.md",
@@ -4449,6 +4468,12 @@
       "url": "https://www.tsa.gov/travel/special-procedures/traveling-children",
       "sources": [
         "src/content/body/airport-pickup-non-parents.md"
+      ]
+    },
+    {
+      "url": "https://www.uiltexas.org/health/info/heat-stress-and-athletic-participation",
+      "sources": [
+        "src/content/news/texas-uil-heat-rule-mandatory-2026.md"
       ]
     },
     {
