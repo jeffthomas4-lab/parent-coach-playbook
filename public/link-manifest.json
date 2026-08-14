@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-12T18:58:10.326Z",
-  "count": 773,
+  "generatedAt": "2026-08-13T05:31:29.853Z",
+  "count": 780,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -93,6 +93,12 @@
       "url": "https://aausports.org/aau-youth-protection-policy/",
       "sources": [
         "src/content/body/volunteer-vs-paid-coach-vetting.md"
+      ]
+    },
+    {
+      "url": "https://activeforlife.com/how-to-handle-a-bad-coach-as-a-parent/",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
       ]
     },
     {
@@ -333,6 +339,12 @@
       "url": "https://bjsm.bmj.com/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://blog.depthchartiq.ai/athletic-career-longevity-factors-parents-control-most",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
       ]
     },
     {
@@ -1115,6 +1127,12 @@
       "url": "https://truesport.org/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://truesport.org/wp-content/uploads/Parent_Code-of-Conduct.pdf",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
       ]
     },
     {
@@ -3489,6 +3507,12 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/university/articles/local-league-parents-code-of-conduct-help-make-parents-families-and-fans-accountable-for-their-behavior/",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org/university/articles/mandatory-play-what-parents-need-to-know/",
       "sources": [
         "src/content/articles/tee-ball-strikeouts.md"
@@ -3682,6 +3706,12 @@
       "url": "https://www.nata.org/professional-interests/job-settings/secondary-school",
       "sources": [
         "src/content/body/heat-and-hydration.md"
+      ]
+    },
+    {
+      "url": "https://www.nays.org/upload/editor/pdf/National%20Standards%20for%20Youth%20Sports%202017%20%282%29.pdf",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
       ]
     },
     {
@@ -4175,6 +4205,12 @@
       "url": "https://www.redcross.org/take-a-class/lifeguarding",
       "sources": [
         "src/content/body/drowning-rescue-and-monitoring.md"
+      ]
+    },
+    {
+      "url": "https://www.riversideca.gov/park_rec/sites/riversideca.gov.park_rec/files/pdf/Parents%20Code%20of%20Ethics.pdf",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
       ]
     },
     {
@@ -5078,6 +5114,12 @@
       "url": "https://www.usyouthsoccer.org/news/2025/06/10/updated-decision-on-age-group-formation/",
       "sources": [
         "src/content/news/youth-soccer-age-cutoff-shifts-to-school-year-2026.md"
+      ]
+    },
+    {
+      "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/US-Youth-Soccer-Code-of-Conduct-4.23.22-1.pdf",
+      "sources": [
+        "src/content/articles/parent-coach-ethics.md"
       ]
     },
     {

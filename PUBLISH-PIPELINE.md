@@ -1,7 +1,7 @@
 # Publish pipeline
 
 **Owner:** Jeff
-**Last updated:** 2026-08-10
+**Last updated:** 2026-08-12
 **Covers:** how an article gets from Ed, Penny, or BabyLoveGrowth onto parentcoachdesk.com without anyone typing a wrangler command.
 
 This is the source for publishing and deployment behavior. `DEPLOYMENT-RUNBOOK.md` still owns the by-hand production sequence and the traps in it. When the two disagree about what happens automatically, this file wins.
@@ -12,11 +12,13 @@ This is the source for publishing and deployment behavior. `DEPLOYMENT-RUNBOOK.m
 
 On 2026-08-05 every GitHub Actions workflow was deleted across nine repos after push-triggered CI burned the monthly allotment in four days. See `Outputs/_system/GITHUB-ACTIONS-REPLACEMENT.md`.
 
-One of the deleted files was `deploy-workers.yml`. It was the only thing that turned a commit on `main` into a live site. Nothing replaced it.
+One of the deleted files was `deploy-workers.yml`. It had been the only thing that turned a commit on `main` into a live site.
 
-Both publishing pipelines kept working exactly as designed. Ed drafts, Penny reviews and flips `draft: false`, the commit lands on `main`. BabyLoveGrowth posts a webhook, the Worker writes the article to `main` with `draft: false` and records a receipt in D1. Every step reported success.
+**Update, 2026-08-12: this section was wrong.** Cloudflare Workers Builds *did* replace it, and it works. Verified directly in Cloudflare's build history: a run of successful green builds, including `0c0d558 Publish BabyLoveGrowth article 703566: parent-coach-ethics`, which built and deployed straight from `main`. "Nothing replaced it" was never true after Workers Builds was connected. That was never the actual failure, and this doc never described the real one until today.
 
-The site just stopped changing. "Published" quietly came to mean "committed to git," and going live became a thing that happened only when Jeff ran the PowerShell block by hand. That gap is what this document closes.
+The real failure: the manual local deploy path was never retired once Workers Builds existed. Dana's nightly local `wrangler deploy` shipped whatever was on her machine — Penny's and Ed's editorial output, which had never been pushed. Workers Builds shipped whatever was on `origin/main` — BabyLoveGrowth's articles, written straight to origin via its webhook. Neither lane knew the other existed, and whichever ran last won, overwriting the other's articles. Cloudflare's version history shows the two lanes alternating for four days: `75b18753` manual, `312e1e7e` build, `0b6ea0f5` manual, `3f4cdcd7` build, `5293d8a4` build, `5dea0f3b` manual. Each deploy reverted the previous lane's content. `parent-coach-ethics` was live right after the `0c0d558` build; a manual deploy seven hours later took it back to a 404.
+
+Fixed 2026-08-12: `CLAUDE.md`'s Deployment norm no longer tells every agent session to append a local `wrangler deploy` on every repo change, and the manual path is now break-glass only (section 7). See `parent-coach-desk-RESYNC-RUNBOOK.md` for the one-time resync this required.
 
 ### The second failure, found the same day
 
@@ -36,9 +38,12 @@ Both end at the same place: a commit on `main` with `draft: false`.
 |---|---|---|
 | 1 | Ed (`pcd-editorial-writer`) | Draft in the right collection with `draft: true`, queue advanced in `editorial-queue.md` |
 | 2 | Penny | Review. Publishes (`draft: false`), sends back for revision, or holds |
-| 3 | Workers Builds | Build and deploy |
+| 3 | Penny / Ed | `git fetch` + `git pull --rebase origin main`, then `git push origin main` |
+| 4 | Workers Builds | Build and deploy |
 
 Penny flipping `draft: false` is the approval. Nothing else gates it, and nothing else should.
+
+The rebase before push is mandatory, not optional. BabyLoveGrowth writes commits directly to `origin/main` via the GitHub Contents API, out from under any local clone — a push that skips the rebase can silently revert whatever BabyLoveGrowth landed since the clone was last synced. That's exactly what happened for four days (section 1). Both scheduled tasks, `pcd-review-publish` and `pcd-editorial-writer`, were updated 2026-08-12 to fetch and rebase before committing.
 
 ### BabyLoveGrowth (provider)
 
@@ -78,6 +83,8 @@ Cloudflare dashboard, **Workers & Pages** → **parent-coach-desk** → **Settin
 | Exclude | (empty) |
 
 A push that touches none of those does not build. Code changes still ship by hand, per `DEPLOYMENT-RUNBOOK.md`.
+
+These were wrong until 2026-08-12: the field was set to `*`, so every push triggered a build, including code-only pushes that were never meant to auto-ship. `ci-deploy-guard` correctly blocked those from deploying, so nothing bad shipped from it directly — but it meant Workers Builds was building on every commit instead of only the content commits it was meant for. Corrected 2026-08-12 to the content allowlist above.
 
 `reports/editorial/editorial-refresh-queue.json` is deliberately absent from that list. It is untracked (`.gitignore`), regenerated at the top of every build, and was untracked on 2026-08-05 because tracking it conflicted on every merge.
 
@@ -121,6 +128,14 @@ Changed 2026-08-10:
 5. Batch raised from 20 to 50, with a warning when the provider returns more than that.
 6. The completion log carries `listing_size`, which separates "the provider returned nothing" from "the shape was wrong."
 
+### Update, 2026-08-12: still not resolved
+
+The shape fix above did not fix it. There are still zero `api_reconciliation` rows in `external_article_receipts`. All six required secrets were confirmed present in the Cloudflare dashboard on 2026-08-12 — nothing is missing.
+
+By elimination: `GITHUB_TOKEN` and the `PCD_OPS_DB` binding are proven good, because the webhook path uses both and has written 7 receipt rows and 7 GitHub commits. `BABYLOVE_WEBHOOK_TOKEN` is proven too — that's how the provider authenticates to us, and that works. `BABYLOVE_API_KEY` is the only one of the six used exclusively by reconciliation, and the code throws on a non-2xx from the provider's list endpoint before it writes anything to D1 — exactly the zero-rows-of-any-status signature observed.
+
+**This points to `BABYLOVE_API_KEY` being invalid or expired.** This is a deduction from elimination, not a direct observation — the tail below is what confirms or kills it. If it shows `api_401` or `api_403`, regenerate the key in the BabyLoveGrowth dashboard and reset it with `npm exec wrangler -- secret put BABYLOVE_API_KEY --config wrangler.production.jsonc`.
+
 ### Confirming it works
 
 The reconciliation runs at `:17` past every sixth hour. Watch a live tick:
@@ -147,6 +162,8 @@ Two checks, both already wired.
 
 **Deploy lag.** `worker-cron` (`parent-coach-playbook-cron`, daily at 13:00 UTC) compares `/build-info.json` against the tip of `main` on GitHub. Logs `deploy_lag_ok` when they match. Logs `deploy_lag` with `severity: alert` once production has been behind for 12 hours or more. It swallows its own errors so it can never fail the camps sweep in the same tick.
 
+**Never actually deployed, as of 2026-08-12.** The monitor above exists in `worker-cron/src/index.ts` (added 2026-08-10), but the live `parent-coach-playbook-cron` bundle only contains `fireCampsSweep`/`runScheduledSweep` — the worker was never redeployed after that commit landed. `deploy_lag_ok` and `deploy_lag` have never once logged, because the code that logs them has never shipped. This monitor would have caught the four-day overwrite bug in section 1 and didn't, because it wasn't live. Any future change to `worker-cron` must be followed by `npm exec wrangler -- deploy` from that directory, and the live bundle checked afterward to confirm the deploy-lag code actually made it — a green deploy is not proof by itself.
+
 **Publish drift.** `scripts/check-publish-queue-drift.mjs` compares every locally eligible page against the live sitemap. It exists because on 2026-07-28 the homepage went a week stale with a green build and passing tests. Run it any time:
 
 ```powershell
@@ -166,13 +183,20 @@ Reported clean on 2026-08-10: 2,104 URLs live, 1,873 eligible, no drift.
 | Deploy succeeded but the site did not change | Staging Worker shipped instead of production | The build must be `build:production`. Assert the manifest name prints `parent-coach-desk` |
 | Whole site behind by days | Workers Builds disconnected or its API token expired | `deploy_lag` alert fires at 12 hours. Reconnect in **Settings** → **Build** |
 | Provider article published with no hero image | `pcd-hero-image-backfill` has been disabled since 2026-07-31 | Generate the hero and commit it, or re-enable the backfill |
+| An article was live, then vanished | A local `wrangler deploy` published a stale clone over production | Never deploy locally. Push to `origin/main` and let Workers Builds ship it |
 
 ---
 
 ## 7. What this does not do
 
-Code changes do not auto-deploy, by choice. Anything outside the content allowlist ships from PowerShell after review.
+Code changes do not auto-deploy, by choice. Anything outside the content allowlist ships from PowerShell after review. As of 2026-08-12 that manual path is break-glass only, per the updated `CLAUDE.md` Deployment norm — not a routine habit, and never run against a clone that's behind `origin/main` (see section 1 and `parent-coach-desk-RESYNC-RUNBOOK.md`).
 
 There is no staging-before-production sequence and no automatic rollback on smoke failure. Both went with `deploy-workers.yml`. `scripts/deploy-remediation.mjs` and `scripts/smoke-worker-deployment.mjs` still exist and still work, but nothing forces them to run. Restoring the staging gate on top of Workers Builds is open work.
 
 Nothing here reopens the human approval gate on BabyLoveGrowth content. `BABYLOVE_AUTOPUBLISH_ENABLED` is the only switch, and it is all or nothing.
+
+---
+
+## Changelog
+
+**2026-08-12.** Corrected section 1: Workers Builds was never missing — it replaced `deploy-workers.yml` and works, verified in Cloudflare's build history. The real bug was that the manual local deploy path was never retired alongside it, so it and Workers Builds spent four days overwriting each other's articles (evidence: the alternating version history now quoted in section 1). Updated section 2's Ed/Penny row to ship by `git push` with a mandatory rebase first, not a local deploy. Updated section 3 to note the build watch paths were wrongly set to `*` until today. Updated section 4 to record that the 2026-08-10 shape fix did not resolve reconciliation, and added the elimination-based deduction that `BABYLOVE_API_KEY` is the remaining suspect. Updated section 5 to flag that the deploy-lag monitor has never actually been deployed. Added a failure-mode row for the vanishing-article bug in section 6. Noted in section 7 that the manual deploy path is now break-glass only, matching the updated `CLAUDE.md`. If this disagrees with notes from before 2026-08-12, this version is correct — the earlier ones described a bug that didn't fully exist and missed the one that did.
