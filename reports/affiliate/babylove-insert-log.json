@@ -63,6 +63,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "No new product sourcing this run. Verification limited to link-resolution, disclosure, and competitor-domain text scans; no live browser Amazon check performed since no monetized article changed."
+    },
+    {
+      "date": "2026-08-13",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Daily babylove pass. Checked git log for 'Publish BabyLoveGrowth article' commits and externalSource frontmatter markers since the 2026-08-12 run (commit 8de388dd): no new BabyLoveGrowth article published. All commits since then belong to Penny, Ed, Dana, Cass, and Flo's own lanes, not BabyLove publishes. Backfill queue re-checked: git log confirms zero commits touching volleyball-equipment, best-youth-softball-gloves, best-kids-shin-guards, usa-vs-usssa-bats, youth-sports-costs, travel-soccer-costs, or parent-coach-ethics since each file's last-modifying commit (1c15da7b, e84e80cb, da072300, 735d8861, 7400907a, 9778cade, 0c0d5582 respectively), so content is byte-identical to what was verified 2026-08-12. Structural re-verification performed: (1) parsed every /go/ link out of the four monetized files via script, all 11 resolve in affiliates.json (volleyball-equipment 7, best-youth-softball-gloves 2, best-kids-shin-guards 2, usa-vs-usssa-bats 2); (2) confirmed the FTC disclosure sentence is present in the visible body of all 4, before the first affiliate link; (3) re-scanned all 7 backfill/queue files for competitor storefront domains (Gopher Sport, BSN Sports, All Volleyball, ChalkTalk, Dick's, Academy, Target, Walmart) -- found only prose/Sources-table citations (allvolleyball.com and chalktalksports.com in volleyball-equipment's Sources table, academy.com as a sizing-chart citation in best-youth-softball-gloves), all protected reference links, none replaced; (4) confirmed youth-sports-costs and travel-soccer-costs still name no substantive single product. affiliates.json parses as valid JSON, 245 entries, unchanged. node scripts/check-content-field-lengths.mjs --check returned zero BUILD-BREAKING entries. Net result: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites today. No ASIN fabricated. No live browser Amazon re-search run today for the two standing softball-glove gaps (Wilson budget glove, Louisville Slugger LXT) since the article is unchanged and both were live-verified as unmatchable on 2026-08-10; that finding stands. Branch is main, working tree clean before this session's edits.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No new product sourcing this run. Verification limited to link-resolution, disclosure, and competitor-domain text scans; no live browser Amazon check performed since no monetized article changed."
     }
   ]
 }
