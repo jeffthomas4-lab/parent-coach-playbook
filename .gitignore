@@ -26,11 +26,21 @@ pnpm-debug.log*
 *session*.json
 *cookies*.json
 
-# editor
+# editor / OS cruft
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
+*.swp
+*~
+
+# python scratch (buildout/ scripts)
+__pycache__/
+*.pyc
+
+# misc build cache
+.cache/
 
 # astro
 .astro/
