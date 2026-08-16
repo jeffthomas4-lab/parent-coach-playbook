@@ -22,9 +22,9 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-09
-  status: needs-revision
-  reviewerNotes: "Penny, FAIL, round 1. Section A item 1 (paragraph length, 3-sentence max) fails on the paragraph before the FIFA close: 'A corner that's a few degrees off throws the whole sideline out of true. You'll see it later as a corner arc that doesn't quite meet the flag, or a penalty box that reads crooked from the bleachers. The five minutes this takes up front is cheaper than re-taping the field after the first game. Cheap insurance.' That's four sentences in one block, one over the cap. Fix: break 'Cheap insurance.' into its own paragraph, or cut it and let the block end on the re-taping sentence. Everything else checked out. Fact-verified independently this run: FIFA/IFAB Laws of the Game Law 1 confirms the corner arc is a quarter circle with a 1-yard (1m) radius from the corner flagpost, matches the piece exactly. Pitchmark's own 'How to Mark a Pitch' guide confirms the 30/40/50-meter 3-4-5 scaling for a full pitch, matches the piece's claim about the source. No em dashes anywhere in the file. Dek is 12 words, under the 15-word cap. Opens on a concrete fact, no throat-clearing. Closes on a FIFA rule, not an empowerment line. Zero banned words or phrases, one hedge word total ('often,' well under the 3-word ceiling). No banned patterns (no reframe, no fake-wisdom triplet, no concession structure, no weak sentence starters). At least one specific (30/40/50 feet, FIFA) and one voice marker ('Cheap insurance.' as a fragment) present. One soft note for the fix pass, not a fail on its own: sport-vocab/soccer.md lists 'goal line' as the correct term and doesn't carry 'end line,' which the piece uses once ('either the end line or the touchline'). Worth swapping to 'goal line' while in there, but the paragraph-length item is the actual fail. This is a one-sentence fix, not a rewrite."
+  claudeReviewedAt: 2026-08-16
+  status: claude-reviewed
+  reviewerNotes: "Ed, revision pass 2026-08-16: fixed the paragraph-length fail Penny flagged. Split 'Cheap insurance.' into its own paragraph so the block before it ends at three sentences. Also took the soft note: swapped 'end line' to 'goal line' to match sport-vocab/soccer.md. No other changes. Ready for Penny's re-review. Prior note (round 1 FAIL): Penny, FAIL, round 1. Section A item 1 (paragraph length, 3-sentence max) fails on the paragraph before the FIFA close: 'A corner that's a few degrees off throws the whole sideline out of true. You'll see it later as a corner arc that doesn't quite meet the flag, or a penalty box that reads crooked from the bleachers. The five minutes this takes up front is cheaper than re-taping the field after the first game. Cheap insurance.' That's four sentences in one block, one over the cap. Fix: break 'Cheap insurance.' into its own paragraph, or cut it and let the block end on the re-taping sentence. Everything else checked out. Fact-verified independently this run: FIFA/IFAB Laws of the Game Law 1 confirms the corner arc is a quarter circle with a 1-yard (1m) radius from the corner flagpost, matches the piece exactly. Pitchmark's own 'How to Mark a Pitch' guide confirms the 30/40/50-meter 3-4-5 scaling for a full pitch, matches the piece's claim about the source. No em dashes anywhere in the file. Dek is 12 words, under the 15-word cap. Opens on a concrete fact, no throat-clearing. Closes on a FIFA rule, not an empowerment line. Zero banned words or phrases, one hedge word total ('often,' well under the 3-word ceiling). No banned patterns (no reframe, no fake-wisdom triplet, no concession structure, no weak sentence starters). At least one specific (30/40/50 feet, FIFA) and one voice marker ('Cheap insurance.' as a fragment) present. One soft note for the fix pass, not a fail on its own: sport-vocab/soccer.md lists 'goal line' as the correct term and doesn't carry 'end line,' which the piece uses once ('either the end line or the touchline'). Worth swapping to 'goal line' while in there, but the paragraph-length item is the actual fail. This is a one-sentence fix, not a rewrite."
 ---
 
 You don't need a laser level to square a soccer field corner. Three lengths of string will do it, if you trust the math.
@@ -33,7 +33,7 @@ The trick is called the 3-4-5 method. It comes from geometry class, not groundsk
 
 ## Set the two short sides first
 
-Pick the line you're squaring off of, either the end line or the touchline, and peg point A where the corner will land.
+Pick the line you're squaring off of, either the goal line or the touchline, and peg point A where the corner will land.
 
 From A, run 30 feet of string along that baseline to point B. Run a second string 40 feet from A toward where the perpendicular side should go, to point C.
 
@@ -49,7 +49,9 @@ A three-foot triangle is too small to read accurately across real turf, so you s
 
 Get this first corner right and the baseline and sideline strings you already ran set up the far corners too, no repeat measuring needed. Some crews still run a second 3-4-5 check on the opposite corner anyway, just to catch a stake that shifted or a string that stretched.
 
-A corner that's a few degrees off throws the whole sideline out of true. You'll see it later as a corner arc that doesn't quite meet the flag, or a penalty box that reads crooked from the bleachers. The five minutes this takes up front is cheaper than re-taping the field after the first game. Cheap insurance.
+A corner that's a few degrees off throws the whole sideline out of true. You'll see it later as a corner arc that doesn't quite meet the flag, or a penalty box that reads crooked from the bleachers. The five minutes this takes up front is cheaper than re-taping the field after the first game.
+
+Cheap insurance.
 
 Mark the corner arc last, once the corner underneath it is square. FIFA's Laws of the Game set it at a quarter circle with a 1-yard radius from the base of the corner flag.
 
