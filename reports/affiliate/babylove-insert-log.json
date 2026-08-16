@@ -73,6 +73,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "No new product sourcing this run. Verification limited to link-resolution, disclosure, and competitor-domain text scans; no live browser Amazon check performed since no monetized article changed."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "run-summary",
+      "action": "blocked-git-contention-partial-verification",
+      "details": "Daily babylove pass, first run since 2026-08-13 (a 3-day gap in this log; no entries for 08-14/08-15 exist, cause unknown). New-article check via `git fetch origin` + `git log HEAD..origin/main` found exactly one unpulled commit: 9c91654d, 'Publish BabyLoveGrowth article 724708: youth-volleyball-drills'. Could not pull it. This repo had persistent, repeated git lock contention all session: .git/index.lock and .git/HEAD.lock were recreated within seconds of every npm run git:unlock clear, across 5 separate attempts over roughly 20 minutes (08:43-09:00), with 'Another git process seems to be running' on every git stash/pull attempt. Commit messages visible in local history from the same window (Cass field audit, Dana hold, Penny publish, Discovery lane batches, Ed revision pass) confirm other automated agents were actively committing to this same clone concurrently. Per the standing git norm, never forced past a lock and never hand-removed one; only ran npm run git:unlock and waited. Article 724708 (youth-volleyball-drills) is UNREAD and UNMONETIZED this run, purely because it could not be pulled, not because it was evaluated and skipped. It is the first item for the next run once the clone is reachable. Backfill queue re-verified instead, all read-only (no git needed): volleyball-equipment still 7/8 links, all resolve in affiliates.json, disclosure present, no open competitor-product links (comparison-table brand mentions and Sources-table citations remain correctly unlinked per governance). best-youth-softball-gloves still 2 links (softball-glove-11in, baseball-glove-breakin-kit), both resolve, disclosure present; the two standing gaps (Wilson $40-80 budget synthetic naming two brands with no single model / sizing mismatch, Louisville Slugger LXT which is a bat line with no matching glove) re-read and confirmed unchanged, not re-run live since the article text hasn't changed since 2026-08-09/10. youth-sports-costs and travel-soccer-costs re-read in full: both remain pure cost/budgeting pieces naming zero specific buyable products (gear nouns appear only in a used/secondhand tip and generic checklist items), correctly zero links per governance's 'a costs or advice article that names no products still gets zero links' rule. affiliates.json read and confirmed valid JSON, 245 entries. No content files were edited this run, so nothing new needs check-content-field-lengths.mjs or a commit beyond this log and the gap-queue entry below. No ASIN fabricated. Net result: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites, 1 new article blocked on git access.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No browser sourcing needed or attempted this run; no new content was reachable to monetize, and no existing monetized article changed."
     }
   ]
 }
