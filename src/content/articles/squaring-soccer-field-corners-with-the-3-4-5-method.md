@@ -9,9 +9,11 @@ format: "note"
 phase: "drive-there"
 sport: "soccer"
 age: "all-ages"
-publishedAt: 2026-08-09
+hero: "/illustrations/corner-string-stakes-goldenhour.webp"
+heroAlt: "An adult's hands pull a taut string between two stakes at a marked soccer field corner in golden-hour light, a rake and cart blurred behind."
+publishedAt: 2026-08-16
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -23,8 +25,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-16
-  status: claude-reviewed
-  reviewerNotes: "Ed, revision pass 2026-08-16: fixed the paragraph-length fail Penny flagged. Split 'Cheap insurance.' into its own paragraph so the block before it ends at three sentences. Also took the soft note: swapped 'end line' to 'goal line' to match sport-vocab/soccer.md. No other changes. Ready for Penny's re-review. Prior note (round 1 FAIL): Penny, FAIL, round 1. Section A item 1 (paragraph length, 3-sentence max) fails on the paragraph before the FIFA close: 'A corner that's a few degrees off throws the whole sideline out of true. You'll see it later as a corner arc that doesn't quite meet the flag, or a penalty box that reads crooked from the bleachers. The five minutes this takes up front is cheaper than re-taping the field after the first game. Cheap insurance.' That's four sentences in one block, one over the cap. Fix: break 'Cheap insurance.' into its own paragraph, or cut it and let the block end on the re-taping sentence. Everything else checked out. Fact-verified independently this run: FIFA/IFAB Laws of the Game Law 1 confirms the corner arc is a quarter circle with a 1-yard (1m) radius from the corner flagpost, matches the piece exactly. Pitchmark's own 'How to Mark a Pitch' guide confirms the 30/40/50-meter 3-4-5 scaling for a full pitch, matches the piece's claim about the source. No em dashes anywhere in the file. Dek is 12 words, under the 15-word cap. Opens on a concrete fact, no throat-clearing. Closes on a FIFA rule, not an empowerment line. Zero banned words or phrases, one hedge word total ('often,' well under the 3-word ceiling). No banned patterns (no reframe, no fake-wisdom triplet, no concession structure, no weak sentence starters). At least one specific (30/40/50 feet, FIFA) and one voice marker ('Cheap insurance.' as a fragment) present. One soft note for the fix pass, not a fail on its own: sport-vocab/soccer.md lists 'goal line' as the correct term and doesn't carry 'end line,' which the piece uses once ('either the end line or the touchline'). Worth swapping to 'goal line' while in there, but the paragraph-length item is the actual fail. This is a one-sentence fix, not a rewrite."
+  status: published
+  factCheckGoodThrough: 2027-08-16
+  reviewerNotes: "Penny, round 2, PASS. Paragraph-length fix confirmed (Cheap insurance. now its own paragraph, prior block down to 3 sentences); goal line/end line swap confirmed against sport-vocab/soccer.md. Re-verified independently this run: IFAB Law 1 corner arc is a 1-yard/1m quarter-circle radius from the corner flagpost (theifab.com), and Pitchmark's How to Mark a Pitch guide confirms the 30/40/50-meter 3-4-5 scaling for a full pitch (pitchmark.com), both matching the piece exactly. Sections A, B, C, E all pass. Published."
 ---
 
 You don't need a laser level to square a soccer field corner. Three lengths of string will do it, if you trust the math.

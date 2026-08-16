@@ -9,9 +9,11 @@ format: "essay"
 phase: "game"
 sport: "football"
 age: "all-ages"
-publishedAt: 2026-08-12
+hero: "/illustrations/solo-early-route-run-morning.webp"
+heroAlt: "A helmeted youth football player seen from behind running alone across an empty field in early morning light, goalpost and trees blurred ahead."
+publishedAt: 2026-08-16
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,8 +25,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-16
-  status: claude-reviewed
-  reviewerNotes: "Ed, revision pass 2026-08-16: fixed both reframe-pattern fails Penny flagged. Cut 'That's not a problem' and left 'That's a gift, and most coaches would trade for it' standing alone. Cut 'The fix isn't slowing Eli down' and rewrote the second sentence as a direct instruction: 'Build Eli a second track, one that doesn't run through shared practice time.' No negation-then-reassert shape left in either spot. Word count and paragraph counts barely moved, no em dashes added, no new banned words. Ready for Penny's re-review. Prior note (round 1 FAIL): Penny, FAIL, round 1. Section C item 1 (reframe pattern, 'This isn't just X, it's Y') fails twice. First: 'That's not a problem. That's a gift, and most coaches would trade for it.' Second: 'The fix isn't slowing Eli down. The fix is building him a second track that doesn't run through shared practice time.' Both split the same negate-then-reassert-identity move across two sentences instead of one comma, but it's the same rhetorical shape the rubric bans: state what X isn't, then declare what X actually is. The rubric's own fix for this pattern removes the negation entirely rather than restructuring it across a period, which is the move to make here too. Fix: cut the 'isn't A' half in both spots and state the gift/fix directly, or ground each claim in a fact instead of an assertion of what something 'really is.' Everything else checked out this run: all paragraphs 3 sentences or fewer including the quote paragraph, zero em dashes, dek 14 words, opens on Eli's concrete behavior not a windup, closes on a fact about what the attention is for rather than an empowerment line, zero banned words or phrases (checked programmatically against the full list), zero hedge words, one 'It's' total against budget for 616 words and not in the first paragraph, no fake-wisdom-triplet or concession-structure patterns. Sentence-rhythm rolling-window check clean across all 33 sentences, no three consecutive within 5 words of each other. At least one specific present (Eli, 5:30/5:45, sixty minutes, nine kids) and at least one voice marker present (flat unhedged assertions like 'The team doesn't need Eli to want less'). No checkable external facts in this piece (coaching-practice essay), so nothing to fact-verify this run. sportLanguageCheckPassed against sport-vocab/football.md confirmed: route, playbook, reps, throw all correct terms. No hard-hold triggers: no named minor, no specific family or local team, no health/safety claim, no legal/eligibility claim. This is a two-sentence fix, not a rewrite."
+  status: published
+  factCheckGoodThrough: 2027-08-16
+  reviewerNotes: "Penny, round 2, PASS. Both reframe-pattern fixes confirmed: negation-then-reassert shape removed in both spots, no reframe pattern remains anywhere in the piece. Paragraphs, em-dash count, dek length, hedge count, and sentence rhythm unchanged from the passing round-1 read. No checkable external facts (coaching-practice essay). Eli is an illustrative composite example, not an identifiable real minor; no hard-hold trigger. Sections A, B, C, E all pass. Published."
 ---
 
 Eli asks for extra reps after every practice, runs the route again after the whistle blows, wants the playbook emailed to him instead of just handed out. He shows up twenty minutes early to throw with anyone who'll catch.
