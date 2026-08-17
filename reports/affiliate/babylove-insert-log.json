@@ -83,6 +83,134 @@
       "after": null,
       "asin": null,
       "browserVerification": "No browser sourcing needed or attempted this run; no new content was reachable to monetize, and no existing monetized article changed."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 724708, published to origin/main 2026-08-15/16, pulled into local working tree this run since local main had diverged from origin/main). Added the FTC disclosure sentence to the visible body, placed after the opening paragraph and before every affiliate link in the piece. Set editorial.affiliateDisclosurePresent: true in frontmatter.",
+      "before": "No disclosure sentence present anywhere in the body.",
+      "after": "Added: 'This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.' as its own paragraph directly after the opening paragraph.",
+      "asin": null,
+      "browserVerification": "Not applicable, no product page."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "volleyball-volley-lite",
+      "anchorText": "Volley LITE balls",
+      "location": "'What equipment do you actually need for youth volleyball practice?' section, first mention of the Volley LITE ball recommendation",
+      "before": "recommend Volley LITE balls for beginners because they are lighter, softer, and easier to control than a regulation volleyball.",
+      "after": "recommend [Volley LITE balls](/go/volleyball-volley-lite/) for beginners because they are lighter, softer, and easier to control than a regulation volleyball.",
+      "asin": "B000PGHAZW (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Reused an existing, previously-curated catalog slug per governance step 2 ('always prefer an existing slug... it is already curated and Linda health-checks it weekly'). No new ASIN was written to affiliates.json, so the hard browser-verification rule (which binds new entries) does not apply. Destination was not altered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "volleyball-flistatec",
+      "anchorText": "a regulation volleyball",
+      "location": "'Ball choices by age' bullet list, Ages 12+ line",
+      "before": "Ages 12+: regulation volleyball for most drills; Volley LITE still useful for hitting progressions.",
+      "after": "Ages 12+: [a regulation volleyball](/go/volleyball-flistatec/) for most drills; Volley LITE still useful for hitting progressions.",
+      "asin": "B0063NDCGW (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, same rationale as above. Existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones",
+      "anchorText": "cones or floor markers",
+      "location": "Practice packing list",
+      "before": "8-10 cones or floor markers",
+      "after": "8-10 [cones or floor markers](/go/agility-cones/)",
+      "asin": "B0CLNGGXBC (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "portable-whiteboard",
+      "anchorText": "Whiteboard",
+      "location": "Practice packing list",
+      "before": "Whiteboard or notepad and marker",
+      "after": "[Whiteboard](/go/portable-whiteboard/) or notepad and marker",
+      "asin": "B09FXVSMSD (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "Water bottles",
+      "location": "Practice packing list",
+      "before": "Water bottles (one per player minimum)",
+      "after": "[Water bottles](/go/multi-sport-water-bottle/) (one per player minimum)",
+      "asin": "B08TQQ9RTS (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "youth-volleyball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "first-aid-fanny-pack",
+      "anchorText": "first-aid kit",
+      "location": "Practice packing list",
+      "before": "Basic first-aid kit: bandages, ice pack, athletic tape",
+      "after": "Basic [first-aid kit](/go/first-aid-fanny-pack/): bandages, ice pack, athletic tape",
+      "asin": "B08BJY3KV8 (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered. Treated as a packing-list item, not a safety directive: the sentence is a generic 'bring one' recommendation, not an instruction to replace unsafe gear mid-play, so the no-links-in-safety-directives rule does not block it."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "post-game-snacks-kids",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 728714, published to origin/main 2026-08-16/17, pulled into local working tree this run since local main had diverged from origin/main). Added the FTC disclosure sentence to the visible body, placed after the opening paragraph and before every affiliate link. Set editorial.affiliateDisclosurePresent: true in frontmatter. Note: the article's own links to nata.org and a 'sparkling drinks vs sports drinks' explainer on a sports-drink brand's blog were left untouched; both are citations/reference content, not buyable-product pages, so they are not competitor-storefront links under the governance rule.",
+      "before": "No disclosure sentence present anywhere in the body.",
+      "after": "Added: 'This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.' as its own paragraph directly after the opening paragraph.",
+      "asin": null,
+      "browserVerification": "Not applicable, no product page."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "post-game-snacks-kids",
+      "action": "insert-existing-catalog-link",
+      "slug": "soft-cooler-25qt",
+      "anchorText": "one insulated bag or cooler",
+      "location": "'Packing and Serving Snacks for a Team' section, opening sentence",
+      "before": "Start with one insulated bag or cooler that holds everything",
+      "after": "Start with [one insulated bag or cooler](/go/soft-cooler-25qt/) that holds everything",
+      "asin": "B07YD4FCNM (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "post-game-snacks-kids",
+      "action": "insert-existing-catalog-link",
+      "slug": "ice-pack-arctic-flex-gel",
+      "anchorText": "reusable ice packs",
+      "location": "'Your One-Bag Shopping List' section, shelf-stable/freezer list",
+      "before": "Shelf-stable / freezer: boxed chocolate milk, applesauce pouches, reusable ice packs for the cooler.",
+      "after": "Shelf-stable / freezer: boxed chocolate milk, applesauce pouches, [reusable ice packs](/go/ice-pack-arctic-flex-gel/) for the cooler.",
+      "asin": "search-listing entry, no fixed ASIN (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-08-16",
+      "articleSlug": "post-game-snacks-kids",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "reusable water bottles",
+      "location": "'Your One-Bag Shopping List' section, 30-minute prep plan, minutes 20-30",
+      "before": "Fill and label reusable water bottles, load chocolate milk boxes into the cooler with ice packs",
+      "after": "Fill and label [reusable water bottles](/go/multi-sport-water-bottle/), load chocolate milk boxes into the cooler with ice packs",
+      "asin": "B08TQQ9RTS (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
     }
   ]
 }
