@@ -78,8 +78,8 @@ The hardest emotional terrain. Cornerstone-quality essays under the Editorial by
 | Tempering a top kid's hunger for growth without crushing the team | Editorial | The Game | drafted 2026-08-12 (src/content/articles/your-hungriest-player-needs-a-second-track.md; no hero, no OpenAI API key available this run) |
 | Making it fun for everyone when your own kid is struggling | Editorial | The Game | drafted 2026-08-13 (src/content/articles/making-it-fun-for-everyone-when-your-own-kid-is-struggling.md; no hero, no OpenAI API key available this run) |
 | The "playing time" email from another parent | Editorial | Team Parent · Communication | covered (when-a-parent-emails-about-playing-time.md, how-to-talk-to-the-coach-about-playing-time.md, playing-time-fairness.md) |
-| When your kid's friend makes the A team and your kid doesn't | Editorial | Drive Home | PIPELINE |
-| The kid on your team who is mean to your kid | Editorial | The Game | PIPELINE |
+| When your kid's friend makes the A team and your kid doesn't | Editorial | Drive Home | covered (src/content/articles/the-friend-who-made-the-team-your-kid-didnt.md already covers a best friend making the team a kid didn't, same beat; checked 2026-08-16) |
+| The kid on your team who is mean to your kid | Editorial | The Game | drafted 2026-08-16 (src/content/articles/the-kid-on-your-team-who-is-mean-to-your-kid.md; no hero, no OpenAI API key available this run) |
 | Co-parenting the season: who does what | Editorial | Drive There | PIPELINE |
 
 ---
