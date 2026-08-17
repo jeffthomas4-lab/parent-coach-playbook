@@ -194,8 +194,48 @@ export async function checkDeployLag(fetchImpl: typeof fetch = fetch): Promise<v
   // Behind is normal for a few minutes after a push, and normal indefinitely
   // for a code-only push the deploy guard deliberately refused. Only shout
   // once it has been behind long enough that nobody is coming.
-  const hoursBehind = headDate
-    ? (Date.now() - Date.parse(headDate)) / 3_600_000
+  //
+  // MEASURE THE OLDEST UNDEPLOYED COMMIT, NOT THE NEWEST (fixed 2026-08-17).
+  //
+  // This used to compute `now - headDate`, the age of the TIP commit, which
+  // made the alert unfireable in normal operation. BabyLoveGrowth publishes
+  // nightly around 22:00-22:30 PT and this cron ticks at 13:00 UTC (06:00 PT),
+  // so the tip commit was reliably ~7.5 hours old at tick time: always under
+  // LAG_ALERT_HOURS, always logged `info`, never once an alert. Production sat
+  // 3 days stale from 2026-08-14 to 2026-08-17 with two published articles
+  // 404ing, and this check would have shrugged at it every single morning if it
+  // had been deployed. Any night with a fresh article reset the clock.
+  //
+  // The honest question is how long the oldest thing waiting to ship has been
+  // waiting. GitHub's commits API with `since` answers it, still with no token.
+  // `since` excludes anything at or before builtAt, so the deployed commit
+  // drops out and what remains is the actual backlog.
+  let waitingSince = headDate;
+  if (builtAt) {
+    try {
+      const response = await fetchImpl(
+        `https://api.github.com/repos/${REPO}/commits?since=${encodeURIComponent(builtAt)}&per_page=100`,
+        {
+          headers: { ...headers, Accept: 'application/vnd.github+json' },
+          signal: AbortSignal.timeout(15_000),
+        },
+      );
+      if (response.ok) {
+        const list = await response.json() as Array<{ commit?: { committer?: { date?: unknown } } }>;
+        // GitHub returns newest first, so the last entry is the oldest commit
+        // that has not shipped.
+        const oldest = Array.isArray(list) && list.length > 0 ? list[list.length - 1] : null;
+        const date = oldest?.commit?.committer?.date;
+        if (typeof date === 'string' && date) waitingSince = date;
+      }
+    } catch {
+      // Fall back to headDate. A missing backlog window is not worth throwing:
+      // this monitor must never fail the camps sweep that shares its tick.
+    }
+  }
+
+  const hoursBehind = waitingSince
+    ? (Date.now() - Date.parse(waitingSince)) / 3_600_000
     : Number.POSITIVE_INFINITY;
 
   const payload = {
@@ -204,6 +244,7 @@ export async function checkDeployLag(fetchImpl: typeof fetch = fetch): Promise<v
     head_commit: headCommit.slice(0, 8),
     live_built_at: builtAt,
     head_committed_at: headDate,
+    oldest_undeployed_at: waitingSince,
     hours_behind: Number.isFinite(hoursBehind) ? Math.round(hoursBehind * 10) / 10 : null,
   };
 

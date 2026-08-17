@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-15T00:35:18.353Z",
-  "count": 780,
+  "generatedAt": "2026-08-17T15:31:28.720Z",
+  "count": 797,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -348,6 +348,12 @@
       ]
     },
     {
+      "url": "https://blog.nemours.org/2026/01/young-athlete-nutrition/",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
       "url": "https://bnq.qc.ca/en/certification/protection-and-safety/neck-protectors-c2.html",
       "sources": [
         "src/content/body/hockey-equipment-safety.md"
@@ -481,6 +487,12 @@
       ]
     },
     {
+      "url": "https://coachingvb.com/first-volleyball-practice-plan/",
+      "sources": [
+        "src/content/articles/youth-volleyball-practice-plan.md"
+      ]
+    },
+    {
       "url": "https://coachjeffthomas.com/about/",
       "sources": [
         "src/pages/about.astro"
@@ -547,6 +559,12 @@
       ]
     },
     {
+      "url": "https://drinksolidviibe.com/blogs/news/sparkling-drinks-vs-sports-drinks",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
       "url": "https://dt5602vnjxv0c.cloudfront.net/portals/28638/docs/travel/2022-23%20financial%20policy%202.5.22.pdf",
       "sources": [
         "src/content/articles/travel-soccer-costs.md"
@@ -563,6 +581,24 @@
       "sources": [
         "src/content/body/hockey-equipment-safety.md",
         "src/content/body/youth-hockey-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://hoopsking.com/blogs/default-blog/60-minute-youth-volleyball-practice-plan",
+      "sources": [
+        "src/content/articles/youth-volleyball-practice-plan.md"
+      ]
+    },
+    {
+      "url": "https://htktrainingco.wpcomstaging.com/2026/07/28/reactive-strength-exercises-for-sport",
+      "sources": [
+        "src/content/articles/youth-volleyball-drills.md"
+      ]
+    },
+    {
+      "url": "https://htktrainingco.wpcomstaging.com/2026/07/31/plyometric-exercises-for-athletes",
+      "sources": [
+        "src/content/articles/youth-volleyball-practice-plan.md"
       ]
     },
     {
@@ -594,6 +630,12 @@
       "url": "https://jissn.biomedcentral.com/",
       "sources": [
         "src/content/body/creatine-youth-athletes.md"
+      ]
+    },
+    {
+      "url": "https://joinstriveon.com/blog/volleyball-practice-plan",
+      "sources": [
+        "src/content/articles/youth-volleyball-practice-plan.md"
       ]
     },
     {
@@ -637,6 +679,12 @@
       "url": "https://kidshealth.org/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://kidshealth.org/en/parents/feed-child-athlete.html",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
       ]
     },
     {
@@ -782,6 +830,12 @@
       "url": "https://nsga.org/news/nfhs-makes-football-rule-changes-for-2026/",
       "sources": [
         "src/content/news/nfhs-football-equipment-rules-2026.md"
+      ]
+    },
+    {
+      "url": "https://nutritionbymandy.com/after-game-snack-ideas-youth-sports/",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
       ]
     },
     {
@@ -1130,6 +1184,12 @@
       ]
     },
     {
+      "url": "https://truesport.org/nutrition/post-workout-fueling/",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
       "url": "https://truesport.org/wp-content/uploads/Parent_Code-of-Conduct.pdf",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
@@ -1216,6 +1276,12 @@
       "url": "https://usavolleyball.org/resource/simplified-youth-rules/",
       "sources": [
         "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://usavolleyball.org/resources-for-coaches/lesson-plans/",
+      "sources": [
+        "src/content/articles/youth-volleyball-practice-plan.md"
       ]
     },
     {
@@ -1344,9 +1410,21 @@
       ]
     },
     {
+      "url": "https://usyvl.org/wp-content/uploads/2024/08/USYVL-Curriculum-Handbook-Spring-2024.pdf",
+      "sources": [
+        "src/content/articles/youth-volleyball-drills.md"
+      ]
+    },
+    {
       "url": "https://volleyball.ca/uploads/About/LTAD/How_it_works_Stage_Appropriate_Volleyball_June_21_EN.pdf",
       "sources": [
         "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://volleyball.ca/uploads/About/LTAD/VDM_Mar_03b_2023_EN.pdf",
+      "sources": [
+        "src/content/articles/youth-volleyball-drills.md"
       ]
     },
     {
@@ -1364,6 +1442,12 @@
         "src/content/recruiting/what-verbal-commits-mean.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://wendylebolt.com/coaching/how-to-develop-the-volleyball-athlete-focus-changes-with-age-and-stage/",
+      "sources": [
+        "src/content/articles/youth-volleyball-drills.md"
       ]
     },
     {
@@ -1565,6 +1649,12 @@
       "url": "https://www.acc.org/",
       "sources": [
         "src/content/body/energy-drinks-youth.md"
+      ]
+    },
+    {
+      "url": "https://www.acefitness.org/resources/pros/expert-articles/8935/are-sports-drinks-a-smart-choice-for-young-athletes/",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
       ]
     },
     {
@@ -3709,6 +3799,12 @@
       ]
     },
     {
+      "url": "https://www.nata.org/sites/default/files/2025-08/healthy-hydration-for-young-athletes.pdf",
+      "sources": [
+        "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
       "url": "https://www.nays.org/upload/editor/pdf/National%20Standards%20for%20Youth%20Sports%202017%20%282%29.pdf",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
@@ -4412,6 +4508,12 @@
       "url": "https://www.teamusa.org/usa-wrestling/rules",
       "sources": [
         "src/content/rules/wrestling.md"
+      ]
+    },
+    {
+      "url": "https://www.theartofcoachingvolleyball.com/strategies-for-coaching-10-year-old-volleyball-players/",
+      "sources": [
+        "src/content/articles/youth-volleyball-practice-plan.md"
       ]
     },
     {

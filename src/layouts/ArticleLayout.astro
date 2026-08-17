@@ -270,7 +270,31 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
           )}
 
           <!-- Byline -->
-          <div class="mt-8 pt-5 rule-navy">
+          {/*
+            AI provenance is machine-readable here and disclosed at the site
+            level, not printed on every article (changed 2026-08-17).
+
+            The per-article sentence used to render on all ~837 articles, and
+            because `editorial.jeffReviewedAt` has never been set on any of
+            them, it always rendered the negative branch: "a human editorial
+            review is not recorded for this article." That read as a disclaimer
+            of editorial responsibility on every page, and it was inconsistent
+            anyway (the team-parent template never rendered it at all).
+
+            Site-level disclosure now carries it: the Footer links
+            /ai-transparency/ on every page, and terms.astro and
+            disclosure.astro both cover AI-assisted content. This follows the
+            same pattern already used for illustrations, which AI-CONTENT-REGISTER
+            describes as "internal provenance only; no per-image public notice."
+
+            These attributes stay so provenance remains auditable in the DOM and
+            so scripts/check-ai-transparency.mjs keeps a real contract to check.
+          */}
+          <div
+            class="mt-8 pt-5 rule-navy"
+            data-ai-origin="ai_assisted"
+            data-human-review={humanReviewedRaw ? 'recorded' : 'not-recorded'}
+          >
             <div class="font-display italic text-rust font-medium">
               {EDITORIAL.byline}
             </div>
@@ -282,10 +306,6 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
               {' · '}
               {isShort ? 'short read' : 'longer read'}
             </div>
-            <p class="font-body text-muted text-sm mt-3" data-ai-origin="ai_assisted" data-human-review={humanReviewedRaw ? 'recorded' : 'not-recorded'}>
-              {humanReviewedRaw ? 'AI-assisted editorial content; human review is recorded, and Parent Coach Desk assumes editorial responsibility.' : 'AI-assisted editorial content; a human editorial review is not recorded for this article.'}
-              {' '}<a href="/ai-transparency/" class="text-rust hover:underline">AI transparency details</a>
-            </p>
           </div>
         </header>
 

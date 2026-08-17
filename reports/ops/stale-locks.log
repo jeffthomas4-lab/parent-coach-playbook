@@ -350,3 +350,5 @@
 2026-08-17T15:29:39.703Z	git:unlock	manual	cleared	.git\HEAD.lock	age=3m
 2026-08-17T15:29:39.703Z	git:unlock	manual	cleared	.git\index.lock	age=3m
 2026-08-17T15:29:39.703Z	git:unlock	manual	cleared	.git\refs\heads\main.lock	age=3m
+2026-08-17T17:07:42.209Z	git:unlock	manual	cleared	.git\index.lock	age=1.5h
+2026-08-17T17:07:42.209Z	git:unlock	manual	cleared	.git\shallow.lock	age=1.1h
