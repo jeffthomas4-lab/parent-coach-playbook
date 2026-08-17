@@ -190,7 +190,16 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
     title={article.data.title.replace(/\*/g, '')}
     description={article.data.dek ?? SITE.description}
     ogType="article"
-    ogImage={(article.data as any).ogImage}
+    {/*
+      Fall back to the slug-keyed OG image, matching ArticleLayout line 95.
+      This route renders through BaseLayout instead of ArticleLayout, and it
+      only forwarded the frontmatter `ogImage`, which is unset on essentially
+      every article. BaseLayout then defaulted to /og-default.jpg, so EVERY
+      team-parent article shared one generic social preview even when
+      scripts/build-og-images.py had already generated and committed
+      /og/{slug}.jpg for it. Found 2026-08-17 on post-game-snacks-kids.
+    */}
+    ogImage={(article.data as any).ogImage ?? `/og/${article.id}.jpg`}
     publishedAt={article.data.publishedAt.toISOString()}
   >
     <script slot="head" type="application/ld+json" set:html={serializeJsonLd(articleSchema)} />
