@@ -33,6 +33,23 @@ describe('BabyLoveGrowth publishing contract', () => {
     }
   });
 
+  // The webhook commits provider article bodies to origin/main verbatim; nothing
+  // rewrites their links. BabyLoveGrowth's generator assumes its own hosted-blog
+  // URL pattern (blog.<domain>/blog/<slug>/), a subdomain this site has never
+  // owned, so its "internal" cross-links land on a hostname with no DNS record.
+  // Caught live 2026-08-20 in travel-soccer-costs.md, which had shipped that way
+  // since 2026-08-03. Config-level guarding above was not enough: the bad URL
+  // arrives inside prose, not configuration.
+  it('never ships an article body linking to the unowned blog subdomain', () => {
+    const articlesDir = resolve(root, 'src/content/articles');
+    const offenders = readdirSync(articlesDir)
+      .filter((name) => name.endsWith('.md'))
+      .filter((name) =>
+        readFileSync(resolve(articlesDir, name), 'utf8').includes('blog.parentcoachdesk.com'),
+      );
+    expect(offenders).toEqual([]);
+  });
+
   // The three workflows that used to carry this contract — babylove-normalize.yml,
   // deploy-workers.yml, and the protected `production` environment its release
   // classifier could auto-approve — were deleted on 2026-08-05 with the rest of

@@ -10,7 +10,7 @@ sport: "cross-country"
 age: "15-plus"
 topic: tryouts
 publishedAt: 2026-08-17
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -22,7 +22,7 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-16
-  status: claude-reviewed
+  status: published
   factCheckGoodThrough: 2027-08-16
   reviewerNotes: "Penny, round 2, PASS, scheduled for 2026-08-17 (future-dated, not flipping draft yet). Rhythm fix confirmed: 25/17/24 now, range 8, clears the 5-word cap. Closing-section cut confirmed, piece now ends on the JV-to-varsity-junior claim, not a third thesis restatement. Re-verified independently: NFHS/state association rules cap varsity scoring entry at 7 runners per team, top 5 score (nfhs.org / state manuals), matching the piece. sportLanguageCheckPassed set true on manual review (no sport-vocab/cross-country.md exists in the repo to check mechanically against): time trial, scoring-eligible, varsity, course, mile all correct XC vocabulary, nothing borrowed from another sport. No hard-hold triggers. Sections A, B, C, E all pass. Will flip draft:false and generate the hero image on or after 2026-08-17."
 ---

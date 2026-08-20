@@ -296,7 +296,7 @@ Regional variance is significant. Always pull the current fee schedule directly 
 
 ## Recommended
 
-- [Youth Sports Costs for Parents: How to Plan and Save](https://blog.parentcoachdesk.com/blog/youth-sports-costs/)
+- [Youth Sports Costs for Parents: How to Plan and Save](https://parentcoachdesk.com/game/youth-sports-costs/)
 - [Youth Soccer for Parents: Gear, Costs and Recruiting | Parent Coach Desk](/sports/soccer/)
 - [Team Parent | Parent Coach Desk](/team-parent/)
 - [Decisions parents face | Parent Coach Desk](/decisions/)
