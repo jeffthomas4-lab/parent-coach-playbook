@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-20T15:11:02.608Z",
-  "count": 797,
+  "generatedAt": "2026-08-20T15:36:39.533Z",
+  "count": 801,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -316,6 +316,12 @@
       ]
     },
     {
+      "url": "https://appliedsportpsych.org/blog/2026/03/how-parents-can-encourage-a-growth-mindset-in-athletes/",
+      "sources": [
+        "src/content/articles/growth-mindset-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://asmi.org/",
       "sources": [
         "src/content/body/youth-pitcher-arm-care.md"
@@ -556,6 +562,12 @@
       "url": "https://discord.com/safety",
       "sources": [
         "src/content/body/discord-servers-youth-teams.md"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.1080/10413200.2019.1570392",
+      "sources": [
+        "src/content/articles/growth-mindset-youth-sports.md"
       ]
     },
     {
@@ -921,6 +933,12 @@
       "url": "https://pitchmark.com/support/how-to-mark-a-pitch/",
       "sources": [
         "src/content/articles/squaring-soccer-field-corners-with-the-3-4-5-method.md"
+      ]
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12151056/",
+      "sources": [
+        "src/content/articles/growth-mindset-youth-sports.md"
       ]
     },
     {
@@ -4411,6 +4429,12 @@
       "url": "https://www.sportsmed.org/",
       "sources": [
         "src/content/body/specialization-risk-safety-lens.md"
+      ]
+    },
+    {
+      "url": "https://www.sportspsychology.org/articles/youth-sports-psychology-mental-skills/",
+      "sources": [
+        "src/content/articles/growth-mindset-youth-sports.md"
       ]
     },
     {

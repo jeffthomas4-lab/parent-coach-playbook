@@ -30,7 +30,7 @@ const {
 
 const pageTitle = title
   ? (title.includes(SITE.name) ? title : `${title} | ${SITE.name}`)
-  : 'Parent Coach Desk: Sports Parenting Tips & Advice';
+  : 'Parent Coach Desk: Sports Parenting Tips & Scripts';
 const rawCanonical = canonical ?? new URL(Astro.url.pathname, SITE.url).toString();
 // Force one canonical form site-wide: trailing slash, matching how every
 // internal link on the site is written (ArticleLayout, camp pages, nav,
