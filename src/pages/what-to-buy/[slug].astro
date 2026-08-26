@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Illo from '../../components/Illo.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 import { BUYING_GUIDES, EDITORIAL } from '../../data/site';
@@ -58,6 +59,14 @@ const itemListSchema = gearItems.length > 0 ? {
     item: { '@type': 'Product', name: it.name, url: it.url },
   })),
 } : null;
+
+// Every guide has carried `hero` + `heroAlt` in frontmatter since February and
+// this template never rendered either one, so all 37 gear files shipped as a
+// wall of text while their images sat unused in public/illustrations/. Same
+// resolution ArticleLayout uses: prefer the responsive Illo variants, fall back
+// to a plain <img> for the one hero that points outside /illustrations/.
+const heroBase = guide.data.hero?.match(/^\/illustrations\/(.+)\.webp$/)?.[1] ?? null;
+const heroAlt = guide.data.heroAlt ?? `${guide.data.activity} gear laid out for the season.`;
 ---
 <BaseLayout
   title={pageTitle}
@@ -90,6 +99,30 @@ const itemListSchema = gearItems.length > 0 ? {
           </div>
         )}
       </div>
+      {guide.data.hero && (
+        <div class="mt-8 rounded-card overflow-hidden">
+          {heroBase ? (
+            <Illo
+              base={heroBase}
+              alt={heroAlt}
+              class="w-full object-cover max-h-[220px] md:max-h-[420px]"
+              sizes="(min-width: 768px) 1100px, 100vw"
+              eager={true}
+            />
+          ) : (
+            <img
+              src={guide.data.hero}
+              alt={heroAlt}
+              class="w-full object-cover max-h-[220px] md:max-h-[420px]"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          )}
+        </div>
+      )}
     </div>
   </section>
 

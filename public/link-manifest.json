@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-20T15:36:39.533Z",
-  "count": 801,
+  "generatedAt": "2026-08-26T14:49:07.648Z",
+  "count": 807,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -328,6 +328,12 @@
       ]
     },
     {
+      "url": "https://asmi.org/wp-content/uploads/Interval_Throwing_Program_for_Baseball_Pitchers-2019.pdf",
+      "sources": [
+        "src/content/articles/baseball-throwing-drill.md"
+      ]
+    },
+    {
       "url": "https://autismsociety.org",
       "sources": [
         "src/content/adaptive/finding-the-right-sport-for-a-neurodivergent-kid.md",
@@ -620,6 +626,12 @@
       ]
     },
     {
+      "url": "https://ijspt.scholasticahq.com/article/29923-the-youth-throwers-ten-exercise-program-a-variation-of-an-exercise-series-for-enhanced-dynamic-shoulder-control-in-the-youth-overhead-throwing-atlet",
+      "sources": [
+        "src/content/articles/baseball-throwing-drill.md"
+      ]
+    },
+    {
       "url": "https://inside.fifa.com/health-and-medical/injury-prevention",
       "sources": [
         "src/content/body/youth-soccer-safety-briefing.md"
@@ -776,6 +788,12 @@
       "url": "https://ncys.org/the-hidden-costs-of-youth-sports-financial-strain-and-emotional-toll/",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://nextgencards.shop/blogs/collectors-guide/best-starter-baseball-card-series-for-kids-in-2026",
+      "sources": [
+        "src/content/articles/baseball-throwing-drill.md"
       ]
     },
     {
@@ -1103,6 +1121,12 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18681352/",
+      "sources": [
+        "src/content/articles/baseball-throwing-drill.md"
       ]
     },
     {
@@ -4178,6 +4202,12 @@
       ]
     },
     {
+      "url": "https://www.ortho.wustl.edu/mm/files/Patient%20Education/YACInjuryPreventionFlyer-2.pdf",
+      "sources": [
+        "src/content/articles/baseball-throwing-drill.md"
+      ]
+    },
+    {
       "url": "https://www.pgajrleague.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -4686,6 +4716,12 @@
         "src/content/articles/used-gear-rules.md",
         "src/content/articles/used-vs-new-gear-the-actual-math.md",
         "src/content/articles/youth-baseball-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://www.usabaseball.com/news/mlb-usa-baseball-announce-updates-to-pitch-smart-program-251090688",
+      "sources": [
+        "src/content/articles/baseball-throwing-drill.md"
       ]
     },
     {

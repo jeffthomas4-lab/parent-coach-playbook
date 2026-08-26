@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Illo from '../../components/Illo.astro';
 import { SPORTS } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
@@ -61,6 +62,38 @@ const totalCount = matchedArticles.length + matchedTips.length
 
 const fmtDate = (d: Date) =>
   d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+
+// Hero resolution. These pages shipped with no imagery at all, which is why the
+// whole sport tier read as a wall of text. Preference order, each step falling
+// through only when the one above it has nothing:
+//   1. a hero authored on the SPORTS entry (scripts/build-sport-heroes.py)
+//   2. the sport's pillar page
+//   3. the newest article tagged to this sport
+//   4. the buying guide's flat-lay, last resort only
+// The guide sits last on purpose: the gear card below needs that same image, and
+// a page showing one flat-lay twice on a single screen looks like a mistake.
+const guideHero = matchedGuide?.data.hero ?? null;
+
+// No SPORTS entry carries `hero` yet, so an `in` guard would narrow to never and
+// fail `astro check`. scripts/build-sport-heroes.py writes the files; adding
+// `hero`/`heroAlt` to an entry in src/data/site.ts is what switches one on.
+const sportHero = sportData as { hero?: string; heroAlt?: string };
+
+const heroCandidates: Array<[string | null | undefined, string | null | undefined]> = [
+  [sportHero.hero, sportHero.heroAlt],
+  [matchedPillar?.data.hero, matchedPillar?.data.heroAlt],
+  [matchedArticles[0]?.data.hero, matchedArticles[0]?.data.heroAlt],
+  [guideHero, matchedGuide?.data.heroAlt],
+];
+const [pageHero, pageHeroAltRaw] = heroCandidates.find(([h]) => Boolean(h)) ?? [null, null];
+
+const pageHeroAlt  = pageHeroAltRaw ?? `${sportLabel} gear and equipment in natural light.`;
+const pageHeroBase = pageHero?.match(/^\/illustrations\/(.+)\.webp$/)?.[1] ?? null;
+
+// The gear card carries the guide flat-lay unless the hero already used it.
+const gearHeroBase = (guideHero && guideHero !== pageHero)
+  ? (guideHero.match(/^\/illustrations\/(.+)\.webp$/)?.[1] ?? null)
+  : null;
 ---
 <BaseLayout
   title={pageTitle}
@@ -80,8 +113,59 @@ const fmtDate = (d: Date) =>
       <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
         {totalCount} pieces.
       </p>
+      {pageHeroBase && (
+        <div class="mt-8 rounded-card overflow-hidden">
+          <Illo
+            base={pageHeroBase}
+            alt={pageHeroAlt}
+            class="w-full object-cover max-h-[220px] md:max-h-[420px]"
+            sizes="(min-width: 768px) 1100px, 100vw"
+            eager={true}
+          />
+        </div>
+      )}
     </div>
   </section>
+
+  {/* Gear file. Sits directly under the hero because the buying guides are the
+      revenue surface; it used to sit fourth, styled identically to every other
+      block, and read as one more link in a list. */}
+  {matchedGuide && (
+    <section class="section-band">
+      <div class="container-px py-10 md:py-14">
+        <a
+          href={`/what-to-buy/${sportSlug}/`}
+          class="group block border border-bone bg-paper-warm hover:bg-paper transition-colors overflow-hidden"
+        >
+          <div class={gearHeroBase ? 'grid md:grid-cols-5' : ''}>
+            {gearHeroBase && (
+              <div class="md:col-span-2 overflow-hidden">
+                <Illo
+                  base={gearHeroBase}
+                  alt={matchedGuide.data.heroAlt ?? `${sportLabel} gear laid out for the season.`}
+                  class="w-full h-full object-cover max-h-[220px] md:max-h-none"
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                />
+              </div>
+            )}
+            <div class={`p-6 md:p-8 ${gearHeroBase ? 'md:col-span-3' : ''}`}>
+              <p class="t-eyebrow mb-2">Gear file</p>
+              <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium">
+                The {sportLabel.toLowerCase()} buying guide
+              </h2>
+              <p class="font-display text-ink-soft mt-3 leading-snug">{matchedGuide.data.lede}</p>
+              {matchedGuide.data.costSummary && (
+                <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug">
+                  {matchedGuide.data.costSummary}
+                </p>
+              )}
+              <p class="btn mt-6 inline-block">What to buy for {sportLabel.toLowerCase()} →</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
 
   {/* Complete Parent Guide banner — only shown when a pillar page exists for this sport */}
   {matchedPillar && (
@@ -153,22 +237,6 @@ const fmtDate = (d: Date) =>
       </div>
     </div>
   </section>
-
-  {/* What to buy */}
-  {matchedGuide && (
-    <section class="section-band">
-      <div class="container-px py-10 md:py-12">
-        <p class="t-eyebrow mb-2">Gear file</p>
-        <a href={`/what-to-buy/${sportSlug}/`} class="block max-w-2xl group">
-          <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium">
-            The {sportLabel.toLowerCase()} buying guide
-          </h2>
-          <p class="font-display text-ink-soft mt-3 leading-snug">{matchedGuide.data.lede}</p>
-          <p class="t-eyebrow mt-4">→ Read the guide</p>
-        </a>
-      </div>
-    </section>
-  )}
 
   {/* Reads (articles tagged this sport) */}
   {matchedArticles.length > 0 && (
