@@ -491,11 +491,17 @@ async function publishReceipt(env: BabyLoveEnv, receipt: ReceiptRow, article: Ba
     console.log(JSON.stringify({ event: 'babylove_article_published', article_id: article.id, receipt_id: receipt.id, no_change: outcome.noChange }));
   } catch (error) {
     const code = error instanceof BabyLoveFailure ? error.code : 'publish_failed';
-    const quarantined = code === 'slug_collision' || code.startsWith('invalid_') || code === 'unsupported_language';
-    await updateReceipt(db, receipt.id, quarantined ? 'quarantined' : 'retryable_failure', { errorCode: code });
+    await updateReceipt(db, receipt.id, isQuarantineCode(code) ? 'quarantined' : 'retryable_failure', { errorCode: code });
     console.error(JSON.stringify({ event: 'babylove_article_failed', article_id: article.id, receipt_id: receipt.id, code }));
     throw error;
   }
+}
+
+// A quarantine is a decision this code made on purpose, not an outage. These
+// codes are permanent: the identical payload replayed an hour later lands in
+// the identical state, so telling the sender to retry is always wrong.
+function isQuarantineCode(code: string): boolean {
+  return code === 'slug_collision' || code.startsWith('invalid_') || code === 'unsupported_language';
 }
 
 async function acceptArticle(env: BabyLoveEnv, article: BabyLoveArticle, source: 'webhook' | 'api_reconciliation'): Promise<{ receipt: ReceiptRow; replay: boolean }> {
@@ -545,7 +551,20 @@ export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, 
     if (accepted.receipt.status !== 'published') {
       try {
         await publishReceipt(env, accepted.receipt, article);
-      } catch {
+      } catch (error) {
+        // WHY THIS IS NOT A 503. Every publish failure used to answer with a
+        // retryable 503, quarantines included. BabyLoveGrowth reads 5xx as
+        // "this endpoint is unhealthy" and stops delivering, and its own
+        // webhook verification step replays an OLD article whose slug always
+        // collides — so the endpoint 503s, stays unverified, and can never be
+        // re-verified. That deadlock is why nothing arrived between
+        // 2026-08-21 and 2026-08-26 while three articles published on the
+        // provider side. A quarantine is a 200: received, understood, parked
+        // for a human, do not send it again.
+        const code = error instanceof BabyLoveFailure ? error.code : 'publish_failed';
+        if (isQuarantineCode(code)) {
+          return json({ ok: true, accepted: false, quarantined: true, error: code });
+        }
         return json({ ok: false, error: 'publish_failed', retryable: true }, 503);
       }
     }
