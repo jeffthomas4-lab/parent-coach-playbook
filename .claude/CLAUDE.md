@@ -45,28 +45,64 @@ When you change an already-published piece in a way a returning reader should kn
 
 ## Deploy commands
 
-Every session that changes a file in this repo ends with this PowerShell block:
+**Pushing is deploying. Do not run `wrangler deploy`.**
+
+Cloudflare Workers Builds watches `main` and ships every push. A session that changes files ends
+here:
 
 ```powershell
-npm run build
+npm run build          # prove it compiles before you commit
 git add -A
 git commit -m "ONE-LINE SUMMARY"
-npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
-npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars
-node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production
-git push
+git push origin main
 ```
 
-Build before commit. Commit before deploy. Specific commit message, not "update files."
+Build before commit. Commit before push. Specific commit message, not "update files."
 
-⚠️ **Two corrections, 2026-08-05.** Production is the Cloudflare **Worker** `parent-coach-desk`, not
-a Pages project. `wrangler pages deploy dist --project-name parent-coach-playbook` targets the
-RETIRED Pages project and does **not** reach the live site — a Pages deploy reported success on
-2026-07-22 while production stayed unchanged. And GitHub Actions was removed from every repo on
-2026-08-05 after it burned the monthly allotment in four days, so `deploy-workers.yml` and its
-protected `production` approval gate are gone. Deploy runs locally now. Keep the `--dry-run` line;
-it is the cheapest surviving piece of the old gate. See
-`Outputs/_system/GITHUB-ACTIONS-REPLACEMENT.md`.
+### If the change touches code
+
+`scripts/ci-deploy-guard.mjs` refuses to auto-deploy a push carrying code (anything under `src/`,
+`scripts/`, `worker-cron/`, `migrations/`, config, wrangler files — content and `reports/`,
+`coordination/`, `docs/` are fine). The build goes red and **nothing ships, including the content
+in that same push.**
+
+Review the code. If it is good, approve the pending range and push again:
+
+```powershell
+git commit --allow-empty -m "Approve pending code for deploy" -m "Deploy-Code: approved"
+git push origin main
+```
+
+Approval is range-level: it clears everything pending between the live commit and HEAD, and covers
+nothing that lands after it.
+
+⚠️ **An agent must never write that trailer for its own code change.** It is Jeff's sign-off. Ed,
+Penny, Dana, Arnie, and the rest commit under Jeff's name and email, so nothing but discipline
+distinguishes them here. If your code change is blocked, say so in your Slack summary and stop.
+
+### Break glass
+
+A local `wrangler deploy` is for one case only: Workers Builds itself is down.
+
+```powershell
+git push origin main   # ALWAYS push first
+npm ci
+npm run build:production
+(Get-Content dist\server\wrangler.json -Raw | ConvertFrom-Json).name   # must print parent-coach-desk
+npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
+npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars
+```
+
+Pushing first is not optional. A local deploy publishes your working tree over whatever is live; run
+it from a clone that is behind `origin/main` and you delete everything pushed since. That is not
+hypothetical: it silently removed BabyLoveGrowth articles twice, on 2026-08-12 and again in the days
+after. The old version of this section told you to `git push` *after* deploying, which is how.
+
+⚠️ **Corrections.** Production is the Cloudflare **Worker** `parent-coach-desk`, not a Pages project.
+`wrangler pages deploy dist --project-name parent-coach-playbook` targets the RETIRED Pages project
+and does **not** reach the live site — it reported success on 2026-07-22 while production stayed
+unchanged. GitHub Actions was removed 2026-08-05 after burning the monthly allotment in four days;
+Workers Builds replaced it. See `Outputs/_system/GITHUB-ACTIONS-REPLACEMENT.md`.
 
 The stack line above also says Cloudflare Pages. It is a Worker (`src/worker.ts`).
 

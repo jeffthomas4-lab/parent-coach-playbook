@@ -17,6 +17,13 @@ export interface Env {
   // removed 2026-08-01 (Jeff is working PCD nightly through the season now);
   // this is the only remaining way to hold writes, and it is manual only.
   PCD_MAINTENANCE_MODE?: string;
+  // Secret, optional. Slack incoming-webhook URL for #pcd-agent-notifications.
+  // The deploy-lag alert used to be a console.error, which meant it landed in
+  // Workers observability logs that nobody opens. Production sat ten days stale
+  // from 2026-08-19 to 2026-08-29 and every channel that could have said so was
+  // a log file. If this is unset the monitor still logs and never throws, so a
+  // missing secret degrades the alarm rather than breaking the camps sweep.
+  SLACK_WEBHOOK_URL?: string;
 }
 
 const WORKFLOW_ID = 'pcd-camps-sweep';
@@ -147,7 +154,48 @@ const REPO = 'jeffthomas4-lab/parent-coach-playbook';
 const BUILD_INFO_URL = 'https://parentcoachdesk.com/build-info.json';
 const LAG_ALERT_HOURS = 12;
 
-export async function checkDeployLag(fetchImpl: typeof fetch = fetch): Promise<void> {
+/**
+ * Post the lag alert somewhere a human actually looks. Best-effort by design:
+ * a monitor must never fail the invocation it shares with the camps sweep.
+ */
+async function postLagAlert(
+  env: Env | undefined,
+  payload: Record<string, unknown>,
+  fetchImpl: typeof fetch,
+): Promise<void> {
+  const webhook = env?.SLACK_WEBHOOK_URL;
+  if (!webhook) {
+    console.warn(JSON.stringify({ event: 'deploy_lag_alert_undeliverable', reason: 'no_slack_webhook' }));
+    return;
+  }
+  const hours = payload.hours_behind ?? '?';
+  const text = [
+    `:rotating_light: *parentcoachdesk.com has been behind for ${hours}h*`,
+    `live \`${payload.live_commit}\` vs main \`${payload.head_commit}\``,
+    `oldest undeployed commit: ${payload.oldest_undeployed_at ?? 'unknown'}`,
+    '',
+    'Usually this is the deploy guard holding an unapproved code change, which',
+    'also blocks every content push behind it. Check the latest Workers build.',
+    'If the code is good, approve the pending range and push:',
+    '```',
+    'git commit --allow-empty -m "Approve pending code for deploy" \\',
+    '                         -m "Deploy-Code: approved"',
+    'git push origin main',
+    '```',
+  ].join('\n');
+  try {
+    await fetchImpl(webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+      signal: AbortSignal.timeout(10_000),
+    });
+  } catch (error) {
+    console.warn(JSON.stringify({ event: 'deploy_lag_alert_failed', code: String(error).slice(0, 80) }));
+  }
+}
+
+export async function checkDeployLag(fetchImpl: typeof fetch = fetch, env?: Env): Promise<void> {
   const headers = { 'User-Agent': 'pcd-deploy-lag-monitor/1.0' };
   let liveCommit: string;
   let builtAt: string;
@@ -250,6 +298,7 @@ export async function checkDeployLag(fetchImpl: typeof fetch = fetch): Promise<v
 
   if (hoursBehind >= LAG_ALERT_HOURS) {
     console.error(JSON.stringify({ ...payload, severity: 'alert' }));
+    await postLagAlert(env, payload, fetchImpl);
   } else {
     console.log(JSON.stringify({ ...payload, severity: 'info' }));
   }
@@ -336,7 +385,7 @@ export default {
     // GETs, and putting it first would delay the sweep. waitUntil so a slow
     // GitHub response cannot hold the invocation open, and checkDeployLag
     // swallows its own errors so it can never fail the sweep's tick.
-    ctx.waitUntil(checkDeployLag());
+    ctx.waitUntil(checkDeployLag(fetch, env));
     await runScheduledSweep(env, event.scheduledTime);
   },
 };
