@@ -9,9 +9,9 @@ format: "essay"
 phase: "game"
 sport: "football"
 age: "11-12"
-publishedAt: 2026-08-13
+publishedAt: 2026-08-29
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,8 +23,14 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-13
-  status: ready-for-jeff
-  reviewerNotes: "Penny, HOLD, round 1. flagSensitiveTopic is true with no flagResolutions entry, an unresolved flag on the hard-hold list, so this goes to Jeff instead of being scored to a publish/revise verdict. The sensitive angle: a coach's own kid struggling and being singled out (or protected) in front of the team, a real dynamic about a real family situation even though the son isn't named. Jeff's call on whether the framing is safe to publish as-is. Mechanical checks run anyway per the hold protocol: dek is 14 words, under the 15-word cap. Zero em dashes anywhere in the file. seoTitle and seoDescription both sit within schema limits per this run's check-content-field-lengths.mjs pass (0 build-breaking entries across 1484 scanned). No other flags set (flagInappropriateness false, flagIpRisk false). No named minor, no identifiable local team, no health/safety or legal claim requiring a source, no /go/ or affiliate link. Full voice pass also run in case this clears the flag: Section A (structure) passes all nine items, including paragraph length, sentence rhythm (checked all 42 sentences across every rolling three-sentence window, no spread of 5 words or less), opens on the concrete missed-block scene not a windup, closes on a fact (drill went back to being fourteen guys working it) not an empowerment line. Section B (banned words) clean, zero matches. Section C (banned patterns) clean, no reframe/fake-wisdom-triplet/concession/weak-starter patterns. If Jeff clears the sensitive flag, this is publish-ready as written."
+  jeffReviewedAt: 2026-08-29
+  status: published
+  reviewerNotes: "Published 2026-08-29 on Jeff's clearance of the sensitive-topic hold, which had sat unresolved for 16 days. No text changed at publish: Penny's round-1 hold note already recorded a full voice pass in case the flag cleared, and it passed Sections A, B, and C outright. publishedAt moved from 2026-08-13 to 2026-08-29 so the piece lands at the top of the feed instead of being buried two weeks deep in the archive on its first day live. No hero image: pcd-hero-image-backfill has been disabled since 2026-07-31, and hero is optional in the articles schema, so the piece ships without one and picks one up when Iggy runs again. Original hold note follows. Penny, HOLD, round 1. flagSensitiveTopic is true with no flagResolutions entry, an unresolved flag on the hard-hold list, so this goes to Jeff instead of being scored to a publish/revise verdict. The sensitive angle: a coach's own kid struggling and being singled out (or protected) in front of the team, a real dynamic about a real family situation even though the son isn't named. Jeff's call on whether the framing is safe to publish as-is. Mechanical checks run anyway per the hold protocol: dek is 14 words, under the 15-word cap. Zero em dashes anywhere in the file. seoTitle and seoDescription both sit within schema limits per this run's check-content-field-lengths.mjs pass (0 build-breaking entries across 1484 scanned). No other flags set (flagInappropriateness false, flagIpRisk false). No named minor, no identifiable local team, no health/safety or legal claim requiring a source, no /go/ or affiliate link. Full voice pass also run in case this clears the flag: Section A (structure) passes all nine items, including paragraph length, sentence rhythm (checked all 42 sentences across every rolling three-sentence window, no spread of 5 words or less), opens on the concrete missed-block scene not a windup, closes on a fact (drill went back to being fourteen guys working it) not an empowerment line. Section B (banned words) clean, zero matches. Section C (banned patterns) clean, no reframe/fake-wisdom-triplet/concession/weak-starter patterns. If Jeff clears the sensitive flag, this is publish-ready as written."
+  flagResolutions:
+    - flag: "SENS"
+      reason: "The sensitive angle is a coach's own kid struggling in front of the team he coaches. The son is not named, the team is not identifiable, and the piece is written against the author's own conduct rather than the child's performance: the correctable behavior in it belongs to the coach. No depiction of harm to a minor and no advice directed at a child. Jeff cleared it for publication 2026-08-29."
+      date: "2026-08-29"
+      admin: "jeff@coachjeffthomas.com"
 ---
 
 My son missed the same block three times in one inside-run period this spring. Same gap, same defender, same result. Thirteen other kids stood on the line waiting for the whistle to move on.

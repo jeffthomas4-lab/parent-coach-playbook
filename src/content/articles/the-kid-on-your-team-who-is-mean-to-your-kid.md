@@ -9,9 +9,9 @@ format: "essay"
 phase: "game"
 sport: "football"
 age: "11-12"
-publishedAt: 2026-08-16
+publishedAt: 2026-08-29
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,8 +23,14 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-08-16
-  status: ready-for-jeff
-  reviewerNotes: "Hard-hold per protocol: flagSensitiveTopic is true (a coach's own kid being frozen out by a teammate, a real family dynamic even with a composite kid), so this goes to Jeff instead of an auto verdict. Mechanical checks run anyway: dek is 14 words, under the 15-word cap. Zero em dashes. No sentence opens with This is/It's/There are/There is, and no first paragraph starter violation. No banned words or reframe/triplet/concession patterns found on read-through. Paragraphs check at 3 sentences or fewer throughout. No checkable external facts, this is a coaching-experience essay with a composite kid, no named minor, no identifiable local team. If Jeff clears the sensitive flag, this is publish-ready as written."
+  jeffReviewedAt: 2026-08-29
+  status: published
+  reviewerNotes: "Published 2026-08-29 on Jeff's clearance of the sensitive-topic hold, which had sat unresolved for 13 days. No text changed at publish: Penny's hold note already recorded the full mechanical pass and found nothing to fix. publishedAt moved from 2026-08-16 to 2026-08-29 so it enters the feed at the top instead of landing two weeks back in the archive. No hero image: pcd-hero-image-backfill has been disabled since 2026-07-31 and hero is optional in the schema. Original hold note follows. Hard-hold per protocol: flagSensitiveTopic is true (a coach's own kid being frozen out by a teammate, a real family dynamic even with a composite kid), so this goes to Jeff instead of an auto verdict. Mechanical checks run anyway: dek is 14 words, under the 15-word cap. Zero em dashes. No sentence opens with This is/It's/There are/There is, and no first paragraph starter violation. No banned words or reframe/triplet/concession patterns found on read-through. Paragraphs check at 3 sentences or fewer throughout. No checkable external facts, this is a coaching-experience essay with a composite kid, no named minor, no identifiable local team. If Jeff clears the sensitive flag, this is publish-ready as written."
+  flagResolutions:
+    - flag: "SENS"
+      reason: "The sensitive angle is exclusion between two eleven-year-old teammates on a team the author coaches. The other kid is a composite, neither child is named, the team is not identifiable, and the piece prescribes enforcing an existing team standard rather than punishing a child. No depiction of harm and no advice directed at a minor. Jeff cleared it for publication 2026-08-29."
+      date: "2026-08-29"
+      admin: "jeff@coachjeffthomas.com"
 ---
 
 My son ran to the huddle at the start of a 7-on-7 rep and the kid next to him took two steps sideways to make room for someone else. Same thing happened on the sled line the next week.
@@ -49,7 +55,9 @@ The second trap runs the other way: pretend not to see it, so nobody can say the
 
 ## Fix the rule, not the moment
 
-Our team already says one thing out loud at the first practice every year: every rep, every drill, every kid, no exceptions. The freeze-out at the sled line broke that rule the same way skipping a rep would, so I coached it exactly like I'd coach a missed rep. No speech about kindness, no name attached to what happened.
+Our team says one thing out loud at the first practice every year. Every rep, every drill, every kid, no exceptions.
+
+The freeze-out at the sled line broke that rule the same way skipping a rep would, so I coached it exactly like I'd coach a missed rep. No speech about kindness, no name attached to what happened.
 
 I built a rotation I controlled directly for two weeks and partnered the two of them every drill, no explanation offered, until working next to each other stopped being a choice either kid got to make. Sled line, water break, ride to the away scrimmage. Same two kids, same seat, no vote.
 

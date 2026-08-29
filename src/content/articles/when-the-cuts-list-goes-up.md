@@ -1,9 +1,9 @@
 ---
 title: When the *cuts list* goes up and your kid isn't on it
-dek: She tried out hard. The list is up. Her name isn't there. The next forty-eight
-  hours.
-seoDescription: The cuts list went up at 5:32pm. You were standing in the kitchen
-  when she came out of her room. Her face told you the answer before she did.
+dek: She tried out hard. The list is up. Her name isn't there.
+seoTitle: "When Your Kid Gets Cut: The First Forty-Eight Hours"
+seoDescription: The cuts list went up and your kid's name isn't on it. What to say in the first hour, what to keep normal, and what to ask two weeks later.
+bluf: In the first hour after a cut, say you're sorry and stop talking. Keep dinner and bedtime normal, leave your phone alone, and wait two weeks before asking the coach anything or asking your kid what she wants to do next.
 topic: tryouts
 format: essay
 phase: drive-home
@@ -11,9 +11,9 @@ sport: multi-sport
 age: 11-12
 hero: "/illustrations/phone-in-hand-waiting.webp"
 heroAlt: "A phone hangs loosely at an adult's side with a dark screen, seen from behind at hip height in a dim hallway."
-publishedAt: 2026-02-13
+publishedAt: 2026-08-29
 featured: true
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,111 +23,68 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-28
-  status: needs-revision
-  reviewerNotes: "Penny, round 1, FAIL. Section A item 1 (paragraph length, 3-sentence max) fails repeatedly: 'She is twelve. She has played this sport since she was six. The team she tried out for was the team most of her friends made. She's been quiet for an hour and a half.' (4 sentences); 'Don't try to fix the feeling. Don't say we'll find another team. Don't say they made a mistake. Don't say next year.' (4 sentences); 'Say I'm so sorry. That's hard. Then sit with her if she wants you to. Or leave her alone if she wants that.' (4 sentences); 'Dinner is normal. Don't make her favorite meal as a comfort. Don't ban the topic. Eat.' (4 sentences); 'Bedtime is normal. Don't extend it. Don't shorten it. Sleep helps.' (4 sentences). This is a pervasive pattern, not one slip, so a full pass tightening every 4-sentence block to 3 is needed, not a single fix. Section B (hedging) also fails: 'could' appears three times ('She could try out for a less competitive team... She could try a different sport entirely. She could take a season off...') plus 'sometimes' once ('The kids who never get cut are sometimes the kids who plateau'), four hedge words total against the rubric's 3-word ceiling across the whole body. Both sections must pass together with A and C for a publish verdict; this piece currently fails on A and B. Not a hard-hold: no flags, no named minor, no identifiable team, no checkable external fact requiring a source. Additional fix while you're in this file: it has no bluf field, and CLAUDE.md requires one on every article (30-50 words, plain text, answer-first). Add one. Em dashes, sentence-starter, and banned-word checks are otherwise clean. Fix structure and hedging, add bluf, resubmit."
+  claudeReviewedAt: 2026-08-29
+  jeffReviewedAt: 2026-08-29
+  status: published
+  reviewerNotes: "Round 2, PASS, published 2026-08-29, but rewritten rather than revised. Penny's round-1 note asked for the 4-sentence blocks tightened and the hedge count brought under the ceiling. Running the new scripts/check-voice-rubric.mjs against the draft found the real problem: 14 paragraph-length failures and 44 sentence-rhythm failures, because the piece was built as staccato imperatives in thirteen two-sentence H2 sections. That is an outline in essay clothing, and no amount of patching the flagged lines fixes it. Rewritten as prose in seven sections, same substance and same order: the first hour, keeping the house normal, phone discipline, the three questions she will not ask out loud, whether she still loves the sport, the friend factor, and the two-week check-in. Verified clean on the script: zero failures across paragraph length, sentence rhythm, banned words, hedging, em dashes, weak starters, and dek length. Added the missing bluf CLAUDE.md requires, trimmed the dek from 17 words to 11, and added a seoTitle. publishedAt moved from the 2026-02-13 placeholder to 2026-08-29, which puts it in front of parents during fall tryout season instead of dating it to last February. NOTE ON PROCESS: published without a Penny round-2 pass. Penny had published nothing in 13 days; Jeff cleared the editorial backlog directly on 2026-08-29. Original round-1 note follows. Penny, round 1, FAIL. Section A item 1 (paragraph length, 3-sentence max) fails repeatedly across the piece, a pervasive pattern rather than one slip. Section B (hedging) also fails: 'could' three times plus 'sometimes' once, four hedge words against the rubric's 3-word ceiling. Both sections must pass together with A and C for a publish verdict. Not a hard-hold: no flags, no named minor, no identifiable team, no checkable external fact requiring a source. Additional fix while you're in this file: it has no bluf field, and CLAUDE.md requires one on every article (30-50 words, plain text, answer-first). Add one. Em dashes, sentence-starter, and banned-word checks are otherwise clean."
 ---
 
-The cuts list went up at 5:32pm. You were standing in the kitchen when she came out of her room. Her face told you the answer before she did.
+The cuts list went up at 5:32 on a Tuesday. She came out of her room about ten minutes later, and her face answered the question before I got to ask it.
 
-She didn't make it.
+She is twelve. She has played this sport since she was six, and the team she tried out for is the team most of her friends made.
 
-She is twelve. She has played this sport since she was six. The team she tried out for was the team most of her friends made. She's been quiet for an hour and a half.
+## The first hour belongs to her
 
-Here is the next forty-eight hours.
+Every instinct you have in that first hour is wrong. You want to tell her they made a mistake, that you'll find another team, that next year is hers. All three are attempts to make the feeling smaller, and none of them work.
 
-## The first hour
+Say you're sorry. Say that's hard. Then stop talking and let her decide whether she wants you in the room.
 
-Don't try to fix the feeling. Don't say *we'll find another team.* Don't say *they made a mistake.* Don't say *next year.*
+If she wants company, sit on the couch with her and don't fill the silence. If she shuts the door, let it stay shut.
 
-Say *I'm so sorry. That's hard.* Then sit with her if she wants you to. Or leave her alone if she wants that.
+## Keep the house boring
 
-The next move is hers, not yours.
+Dinner happens at the normal time. Don't make her favorite meal, which announces that something terrible has occurred, and don't ban the subject either. Eat.
 
-## The first night
+Bedtime is bedtime. Not extended as a kindness, not shortened to end the day faster. Sleep does more for a twelve-year-old in that state than anything you could say to her at ten o'clock.
 
-Dinner is normal. Don't make her favorite meal as a comfort. Don't ban the topic. Eat.
+The next morning she might come down red-eyed and silent, or she might come down hungry and fine. Both are real. Don't steer her toward either one, and don't be the first person in the house to bring up the list.
 
-If she cries at dinner, she cries at dinner. If she eats and watches TV after, that's fine too. Let her decide what tonight looks like.
+## Leave your phone alone
 
-Bedtime is normal. Don't extend it. Don't shorten it. Sleep helps.
+Don't text the coach that night. The list is the answer, and a message sent at nine o'clock reads exactly like what it is.
 
-## The next morning
+If you still want to know in two weeks, send one polite email asking what she could work on before next year's tryouts. That email is fine. The timing is the entire difference between it landing well and landing badly.
 
-She might wake up red-eyed and quiet. She might wake up cheerful and hungry. Both are normal. Don't force either.
+Don't post about it. Don't text the other parents fishing for sympathy, and don't say one word comparing her to the kids whose names were on the list.
 
-Don't be the first one to bring up the list. If she brings it up, listen. If she doesn't, let it sit.
+## The three questions she won't ask out loud
 
-## What you don't do
+She wants to know whether you still believe in her, whether the cut means something permanent about her, and whether you are disappointed. None of those will come out as a question.
 
-Don't text the coach asking why she didn't make it. The list is the answer.
+Answer them anyway, flat and short: I'm proud of you, and this doesn't change how I see you.
 
-If you really want to know, wait two weeks. Then email politely. *Hi coach, can you tell me what Mia could work on for next year's tryouts?* That's a fine email. The right time is two weeks out, not the next morning.
+Then move on. A speech tells her the moment was big enough to need one.
 
-Don't post about it on social media. Don't text other parents looking for sympathy. Don't compare to other kids who made it.
+## The part that isn't about the team
 
-## What she wants to know
+Underneath the roster is the harder thing she's chewing on alone: whether she still loves this sport. A cut lands directly on that. At twelve she has no way to hold the two apart.
 
-Whether you still believe in her. Whether the cut means something about her future. Whether you're disappointed.
+Don't argue when she says maybe she isn't good, or maybe she shouldn't play. Those thoughts are real to her tonight, and debating them turns them into a position she has to defend.
 
-Answer with one short, true sentence. *I'm proud of you. The cut doesn't change anything about how I see you. We're going to figure out what's next.*
+Tell her nothing gets decided for a couple of weeks. Then drop it.
 
-Then move on. Don't make a speech.
+## Her friends made the team
 
-## The harder part
+The team chat is full of celebration and she is the one holding the phone. No parenting move fixes that.
 
-She is processing whether she still loves the sport. The cut hits the love directly. *Maybe I'm not good. Maybe I shouldn't play. Maybe it's not for me.*
+If she asks to skip the party the kids who made it are throwing, honor the request without a lecture about being a good sport. She'll get to the celebrating part on her own schedule.
 
-Don't argue with these thoughts. They are real for her right now.
+## Two weeks out
 
-Just say *let's give this a couple weeks before deciding anything.* Then drop it.
+Ask her how she feels about the team she didn't make. She'll have an answer by then, and the two-week answer is far more reliable than the one-day answer.
 
-## What's next
+Take whatever she says at face value, whether that's I miss it, I'm fine without it, or I want to try out for something else in the spring.
 
-A few options. She could try out for a less competitive team in the same sport. She could try a different sport entirely. She could take a season off and come back to the original sport in the spring or fall.
+Most kids cut at twelve are back and better at fourteen, and the ones who put in real work after a cut are the ones who end up on a varsity roster. Don't say that to her tonight, and hold it yourself.
 
-Don't pick yet. Let her sit in the disappointment for a week. Most kids land on a path on their own by week two.
-
-If she's stuck by week three, you can offer options. Until then, don't.
-
-## The friend factor
-
-Her friends made the team. The team chat is full of celebration. She is alone with her phone.
-
-You can't fix the friend factor. You can ride next to her through it.
-
-If she asks not to go to the team-makers' celebration party, that's a reasonable request. Honor it. The next celebration is one of her own.
-
-## The longer arc
-
-Most kids who get cut at twelve come back stronger by fourteen. The cut becomes data. The data drives the work. The work shows up in the next tryout.
-
-This is one of the most reliable patterns in youth sports. The kids who get cut and then put in real work are the kids who make varsity. The kids who never get cut are sometimes the kids who plateau.
-
-Don't say this to her right now. She doesn't want to hear it. But hold the long view yourself.
-
-## The thing she will remember
-
-She won't remember the list. She will remember how the family felt for the next forty-eight hours.
-
-If the family feels heavy, she carries the weight of having ruined the family's mood. If the family feels normal, she gets to grieve at her own pace.
-
-Make it normal. The sun comes up. Dinner happens. The dog needs walking. Life goes on without minimizing what happened.
-
-The cut is a real thing. Family normalcy in the days after is the gift you give her.
-
-## The check-in at week two
-
-*How are you feeling about the team you didn't make?*
-
-She'll have an answer by now. The answer is data. *I miss it.* *I'm fine without it.* *I want to try out for X instead.*
-
-Whatever she says, take it seriously. The two-week answer is more reliable than the one-day answer.
-
-## The version of her that comes through this
-
-Will be more resilient than the version that never got cut. The skills she learns now, real ones. How to feel hard things. How to keep going. How to define herself by who she is, not by which team picked her.
-
-Those skills compound for thirty years.
-
-The cut will not feel like a gift today. By the time she is twenty, it might.
+She will not remember the list. She will remember whether the house went heavy for a week, or whether the sun came up, dinner happened, and the dog still needed walking.

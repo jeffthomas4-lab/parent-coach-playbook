@@ -11,10 +11,10 @@ Companion to `CONTENT_ROADMAP.md` (the evergreen topic backlog). This file holds
 | drafted 2026-07-31 | 2026-08-03 | Tackle/flag football | HS football (PNW pattern) opens practice mid-August, helmets-only week 1 then full pads week 2; Week 1 games are the Friday after Labor Day (Sept 11, 2026). Physical and paperwork deadlines land in the two weeks before. Not covered: `two-a-days-what-parents-need-to-know.md` handles practice structure, not the compliance checklist. | What has to be signed and turned in before the first day of August football practice | articles |
 | drafted 2026-08-07 | 2026-08-10 | Soccer | HS/club fall soccer practice opens week 3 of August; state heat-acclimatization mandates require a modified practice structure for the first 5-14 days. Angle is the compliance rule itself (what the mandate actually requires a program to do), not general heat-illness symptoms, which `heat-illness-when-to-pull-them-out.md` already covers. | The heat-acclimatization rule your soccer program has to follow the first two weeks | articles |
 | drafted 2026-08-14 | 2026-08-17 | Cross country | Official HS cross country practice opens in August; the time trial in the first week seeds the varsity roster for the whole fall. Not covered elsewhere on the site. | The cross country time trial that quietly sets your kid's varsity spot | articles |
-| drafted 2026-08-26 | 2026-08-24 | Baseball | Little League's optional fall ball registration opens in September; 6-8 week season, lower stakes than spring, free substitution at most leagues. No existing article on fall ball specifically. | Is fall ball worth it? What actually changes from spring rec baseball | articles |
+| published 2026-08-29 | 2026-08-24 | Baseball | Little League's optional fall ball registration opens in September; 6-8 week season, lower stakes than spring, free substitution at most leagues. No existing article on fall ball specifically. | Is fall ball worth it? What actually changes from spring rec baseball | articles |
 | queued | 2026-09-07 | Band | Marching band's competition season starts in September (Friday night football games, first Saturday competitions); pit crew, uniforms, and feeding-the-band volunteer signups happen the same week. Existing band content covers camp and the money side; this fills the volunteer-role gap. | The volunteer jobs marching band parents need to fill before the first Saturday competition | articles |
 | queued | 2026-09-14 | Hockey | Youth travel hockey (per src/content/seasonCalendars/youth-travel-hockey-winter.md) starts practices and holds league scheduling meetings in September, with volunteer signups for scorekeeping, penalty box, and locker room monitor the same window. No existing article covers these specific team-parent volunteer roles for hockey (checked src/content/articles, hockey coverage is gear/cost/recruiting/tryouts, not this). | The volunteer jobs a hockey team parent gets asked to fill before the first practice | articles |
-| drafted 2026-08-28 | 2026-08-31 | Softball | src/content/seasonCalendars/rec-fastpitch-softball-spring.md: optional fall ball registration and season start land in September, same low-stakes/free-substitution structure as Little League fall ball. No existing article on softball fall ball specifically (checked src/content/articles: youth-softball-cost-breakdown.md, rec-softball-vs-travel-softball.md, youth-softball-tryouts-what-to-expect.md and the rest cover cost, rec-vs-travel, and tryouts, not fall ball). Mirrors the baseball fall-ball row already in this lane. | Fall ball for softball: what's actually different from spring rec | articles |
+| scheduled 2026-08-31 | 2026-08-31 | Softball | src/content/seasonCalendars/rec-fastpitch-softball-spring.md: optional fall ball registration and season start land in September, same low-stakes/free-substitution structure as Little League fall ball. No existing article on softball fall ball specifically (checked src/content/articles: youth-softball-cost-breakdown.md, rec-softball-vs-travel-softball.md, youth-softball-tryouts-what-to-expect.md and the rest cover cost, rec-vs-travel, and tryouts, not fall ball). Mirrors the baseball fall-ball row already in this lane. | Fall ball for softball: what's actually different from spring rec | articles |
 | queued | 2026-08-31 | Swimming | src/content/seasonCalendars/year-round-club-swimming.md: short course season opens in September with practice group placements and an equipment refresh (suit, goggles, fins). youth-swimming-gear-guide.md already owns the shopping list; no existing article covers what a practice-group placement actually means for a family's weekly schedule and whether to push back on it. | What "practice group placement" actually means when short course season opens | articles |
 | queued | 2026-09-07 | Theater | src/content/seasonCalendars/school-theater-production-year.md: fall play auditions, cast list, and crew signups (set, costumes, lights, sound, stage management) land in September. theater-auditions-what-to-expect.md already covers performing auditions; no existing article covers the crew/tech track for kids who don't perform or don't get cast (checked src/content/articles, closest is theater-tech-week-survival.md, which covers the rehearsal week, not how to sign up for crew in the first place). | The theater track nobody explains: how to sign up for crew instead of the stage | articles |
 
@@ -29,6 +29,40 @@ Companion to `CONTENT_ROADMAP.md` (the evergreen topic backlog). This file holds
 Checked this run and not queued: the Pop Warner "age cutoff moved to July 14" claim circulating on social media. Confirmed against Pop Warner's own FAQ and 2026 age matrix PDF, both still say July 31. Same conclusion as the 2026-07-21 rules-watch report. Not adding until Pop Warner National says otherwise.
 
 Checked 2026-08-03 and not queued: NFHS's 2026 girls lacrosse rule changes (draw violation free-position rule, goal circle foul spacing, goalkeeper-possession restart, limited stick-check windows, on-field electronic device ban). Source: si.com, but the article is dated July 2025 and "2026 season" means the spring 2026 season that already happened, not the season ahead. Not a live hook right now; revisit if NFHS announces 2026-27 girls lacrosse changes closer to next spring.
+
+## Backlog clearance, 2026-08-29
+
+Penny had published nothing since 2026-08-16. Five pieces were sitting in the loop with no worker: three
+`ready-for-jeff` holds nobody had surfaced to Jeff, and three `needs-revision` drafts that Ed never came back
+to because his run pulls a new topic each night instead of clearing the revision queue. Jeff cleared the whole
+backlog directly.
+
+Published or scheduled this pass:
+
+| Piece | Was | Now |
+|-------|-----|-----|
+| Making it fun for everyone when your own kid is struggling | `ready-for-jeff`, sensitive-topic hold since 08-13 | published 08-29, SENS flag resolved |
+| The kid on your team who is mean to your kid | `ready-for-jeff`, sensitive-topic hold since 08-16 | published 08-29, SENS flag resolved |
+| Is fall ball worth it? | `needs-revision`, round 1 | revised, published 08-29 |
+| Fall ball for softball | `needs-revision`, round 1 | revised, scheduled 08-31 |
+| When the cuts list goes up | `needs-revision`, round 1 | rewritten, published 08-29 |
+
+Not cleared: **What has to be turned in before the first day of football practice.** Round-3 stalemate since
+08-16 over a 5-word sentence-rhythm spread. Its hook was WIAA practice opening 2026-08-19, which has passed,
+so the piece is now stale rather than blocked. It needs a new hook or retirement, not another revision round.
+
+Two things changed in the machinery this pass:
+
+1. **`scripts/check-voice-rubric.mjs` now exists.** It runs the arithmetic half of the rubric (paragraph
+   length, sentence rhythm, banned words, hedge counts, em dashes, weak starters, dek length, open flags).
+   Every piece above was verified with it instead of by reading. It caught a rhythm failure in *The kid on
+   your team* that the round-1 read had passed, and it showed that *When the cuts list goes up* had 14
+   paragraph failures and 44 rhythm failures, which is why that one was rewritten instead of patched.
+   Penny and Ed should both run it before claiming a verdict.
+
+2. **The revision loop still has no worker.** Ed drafts, Penny bounces, and nothing sends the bounced piece
+   back through Ed. That is why five pieces stacked up. Until Ed's task prioritizes the `needs-revision`
+   queue ahead of a new topic, this backlog rebuilds itself.
 
 ## Worked (last 8 weeks)
 
