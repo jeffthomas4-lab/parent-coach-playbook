@@ -23,9 +23,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-19
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-28
+  status: needs-revision
+  reviewerNotes: "Penny, round 1, FAIL. Section A item 1 (paragraph length, 3-sentence max) fails repeatedly: 'She is twelve. She has played this sport since she was six. The team she tried out for was the team most of her friends made. She's been quiet for an hour and a half.' (4 sentences); 'Don't try to fix the feeling. Don't say we'll find another team. Don't say they made a mistake. Don't say next year.' (4 sentences); 'Say I'm so sorry. That's hard. Then sit with her if she wants you to. Or leave her alone if she wants that.' (4 sentences); 'Dinner is normal. Don't make her favorite meal as a comfort. Don't ban the topic. Eat.' (4 sentences); 'Bedtime is normal. Don't extend it. Don't shorten it. Sleep helps.' (4 sentences). This is a pervasive pattern, not one slip, so a full pass tightening every 4-sentence block to 3 is needed, not a single fix. Section B (hedging) also fails: 'could' appears three times ('She could try out for a less competitive team... She could try a different sport entirely. She could take a season off...') plus 'sometimes' once ('The kids who never get cut are sometimes the kids who plateau'), four hedge words total against the rubric's 3-word ceiling across the whole body. Both sections must pass together with A and C for a publish verdict; this piece currently fails on A and B. Not a hard-hold: no flags, no named minor, no identifiable team, no checkable external fact requiring a source. Additional fix while you're in this file: it has no bluf field, and CLAUDE.md requires one on every article (30-50 words, plain text, answer-first). Add one. Em dashes, sentence-starter, and banned-word checks are otherwise clean. Fix structure and hedging, add bluf, resubmit."
 ---
 
 The cuts list went up at 5:32pm. You were standing in the kitchen when she came out of her room. Her face told you the answer before she did.
