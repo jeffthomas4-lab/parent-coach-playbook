@@ -1,11 +1,15 @@
 {
   "queue_version": 1,
-  "generated_by": "pcd-link-health-monitor",
+  "generated_by": "pcd-affiliate-replacement-sourcer",
   "generated_at": "2026-08-17",
   "source_report": "reports/link-health/LINK_HEALTH_2026-08-17.md",
   "consumer": "pcd-affiliate-replacement-sourcer (Arnie)",
-  "consumer_instructions": "Work items where status=='open'. For each: source a replacement matching product_intent, browser-verify it is live + In Stock + correct product (space Amazon requests 5-10s apart), then write the proposed new destination into resolution.proposed_destination and set status='proposed'. Do NOT edit affiliates.json or deploy — Jeff reviews and pushes. Reconcile against affiliate-governance.json and lifecycle.json before proposing (a slug may already be owned/retired there). If no good replacement exists, set status='retire-recommended' with a reason.",
-  "totals": { "open": 7, "high_priority": 2, "medium_priority": 2 },
+  "consumer_instructions": "Work items where status=='open'. For each: source a replacement matching product_intent, browser-verify it is live + In Stock + correct product (space Amazon requests 5-10s apart), then write the proposed new destination into resolution.proposed_destination and set status='proposed'. Do NOT edit affiliates.json or deploy \u2014 Jeff reviews and pushes. Reconcile against affiliate-governance.json and lifecycle.json before proposing (a slug may already be owned/retired there). If no good replacement exists, set status='retire-recommended' with a reason.",
+  "totals": {
+    "open": 1,
+    "high_priority": 0,
+    "medium_priority": 0
+  },
   "items": [
     {
       "slug": "tennis-racquet-junior",
@@ -18,8 +22,21 @@
       "product_intent": "Junior/youth tennis racquet, ~25 inch",
       "suggested_search_query": "junior tennis racquet 25 inch youth",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "proposed",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B095S1S2C7?tag=parentcoachpl-20",
+        "proposed_asin": "B095S1S2C7",
+        "product_title": "HEAD Speed 25 Junior Tennis Racquet, Blue (SIOC), Pre-Strung, Ages 8-11",
+        "price": "$25.50",
+        "rating": 4.8,
+        "rating_count": 1121,
+        "why_fits": "Same brand/model line as the existing card (HEAD Speed junior). 4.8 stars, 1,121 ratings, well above the 4.0/100 bar. In stock, Add to Cart confirmed live in browser. Old listing had no working price to compare, so no price delta flagged.",
+        "runner_up": "B095RHHH36 (HEAD Speed Junior Tennis Racquet, Pre-Strung, 4.8 stars, ~5K ratings, $24.80)",
+        "validated_at": "2026-08-27",
+        "validated_in_browser": true,
+        "named_card_found": true,
+        "named_card_location": "src/content/guides/tennis.md - h3 'HEAD Speed junior racquet' - matches new pick exactly, no copy change needed"
+      }
     },
     {
       "slug": "foam-roller-medium",
@@ -32,8 +49,21 @@
       "product_intent": "Medium-density foam roller for recovery/muscle work",
       "suggested_search_query": "medium density foam roller 18 inch recovery",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "proposed",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B00ED3GIV0?tag=parentcoachpl-20",
+        "proposed_asin": "B00ED3GIV0",
+        "product_title": "ProsourceFit High Density Foam Rollers, 36 inches long, Firm Full Body Athletic Massage Tool, Black",
+        "price": "$22.99",
+        "rating": 4.6,
+        "rating_count": 20865,
+        "why_fits": "In stock, 4.6 stars, 20,865 ratings, well above the 4.0/100 bar, 36-inch length matches the published card copy. IMPORTANT: the old ASIN (B071P2MQ5D) actually resolves to an Amazon Basics 24-inch HIGH-density roller, not a 36-inch medium-density one as all three cards claim -- the card copy was already inaccurate before this swap. This candidate is 36 inches (matches) but is also High Density, not Medium. Price is close to the old Amazon Basics price range, no major delta.",
+        "runner_up": "B00XM2MRGI (Amazon Basics High-Density Foam Roller, 36 Inches, 4.6 stars, price not shown/likely OOS)",
+        "validated_at": "2026-08-27",
+        "validated_in_browser": true,
+        "named_card_found": true,
+        "named_card_location": "src/content/guides/cross-country.md, src/content/guides/gymnastics.md, src/content/guides/stunt.md - all three h3s say 'Foam roller - medium density' and body copy says '36-inch medium-density' - needs updating to reflect the actual density (firm/high) of whichever roller ships; this mismatch predates this swap"
+      }
     },
     {
       "slug": "hockey-helmet-youth",
@@ -46,8 +76,11 @@
       "product_intent": "Youth ice hockey helmet, certified",
       "suggested_search_query": "youth ice hockey helmet CSA certified",
       "priority": "medium",
-      "status": "open",
-      "resolution": null
+      "status": "retire-recommended",
+      "resolution": {
+        "reason": "no candidate met the 4.0-star/100-rating bar for a genuinely youth-sized helmet. Bauer Lil Sport Hockey Helmet Combo with Cage (closest brand/model match to the existing card, Toddler Size, ASIN B0DVH6FH71) is in stock at 4.8 stars but only 5 ratings -- fails the 100-rating floor. Bauer RE-AKT 55 Helmet Combo (B0DG6DTCWX, 4.6 stars, 236 ratings, in stock) and CCM Tacks 70 Helmet Combo (in stock, 4.5 stars) are both Senior/adult sizing only, not youth-appropriate substitutes despite meeting the rating bar. No true youth/junior HECC-certified combo with adequate reviews was found live.",
+        "validated_at": "2026-08-27"
+      }
     },
     {
       "slug": "football-cup-shorts-youth",
@@ -60,8 +93,21 @@
       "product_intent": "Youth football compression shorts with athletic cup pocket",
       "suggested_search_query": "youth football compression shorts with cup pocket",
       "priority": "medium",
-      "status": "open",
-      "resolution": null
+      "status": "proposed",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B00181B9W8?tag=parentcoachpl-20",
+        "proposed_asin": "B00181B9W8",
+        "product_title": "Shock Doctor Compression Shorts with Cup Pocket, Athletic Supporter Underwear with Pocket (Cup NOT Included) - Youth",
+        "price": "$29.99",
+        "rating": 4.5,
+        "rating_count": 328,
+        "why_fits": "In stock, 4.5 stars, 328 ratings, same brand (Shock Doctor) and same product family as the old ASIN. IMPORTANT FUNCTIONAL DIFFERENCE: the card currently says 'Bio-Flex cup' implying the cup ships with the shorts. Every Shock Doctor 'with Bio-Flex Cup' (cup-included) listing checked (B0G3GKL2VC, B0H5G3QYMX, B0H2H3RPY9) is Currently Unavailable. This candidate is pocket-only -- cup sold separately. Price is close to old range.",
+        "runner_up": "B00181BC5W (Shock Doctor, 4.4 stars, $29.99, similar pocket-only construction)",
+        "validated_at": "2026-08-27",
+        "validated_in_browser": true,
+        "named_card_found": true,
+        "named_card_location": "src/content/guides/football.md - h3 'Shock Doctor compression shorts with Bio-Flex cup' - needs the 'with Bio-Flex cup' claim removed or changed to 'cup sold separately' since no in-stock cup-included version exists"
+      }
     },
     {
       "slug": "soccer-shin-guards-ankle-youth",
@@ -74,8 +120,21 @@
       "product_intent": "Youth soccer shin guards with ankle protection/sleeve",
       "suggested_search_query": "youth soccer shin guards with ankle protection",
       "priority": "low",
-      "status": "open",
-      "resolution": null
+      "status": "proposed",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B0CX1S91GH?tag=parentcoachpl-20",
+        "proposed_asin": "B0CX1S91GH",
+        "product_title": "Shin Guards Soccer Youth Kids, Boys Girls Teenagers 2-18 Yrs Old, with Ankle Sleeves Protection, Adjustable Strap",
+        "price": "$19.99",
+        "rating": 4.6,
+        "rating_count": 641,
+        "why_fits": "In stock (19 left), 4.6 stars, 641 ratings, well above the 4.0/100 bar. Explicitly ankle-sleeve construction matching product_intent. No price history available for comparison from the old listing.",
+        "runner_up": "B0D732NJ6Z (Soccer Shin Guards with Calf Compression Sleeve, 4.6 stars, $19.99)",
+        "validated_at": "2026-08-27",
+        "validated_in_browser": true,
+        "named_card_found": false,
+        "named_card_location": null
+      }
     },
     {
       "slug": "multi-sport-socks-crew",
@@ -88,8 +147,21 @@
       "product_intent": "Youth crew athletic socks for general multi-sport use",
       "suggested_search_query": "youth crew athletic socks multipack",
       "priority": "low",
-      "status": "open",
-      "resolution": null
+      "status": "proposed",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B086CCM86Z?tag=parentcoachpl-20",
+        "proposed_asin": "B086CCM86Z",
+        "product_title": "Nike Unisex Everyday Cushioned Training Crew Socks (3-Pack)",
+        "price": "$15.00",
+        "rating": 4.7,
+        "rating_count": 7164,
+        "why_fits": "SAME ASIN as the old destination -- it has come back in stock since Linda flagged it on 2026-08-17 (confirmed live: Add to Cart and Buy Now both present, $15.00, 4.7 stars, 7,164 ratings). No product change needed, just re-confirm the existing link is healthy again.",
+        "runner_up": null,
+        "validated_at": "2026-08-27",
+        "validated_in_browser": true,
+        "named_card_found": true,
+        "named_card_location": "src/content/guides/basketball.md - h3 'Nike Everyday Cushioned crew socks (3 pack)' - already accurate, no copy change needed"
+      }
     },
     {
       "slug": "soccer-goalie-gloves-youth",
@@ -103,7 +175,13 @@
       "suggested_search_query": "youth soccer goalkeeper gloves",
       "priority": "low",
       "status": "open",
-      "resolution": null
+      "resolution": {
+        "skipped": false,
+        "awaiting_validation": true,
+        "reason": "soccergarage.com timed out twice this run (180s) and could not be reached to source/validate a candidate. Separately: even once a candidate is found, Arnie cannot mint a new CJ tracking link without CJ network dashboard access -- Jeff or the CJ dashboard will need to generate the actual affiliate deep link for whatever product is chosen."
+      }
     }
-  ]
+  ],
+  "last_worked_by": "pcd-affiliate-replacement-sourcer (manual run 2026-08-27)",
+  "last_worked_at": "2026-08-27"
 }

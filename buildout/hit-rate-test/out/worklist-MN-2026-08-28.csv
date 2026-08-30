@@ -1,0 +1,11 @@
+seq,org_id,name,city,state,tier,engine,query,search_url
+1,org-e6d8214b-469e-56f7-91d8-da93441019c3,Rock Ridge Volleyball Club,Eveleth,MN,1,duckduckgo,"""Rock Ridge Volleyball Club"" Eveleth MN",https://html.duckduckgo.com/html/?q=%22Rock+Ridge+Volleyball+Club%22+Eveleth+MN
+2,org-50c111b3-f359-5ba1-beaa-f810bd793007,Lakes Lightning Volleyball Club,Frazee,MN,1,bing,"""Lakes Lightning Volleyball Club"" Frazee MN",https://www.bing.com/search?q=%22Lakes+Lightning+Volleyball+Club%22+Frazee+MN
+3,org-9defae3c-fcac-5649-b571-d9a604da70b2,Hibbing Junior Olympic Volleyball Club,Hibbing,MN,1,brave,"""Hibbing Junior Olympic Volleyball Club"" Hibbing MN",https://search.brave.com/search?q=%22Hibbing+Junior+Olympic+Volleyball+Club%22+Hibbing+MN
+4,org-9a0cd2e8-bec8-57c7-b60f-053b3083c48f,Whitecaps Volleyball Club,Intl Falls,MN,1,mojeek,"""Whitecaps Volleyball Club"" Intl Falls MN",https://www.mojeek.com/search?q=%22Whitecaps+Volleyball+Club%22+Intl+Falls+MN
+5,org-52cff66a-b362-574a-a839-f073a2e5e891,Laporte Jo Youth Volleyball,Laporte,MN,1,ecosia,"""Laporte Jo Youth Volleyball"" Laporte MN",https://www.ecosia.org/search?q=%22Laporte+Jo+Youth+Volleyball%22+Laporte+MN
+6,org-ab291d9a-0b3b-5b5b-ac90-62da92a20bf5,Mn Blizzard Volleyball Club,Mankato,MN,1,startpage,"""Mn Blizzard Volleyball Club"" Mankato MN",https://www.startpage.com/sp/search?query=%22Mn+Blizzard+Volleyball+Club%22+Mankato+MN
+7,org-fb6a67b1-bdbf-5db7-96fc-d2298b9ea7cc,Monti Club Jo Volleyball Inc,Monticello,MN,1,duckduckgo,"""Monti Club Jo Volleyball Inc"" Monticello MN",https://html.duckduckgo.com/html/?q=%22Monti+Club+Jo+Volleyball+Inc%22+Monticello+MN
+8,org-75cf715f-3b7d-5288-9c22-47fd609edb6d,Pierz Volleyball Club,Pierz,MN,1,bing,"""Pierz Volleyball Club"" Pierz MN",https://www.bing.com/search?q=%22Pierz+Volleyball+Club%22+Pierz+MN
+9,org-fd2bdad0-e083-5692-8215-b29026d0ba72,Underwood Volleyball Club Inc,Underwood,MN,1,brave,"""Underwood Volleyball Club Inc"" Underwood MN",https://search.brave.com/search?q=%22Underwood+Volleyball+Club+Inc%22+Underwood+MN
+10,org-c88d05c8-74b8-5ac5-9b91-a03b783d39b2,Waseca Fusion Jo Volleyball,Waseca,MN,1,mojeek,"""Waseca Fusion Jo Volleyball"" Waseca MN",https://www.mojeek.com/search?q=%22Waseca+Fusion+Jo+Volleyball%22+Waseca+MN
