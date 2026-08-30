@@ -21,9 +21,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-29
-  status: draft
-  reviewerNotes: "Placement criteria (times, attendance, technique, coachability) and season-boundary move timing checked against published club practice-group pages and ASCA age-group development material. No existing PCD article covers group placement outside the tryout context."
+  claudeReviewedAt: 2026-08-30
+  status: claude-reviewed
+  reviewerNotes: "Penny, PASS on all rubric sections (A/B/C/E). Structure: all 7 paragraphs at or under 3 sentences, zero em dashes, opens on a concrete fact, closes on a next action not a summary or empowerment line, sentence-rhythm rolling windows all clear (min spread 8 words), one unhedged flat opinion ('That assumption is wrong'), zero banned words/patterns. Fact spot-check: USA Swimming's short course (Sept-Mar) / long course (Apr-Aug) season split confirmed live via web search; the piece's three club-level reset windows (spring/summer/winter) describe common club practice-group cadence consistent with that structure, not a cited USA Swimming national rule, matching Ed's own sourcing note. Schema-complete, dek 14 words, no affiliate links so disclosure correctly absent. HOLDING: publishedAt is 2026-08-31 (tomorrow), so draft stays true per the future-dated-pass rule; also needs a hero image before it goes live, and the pcd-review-publish scheduled task is now disabled (see 8/30 folder-access finding), so this will not auto-publish tomorrow without a manual run."
+  factCheckGoodThrough: 2027-08-30
 ---
 
 Short course season opens in September for most club swim teams, and the group placements coaches announce that first week land harder on families than expected. Parents hear terms like developmental group or age group silver and assume it's a ranking. That assumption is wrong.
