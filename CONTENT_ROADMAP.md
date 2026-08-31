@@ -80,7 +80,7 @@ The hardest emotional terrain. Cornerstone-quality essays under the Editorial by
 | The "playing time" email from another parent | Editorial | Team Parent · Communication | covered (when-a-parent-emails-about-playing-time.md, how-to-talk-to-the-coach-about-playing-time.md, playing-time-fairness.md) |
 | When your kid's friend makes the A team and your kid doesn't | Editorial | Drive Home | covered (src/content/articles/the-friend-who-made-the-team-your-kid-didnt.md already covers a best friend making the team a kid didn't, same beat; checked 2026-08-16) |
 | The kid on your team who is mean to your kid | Editorial | The Game | drafted 2026-08-16 (src/content/articles/the-kid-on-your-team-who-is-mean-to-your-kid.md; no hero, no OpenAI API key available this run) |
-| Co-parenting the season: who does what | Editorial | Drive There | PIPELINE |
+| Co-parenting the season: who does what | Editorial | Drive There | drafted 2026-08-30 (src/content/articles/the-season-has-four-jobs.md; no hero, no OpenAI API key available this run, pcd-hero-image-backfill disabled since 2026-07-31) |
 
 ---
 
