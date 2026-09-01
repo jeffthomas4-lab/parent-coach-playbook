@@ -1,11 +1,49 @@
 id,name,city,state
 org-e6d8214b-469e-56f7-91d8-da93441019c3,Rock Ridge Volleyball Club,Eveleth,MN
-org-50c111b3-f359-5ba1-beaa-f810bd793007,Lakes Lightning Volleyball Club,Frazee,MN
-org-9defae3c-fcac-5649-b571-d9a604da70b2,Hibbing Junior Olympic Volleyball Club,Hibbing,MN
 org-9a0cd2e8-bec8-57c7-b60f-053b3083c48f,Whitecaps Volleyball Club,Intl Falls,MN
 org-52cff66a-b362-574a-a839-f073a2e5e891,Laporte Jo Youth Volleyball,Laporte,MN
 org-ab291d9a-0b3b-5b5b-ac90-62da92a20bf5,Mn Blizzard Volleyball Club,Mankato,MN
-org-fb6a67b1-bdbf-5db7-96fc-d2298b9ea7cc,Monti Club Jo Volleyball Inc,Monticello,MN
 org-75cf715f-3b7d-5288-9c22-47fd609edb6d,Pierz Volleyball Club,Pierz,MN
 org-fd2bdad0-e083-5692-8215-b29026d0ba72,Underwood Volleyball Club Inc,Underwood,MN
 org-c88d05c8-74b8-5ac5-9b91-a03b783d39b2,Waseca Fusion Jo Volleyball,Waseca,MN
+org-f0a1974f-42dc-5c87-9243-8e2254e45eff,Metro Board Of Volleyball Officials,Brooklyn Park,MN
+org-0a3e337b-a974-5fb8-9372-47f5d50041d8,Chisholm Junior Volleyball Inc,Chisholm,MN
+org-0c904de9-1edd-5bf6-8291-d6bfe1785049,Raider Volleyball Association,Detroit Lakes,MN
+org-451eafa6-42e0-512a-b905-c29c3bb9a16a,Venom Volleyball Mn,Dodge Center,MN
+org-73fab844-5946-56fd-8d4c-f184e25f36e5,Ls Cougar Boys Volleyball,Elko New Mrkt,MN
+org-9291009c-1227-555b-8325-4b9a8be74450,Milaca Volleyball,Foley,MN
+org-a1f7e6e1-5a44-5f1c-b605-23b621fd142c,Grand Rapids Volleyball Association,Grand Rapids,MN
+org-4cd580d0-5326-53be-9563-9057e4bba60b,Jordan Volleyball Association,Jordan,MN
+org-a4142d99-6801-5145-8c9c-aba3d6d78027,Kms Volleyball Association,Kerkhoven,MN
+org-8bbf5151-631e-567b-9845-dd628b8120ac,Litchfield Volleyball Association A Minnesota Non-profit Corporation,Litchfield,MN
+org-40b0e774-fdf6-5a32-83af-30b05d863e97,Minnesota Volleyball Coaches Association,Litchfield,MN
+org-1ecd75ed-f8dd-577a-b829-3a5fcb6d5080,Little Falls Volleyball Association,Little Falls,MN
+org-8d6eaf8c-c55e-5d4f-a091-9cb7065154fe,Maple River Volleyball Association,Mapleton,MN
+org-9c036df7-678c-50c1-a9d4-9375418543d7,Southwest Minnesota Volleyball,Marshall,MN
+org-0780a8c5-d75e-57b7-9375-3f9827596487,Monte J O Volleyball,Montevideo,MN
+org-8b059578-24ca-57da-86d6-8b1904c10c45,Big Lake Youth Volleyball Association,Monticello,MN
+org-65c2431f-e3ed-57bd-9ad2-64cb64a91842,Morris Area Volleyball Association,Morris,MN
+org-bca91fc9-bf01-5340-a9d1-19ebbf1a2708,Nb Vikings Volleyball,North Branch,MN
+org-bb22fee3-733c-5fe2-986d-d8d23124ff78,Northeast Velocity Volleyball,North Oaks,MN
+org-1fc5d9a1-90fa-5cd5-bccd-522ab09e943c,Twin Cities Elite Volleyball,Oakdale,MN
+org-15088802-2a17-59f4-9a63-cfdbbc09e8af,Pine Island Volleyball Association,Pine Island,MN
+org-e01c123a-709c-5ba0-8ecc-e84cb1f13a7a,Osseo Boys Volleyball,Plymouth,MN
+org-90b01dba-a119-5d08-9b78-24382bcae0f3,Red Wing Youth Volleyball Association Inc,Red Wing,MN
+org-fb3db24d-094a-57fa-badd-5b799dfe33e8,Rochester Area Homeschool Defenders Volleyball,Rochester,MN
+org-6de98e1f-b420-5219-b14b-8b73e9fd2d17,Rochester Youth Volleyball Association Inc,Rochester,MN
+org-2d588f36-4734-5b60-b811-488d03abe929,Rogers Area Youth Volleyball Association,Rogers,MN
+org-ab3eeac6-fdc4-5173-a9c8-bfd68799cc93,Rogers Boys Volleyball,Rogers,MN
+org-70db8046-a5cf-5ecf-a0a7-f2bfca870cc4,Royalton Junior Volleyball,Royalton,MN
+org-3c7994c5-5b44-5c60-bf76-d73f11ff24b5,Saint Charles Heat Youth Volleyball Inc,Saint Charles,MN
+org-3d16594d-342f-5e7b-9447-5ff1cbd99b04,Minnesota Boys Volleyball Coaches Association,Shakopee,MN
+org-33bca937-180e-5157-8d46-567f5a37a842,Shakopee Volleyball Association,Shakopee,MN
+org-d7966610-b6d7-55b7-a98a-e934a67c9caf,Acceleration Volleyball,St Joseph,MN
+org-47a37309-f0f2-539b-9d45-a945edbc1a1b,Saint Peter Volleyball Association,St Peter,MN
+org-d1fa29ee-5148-5360-8983-4c1a23cb566f,Cannon Falls Volleyball Inc,Stanton,MN
+org-880a7616-e11e-5ec7-a6c1-dfcb0739f3b6,Swanville Youth Volleyball Association,Swanville,MN
+org-e5c78c16-20f0-5a01-bb4d-70820738ce06,Lakes Elite Volleyball,Underwood,MN
+org-cee121e5-15e2-53e7-a02e-fa0ea7139d5a,The White Bear Lake Volleyball Association,Vadnais Hts,MN
+org-acb57057-bcb8-5e0c-83b9-588260d64969,High Voltage Volleyball,Waconia,MN
+org-92455f22-5b55-5459-b71d-9167b1d5f1d4,Mn Core Volleyball,Waconia,MN
+org-1cb10f42-f0d4-560a-9d27-3bc9ad25e73b,Mahtomedi Area Volleyball Association,Willernie,MN
+org-d8206530-75bf-5781-8913-ab6c9c54f17e,Minnesota Warriors Volleyball,Winnebago,MN
