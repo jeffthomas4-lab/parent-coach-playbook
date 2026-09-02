@@ -16,10 +16,11 @@ import {
 } from './lib/sentry-worker';
 import { isFeatureEnabled } from './lib/intel/config';
 import { runOrgSweep } from './lib/intel/pipeline';
+import { runPcdCrmAdapter, type PcdCrmAdapterEnv } from './lib/crm-adapter';
 
 type AstroWorkerEnv = Parameters<typeof astroWorker.fetch>[1];
 type PcdWorkerEnv = AstroWorkerEnv & AdminAuthEnv & SentryWorkerEnv;
-type PcdIntegrationEnv = PcdWorkerEnv & BabyLoveEnv;
+type PcdIntegrationEnv = PcdWorkerEnv & BabyLoveEnv & PcdCrmAdapterEnv;
 
 export async function fetchWithAdminGate(
   request: Request,
@@ -112,6 +113,21 @@ export async function scheduledReconciliationAndIntelSweep(
   } catch (error) {
     console.error(JSON.stringify({
       event: 'intel_org_sweep_dispatch_failed',
+      code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
+    }));
+  }
+
+  try {
+    context.waitUntil(runPcdCrmAdapter(env).catch((error) => {
+      console.error(JSON.stringify({
+        event: 'pcd_crm_adapter_failed',
+        code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
+      }));
+      throw error;
+    }));
+  } catch (error) {
+    console.error(JSON.stringify({
+      event: 'pcd_crm_adapter_dispatch_failed',
       code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
     }));
   }

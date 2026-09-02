@@ -25,10 +25,13 @@
 // and never logged. The log lines below deliberately carry ids and counts only.
 
 import { log } from './log';
+import {
+  commitPcdContactMutation,
+  type PcdCrmAdapterEnv,
+  type PcdContactProjectionInput,
+} from './crm-adapter';
 
-export interface OrgContactsEnv {
-  PCD_OPS_DB?: D1Database;
-}
+export interface OrgContactsEnv extends PcdCrmAdapterEnv {}
 
 export type OrgContactRole =
   | 'owner' | 'director' | 'registrar' | 'coach'
@@ -234,15 +237,15 @@ export async function upsertOrgContact(
   const now = nowIso();
 
   try {
-    let existing: Pick<OrgContact, 'id' | 'do_not_contact'> | null = null;
+    let existing: OrgContact | null = null;
     if (email) {
       existing = await env.PCD_OPS_DB
         .prepare(
-          `SELECT id, do_not_contact FROM org_contacts
+          `SELECT * FROM org_contacts
             WHERE organization_id = ? AND email = ? AND deleted_at IS NULL`,
         )
         .bind(organizationId, email)
-        .first<Pick<OrgContact, 'id' | 'do_not_contact'>>();
+        .first<OrgContact>();
     }
 
     if (existing?.do_not_contact === 1) {
@@ -258,8 +261,7 @@ export async function upsertOrgContact(
 
     if (existing) {
       // COALESCE so a thinner re-discovery never erases a richer earlier pass.
-      await env.PCD_OPS_DB
-        .prepare(
+      const statement = env.PCD_OPS_DB.prepare(
           `UPDATE org_contacts SET
              full_name           = COALESCE(?, full_name),
              title               = COALESCE(?, title),
@@ -275,21 +277,35 @@ export async function upsertOrgContact(
              content_hash        = ?,
              updated_at          = ?
            WHERE id = ?`,
-        )
-        .bind(
+        ).bind(
           fullName, input.title ?? null, role, phone, input.phoneExt ?? null,
           input.sourceUrl ?? null, input.confidence ?? 'medium',
           input.verifiedBy ?? null, input.verifiedBy ? now : null,
           input.verificationMethod ?? null, input.notes ?? null,
           contentHash, now, existing.id,
-        )
-        .run();
+        );
+      const projected: PcdContactProjectionInput = {
+        id: existing.id,
+        organization_id: existing.organization_id,
+        full_name: fullName ?? existing.full_name,
+        title: input.title ?? existing.title,
+        role: existing.role === 'unknown' ? role : existing.role,
+        email: existing.email,
+        phone: phone ?? existing.phone,
+        do_not_contact: existing.do_not_contact,
+        source_url: input.sourceUrl ?? existing.source_url,
+        confidence: input.confidence ?? existing.confidence,
+        verified_at: input.verifiedBy ? now : existing.verified_at,
+        content_hash: contentHash,
+        deleted_at: existing.deleted_at,
+        updated_at: now,
+      };
+      await commitPcdContactMutation(env, statement, projected, Date.parse(now));
       return { ok: true, id: existing.id, created: false };
     }
 
     const id = crypto.randomUUID();
-    await env.PCD_OPS_DB
-      .prepare(
+    const statement = env.PCD_OPS_DB.prepare(
         `INSERT INTO org_contacts (
            id, organization_id, program_id, full_name, title, role,
            email, phone, phone_ext, is_primary, is_public,
@@ -297,8 +313,7 @@ export async function upsertOrgContact(
            verified_by, verified_at, verification_method, notes,
            content_hash, created_at, updated_at
          ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-      )
-      .bind(
+      ).bind(
         // is_public is hardcoded to 0 here, not read from input.isPublic. This
         // table is populated by daily agents reading an organization's own
         // public web pages (see CONTACT-DATA-MAP.md's Agents section); a
@@ -313,8 +328,23 @@ export async function upsertOrgContact(
         input.verifiedBy ?? null, input.verifiedBy ? now : null,
         input.verificationMethod ?? null, input.notes ?? null,
         contentHash, now, now,
-      )
-      .run();
+      );
+    await commitPcdContactMutation(env, statement, {
+      id,
+      organization_id: organizationId,
+      full_name: fullName,
+      title: input.title ?? null,
+      role,
+      email,
+      phone,
+      do_not_contact: 0,
+      source_url: input.sourceUrl ?? null,
+      confidence: input.confidence ?? 'medium',
+      verified_at: input.verifiedBy ? now : null,
+      content_hash: contentHash,
+      deleted_at: null,
+      updated_at: now,
+    }, Date.parse(now));
     return { ok: true, id, created: true };
   } catch (err) {
     if (isMissingTable(err)) return { ok: false, reason: 'no-table' };
@@ -336,10 +366,13 @@ export async function softDeleteOrgContact(
   if (!env?.PCD_OPS_DB) return false;
   try {
     const now = nowIso();
-    await env.PCD_OPS_DB
-      .prepare(`UPDATE org_contacts SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL`)
-      .bind(now, now, id)
-      .run();
+    const existing = await env.PCD_OPS_DB.prepare(`SELECT * FROM org_contacts WHERE id=? AND deleted_at IS NULL`).bind(id).first<OrgContact>();
+    const statement = env.PCD_OPS_DB.prepare(`UPDATE org_contacts SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL`).bind(now, now, id);
+    if (existing) {
+      await commitPcdContactMutation(env, statement, { ...existing, deleted_at: now, updated_at: now }, Date.parse(now));
+    } else {
+      await statement.run();
+    }
     return true;
   } catch (err) {
     if (!isMissingTable(err)) log('error', { requestId: crypto.randomUUID(), route: 'lib/org-contacts', action: 'soft_delete_failed', id, error: err });
@@ -361,15 +394,18 @@ export async function setDoNotContact(
   if (!env?.PCD_OPS_DB) return false;
   try {
     const now = nowIso();
-    await env.PCD_OPS_DB
-      .prepare(
+    const existing = await env.PCD_OPS_DB.prepare(`SELECT * FROM org_contacts WHERE id=?`).bind(id).first<OrgContact>();
+    const statement = env.PCD_OPS_DB.prepare(
         `UPDATE org_contacts
             SET do_not_contact = 1, do_not_contact_at = ?, do_not_contact_reason = ?,
                 is_public = 0, updated_at = ?
           WHERE id = ?`,
-      )
-      .bind(now, reason, now, id)
-      .run();
+      ).bind(now, reason, now, id);
+    if (existing) {
+      await commitPcdContactMutation(env, statement, { ...existing, do_not_contact: 1, updated_at: now }, Date.parse(now));
+    } else {
+      await statement.run();
+    }
     return true;
   } catch (err) {
     if (!isMissingTable(err)) log('error', { requestId: crypto.randomUUID(), route: 'lib/org-contacts', action: 'suppression_failed', id, error: err });
