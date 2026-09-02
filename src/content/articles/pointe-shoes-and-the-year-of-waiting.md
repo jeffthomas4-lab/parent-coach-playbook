@@ -1,5 +1,5 @@
 ---
-title: "Pointe shoes and *the year of waiting*"
+title: "Pointe shoes and the year of waiting"
 dek: "They've been dancing for years. Now they want to go on pointe. The teacher says not yet. How to hold the line."
 seoDescription: "Your daughter or son has been in dance class for four years."
 topic: "the-hard-stuff"

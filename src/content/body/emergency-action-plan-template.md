@@ -1,5 +1,5 @@
 ---
-title: "Emergency Action Plan: *what every team should have written down*"
+title: "Emergency Action Plan: what every team should have written down"
 summary: "The EAP template youth-sports programs should adapt for every venue. The 11 elements that turn a panicked moment into a worked protocol."
 subhub: "safety"
 safetyCategory: "emergency-response"

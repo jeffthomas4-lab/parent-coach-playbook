@@ -1,5 +1,5 @@
 ---
-title: "AED location and field readiness: *90 seconds or less*"
+title: "AED location and field readiness: 90 seconds or less"
 summary: "Sudden cardiac arrest survival drops 7 to 10 percent every minute without defibrillation. The AED math, the field walkthrough, and what to ask your league."
 subhub: "safety"
 safetyCategory: "emergency-response"

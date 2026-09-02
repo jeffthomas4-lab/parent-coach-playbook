@@ -1,5 +1,5 @@
 ---
-title: The *first travel tournament*. What no one warns you about
+title: The first travel tournament. What no one warns you about
 dek: Three days. Five games. A hotel. The honest preview.
 seoDescription: You signed up for travel. The first tournament is in two weeks. You
   don't know what you're walking into.

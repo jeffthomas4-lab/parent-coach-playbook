@@ -1,5 +1,5 @@
 ---
-title: "Track spikes by event: *what's safe at each*"
+title: "Track spikes by event: what's safe at each"
 summary: "Sprint spikes, distance spikes, jumping spikes, throwing shoes. The pin lengths, the surface considerations, and the youth-event guidance."
 subhub: "safety"
 safetyCategory: "equipment-certification"

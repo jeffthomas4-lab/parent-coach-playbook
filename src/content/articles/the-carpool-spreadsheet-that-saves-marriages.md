@@ -1,5 +1,5 @@
 ---
-title: The *carpool spreadsheet* that saves marriages
+title: The carpool spreadsheet that saves marriages
 dek: Four families. Two practices a week. One spreadsheet. Why this is non-negotiable.
 seoDescription: Four families. Two practices a week. Saturday games. Add a tournament
   weekend. That's at least 12 transit events a week.

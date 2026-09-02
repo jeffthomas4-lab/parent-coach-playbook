@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth water polo*"
+title: "What's actually dangerous about youth water polo"
 summary: "Eye injuries, shoulder overuse, underwater contact, and the supervision standards that distinguish well-run programs."
 subhub: "safety"
 safetyCategory: "aquatic"

@@ -1,5 +1,5 @@
 ---
-title: "Heatstroke *right now*: cool first, transport second"
+title: "Heatstroke right now: cool first, transport second"
 summary: "The protocol that saves lives in the August heat. Cold-water immersion before EMS transport. The signs that mean act now."
 subhub: "safety"
 safetyCategory: "weather"

@@ -1,5 +1,5 @@
 ---
-title: "Pole vault helmets: *the unresolved debate*"
+title: "Pole vault helmets: the unresolved debate"
 summary: "The published research on whether helmets prevent the catastrophic injuries in pole vault is mixed. The current state of the rules and what some states do."
 subhub: "safety"
 safetyCategory: "equipment-certification"

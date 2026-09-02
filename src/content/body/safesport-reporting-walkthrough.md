@@ -1,5 +1,5 @@
 ---
-title: "The SafeSport reporting walkthrough: *what to do if something feels wrong*"
+title: "The SafeSport reporting walkthrough: what to do if something feels wrong"
 summary: "The exact steps. The phone number. The forms. What SafeSport investigates, what it doesn't, and what gets routed to law enforcement."
 subhub: "safety"
 safetyCategory: "coach-vetting"

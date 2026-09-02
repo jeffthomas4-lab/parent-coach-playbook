@@ -1,5 +1,5 @@
 ---
-title: What a tournament weekend *actually costs*.
+title: What a tournament weekend actually costs.
 dek: The number most families underestimate by half.
 seoDescription: "A real breakdown of tournament weekend costs for sports families. Entry fees, hotel, food, gas, and the hidden expenses that catch parents off guard. Includes tips for cutting..."
 topic: season-ops

@@ -1,5 +1,5 @@
 ---
-title: "Knocked-out tooth *right now*: the 30-minute window"
+title: "Knocked-out tooth right now: the 30-minute window"
 summary: "Hold the crown, not the root. Reimplant or store in milk. Get to a dentist within 30 minutes. The protocol that saves the tooth."
 subhub: "safety"
 safetyCategory: "emergency-response"

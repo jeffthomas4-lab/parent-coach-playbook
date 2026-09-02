@@ -1,5 +1,5 @@
 ---
-title: "Ski and snowboard helmets: *the published evidence and the school-team standard*"
+title: "Ski and snowboard helmets: the published evidence and the school-team standard"
 summary: "Helmets reduce head-injury rates in skiing and snowboarding by 30 to 50 percent in published data. What certifications matter and when fit fails."
 subhub: "safety"
 safetyCategory: "equipment-certification"

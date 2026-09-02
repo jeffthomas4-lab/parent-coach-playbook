@@ -1,5 +1,5 @@
 ---
-title: "America has a *missing rec layer*."
+title: "America has a missing rec layer."
 dek: "Good youth rec. Aggressive travel. No just-for-fun high school. It comes back at college intramurals. The hole in the middle is where the most kids quit."
 seoDescription: "Look at the graph of how Americans play sports across a lifetime and a strange shape appears. Peak at age eight. Long dive starting at thirteen."
 topic: "rec-vs-travel"

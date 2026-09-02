@@ -1,5 +1,5 @@
 ---
-title: "Cross-team rivalries: *when the parents on the other side become the problem*"
+title: "Cross-team rivalries: when the parents on the other side become the problem"
 summary: "The rival-school dad in the stands. The travel-team grudge match. The pattern that turns a regular game into a safety issue, and how programs manage it."
 subhub: "safety"
 safetyCategory: "conduct"

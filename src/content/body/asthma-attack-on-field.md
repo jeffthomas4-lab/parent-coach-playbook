@@ -1,5 +1,5 @@
 ---
-title: "Asthma attack on the field: *the inhaler, the call, and the cold-air piece*"
+title: "Asthma attack on the field: the inhaler, the call, and the cold-air piece"
 summary: "The kid stops mid-drill, can't catch breath. The protocol most parents don't know, including when to call 911 and the spacer most kids should use."
 subhub: "safety"
 safetyCategory: "emergency-response"

@@ -1,5 +1,5 @@
 ---
-title: "The 13-year-old's *I need new everything* moment"
+title: "The 13-year-old's I need new everything moment"
 dek: "They outgrew last year's gear in three months. The budget conversation that doesn't feel like punishment."
 seoDescription: "September. New season. Your kid tried on last year's cleats."
 topic: "equipment"

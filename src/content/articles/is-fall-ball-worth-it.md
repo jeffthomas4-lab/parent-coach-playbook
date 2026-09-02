@@ -1,5 +1,5 @@
 ---
-title: "Is fall ball worth it? *What actually changes* from spring rec baseball"
+title: "Is fall ball worth it? What actually changes from spring rec baseball"
 seoTitle: "Is Fall Ball Worth It? What Changes From Spring"
 seoDescription: "Little League fall ball explained: when it starts, what free substitution means, and whether it's worth it for a rec baseball family."
 dek: "What changes when your rec baseball kid signs up for fall ball"

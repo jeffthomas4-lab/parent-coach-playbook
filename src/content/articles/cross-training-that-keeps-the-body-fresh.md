@@ -1,5 +1,5 @@
 ---
-title: Cross-training that *keeps the body fresh*
+title: Cross-training that keeps the body fresh
 dek: Swimming, biking, hiking, pickup hoops. The summer activities that make the kid
   better at their sport without anyone calling it training.
 seoDescription: The kid who plays one sport year-round is the kid who burns out and

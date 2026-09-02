@@ -1,5 +1,5 @@
 ---
-title: "Ejection and appeals: *what the process looks like*"
+title: "Ejection and appeals: what the process looks like"
 summary: "Your kid (or you) got ejected. The next 48 hours determine whether it's a one-game suspension or longer. The actual appeals process, association by association."
 subhub: "safety"
 safetyCategory: "conduct"

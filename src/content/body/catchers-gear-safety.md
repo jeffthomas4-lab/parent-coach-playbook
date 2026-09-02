@@ -1,5 +1,5 @@
 ---
-title: "Catcher's gear safety: *foul tips, throat protectors, and fit*"
+title: "Catcher's gear safety: foul tips, throat protectors, and fit"
 summary: "The mask, the throat protector, the chest protector, and the kid behind the plate. What good gear looks like and what fails parents miss."
 subhub: "safety"
 safetyCategory: "equipment-certification"

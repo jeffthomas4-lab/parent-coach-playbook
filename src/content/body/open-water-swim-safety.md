@@ -1,5 +1,5 @@
 ---
-title: "Open-water swim safety: *lakes, ocean, off-site meets*"
+title: "Open-water swim safety: lakes, ocean, off-site meets"
 summary: "What changes when the meet moves outside the pool. Cold-water shock, cramps, currents, and the bright-colored cap rule that makes the difference."
 subhub: "safety"
 safetyCategory: "aquatic"

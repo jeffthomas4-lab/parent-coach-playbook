@@ -1,5 +1,5 @@
 ---
-title: "Nosebleeds and eye injuries: *what to do, what not to do*"
+title: "Nosebleeds and eye injuries: what to do, what not to do"
 summary: "The pinch-and-lean technique that actually works for nosebleeds. The eye-injury triage that saves vision. When to send to the ER."
 subhub: "safety"
 safetyCategory: "emergency-response"

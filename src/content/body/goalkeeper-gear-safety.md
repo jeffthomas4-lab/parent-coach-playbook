@@ -1,5 +1,5 @@
 ---
-title: "Goalkeeper gear safety: *gloves, headgear, padding*"
+title: "Goalkeeper gear safety: gloves, headgear, padding"
 summary: "What protects a soccer or lacrosse goalie. The headgear data, the glove sizing rule, and the chest protector debate."
 subhub: "safety"
 safetyCategory: "equipment-certification"

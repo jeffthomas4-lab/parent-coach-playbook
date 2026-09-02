@@ -1,5 +1,5 @@
 ---
-title: "Broken bone vs sprain: *sideline triage when there's no trainer*"
+title: "Broken bone vs sprain: sideline triage when there's no trainer"
 summary: "The signs that say ER, the signs that say urgent care, and the signs that say ice and Monday pediatrician. Not medical advice. Just the framework."
 subhub: "safety"
 safetyCategory: "emergency-response"

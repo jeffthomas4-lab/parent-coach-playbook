@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth field hockey*"
+title: "What's actually dangerous about youth field hockey"
 summary: "Concussion, eye and dental injuries, stick contact, and the rules that have evolved to reduce them."
 subhub: "safety"
 format: "sport-briefing"

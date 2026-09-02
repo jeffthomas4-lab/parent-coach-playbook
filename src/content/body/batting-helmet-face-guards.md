@@ -1,5 +1,5 @@
 ---
-title: "Batting helmet face guards: *C-flap, full cage, and when each makes sense*"
+title: "Batting helmet face guards: C-flap, full cage, and when each makes sense"
 summary: "The optional face protection on batting helmets. What the published data supports, what state laws require, and when the cost-benefit math leans toward yes."
 subhub: "safety"
 safetyCategory: "equipment-certification"

@@ -1,5 +1,5 @@
 ---
-title: "Volunteer coach vs paid coach: *the vetting gap nobody talks about*"
+title: "Volunteer coach vs paid coach: the vetting gap nobody talks about"
 summary: "The training and screening that paid coaches go through is not always required of the dad on the sideline. What good leagues do anyway."
 subhub: "safety"
 safetyCategory: "coach-vetting"

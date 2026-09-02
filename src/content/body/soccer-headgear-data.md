@@ -1,5 +1,5 @@
 ---
-title: "Soccer headgear: *what the data actually says*"
+title: "Soccer headgear: what the data actually says"
 summary: "The padded headbands marketed for concussion reduction. What the published research supports, what it doesn't, and when it might still make sense."
 subhub: "safety"
 safetyCategory: "equipment-certification"

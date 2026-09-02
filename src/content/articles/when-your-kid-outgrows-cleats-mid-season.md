@@ -1,5 +1,5 @@
 ---
-title: When your kid *outgrows cleats* mid-season
+title: When your kid outgrows cleats mid-season
 dek: Three weeks left in the season. The cleats don't fit. The cheap fix and the right
   fix.
 seoDescription: Tuesday at 5:25pm. Your kid is putting on his cleats for practice.

@@ -1,5 +1,5 @@
 ---
-title: "Rib injury and the splenic concern: *the hit that looks like a bruise*"
+title: "Rib injury and the splenic concern: the hit that looks like a bruise"
 summary: "A blow to the lower-left torso can be more than a bruised rib. The signs of splenic injury, the timeline to watch, and when the kid goes to the emergency room."
 subhub: "safety"
 safetyCategory: "emergency-response"

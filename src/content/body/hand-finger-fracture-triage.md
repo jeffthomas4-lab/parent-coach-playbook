@@ -1,5 +1,5 @@
 ---
-title: "Hand and finger fractures: *the kid's growth plates change the math*"
+title: "Hand and finger fractures: the kid's growth plates change the math"
 summary: "Buddy-taping a 'jam' that's actually a Salter-Harris fracture can cause permanent deformity. The on-field triage and the X-ray threshold."
 subhub: "safety"
 safetyCategory: "emergency-response"

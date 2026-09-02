@@ -1,5 +1,5 @@
 ---
-title: "Lightning-strike survivor care: *the first 30 minutes after a strike*"
+title: "Lightning-strike survivor care: the first 30 minutes after a strike"
 summary: "Most lightning-strike victims survive. The protocol that maximizes survival, the cardiac risk, and the long-term injury patterns to know about."
 subhub: "safety"
 safetyCategory: "emergency-response"

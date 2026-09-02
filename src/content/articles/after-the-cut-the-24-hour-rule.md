@@ -1,5 +1,5 @@
 ---
-title: After the cut. *The 24-hour rule*
+title: After the cut. The 24-hour rule
 dek: Don't make any decisions in the first 24 hours. The rule that prevents most regrets.
 bluf: Don't make any decisions in the first 24 hours after a cut. Don't email the
   coach. Don't switch leagues. Don't promise private lessons. The kid isn't ready,

@@ -1,5 +1,5 @@
 ---
-title: "Pollen and allergic conjunctivitis: *the spring eye-irritation kids underreport*"
+title: "Pollen and allergic conjunctivitis: the spring eye-irritation kids underreport"
 summary: "Itchy red eyes during outdoor practice. The seasonal patterns, the over-the-counter management, and when to see a doctor."
 subhub: "safety"
 safetyCategory: "weather"

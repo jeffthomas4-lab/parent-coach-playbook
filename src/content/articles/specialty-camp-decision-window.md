@@ -1,5 +1,5 @@
 ---
-title: The *specialty camp* decision window
+title: The specialty camp decision window
 dek: Pitching, kicking, goalkeeping. Three days for $700. When it's worth it. When
   it's not.
 seoDescription: Specialty camps run August. Pitching camp. Kicking camp. Goalkeeper

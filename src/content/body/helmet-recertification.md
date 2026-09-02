@@ -1,5 +1,5 @@
 ---
-title: "Helmet recertification: *the dates inside the shell*"
+title: "Helmet recertification: the dates inside the shell"
 summary: "NOCSAE-certified helmets get reconditioned every year or two. After 10 years, they're done. How to read the stickers and when to replace."
 subhub: "safety"
 safetyCategory: "equipment-certification"

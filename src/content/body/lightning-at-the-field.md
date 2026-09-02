@@ -1,5 +1,5 @@
 ---
-title: "Lightning at the field: *the 30/30 rule*"
+title: "Lightning at the field: the 30/30 rule"
 summary: "When you see lightning, when you hear thunder, when to clear, where to go, and when to come back. The NWS standard, in 200 words plus protocol."
 subhub: "safety"
 safetyCategory: "weather"

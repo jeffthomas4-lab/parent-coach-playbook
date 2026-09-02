@@ -1,5 +1,5 @@
 ---
-title: "The mom who texts you about her kid's *real talent*"
+title: "The mom who texts you about her kid's real talent"
 dek: "She's been texting you for weeks about her son's potential. She wants something. Here is what."
 seoDescription: "A mom on the team has been texting you for weeks. Each text is some version of the same thing. Did you see Carter's goal? Did you see his pass?"
 topic: "communication"

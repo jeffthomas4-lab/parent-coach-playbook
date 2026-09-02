@@ -1,5 +1,5 @@
 ---
-title: "Recruiting service red flags: *what's a scam, what's a tool*"
+title: "Recruiting service red flags: what's a scam, what's a tool"
 summary: "The pay-to-play industry has both legitimate operators and outright scams. The questions to ask, the contracts to refuse, and what coaches actually use."
 subhub: "safety"
 safetyCategory: "coach-vetting"

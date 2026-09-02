@@ -1,5 +1,5 @@
 ---
-title: "Spinal injury *right now*: do not move the kid"
+title: "Spinal injury right now: do not move the kid"
 summary: "Suspected cervical-spine injury on the field. The protocol that prevents the temporary injury from becoming permanent."
 subhub: "safety"
 safetyCategory: "emergency-response"

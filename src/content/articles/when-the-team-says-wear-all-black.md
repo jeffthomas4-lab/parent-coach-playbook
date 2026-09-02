@@ -1,5 +1,5 @@
 ---
-title: "When the team says *wear all black*"
+title: "When the team says wear all black"
 dek: "You have nothing. The tournament is Saturday. How to source gear without panic."
 seoDescription: "Friday afternoon. Email from the coach: \"Tournament uniform is all black. Shorts, shirt, socks, shoes. Everything black.\""
 topic: "equipment"

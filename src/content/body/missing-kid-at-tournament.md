@@ -1,5 +1,5 @@
 ---
-title: "Missing kid at a tournament: *the first 10 minutes*"
+title: "Missing kid at a tournament: the first 10 minutes"
 summary: "What to do when you cannot find a kid between games at a tournament venue. Search pattern, who to call, when to escalate to security and police."
 subhub: "safety"
 safetyCategory: "emergency-response"

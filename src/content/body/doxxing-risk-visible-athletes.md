@@ -1,5 +1,5 @@
 ---
-title: "Doxxing risk for visible athletes: *the privacy hygiene that prevents it*"
+title: "Doxxing risk for visible athletes: the privacy hygiene that prevents it"
 summary: "Public-facing athletes face doxxing risk that other kids do not. The information to keep off the internet, the privacy audits, and the response if it happens."
 subhub: "safety"
 safetyCategory: "cyber"

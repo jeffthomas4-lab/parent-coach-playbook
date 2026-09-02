@@ -1,5 +1,5 @@
 ---
-title: "Bus and banquet conduct: *the moments off the field that go wrong*"
+title: "Bus and banquet conduct: the moments off the field that go wrong"
 summary: "Team buses, end-of-season banquets, post-game team rooms. The norms most programs don't write down, and the ones they should."
 subhub: "safety"
 safetyCategory: "conduct"

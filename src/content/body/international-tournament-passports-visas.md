@@ -1,5 +1,5 @@
 ---
-title: "International tournament: *passports, visas, vaccinations, and consent*"
+title: "International tournament: passports, visas, vaccinations, and consent"
 summary: "The 90-day lead time, the consent letter for unaccompanied travel, the vaccination panel, and the team-manager checklist for travel abroad."
 subhub: "safety"
 safetyCategory: "travel-logistics"

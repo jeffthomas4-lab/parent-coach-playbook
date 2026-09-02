@@ -1,5 +1,5 @@
 ---
-title: "When the coach replies *short*"
+title: "When the coach replies short"
 dek: "We sent a thoughtful email. We got back five words. The next two hours were ours to ruin or not."
 seoDescription: "It was a Wednesday last fall. We sat at the kitchen table after dinner and wrote our kid's coach an email about playing time. We took our time on it."
 topic: "communication"

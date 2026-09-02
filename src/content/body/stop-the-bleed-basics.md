@@ -1,5 +1,5 @@
 ---
-title: "Stop the Bleed basics: *direct pressure, packing, tourniquet*"
+title: "Stop the Bleed basics: direct pressure, packing, tourniquet"
 summary: "The civilian bleeding-control protocol every coach and team-manager parent should know. The three techniques that buy time until EMS arrives."
 subhub: "safety"
 safetyCategory: "emergency-response"

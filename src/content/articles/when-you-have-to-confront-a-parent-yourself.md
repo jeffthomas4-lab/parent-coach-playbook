@@ -1,5 +1,5 @@
 ---
-title: "When you have to *confront a parent* yourself"
+title: "When you have to confront a parent yourself"
 dek: "The coach can't do it. The team manager won't. It is on you. The script."
 seoDescription: "A parent on the team is doing something. Yelling at the ref. Filming kids on other teams. Pushing their kid in the parking lot."
 topic: "communication"

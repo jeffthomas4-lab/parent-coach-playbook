@@ -1,5 +1,5 @@
 ---
-title: "Team photographer vetting: *the access most parents don't think about*"
+title: "Team photographer vetting: the access most parents don't think about"
 summary: "The person taking team photos has access to minor athletes that few other adults have. The vetting standards and the photo-policy questions to ask."
 subhub: "safety"
 safetyCategory: "coach-vetting"

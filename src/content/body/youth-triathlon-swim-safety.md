@@ -1,5 +1,5 @@
 ---
-title: "Youth triathlon swim safety: *the open-water leg's specific risks*"
+title: "Youth triathlon swim safety: the open-water leg's specific risks"
 summary: "Cold-water shock, mass starts, sighting, wetsuit decisions. The published rules and the family-side preparation that keeps the swim leg safe."
 subhub: "safety"
 safetyCategory: "aquatic"

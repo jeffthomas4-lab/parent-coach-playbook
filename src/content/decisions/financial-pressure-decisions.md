@@ -1,5 +1,5 @@
 ---
-title: "Can we *afford* to keep paying for this sport?"
+title: "Can we afford to keep paying for this sport?"
 summary: "Travel ball costs more than the family can absorb and you have to say it out loud. The honest conversation, the math, and the way to tell the kid without making it their fault."
 theQuestion: "The bills are real and the kid loves it. Is the money worth it, and how do we know if we should pull back?"
 publishedAt: 2026-06-24

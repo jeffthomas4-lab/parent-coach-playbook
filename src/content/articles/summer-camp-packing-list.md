@@ -1,5 +1,5 @@
 ---
-title: "The summer camp *packing list* that actually works"
+title: "The summer camp packing list that actually works"
 seoTitle: "Summer camp packing list for day and overnight camp"
 seoDescription: "Pack for summer camp without overloading the bag: day-camp essentials, overnight additions, what to skip, and a simple pickup routine for wet gear."
 dek: "What to pack. What to skip. What every parent forgets."

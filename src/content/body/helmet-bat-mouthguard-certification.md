@@ -1,5 +1,5 @@
 ---
-title: "Helmet, bat, and mouthguard certification: *the stamps that matter*"
+title: "Helmet, bat, and mouthguard certification: the stamps that matter"
 summary: "NOCSAE for helmets. USA Baseball and USA Softball for bats. State-by-state rules for mouthguards. What stamps to look for, what's expired, and what used gear is fine."
 subhub: "safety"
 safetyCategory: "equipment-certification"

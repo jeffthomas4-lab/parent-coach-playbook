@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth baseball*"
+title: "What's actually dangerous about youth baseball"
 summary: "Arm injuries from over-pitching, foul-ball-to-the-face, sliding injuries, commotio cordis. The risk profile of a sport that looks slow."
 subhub: "safety"
 format: "sport-briefing"

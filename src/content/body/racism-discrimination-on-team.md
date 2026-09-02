@@ -1,5 +1,5 @@
 ---
-title: "Racism on the team: *what counts and the path to escalation*"
+title: "Racism on the team: what counts and the path to escalation"
 summary: "Slurs, exclusionary jokes, racial commentary from coaches or teammates. The patterns, the documentation, and the channels that produce real consequences."
 subhub: "safety"
 safetyCategory: "conduct"

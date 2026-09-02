@@ -1,5 +1,5 @@
 ---
-title: "Compression sleeves and athletic tape: *function vs marketing*"
+title: "Compression sleeves and athletic tape: function vs marketing"
 summary: "What the published research supports, what's mostly placebo, and when to use each. Plus the kid who uses tape to hide an injury."
 subhub: "safety"
 safetyCategory: "equipment-certification"

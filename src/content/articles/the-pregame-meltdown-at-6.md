@@ -1,5 +1,5 @@
 ---
-title: The *pregame meltdown* at 6
+title: The pregame meltdown at 6
 dek: She is dressed. The car is running. She is on the floor crying. Twenty minutes
   to game time.
 seoDescription: She is six. She has been excited about the game since Tuesday. It

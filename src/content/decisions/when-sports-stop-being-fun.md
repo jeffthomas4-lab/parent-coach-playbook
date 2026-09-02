@@ -1,5 +1,5 @@
 ---
-title: "When *sports stop being fun*"
+title: "When sports stop being fun"
 summary: "How to tell the difference between burnout and a phase. The signals that tell you it's not the sport, it's the configuration. The diagnostic that gets you a real answer."
 theQuestion: "My kid used to love this. Now they drag to practice and complain on the way home. Is this burnout, a phase, or the wrong fit?"
 publishedAt: 2026-06-20

@@ -1,5 +1,5 @@
 ---
-title: "Tornado at the field *right now*: shelter, count, wait"
+title: "Tornado at the field right now: shelter, count, wait"
 summary: "The protocol when a tornado warning hits during a practice or game. Where to go, how to stay accounted for, when to resume."
 subhub: "safety"
 safetyCategory: "weather"

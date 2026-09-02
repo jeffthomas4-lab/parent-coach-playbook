@@ -1,5 +1,5 @@
 ---
-title: "*First overnight camp* packing list"
+title: "First overnight camp packing list"
 dek: "What to pack so the kid doesn't call home day two. The list that works."
 seoDescription: "First overnight camp is a real moment. You're nervous. They're nervous. The list the camp sends you is too long and too vague. Here's the actual list."
 topic: "summer-camps"

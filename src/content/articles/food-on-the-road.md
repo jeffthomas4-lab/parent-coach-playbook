@@ -1,5 +1,5 @@
 ---
-title: '*Food on the road* during a tournament'
+title: 'Food on the road during a tournament'
 dek: Hotel breakfast, gas station snacks, the dinner reservation that never materialized.
   The pattern that survives a three-day weekend.
 seoDescription: Three games in a day means the kid eats five times. Two of those are

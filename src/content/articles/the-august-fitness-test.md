@@ -1,5 +1,5 @@
 ---
-title: The August *fitness test*
+title: The August fitness test
 dek: Two weeks before tryouts. Conditioning matters more than skill at this point.
   The week-by-week to be ready.
 seoDescription: Most fall sports tryouts include a fitness component. A timed mile,

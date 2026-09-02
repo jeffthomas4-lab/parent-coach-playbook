@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth basketball*"
+title: "What's actually dangerous about youth basketball"
 summary: "Ankles, knees, finger fractures, and the head impacts you don't expect. The risk profile of an indoor sport that looks safer than it plays."
 subhub: "safety"
 format: "sport-briefing"

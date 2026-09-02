@@ -1,5 +1,5 @@
 ---
-title: The *other team's parent* who keeps yelling
+title: The other team's parent who keeps yelling
 dek: Stays on your sideline for three innings. Yelling at a kid who isn't theirs.
   The framework for whether and how to engage.
 seoDescription: The dad two seats away is yelling at his own kid in left field. He's

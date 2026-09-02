@@ -1,5 +1,5 @@
 ---
-title: "Discord servers for youth teams: *the platform parents don't see*"
+title: "Discord servers for youth teams: the platform parents don't see"
 summary: "Voice channels, DMs, and the moderation tools most team servers don't use. What good moderation looks like and the conversation to have with the coach who runs one."
 subhub: "safety"
 safetyCategory: "cyber"

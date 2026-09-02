@@ -1,5 +1,5 @@
 ---
-title: The summer tournament *kit*
+title: The summer tournament kit
 dek: Sunscreen, electrolytes, towels, the cooler. The pack list that prevents most
   of the meltdowns.
 seoDescription: The summer tournament list is shorter than the winter one but the

@@ -1,5 +1,5 @@
 ---
-title: Your *first team meeting* agenda.
+title: Your first team meeting agenda.
 dek: What to cover, in what order, in 30 minutes.
 seoDescription: Your first team meeting with 8-10 year old players doesn't need to be complicated. Here's a time-blocked agenda, what to say in the first five minutes, and what to skip entirely.
 topic: the-hard-stuff

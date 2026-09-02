@@ -1,5 +1,5 @@
 ---
-title: "Suspected concussion *right now*: same-day pull, written clearance"
+title: "Suspected concussion right now: same-day pull, written clearance"
 summary: "The first ten minutes after the hit. What the trainer, coach, or parent does in order. Sideline triage, not medical advice."
 subhub: "safety"
 safetyCategory: "emergency-response"

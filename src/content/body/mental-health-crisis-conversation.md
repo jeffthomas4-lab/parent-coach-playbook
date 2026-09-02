@@ -1,5 +1,5 @@
 ---
-title: "The mental-health crisis conversation: *what to say, what not to say*"
+title: "The mental-health crisis conversation: what to say, what not to say"
 summary: "Your kid said something that worried you. The conversation that follows is the most important one. The script that supports without rushing."
 subhub: "safety"
 safetyCategory: "crisis-mental-health"

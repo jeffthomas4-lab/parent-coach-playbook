@@ -1,5 +1,5 @@
 ---
-title: "When she says \"*everyone hates me*\" after a bad game"
+title: "When she says \"everyone hates me\" after a bad game"
 dek: "It's not literal. It's also not nothing. The middle path."
 seoDescription: "They had a rough game. Two missed shots, a turnover that led to a goal. In the car they say, everyone hates me."
 topic: "the-hard-stuff"

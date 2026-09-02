@@ -1,5 +1,5 @@
 ---
-title: "The *8-year-old's glove* that cost too much"
+title: "The 8-year-old's glove that cost too much"
 dek: "The expensive glove is already in the house. Check the fit before buying a second mistake."
 seoTitle: "Did You Spend Too Much on an 8-Year-Old's Glove?"
 seoDescription: "If an expensive baseball glove is too stiff or loose for your 8-year-old, test the fit before replacing it. Fit and easy closure matter more than price."

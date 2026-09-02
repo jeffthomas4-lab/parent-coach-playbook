@@ -1,5 +1,5 @@
 ---
-title: "Locker room culture: *normal, hazing, and when to escalate*"
+title: "Locker room culture: normal, hazing, and when to escalate"
 summary: "Adult presence rules, the difference between team chirping and targeted harm, and what good locker-room policies look like."
 subhub: "safety"
 safetyCategory: "conduct"

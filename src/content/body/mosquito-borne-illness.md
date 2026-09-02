@@ -1,5 +1,5 @@
 ---
-title: "Mosquito-borne illness in outdoor youth sport: *West Nile, EEE, and the basics*"
+title: "Mosquito-borne illness in outdoor youth sport: West Nile, EEE, and the basics"
 summary: "Outdoor practices at dawn and dusk during summer carry small but real risk of mosquito-borne illness. The repellents, the timing, and the regional patterns."
 subhub: "safety"
 safetyCategory: "weather"

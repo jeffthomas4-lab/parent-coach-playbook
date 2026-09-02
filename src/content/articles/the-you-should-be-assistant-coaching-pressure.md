@@ -1,5 +1,5 @@
 ---
-title: "The \"*you should be assistant coaching*\" pressure"
+title: "The \"you should be assistant coaching\" pressure"
 dek: "Coach asked. Two parents asked. You're considering it. Read this first."
 seoDescription: "The head coach pulled you aside. We could really use you as an assistant. You played in college. The team would love it."
 topic: "communication"

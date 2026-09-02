@@ -1,5 +1,5 @@
 ---
-title: "Should we *leave this team*?"
+title: "Should we leave this team?"
 summary: "Mid-season exits are real. They are also a real obligation. The framework that helps you tell the difference between a hard week and a wrong fit, and the right way to leave when it's time."
 theQuestion: "We're considering pulling our kid from the team mid-season. Is this the right call, and how do we do it without hurting them or the team?"
 publishedAt: 2026-06-08

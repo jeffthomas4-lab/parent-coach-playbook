@@ -1,5 +1,5 @@
 ---
-title: "Driver fatigue on team road trips: *the rule that prevents the worst day*"
+title: "Driver fatigue on team road trips: the rule that prevents the worst day"
 summary: "The 4-hour rule, the hours-of-service framework, and the carpool norms that keep parents from driving past the line."
 subhub: "safety"
 safetyCategory: "travel-logistics"

@@ -1,5 +1,5 @@
 ---
-title: "Testicular torsion vs simple groin trauma: *the six-hour window*"
+title: "Testicular torsion vs simple groin trauma: the six-hour window"
 summary: "A groin hit that produces severe persistent pain may be testicular torsion. The window for saving the testicle is short. The signs and the protocol."
 subhub: "safety"
 safetyCategory: "emergency-response"

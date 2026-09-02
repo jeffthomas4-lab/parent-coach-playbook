@@ -1,5 +1,5 @@
 ---
-title: "Eating disorders in sport: *what to watch for in your athlete*"
+title: "Eating disorders in sport: what to watch for in your athlete"
 summary: "Anorexia, bulimia, and Relative Energy Deficiency in Sport. The signs, the conversation, and the path to specialist care."
 subhub: "safety"
 safetyCategory: "crisis-mental-health"

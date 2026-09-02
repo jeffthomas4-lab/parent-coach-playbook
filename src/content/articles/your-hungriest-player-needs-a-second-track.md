@@ -1,5 +1,5 @@
 ---
-title: "Your hungriest player needs a *second track*"
+title: "Your hungriest player needs a second track"
 seoTitle: "Coaching a Hungry Player Without Losing the Team"
 seoDescription: "A hungry player's extra reps shouldn't cost the rest of the team practice time. Build a second track instead."
 dek: "Feed a talented kid's hunger for more without taxing the rest of the roster."

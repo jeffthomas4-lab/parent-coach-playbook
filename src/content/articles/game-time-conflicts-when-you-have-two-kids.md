@@ -1,5 +1,5 @@
 ---
-title: '*Game-time conflicts* when you have two kids'
+title: 'Game-time conflicts when you have two kids'
 dek: Both have games at 9am Saturday at different fields. The annual problem. Here
   is the system.
 seoDescription: You have two kids. They both have games Saturday at 9am at different

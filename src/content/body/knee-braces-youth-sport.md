@@ -1,5 +1,5 @@
 ---
-title: "Knee braces in youth sport: *what helps, what doesn't*"
+title: "Knee braces in youth sport: what helps, what doesn't"
 summary: "Functional braces, prophylactic braces, neoprene sleeves. The published evidence on what each does and when to use them."
 subhub: "safety"
 safetyCategory: "equipment-certification"

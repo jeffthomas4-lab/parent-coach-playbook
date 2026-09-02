@@ -1,5 +1,5 @@
 ---
-title: "The bat your kid *begged for* (and whether to buy it)"
+title: "The bat your kid begged for (and whether to buy it)"
 dek: "The top-shelf composite. The entry-level drop-5. The promise vs. what they actually need."
 seoDescription: "Your kid has seen it. Another player walked up to the plate with it. Same brand as a pro player wears. Suddenly your kid needs it."
 topic: "equipment"

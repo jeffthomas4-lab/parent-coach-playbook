@@ -1,5 +1,5 @@
 ---
-title: "CPR for parents: *what level of certification is realistic*"
+title: "CPR for parents: what level of certification is realistic"
 summary: "Heartsaver, Hands-Only CPR, Basic Life Support. The differences, what your league should expect, and the four-hour course that gets you to the bar."
 subhub: "safety"
 safetyCategory: "emergency-response"

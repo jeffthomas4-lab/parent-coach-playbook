@@ -1,5 +1,5 @@
 ---
-title: "Coach-coach conflicts: *when the kid is in the middle*"
+title: "Coach-coach conflicts: when the kid is in the middle"
 summary: "Head coach and assistant disagreeing in front of the team. Club coach and HS coach pulling in different directions. The kid pays the price. The protocol parents can run."
 subhub: "safety"
 safetyCategory: "conduct"

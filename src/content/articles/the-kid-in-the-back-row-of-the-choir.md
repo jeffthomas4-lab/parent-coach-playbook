@@ -1,5 +1,5 @@
 ---
-title: "The kid in the back row *of the choir*"
+title: "The kid in the back row of the choir"
 dek: "Small voice. No solo. But they're still part of something. Why that matters."
 seoDescription: "They're in the back row. They don't have a solo. They're one of 40 voices."
 topic: "the-hard-stuff"

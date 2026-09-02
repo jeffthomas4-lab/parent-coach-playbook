@@ -1,5 +1,5 @@
 ---
-title: "Registered Dietitian vs nutritionist: *the credential that means something*"
+title: "Registered Dietitian vs nutritionist: the credential that means something"
 summary: "RDN is regulated and licensed. 'Nutritionist' is not. The credential difference matters for youth athlete nutrition advice and disordered-eating risk."
 subhub: "safety"
 safetyCategory: "coach-vetting"

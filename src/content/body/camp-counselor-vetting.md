@@ -1,5 +1,5 @@
 ---
-title: "Camp counselor vetting: *what good camps actually do*"
+title: "Camp counselor vetting: what good camps actually do"
 summary: "ACA accreditation, background checks, training, ratios. The questions to ask before you hand your kid over for a week."
 subhub: "safety"
 safetyCategory: "coach-vetting"

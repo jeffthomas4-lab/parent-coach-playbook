@@ -1,5 +1,5 @@
 ---
-title: "Tournament packing list: *the master document*"
+title: "Tournament packing list: the master document"
 summary: "The 40 items a kid actually needs for a tournament weekend. Print this, bring this, deviate only when you know why."
 subhub: "safety"
 safetyCategory: "travel-logistics"

@@ -83,7 +83,25 @@ Fix: "Next week's practice starts at 5:30. Get there ten minutes early."
 
 **7. Concession structure.** "While X, it's also true that Y." Test: fail on any sentence built on this exact shape.
 
-**Section C passes only if none of the seven patterns appear.**
+**8. Emphasis inside a headline.** `*asterisks*` or `**bold**` in `title`, `seoTitle`, `dek`, or `bluf`.
+
+Violation: `title: "Cleat care that *triples* the lifespan"`
+Fix: `title: "Cleat care that triples the lifespan"`
+
+Added 2026-08-29. This was house style for a long time: a word or two in a headline set italic and
+accent-coloured. 413 of 1892 files carried it. It has since become one of the most recognisable
+machine-written tells on the web, and a device that reads as automated is worse than no device.
+The CSS that rendered it (`.t-display em`) is neutralised and the existing titles were stripped, so
+new asterisks now render as nothing at all: dead markup that still signals AI in the raw file and in
+any feed that reads frontmatter directly.
+
+Write the emphasis into the words instead. If a headline needs a word to land harder, that is a
+sentence problem, not a formatting one.
+
+Italics inside body prose are untouched and still correct for their real uses: a book or film title,
+a term being defined, a word spoken with stress in dialogue.
+
+**Section C passes only if none of the eight patterns appear.**
 
 ---
 

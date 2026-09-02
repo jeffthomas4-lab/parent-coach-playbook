@@ -1,5 +1,5 @@
 ---
-title: Travel team politics. *The playing time formula*
+title: Travel team politics. The playing time formula
 dek: How playing time really gets allocated. The factors no one tells you about.
 seoDescription: You assumed travel ball was a meritocracy. The best players play the
   most. By midseason, you've noticed the playing time doesn't match the skill rankings.

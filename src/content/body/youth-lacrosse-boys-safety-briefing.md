@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth boys' lacrosse*"
+title: "What's actually dangerous about youth boys' lacrosse"
 summary: "Concussion, body checks, the stick to the head. The contact sport with helmets that still produces real head and shoulder injury rates."
 subhub: "safety"
 format: "sport-briefing"

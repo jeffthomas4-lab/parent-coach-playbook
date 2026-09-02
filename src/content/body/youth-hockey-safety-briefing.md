@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth hockey*"
+title: "What's actually dangerous about youth hockey"
 summary: "Concussion, dental, eye, and the specific risks that come with skates, sticks, and the boards. Ranked by frequency and severity."
 subhub: "safety"
 format: "sport-briefing"

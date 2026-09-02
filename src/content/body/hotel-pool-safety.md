@@ -1,5 +1,5 @@
 ---
-title: "Hotel pool safety: *the highest-risk hour of the tournament weekend*"
+title: "Hotel pool safety: the highest-risk hour of the tournament weekend"
 summary: "The team is bored. The pool is open. There's no lifeguard. The protocol that prevents the drowning at the team hotel."
 subhub: "safety"
 safetyCategory: "aquatic"

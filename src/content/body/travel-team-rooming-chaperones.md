@@ -1,5 +1,5 @@
 ---
-title: "Travel-team rooming and chaperones: *what good policies look like*"
+title: "Travel-team rooming and chaperones: what good policies look like"
 summary: "SafeSport's MAAPP rules for adult-minor travel, model NGB policies, and the conversation to have with the team manager before tournament weekend."
 subhub: "safety"
 safetyCategory: "travel-logistics"

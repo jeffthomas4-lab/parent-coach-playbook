@@ -1,5 +1,5 @@
 ---
-title: "Sun and skin: *youth athletes, sunscreen, and the melanoma math*"
+title: "Sun and skin: youth athletes, sunscreen, and the melanoma math"
 summary: "The cumulative-exposure problem with kids in outdoor sports. SPF, the two-finger rule, when to reapply, and why hats and shirts are still the best UV protection."
 subhub: "safety"
 safetyCategory: "weather"

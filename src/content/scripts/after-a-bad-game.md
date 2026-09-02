@@ -1,5 +1,5 @@
 ---
-title: "Your kid had a *bad game*. Here's what to say."
+title: "Your kid had a bad game. Here's what to say."
 seoTitle: "What to Say After a Bad Game: A Parent Script"
 seoDescription: "The first 90 seconds after a bad game decide the week. The exact words that protect the relationship, and the ones to skip."
 summary: "What to say in the first 90 seconds when the game went badly. The script that protects the relationship and the rest of the week."

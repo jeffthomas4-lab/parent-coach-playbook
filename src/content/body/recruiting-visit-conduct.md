@@ -1,5 +1,5 @@
 ---
-title: "Recruiting visit conduct: *what's appropriate, what's not*"
+title: "Recruiting visit conduct: what's appropriate, what's not"
 summary: "Unofficial visits, official visits, host families. The conduct standards every recruit and family should know about."
 subhub: "safety"
 safetyCategory: "conduct"

@@ -1,5 +1,5 @@
 ---
-title: The camp counselor your kid *hates*
+title: The camp counselor your kid hates
 dek: Day three. The counselor singled them out. The kid wants to come home. The conversation
   that doesn't blow up the week.
 seoDescription: Day-three calls from camp are common. The counselor doesn't like me.

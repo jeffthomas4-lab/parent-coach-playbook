@@ -1,5 +1,5 @@
 ---
-title: Tryouts when your kid has a *cold*
+title: Tryouts when your kid has a cold
 dek: The roster matters. So does keeping a respiratory illness out of the gym.
 seoTitle: Should a Kid Attend Tryouts With a Cold?
 seoDescription: Use current CDC respiratory guidance, the team's illness policy, and a make-up request to decide what to do when your child is sick before tryouts.

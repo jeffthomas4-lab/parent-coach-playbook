@@ -1,5 +1,5 @@
 ---
-title: The pre-season meeting with the *new coach*
+title: The pre-season meeting with the new coach
 dek: Twenty minutes. Two questions to ask. One thing to never bring up.
 seoDescription: The new coach scheduled a parent meeting before the season. Most parents
   bring up playing time. Most coaches mentally tune out within 90 seconds.

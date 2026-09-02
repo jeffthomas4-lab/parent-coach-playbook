@@ -1,5 +1,5 @@
 ---
-title: "Should we *report another parent's* behavior?"
+title: "Should we report another parent's behavior?"
 summary: "The yelling parent, the post-game tirade, the parent who singled out a kid. The framework for when to escalate and when to let the league handle it on their own timeline."
 theQuestion: "We saw something at the field that wasn't okay. Is reporting it the right move, or do we let it go?"
 publishedAt: 2026-05-05

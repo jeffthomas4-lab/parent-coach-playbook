@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth softball*"
+title: "What's actually dangerous about youth softball"
 summary: "Pitching arm injuries, sliding injuries, line drives at corner infielders, and the heat profile of a spring-summer outdoor sport."
 subhub: "safety"
 format: "sport-briefing"

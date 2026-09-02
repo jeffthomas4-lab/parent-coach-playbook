@@ -1,5 +1,5 @@
 ---
-title: "15-passenger vans: *the rollover risk every team manager should know*"
+title: "15-passenger vans: the rollover risk every team manager should know"
 summary: "Federal regulators have flagged 15-passenger vans as a known rollover risk for decades. The data, the laws, and the safer alternatives for team transport."
 subhub: "safety"
 safetyCategory: "travel-logistics"

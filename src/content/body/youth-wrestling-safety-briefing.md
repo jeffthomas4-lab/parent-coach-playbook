@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth wrestling*"
+title: "What's actually dangerous about youth wrestling"
 summary: "Skin infections, weight cutting, concussion, and the joint injuries that come with a contact sport on a mat. Ranked by frequency and severity."
 subhub: "safety"
 format: "sport-briefing"

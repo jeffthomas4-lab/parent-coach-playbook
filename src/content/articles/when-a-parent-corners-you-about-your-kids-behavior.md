@@ -1,5 +1,5 @@
 ---
-title: "When a parent *corners you about your kid's behavior*"
+title: "When a parent corners you about your kid's behavior"
 dek: "Her son said something happened. She wants you to handle it. Here is the move."
 seoDescription: "A mom from the team comes up to you at pickup. Her son said your son said something mean to him at practice."
 topic: "communication"

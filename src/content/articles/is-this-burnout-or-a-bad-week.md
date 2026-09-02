@@ -1,5 +1,5 @@
 ---
-title: Is this *burnout*, or just a bad week?
+title: Is this burnout, or just a bad week?
 dek: The difference matters. The response is completely different.
 seoDescription: Burnout and a bad week look almost identical at first. Here is how to tell them apart, and what to do differently depending on which one you are actually dealing with.
 topic: the-hard-stuff

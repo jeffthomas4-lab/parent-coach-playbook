@@ -1,5 +1,5 @@
 ---
-title: "Camping and outdoor team trips: *the safety framework most teams don't have*"
+title: "Camping and outdoor team trips: the safety framework most teams don't have"
 summary: "Wilderness team trips combine standard sport-team risks with outdoor-recreation risks. The protocols that protect kids on team retreats and outdoor team-building events."
 subhub: "safety"
 safetyCategory: "travel-logistics"

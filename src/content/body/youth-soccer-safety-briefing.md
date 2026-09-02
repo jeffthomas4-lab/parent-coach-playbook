@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth soccer*"
+title: "What's actually dangerous about youth soccer"
 summary: "ACL tears in girls, heading research, ankle sprains, and the heat-and-lightning weather profile of an outdoor sport."
 subhub: "safety"
 format: "sport-briefing"

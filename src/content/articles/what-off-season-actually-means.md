@@ -1,5 +1,5 @@
 ---
-title: "What *off-season* actually means by age"
+title: "What off-season actually means by age"
 dek: "It's not zero. It's not a private trainer five days a week. Here's what off-season looks like by age."
 seoDescription: "The off-season is one of the most-misunderstood concepts in youth sports. Coaches use the word. Parents nod. Almost nobody agrees on what it actually means."
 topic: "season-ops"

@@ -1,5 +1,5 @@
 ---
-title: '*Packing food* for the travel weekend'
+title: 'Packing food for the travel weekend'
 dek: Tournament weekends eat money in $14 sandwiches. The cooler approach saves hundreds
   and feeds the team better.
 seoDescription: Three meals out a day, four people, three days. At tournament-venue

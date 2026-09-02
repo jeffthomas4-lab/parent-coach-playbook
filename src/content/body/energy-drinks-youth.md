@@ -1,5 +1,5 @@
 ---
-title: "Energy drinks and youth athletes: *the AAP says no*"
+title: "Energy drinks and youth athletes: the AAP says no"
 summary: "The published cardiovascular events linked to energy drinks in adolescents. The marketing that targets athletes. The team policy worth writing down."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

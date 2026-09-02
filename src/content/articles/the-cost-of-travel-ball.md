@@ -1,5 +1,5 @@
 ---
-title: The *cost of travel ball*. Actual annual breakdown
+title: The cost of travel ball. Actual annual breakdown
 dek: The team fee is the opening number. The schedule tells you what the season will really cost.
 seoTitle: "Travel Ball Costs: Build the Real Annual Budget"
 seoDescription: "Build a complete travel ball budget from the team schedule, including hotels, road meals, gear, optional training, and the costs families miss."

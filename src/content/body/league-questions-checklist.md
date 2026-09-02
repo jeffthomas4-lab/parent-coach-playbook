@@ -1,5 +1,5 @@
 ---
-title: "12 questions to ask your league before you *sign the season form*"
+title: "12 questions to ask your league before you sign the season form"
 summary: "Print this. Bring it to the registration table. The league that answers all twelve clearly is one you trust your kid with."
 subhub: "safety"
 safetyCategory: "coach-vetting"

@@ -1,5 +1,5 @@
 ---
-title: "Heat cramps: *the distinct protocol, not just hydration*"
+title: "Heat cramps: the distinct protocol, not just hydration"
 summary: "Muscle cramps mid-practice in heat. The sodium-and-fluid framework that actually works, and the signs that the kid is moving toward heat exhaustion."
 subhub: "safety"
 safetyCategory: "emergency-response"

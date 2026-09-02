@@ -1,5 +1,5 @@
 ---
-title: "The case for *one sport per season*"
+title: "The case for one sport per season"
 dek: "One active team is a calendar rule, not a prediction about talent."
 seoTitle: "One Sport Per Season for Kids"
 seoDescription: "Use one active team per season to protect rest days and family time without forcing year-round specialization or promising better athletic results."

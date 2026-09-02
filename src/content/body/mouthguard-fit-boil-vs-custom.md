@@ -1,5 +1,5 @@
 ---
-title: "Mouthguard fit: *boil-and-bite vs custom*"
+title: "Mouthguard fit: boil-and-bite vs custom"
 summary: "The boil-and-bite option works. The custom option works better. The actual difference, and when paying for custom matters."
 subhub: "safety"
 safetyCategory: "equipment-certification"

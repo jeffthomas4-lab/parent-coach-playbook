@@ -1,5 +1,5 @@
 ---
-title: "Telling the coach *your kid is being bullied*"
+title: "Telling the coach your kid is being bullied"
 dek: "Name what happened, use the program's safeguarding route, and ask who owns the next step."
 seoTitle: "How to Tell a Coach Your Kid Is Being Bullied"
 seoDescription: "Report bullying in youth sports with specific facts, distinguish peer conflict from a harmful pattern, and use the program's safeguarding escalation route."

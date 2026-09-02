@@ -1,5 +1,5 @@
 ---
-title: How to tell if your kid is *on the bubble*
+title: How to tell if your kid is on the bubble
 dek: They might make the team. They might not. The signs to read before the list goes
   up.
 seoDescription: Tryouts ended. The list goes up Monday. Between now and then, you're

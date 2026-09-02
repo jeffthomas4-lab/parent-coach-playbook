@@ -1,5 +1,5 @@
 ---
-title: "Live streams of minor athletes: *what to allow and what to refuse*"
+title: "Live streams of minor athletes: what to allow and what to refuse"
 summary: "GameChanger, NFHS Network, BallerTV. The default is public. The settings parents need to know about and the consent norms most leagues skip."
 subhub: "safety"
 safetyCategory: "cyber"

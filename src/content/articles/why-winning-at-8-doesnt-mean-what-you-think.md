@@ -1,5 +1,5 @@
 ---
-title: "Why winning at 8 *doesn't mean what you think*"
+title: "Why winning at 8 doesn't mean what you think"
 dek: "The scoreboard, the trophy, and what your kid is actually learning."
 seoDescription: "Your kid's team won the tournament. Gold medal. Photos with the trophy. Your kid came home proud."
 topic: "rules-of-play"

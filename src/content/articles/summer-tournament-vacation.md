@@ -1,5 +1,5 @@
 ---
-title: When the team goes on a *tournament vacation*
+title: When the team goes on a tournament vacation
 dek: Three nights, four games, two beach days. The framework for whether your family
   does this and how to survive it.
 seoDescription: The team is doing a destination tournament. The brochure is selling

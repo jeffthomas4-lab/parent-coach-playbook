@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth cross country*"
+title: "What's actually dangerous about youth cross country"
 summary: "Overuse injuries, RED-S, weather exposure, and the cultural risk that's specific to distance running for adolescent girls."
 subhub: "safety"
 format: "sport-briefing"

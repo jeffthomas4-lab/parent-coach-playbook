@@ -1,5 +1,5 @@
 ---
-title: "Religious accommodations on the team: *what's reasonable, what's required*"
+title: "Religious accommodations on the team: what's reasonable, what's required"
 summary: "Practice scheduling around Sabbath, prayer time during practice, dietary needs at team meals, religious dress in uniform. The norms that keep kids included and playing."
 subhub: "safety"
 safetyCategory: "conduct"

@@ -1,5 +1,5 @@
 ---
-title: "Coach verbal abuse: *the line between hard coaching and harm*"
+title: "Coach verbal abuse: the line between hard coaching and harm"
 summary: "What SafeSport defines as emotional misconduct, what crosses the line in published youth-sport research, and the conversation parents need to have when a coach is over the line."
 subhub: "safety"
 safetyCategory: "conduct"

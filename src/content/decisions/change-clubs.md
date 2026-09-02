@@ -1,5 +1,5 @@
 ---
-title: "Should we *change clubs*?"
+title: "Should we change clubs?"
 summary: "The club isn't working but switching has costs. Politics, friendships, financial deposits, and what the next club isn't telling you. The framework for the call."
 theQuestion: "We're frustrated with our current club. Is the next one going to be better, or are we trading one set of problems for another?"
 publishedAt: 2026-05-05

@@ -1,5 +1,5 @@
 ---
-title: "The night before *tryouts*"
+title: "The night before tryouts"
 seoTitle: "What to Do the Night Before Tryouts"
 seoDescription: "The night before tryouts, keep dinner, packing, bedtime, and conversation normal. Give your 11- or 12-year-old less pressure, not one last lesson."
 bluf: "The night before tryouts, keep the house boring. Pack the bag, eat a familiar dinner, and use the normal bedtime. Answer questions without giving a speech. Your 11- or 12-year-old does not need one more lesson. They need a parent who is steady."

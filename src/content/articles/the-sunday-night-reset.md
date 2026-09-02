@@ -1,5 +1,5 @@
 ---
-title: The *Sunday night reset*
+title: The Sunday night reset
 dek: One hour. The week ahead becomes possible.
 seoDescription: The week ahead has two practices, a game, three school events, a doctor's
   appointment, and a work deadline. By Tuesday it will be on top of you.

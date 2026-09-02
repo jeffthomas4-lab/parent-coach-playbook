@@ -1,5 +1,5 @@
 ---
-title: When your kid is the *star* and the team *loses*
+title: When your kid is the star and the team loses
 dek: She had two goals. The team lost 4-2. She is not allowed to feel good about her
   game. Or is she.
 seoDescription: Your daughter scored two goals. The team lost 4 to 2. She is in the

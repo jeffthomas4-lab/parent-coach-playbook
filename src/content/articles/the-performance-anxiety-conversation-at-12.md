@@ -1,5 +1,5 @@
 ---
-title: "The *performance anxiety* conversation at 12"
+title: "The performance anxiety conversation at 12"
 dek: "She freezes at the free throw line. He throws up before games. The thing they cannot say. What helps."
 seoDescription: "Your daughter has been freezing at the free throw line for three games. Stepping to the line, her body goes rigid, the shot misses badly."
 topic: "the-hard-stuff"

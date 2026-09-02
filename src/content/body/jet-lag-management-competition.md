@@ -1,5 +1,5 @@
 ---
-title: "Jet lag management for competition: *the protocol that gets the kid race-ready*"
+title: "Jet lag management for competition: the protocol that gets the kid race-ready"
 summary: "Cross-time-zone travel for tournaments and showcases. The published adjustment timeline, the light-and-sleep protocol, and what actually works for adolescent athletes."
 subhub: "safety"
 safetyCategory: "travel-logistics"

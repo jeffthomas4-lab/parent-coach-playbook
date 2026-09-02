@@ -1,5 +1,5 @@
 ---
-title: "Diabetic emergency on the field: *low first, high second*"
+title: "Diabetic emergency on the field: low first, high second"
 summary: "The kid with type 1 diabetes who goes hypoglycemic mid-game. The 15-15 rule, when to give glucagon, and what high blood sugar looks like instead."
 subhub: "safety"
 safetyCategory: "emergency-response"

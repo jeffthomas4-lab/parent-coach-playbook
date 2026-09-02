@@ -1,5 +1,5 @@
 ---
-title: "Cold-weather practice: *frostbite, layering, the temperature threshold*"
+title: "Cold-weather practice: frostbite, layering, the temperature threshold"
 summary: "What an outdoor practice should look like below 40°F, when the wind chill makes it actually dangerous, and the layering rule for kids who run hot."
 subhub: "safety"
 safetyCategory: "weather"

@@ -1,5 +1,5 @@
 ---
-title: Pre-game anxiety is *normal*. Here's where it stops being normal.
+title: Pre-game anxiety is normal. Here's where it stops being normal.
 dek: The line between healthy nerves and something to address.
 seoDescription: Pre-game nerves are a sign your kid cares. Here is how to tell when anxiety has crossed from normal competitive stress into something that needs a different response from you.
 topic: the-hard-stuff

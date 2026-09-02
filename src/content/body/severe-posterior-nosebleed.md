@@ -1,5 +1,5 @@
 ---
-title: "Severe posterior nosebleed: *when the 20-minute rule fails*"
+title: "Severe posterior nosebleed: when the 20-minute rule fails"
 summary: "Most nosebleeds stop with pressure. A few do not. The signs of posterior bleed, the on-field management, and the emergency room threshold."
 subhub: "safety"
 safetyCategory: "emergency-response"

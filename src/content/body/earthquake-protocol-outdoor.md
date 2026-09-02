@@ -1,5 +1,5 @@
 ---
-title: "Earthquake during practice: *drop, cover, hold on, and the outdoor variant*"
+title: "Earthquake during practice: drop, cover, hold on, and the outdoor variant"
 summary: "Pacific Northwest and West Coast teams should know the protocol. Indoor and outdoor responses differ. The post-shake assessment matters."
 subhub: "safety"
 safetyCategory: "weather"

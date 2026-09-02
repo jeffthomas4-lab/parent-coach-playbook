@@ -1,5 +1,5 @@
 ---
-title: "Wrestling headgear and skin infections: *the gear and the protocol*"
+title: "Wrestling headgear and skin infections: the gear and the protocol"
 summary: "NFHS-legal ear protection. Impetigo, ringworm, herpes gladiatorum, MRSA. The pre-match skin check, the team-wide protocol, and what gets a kid out for the season."
 subhub: "safety"
 safetyCategory: "equipment-certification"

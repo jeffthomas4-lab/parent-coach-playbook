@@ -1,5 +1,5 @@
 ---
-title: "Team apps and direct messaging: *the permission settings every parent should check*"
+title: "Team apps and direct messaging: the permission settings every parent should check"
 summary: "TeamSnap, GameChanger, SportsEngine, Band, GroupMe. Where to turn off coach-to-player DMs, where to control photo permissions, and the SafeSport-aligned defaults to set."
 subhub: "safety"
 safetyCategory: "cyber"

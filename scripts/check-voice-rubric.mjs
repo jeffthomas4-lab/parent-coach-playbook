@@ -203,6 +203,22 @@ function checkFile(path) {
     if (re.test(body)) fails.push(`C pattern: ${name}`);
   });
 
+  // Headline emphasis. Retired 2026-08-29. Titles used to carry *emphasis* that
+  // rendered italic and accent-coloured on a word or two. 413 of 1892 files had
+  // it. Enough of the web ships that exact headline shape that it now reads as
+  // machine-written, so the markup is banned at the source rather than styled
+  // away and left to regenerate. Body prose keeps real italics.
+  ['title', 'seoTitle', 'dek', 'bluf'].forEach((field) => {
+    const match = frontmatter.match(new RegExp(`^${field}:\\s*(.*)$`, 'm'));
+    if (!match) return;
+    const value = match[1];
+    if (/\*\*[^*]+\*\*/.test(value)) {
+      fails.push(`headline emphasis: bold markup in ${field}, write it plain`);
+    } else if (/\*[^*]+\*/.test(value)) {
+      fails.push(`headline emphasis: *asterisks* in ${field}, write it plain`);
+    }
+  });
+
   // E5: dek under 15 words.
   const dekMatch = frontmatter.match(/^dek:\s*"?(.*?)"?\s*$/m);
   if (dekMatch) {

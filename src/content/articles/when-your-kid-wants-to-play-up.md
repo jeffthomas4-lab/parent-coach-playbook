@@ -1,5 +1,5 @@
 ---
-title: "When your kid wants to *play up*. Or down"
+title: "When your kid wants to play up. Or down"
 dek: "Up looks like ambition. Down looks like settling. Both can be right. The criteria."
 seoDescription: "Two real questions parents face. Should my kid play up an age group? Should my kid play down an age group?"
 topic: "the-hard-stuff"

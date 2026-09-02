@@ -1,5 +1,5 @@
 ---
-title: "How to evaluate a summer camp in *10 minutes*"
+title: "How to evaluate a summer camp in 10 minutes"
 dek: "Eight questions. Ten minutes. Specific answers beat a polished brochure."
 seoTitle: "How to Evaluate a Summer Camp in 10 Minutes"
 seoDescription: "Use eight questions to screen a summer camp quickly, including staff, supervision, daily schedule, safety plans, communication, and total cost."

@@ -1,5 +1,5 @@
 ---
-title: The tournament *t-shirt economy*
+title: The tournament t-shirt economy
 dek: Twelve t-shirts later, two of which the kid wears. The honest read on the merch
   table, and what to actually buy.
 seoDescription: The tournament merch table is not for the kid. It's for the family

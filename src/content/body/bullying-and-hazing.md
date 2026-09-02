@@ -1,5 +1,5 @@
 ---
-title: "Bullying and hazing in youth sports: *what counts and what to escalate*"
+title: "Bullying and hazing in youth sports: what counts and what to escalate"
 summary: "Bullying is repeated power-imbalance harm. Hazing is initiation-based harm. The legal definitions, the AD's obligations, and the path to escalation."
 subhub: "safety"
 safetyCategory: "conduct"

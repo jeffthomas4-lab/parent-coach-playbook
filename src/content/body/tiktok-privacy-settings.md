@@ -1,5 +1,5 @@
 ---
-title: "TikTok privacy settings: *the toggles every athlete account should change*"
+title: "TikTok privacy settings: the toggles every athlete account should change"
 summary: "Public-by-default, autosearch, DM permissions. The settings most kids never adjust and the implications for youth athletes."
 subhub: "safety"
 safetyCategory: "cyber"

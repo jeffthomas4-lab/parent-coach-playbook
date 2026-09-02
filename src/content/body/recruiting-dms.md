@@ -1,5 +1,5 @@
 ---
-title: "Recruiting DMs: *who can message your kid, when, and how*"
+title: "Recruiting DMs: who can message your kid, when, and how"
 summary: "NCAA contact rules by division, what's allowed by social DM, what to do when a coach skips the rules, and the trafficking and predator vectors hiding in recruiting dressing."
 subhub: "safety"
 safetyCategory: "cyber"

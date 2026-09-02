@@ -1,5 +1,5 @@
 ---
-title: "ADHD medication and competition: *the Therapeutic Use Exemption every recruited athlete needs*"
+title: "ADHD medication and competition: the Therapeutic Use Exemption every recruited athlete needs"
 summary: "Adderall, Vyvanse, Concerta, and Ritalin are banned without paperwork at most competitive levels. The TUE process and what families need on file."
 subhub: "safety"
 safetyCategory: "crisis-mental-health"

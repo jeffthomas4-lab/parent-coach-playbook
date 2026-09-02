@@ -1,5 +1,5 @@
 ---
-title: The summer your kid asks *not to play for you* again
+title: The summer your kid asks not to play for you again
 dek: What it actually means. What it doesn't mean. And the right way to hear it without
   making it about you.
 seoDescription: It's the first week of June. You're filling out the rec league sign-up.

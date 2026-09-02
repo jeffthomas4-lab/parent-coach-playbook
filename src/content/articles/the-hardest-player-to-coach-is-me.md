@@ -1,5 +1,5 @@
 ---
-title: "The hardest player to coach is *me*"
+title: "The hardest player to coach is me"
 seoTitle: "Emotional regulation for the parent-coach"
 seoDescription: "The sideline meltdown was never about the ref. It's about me. What I do to regulate my own emotions before I lose it in front of my kid's team."
 dek: "The sideline meltdown was never about the ref. Here's what I do instead."

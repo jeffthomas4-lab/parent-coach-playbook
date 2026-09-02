@@ -1,5 +1,5 @@
 ---
-title: The *grandparent* who pushes too hard
+title: The grandparent who pushes too hard
 dek: The post-game speech you didn't ask for. The pressure your kid feels coming from
   both directions. How to love them without letting it land on the kid.
 seoDescription: Your dad has been at every game since your kid was four. He played

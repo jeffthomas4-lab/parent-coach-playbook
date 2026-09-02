@@ -1,5 +1,5 @@
 ---
-title: The *quiet pickup* after a loss
+title: The quiet pickup after a loss
 dek: He played hard. The team lost. He won't talk. The first ten minutes of pickup.
 seoDescription: Final whistle. The team lost. Your kid walks off the field with the
   kind of slow steps that mean he played his heart out and lost anyway.

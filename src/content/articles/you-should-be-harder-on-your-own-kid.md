@@ -1,5 +1,5 @@
 ---
-title: '*"You should have been harder on your own kid"*'
+title: '"You should have been harder on your own kid"'
 dek: When another parent gives you the feedback you didn't ask for. How to take what's
   true, leave what isn't, and not punish your kid for the conversation.
 seoDescription: Another parent corners you in the parking lot. They lead with hey,

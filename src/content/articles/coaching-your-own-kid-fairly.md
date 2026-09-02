@@ -1,5 +1,5 @@
 ---
-title: How to know if you're *actually* coaching your kid fairly
+title: How to know if you're actually coaching your kid fairly
 seoTitle: How to coach your own kid fairly — the test that works
 seoDescription: Most parent-coaches drift toward overcorrecting or undercorrecting
   their own kid. The test that tells you which one, and how to fix it in two weeks.

@@ -1,5 +1,5 @@
 ---
-title: "Post-injury depression in youth athletes: *the reaction the team doesn't see*"
+title: "Post-injury depression in youth athletes: the reaction the team doesn't see"
 summary: "Identity collapse after a season-ending injury. The signs, the conversation, and how programs and families support the kid through it."
 subhub: "safety"
 safetyCategory: "crisis-mental-health"

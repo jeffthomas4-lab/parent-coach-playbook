@@ -1,5 +1,5 @@
 ---
-title: "One bin per kid, *color-coded* by sport"
+title: "One bin per kid, color-coded by sport"
 seoTitle: "Color-Coded Bin System for Multi-Sport Families"
 seoDescription: "One bin and one color per kid, not per sport, keeps gear from getting lost between seasons in a multi-sport household."
 dek: "One color per kid, not per sport, keeps gear from getting lost between seasons."

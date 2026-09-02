@@ -1,5 +1,5 @@
 ---
-title: "Vetting a private trainer: *the questions most parents skip*"
+title: "Vetting a private trainer: the questions most parents skip"
 summary: "Skills coaches, hitting instructors, speed trainers. The credentials that mean something, the SafeSport gap, and the conversation to have before the first session."
 subhub: "safety"
 safetyCategory: "coach-vetting"

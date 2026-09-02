@@ -1,5 +1,5 @@
 ---
-title: "Caffeine in youth athletes: *the AAP limit and what coaches should know*"
+title: "Caffeine in youth athletes: the AAP limit and what coaches should know"
 summary: "The AAP says no caffeine for kids under 12 and limit it for teens. The energy-drink question. What 'pre-workout' actually contains."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

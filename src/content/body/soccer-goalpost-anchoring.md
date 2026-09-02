@@ -1,5 +1,5 @@
 ---
-title: "Soccer goalpost anchoring: *the CPSC warning every parent should know*"
+title: "Soccer goalpost anchoring: the CPSC warning every parent should know"
 summary: "Unanchored portable soccer goals have killed kids. The CPSC's warnings, the safer designs, and the questions to ask before signing up at any field."
 subhub: "safety"
 safetyCategory: "equipment-certification"

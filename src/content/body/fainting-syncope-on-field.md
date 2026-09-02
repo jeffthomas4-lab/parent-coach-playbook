@@ -1,5 +1,5 @@
 ---
-title: "Fainting on the field: *vasovagal, dehydration, cardiac*"
+title: "Fainting on the field: vasovagal, dehydration, cardiac"
 summary: "The kid collapses, regains consciousness in seconds, says they feel fine. The decision tree that distinguishes a benign vasovagal episode from a cardiac flag."
 subhub: "safety"
 safetyCategory: "emergency-response"

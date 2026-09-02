@@ -1,5 +1,5 @@
 ---
-title: "Creatine in youth athletes: *the AAP position and the published data*"
+title: "Creatine in youth athletes: the AAP position and the published data"
 summary: "The most-studied performance supplement. What it does, what it doesn't, the AAP's position, and the actual conversation with a youth athlete who wants it."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

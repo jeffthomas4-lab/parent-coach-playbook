@@ -1,5 +1,5 @@
 ---
-title: "Abdominal trauma: *spleen, kidney, liver, and the hit that needs evaluation*"
+title: "Abdominal trauma: spleen, kidney, liver, and the hit that needs evaluation"
 summary: "Direct blows to the torso can produce internal-organ injury. The signs, the delayed-presentation pattern, and when the emergency room is the right call."
 subhub: "safety"
 safetyCategory: "emergency-response"

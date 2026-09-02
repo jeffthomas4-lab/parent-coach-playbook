@@ -1,5 +1,5 @@
 ---
-title: "Hypothermia on the field: *recognize, warm, escalate*"
+title: "Hypothermia on the field: recognize, warm, escalate"
 summary: "The signs the kid is past 'cold' and into hypothermia. The protocol that warms safely. When to call 911."
 subhub: "safety"
 safetyCategory: "weather"

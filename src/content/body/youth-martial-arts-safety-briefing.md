@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth martial arts*"
+title: "What's actually dangerous about youth martial arts"
 summary: "Concussion, joint injuries, the wide variation between disciplines, and the instructor-vetting question that matters as much as the gear."
 subhub: "safety"
 format: "sport-briefing"

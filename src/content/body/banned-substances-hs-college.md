@@ -1,5 +1,5 @@
 ---
-title: "Banned substances for HS and college athletes: *the lists that matter*"
+title: "Banned substances for HS and college athletes: the lists that matter"
 summary: "NCAA, USADA, state HS associations. What's on the banned list, what's in supplements that lands kids on it accidentally, and the contamination risk."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

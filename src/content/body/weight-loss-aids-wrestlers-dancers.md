@@ -1,5 +1,5 @@
 ---
-title: "Weight-loss aids in youth sport: *the wrestlers, the dancers, and the line into harm*"
+title: "Weight-loss aids in youth sport: the wrestlers, the dancers, and the line into harm"
 summary: "Diuretics, laxatives, fat burners, and the supplement industry targeting weight-class and aesthetic sports. The published harms and the cultural-risk framing."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

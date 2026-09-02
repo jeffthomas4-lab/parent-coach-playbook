@@ -1,5 +1,5 @@
 ---
-title: "What goes in your *sideline first-aid kit*"
+title: "What goes in your sideline first-aid kit"
 summary: "The 22 items every team manager should have in the bag. What's worth the weight, what's a gimmick, and what's actually used the most often."
 subhub: "safety"
 safetyCategory: "emergency-response"

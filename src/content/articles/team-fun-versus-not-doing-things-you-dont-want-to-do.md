@@ -1,5 +1,5 @@
 ---
-title: Team fun *versus not doing things you don't want to do*
+title: Team fun versus not doing things you don't want to do
 dek: The Saturday-night team activity. The Sunday morning bowling. You can pass. The
   art of how.
 seoDescription: Friday night arrival at the tournament hotel. The team chat lights

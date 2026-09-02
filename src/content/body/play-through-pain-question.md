@@ -1,5 +1,5 @@
 ---
-title: "Playing through pain: *when toughness is harm*"
+title: "Playing through pain: when toughness is harm"
 summary: "The line between soreness you push through and pain you sit down for. The pediatric difference, the questions to ask, and the patterns parents miss."
 subhub: "safety"
 safetyCategory: "emergency-response"

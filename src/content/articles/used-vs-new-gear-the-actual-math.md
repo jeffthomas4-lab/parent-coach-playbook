@@ -1,5 +1,5 @@
 ---
-title: Used vs new gear. *The actual math*
+title: Used vs new gear. The actual math
 dek: Compare usable seasons, required service, fit, and resale instead of discount stickers.
 seoTitle: Used vs New Youth Sports Gear Cost Math
 seoDescription: Compare used and new youth sports gear by cost per usable season, fit, certification, required reconditioning, replacement parts, and resale value.

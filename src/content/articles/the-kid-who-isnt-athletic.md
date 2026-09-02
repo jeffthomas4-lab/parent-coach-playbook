@@ -1,5 +1,5 @@
 ---
-title: "The kid who *isn't athletic* (and what that actually means)"
+title: "The kid who isn't athletic (and what that actually means)"
 dek: "Not coordinated. Not fast. Not 'a natural.' But can they learn? Yes."
 seoDescription: "Your kid tried out for soccer. Or started kindergarten sports. And you saw it immediately."
 topic: "rules-of-play"

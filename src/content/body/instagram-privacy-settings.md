@@ -1,5 +1,5 @@
 ---
-title: "Instagram privacy settings: *the configuration every youth-athlete account needs*"
+title: "Instagram privacy settings: the configuration every youth-athlete account needs"
 summary: "Public-by-default for older teens, DM permissions, story controls, and the recruiting trade-offs. The settings most families never adjust."
 subhub: "safety"
 safetyCategory: "cyber"

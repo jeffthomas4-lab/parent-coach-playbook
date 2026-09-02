@@ -1,5 +1,5 @@
 ---
-title: When the *cuts list* goes up and your kid isn't on it
+title: When the cuts list goes up and your kid isn't on it
 dek: She tried out hard. The list is up. Her name isn't there.
 seoTitle: "When Your Kid Gets Cut: The First Forty-Eight Hours"
 seoDescription: The cuts list went up and your kid's name isn't on it. What to say in the first hour, what to keep normal, and what to ask two weeks later.

@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth golf*"
+title: "What's actually dangerous about youth golf"
 summary: "Lightning, heat, overuse back and elbow injuries, and the rare-but-real cart and club incidents. The golf-specific risk profile."
 subhub: "safety"
 format: "sport-briefing"

@@ -1,5 +1,5 @@
 ---
-title: "Snapchat and Snap Map: *the location-sharing default kids didn't read*"
+title: "Snapchat and Snap Map: the location-sharing default kids didn't read"
 summary: "Most kids on Snapchat broadcast their real-time location to anyone on their friends list. The Ghost Mode setting, the parent conversation, and the team norms."
 subhub: "safety"
 safetyCategory: "cyber"

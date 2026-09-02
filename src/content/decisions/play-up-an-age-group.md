@@ -1,5 +1,5 @@
 ---
-title: "Should we let our kid *play up* an age group?"
+title: "Should we let our kid play up an age group?"
 summary: "Faster competition can accelerate development. It can also crush confidence and change a kid's body before it's ready. The framework for the call."
 theQuestion: "Coach wants them to play up. Or we want them to. Is moving up actually the right move right now?"
 publishedAt: 2026-05-05

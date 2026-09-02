@@ -1,5 +1,5 @@
 ---
-title: "Exercise compulsion: *when training crosses into disordered eating*"
+title: "Exercise compulsion: when training crosses into disordered eating"
 summary: "Compulsive exercise is one form of disordered eating. The signs, the distinction from healthy training, and the path to professional support."
 subhub: "safety"
 safetyCategory: "crisis-mental-health"

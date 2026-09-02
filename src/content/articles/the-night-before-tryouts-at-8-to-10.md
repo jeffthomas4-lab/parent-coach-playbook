@@ -1,5 +1,5 @@
 ---
-title: The night before tryouts at *8 to 10*
+title: The night before tryouts at 8 to 10
 dek: He's nervous. The dinner table is tense. The 8-10 version is different from the
   5-7 version.
 seoDescription: Your kid is nine. Tryouts are tomorrow morning. He is at the dinner

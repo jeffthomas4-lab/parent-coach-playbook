@@ -1,5 +1,5 @@
 ---
-title: "Off-season conditioning safety: *what kids can actually do*"
+title: "Off-season conditioning safety: what kids can actually do"
 summary: "Strength training, plyometric work, conditioning for growing kids. The published age-appropriate framework and the trainer-vetting that matters."
 subhub: "safety"
 safetyCategory: "emergency-response"

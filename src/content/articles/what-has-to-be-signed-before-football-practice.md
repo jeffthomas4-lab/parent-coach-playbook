@@ -1,5 +1,5 @@
 ---
-title: "What has to be turned in before *the first day of football practice*"
+title: "What has to be turned in before the first day of football practice"
 seoTitle: "Forms due before WIAA football practice starts"
 seoDescription: "WIAA requires four signed forms, a physical, a concussion form, a cardiac form, and a code of conduct, before an athlete's first football practice."
 dek: "Four forms have to be signed before WIAA football practice opens in August."

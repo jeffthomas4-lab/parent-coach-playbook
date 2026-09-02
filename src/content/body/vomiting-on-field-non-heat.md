@@ -1,5 +1,5 @@
 ---
-title: "Vomiting on the field: *when it's the moment, when it's the emergency*"
+title: "Vomiting on the field: when it's the moment, when it's the emergency"
 summary: "Heat-related vomiting is one signal. Non-heat vomiting is another. The decision tree, the dehydration risk, and the head-injury overlap."
 subhub: "safety"
 safetyCategory: "emergency-response"

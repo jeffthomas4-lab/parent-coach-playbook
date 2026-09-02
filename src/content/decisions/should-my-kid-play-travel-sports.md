@@ -1,5 +1,5 @@
 ---
-title: "Should my kid play *travel sports*?"
+title: "Should my kid play travel sports?"
 summary: "Travel sports can open doors. They can also reshape your family's whole calendar. Here's how to decide whether it's the right call right now."
 theQuestion: "Travel sports for a kid this age: is it worth the time, money, and emotional load right now?"
 publishedAt: 2026-04-26

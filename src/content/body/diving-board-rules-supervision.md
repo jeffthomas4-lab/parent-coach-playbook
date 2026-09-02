@@ -1,5 +1,5 @@
 ---
-title: "Diving board rules and supervision: *the protocol pool deaths come from skipping*"
+title: "Diving board rules and supervision: the protocol pool deaths come from skipping"
 summary: "Spinal injuries, head injuries, and drownings from diving boards happen in patterns. The rules that prevent them, and the supervision that backs the rules up."
 subhub: "safety"
 safetyCategory: "aquatic"

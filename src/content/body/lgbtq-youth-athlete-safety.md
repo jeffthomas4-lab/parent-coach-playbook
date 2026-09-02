@@ -1,5 +1,5 @@
 ---
-title: "LGBTQ+ youth athletes: *what safety looks like, in context*"
+title: "LGBTQ+ youth athletes: what safety looks like, in context"
 summary: "Locker rooms, language norms, and the team-culture moves that keep LGBTQ+ kids safe and playing. Practical, not political."
 subhub: "safety"
 safetyCategory: "conduct"

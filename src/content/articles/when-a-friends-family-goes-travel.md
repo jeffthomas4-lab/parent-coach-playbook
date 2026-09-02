@@ -1,5 +1,5 @@
 ---
-title: When a *friend's family* goes travel and yours doesn't
+title: When a friend's family goes travel and yours doesn't
 dek: Their kid is on the travel team. Yours isn't. The friendship is going to feel
   different.
 seoDescription: Your kid's best friend just made the travel team. Your kid is staying

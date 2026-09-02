@@ -1,5 +1,5 @@
 ---
-title: "Anaphylaxis on the field: *EpiPen first, ambulance second*"
+title: "Anaphylaxis on the field: EpiPen first, ambulance second"
 summary: "Recognize the signs, use the auto-injector, then call 911. The protocol that saves the kid with the bee allergy or the new peanut exposure."
 subhub: "safety"
 safetyCategory: "emergency-response"

@@ -1,5 +1,5 @@
 ---
-title: The kid who *refuses* to go to tryouts
+title: The kid who refuses to go to tryouts
 dek: She loved this sport last week. This morning she will not get out of bed. The
   fork in the road.
 seoDescription: Tryouts at 9am. It's 7:50am. Your nine-year-old is in bed with the

@@ -1,5 +1,5 @@
 ---
-title: The summer practice schedule the *kid hates*
+title: The summer practice schedule the kid hates
 dek: What's actually wrong, what isn't, and the one conversation that fixes it more
   often than not.
 seoDescription: It's July. The schedule said "summer optional" in May. By July it's

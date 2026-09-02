@@ -1,5 +1,5 @@
 ---
-title: "Cleats and foot safety: *metal vs molded, fit, and the growth question*"
+title: "Cleats and foot safety: metal vs molded, fit, and the growth question"
 summary: "When metal cleats are allowed, when they're not, and the fit rules that prevent the most common youth-sport foot injuries."
 subhub: "safety"
 safetyCategory: "equipment-certification"

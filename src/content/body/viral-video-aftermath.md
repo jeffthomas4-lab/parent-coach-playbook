@@ -1,5 +1,5 @@
 ---
-title: "The viral video aftermath: *your kid in a moment the internet won't let go*"
+title: "The viral video aftermath: your kid in a moment the internet won't let go"
 summary: "A clip of your kid spread overnight. The platform takedown options, the doxxing risk, and the family conversation that helps."
 subhub: "safety"
 safetyCategory: "cyber"

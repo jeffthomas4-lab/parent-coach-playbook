@@ -1,5 +1,5 @@
 ---
-title: "Artificial turf temperatures: *the burn-risk parents don't see*"
+title: "Artificial turf temperatures: the burn-risk parents don't see"
 summary: "Synthetic turf can run 40 to 60°F hotter than air temperature. The skin-burn risk, the heat-illness contribution, and the practice-modification thresholds."
 subhub: "safety"
 safetyCategory: "weather"

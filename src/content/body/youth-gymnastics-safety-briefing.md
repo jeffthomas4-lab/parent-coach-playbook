@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth gymnastics*"
+title: "What's actually dangerous about youth gymnastics"
 summary: "Growth-plate injuries, overuse, the rare catastrophic apparatus injury, and the cultural risks that have shaped USA Gymnastics' recent decade."
 subhub: "safety"
 format: "sport-briefing"

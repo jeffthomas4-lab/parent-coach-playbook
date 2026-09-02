@@ -1,5 +1,5 @@
 ---
-title: The summer the kid *grew four inches*
+title: The summer the kid grew four inches
 dek: Cleats don't fit. Coordination is gone. Confidence took a hit. The growth-spurt
   season nobody warns you about.
 seoDescription: May to August. The kid grew. The sport got harder, not easier.

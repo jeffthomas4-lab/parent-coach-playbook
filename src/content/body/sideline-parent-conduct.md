@@ -1,5 +1,5 @@
 ---
-title: "Sideline parent conduct: *refs, ejections, and what gets your kid suspended*"
+title: "Sideline parent conduct: refs, ejections, and what gets your kid suspended"
 summary: "The parent-on-parent and parent-on-ref behavior that crosses lines, what NFHS and state associations enforce, and the conduct contract you signed without reading."
 subhub: "safety"
 safetyCategory: "conduct"

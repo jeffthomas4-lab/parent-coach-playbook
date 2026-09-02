@@ -1,5 +1,5 @@
 ---
-title: The friend's kid who got the *summer scholarship*
+title: The friend's kid who got the summer scholarship
 dek: The Instagram post lit up the parent group chat. Your kid is processing. Here's
   the conversation.
 seoDescription: A teammate just posted that they got a scholarship to a summer elite

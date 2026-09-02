@@ -1,5 +1,5 @@
 ---
-title: Tournament Day Food When *You're Stuck There All Day*
+title: Tournament Day Food When You're Stuck There All Day
 dek: What to pack, what to buy, and what to avoid when you have multiple games and no good options.
 seoDescription: "Tournament day food strategy for youth sports parents. What to pack when you have 3-4 games across 8 hours, how to handle unpredictable schedules, and what to do when vending..."
 topic: the-hard-stuff

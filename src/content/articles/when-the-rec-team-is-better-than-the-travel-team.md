@@ -1,5 +1,5 @@
 ---
-title: When the *rec team is better* than the travel team
+title: When the rec team is better than the travel team
 dek: It happens. The travel team is overpriced and over-promised. The rec team has
   the right coach. Now what.
 seoDescription: You did travel last year. The team was a mixed bag. The coaching was

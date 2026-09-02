@@ -1,5 +1,5 @@
 ---
-title: "Fall ball for softball: *what's actually different* from spring rec"
+title: "Fall ball for softball: what's actually different from spring rec"
 seoTitle: "Softball Fall Ball: What's Different From Spring Rec"
 seoDescription: "How softball fall ball differs from spring rec: registration timing, pitching rules, free substitution, and whether it's worth signing up for."
 dek: "What changes when your rec softball kid signs up for fall ball"

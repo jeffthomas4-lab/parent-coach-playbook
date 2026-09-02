@@ -1,5 +1,5 @@
 ---
-title: "Competition dance: *the actual annual cost*"
+title: "Competition dance: the actual annual cost"
 dek: "The $3,000 costume. The $2,000 hotel. The $5,000 nationals fee. The real number nobody talks about."
 seoTitle: "How Much Does Competitive Dance Cost Per Year? (2026)"
 seoDescription: "Competitive dance costs in 2026: tuition, costumes, entry fees, solos, and nationals travel. The real annual number runs $8,500. Here is the math."

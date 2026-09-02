@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth crew and rowing*"
+title: "What's actually dangerous about youth crew and rowing"
 summary: "Back injuries from rowing volume, water safety, blistering, and the catastrophic risks of capsizing in open water."
 subhub: "safety"
 format: "sport-briefing"

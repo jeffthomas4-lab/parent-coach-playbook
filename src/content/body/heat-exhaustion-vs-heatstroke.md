@@ -1,5 +1,5 @@
 ---
-title: "Heat exhaustion vs heatstroke: *the line that matters*"
+title: "Heat exhaustion vs heatstroke: the line that matters"
 summary: "Both look bad. One is recoverable with rest and water. The other is a true emergency. The signs that distinguish them, and the protocol for each."
 subhub: "safety"
 safetyCategory: "weather"

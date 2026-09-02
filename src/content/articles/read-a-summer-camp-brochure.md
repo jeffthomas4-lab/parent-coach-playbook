@@ -1,5 +1,5 @@
 ---
-title: How to read a *summer camp brochure* honestly
+title: How to read a summer camp brochure honestly
 dek: What the marketing language hides. The questions that surface what the camp actually
   does. The answers that should make you walk.
 seoDescription: The summer camp brochure is a sales document. Glossy photos, smiling

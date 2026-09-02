@@ -1,5 +1,5 @@
 ---
-title: "Showcase event vetting: *the recruiting events worth your money*"
+title: "Showcase event vetting: the recruiting events worth your money"
 summary: "Pay-to-play showcases vs invite-only events. The red flags, the legitimate operators, and what college coaches actually use."
 subhub: "safety"
 safetyCategory: "coach-vetting"

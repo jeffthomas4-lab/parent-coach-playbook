@@ -1,5 +1,5 @@
 ---
-title: "When the coach is targeting your kid: *the pattern, and the path*"
+title: "When the coach is targeting your kid: the pattern, and the path"
 summary: "It started as 'tough coaching.' Now it's specific to your kid. Documenting the pattern, escalating the right way, and knowing when to pull the kid."
 subhub: "safety"
 safetyCategory: "conduct"

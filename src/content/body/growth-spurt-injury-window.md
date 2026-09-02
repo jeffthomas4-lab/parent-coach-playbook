@@ -1,5 +1,5 @@
 ---
-title: "The growth-spurt injury window: *why 12 to 15 is the riskiest year*"
+title: "The growth-spurt injury window: why 12 to 15 is the riskiest year"
 summary: "Growth plates open, bones lengthen faster than muscles strengthen, coordination temporarily lags. The injuries that cluster in adolescence and the training adjustments that prevent them."
 subhub: "safety"
 safetyCategory: "emergency-response"

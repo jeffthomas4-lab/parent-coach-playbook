@@ -1,5 +1,5 @@
 ---
-title: "The *booster club power plays*"
+title: "The booster club power plays"
 dek: "Three families run it. Decisions about your kid get made there. What to know."
 seoDescription: "Your kid is a freshman. The high school sports booster club is run by three sets of parents. They have been running it for five years. Their kids are seniors."
 topic: "communication"

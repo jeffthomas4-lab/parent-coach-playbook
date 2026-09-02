@@ -1,5 +1,5 @@
 ---
-title: End-of-game snack. *What actually works*
+title: End-of-game snack. What actually works
 dek: Six-year-olds. Twenty minutes after the whistle. The snacks they will actually
   eat.
 seoDescription: You signed up for snack. You are at the grocery store. You don't know

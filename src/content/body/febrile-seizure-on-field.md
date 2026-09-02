@@ -1,5 +1,5 @@
 ---
-title: "Febrile seizure on the field: *recognize, position, time, transport*"
+title: "Febrile seizure on the field: recognize, position, time, transport"
 summary: "Most kids who have a febrile seizure recover fully. The protocol on the field, the don't-do list, and when to call 911 versus when to drive to urgent care."
 subhub: "safety"
 safetyCategory: "emergency-response"

@@ -1,5 +1,5 @@
 ---
-title: "When another parent *says something racist* at the field"
+title: "When another parent says something racist at the field"
 dek: "It happens. The script for the moment, and what comes after."
 seoDescription: "A parent two rows down says something at the game. About a kid on the other team. The comment is racist. Not subtle."
 topic: "communication"

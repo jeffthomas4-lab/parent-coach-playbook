@@ -1,5 +1,5 @@
 ---
-title: "Humidity and dew point: *practice modifiers when WBGT isn't on hand*"
+title: "Humidity and dew point: practice modifiers when WBGT isn't on hand"
 summary: "WBGT is the gold standard for heat decisions, but most youth programs don't have a reader. Humidity and dew point are the backup metrics, and they tell you more than air temperature alone."
 subhub: "safety"
 safetyCategory: "weather"

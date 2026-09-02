@@ -1,5 +1,5 @@
 ---
-title: "Patellar dislocation: *the kneecap is not where it should be*"
+title: "Patellar dislocation: the kneecap is not where it should be"
 summary: "The kneecap slipped sideways and may have popped back. The on-field protocol, the imaging that matters, and the recovery picture for repeat dislocators."
 subhub: "safety"
 safetyCategory: "emergency-response"

@@ -1,5 +1,5 @@
 ---
-title: "The 15-plus *walking-away decision*"
+title: "The 15-plus walking-away decision"
 seoTitle: "When your teenager wants to quit sports"
 seoDescription: "When a teenager wants to quit travel sports, sort out whether they are done with the team, the level, or the sport before planning the exit together."
 dek: "How to quit without turning it into a failure."

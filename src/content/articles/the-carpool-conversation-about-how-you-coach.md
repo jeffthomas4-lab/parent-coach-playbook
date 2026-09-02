@@ -1,5 +1,5 @@
 ---
-title: The *carpool conversation* about how you coach
+title: The carpool conversation about how you coach
 dek: What the other parents say in the back seat when you're not there. What you'll
   actually hear. What to do with it without losing the team.
 seoDescription: Your kid comes home from a sleepover. They mention, casually, that

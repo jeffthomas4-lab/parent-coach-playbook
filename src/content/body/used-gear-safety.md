@@ -1,5 +1,5 @@
 ---
-title: "Used gear safety: *what's fine, what's risky*"
+title: "Used gear safety: what's fine, what's risky"
 summary: "The hand-me-down soccer cleats are fine. The hand-me-down football helmet is not, unless it's been recertified. A category-by-category guide."
 subhub: "safety"
 safetyCategory: "equipment-certification"

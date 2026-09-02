@@ -1,5 +1,5 @@
 ---
-title: "Shoulder dislocation on the field: *do not put it back yourself*"
+title: "Shoulder dislocation on the field: do not put it back yourself"
 summary: "The kid is in pain, the arm hangs wrong, the joint is visibly out. The protocol that prevents the simple injury from becoming a complicated one."
 subhub: "safety"
 safetyCategory: "emergency-response"

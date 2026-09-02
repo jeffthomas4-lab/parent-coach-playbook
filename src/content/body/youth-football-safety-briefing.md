@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth football*"
+title: "What's actually dangerous about youth football"
 summary: "The injuries that show up most often, the ones parents fear most, and the ones the data says matter. Heat, head, knees, in that order."
 subhub: "safety"
 format: "sport-briefing"

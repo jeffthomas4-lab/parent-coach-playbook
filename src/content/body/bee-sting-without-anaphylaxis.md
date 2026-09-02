@@ -1,5 +1,5 @@
 ---
-title: "Bee sting without anaphylaxis: *the local reaction protocol*"
+title: "Bee sting without anaphylaxis: the local reaction protocol"
 summary: "Most stings produce only local reaction. The on-field protocol, the signs that warrant medical attention, and the conversation about future risk."
 subhub: "safety"
 safetyCategory: "emergency-response"

@@ -1,5 +1,5 @@
 ---
-title: "Mental performance coach credentials: *who's legitimate, who's not*"
+title: "Mental performance coach credentials: who's legitimate, who's not"
 summary: "Sport psychology, mental performance, mental skills coaching. The credentialing landscape, the licensed-vs-unlicensed distinction, and what kids actually need."
 subhub: "safety"
 safetyCategory: "coach-vetting"

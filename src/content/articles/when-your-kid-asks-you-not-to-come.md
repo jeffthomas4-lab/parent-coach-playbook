@@ -1,5 +1,5 @@
 ---
-title: When your kid asks you *not to come*
+title: When your kid asks you not to come
 dek: She is fourteen. She wants you to drop her at the field and leave. The right
   move.
 seoDescription: Your daughter is fourteen. She has been quiet on the way to games

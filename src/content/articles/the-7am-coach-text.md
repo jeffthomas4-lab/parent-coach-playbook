@@ -1,5 +1,5 @@
 ---
-title: "The *7am coach text*"
+title: "The 7am coach text"
 dek: "When to answer. When to wait. The reply that keeps the rest of your morning."
 seoDescription: "You wake up at 7:02am to a text from the coach. Practice moved to 5:30 today, can your son make it?"
 topic: "communication"

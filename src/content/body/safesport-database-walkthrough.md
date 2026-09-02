@@ -1,5 +1,5 @@
 ---
-title: "The SafeSport Centralized Disciplinary Database: *the 60-second check every parent should run*"
+title: "The SafeSport Centralized Disciplinary Database: the 60-second check every parent should run"
 summary: "The public, searchable database of coaches and officials with sanctions. How to use it, what it covers, and what it misses."
 subhub: "safety"
 safetyCategory: "coach-vetting"

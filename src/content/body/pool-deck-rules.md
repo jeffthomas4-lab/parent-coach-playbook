@@ -1,5 +1,5 @@
 ---
-title: "Pool deck rules: *shallow-water blackout, breath-holding, supervision*"
+title: "Pool deck rules: shallow-water blackout, breath-holding, supervision"
 summary: "What USA Swimming and Red Cross publish on swim-team pool safety. The breath-holding rule that saves lives, lifeguard ratios, and what coaches and parents should be watching for."
 subhub: "safety"
 safetyCategory: "aquatic"

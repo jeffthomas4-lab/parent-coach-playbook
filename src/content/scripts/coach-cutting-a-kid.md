@@ -1,5 +1,5 @@
 ---
-title: "You have to cut a kid. *Here's what to say.*"
+title: "You have to cut a kid. Here's what to say."
 seoTitle: "What to Say When You Have to Cut a Kid From the Team"
 seoDescription: "The conversation with the kid and the conversation with the parent. What to say, what not to say, and why specific beats kind every time."
 summary: "The conversation with the kid, then the conversation with the parent. Specific beats kind. Here's the script for both."

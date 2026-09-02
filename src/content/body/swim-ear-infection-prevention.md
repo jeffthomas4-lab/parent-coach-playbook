@@ -1,5 +1,5 @@
 ---
-title: "Swim ear infection: *the prevention that takes 30 seconds*"
+title: "Swim ear infection: the prevention that takes 30 seconds"
 summary: "Swimmer's ear is one of the most-frequent youth-swim issues and one of the most-preventable. The drying drops, the swim caps, and the doctor visit timing."
 subhub: "safety"
 safetyCategory: "aquatic"

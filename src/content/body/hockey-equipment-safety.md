@@ -1,5 +1,5 @@
 ---
-title: "Hockey equipment safety: *fit, mouthguards, neck guards*"
+title: "Hockey equipment safety: fit, mouthguards, neck guards"
 summary: "USA Hockey's HECC helmet rule, the BNQ neck-guard standard for goalies, mouthguard requirements, and why a kid in oversized pads is at higher injury risk."
 subhub: "safety"
 safetyCategory: "equipment-certification"

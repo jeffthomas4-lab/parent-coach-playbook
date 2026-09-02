@@ -1,5 +1,5 @@
 ---
-title: "Cleat care that *triples* the lifespan"
+title: "Cleat care that triples the lifespan"
 seoTitle: "How to Care for Cleats So They Actually Last"
 seoDescription: "Hand-wash cleats, skip the dryer, and keep them off pavement. Small habits that make a pair last a full season longer."
 dek: "Hand-washing and keeping them off pavement make cleats last twice as long."

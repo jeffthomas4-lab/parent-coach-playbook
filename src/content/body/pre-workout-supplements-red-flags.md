@@ -1,5 +1,5 @@
 ---
-title: "Pre-workout supplements: *the red flags for youth athletes*"
+title: "Pre-workout supplements: the red flags for youth athletes"
 summary: "The 150-to-400-mg caffeine doses, the undisclosed stimulants, the contamination risk, and why the American Academy of Pediatrics says no for kids."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

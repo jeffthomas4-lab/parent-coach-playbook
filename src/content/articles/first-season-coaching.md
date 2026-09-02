@@ -1,5 +1,5 @@
 ---
-title: Your *first season* coaching. What actually matters.
+title: Your first season coaching. What actually matters.
 dek: You said yes. Here's what to do next.
 seoTitle: "First Season Coaching Guide"
 seoDescription: "A first-season youth coach needs a simple practice plan, clear parent communication, fair standards, and a repeatable close that keeps kids coming back."

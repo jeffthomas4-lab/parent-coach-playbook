@@ -1,5 +1,5 @@
 ---
-title: "The 13-14 *cost-benefit conversation*"
+title: "The 13-14 cost-benefit conversation"
 seoTitle: "Is travel sports worth the cost at 13 or 14?"
 seoDescription: "Before renewing travel sports at 13 or 14, total the full family cost, name what your kid values, and test a lower-cost season before committing."
 dek: "When it is time to do the family math together."

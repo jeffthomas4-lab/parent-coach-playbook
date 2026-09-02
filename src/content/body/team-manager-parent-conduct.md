@@ -1,5 +1,5 @@
 ---
-title: "The team-manager parent: *conduct expectations for the unpaid second-most-important adult*"
+title: "The team-manager parent: conduct expectations for the unpaid second-most-important adult"
 summary: "Information access, financial responsibility, communication boundaries. The role most teams underdocument, and the guidelines that protect everyone."
 subhub: "safety"
 safetyCategory: "conduct"

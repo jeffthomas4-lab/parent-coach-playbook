@@ -1,5 +1,5 @@
 ---
-title: "Chlorine and asthma in competitive swimmers: *the indoor pool air quality problem*"
+title: "Chlorine and asthma in competitive swimmers: the indoor pool air quality problem"
 summary: "Indoor pools with poor ventilation produce chloramines that irritate airways. Why competitive swimmers have elevated asthma rates and what programs and families can do."
 subhub: "safety"
 safetyCategory: "aquatic"

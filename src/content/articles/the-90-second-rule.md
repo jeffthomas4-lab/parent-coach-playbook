@@ -1,5 +1,5 @@
 ---
-title: What you say in the *first 90 seconds*
+title: What you say in the first 90 seconds
 seoTitle: What to Say to Your Kid Right After a Game
 seoDescription: "Use the first 90 seconds after a game to reconnect, not review. Start with warmth, offer water or food, and let your kid decide whether to talk."
 dek: The game is over. Your coaching job is over too. The first sentence belongs to the relationship.

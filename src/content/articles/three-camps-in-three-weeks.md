@@ -1,5 +1,5 @@
 ---
-title: "Three camps in *three weeks*"
+title: "Three camps in three weeks"
 dek: "The burnout calendar. Why this is more common than parents realize."
 seoDescription: "Your kid is eleven, plays travel baseball year-round, and loves it. You signed up for a week of skills camp in mid-June, a tournament team week in late June..."
 topic: "summer-camps"

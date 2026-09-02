@@ -1,5 +1,5 @@
 ---
-title: "Dry the gear without *warping* it"
+title: "Dry the gear without warping it"
 seoTitle: "How to Dry Sports Gear Without Warping It"
 seoDescription: "Boot dryers and box fans dry cleats, skates, and gloves fast without the heat damage a clothes dryer or space heater causes."
 dek: "Heat dries gear fast and ruins it just as fast. Airflow does not."

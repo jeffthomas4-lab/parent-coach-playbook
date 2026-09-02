@@ -1,5 +1,5 @@
 ---
-title: "Tick prevention and Lyme disease: *the protocol for outdoor youth sports*"
+title: "Tick prevention and Lyme disease: the protocol for outdoor youth sports"
 summary: "The repellents that work, the post-practice tick check, the bullseye rash, and when a tick bite needs the doctor."
 subhub: "safety"
 safetyCategory: "weather"

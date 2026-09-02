@@ -1,5 +1,5 @@
 ---
-title: "Your kid *won*. Here's what to say."
+title: "Your kid won. Here's what to say."
 seoTitle: "What to Say to Your Kid After a Win"
 seoDescription: "Wins matter too. What to say after a good game so they enjoy it, without moving the goalposts in the same sentence."
 summary: "Wins matter too. The script that lets them enjoy it without you immediately moving the goalpost."

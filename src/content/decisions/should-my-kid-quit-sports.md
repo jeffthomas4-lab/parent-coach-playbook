@@ -1,5 +1,5 @@
 ---
-title: "Should my kid *quit* sports?"
+title: "Should my kid quit sports?"
 summary: "Sometimes quitting is giving up. Sometimes quitting is growth. The framework that helps you tell the difference."
 theQuestion: "My kid wants to stop. Is this the moment to let them, or the moment to help them push through?"
 publishedAt: 2026-04-26

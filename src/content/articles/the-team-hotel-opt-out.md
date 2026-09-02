@@ -1,5 +1,5 @@
 ---
-title: The *team hotel*. When you have to stay there. When you don't
+title: The team hotel. When you have to stay there. When you don't
 dek: The block is $220 a night. The motel down the street is $98. Can you opt out
   without burning the bridge.
 seoDescription: The team hotel block is $220 a night. The hotel two miles away is

@@ -1,5 +1,5 @@
 ---
-title: When you *can't afford travel* but everyone else is going
+title: When you can't afford travel but everyone else is going
 dek: The honest conversation, the questions worth asking, and the path that does not require pretending.
 seoTitle: "When You Can't Afford Travel Sports"
 seoDescription: "What to tell your kid when travel sports do not fit the family budget, how to ask about aid, and how to build a strong season another way."

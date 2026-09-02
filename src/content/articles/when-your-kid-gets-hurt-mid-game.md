@@ -1,5 +1,5 @@
 ---
-title: When your kid *gets hurt* mid-game
+title: When your kid gets hurt mid-game
 dek: He goes down. He's not getting up. The first ten seconds. The next ten minutes.
 seoDescription: Your kid is on the field. He goes down hard. He is not getting up.
 topic: game-day

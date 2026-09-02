@@ -1,5 +1,5 @@
 ---
-title: The hotel pool *is the practice*
+title: The hotel pool is the practice
 dek: Three days at a tournament, two pool sessions, one kid who doesn't want to play
   tomorrow's game. The trade nobody talks about.
 seoDescription: You drove four hours. You're at a tournament hotel. Your kid spent

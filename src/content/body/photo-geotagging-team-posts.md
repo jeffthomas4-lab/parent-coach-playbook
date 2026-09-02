@@ -1,5 +1,5 @@
 ---
-title: "Photo geotagging in team posts: *what's revealed, what to turn off*"
+title: "Photo geotagging in team posts: what's revealed, what to turn off"
 summary: "Every photo a phone takes carries hidden location data. The settings to check on iPhone and Android, and the team-post norms that protect kids."
 subhub: "safety"
 safetyCategory: "cyber"

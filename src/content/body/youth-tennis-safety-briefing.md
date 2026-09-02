@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth tennis*"
+title: "What's actually dangerous about youth tennis"
 summary: "Tennis elbow, shoulder overuse, heat exposure, and eye injuries. The risk profile of a sport that looks low-contact and produces meaningful overuse patterns."
 subhub: "safety"
 format: "sport-briefing"

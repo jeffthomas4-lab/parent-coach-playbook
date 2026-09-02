@@ -1,5 +1,5 @@
 ---
-title: "Bus charter vetting: *the FMCSA SaferBus tool and the questions to ask*"
+title: "Bus charter vetting: the FMCSA SaferBus tool and the questions to ask"
 summary: "Bus crashes have killed kids on team trips. The federal safety database parents can search before signing the charter contract."
 subhub: "safety"
 safetyCategory: "travel-logistics"

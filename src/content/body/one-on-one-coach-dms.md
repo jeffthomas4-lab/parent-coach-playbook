@@ -1,5 +1,5 @@
 ---
-title: "One-on-one DMs and the *parent-on-CC* standard"
+title: "One-on-one DMs and the parent-on-CC standard"
 summary: "Why SafeSport asks coaches not to direct-message minors privately, what the rule actually allows, and the thirty-second policy your league should have."
 subhub: "safety"
 safetyCategory: "coach-vetting"

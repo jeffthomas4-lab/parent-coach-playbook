@@ -1,5 +1,5 @@
 ---
-title: "Hurricane and tropical storm protocols: *the coastal-team safety framework*"
+title: "Hurricane and tropical storm protocols: the coastal-team safety framework"
 summary: "Tournament cancellation, travel decisions, evacuation considerations, and the National Hurricane Center categories that should guide them."
 subhub: "safety"
 safetyCategory: "weather"

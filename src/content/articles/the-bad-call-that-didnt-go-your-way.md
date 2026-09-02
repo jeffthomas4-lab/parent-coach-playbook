@@ -1,5 +1,5 @@
 ---
-title: The bad call that *didn't go your way*
+title: The bad call that didn't go your way
 dek: The ref blew it. The team lost because of it. The kid is asking about it. What
   you say.
 seoDescription: The ref made a bad call in the third quarter. The score change made

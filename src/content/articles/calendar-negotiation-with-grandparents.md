@@ -1,5 +1,5 @@
 ---
-title: The *calendar negotiation* with grandparents
+title: The calendar negotiation with grandparents
 dek: They want the kids for two weeks in July. The travel team has nationals that
   week. The conversation that doesn't blow up the family.
 seoDescription: Grandma planned the family trip in March. The travel coach added a

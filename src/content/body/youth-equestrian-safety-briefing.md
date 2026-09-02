@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth equestrian sports*"
+title: "What's actually dangerous about youth equestrian sports"
 summary: "Head injury from falls is the leading catastrophic risk. Helmet certifications, helmet-replacement after any fall, and the discipline-specific patterns."
 subhub: "safety"
 format: "sport-briefing"

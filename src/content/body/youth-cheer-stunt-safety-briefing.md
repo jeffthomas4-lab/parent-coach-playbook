@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth cheer and stunt*"
+title: "What's actually dangerous about youth cheer and stunt"
 summary: "Catastrophic-injury rates higher than most other youth sports. The spotting protocols, the progression rules, and the catastrophic-injury data that drives the standards."
 subhub: "safety"
 format: "sport-briefing"

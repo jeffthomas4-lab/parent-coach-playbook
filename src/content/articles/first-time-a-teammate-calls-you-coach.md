@@ -1,5 +1,5 @@
 ---
-title: The first time a teammate calls you *Coach* and your kid hears it
+title: The first time a teammate calls you Coach and your kid hears it
 dek: The small moment that scrambles the family identity. What your kid is processing.
   What to say tonight if anything.
 seoDescription: It's the third practice of the season. A six-year-old you don't know

@@ -1,5 +1,5 @@
 ---
-title: "Wildfire smoke and AQI: *when to cancel a youth practice*"
+title: "Wildfire smoke and AQI: when to cancel a youth practice"
 summary: "The AirNow AQI thresholds for kids, how PM2.5 affects developing lungs, and the practice-modification rule the EPA actually publishes."
 subhub: "safety"
 safetyCategory: "weather"

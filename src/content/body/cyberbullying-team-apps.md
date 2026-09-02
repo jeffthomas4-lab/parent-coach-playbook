@@ -1,5 +1,5 @@
 ---
-title: "Cyberbullying in team apps: *what counts and how to escalate*"
+title: "Cyberbullying in team apps: what counts and how to escalate"
 summary: "The DM thread, the GroupMe screenshot, the Discord side channel. The patterns that show up in youth-sports cyberbullying and the path to escalation."
 subhub: "safety"
 safetyCategory: "cyber"

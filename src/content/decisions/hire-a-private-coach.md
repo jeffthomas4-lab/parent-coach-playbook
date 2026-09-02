@@ -1,5 +1,5 @@
 ---
-title: "Should we hire a *private coach*?"
+title: "Should we hire a private coach?"
 summary: "Private lessons can fast-track skill. They can also turn a kid's sport into a job. The framework for deciding when it's worth it and when it backfires."
 theQuestion: "My kid wants to get better, or we want them to. Is a private coach worth the money and time?"
 publishedAt: 2026-05-05

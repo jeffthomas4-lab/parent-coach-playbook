@@ -1,5 +1,5 @@
 ---
-title: When the body says *no in July*
+title: When the body says no in July
 dek: Persistent soreness, low energy, not bouncing back. The signals worth listening
   to and the conversation about rest.
 seoDescription: July is when bodies break. Six weeks of intense schedules with no

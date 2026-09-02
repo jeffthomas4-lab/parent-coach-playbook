@@ -1,5 +1,5 @@
 ---
-title: "On *not making* varsity"
+title: "On not making varsity"
 seoDescription: "A kid did not make varsity last week. Eighth grade. He'd been on the JV roster all of seventh and most parents said he was a lock."
 format: "note"
 issue: 7

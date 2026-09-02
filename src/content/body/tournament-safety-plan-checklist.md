@@ -1,5 +1,5 @@
 ---
-title: "Tournament weekends: *the team safety plan*"
+title: "Tournament weekends: the team safety plan"
 summary: "The 14 items the team manager should have nailed down before you leave. Print this. Tape it to the inside of the equipment bag."
 subhub: "safety"
 safetyCategory: "travel-logistics"

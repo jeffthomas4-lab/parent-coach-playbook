@@ -1,5 +1,5 @@
 ---
-title: "How to *vet a camp for safety*"
+title: "How to vet a camp for safety"
 dek: "Ask for the policies behind the promise before you sign the check."
 seoTitle: "How to Vet a Summer Camp for Safety"
 seoDescription: "Vet a summer camp by checking written screening, supervision, abuse-prevention, health, emergency, release, and parent-communication policies."

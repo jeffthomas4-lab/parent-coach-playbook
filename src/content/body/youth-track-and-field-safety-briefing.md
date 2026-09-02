@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth track and field*"
+title: "What's actually dangerous about youth track and field"
 summary: "Stress fractures, hamstring injuries, throwing-event acute injuries, and the heat profile of an outdoor spring-summer sport. By event group."
 subhub: "safety"
 format: "sport-briefing"

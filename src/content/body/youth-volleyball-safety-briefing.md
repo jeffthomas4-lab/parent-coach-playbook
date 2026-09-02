@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth volleyball*"
+title: "What's actually dangerous about youth volleyball"
 summary: "Ankles, knees, fingers, and the shoulder overuse that comes with hitting drills. The injury profile of an indoor sport with constant jumping."
 subhub: "safety"
 format: "sport-briefing"

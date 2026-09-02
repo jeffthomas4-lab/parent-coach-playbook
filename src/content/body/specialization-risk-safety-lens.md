@@ -1,5 +1,5 @@
 ---
-title: "Single-sport specialization: *the safety-lens view*"
+title: "Single-sport specialization: the safety-lens view"
 summary: "The American Academy of Pediatrics says wait until 14 to specialize. The injury data, the dropout data, and the safety case parents should hear."
 subhub: "safety"
 safetyCategory: "emergency-response"

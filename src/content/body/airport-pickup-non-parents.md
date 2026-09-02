@@ -1,5 +1,5 @@
 ---
-title: "Airport pickup by non-parents: *consent, ID, and the awkward arrival*"
+title: "Airport pickup by non-parents: consent, ID, and the awkward arrival"
 summary: "The team trip lands at midnight. The pickup is a chaperone, not the kid's parent. The paperwork and the airline-side rules that make this work."
 subhub: "safety"
 safetyCategory: "travel-logistics"

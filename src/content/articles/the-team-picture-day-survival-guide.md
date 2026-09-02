@@ -1,5 +1,5 @@
 ---
-title: The team *picture day* survival guide
+title: The team picture day survival guide
 dek: Six year olds. Forty minutes. Bad lighting. Here is how it goes.
 seoDescription: Picture day is on the schedule. Six-year-olds. The photographer has
   40 minutes. The lighting is whatever it is. You have one shot.

@@ -1,5 +1,5 @@
 ---
-title: "When your kid *forgets gear* at camp"
+title: "When your kid forgets gear at camp"
 dek: "Call the camp first. Replace only what the kid needs today. Save the lecture for never."
 seoTitle: "What to Do When Your Kid Forgets Camp Gear"
 seoDescription: "When your kid forgets gear at camp, call the camp, check the lost-and-found, replace only today's required item, and make Friday pickup easier."

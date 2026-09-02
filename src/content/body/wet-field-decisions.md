@@ -1,5 +1,5 @@
 ---
-title: "Wet field decisions: *when surface conditions make play unsafe*"
+title: "Wet field decisions: when surface conditions make play unsafe"
 summary: "Standing water, soft mud, ice in cold months. The published thresholds and the questions to ask before a game starts on a marginal field."
 subhub: "safety"
 safetyCategory: "weather"

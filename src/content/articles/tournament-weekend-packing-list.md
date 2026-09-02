@@ -1,5 +1,5 @@
 ---
-title: The tournament weekend *packing list*.
+title: The tournament weekend packing list.
 dek: What to bring, what to leave, what you'll wish you had.
 seoDescription: "A practical tournament weekend packing list for sports parents. Covers athlete gear, food, parent survival, sibling logistics, and car setup. Sport-specific callouts for..."
 topic: season-ops

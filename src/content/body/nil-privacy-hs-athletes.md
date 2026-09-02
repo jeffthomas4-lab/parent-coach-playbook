@@ -1,5 +1,5 @@
 ---
-title: "NIL and privacy for HS athletes: *what changed, what to know*"
+title: "NIL and privacy for HS athletes: what changed, what to know"
 summary: "Name, Image, Likeness deals are legal for high school athletes in most states now. The privacy implications, the contract issues, and the conversation parents need to have."
 subhub: "safety"
 safetyCategory: "cyber"

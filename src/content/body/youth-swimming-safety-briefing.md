@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth swimming*"
+title: "What's actually dangerous about youth swimming"
 summary: "Shallow-water blackout, the breath-holding rule, shoulder overuse, and the open-water risks at meets outside the pool."
 subhub: "safety"
 format: "sport-briefing"

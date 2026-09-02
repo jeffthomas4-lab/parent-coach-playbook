@@ -1,5 +1,5 @@
 ---
-title: The night before *tryouts* when you're also the coach
+title: The night before tryouts when you're also the coach
 dek: Your job tonight is parent. Your job tomorrow morning is coach. The seam between
   the two is the hard part. Here's how to keep them straight.
 seoDescription: You already know who is making the team. You decided two days ago.

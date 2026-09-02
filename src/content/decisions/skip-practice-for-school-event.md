@@ -1,5 +1,5 @@
 ---
-title: "Should we let our kid *skip practice* for a school event?"
+title: "Should we let our kid skip practice for a school event?"
 summary: "School play. Field trip. Birthday party for their best friend. The conversation about competing priorities and the rule that protects both."
 theQuestion: "There's a school event the same night as practice. Do we make them go to practice anyway?"
 publishedAt: 2026-05-05

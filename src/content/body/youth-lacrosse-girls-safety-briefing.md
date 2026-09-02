@@ -1,5 +1,5 @@
 ---
-title: "What's actually dangerous about *youth girls' lacrosse*"
+title: "What's actually dangerous about youth girls' lacrosse"
 summary: "Different rules, different gear, different injury profile. Concussion from stick-to-head and head-to-head, ankle and knee injuries, and the goggles question."
 subhub: "safety"
 format: "sport-briefing"

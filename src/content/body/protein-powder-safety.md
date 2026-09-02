@@ -1,5 +1,5 @@
 ---
-title: "Protein powder safety: *contamination, third-party testing, and what kids actually need*"
+title: "Protein powder safety: contamination, third-party testing, and what kids actually need"
 summary: "The supplement industry is regulated less than food. Independent testing has found undisclosed substances in many products. What certifications matter."
 subhub: "safety"
 safetyCategory: "nutrition-substance"

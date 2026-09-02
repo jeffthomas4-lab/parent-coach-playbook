@@ -1,5 +1,5 @@
 ---
-title: "Drowning rescue and the post-rescue window: *what happens after the pull-out*"
+title: "Drowning rescue and the post-rescue window: what happens after the pull-out"
 summary: "The first 10 minutes after a drowning rescue. The ER decision. What 'secondary drowning' actually is and when to worry."
 subhub: "safety"
 safetyCategory: "emergency-response"

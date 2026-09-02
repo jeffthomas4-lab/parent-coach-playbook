@@ -1,5 +1,5 @@
 ---
-title: "Food allergies on the road: *the restaurant rules that work*"
+title: "Food allergies on the road: the restaurant rules that work"
 summary: "The chef card, the questions to ask, the kitchen tour. How to feed a kid with a serious allergy on a tournament weekend without an ER visit."
 subhub: "safety"
 safetyCategory: "travel-logistics"

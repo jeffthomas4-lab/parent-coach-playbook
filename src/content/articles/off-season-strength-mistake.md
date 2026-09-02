@@ -1,5 +1,5 @@
 ---
-title: The off-season *strength mistake* most parents make
+title: The off-season strength mistake most parents make
 dek: More volume is not more progress. The age-appropriate program nobody runs and
   what to do instead.
 seoDescription: The off-season strength mistake is volume. Three sessions a week,

@@ -1,5 +1,5 @@
 ---
-title: "TSA and youth sports gear: *what flies, what doesn't*"
+title: "TSA and youth sports gear: what flies, what doesn't"
 summary: "Bats are checked. Sticks are checked. Skates are carry-on or checked. The TSA rules for the gear that doesn't fit a normal suitcase."
 subhub: "safety"
 safetyCategory: "travel-logistics"

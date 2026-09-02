@@ -1,5 +1,5 @@
 ---
-title: "Clean the helmet without *wrecking* it"
+title: "Clean the helmet without wrecking it"
 seoTitle: "How to Clean a Football Helmet Without Ruining It"
 seoDescription: "Mild soap and water clean a helmet safely. Commercial cleaners, bleach, and solvents can degrade the shell and void the manufacturer's warranty."
 dek: "Dish soap and water clean it safely. Commercial cleaners can void the warranty."

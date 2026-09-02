@@ -1,5 +1,5 @@
 ---
-title: What my eight-year-old said in *the car last week*
+title: What my eight-year-old said in the car last week
 seoDescription: You're driving home from practice. Your kid is in the back seat, helmet
   of hair smashed to one side, picking at a hole in his sock.
 format: note

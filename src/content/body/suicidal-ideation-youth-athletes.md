@@ -1,5 +1,5 @@
 ---
-title: "Suicidal ideation in youth athletes: *recognize, respond, 988*"
+title: "Suicidal ideation in youth athletes: recognize, respond, 988"
 summary: "The signs that warrant immediate action. The 988 Lifeline. What to do, what not to do, and how to support a kid in crisis."
 subhub: "safety"
 safetyCategory: "crisis-mental-health"

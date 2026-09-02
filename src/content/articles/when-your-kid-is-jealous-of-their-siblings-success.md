@@ -1,5 +1,5 @@
 ---
-title: "When your kid is *jealous of their sibling's success*"
+title: "When your kid is jealous of their sibling's success"
 dek: "The other one made varsity. Yours didn't. The dinner table is a minefield. Here is the work."
 seoDescription: "You have two kids. The older one made varsity as a freshman. The younger one is a sophomore on JV. The dinner table has been quiet for three weeks."
 topic: "the-hard-stuff"
