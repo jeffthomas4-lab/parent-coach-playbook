@@ -31,14 +31,19 @@ describe('test engineering contract', () => {
 
     expect(pkg.scripts['test:unit:coverage']).toContain('vitest.unit.config.ts');
     expect(pkg.scripts['test:unit:coverage']).toContain('--coverage');
-    expect(pkg.scripts['test:integration']).toContain('vitest.integration.config.ts');
+    const integrationCommand = pkg.scripts['test:integration'];
+    expect(integrationCommand).toContain('vitest.integration.config.ts');
+    expect(integrationCommand).toContain('--exclude tests/crm-adapter.test.ts');
+    expect(integrationCommand).toContain(
+      '&& vitest run --config vitest.integration.config.ts tests/crm-adapter.test.ts',
+    );
 
     // ci:release is the single local gate now. It must still reach integration.
     expect(pkg.scripts['ci:release']).toContain('npm run test:integration');
     expect(pkg.scripts['ci:release']).toContain('npm run audit:gate');
   });
 
-  it('runs disposable-D1 integration tests in one deterministic worker fork', async () => {
+  it('runs each integration process in one deterministic worker fork', async () => {
     const config = await read('vitest.integration.config.ts');
     expect(config).toContain("pool: 'forks'");
     expect(config).toContain('maxWorkers: 1');
