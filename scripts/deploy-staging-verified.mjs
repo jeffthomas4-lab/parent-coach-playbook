@@ -9,7 +9,13 @@ const FALSE_FEATURE_FLAGS = [
   'CAMP_CLAIMS_ENABLED', 'CAMP_REVIEWS_ENABLED', 'TRUST_INTAKE_ENABLED',
   'DEMAND_TELEMETRY_ENABLED', 'IDEMPOTENCY_CLEANUP_ENABLED',
   'PCD_CUSTOMER_FOUNDATION_ENABLED', 'PCD_COMMERCE_TEST_MODE_ENABLED',
+  'PCD_CRM_ADAPTER_ENABLED',
 ];
+const CRM_IDENTIFIERS = {
+  PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
+  PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
+  PCD_CRM_SOURCE_ID: 'source-pcd-activity-radar',
+};
 
 function normalized(value) {
   return String(value ?? '').replaceAll('\\', '/');
@@ -41,6 +47,17 @@ export function validateStagingDeploymentManifest(manifest, { expectedConfigPath
   const r2Names = new Set((manifest.r2_buckets ?? []).map((binding) => binding.bucket_name));
   if (!r2Names.has('parent-coach-desk-staging-photos')) errors.push('missing required isolated staging R2 binding');
   if (r2Names.has('activityradar-photos')) errors.push('production R2 binding is forbidden in staging deploy');
+  const crmServices = (manifest.services ?? []).filter((service) => service.binding === 'CRM_ADAPTER');
+  if (crmServices.length !== 1 || crmServices[0]?.service !== 'field-forge-crm-staging') {
+    errors.push('CRM_ADAPTER must target field-forge-crm-staging');
+  }
+  for (const [name, expected] of Object.entries(CRM_IDENTIFIERS)) {
+    if (manifest.vars?.[name] !== expected) errors.push(`${name} must equal ${expected}`);
+  }
+  const requiredSecrets = new Set(manifest.secrets?.required ?? []);
+  if (!requiredSecrets.has('PCD_CRM_ADAPTER_HMAC_SECRET')) {
+    errors.push('missing required staging secret declaration: PCD_CRM_ADAPTER_HMAC_SECRET');
+  }
   return errors;
 }
 

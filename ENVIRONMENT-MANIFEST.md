@@ -49,7 +49,10 @@ is no longer the current state and should not be read as one.
 | R2 (`PHOTOS`) | `parent-coach-desk-staging-photos`. Dedicated empty bucket, distinct from `activityradar-photos`. |
 | KV (`SESSION`) | id `59cbf275ba16459c8f76ff39b033f748`. Distinct from production's SESSION KV. |
 | Rate limiters | Same five names as production, namespace ids `9101xx` (distinct from production's `9102xx`). |
-| Feature flags | All `*_ENABLED` vars default `false` in staging, same as production — staging does not silently turn on a feature production has gated off. |
+| CRM Service Binding | `CRM_ADAPTER` targets only `field-forge-crm-staging`. The receiver must exist before this caller is deployed. |
+| CRM adapter identifiers | Producer `pcd-activity-radar`; target workspace `ws-sightsmash`; governed source `source-pcd-activity-radar`. The source row is not created by this config and remains a separate data gate. |
+| CRM adapter secret name | `PCD_CRM_ADAPTER_HMAC_SECRET` is declared by name only. No value is stored here. |
+| Feature flags | All `*_ENABLED` vars, including `PCD_CRM_ADAPTER_ENABLED`, default `false` in staging — the binding cannot emit until a separate connected-journey approval turns the gate on. |
 | Automated isolation gate | `scripts/deploy-staging-verified.mjs`'s `validateStagingDeploymentManifest()` explicitly **forbids** the D1 database names `activity-radar`, `forge-command`, and `parent-coach-desk-ops-production` from appearing anywhere in the built staging manifest, and requires the isolated staging names instead. This is the standard's "automated validation fails closed when a lower ring points at a production data-bearing resource" requirement, already implemented — confirmed by reading the script's source, not by inference. |
 | Verification state | **Read-back verified 2026-07-30**: staging D1/PCD_OPS_DB ids cross-checked against the live Cloudflare D1 database list and confirmed distinct from every production id above. |
 

@@ -16,6 +16,18 @@
     "crons": ["17 */6 * * *"]
   },
 
+  // Staging-only internal transport. The receiver must already exist; the
+  // runtime gate below remains false until the connected staging journey is approved.
+  "services": [
+    {
+      "binding": "CRM_ADAPTER",
+      "service": "field-forge-crm-staging"
+    }
+  ],
+  "secrets": {
+    "required": ["PCD_CRM_ADAPTER_HMAC_SECRET"]
+  },
+
   // Astro 6+'s Cloudflare adapter (v13+) ships its own Workers entrypoint —
   // "main" points at that package export, not a dist/_worker.js build output
   // (that path was the old v12/Pages-era adapter shape). "assets" replaces
@@ -121,6 +133,10 @@
     "PCD_MAINTENANCE_MODE": "false",
     "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
     "PCD_COMMERCE_TEST_MODE_ENABLED": "false",
+    "PCD_CRM_ADAPTER_ENABLED": "false",
+    "PCD_CRM_PRODUCER_WORKSPACE_ID": "pcd-activity-radar",
+    "PCD_CRM_TARGET_WORKSPACE_ID": "ws-sightsmash",
+    "PCD_CRM_SOURCE_ID": "source-pcd-activity-radar",
     "EDITORIAL_LIFECYCLE_ENABLED": "false",
     "PROOF_SUBMIT_ENABLED": "false",
     "BABYLOVE_AUTOPUBLISH_ENABLED": "false"
