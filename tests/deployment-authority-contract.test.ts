@@ -56,7 +56,7 @@ describe('deployment authority', () => {
     expect(smoke).toMatch(/usage: smoke-worker-deployment\.mjs/);
   });
 
-  it('declares production runtime secret names without values and keeps staging optional', async () => {
+  it('declares runtime secret names without values and limits staging to the CRM transport secret', async () => {
     const [production, staging] = await Promise.all([
       readFile('wrangler.production.jsonc', 'utf8'),
       readFile('wrangler.jsonc', 'utf8'),
@@ -71,7 +71,10 @@ describe('deployment authority', () => {
     ];
     expect(production).toContain('"secrets"');
     for (const name of expected) expect(production).toContain(`"${name}"`);
-    expect(staging).not.toContain('"secrets"');
+    expect(staging).toContain('"secrets"');
+    expect(staging).toContain('"PCD_CRM_ADAPTER_HMAC_SECRET"');
+    for (const name of expected) expect(staging).not.toContain(`"${name}"`);
+    expect(staging).not.toMatch(/PCD_CRM_ADAPTER_HMAC_SECRET"\s*:\s*"/);
     expect(production).not.toMatch(/(?:AGENT_RUNS_TOKEN|BABYLOVE_API_KEY|BABYLOVE_WEBHOOK_TOKEN|BULK_IMPORT_TOKEN|CRON_KEY|GITHUB_TOKEN)"\s*:\s*"/);
   });
 });

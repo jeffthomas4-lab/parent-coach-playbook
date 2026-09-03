@@ -159,4 +159,4 @@ Not until fastball mechanics are solid and a qualified coach is guiding the proc
 
 - [Youth Baseball for Parents: Cost, Gear, What to Expect | Parent Coach Desk](/sports/baseball/)
 - [Softball Parent Guide: Gear, Costs and Season Prep | Parent Coach Desk](/sports/softball/)
-- [USA vs USSSA Bats: Which One Does Your Kid Need?](https://blog.parentcoachdesk.com/blog/usa-vs-usssa-bats/)
+- [USA vs USSSA Bats: Which One Does Your Kid Need?](/game/usa-vs-usssa-bats/)

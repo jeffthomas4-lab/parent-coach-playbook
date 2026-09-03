@@ -85,7 +85,7 @@ Once you have your numbers, the process itself is mechanical. It just takes doin
 
 **Pro Tip:** *Ask your program director whether volunteering for a team role, like scorekeeper or equipment coordinator, comes with a reduced fee. Many programs quietly offer this and never mention it unless you ask.*
 
-If you want a deeper breakdown of category-by-category costs before you commit to a full season, Parentcoachdesk's guide on [planning and saving for youth sports costs](https://blog.parentcoachdesk.com/blog/youth-sports-costs/) walks through the long-term version of this same math.
+If you want a deeper breakdown of category-by-category costs before you commit to a full season, Parentcoachdesk's guide on [planning and saving for youth sports costs](/game/youth-sports-costs/) walks through the long-term version of this same math.
 
 ## What's the Best Way to Split and Collect Team Money?
 
@@ -193,7 +193,7 @@ The budgeting steps and figures above draw from established financial-education 
 
 ## Recommended
 
-- [Youth Sports Costs for Parents: How to Plan and Save](https://blog.parentcoachdesk.com/blog/youth-sports-costs/)
+- [Youth Sports Costs for Parents: How to Plan and Save](/game/youth-sports-costs/)
 - [Parent-Coach Gear Guide: What You Actually Need on the Bench](/what-to-buy/parent-coach-gear/)
 - [Youth Baseball Gear List by Age: What to Buy (and Skip)](/what-to-buy/baseball/)
 - [Start here: the parents' guide to youth sports](/start-here/)

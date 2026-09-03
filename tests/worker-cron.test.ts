@@ -162,12 +162,13 @@ describe('camps-sweep scheduler', () => {
   });
 
   it('fails the scheduled invocation on an unhealthy sweep', async () => {
-    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
-      Response.json({ ok: false, error: 'broken' }),
+    vi.spyOn(globalThis, 'fetch').mockImplementation(
+      async () => Response.json({ ok: false, error: 'broken' }),
     );
+    const ctx = { waitUntil: vi.fn() } as unknown as ExecutionContext;
 
     await expect(
-      worker.scheduled({ scheduledTime: Date.UTC(2026, 6, 16, 13) } as ScheduledEvent, makeEnv(), {} as ExecutionContext),
+      worker.scheduled({ scheduledTime: Date.UTC(2026, 6, 16, 13) } as ScheduledEvent, makeEnv(), ctx),
     ).rejects.toThrow('ok:false');
   });
 });
