@@ -90,7 +90,7 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
         // a real Array is silently ignored, so `config` never applies and no
         // hit is ever sent. This is why the official snippet uses a function
         // declaration instead of an arrow function.
-        function gtag() { (window as any).dataLayer.push(arguments); }
+        function gtag(..._args: unknown[]) { (window as any).dataLayer.push(arguments); }
         (window as any).gtag = gtag;
         gtag('js', new Date());
         gtag('config', GA_ID, {
