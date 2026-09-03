@@ -34,7 +34,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | drafted 2026-07-30 (src/content/articles/the-concussion-call-is-not-yours-to-make.md) |
 | Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | drafted 2026-08-03 (src/content/articles/heat-lightning-decision-trees.md) |
 | First-aid kit for the dugout (what's in it) | Editorial | Team Parent · Game day | covered (src/content/guides/first-aid-kit.md and src/content/body/sideline-first-aid-kit.md already cover kit contents in detail; checked 2026-08-03) |
-| The pre-season parent meeting agenda | Editorial | Lead magnet (PDF) | PIPELINE |
+| The pre-season parent meeting agenda | Editorial | Lead magnet (PDF) | PIPELINE (skipped by Ed 2026-09-02: destination is a standalone PDF lead magnet, not an articles/news/guides collection entry Ed's workflow can draft; needs a separate PDF-production pass) |
 | What to email parents on day one | Editorial | Team Parent · Communication | covered (src/content/articles/the-first-parent-email-of-the-season.md; checked 2026-08-03) |
 
 ---
@@ -93,7 +93,7 @@ Scripts and frameworks for the hardest parent conversations.
 | How to talk to a problem parent on your team | Editorial | Team Parent · Communication | covered (src/content/articles/when-you-have-to-confront-a-parent-yourself.md, when-the-team-needs-to-talk-to-a-parent-collectively.md, and the-other-team-parent-yelling.md already cover confronting/talking to a problem parent, one-on-one and collectively; checked 2026-08-31) |
 | How to handle a parent yelling at the ref | Editorial | Team Parent · Communication | covered (src/content/articles/when-a-parent-yells-at-the-ref.md already covers this directly; checked 2026-08-31) |
 | Disagreeing with your co-coach in front of the team | Editorial | Team Parent · Communication | drafted 2026-08-31 (src/content/articles/disagreeing-with-your-co-coach-in-front-of-the-team.md; distinct from the-assistant-coach-relationship.md, which covers season-long role setup, not the in-the-moment protocol; no hero, no OpenAI API key available this run) |
-| The friend you coached with who isn't coming back | Editorial | Drive Home | PIPELINE |
+| The friend you coached with who isn't coming back | Editorial | Drive Home | drafted 2026-09-02 (src/content/articles/the-friend-you-coached-with-who-isnt-coming-back.md; no hero, no OpenAI API key available this run, pcd-hero-image-backfill disabled since 2026-07-31) |
 | What to say when a parent asks "why isn't my kid pitching?" | Editorial | Team Parent · Communication | COVERED (how-to-talk-to-the-coach-about-playing-time.md, playing-time-how-to-have-the-conversation.md, how-to-handle-playing-time-complaints.md, when-a-parent-emails-about-playing-time.md already cover this ground) |
 
 ---
