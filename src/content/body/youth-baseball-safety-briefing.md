@@ -27,6 +27,7 @@ editorial:
   claudeReviewedAt: 2026-02-22
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. Pitch Smart is the load-bearing primary source for arm care. Commotio cordis section sourced and proportionate."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Baseball looks slow. The injury profile says otherwise. The list below is what actually shows up most in published youth-baseball epidemiology, ranked by frequency and severity.

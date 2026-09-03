@@ -24,6 +24,7 @@ editorial:
   claudeReviewedAt: 2026-02-25
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. ACEP, AAP cited. Companion piece to rib-injury-splenic-concern; broader-organ coverage."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 The rib-injury piece covers the splenic-injury concern from lower-left torso hits. This piece broadens that framework. The spleen, kidney, liver, and (rarely) pancreas can all be injured by direct blunt-force trauma to the abdomen. The protocols and red flags are similar across organs.

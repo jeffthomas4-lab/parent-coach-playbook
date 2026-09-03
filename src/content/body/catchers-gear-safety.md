@@ -26,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-01-15
   status: claude-reviewed
   reviewerNotes: "Little League rule on the dangling throat protector is the most useful actionable piece. NOCSAE on the mask, USA Baseball on the system."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 The kid behind the plate at 10 years old stops 90 mph foul tips with their face for two hours. The gear is what stands between that kid and a dental clinic. Most parents have never inspected it.

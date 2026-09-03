@@ -26,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-02-27
   status: claude-reviewed
   reviewerNotes: "AAOS, ACEP, AAP cited. The straight-leg-lift reduction is the standard but only with provider supervision."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 The kid plants and pivots. The knee buckles inward. The kneecap slides off the front of the knee toward the outside. Instant severe pain. Sometimes the kneecap pops back into place on its own as the kid extends the leg. Sometimes it stays out, with the knee locked at 30 to 60 degrees of flexion.

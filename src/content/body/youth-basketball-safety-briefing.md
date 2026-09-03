@@ -27,6 +27,7 @@ editorial:
   claudeReviewedAt: 2026-01-25
   status: claude-reviewed
   reviewerNotes: "USA Basketball, AAP, AAOS, CDC cited. Ankle and ACL data is well-documented in published youth-basketball epidemiology."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Basketball looks safer than football because there are no pads and no tackling. The injury data tells a different story. Most published youth-basketball epidemiology places it in the top three sports for total injury incidence per athlete-exposure in the relevant age groups, slightly above soccer at older ages.

@@ -27,6 +27,7 @@ editorial:
   claudeReviewedAt: 2026-03-04
   status: claude-reviewed
   reviewerNotes: "USA Softball, Little League Softball, AAOS cited. Distinguishes from baseball where windmill mechanics matter."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Softball injury patterns rhyme with baseball but are not identical. The windmill pitch puts different stress on the shoulder. The base paths are tighter. The ball is bigger and slower. The list below is what shows up most in published youth-softball epidemiology, ranked by frequency.

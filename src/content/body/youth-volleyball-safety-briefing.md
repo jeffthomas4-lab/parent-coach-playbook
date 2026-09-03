@@ -27,6 +27,7 @@ editorial:
   claudeReviewedAt: 2026-01-21
   status: claude-reviewed
   reviewerNotes: "USA Volleyball, AAOS, NATA cited. The ankle and patellar-tendon injury data is well-published."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Volleyball looks like one of the safer team sports. Indoor surface, no contact across the net, controlled environment. The injury data is more interesting than the surface impression. The list below is what shows up most in published youth-volleyball epidemiology, ranked by frequency.

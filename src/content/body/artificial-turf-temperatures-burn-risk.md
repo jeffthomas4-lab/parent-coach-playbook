@@ -26,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-03-05
   status: claude-reviewed
   reviewerNotes: "Penn State surface research and KSI cited. The 40 to 60°F differential is the published Penn State finding."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Most parents and coaches think of artificial turf as the same surface as grass for thermal purposes. It is not. Synthetic turf surfaces can run 40 to 60°F hotter than the air temperature on a sunny day. Penn State's Center for Sports Surface Research has measured turf-surface temperatures above 160°F when air temperatures were under 90°F.

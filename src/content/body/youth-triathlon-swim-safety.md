@@ -12,8 +12,8 @@ governingBodies:
     url: "https://www.usatriathlon.org/"
   - name: "American Red Cross"
     url: "https://www.redcross.org/"
-  - name: "United States Coast Guard (USCG): Water Safety"
-    url: "https://www.uscg.mil/water-safety/"
+  - name: "United States Coast Guard (USCG): Boating Safety"
+    url: "https://www.uscg.mil/Boating-Safety/"
 editorial:
   qualityGrade: 8
   originalityGrade: 9
@@ -26,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-02-08
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. USAT, ARC, USCG cited. The swim leg is where most triathlon fatalities occur in published data."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Triathlon's swim leg is statistically the most-dangerous segment of the sport. Most triathlon fatalities occur during swimming, particularly in mass-start open-water events. Youth triathlon adapts most of these structures with shorter distances and supervised formats, but the core risks remain.

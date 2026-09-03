@@ -11,8 +11,8 @@ governingBodies:
     url: "https://www.usta.com/"
   - name: "American Academy of Orthopaedic Surgeons (AAOS) / OrthoInfo"
     url: "https://orthoinfo.aaos.org/"
-  - name: "International Tennis Federation Junior Tennis"
-    url: "https://www.itftennis.com/juniors"
+  - name: "International Tennis Federation: World Tennis Tour Juniors"
+    url: "https://www.itftennis.com/en/tours/world-tennis-tour-juniors/"
   - name: "American Academy of Ophthalmology (AAO)"
     url: "https://www.aao.org/"
 editorial:
@@ -27,6 +27,7 @@ editorial:
   claudeReviewedAt: 2026-01-24
   status: claude-reviewed
   reviewerNotes: "USTA, AAOS, ITF, AAO cited. Tennis-specific overuse patterns are well-documented."
+  factCheckGoodThrough: 2027-09-01
 ---
 
 Tennis looks like one of the lower-risk youth sports. No contact, no high-velocity collisions, indoor or outdoor surfaces with predictable conditions. The injury data tells a different story for competitive young players. The repetitive overhead motion, the unilateral demand on one side of the body, and the high training volumes in serious junior tennis produce a specific injury profile.
