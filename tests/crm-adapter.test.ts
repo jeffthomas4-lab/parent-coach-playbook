@@ -610,6 +610,35 @@ describe('PCD CRM adapter producer', () => {
       .first<{ count: number }>())?.count).toBe(1);
   });
 
+  it('serializes the bounded delivery batch so receiver audit writes cannot contend', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-01T12:00:00.000Z';
+    for (let index = 1; index <= 10; index += 1) {
+      await insertOrganization(intel, { id: `org-serialized-${index}`, updatedAt: at });
+    }
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1, limit: 10 });
+    let inFlight = 0;
+    let maxInFlight = 0;
+    const fetcher: CrmAdapterFetcher = {
+      fetch: vi.fn(async (_input, init) => {
+        inFlight += 1;
+        maxInFlight = Math.max(maxInFlight, inFlight);
+        await new Promise((resolve) => setTimeout(resolve, 1));
+        inFlight -= 1;
+        const body = JSON.parse(String(init?.body));
+        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId });
+      }),
+    };
+
+    await expect(dispatchPcdCrmOutbox(adapterEnv, {
+      fetcher,
+      now: Date.parse(at) + 2,
+      limit: 10,
+    })).resolves.toMatchObject({ claimed: 10, delivered: 10, retried: 0, dead: 0 });
+    expect(maxInFlight).toBe(1);
+  });
+
   it('classifies missing receiver, 4xx, 5xx and timeout paths with an eight-attempt ceiling', async () => {
     const { ops, intel } = await databases();
     const at = '2026-09-01T12:00:00.000Z';

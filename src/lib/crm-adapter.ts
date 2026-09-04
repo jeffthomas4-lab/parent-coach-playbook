@@ -1118,30 +1118,42 @@ export async function dispatchPcdCrmOutbox(
     .bind(leaseId, now + 60_000, now, now, now, MAX_ATTEMPTS, limit).all<OutboxRow>();
   if (!claimed.results.length) return { enabled: true, claimed: 0, delivered: 0, retried: 0, dead: 0 };
 
-  const outcomes = await Promise.all(claimed.results.map(async (row) => {
-    if (!fetcher) return { row, kind: 'retry' as const, status: 0, code: 'receiver_unavailable', receiptId: null as string | null };
+  const outcomes: Array<{
+    row: OutboxRow;
+    kind: 'delivered' | 'retry' | 'dead';
+    status: number;
+    code: string | null;
+    receiptId: string | null;
+  }> = [];
+  for (const row of claimed.results) {
+    if (!fetcher) {
+      outcomes.push({ row, kind: 'retry', status: 0, code: 'receiver_unavailable', receiptId: null });
+      continue;
+    }
     try {
       const response = await signedFetch(fetcher, secret, config.producerWorkspaceId, EVENT_SCOPE, row.idempotency_key, 'events', row.payload_json);
       const responseBody = await readBoundedJson(response);
       const receiptId = typeof responseBody?.receiptId === 'string' ? responseBody.receiptId.slice(0, 180) : null;
       const accepted = responseBody?.accepted === true && responseBody?.eventId === row.event_id && receiptId;
       if ((response.status === 200 || response.status === 202) && accepted) {
-        return { row, kind: 'delivered' as const, status: response.status, code: null, receiptId };
+        outcomes.push({ row, kind: 'delivered', status: response.status, code: null, receiptId });
+        continue;
       }
       if (response.status >= 400 && response.status < 500) {
-        return { row, kind: 'dead' as const, status: response.status, code: `receiver_${response.status}`, receiptId: null };
+        outcomes.push({ row, kind: 'dead', status: response.status, code: `receiver_${response.status}`, receiptId: null });
+        continue;
       }
-      return { row, kind: 'retry' as const, status: response.status, code: response.status ? `receiver_${response.status}` : 'receiver_invalid_response', receiptId: null };
+      outcomes.push({ row, kind: 'retry', status: response.status, code: response.status ? `receiver_${response.status}` : 'receiver_invalid_response', receiptId: null });
     } catch (error) {
-      return {
+      outcomes.push({
         row,
-        kind: 'retry' as const,
+        kind: 'retry',
         status: 0,
         code: error instanceof DOMException && error.name === 'AbortError' ? 'receiver_timeout' : 'receiver_unavailable',
         receiptId: null,
-      };
+      });
     }
-  }));
+  }
 
   const updates: D1PreparedStatement[] = [];
   let delivered = 0;
