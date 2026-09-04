@@ -10,7 +10,7 @@ sport: "multi-sport"
 age: "all-ages"
 topic: "communication"
 seasonPhase: "pre-season"
-publishedAt: 2026-08-30
+publishedAt: 2026-09-04
 featured: false
 draft: false
 hero: "/illustrations/two-schedules-side-by-side.webp"
