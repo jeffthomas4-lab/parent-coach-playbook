@@ -11,6 +11,8 @@ phase: "drive-there"
 topic: "season-ops"
 publishedAt: 2026-08-31
 draft: false
+hero: "/illustrations/swimming-lane-lines-empty.webp"
+heroAlt: "An empty swimming pool sits at early morning with lane lines strung across still water, natatorium windows glowing behind."
 editorial:
   qualityGrade: 7
   originalityGrade: 7

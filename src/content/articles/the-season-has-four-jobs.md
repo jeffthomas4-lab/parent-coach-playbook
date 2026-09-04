@@ -13,6 +13,8 @@ seasonPhase: "pre-season"
 publishedAt: 2026-08-30
 featured: false
 draft: false
+hero: "/illustrations/two-schedules-side-by-side.webp"
+heroAlt: "Two printed schedule sheets lie side by side on a wooden table with a pen across one, the grids visible but text unreadable."
 editorial:
   qualityGrade: 8
   originalityGrade: 7
