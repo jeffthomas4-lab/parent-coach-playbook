@@ -117,6 +117,9 @@ interface BackfillRunRow {
   reconciliation_cursor_sequence: number;
   reconciliation_window_ordinal: number;
   reconciliation_complete: number;
+  reconciliation_failure_count: number;
+  reconciliation_next_attempt_at: number;
+  reconciliation_halted: number;
 }
 
 interface BackfillResult {
@@ -302,7 +305,8 @@ async function contactDraft(
     verifiedAt: row.verified_at,
     deletedAt: row.deleted_at,
   }));
-  if (row.deleted_at || (row.contact_context !== 'professional' && previouslyObserved)) {
+  const restricted = Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
+  if (row.deleted_at || (restricted && previouslyObserved)) {
     return {
       eventId: await stableEventId('contact-deleted', namespace, row.id, contentHash),
       eventType: 'contact.deleted.v1',
@@ -320,7 +324,7 @@ async function contactDraft(
       },
     };
   }
-  if (row.contact_context !== 'professional') return null;
+  if (restricted) return null;
   const type = row.email ? 'email' : row.phone ? 'phone' : null;
   const value = row.email ?? row.phone;
   if (!type || !value || !row.source_url) return null;
@@ -361,7 +365,7 @@ async function previouslyObservedContactIds(
   rows: PcdContactProjectionInput[],
 ): Promise<Set<string>> {
   const ids = [...new Set(rows
-    .filter((row) => !row.deleted_at && row.contact_context !== 'professional')
+    .filter((row) => !row.deleted_at && (Number(row.do_not_contact) === 1 || row.contact_context !== 'professional'))
     .map((row) => row.id))];
   if (!ids.length) return new Set();
   const placeholders = ids.map(() => '?').join(',');
@@ -407,11 +411,11 @@ async function enqueueDrafts(
         WHERE subject_type='contact' AND subject_id=? AND last_event_id IN (
           SELECT event_id FROM crm_adapter_outbox
           WHERE producer_workspace_id=? AND subject_type='contact' AND subject_id=?
-            AND event_type='contact.observed.v1' AND status IN ('pending','retry','leased')
+            AND event_type='contact.observed.v1' AND status IN ('pending','retry')
         )`).bind(draft.subjectId, producerWorkspaceId, draft.subjectId),
       db.prepare(`DELETE FROM crm_adapter_outbox
         WHERE producer_workspace_id=? AND subject_type='contact' AND subject_id=?
-          AND event_type='contact.observed.v1' AND status IN ('pending','retry','leased')`)
+          AND event_type='contact.observed.v1' AND status IN ('pending','retry')`)
         .bind(producerWorkspaceId, draft.subjectId),
     );
   }
@@ -647,7 +651,8 @@ async function ensureBackfillRun(
   const runId = `pcd-backfill:${await sha256(`${config.producerWorkspaceId}:${config.targetWorkspaceId}:${config.sourceNotBeforeMs}`)}`;
   let run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
     status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete,lease_id,lease_expires_at,
-    reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete
+    reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete,
+    reconciliation_failure_count,reconciliation_next_attempt_at,reconciliation_halted
     FROM crm_adapter_backfill_runs
     WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
     .first<BackfillRunRow>();
@@ -675,7 +680,8 @@ async function ensureBackfillRun(
     ).run();
     run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
       status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete,lease_id,lease_expires_at,
-      reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete
+      reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete,
+      reconciliation_failure_count,reconciliation_next_attempt_at,reconciliation_halted
       FROM crm_adapter_backfill_runs
       WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
       .first<BackfillRunRow>();
@@ -836,7 +842,8 @@ export async function projectPcdCrmBackfill(
           );
           const disposition = draft
             ? draft.eventType === 'contact.deleted.v1' ? 'tombstoned' : 'projected'
-            : row.contact_context === 'unknown' ? 'held_context_review'
+            : Number(row.do_not_contact) === 1 ? 'rejected_suppressed'
+              : row.contact_context === 'unknown' ? 'held_context_review'
               : row.contact_context !== 'professional' ? 'rejected_nonprofessional_context'
                 : row.email || row.phone ? 'rejected_missing_source' : 'rejected_missing_channel';
           return { row, draft, disposition };
@@ -1109,6 +1116,25 @@ function disabledBackfillReconciliation(): BackfillReconciliationResult {
   };
 }
 
+function reconciliationRetryAt(now: number, failureCount: number): number {
+  return now + Math.min(3_600_000, 30_000 * (2 ** Math.max(0, failureCount - 1)));
+}
+
+async function recordBackfillReconciliationFailure(
+  db: D1Database,
+  run: BackfillRunRow,
+  leaseId: string,
+  now: number,
+): Promise<void> {
+  const failureCount = Math.min(MAX_ATTEMPTS, Number(run.reconciliation_failure_count) + 1);
+  const halted = failureCount >= MAX_ATTEMPTS ? 1 : 0;
+  const result = await db.prepare(`UPDATE crm_adapter_backfill_runs
+    SET reconciliation_failure_count=?,reconciliation_next_attempt_at=?,reconciliation_halted=?,
+      lease_id=NULL,lease_expires_at=NULL,updated_at=? WHERE id=? AND lease_id=?`)
+    .bind(failureCount, halted ? 0 : reconciliationRetryAt(now, failureCount), halted, now, run.id, leaseId).run();
+  if (Number(result.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_lease_lost');
+}
+
 export async function reconcilePcdCrmBackfill(
   env: PcdCrmAdapterEnv,
   options: { now?: number; fetcher?: CrmAdapterFetcher } = {},
@@ -1123,7 +1149,6 @@ export async function reconcilePcdCrmBackfill(
     throw new Error('pcd_crm_adapter_configuration_missing');
   }
   const db = env.PCD_OPS_DB;
-  const hmacKey = await importHmacKey(secret);
   const now = options.now ?? Date.now();
   const run = await ensureBackfillRun(env, config, now);
   const pass = Number(run.reconciliation_pass);
@@ -1136,6 +1161,10 @@ export async function reconcilePcdCrmBackfill(
       ...disabledBackfillReconciliation(), enabled: true, pass: 2,
       window: Number(run.reconciliation_window_ordinal), completed: true,
     };
+  }
+  if (run.reconciliation_halted === 1) throw new Error('pcd_crm_backfill_reconciliation_halted');
+  if (Number(run.reconciliation_next_attempt_at) > now) {
+    return { ...disabledBackfillReconciliation(), enabled: true, pass, window };
   }
 
   const accounting = await db.prepare(`SELECT
@@ -1167,10 +1196,12 @@ export async function reconcilePcdCrmBackfill(
     if (!rows.results.length) {
       const update = pass === 1
         ? db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_pass=2,reconciliation_cursor_sequence=0,
-            reconciliation_window_ordinal=0,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+            reconciliation_window_ordinal=0,reconciliation_failure_count=0,reconciliation_next_attempt_at=0,
+            reconciliation_halted=0,lease_id=NULL,lease_expires_at=NULL,updated_at=?
           WHERE id=? AND lease_id=? AND reconciliation_pass=1 AND reconciliation_complete=0`).bind(now, run.id, leaseId)
         : db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_complete=1,lease_id=NULL,
-            lease_expires_at=NULL,updated_at=?
+            lease_expires_at=NULL,reconciliation_failure_count=0,reconciliation_next_attempt_at=0,
+            reconciliation_halted=0,updated_at=?
           WHERE id=? AND lease_id=? AND reconciliation_pass=2 AND reconciliation_complete=0`).bind(now, run.id, leaseId);
       const updated = await update.run();
       if (Number(updated.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_lease_lost');
@@ -1198,6 +1229,7 @@ export async function reconcilePcdCrmBackfill(
       events,
     };
     const body = JSON.stringify(manifest);
+    const hmacKey = await importHmacKey(secret);
     const { response, result } = await signedFetchJson(
       fetcher,
       hmacKey,
@@ -1215,8 +1247,7 @@ export async function reconcilePcdCrmBackfill(
       events,
     );
     if (!validResult || !result) {
-      await db.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=NULL,lease_expires_at=NULL,updated_at=?
-        WHERE id=? AND lease_id=?`).bind(now, run.id, leaseId).run();
+      await recordBackfillReconciliationFailure(db, run, leaseId, now);
       leaseReleased = true;
       return { ...disabledBackfillReconciliation(), enabled: true, pass, window };
     }
@@ -1253,7 +1284,8 @@ export async function reconcilePcdCrmBackfill(
           await sha256(stableJson(events)), resultHash, now,
         ),
         db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_cursor_sequence=?,
-            reconciliation_window_ordinal=?,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+            reconciliation_window_ordinal=?,reconciliation_failure_count=0,reconciliation_next_attempt_at=0,
+            reconciliation_halted=0,lease_id=NULL,lease_expires_at=NULL,updated_at=?
           WHERE id=? AND lease_id=? AND reconciliation_pass=? AND reconciliation_cursor_sequence=?
             AND reconciliation_window_ordinal=? AND reconciliation_complete=0`).bind(
           lastSequence, window, now, run.id, leaseId, pass,
@@ -1273,8 +1305,12 @@ export async function reconcilePcdCrmBackfill(
           MAX_ATTEMPTS - 1, now, now, config.producerWorkspaceId, run.id, ...missingIds,
         ));
       }
-      statements.push(db.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=NULL,lease_expires_at=NULL,updated_at=?
-        WHERE id=? AND lease_id=?`).bind(now, run.id, leaseId));
+      const failureCount = Math.min(MAX_ATTEMPTS, Number(run.reconciliation_failure_count) + 1);
+      const halted = failureCount >= MAX_ATTEMPTS ? 1 : 0;
+      statements.push(db.prepare(`UPDATE crm_adapter_backfill_runs
+        SET reconciliation_failure_count=?,reconciliation_next_attempt_at=?,reconciliation_halted=?,
+          lease_id=NULL,lease_expires_at=NULL,updated_at=? WHERE id=? AND lease_id=?`)
+        .bind(failureCount, halted ? 0 : reconciliationRetryAt(now, failureCount), halted, now, run.id, leaseId));
     }
     const results = await db.batch(statements);
     if (requeueIndex >= 0 && Number(results[requeueIndex]?.meta.changes ?? 0) !== missing) {

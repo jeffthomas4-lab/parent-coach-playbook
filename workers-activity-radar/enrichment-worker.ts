@@ -418,7 +418,7 @@ function candidateNames(context: string): { name: string; index: number }[] {
 const MINOR_RISK_URL_RE = /\/(roster|rosters|players?|athletes?|students?|participants?|kids?|campers?|teams?\/|our-?kids|meet-the-(?:team|players|kids))/i;
 
 /** Signals inside a text window that it is describing a child, not a staffer. */
-const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|parent of)\b/i;
+const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|parent of|parent|guardian|student)\b/i;
 
 export interface ScrapedContact {
   fullName: string | null;

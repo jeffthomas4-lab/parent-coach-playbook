@@ -133,6 +133,14 @@ describe('extractContacts — child-safety guardrails', () => {
     expect(extractContacts(html, 'https://club.org/contact', false)).toEqual([]);
   });
 
+  it.each(['Parent Coach', 'Guardian Volunteer Coach', 'Student Coach'])(
+    'drops explicit family or student context even when it also contains a staff title: %s',
+    (title) => {
+      const html = `<p>Taylor Example</p><p>${title}</p><p><a href="mailto:taylor@familymail.example">Email</a></p>`;
+      expect(extractContacts(html, 'https://club.example/staff', true)).toEqual([]);
+    },
+  );
+
   it('never marks a scraped contact public', () => {
     const html = `<p>Dana Reyes</p><p>Camp Director</p><p><a href="mailto:d@org.com">e</a></p>`;
     const out = extractContacts(html, 'https://org.com/staff', true);

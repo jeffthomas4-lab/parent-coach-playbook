@@ -285,8 +285,11 @@ try {
       }
       let reconciliationComplete = false;
       let calls = 0;
+      const retryAt = Number((ops.prepare(`SELECT reconciliation_next_attempt_at value
+        FROM crm_adapter_backfill_runs`).get() as { value: number }).value);
+      const reconciliationNow = Math.max(Date.now(), retryAt) + 1;
       for (; calls < RECONCILIATION_CALLS_PER_STAGE; calls += 1) {
-        const result = await reconcilePcdCrmBackfill(env, { fetcher, now: Date.now() + calls + 1 });
+        const result = await reconcilePcdCrmBackfill(env, { fetcher, now: reconciliationNow + calls });
         if (result.completed) { reconciliationComplete = true; calls += 1; break; }
       }
       if (!reconciliationComplete) {

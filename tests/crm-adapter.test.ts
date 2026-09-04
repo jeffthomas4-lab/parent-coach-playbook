@@ -443,7 +443,46 @@ describe('PCD CRM adapter producer', () => {
     expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher: deliveryFetcher, now: now + 3 }))
       .toMatchObject({ claimed: 1, delivered: 1 });
     expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher: successfulReconciliationFetcher(), now: now + 4 }))
+      .toMatchObject({ checked: false });
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher: successfulReconciliationFetcher(), now: now + 30_003 }))
       .toMatchObject({ checked: true, missing: 0 });
+  });
+
+  it('halts a repeatedly failing historical reconciliation window after eight backed-off attempts', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const startedAt = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-recon-halt', updatedAt: '2026-09-01T12:00:00.000Z' });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    await projectPcdCrmBackfill(adapterEnv, { now: startedAt });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='recon-halt',
+      delivered_at=?,updated_at=?`).bind(startedAt + 1, startedAt + 1).run();
+    const failed: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      return Response.json({
+        producer: 'parent-coach-desk', producerWorkspaceId: body.producerWorkspaceId,
+        declaredHighWater: body.declaredHighWater, receiverHighWater: body.declaredHighWater,
+        missing: [], duplicate: [], stale: [], unauthorized: [], mismatch: [body.events[0]],
+      });
+    }) };
+    let now = startedAt + 2;
+    for (let attempt = 1; attempt <= 8; attempt += 1) {
+      await expect(reconcilePcdCrmBackfill(adapterEnv, { fetcher: failed, now }))
+        .resolves.toMatchObject({ checked: true, mismatch: 1 });
+      const state = await ops.prepare(`SELECT reconciliation_failure_count,reconciliation_next_attempt_at,
+        reconciliation_halted FROM crm_adapter_backfill_runs`).first<{
+          reconciliation_failure_count: number; reconciliation_next_attempt_at: number; reconciliation_halted: number;
+        }>();
+      expect(state?.reconciliation_failure_count).toBe(attempt);
+      expect(state?.reconciliation_halted).toBe(attempt === 8 ? 1 : 0);
+      now = Number(state?.reconciliation_next_attempt_at ?? now) + 1;
+    }
+    await expect(reconcilePcdCrmBackfill(adapterEnv, { fetcher: failed, now }))
+      .rejects.toThrow('pcd_crm_backfill_reconciliation_halted');
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_reconciliation_receipts`)
+      .first<{ count: number }>())?.count).toBe(8);
   });
 
   it('refuses a changed historical boundary and skips a concurrently leased run', async () => {
@@ -889,14 +928,37 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-suppression.example/staff', contactContext: 'professional',
     });
     expect(result.ok).toBe(true);
+    const deliveredFetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
+    }) };
+    await expect(dispatchPcdCrmOutbox(adapterEnv, { fetcher: deliveredFetcher, now: Date.now(), limit: 1 }))
+      .resolves.toMatchObject({ delivered: 1 });
     expect(await setDoNotContact(adapterEnv, result.ok ? result.id : '', 'unsubscribed')).toBe(true);
-    const events = await ops.prepare(`SELECT event_id,payload_json FROM crm_adapter_outbox
+    const events = await ops.prepare(`SELECT event_id,event_type,payload_json FROM crm_adapter_outbox
       WHERE subject_id=? ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{
-        event_id: string; payload_json: string;
+        event_id: string; event_type: string; payload_json: string;
       }>();
     expect(events.results).toHaveLength(2);
     expect(events.results[0]?.event_id).not.toBe(events.results[1]?.event_id);
-    expect(JSON.parse(events.results[1]!.payload_json).payload.doNotContact).toBe(true);
+    expect(events.results[1]?.event_type).toBe('contact.deleted.v1');
+    expect(events.results[1]?.payload_json).not.toContain('morgan@org-suppression.example');
+  });
+
+  it('removes unsent observed PII when a professional contact is suppressed before dispatch', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const result = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-unsent-suppression', fullName: 'Private Contact', role: 'director',
+      email: 'private@org-unsent-suppression.example', source: 'website',
+      sourceUrl: 'https://org-unsent-suppression.example/staff', contactContext: 'professional',
+    });
+    expect(result.ok).toBe(true);
+    expect(await setDoNotContact(adapterEnv, result.ok ? result.id : '', 'unsubscribed')).toBe(true);
+    const rows = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox WHERE subject_id=?`)
+      .bind(result.ok ? result.id : '').all<{ event_type: string; payload_json: string }>();
+    expect(rows.results.map((row) => row.event_type)).toEqual(['contact.deleted.v1']);
+    expect(JSON.stringify(rows.results)).not.toContain('private@org-unsent-suppression.example');
   });
 
   it('retracts a previously projected contact when it is reclassified as minor', async () => {
@@ -987,6 +1049,47 @@ describe('PCD CRM adapter producer', () => {
       ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{ event_type: string; payload_json: string }>();
     expect(queued.results.at(-1)?.event_type).toBe('contact.deleted.v1');
     expect(queued.results.at(-1)?.payload_json).not.toContain('original@org-suppressed-minor.example');
+  });
+
+  it('fails a safety reclassification while its observed event is leased, then retracts after delivery', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const result = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-leased-safety', fullName: 'Leased Contact', role: 'director',
+      email: 'leased@org-leased-safety.example', source: 'website',
+      sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'professional',
+    });
+    expect(result.ok).toBe(true);
+    let release!: () => void;
+    const held = new Promise<void>((resolve) => { release = resolve; });
+    let started!: () => void;
+    const requestStarted = new Promise<void>((resolve) => { started = resolve; });
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      started();
+      await held;
+      const body = JSON.parse(String(init?.body));
+      return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
+    }) };
+    const delivery = dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.now(), limit: 1 });
+    await requestStarted;
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-leased-safety', fullName: 'Leased Contact', role: 'director',
+      email: 'leased@org-leased-safety.example', source: 'website',
+      sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'minor',
+    })).resolves.toEqual({ ok: false, reason: 'error' });
+    expect(await ops.prepare(`SELECT contact_context FROM org_contacts WHERE id=?`)
+      .bind(result.ok ? result.id : '').first()).toEqual({ contact_context: 'professional' });
+    release();
+    await expect(delivery).resolves.toMatchObject({ claimed: 1, delivered: 1 });
+    expect(await ops.prepare(`SELECT status,receiver_receipt_id FROM crm_adapter_outbox WHERE source_sequence=1`).first())
+      .toMatchObject({ status: 'delivered', receiver_receipt_id: expect.any(String) });
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-leased-safety', fullName: 'Leased Contact', role: 'director',
+      email: 'leased@org-leased-safety.example', source: 'website',
+      sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'minor',
+    })).resolves.toMatchObject({ ok: true, created: false });
+    expect(await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox ORDER BY source_sequence DESC LIMIT 1`).first())
+      .toMatchObject({ event_type: 'contact.deleted.v1', payload_json: expect.not.stringContaining('leased@org-leased-safety.example') });
   });
 
   it('holds unknown and rejects family, guardian, minor, and roster contacts while preserving tombstones', async () => {
