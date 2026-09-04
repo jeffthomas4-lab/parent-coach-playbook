@@ -13,7 +13,7 @@
     "head_sampling_rate": 1
   },
   "triggers": {
-    "crons": ["17 */6 * * *"]
+    "crons": ["17 */6 * * *", "* * * * *"]
   },
 
   // Staging-only internal transport. The receiver must already exist; the
@@ -134,6 +134,9 @@
     "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
     "PCD_COMMERCE_TEST_MODE_ENABLED": "false",
     "PCD_CRM_ADAPTER_ENABLED": "false",
+    // Historical projection remains separately disabled. Enabling it also
+    // requires an exact action-time PCD_CRM_SOURCE_NOT_BEFORE_MS boundary.
+    "PCD_CRM_BACKFILL_ENABLED": "false",
     "PCD_CRM_PRODUCER_WORKSPACE_ID": "pcd-activity-radar",
     "PCD_CRM_TARGET_WORKSPACE_ID": "ws-sightsmash",
     "PCD_CRM_SOURCE_ID": "source-pcd-activity-radar",

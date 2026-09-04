@@ -18,6 +18,8 @@ import { isFeatureEnabled } from './lib/intel/config';
 import { runOrgSweep } from './lib/intel/pipeline';
 import { runPcdCrmAdapter, type PcdCrmAdapterEnv } from './lib/crm-adapter';
 
+const CRM_BACKFILL_CRON = '* * * * *';
+
 type AstroWorkerEnv = Parameters<typeof astroWorker.fetch>[1];
 type PcdWorkerEnv = AstroWorkerEnv & AdminAuthEnv & SentryWorkerEnv;
 type PcdIntegrationEnv = PcdWorkerEnv & BabyLoveEnv & PcdCrmAdapterEnv;
@@ -99,6 +101,16 @@ export async function scheduledReconciliationAndIntelSweep(
   env: PcdIntegrationEnv,
   context: ExecutionContext,
 ): Promise<void> {
+  if (controller.cron === CRM_BACKFILL_CRON) {
+    context.waitUntil(runPcdCrmAdapter(env, { backfillOnly: true }).catch((error) => {
+      console.error(JSON.stringify({
+        event: 'pcd_crm_adapter_failed',
+        code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
+      }));
+      throw error;
+    }));
+    return;
+  }
   try {
     await scheduledBabyLoveReconciliation(controller, env, context);
   } catch (error) {

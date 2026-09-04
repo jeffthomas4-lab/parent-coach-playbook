@@ -1,9 +1,11 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types';
 import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 import { createDisposableIntelDatabase } from './helpers/disposable-intel-db';
 import {
   dispatchPcdCrmOutbox,
+  finalizePcdCrmBackfill,
+  projectPcdCrmBackfill,
   projectPcdCrmEvents,
   reconcilePcdCrmOutbox,
   type CrmAdapterFetcher,
@@ -11,18 +13,38 @@ import {
 } from '../src/lib/crm-adapter';
 import { softDeleteOrgContact, upsertOrgContact } from '../src/lib/org-contacts';
 
-const resources: Array<() => Promise<void> | void> = [];
+let opsResource: Awaited<ReturnType<typeof createDisposableOpsDatabase>>;
+let intelResource: Awaited<ReturnType<typeof createDisposableIntelDatabase>>;
+
+beforeAll(async () => {
+  opsResource = await createDisposableOpsDatabase(`crm-adapter-${crypto.randomUUID()}`);
+  intelResource = await createDisposableIntelDatabase();
+});
+
+beforeEach(async () => {
+  await opsResource.db.batch([
+    opsResource.db.prepare('DELETE FROM crm_adapter_reconciliation_receipts'),
+    opsResource.db.prepare('DELETE FROM crm_adapter_projection_receipts'),
+    opsResource.db.prepare('DELETE FROM crm_adapter_outbox'),
+    opsResource.db.prepare('DELETE FROM crm_adapter_backfill_chunks'),
+    opsResource.db.prepare('DELETE FROM crm_adapter_backfill_runs'),
+    opsResource.db.prepare('DELETE FROM crm_adapter_controls'),
+    opsResource.db.prepare('DELETE FROM org_contacts'),
+  ]);
+  await intelResource.db.prepare('DELETE FROM organizations').run();
+});
 
 afterEach(async () => {
   vi.restoreAllMocks();
-  while (resources.length) await resources.pop()?.();
+});
+
+afterAll(async () => {
+  await opsResource.mf.dispose();
+  intelResource.sqlite.close();
 });
 
 async function databases() {
-  const ops = await createDisposableOpsDatabase(`crm-adapter-${crypto.randomUUID()}`);
-  const intel = await createDisposableIntelDatabase();
-  resources.push(() => ops.mf.dispose(), () => intel.sqlite.close());
-  return { ops: ops.db, intel: intel.db };
+  return { ops: opsResource.db, intel: intelResource.db };
 }
 
 function env(ops: D1Database, intel: D1Database, extra: Partial<PcdCrmAdapterEnv> = {}): PcdCrmAdapterEnv {
@@ -34,12 +56,12 @@ function env(ops: D1Database, intel: D1Database, extra: Partial<PcdCrmAdapterEnv
     PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
     PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
     PCD_CRM_SOURCE_ID: 'source-test',
-    PCD_CRM_SOURCE_NOT_BEFORE_MS: '1',
+    PCD_CRM_SOURCE_NOT_BEFORE_MS: '1000',
     ...extra,
   };
 }
 
-async function insertOrganization(db: D1Database, input: { id: string; updatedAt: string; name?: string; deletedAt?: string | null }) {
+async function insertOrganization(db: D1Database, input: { id: string; updatedAt: string; createdAt?: string; name?: string; deletedAt?: string | null }) {
   await db.prepare(`INSERT INTO organizations
     (id,slug,name,organization_type,website_url,city,state,zip,categories,record_source,record_status,is_claimed,
      confidence_score,created_at,updated_at,content_hash,deleted_at)
@@ -53,14 +75,14 @@ async function insertOrganization(db: D1Database, input: { id: string; updatedAt
     'WA',
     '98401',
     '["volleyball"]',
-    input.updatedAt,
+    input.createdAt ?? input.updatedAt,
     input.updatedAt,
     null,
     input.deletedAt ?? null,
   ).run();
 }
 
-async function insertContact(db: D1Database, input: { id: string; organizationId: string; updatedAt: string; deletedAt?: string | null }) {
+async function insertContact(db: D1Database, input: { id: string; organizationId: string; updatedAt: string; createdAt?: string; deletedAt?: string | null }) {
   await db.prepare(`INSERT INTO org_contacts
     (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
      confidence,verified_at,content_hash,deleted_at,created_at,updated_at)
@@ -72,7 +94,7 @@ async function insertContact(db: D1Database, input: { id: string; organizationId
     `https://${input.organizationId}.example/staff`,
     input.updatedAt,
     input.deletedAt ?? null,
-    input.updatedAt,
+    input.createdAt ?? input.updatedAt,
     input.updatedAt,
   ).run();
 }
@@ -164,6 +186,235 @@ describe('PCD CRM adapter producer', () => {
     const { ops, intel } = await databases();
     await expect(projectPcdCrmEvents(env(ops, intel, { PCD_CRM_SOURCE_NOT_BEFORE_MS: '' })))
       .rejects.toThrow('pcd_crm_adapter_configuration_missing');
+  });
+
+  it('keeps historical projection behind a separate explicit backfill flag', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-historical-disabled', updatedAt: oldAt });
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    }));
+    expect(result).toEqual({
+      enabled: false,
+      organizations: 0,
+      contacts: 0,
+      replayed: 0,
+      rejected: 0,
+      scanCompleted: false,
+      completed: false,
+      busy: false,
+    });
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_backfill_runs`).first<{ count: number }>())?.count).toBe(0);
+  });
+
+  it('backfills only pre-activation rows with durable bounded receipts and resumes to completion', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const newAt = '2026-09-03T12:00:00.000Z';
+    for (const id of ['org-historical-a', 'org-historical-b', 'org-historical-c']) {
+      await insertOrganization(intel, { id, updatedAt: oldAt });
+    }
+    await insertOrganization(intel, { id: 'org-live-only', updatedAt: newAt });
+    await insertContact(ops, { id: 'contact-historical', organizationId: 'org-historical-a', updatedAt: oldAt });
+
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    });
+    const first = await projectPcdCrmBackfill(adapterEnv, { limit: 2, now: Date.parse(newAt) + 1 });
+    expect(first).toMatchObject({ enabled: true, organizations: 2, contacts: 0, completed: false, busy: false });
+    const second = await projectPcdCrmBackfill(adapterEnv, { limit: 2, now: Date.parse(newAt) + 2 });
+    expect(second).toMatchObject({ enabled: true, organizations: 1, contacts: 1, scanCompleted: true, completed: false, busy: false });
+    const replay = await projectPcdCrmBackfill(adapterEnv, { limit: 2, now: Date.parse(newAt) + 3 });
+    expect(replay).toMatchObject({ enabled: true, organizations: 0, contacts: 0, scanCompleted: true, completed: false, busy: false });
+
+    const subjects = await ops.prepare(`SELECT subject_id FROM crm_adapter_outbox ORDER BY subject_id`).all<{ subject_id: string }>();
+    expect(subjects.results.map((row) => row.subject_id)).toEqual([
+      'contact-historical',
+      'org-historical-a',
+      'org-historical-b',
+      'org-historical-c',
+    ]);
+    const run = await ops.prepare(`SELECT status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete
+      FROM crm_adapter_backfill_runs`).first();
+    expect(run).toEqual({
+      status: 'scanned',
+      organization_cursor_id: 'org-historical-c',
+      contact_cursor_id: 'contact-historical',
+      organization_complete: 1,
+      contact_complete: 1,
+    });
+    const chunks = await ops.prepare(`SELECT subject_type,rows_seen,eligible_count,rejected_count,length(disposition_hash) hash_length
+      FROM crm_adapter_backfill_chunks ORDER BY subject_type,chunk_ordinal`).all();
+    expect(chunks.results).toEqual([
+      { subject_type: 'contact', rows_seen: 1, eligible_count: 1, rejected_count: 0, hash_length: 64 },
+      { subject_type: 'organization', rows_seen: 2, eligible_count: 2, rejected_count: 0, hash_length: 64 },
+      { subject_type: 'organization', rows_seen: 1, eligible_count: 1, rejected_count: 0, hash_length: 64 },
+    ]);
+  });
+
+  it('accounts for rejected historical contacts without copying their raw values into receipts', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-contact-disposition', updatedAt: oldAt });
+    await ops.prepare(`INSERT INTO org_contacts
+      (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
+       confidence,verified_at,content_hash,deleted_at,created_at,updated_at)
+      VALUES ('contact-no-source','org-contact-disposition','Private Example','Director','director',
+        'private-value@test.example',0,0,0,'website',NULL,'medium',NULL,NULL,NULL,?,?)`).bind(oldAt, oldAt).run();
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    }), { now: Date.parse(oldAt) + 1 });
+    expect(result).toMatchObject({ contacts: 0, rejected: 1, scanCompleted: true, completed: false });
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE subject_id='contact-no-source'`).first<{ count: number }>())?.count).toBe(0);
+    const receipt = await ops.prepare(`SELECT eligible_count,rejected_count,disposition_hash FROM crm_adapter_backfill_chunks
+      WHERE subject_type='contact'`).first<{ eligible_count: number; rejected_count: number; disposition_hash: string }>();
+    expect(receipt).toMatchObject({ eligible_count: 0, rejected_count: 1 });
+    expect(JSON.stringify(receipt)).not.toContain('private-value@test.example');
+  });
+
+  it('does not call a scan complete until every event is delivered and reconciled', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const now = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-finalize-backfill', updatedAt: oldAt });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now })).toMatchObject({ scanCompleted: true, completed: false });
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 1 })).toMatchObject({ completed: false, pending: 1, reconciled: false });
+
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='receipt-final',delivered_at=?,updated_at=?`).bind(now + 2, now + 2).run();
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 3 })).toMatchObject({ completed: false, pending: 0, reconciled: false });
+    const highWater = (await ops.prepare(`SELECT MAX(source_sequence) high_water FROM crm_adapter_outbox`).first<{ high_water: number }>())!.high_water;
+    await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
+      (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
+      VALUES ('recon-final','pcd-activity-radar',?,?,1,0,0,0,0,0,?,?)`).bind(highWater, highWater, 'a'.repeat(64), now + 4).run();
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 5 })).toMatchObject({ completed: false, reconciled: false });
+    await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
+      (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
+      VALUES ('recon-final-confirm','pcd-activity-radar',?,?,1,0,0,0,0,0,?,?)`).bind(highWater, highWater, 'b'.repeat(64), now + 5).run();
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 6 })).toEqual({
+      enabled: true, completed: true, pending: 0, dead: 0, reconciled: true,
+    });
+    expect(await ops.prepare(`SELECT status,completed_at FROM crm_adapter_backfill_runs`).first()).toEqual({ status: 'completed', completed_at: now + 6 });
+  });
+
+  it('refuses a changed historical boundary and skips a concurrently leased run', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-lease-a', updatedAt: oldAt });
+    await insertOrganization(intel, { id: 'org-lease-b', updatedAt: oldAt });
+    const adapterEnv = env(ops, intel, { PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff) });
+    expect(await projectPcdCrmBackfill(adapterEnv, { limit: 1, now: cutoff + 1 })).toMatchObject({ scanCompleted: false, busy: false });
+    await ops.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id='other-worker',lease_expires_at=?`).bind(cutoff + 60_000).run();
+    expect(await projectPcdCrmBackfill(adapterEnv, { limit: 1, now: cutoff + 2 })).toMatchObject({ busy: true });
+    await expect(projectPcdCrmBackfill({ ...adapterEnv, PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff + 1000) }, { now: cutoff + 3 }))
+      .rejects.toThrow('pcd_crm_backfill_boundary_conflict');
+  });
+
+  it('fails completion when the frozen source inventory changes during the scan', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const adapterEnv = env(ops, intel, { PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff) });
+    await insertOrganization(intel, { id: 'org-inventory-first', updatedAt: oldAt });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now: cutoff + 1 })).toMatchObject({ scanCompleted: true });
+
+    await insertOrganization(intel, { id: 'org-inventory-late', updatedAt: oldAt });
+    await expect(finalizePcdCrmBackfill(adapterEnv, { now: cutoff + 2 }))
+      .rejects.toThrow('pcd_crm_backfill_source_inventory_changed');
+  });
+
+  it('keeps pre-boundary rows in the frozen inventory when they are updated during the drain', async () => {
+    const { ops, intel } = await databases();
+    const createdAt = '2026-09-01T12:00:00.000Z';
+    const updatedAt = '2026-09-03T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const scanNow = Date.parse(updatedAt) + 1;
+    await insertOrganization(intel, { id: 'org-updated-during-drain', createdAt, updatedAt });
+    await insertContact(ops, { id: 'contact-updated-during-drain', organizationId: 'org-updated-during-drain', createdAt, updatedAt });
+
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    }), { now: scanNow });
+    expect(result).toMatchObject({ organizations: 1, contacts: 1, scanCompleted: true });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='receipt-moving',
+      delivered_at=?,updated_at=?`).bind(scanNow + 1, scanNow + 1).run();
+    const highWater = (await ops.prepare('SELECT MAX(source_sequence) high_water FROM crm_adapter_outbox')
+      .first<{ high_water: number }>())!.high_water;
+    for (const [id, checkedAt] of [['recon-moving-1', scanNow + 2], ['recon-moving-2', scanNow + 3]] as const) {
+      await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
+        (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,
+         stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
+        VALUES (?,'pcd-activity-radar',?,?,2,0,0,0,0,0,?,?)`)
+        .bind(id, highWater, highWater, 'c'.repeat(64), checkedAt).run();
+    }
+    await expect(finalizePcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    }), { now: scanNow + 4 })).resolves.toMatchObject({ completed: true, reconciled: true });
+  });
+
+  it('applies the snapshot boundary by time instead of timestamp text format', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const afterCutoffInSqliteFormat = '2026-09-02 12:00:00';
+    await insertOrganization(intel, { id: 'org-after-cutoff-space', updatedAt: afterCutoffInSqliteFormat });
+    await insertContact(ops, { id: 'contact-after-cutoff-space', organizationId: 'org-after-cutoff-space', updatedAt: afterCutoffInSqliteFormat });
+
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    }), { now: cutoff + 1 });
+    expect(result).toMatchObject({ organizations: 0, contacts: 0, scanCompleted: true });
+    expect((await ops.prepare('SELECT COUNT(*) count FROM crm_adapter_outbox').first<{ count: number }>())?.count).toBe(0);
+  });
+
+  it('projects live rows in both timestamp formats without skipping either cursor stream', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    for (const [suffix, updatedAt] of [
+      ['iso', '2026-09-02T12:00:00.500Z'],
+      ['space', '2026-09-02 12:00:01'],
+    ] as const) {
+      await insertOrganization(intel, { id: `org-live-${suffix}`, updatedAt });
+      await insertContact(ops, { id: `contact-live-${suffix}`, organizationId: `org-live-${suffix}`, updatedAt });
+    }
+    const result = await projectPcdCrmEvents(env(ops, intel, {
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    }), { now: cutoff + 2 });
+    expect(result).toMatchObject({ organizations: 2, contacts: 2 });
+    expect((await ops.prepare('SELECT COUNT(*) count FROM crm_adapter_outbox').first<{ count: number }>())?.count).toBe(4);
+  });
+
+  it('does not advance live contacts until every historical organization is queued', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const liveAt = '2026-09-03T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-order-a', updatedAt: oldAt });
+    await insertOrganization(intel, { id: 'org-order-b', updatedAt: oldAt });
+    await insertContact(ops, { id: 'contact-live-before-org', organizationId: 'org-order-b', updatedAt: liveAt });
+    const adapterEnv = env(ops, intel, { PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff) });
+    await projectPcdCrmBackfill(adapterEnv, { limit: 1, now: cutoff + 1 });
+    expect(await projectPcdCrmEvents(adapterEnv, { limit: 10, now: cutoff + 2 })).toMatchObject({ contacts: 0 });
+    expect(await ops.prepare(`SELECT contact_cursor_at,contact_cursor_id FROM crm_adapter_controls`).first()).toEqual({
+      contact_cursor_at: '', contact_cursor_id: '',
+    });
+    await projectPcdCrmBackfill(adapterEnv, { limit: 10, now: cutoff + 3 });
+    expect(await projectPcdCrmEvents(adapterEnv, { limit: 10, now: cutoff + 4 })).toMatchObject({ contacts: 1 });
+    const ordered = await ops.prepare(`SELECT subject_type,subject_id FROM crm_adapter_outbox ORDER BY source_sequence`).all();
+    expect(ordered.results).toEqual([
+      { subject_type: 'organization', subject_id: 'org-order-a' },
+      { subject_type: 'organization', subject_id: 'org-order-b' },
+      { subject_type: 'contact', subject_id: 'contact-live-before-org' },
+    ]);
   });
 
   it('commits same-D1 contact writes and their outbox event in one batch', async () => {

@@ -31,11 +31,15 @@ vi.mock('../src/lib/intel/pipeline', () => ({
   runOrgSweep: vi.fn(),
   runApprovedRun: vi.fn(),
 }));
+vi.mock('../src/lib/crm-adapter', () => ({
+  runPcdCrmAdapter: vi.fn(),
+}));
 
 import worker, { scheduledBabyLoveReconciliation, scheduledReconciliationAndIntelSweep } from '../src/worker';
 import { reconcileBabyLoveArticles } from '../src/lib/babylove-growth';
 import { isFeatureEnabled } from '../src/lib/intel/config';
 import { runApprovedRun, runOrgSweep } from '../src/lib/intel/pipeline';
+import { runPcdCrmAdapter } from '../src/lib/crm-adapter';
 
 function fakeContext() {
   const waited: Promise<unknown>[] = [];
@@ -55,6 +59,7 @@ describe('src/worker.ts composed scheduled handler', () => {
     (isFeatureEnabled as any).mockReturnValue(true);
     (reconcileBabyLoveArticles as any).mockResolvedValue({ scanned: 0, published: 0, skipped: 0, failed: 0 });
     (runOrgSweep as any).mockResolvedValue({ ok: true });
+    (runPcdCrmAdapter as any).mockResolvedValue(undefined);
   });
 
   afterEach(() => {
@@ -71,6 +76,18 @@ describe('src/worker.ts composed scheduled handler', () => {
     await settleAll(waited);
     expect(reconcileBabyLoveArticles).toHaveBeenCalledTimes(1);
     expect(runOrgSweep).toHaveBeenCalledTimes(1);
+    expect(runPcdCrmAdapter).toHaveBeenCalledTimes(1);
+    expect(runPcdCrmAdapter).toHaveBeenCalledWith({});
+  });
+
+  it('isolates the minute CRM backfill pump from unrelated scheduled work', async () => {
+    const { ctx, waited } = fakeContext();
+    await scheduledReconciliationAndIntelSweep({ cron: '* * * * *' } as ScheduledController, {} as any, ctx);
+    await settleAll(waited);
+    expect(runPcdCrmAdapter).toHaveBeenCalledTimes(1);
+    expect(runPcdCrmAdapter).toHaveBeenCalledWith({}, { backfillOnly: true });
+    expect(reconcileBabyLoveArticles).not.toHaveBeenCalled();
+    expect(runOrgSweep).not.toHaveBeenCalled();
   });
 
   it('still runs the intel sweep when BabyLove reconciliation throws', async () => {

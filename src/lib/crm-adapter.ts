@@ -16,6 +16,7 @@ export interface PcdCrmAdapterEnv {
   PCD_OPS_DB?: D1Database;
   CRM_ADAPTER?: CrmAdapterFetcher;
   PCD_CRM_ADAPTER_ENABLED?: string;
+  PCD_CRM_BACKFILL_ENABLED?: string;
   PCD_CRM_ADAPTER_HMAC_SECRET?: string;
   PCD_CRM_PRODUCER_WORKSPACE_ID?: string;
   PCD_CRM_TARGET_WORKSPACE_ID?: string;
@@ -84,6 +85,31 @@ interface OutboxRow {
   attempt_count: number;
 }
 
+interface BackfillRunRow {
+  id: string;
+  snapshot_before_ms: number;
+  expected_organization_rows: number;
+  expected_contact_rows: number;
+  status: 'running' | 'scanned' | 'completed';
+  organization_cursor_id: string;
+  contact_cursor_id: string;
+  organization_complete: number;
+  contact_complete: number;
+  lease_id: string | null;
+  lease_expires_at: number | null;
+}
+
+interface BackfillResult {
+  enabled: boolean;
+  organizations: number;
+  contacts: number;
+  replayed: number;
+  rejected: number;
+  scanCompleted: boolean;
+  completed: boolean;
+  busy: boolean;
+}
+
 const encoder = new TextEncoder();
 
 function stableJson(value: unknown): string {
@@ -126,19 +152,22 @@ async function stableEventId(prefix: string, subjectId: string, contentHash: str
   return raw.length <= 180 ? raw : `pcd:${prefix}:${await sha256(raw)}`;
 }
 
-function requireConfig(env: PcdCrmAdapterEnv): {
+interface PcdAdapterConfig {
   producerWorkspaceId: string;
   targetWorkspaceId: string;
   sourceId: string;
   sourceNotBeforeMs: number;
-} | null {
+}
+
+function requireConfig(env: PcdCrmAdapterEnv): PcdAdapterConfig | null {
   const producerWorkspaceId = env.PCD_CRM_PRODUCER_WORKSPACE_ID?.trim() ?? '';
   const targetWorkspaceId = env.PCD_CRM_TARGET_WORKSPACE_ID?.trim() ?? '';
   const sourceId = env.PCD_CRM_SOURCE_ID?.trim() ?? '';
   const sourceNotBeforeRaw = env.PCD_CRM_SOURCE_NOT_BEFORE_MS?.trim() ?? '';
   const sourceNotBeforeMs = Number(sourceNotBeforeRaw);
   if (!producerWorkspaceId || !targetWorkspaceId || !sourceId
-    || !/^\d+$/.test(sourceNotBeforeRaw) || !Number.isSafeInteger(sourceNotBeforeMs) || sourceNotBeforeMs <= 0) return null;
+    || !/^\d+$/.test(sourceNotBeforeRaw) || !Number.isSafeInteger(sourceNotBeforeMs)
+    || sourceNotBeforeMs <= 0 || sourceNotBeforeMs % 1000 !== 0) return null;
   return { producerWorkspaceId, targetWorkspaceId, sourceId, sourceNotBeforeMs };
 }
 
@@ -282,6 +311,7 @@ async function enqueueDrafts(
   now: number,
   cursor?: { kind: 'organization' | 'contact'; at: string; id: string },
   canonicalStatements: D1PreparedStatement[] = [],
+  backfillRunId?: string,
 ): Promise<{ projected: number; replayed: number; highWater: number }> {
   await ensureControl(db, producerWorkspaceId, now);
   const existingIds = new Set<string>();
@@ -310,13 +340,15 @@ async function enqueueDrafts(
     };
     const payloadJson = JSON.stringify(envelope);
     const payloadHash = await sha256(stableJson(envelope));
+    const backfillColumn = backfillRunId ? ',backfill_run_id' : '';
+    const backfillPlaceholder = backfillRunId ? ',?' : '';
     statements.push(
       db.prepare(`INSERT INTO crm_adapter_outbox
-        (id,producer_workspace_id,event_id,source_sequence,event_type,subject_type,subject_id,authority_updated_at,payload_json,payload_hash,idempotency_key,status,attempt_count,next_attempt_at,created_at,updated_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending',0,?,?,?)`).bind(
+        (id,producer_workspace_id,event_id,source_sequence,event_type,subject_type,subject_id,authority_updated_at,payload_json,payload_hash,idempotency_key,status,attempt_count,next_attempt_at,created_at,updated_at${backfillColumn})
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending',0,?,?,?${backfillPlaceholder})`).bind(
         `pcd-outbox:${draft.eventId}`, producerWorkspaceId, draft.eventId, sequence, draft.eventType,
         draft.subjectType, draft.subjectId, draft.authorityUpdatedAt, payloadJson, payloadHash, draft.eventId,
-        now, now, now,
+        now, now, now, ...(backfillRunId ? [backfillRunId] : []),
       ),
       db.prepare(`INSERT INTO crm_adapter_projection_receipts
         (subject_type,subject_id,content_hash,last_event_id,last_sequence,authority_updated_at,projected_at)
@@ -332,6 +364,12 @@ async function enqueueDrafts(
   if (pending.length) {
     statements.push(db.prepare(`UPDATE crm_adapter_controls SET next_sequence=?,updated_at=?
       WHERE producer_workspace_id=? AND next_sequence=?`).bind(start + pending.length, now, producerWorkspaceId, start));
+  }
+  if (backfillRunId && existingIds.size) {
+    const placeholders = [...existingIds].map(() => '?').join(',');
+    statements.push(db.prepare(`UPDATE crm_adapter_outbox SET backfill_run_id=?
+      WHERE backfill_run_id IS NULL AND event_id IN (${placeholders})`)
+      .bind(backfillRunId, ...existingIds));
   }
   if (cursor) {
     const column = cursor.kind === 'organization'
@@ -396,10 +434,13 @@ export async function projectPcdCrmEvents(
     config.sourceNotBeforeMs,
   );
 
+  const organizationCursorSecond = Math.trunc(timestamp(organizationCursor.at) / 1000);
+  const contactCursorSecond = Math.trunc(timestamp(contactCursor.at) / 1000);
   const organizations = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
     record_status,is_claimed,content_hash,deleted_at,updated_at FROM organizations
-    WHERE updated_at>? OR (updated_at=? AND id>?) ORDER BY updated_at,id LIMIT ?`)
-    .bind(organizationCursor.at, organizationCursor.at, organizationCursor.id, limit)
+    WHERE unixepoch(updated_at)>? OR (unixepoch(updated_at)=? AND id>?)
+    ORDER BY unixepoch(updated_at),id LIMIT ?`)
+    .bind(organizationCursorSecond, organizationCursorSecond, organizationCursor.id, limit)
     .all<OrganizationRow>();
   const organizationDrafts = await Promise.all(organizations.results.map((row) => organizationDraft(row, config.targetWorkspaceId)));
   const lastOrganization = organizations.results.at(-1);
@@ -411,11 +452,25 @@ export async function projectPcdCrmEvents(
     lastOrganization ? { kind: 'organization', at: lastOrganization.updated_at, id: lastOrganization.id } : undefined,
   );
 
-  const contacts = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,
-    source_url,confidence,verified_at,content_hash,deleted_at,updated_at FROM org_contacts
-    WHERE updated_at>? OR (updated_at=? AND id>?) ORDER BY updated_at,id LIMIT ?`)
-    .bind(contactCursor.at, contactCursor.at, contactCursor.id, limit)
-    .all<PcdContactProjectionInput>();
+  let contacts = { results: [] as PcdContactProjectionInput[] };
+  if (env.PCD_CRM_BACKFILL_ENABLED === 'true') {
+    const historicalOrganizations = await env.PCD_OPS_DB.prepare(`SELECT organization_complete
+      FROM crm_adapter_backfill_runs WHERE producer_workspace_id=? AND target_workspace_id=?`)
+      .bind(config.producerWorkspaceId, config.targetWorkspaceId).first<{ organization_complete: number }>();
+    if (historicalOrganizations?.organization_complete === 1) {
+      contacts = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,
+        source_url,confidence,verified_at,content_hash,deleted_at,updated_at FROM org_contacts
+        WHERE unixepoch(updated_at)>? OR (unixepoch(updated_at)=? AND id>?)
+        ORDER BY unixepoch(updated_at),id LIMIT ?`)
+        .bind(contactCursorSecond, contactCursorSecond, contactCursor.id, limit).all<PcdContactProjectionInput>();
+    }
+  } else {
+    contacts = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,
+      source_url,confidence,verified_at,content_hash,deleted_at,updated_at FROM org_contacts
+      WHERE unixepoch(updated_at)>? OR (unixepoch(updated_at)=? AND id>?)
+      ORDER BY unixepoch(updated_at),id LIMIT ?`)
+      .bind(contactCursorSecond, contactCursorSecond, contactCursor.id, limit).all<PcdContactProjectionInput>();
+  }
   const contactCandidates = await Promise.all(
     contacts.results.map((row) => contactDraft(row, config.targetWorkspaceId, config.sourceId)),
   );
@@ -435,6 +490,301 @@ export async function projectPcdCrmEvents(
     replayed: orgResult.replayed + contactResult.replayed,
     deferred: contactCandidates.length - contactDrafts.length,
   };
+}
+
+function disabledBackfill(): BackfillResult {
+  return { enabled: false, organizations: 0, contacts: 0, replayed: 0, rejected: 0, scanCompleted: false, completed: false, busy: false };
+}
+
+async function ensureBackfillRun(
+  env: PcdCrmAdapterEnv,
+  config: PcdAdapterConfig,
+  now: number,
+  verifyInventory = false,
+): Promise<BackfillRunRow> {
+  if (!env.DB || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
+  const db = env.PCD_OPS_DB;
+  const runId = `pcd-backfill:${await sha256(`${config.producerWorkspaceId}:${config.targetWorkspaceId}:${config.sourceNotBeforeMs}`)}`;
+  let run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
+    status,organization_cursor_id,contact_cursor_id,
+    organization_complete,contact_complete,lease_id,lease_expires_at FROM crm_adapter_backfill_runs
+    WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
+    .first<BackfillRunRow>();
+  if (!run) {
+    const snapshotBeforeSecond = config.sourceNotBeforeMs / 1000;
+    const [organizations, contacts] = await Promise.all([
+      env.DB.prepare(`SELECT SUM(CASE WHEN unixepoch(created_at)<? THEN 1 ELSE 0 END) count,
+        SUM(CASE WHEN unixepoch(created_at) IS NULL OR unixepoch(updated_at) IS NULL THEN 1 ELSE 0 END) invalid
+        FROM organizations`)
+        .bind(snapshotBeforeSecond).first<{ count: number; invalid: number }>(),
+      db.prepare(`SELECT SUM(CASE WHEN unixepoch(created_at)<? THEN 1 ELSE 0 END) count,
+        SUM(CASE WHEN unixepoch(created_at) IS NULL OR unixepoch(updated_at) IS NULL THEN 1 ELSE 0 END) invalid
+        FROM org_contacts`)
+        .bind(snapshotBeforeSecond).first<{ count: number; invalid: number }>(),
+    ]);
+    if (Number(organizations?.invalid ?? 0) > 0 || Number(contacts?.invalid ?? 0) > 0) {
+      throw new Error('pcd_crm_backfill_source_timestamp_invalid');
+    }
+    await db.prepare(`INSERT OR IGNORE INTO crm_adapter_backfill_runs
+      (id,producer_workspace_id,target_workspace_id,snapshot_before_ms,expected_organization_rows,
+       expected_contact_rows,status,started_at,updated_at)
+      VALUES (?,?,?,?,?,?,'running',?,?)`).bind(
+      runId, config.producerWorkspaceId, config.targetWorkspaceId, config.sourceNotBeforeMs,
+      Number(organizations?.count ?? 0), Number(contacts?.count ?? 0), now, now,
+    ).run();
+    run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
+      status,organization_cursor_id,contact_cursor_id,
+      organization_complete,contact_complete,lease_id,lease_expires_at FROM crm_adapter_backfill_runs
+      WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
+      .first<BackfillRunRow>();
+  }
+  if (!run || Number(run.snapshot_before_ms) !== config.sourceNotBeforeMs || run.id !== runId) {
+    throw new Error('pcd_crm_backfill_boundary_conflict');
+  }
+  if (verifyInventory) {
+    const snapshotBeforeSecond = config.sourceNotBeforeMs / 1000;
+    const [organizations, contacts] = await Promise.all([
+      env.DB.prepare(`SELECT SUM(CASE WHEN unixepoch(created_at)<? THEN 1 ELSE 0 END) count,
+        SUM(CASE WHEN unixepoch(created_at) IS NULL OR unixepoch(updated_at) IS NULL THEN 1 ELSE 0 END) invalid
+        FROM organizations`)
+        .bind(snapshotBeforeSecond).first<{ count: number; invalid: number }>(),
+      db.prepare(`SELECT SUM(CASE WHEN unixepoch(created_at)<? THEN 1 ELSE 0 END) count,
+        SUM(CASE WHEN unixepoch(created_at) IS NULL OR unixepoch(updated_at) IS NULL THEN 1 ELSE 0 END) invalid
+        FROM org_contacts`)
+        .bind(snapshotBeforeSecond).first<{ count: number; invalid: number }>(),
+    ]);
+    if (Number(organizations?.invalid ?? 0) > 0 || Number(contacts?.invalid ?? 0) > 0) {
+      throw new Error('pcd_crm_backfill_source_timestamp_invalid');
+    }
+    if (Number(organizations?.count ?? 0) !== Number(run.expected_organization_rows)
+      || Number(contacts?.count ?? 0) !== Number(run.expected_contact_rows)) {
+      throw new Error('pcd_crm_backfill_source_inventory_changed');
+    }
+  }
+  return run;
+}
+
+async function recordBackfillChunk(
+  db: D1Database,
+  run: BackfillRunRow,
+  subjectType: 'organization' | 'contact',
+  afterCursorId: string,
+  lastCursorId: string,
+  rowsSeen: number,
+  eligibleCount: number,
+  newEventCount: number,
+  replayedEventCount: number,
+  rejectedCount: number,
+  dispositionHash: string,
+  complete: boolean,
+  leaseId: string,
+  now: number,
+): Promise<void> {
+  const ordinalRow = await db.prepare(`SELECT COALESCE(MAX(chunk_ordinal),0)+1 ordinal
+    FROM crm_adapter_backfill_chunks WHERE run_id=? AND subject_type=?`).bind(run.id, subjectType)
+    .first<{ ordinal: number }>();
+  const ordinal = Number(ordinalRow?.ordinal ?? 1);
+  const cursorColumn = subjectType === 'organization' ? 'organization_cursor_id' : 'contact_cursor_id';
+  const completeColumn = subjectType === 'organization' ? 'organization_complete' : 'contact_complete';
+  const results = await db.batch([
+    db.prepare(`INSERT INTO crm_adapter_backfill_chunks
+      (id,run_id,subject_type,chunk_ordinal,after_cursor_id,last_cursor_id,rows_seen,eligible_count,new_event_count,
+       replayed_event_count,rejected_count,disposition_hash,created_at)
+      SELECT ?,?,?,?,?,?,?,?,?,?,?,?,?
+      WHERE EXISTS (SELECT 1 FROM crm_adapter_backfill_runs
+        WHERE id=? AND lease_id=? AND lease_expires_at>=?)`).bind(
+      `${run.id}:${subjectType}:${ordinal}`, run.id, subjectType, ordinal, afterCursorId, lastCursorId, rowsSeen,
+      eligibleCount, newEventCount, replayedEventCount, rejectedCount, dispositionHash, now,
+      run.id, leaseId, now,
+    ),
+    db.prepare(`UPDATE crm_adapter_backfill_runs SET ${cursorColumn}=?,${completeColumn}=?,updated_at=?
+      WHERE id=? AND lease_id=? AND lease_expires_at>=?`).bind(lastCursorId, complete ? 1 : 0, now, run.id, leaseId, now),
+  ]);
+  if (Number(results[0]?.meta.changes ?? 0) !== 1 || Number(results[1]?.meta.changes ?? 0) !== 1) {
+    throw new Error('pcd_crm_backfill_lease_lost');
+  }
+}
+
+async function markBackfillSubjectComplete(
+  db: D1Database,
+  runId: string,
+  subjectType: 'organization' | 'contact',
+  leaseId: string,
+  now: number,
+): Promise<void> {
+  const completeColumn = subjectType === 'organization' ? 'organization_complete' : 'contact_complete';
+  const result = await db.prepare(`UPDATE crm_adapter_backfill_runs SET ${completeColumn}=1,updated_at=?
+    WHERE id=? AND lease_id=? AND lease_expires_at>=?`).bind(now, runId, leaseId, now).run();
+  if (Number(result.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_lease_lost');
+}
+
+export async function projectPcdCrmBackfill(
+  env: PcdCrmAdapterEnv,
+  options: { limit?: number; now?: number } = {},
+): Promise<BackfillResult> {
+  if (env.PCD_CRM_ADAPTER_ENABLED !== 'true' || env.PCD_CRM_BACKFILL_ENABLED !== 'true') return disabledBackfill();
+  const config = requireConfig(env);
+  if (!config || !env.DB || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
+  const now = options.now ?? Date.now();
+  const limit = Math.max(1, Math.min(50, Math.trunc(options.limit ?? 25)));
+  const run = await ensureBackfillRun(env, config, now);
+  if (run.status !== 'running') {
+    return { ...disabledBackfill(), enabled: true, scanCompleted: true, completed: run.status === 'completed' };
+  }
+
+  const leaseId = crypto.randomUUID();
+  const lease = await env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=?,lease_expires_at=?,updated_at=?
+    WHERE id=? AND status='running' AND (lease_expires_at IS NULL OR lease_expires_at<?)`)
+    .bind(leaseId, now + 60_000, now, run.id, now).run();
+  if (Number(lease.meta.changes ?? 0) !== 1) {
+    return { ...disabledBackfill(), enabled: true, busy: true };
+  }
+
+  let organizations = 0;
+  let contacts = 0;
+  let replayed = 0;
+  let rejected = 0;
+  let organizationComplete = run.organization_complete === 1;
+  const snapshotBeforeSecond = config.sourceNotBeforeMs / 1000;
+  try {
+    if (!run.organization_complete) {
+      const rows = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
+        record_status,is_claimed,content_hash,deleted_at,updated_at FROM organizations
+        WHERE id>? AND unixepoch(created_at)<? ORDER BY id LIMIT ?`)
+        .bind(run.organization_cursor_id, snapshotBeforeSecond, limit).all<OrganizationRow>();
+      if (!rows.results.length) {
+        await markBackfillSubjectComplete(env.PCD_OPS_DB, run.id, 'organization', leaseId, now);
+        organizationComplete = true;
+      } else {
+        const drafts = await Promise.all(rows.results.map((row) => organizationDraft(row, config.targetWorkspaceId)));
+        const outbox = await enqueueDrafts(env.PCD_OPS_DB, config.producerWorkspaceId, drafts, now, undefined, [], run.id);
+        const dispositions = drafts.map((draft) => ({ id: draft.subjectId, disposition: draft.eventType.endsWith('deleted.v1') ? 'tombstoned' : 'projected', contentHash: draft.contentHash }));
+        const last = rows.results.at(-1)!;
+        await recordBackfillChunk(
+          env.PCD_OPS_DB, run, 'organization', run.organization_cursor_id, last.id, rows.results.length,
+          drafts.length, outbox.projected, outbox.replayed, 0, await sha256(stableJson(dispositions)),
+          rows.results.length < limit, leaseId, now,
+        );
+        organizations = drafts.length;
+        replayed += outbox.replayed;
+        organizationComplete = rows.results.length < limit;
+      }
+    }
+
+    if (organizationComplete && !run.contact_complete) {
+      const rows = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,
+        source_url,confidence,verified_at,content_hash,deleted_at,updated_at FROM org_contacts
+        WHERE id>? AND unixepoch(created_at)<? ORDER BY id LIMIT ?`)
+        .bind(run.contact_cursor_id, snapshotBeforeSecond, limit).all<PcdContactProjectionInput>();
+      if (!rows.results.length) {
+        await markBackfillSubjectComplete(env.PCD_OPS_DB, run.id, 'contact', leaseId, now);
+      } else {
+        const classified = await Promise.all(rows.results.map(async (row) => {
+          const draft = await contactDraft(row, config.targetWorkspaceId, config.sourceId);
+          const disposition = draft
+            ? draft.eventType === 'contact.deleted.v1' ? 'tombstoned' : 'projected'
+            : row.email || row.phone ? 'rejected_missing_source' : 'rejected_missing_channel';
+          return { row, draft, disposition };
+        }));
+        const drafts = classified.flatMap((item) => item.draft ? [item.draft] : []);
+        const outbox = await enqueueDrafts(env.PCD_OPS_DB, config.producerWorkspaceId, drafts, now, undefined, [], run.id);
+        const dispositions = await Promise.all(classified.map(async ({ row, draft, disposition }) => ({
+          id: row.id,
+          disposition,
+          contentHash: draft?.contentHash ?? row.content_hash ?? await sha256(stableJson({ id: row.id, organizationId: row.organization_id, updatedAt: row.updated_at, disposition })),
+        })));
+        const last = rows.results.at(-1)!;
+        const rejectedCount = classified.length - drafts.length;
+        await recordBackfillChunk(
+          env.PCD_OPS_DB, run, 'contact', run.contact_cursor_id, last.id, rows.results.length,
+          drafts.length, outbox.projected, outbox.replayed, rejectedCount, await sha256(stableJson(dispositions)),
+          rows.results.length < limit, leaseId, now,
+        );
+        contacts = drafts.length;
+        replayed += outbox.replayed;
+        rejected = rejectedCount;
+      }
+    }
+
+    const completion = await env.PCD_OPS_DB.prepare(`SELECT organization_complete,contact_complete
+      FROM crm_adapter_backfill_runs WHERE id=?`).bind(run.id)
+      .first<{ organization_complete: number; contact_complete: number }>();
+    const completed = completion?.organization_complete === 1 && completion.contact_complete === 1;
+    const release = await env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_backfill_runs SET status=?,lease_id=NULL,lease_expires_at=NULL,
+      scanned_at=CASE WHEN ?=1 THEN COALESCE(scanned_at,?) ELSE scanned_at END,updated_at=? WHERE id=? AND lease_id=?`)
+      .bind(completed ? 'scanned' : 'running', completed ? 1 : 0, now, now, run.id, leaseId).run();
+    if (Number(release.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_lease_lost');
+    return { enabled: true, organizations, contacts, replayed, rejected, scanCompleted: completed, completed: false, busy: false };
+  } catch (error) {
+    await env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=NULL,lease_expires_at=NULL,updated_at=?
+      WHERE id=? AND lease_id=?`).bind(now, run.id, leaseId).run();
+    throw error;
+  }
+}
+
+export async function finalizePcdCrmBackfill(
+  env: PcdCrmAdapterEnv,
+  options: { now?: number } = {},
+): Promise<{ enabled: boolean; completed: boolean; pending: number; dead: number; reconciled: boolean }> {
+  if (env.PCD_CRM_ADAPTER_ENABLED !== 'true' || env.PCD_CRM_BACKFILL_ENABLED !== 'true') {
+    return { enabled: false, completed: false, pending: 0, dead: 0, reconciled: false };
+  }
+  const config = requireConfig(env);
+  if (!config || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
+  const now = options.now ?? Date.now();
+  const run = await ensureBackfillRun(env, config, now, true);
+  if (run.status === 'completed') return { enabled: true, completed: true, pending: 0, dead: 0, reconciled: true };
+  if (run.status !== 'scanned') return { enabled: true, completed: false, pending: 0, dead: 0, reconciled: false };
+
+  const accounting = await env.PCD_OPS_DB.prepare(`SELECT
+      COALESCE((SELECT SUM(eligible_count) FROM crm_adapter_backfill_chunks WHERE run_id=?),0) eligible,
+      COALESCE((SELECT SUM(rows_seen) FROM crm_adapter_backfill_chunks WHERE run_id=? AND subject_type='organization'),0) organization_seen,
+      COALESCE((SELECT SUM(rows_seen) FROM crm_adapter_backfill_chunks WHERE run_id=? AND subject_type='contact'),0) contact_seen,
+      COUNT(*) outbox_total,
+      SUM(CASE WHEN status='delivered' AND receiver_receipt_id IS NOT NULL THEN 1 ELSE 0 END) delivered,
+      SUM(CASE WHEN status='dead' THEN 1 ELSE 0 END) dead,
+      SUM(CASE WHEN status!='delivered' THEN 1 ELSE 0 END) pending,
+      COALESCE(MAX(source_sequence),0) high_water
+    FROM crm_adapter_outbox WHERE backfill_run_id=?`).bind(run.id, run.id, run.id, run.id)
+    .first<{ eligible: number; organization_seen: number; contact_seen: number; outbox_total: number; delivered: number; dead: number; pending: number; high_water: number }>();
+  const eligible = Number(accounting?.eligible ?? 0);
+  const organizationSeen = Number(accounting?.organization_seen ?? 0);
+  const contactSeen = Number(accounting?.contact_seen ?? 0);
+  const outboxTotal = Number(accounting?.outbox_total ?? 0);
+  const delivered = Number(accounting?.delivered ?? 0);
+  const dead = Number(accounting?.dead ?? 0);
+  const pending = Number(accounting?.pending ?? 0);
+  const highWater = Number(accounting?.high_water ?? 0);
+  if (organizationSeen !== Number(run.expected_organization_rows) || contactSeen !== Number(run.expected_contact_rows)) {
+    throw new Error('pcd_crm_backfill_source_accounting_mismatch');
+  }
+  if (eligible !== outboxTotal) throw new Error('pcd_crm_backfill_event_accounting_mismatch');
+  if (dead > 0) throw new Error('pcd_crm_backfill_dead_letters_present');
+  if (pending > 0 || delivered !== eligible) return { enabled: true, completed: false, pending, dead, reconciled: false };
+
+  const reconciliations = await env.PCD_OPS_DB.prepare(`SELECT declared_high_water,receiver_high_water,missing_count,
+    duplicate_count,stale_count,unauthorized_count,mismatch_count FROM crm_adapter_reconciliation_receipts
+    WHERE producer_workspace_id=? AND checked_at>=COALESCE((SELECT scanned_at FROM crm_adapter_backfill_runs WHERE id=?),0)
+    ORDER BY checked_at DESC LIMIT 2`).bind(config.producerWorkspaceId, run.id)
+    .all<{ declared_high_water: number; receiver_high_water: number; missing_count: number; duplicate_count: number; stale_count: number; unauthorized_count: number; mismatch_count: number }>();
+  const reconciled = reconciliations.results.length === 2
+    && reconciliations.results.every((reconciliation) => (
+      Number(reconciliation.declared_high_water) >= highWater
+      && Number(reconciliation.receiver_high_water) >= highWater
+      && Number(reconciliation.missing_count) === 0
+      && Number(reconciliation.duplicate_count) === 0
+      && Number(reconciliation.stale_count) === 0
+      && Number(reconciliation.unauthorized_count) === 0
+      && Number(reconciliation.mismatch_count) === 0
+    ))
+    && Number(reconciliations.results[0]!.declared_high_water) === Number(reconciliations.results[1]!.declared_high_water)
+    && Number(reconciliations.results[0]!.receiver_high_water) === Number(reconciliations.results[1]!.receiver_high_water);
+  if (!reconciled) return { enabled: true, completed: false, pending: 0, dead: 0, reconciled: false };
+
+  const update = await env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_backfill_runs SET status='completed',completed_at=?,updated_at=?
+    WHERE id=? AND status='scanned'`).bind(now, now, run.id).run();
+  if (Number(update.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_finalize_conflict');
+  return { enabled: true, completed: true, pending: 0, dead: 0, reconciled: true };
 }
 
 async function readBoundedJson(response: Response): Promise<Record<string, unknown> | null> {
@@ -628,16 +978,34 @@ export async function reconcilePcdCrmOutbox(
   return { enabled: true, checked: true, missing: count('missing'), mismatch: count('mismatch') };
 }
 
-export async function runPcdCrmAdapter(env: PcdCrmAdapterEnv): Promise<void> {
+export async function runPcdCrmAdapter(
+  env: PcdCrmAdapterEnv,
+  options: { backfillOnly?: boolean } = {},
+): Promise<void> {
   if (env.PCD_CRM_ADAPTER_ENABLED !== 'true') return;
-  const projection = await projectPcdCrmEvents(env);
+  const backfill = await projectPcdCrmBackfill(env);
+  const projection = options.backfillOnly
+    ? { organizations: 0, contacts: 0, deferred: 0 }
+    : await projectPcdCrmEvents(env);
   const delivery = await dispatchPcdCrmOutbox(env);
-  const reconciliation = await reconcilePcdCrmOutbox(env);
+  const reconciliation = options.backfillOnly
+    ? { checked: false, missing: 0, mismatch: 0 }
+    : await reconcilePcdCrmOutbox(env);
+  const backfillFinal = options.backfillOnly
+    ? { completed: false }
+    : await finalizePcdCrmBackfill(env);
   console.log(JSON.stringify({
     event: 'pcd_crm_adapter_tick',
     projectedOrganizations: projection.organizations,
     projectedContacts: projection.contacts,
     deferredContacts: projection.deferred,
+    backfillOrganizations: backfill.organizations,
+    backfillContacts: backfill.contacts,
+    backfillRejected: backfill.rejected,
+    backfillScanCompleted: backfill.scanCompleted,
+    backfillCompleted: backfillFinal.completed,
+    backfillBusy: backfill.busy,
+    backfillOnly: options.backfillOnly === true,
     delivered: delivery.delivered,
     retried: delivery.retried,
     dead: delivery.dead,
