@@ -7,6 +7,7 @@ import {
   finalizePcdCrmBackfill,
   projectPcdCrmBackfill,
   projectPcdCrmEvents,
+  reconcilePcdCrmBackfill,
   reconcilePcdCrmOutbox,
   type CrmAdapterFetcher,
   type PcdCrmAdapterEnv,
@@ -26,6 +27,7 @@ beforeEach(async () => {
     opsResource.db.prepare('DELETE FROM crm_adapter_reconciliation_receipts'),
     opsResource.db.prepare('DELETE FROM crm_adapter_projection_receipts'),
     opsResource.db.prepare('DELETE FROM crm_adapter_outbox'),
+    opsResource.db.prepare('DELETE FROM crm_adapter_backfill_reconciliation_windows'),
     opsResource.db.prepare('DELETE FROM crm_adapter_backfill_chunks'),
     opsResource.db.prepare('DELETE FROM crm_adapter_backfill_runs'),
     opsResource.db.prepare('DELETE FROM crm_adapter_controls'),
@@ -58,6 +60,21 @@ function env(ops: D1Database, intel: D1Database, extra: Partial<PcdCrmAdapterEnv
     PCD_CRM_SOURCE_ID: 'source-test',
     PCD_CRM_SOURCE_NOT_BEFORE_MS: '1000',
     ...extra,
+  };
+}
+
+function successfulReconciliationFetcher(): CrmAdapterFetcher {
+  return {
+    fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      return Response.json({
+        producer: 'parent-coach-desk',
+        producerWorkspaceId: body.producerWorkspaceId,
+        declaredHighWater: body.declaredHighWater,
+        receiverHighWater: body.declaredHighWater,
+        missing: [], duplicate: [], stale: [], unauthorized: [], mismatch: [],
+      });
+    }),
   };
 }
 
@@ -289,18 +306,123 @@ describe('PCD CRM adapter producer', () => {
 
     await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='receipt-final',delivered_at=?,updated_at=?`).bind(now + 2, now + 2).run();
     expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 3 })).toMatchObject({ completed: false, pending: 0, reconciled: false });
-    const highWater = (await ops.prepare(`SELECT MAX(source_sequence) high_water FROM crm_adapter_outbox`).first<{ high_water: number }>())!.high_water;
-    await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
-      (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
-      VALUES ('recon-final','pcd-activity-radar',?,?,1,0,0,0,0,0,?,?)`).bind(highWater, highWater, 'a'.repeat(64), now + 4).run();
+    const fetcher = successfulReconciliationFetcher();
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher, now: now + 4 }))
+      .toMatchObject({ checked: true, pass: 1, window: 1, passCompleted: false });
     expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 5 })).toMatchObject({ completed: false, reconciled: false });
-    await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
-      (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
-      VALUES ('recon-final-confirm','pcd-activity-radar',?,?,1,0,0,0,0,0,?,?)`).bind(highWater, highWater, 'b'.repeat(64), now + 5).run();
-    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 6 })).toEqual({
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher, now: now + 6 }))
+      .toMatchObject({ checked: false, pass: 1, passCompleted: true, completed: false });
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher, now: now + 7 }))
+      .toMatchObject({ checked: true, pass: 2, window: 1, passCompleted: false });
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher, now: now + 8 }))
+      .toMatchObject({ checked: false, pass: 2, passCompleted: true, completed: true });
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 9 })).toEqual({
       enabled: true, completed: true, pending: 0, dead: 0, reconciled: true,
     });
-    expect(await ops.prepare(`SELECT status,completed_at FROM crm_adapter_backfill_runs`).first()).toEqual({ status: 'completed', completed_at: now + 6 });
+    expect(await ops.prepare(`SELECT status,completed_at FROM crm_adapter_backfill_runs`).first()).toEqual({ status: 'completed', completed_at: now + 9 });
+  });
+
+  it('does not let two tail-only reconciliation samples complete a multi-event backfill', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const now = Date.parse('2026-09-03T12:00:00.000Z');
+    for (const id of ['org-full-recon-a', 'org-full-recon-b', 'org-full-recon-c']) {
+      await insertOrganization(intel, { id, updatedAt: oldAt });
+    }
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now })).toMatchObject({ scanCompleted: true });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='tail-only',
+      delivered_at=?,updated_at=?`).bind(now + 1, now + 1).run();
+    const highWater = (await ops.prepare('SELECT MAX(source_sequence) high_water FROM crm_adapter_outbox')
+      .first<{ high_water: number }>())!.high_water;
+    for (const [id, checkedAt] of [['tail-only-1', now + 2], ['tail-only-2', now + 3]] as const) {
+      await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
+        (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,
+         stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
+        VALUES (?,'pcd-activity-radar',?,?,1,0,0,0,0,0,?,?)`)
+        .bind(id, highWater, highWater, 'd'.repeat(64), checkedAt).run();
+    }
+
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 4 }))
+      .toMatchObject({ completed: false, reconciled: false });
+    expect(await ops.prepare('SELECT status FROM crm_adapter_backfill_runs').first()).toEqual({ status: 'scanned' });
+  });
+
+  it('covers every run-linked event in two identical bounded reconciliation passes', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const now = Date.parse('2026-09-03T12:00:00.000Z');
+    intelResource.sqlite.exec(`WITH RECURSIVE sequence(value) AS (
+        SELECT 1 UNION ALL SELECT value+1 FROM sequence WHERE value<101
+      )
+      INSERT INTO organizations
+        (id,slug,name,organization_type,website_url,city,state,zip,categories,record_source,record_status,is_claimed,
+         confidence_score,created_at,updated_at,content_hash,deleted_at)
+      SELECT printf('org-recon-%03d',value),printf('org-recon-%03d',value),printf('Organization %03d',value),
+        'club_league',printf('https://org-recon-%03d.example',value),'Tacoma','WA','98401','["volleyball"]',
+        'manual','active',0,90,'2026-09-01T12:00:00.000Z','2026-09-01T12:00:00.000Z',NULL,NULL
+      FROM sequence`);
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    let scanCompleted = false;
+    for (let tick = 0; tick < 6 && !scanCompleted; tick += 1) {
+      scanCompleted = (await projectPcdCrmBackfill(adapterEnv, { limit: 25, now: now + tick })).scanCompleted;
+    }
+    expect(scanCompleted).toBe(true);
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='full-window',
+      delivered_at=?,updated_at=?`).bind(now + 10, now + 10).run();
+
+    const fetcher = successfulReconciliationFetcher();
+    for (let tick = 0; tick < 6; tick += 1) {
+      await reconcilePcdCrmBackfill(adapterEnv, { fetcher, now: now + 20 + tick });
+    }
+    const coverage = await ops.prepare(`SELECT pass_number,COUNT(*) windows,SUM(manifest_count) events
+      FROM crm_adapter_backfill_reconciliation_windows GROUP BY pass_number ORDER BY pass_number`).all();
+    expect(coverage.results).toEqual([
+      { pass_number: 1, windows: 2, events: 101 },
+      { pass_number: 2, windows: 2, events: 101 },
+    ]);
+    expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 30 }))
+      .toMatchObject({ completed: true, reconciled: true });
+  });
+
+  it('retains failed window evidence without advancing reconciliation coverage', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const now = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-recon-missing', updatedAt: '2026-09-01T12:00:00.000Z' });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    await projectPcdCrmBackfill(adapterEnv, { now });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='missing-window',
+      delivered_at=?,updated_at=?`).bind(now + 1, now + 1).run();
+    const failed: CrmAdapterFetcher = {
+      fetch: vi.fn(async (_input, init) => {
+        const body = JSON.parse(String(init?.body));
+        return Response.json({
+          producer: 'parent-coach-desk', producerWorkspaceId: body.producerWorkspaceId,
+          declaredHighWater: body.declaredHighWater, receiverHighWater: body.declaredHighWater,
+          missing: [body.events[0]], duplicate: [], stale: [], unauthorized: [], mismatch: [],
+        });
+      }),
+    };
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher: failed, now: now + 2 }))
+      .toMatchObject({ checked: true, pass: 1, window: 1, missing: 1 });
+    expect(await ops.prepare(`SELECT reconciliation_cursor_sequence,reconciliation_window_ordinal
+      FROM crm_adapter_backfill_runs`).first()).toEqual({
+      reconciliation_cursor_sequence: 0,
+      reconciliation_window_ordinal: 0,
+    });
+    expect((await ops.prepare('SELECT COUNT(*) count FROM crm_adapter_backfill_reconciliation_windows')
+      .first<{ count: number }>())?.count).toBe(0);
+    expect((await ops.prepare('SELECT missing_count FROM crm_adapter_reconciliation_receipts').first())?.missing_count).toBe(1);
   });
 
   it('refuses a changed historical boundary and skips a concurrently leased run', async () => {
@@ -346,19 +468,18 @@ describe('PCD CRM adapter producer', () => {
     expect(result).toMatchObject({ organizations: 1, contacts: 1, scanCompleted: true });
     await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='receipt-moving',
       delivered_at=?,updated_at=?`).bind(scanNow + 1, scanNow + 1).run();
-    const highWater = (await ops.prepare('SELECT MAX(source_sequence) high_water FROM crm_adapter_outbox')
-      .first<{ high_water: number }>())!.high_water;
-    for (const [id, checkedAt] of [['recon-moving-1', scanNow + 2], ['recon-moving-2', scanNow + 3]] as const) {
-      await ops.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
-        (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,duplicate_count,
-         stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
-        VALUES (?,'pcd-activity-radar',?,?,2,0,0,0,0,0,?,?)`)
-        .bind(id, highWater, highWater, 'c'.repeat(64), checkedAt).run();
+    const movingEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    const fetcher = successfulReconciliationFetcher();
+    for (let tick = 0; tick < 4; tick += 1) {
+      await reconcilePcdCrmBackfill(movingEnv, { fetcher, now: scanNow + 2 + tick });
     }
     await expect(finalizePcdCrmBackfill(env(ops, intel, {
       PCD_CRM_BACKFILL_ENABLED: 'true',
       PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
-    }), { now: scanNow + 4 })).resolves.toMatchObject({ completed: true, reconciled: true });
+    }), { now: scanNow + 6 })).resolves.toMatchObject({ completed: true, reconciled: true });
   });
 
   it('applies the snapshot boundary by time instead of timestamp text format', async () => {

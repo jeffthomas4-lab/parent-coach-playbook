@@ -38,9 +38,10 @@ Required runtime bindings, none of which are declared or provisioned by Packet 6
 
 The committed configuration keeps both switches false. A dedicated minute cron is declared but
 returns without source reads, receiver calls, or writes while the adapter switch is false. When
-enabled, that minute pump performs only the historical scan and bounded delivery; the existing
-six-hour job owns the live mixed-timestamp scan, reconciliation, and completion check. Changing
-the schedule, applying migration `0032`, adding the Service Binding or secret, or enabling either
+enabled, that minute pump performs the historical scan, bounded delivery, and at most one
+100-event historical reconciliation window; the existing six-hour job owns the live
+mixed-timestamp scan, rolling reconciliation, and completion check. Changing the schedule,
+applying migrations `0032` or `0033`, adding the Service Binding or secret, or enabling either
 switch remains a separately approved provider/data action.
 
 ## Guarantees and recovery
@@ -59,10 +60,12 @@ switch remains a separately approved provider/data action.
   that the same unexpired lease still owns the run;
 - completion fails closed if the frozen source inventory changed, source rows do not equal chunk
   rows, eligible dispositions do not equal outbox events, any event is pending/dead or lacks a
-  receiver receipt, or two stable post-scan reconciliations do not agree;
+  receiver receipt, or two complete post-scan reconciliation passes do not cover the same exact
+  run-linked event manifests with zero receiver findings;
 - dispatcher leases at most 10 rows, times out after five seconds and stops after eight attempts;
 - 4xx is terminal; missing receiver, timeout and 5xx back off and retry;
-- reconciliation sends at most 100 hashes and retains only bounded counts/result hash;
+- reconciliation sends at most 100 hashes per request, durably advances only a green window, and
+  restarts the second pass from sequence zero after every first-pass event has been covered;
 - scheduled execution is isolated from the existing publishing and intelligence jobs;
 - contact notes are never exported; channel data stays inside the strict professional-contact schema.
 
@@ -72,13 +75,16 @@ switch remains a separately approved provider/data action.
   work per minute tick;
 - DB query count: 0 when disabled; the first historical tick adds 2 aggregate source-count reads;
   an ordinary historical tick reads one source chunk and performs bounded control, dedupe, receipt,
-  and cursor work; finalization adds 2 source-count reads, 1 accounting read, and 1 reconciliation
-  read on the six-hour job only;
+  and cursor work; a post-delivery minute tick adds one 100-row reconciliation read and bounded
+  receipt/cursor writes; while delivery is incomplete, indexed existence checks replace a repeated
+  full-run count; finalization adds 2 source-count reads, 1 accounting read, and 2 coverage reads on
+  the six-hour job only;
 - external API calls: 0 when disabled; at most 10 parallel Service Binding event calls per minute,
-  plus at most 1 reconciliation call on each six-hour job;
+  plus at most 1 historical reconciliation call per minute and 1 rolling reconciliation call on
+  each six-hour job;
 - queue jobs created: 0;
-- expected memory: O(50) for a source chunk plus O(10) bounded receiver responses, each capped at
-  4 KiB;
+- expected memory: O(100), bounded by a 50-row source chunk, 10 delivery responses, or one
+  100-hash reconciliation window; every receiver response is capped at 4 KiB;
 - likely scaling bottleneck: the 10-event-per-minute receiver pump. At the 2026-09-04 inventory,
   198,287 organizations plus 16 currently channel-bearing contacts is approximately 198,303
   eligible upsert events and a conservative 13.8-day initial drain with no retries. A bounded

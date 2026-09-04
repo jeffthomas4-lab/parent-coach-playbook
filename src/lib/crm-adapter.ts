@@ -97,6 +97,10 @@ interface BackfillRunRow {
   contact_complete: number;
   lease_id: string | null;
   lease_expires_at: number | null;
+  reconciliation_pass: number;
+  reconciliation_cursor_sequence: number;
+  reconciliation_window_ordinal: number;
+  reconciliation_complete: number;
 }
 
 interface BackfillResult {
@@ -108,6 +112,18 @@ interface BackfillResult {
   scanCompleted: boolean;
   completed: boolean;
   busy: boolean;
+}
+
+interface BackfillReconciliationResult {
+  enabled: boolean;
+  checked: boolean;
+  pass: number;
+  window: number;
+  passCompleted: boolean;
+  completed: boolean;
+  pending: number;
+  missing: number;
+  mismatch: number;
 }
 
 const encoder = new TextEncoder();
@@ -506,8 +522,9 @@ async function ensureBackfillRun(
   const db = env.PCD_OPS_DB;
   const runId = `pcd-backfill:${await sha256(`${config.producerWorkspaceId}:${config.targetWorkspaceId}:${config.sourceNotBeforeMs}`)}`;
   let run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
-    status,organization_cursor_id,contact_cursor_id,
-    organization_complete,contact_complete,lease_id,lease_expires_at FROM crm_adapter_backfill_runs
+    status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete,lease_id,lease_expires_at,
+    reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete
+    FROM crm_adapter_backfill_runs
     WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
     .first<BackfillRunRow>();
   if (!run) {
@@ -533,8 +550,9 @@ async function ensureBackfillRun(
       Number(organizations?.count ?? 0), Number(contacts?.count ?? 0), now, now,
     ).run();
     run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
-      status,organization_cursor_id,contact_cursor_id,
-      organization_complete,contact_complete,lease_id,lease_expires_at FROM crm_adapter_backfill_runs
+      status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete,lease_id,lease_expires_at,
+      reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete
+      FROM crm_adapter_backfill_runs
       WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
       .first<BackfillRunRow>();
   }
@@ -744,9 +762,10 @@ export async function finalizePcdCrmBackfill(
       SUM(CASE WHEN status='delivered' AND receiver_receipt_id IS NOT NULL THEN 1 ELSE 0 END) delivered,
       SUM(CASE WHEN status='dead' THEN 1 ELSE 0 END) dead,
       SUM(CASE WHEN status!='delivered' THEN 1 ELSE 0 END) pending,
+      COALESCE(MIN(source_sequence),0) low_water,
       COALESCE(MAX(source_sequence),0) high_water
     FROM crm_adapter_outbox WHERE backfill_run_id=?`).bind(run.id, run.id, run.id, run.id)
-    .first<{ eligible: number; organization_seen: number; contact_seen: number; outbox_total: number; delivered: number; dead: number; pending: number; high_water: number }>();
+    .first<{ eligible: number; organization_seen: number; contact_seen: number; outbox_total: number; delivered: number; dead: number; pending: number; low_water: number; high_water: number }>();
   const eligible = Number(accounting?.eligible ?? 0);
   const organizationSeen = Number(accounting?.organization_seen ?? 0);
   const contactSeen = Number(accounting?.contact_seen ?? 0);
@@ -754,6 +773,7 @@ export async function finalizePcdCrmBackfill(
   const delivered = Number(accounting?.delivered ?? 0);
   const dead = Number(accounting?.dead ?? 0);
   const pending = Number(accounting?.pending ?? 0);
+  const lowWater = Number(accounting?.low_water ?? 0);
   const highWater = Number(accounting?.high_water ?? 0);
   if (organizationSeen !== Number(run.expected_organization_rows) || contactSeen !== Number(run.expected_contact_rows)) {
     throw new Error('pcd_crm_backfill_source_accounting_mismatch');
@@ -762,23 +782,53 @@ export async function finalizePcdCrmBackfill(
   if (dead > 0) throw new Error('pcd_crm_backfill_dead_letters_present');
   if (pending > 0 || delivered !== eligible) return { enabled: true, completed: false, pending, dead, reconciled: false };
 
-  const reconciliations = await env.PCD_OPS_DB.prepare(`SELECT declared_high_water,receiver_high_water,missing_count,
-    duplicate_count,stale_count,unauthorized_count,mismatch_count FROM crm_adapter_reconciliation_receipts
-    WHERE producer_workspace_id=? AND checked_at>=COALESCE((SELECT scanned_at FROM crm_adapter_backfill_runs WHERE id=?),0)
-    ORDER BY checked_at DESC LIMIT 2`).bind(config.producerWorkspaceId, run.id)
-    .all<{ declared_high_water: number; receiver_high_water: number; missing_count: number; duplicate_count: number; stale_count: number; unauthorized_count: number; mismatch_count: number }>();
-  const reconciled = reconciliations.results.length === 2
-    && reconciliations.results.every((reconciliation) => (
-      Number(reconciliation.declared_high_water) >= highWater
-      && Number(reconciliation.receiver_high_water) >= highWater
-      && Number(reconciliation.missing_count) === 0
-      && Number(reconciliation.duplicate_count) === 0
-      && Number(reconciliation.stale_count) === 0
-      && Number(reconciliation.unauthorized_count) === 0
-      && Number(reconciliation.mismatch_count) === 0
-    ))
-    && Number(reconciliations.results[0]!.declared_high_water) === Number(reconciliations.results[1]!.declared_high_water)
-    && Number(reconciliations.results[0]!.receiver_high_water) === Number(reconciliations.results[1]!.receiver_high_water);
+  if (run.reconciliation_complete !== 1) {
+    return { enabled: true, completed: false, pending: 0, dead: 0, reconciled: false };
+  }
+  const coverage = await env.PCD_OPS_DB.prepare(`SELECT
+      COALESCE(SUM(CASE WHEN pass_number=1 THEN manifest_count ELSE 0 END),0) pass_one_count,
+      COALESCE(SUM(CASE WHEN pass_number=2 THEN manifest_count ELSE 0 END),0) pass_two_count,
+      COALESCE(SUM(CASE WHEN pass_number=1 THEN 1 ELSE 0 END),0) pass_one_windows,
+      COALESCE(SUM(CASE WHEN pass_number=2 THEN 1 ELSE 0 END),0) pass_two_windows,
+      COALESCE(MIN(CASE WHEN pass_number=1 THEN first_sequence END),0) pass_one_low,
+      COALESCE(MIN(CASE WHEN pass_number=2 THEN first_sequence END),0) pass_two_low,
+      COALESCE(MAX(CASE WHEN pass_number=1 THEN last_sequence END),0) pass_one_high,
+      COALESCE(MAX(CASE WHEN pass_number=2 THEN last_sequence END),0) pass_two_high,
+      COALESCE(SUM(missing_count+duplicate_count+stale_count+unauthorized_count+mismatch_count),0) errors,
+      COALESCE(SUM(CASE WHEN receiver_high_water<last_sequence THEN 1 ELSE 0 END),0) receiver_behind
+    FROM crm_adapter_backfill_reconciliation_windows WHERE run_id=?`).bind(run.id)
+    .first<Record<string, number>>();
+  const pairMismatch = await env.PCD_OPS_DB.prepare(`SELECT COUNT(*) mismatch FROM (
+      SELECT one.window_ordinal FROM crm_adapter_backfill_reconciliation_windows one
+      LEFT JOIN crm_adapter_backfill_reconciliation_windows two
+        ON two.run_id=one.run_id AND two.pass_number=2 AND two.window_ordinal=one.window_ordinal
+      WHERE one.run_id=? AND one.pass_number=1 AND (
+        two.window_ordinal IS NULL OR two.first_sequence!=one.first_sequence OR two.last_sequence!=one.last_sequence
+        OR two.manifest_count!=one.manifest_count OR two.manifest_hash!=one.manifest_hash)
+      UNION ALL
+      SELECT two.window_ordinal FROM crm_adapter_backfill_reconciliation_windows two
+      LEFT JOIN crm_adapter_backfill_reconciliation_windows one
+        ON one.run_id=two.run_id AND one.pass_number=1 AND one.window_ordinal=two.window_ordinal
+      WHERE two.run_id=? AND two.pass_number=2 AND one.window_ordinal IS NULL
+    )`).bind(run.id, run.id).first<{ mismatch: number }>();
+  const passOneCount = Number(coverage?.pass_one_count ?? 0);
+  const passTwoCount = Number(coverage?.pass_two_count ?? 0);
+  const passOneWindows = Number(coverage?.pass_one_windows ?? 0);
+  const passTwoWindows = Number(coverage?.pass_two_windows ?? 0);
+  const expectedWindows = Math.ceil(eligible / 100);
+  const reconciled = passOneCount === eligible
+    && passTwoCount === eligible
+    && passOneWindows === expectedWindows
+    && passTwoWindows === expectedWindows
+    && Number(coverage?.errors ?? 0) === 0
+    && Number(coverage?.receiver_behind ?? 0) === 0
+    && Number(pairMismatch?.mismatch ?? 0) === 0
+    && (eligible === 0 || (
+      Number(coverage?.pass_one_low ?? 0) === lowWater
+      && Number(coverage?.pass_two_low ?? 0) === lowWater
+      && Number(coverage?.pass_one_high ?? 0) === highWater
+      && Number(coverage?.pass_two_high ?? 0) === highWater
+    ));
   if (!reconciled) return { enabled: true, completed: false, pending: 0, dead: 0, reconciled: false };
 
   const update = await env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_backfill_runs SET status='completed',completed_at=?,updated_at=?
@@ -850,6 +900,199 @@ async function signedFetch(
     });
   } finally {
     clearTimeout(timeout);
+  }
+}
+
+function disabledBackfillReconciliation(): BackfillReconciliationResult {
+  return {
+    enabled: false,
+    checked: false,
+    pass: 0,
+    window: 0,
+    passCompleted: false,
+    completed: false,
+    pending: 0,
+    missing: 0,
+    mismatch: 0,
+  };
+}
+
+export async function reconcilePcdCrmBackfill(
+  env: PcdCrmAdapterEnv,
+  options: { now?: number; fetcher?: CrmAdapterFetcher } = {},
+): Promise<BackfillReconciliationResult> {
+  if (env.PCD_CRM_ADAPTER_ENABLED !== 'true' || env.PCD_CRM_BACKFILL_ENABLED !== 'true') {
+    return disabledBackfillReconciliation();
+  }
+  const config = requireConfig(env);
+  const secret = env.PCD_CRM_ADAPTER_HMAC_SECRET?.trim() ?? '';
+  const fetcher = options.fetcher ?? env.CRM_ADAPTER;
+  if (!config || !secret || !fetcher || !env.PCD_OPS_DB) {
+    throw new Error('pcd_crm_adapter_configuration_missing');
+  }
+  const db = env.PCD_OPS_DB;
+  const now = options.now ?? Date.now();
+  const run = await ensureBackfillRun(env, config, now);
+  const pass = Number(run.reconciliation_pass);
+  const window = Number(run.reconciliation_window_ordinal) + 1;
+  if (run.status === 'running') {
+    return { ...disabledBackfillReconciliation(), enabled: true, pass, window };
+  }
+  if (run.status === 'completed' || run.reconciliation_complete === 1) {
+    return {
+      ...disabledBackfillReconciliation(), enabled: true, pass: 2,
+      window: Number(run.reconciliation_window_ordinal), completed: true,
+    };
+  }
+
+  const accounting = await db.prepare(`SELECT
+      EXISTS(SELECT 1 FROM crm_adapter_outbox WHERE backfill_run_id=? AND status='dead' LIMIT 1) dead,
+      EXISTS(SELECT 1 FROM crm_adapter_outbox WHERE backfill_run_id=? AND status!='delivered' LIMIT 1) pending`)
+    .bind(run.id, run.id).first<{ pending: number; dead: number }>();
+  const pending = Number(accounting?.pending ?? 0);
+  const dead = Number(accounting?.dead ?? 0);
+  if (dead > 0) throw new Error('pcd_crm_backfill_dead_letters_present');
+  if (pending > 0) {
+    return { ...disabledBackfillReconciliation(), enabled: true, pass, window, pending };
+  }
+
+  const leaseId = `pcd-crm-backfill-reconcile:${crypto.randomUUID()}`;
+  const lease = await db.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=?,lease_expires_at=?,updated_at=?
+    WHERE id=? AND status='scanned' AND reconciliation_complete=0
+      AND (lease_expires_at IS NULL OR lease_expires_at<?)`)
+    .bind(leaseId, now + 60_000, now, run.id, now).run();
+  if (Number(lease.meta.changes ?? 0) !== 1) {
+    return { ...disabledBackfillReconciliation(), enabled: true, pass, window };
+  }
+
+  let leaseReleased = false;
+  try {
+    const rows = await db.prepare(`SELECT event_id,source_sequence,event_type,payload_hash
+      FROM crm_adapter_outbox WHERE backfill_run_id=? AND source_sequence>?
+      ORDER BY source_sequence LIMIT 100`).bind(run.id, run.reconciliation_cursor_sequence)
+      .all<{ event_id: string; source_sequence: number; event_type: string; payload_hash: string }>();
+    if (!rows.results.length) {
+      const update = pass === 1
+        ? db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_pass=2,reconciliation_cursor_sequence=0,
+            reconciliation_window_ordinal=0,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+          WHERE id=? AND lease_id=? AND reconciliation_pass=1 AND reconciliation_complete=0`).bind(now, run.id, leaseId)
+        : db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_complete=1,lease_id=NULL,
+            lease_expires_at=NULL,updated_at=?
+          WHERE id=? AND lease_id=? AND reconciliation_pass=2 AND reconciliation_complete=0`).bind(now, run.id, leaseId);
+      const updated = await update.run();
+      if (Number(updated.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_lease_lost');
+      leaseReleased = true;
+      return {
+        ...disabledBackfillReconciliation(), enabled: true, pass, window: window - 1,
+        passCompleted: true, completed: pass === 2,
+      };
+    }
+
+    const highWaterRow = await db.prepare(`SELECT COALESCE(MAX(source_sequence),0) high_water
+      FROM crm_adapter_outbox WHERE producer_workspace_id=?`).bind(config.producerWorkspaceId)
+      .first<{ high_water: number }>();
+    const declaredHighWater = Number(highWaterRow?.high_water ?? 0);
+    const events = rows.results.map((row) => ({
+      eventId: row.event_id,
+      sequence: Number(row.source_sequence),
+      eventType: row.event_type,
+      payloadHash: row.payload_hash,
+    }));
+    const manifest = {
+      contractVersion: CONTRACT_VERSION,
+      producerWorkspaceId: config.producerWorkspaceId,
+      declaredHighWater,
+      events,
+    };
+    const body = JSON.stringify(manifest);
+    const response = await signedFetch(
+      fetcher,
+      secret,
+      config.producerWorkspaceId,
+      RECONCILE_SCOPE,
+      `pcd-backfill-reconcile-${run.id}-${pass}-${window}`,
+      'reconcile',
+      body,
+    );
+    const result = await readBoundedJson(response);
+    const resultArrays = ['missing', 'duplicate', 'stale', 'unauthorized', 'mismatch'] as const;
+    const validResult = response.status === 200
+      && result
+      && result.producer === PRODUCER
+      && result.producerWorkspaceId === config.producerWorkspaceId
+      && result.declaredHighWater === declaredHighWater
+      && typeof result.receiverHighWater === 'number'
+      && Number.isSafeInteger(result.receiverHighWater)
+      && result.receiverHighWater >= 0
+      && resultArrays.every((key) => Array.isArray(result[key]) && (result[key] as unknown[]).length <= 100);
+    if (!validResult || !result) {
+      await db.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=NULL,lease_expires_at=NULL,updated_at=?
+        WHERE id=? AND lease_id=?`).bind(now, run.id, leaseId).run();
+      leaseReleased = true;
+      return { ...disabledBackfillReconciliation(), enabled: true, pass, window };
+    }
+
+    const count = (key: typeof resultArrays[number]) => (result[key] as unknown[]).length;
+    const missing = count('missing');
+    const duplicate = count('duplicate');
+    const stale = count('stale');
+    const unauthorized = count('unauthorized');
+    const mismatch = count('mismatch');
+    const resultHash = await sha256(stableJson(result));
+    const receiptId = `pcd-crm-recon:${crypto.randomUUID()}`;
+    const statements: D1PreparedStatement[] = [
+      db.prepare(`INSERT INTO crm_adapter_reconciliation_receipts
+        (id,producer_workspace_id,declared_high_water,receiver_high_water,manifest_count,missing_count,
+         duplicate_count,stale_count,unauthorized_count,mismatch_count,result_hash,checked_at)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`).bind(
+        receiptId, config.producerWorkspaceId, declaredHighWater, Number(result.receiverHighWater), events.length,
+        missing, duplicate, stale, unauthorized, mismatch, resultHash, now,
+      ),
+    ];
+    if (missing + duplicate + stale + unauthorized + mismatch === 0) {
+      const firstSequence = events[0]!.sequence;
+      const lastSequence = events.at(-1)!.sequence;
+      statements.push(
+        db.prepare(`INSERT INTO crm_adapter_backfill_reconciliation_windows
+          (run_id,pass_number,window_ordinal,after_sequence,first_sequence,last_sequence,manifest_count,
+           declared_high_water,receiver_high_water,missing_count,duplicate_count,stale_count,unauthorized_count,
+           mismatch_count,manifest_hash,result_hash,checked_at)
+          VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).bind(
+          run.id, pass, window, run.reconciliation_cursor_sequence, firstSequence, lastSequence, events.length,
+          declaredHighWater, Number(result.receiverHighWater), 0, 0, 0, 0, 0,
+          await sha256(stableJson(events)), resultHash, now,
+        ),
+        db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_cursor_sequence=?,
+            reconciliation_window_ordinal=?,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+          WHERE id=? AND lease_id=? AND reconciliation_pass=? AND reconciliation_cursor_sequence=?
+            AND reconciliation_window_ordinal=? AND reconciliation_complete=0`).bind(
+          lastSequence, window, now, run.id, leaseId, pass,
+          run.reconciliation_cursor_sequence, run.reconciliation_window_ordinal,
+        ),
+      );
+    } else {
+      statements.push(db.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=NULL,lease_expires_at=NULL,updated_at=?
+        WHERE id=? AND lease_id=?`).bind(now, run.id, leaseId));
+    }
+    const results = await db.batch(statements);
+    if (Number(results.at(-1)?.meta.changes ?? 0) !== 1) throw new Error('pcd_crm_backfill_lease_lost');
+    leaseReleased = true;
+    return {
+      enabled: true,
+      checked: true,
+      pass,
+      window,
+      passCompleted: false,
+      completed: false,
+      pending: 0,
+      missing,
+      mismatch: mismatch + duplicate + stale + unauthorized,
+    };
+  } finally {
+    if (!leaseReleased) {
+      await db.prepare(`UPDATE crm_adapter_backfill_runs SET lease_id=NULL,lease_expires_at=NULL,updated_at=?
+        WHERE id=? AND lease_id=?`).bind(now, run.id, leaseId).run();
+    }
   }
 }
 
@@ -991,6 +1234,7 @@ export async function runPcdCrmAdapter(
   const reconciliation = options.backfillOnly
     ? { checked: false, missing: 0, mismatch: 0 }
     : await reconcilePcdCrmOutbox(env);
+  const backfillReconciliation = await reconcilePcdCrmBackfill(env);
   const backfillFinal = options.backfillOnly
     ? { completed: false }
     : await finalizePcdCrmBackfill(env);
@@ -1012,5 +1256,13 @@ export async function runPcdCrmAdapter(
     reconciled: reconciliation.checked,
     missing: reconciliation.missing,
     mismatch: reconciliation.mismatch,
+    backfillReconciliationChecked: backfillReconciliation.checked,
+    backfillReconciliationPass: backfillReconciliation.pass,
+    backfillReconciliationWindow: backfillReconciliation.window,
+    backfillReconciliationPassCompleted: backfillReconciliation.passCompleted,
+    backfillReconciliationCompleted: backfillReconciliation.completed,
+    backfillReconciliationPending: backfillReconciliation.pending,
+    backfillReconciliationMissing: backfillReconciliation.missing,
+    backfillReconciliationMismatch: backfillReconciliation.mismatch,
   }));
 }
