@@ -6,5 +6,5 @@ sport: "football"
 sourceUrl: "https://nfhs.org/stories/prohibition-on-slapping-the-head-now-applies-to-all-players-in-high-school-football"
 sourceLabel: "National Federation of State High School Associations (NFHS)"
 publishedAt: 2026-09-01
-draft: true
+draft: false
 ---

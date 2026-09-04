@@ -10,7 +10,7 @@ age: "8-10"
 phase: "drive-there"
 topic: "season-ops"
 publishedAt: 2026-08-31
-draft: true
+draft: false
 editorial:
   qualityGrade: 7
   originalityGrade: 7

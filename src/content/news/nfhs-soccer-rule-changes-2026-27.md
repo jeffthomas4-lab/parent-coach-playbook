@@ -1,12 +1,12 @@
 ---
 headline: "Three high school soccer rule changes will show up as confusing calls this fall"
-summary: "NFHS gave goalkeepers eight seconds to release the ball this season, up from six. Holding it longer now costs a corner kick instead of an indirect free kick. Referees will also warn instead of caution on a first-time penalty kick encroachment, and no player can wear an audio or video recording device during a match."
+summary: "NFHS gave goalkeepers eight seconds to release the ball this season, up from six. Holding it longer now costs a corner kick instead of an indirect free kick. Goalkeepers now get a warning instead of a caution the first time they encroach on a penalty kick, and no player can wear an audio or video recording device during a match."
 category: "rule-change"
 sport: "soccer"
 sourceUrl: "https://nfhs.org/stories/new-process-for-distributing-cards-among-13-changes-in-high-school-soccer-rules"
 sourceLabel: "National Federation of State High School Associations (NFHS)"
 publishedAt: 2026-09-03
-draft: true
+draft: false
 editorial:
   flagInappropriateness: false
   flagIpRisk: false

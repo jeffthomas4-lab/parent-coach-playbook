@@ -12,7 +12,7 @@ topic: "communication"
 seasonPhase: "pre-season"
 publishedAt: 2026-08-30
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
