@@ -33,7 +33,11 @@ describe('test engineering contract', () => {
     expect(pkg.scripts['test:unit:coverage']).toContain('--coverage');
     const integrationCommand = pkg.scripts['test:integration'];
     expect(integrationCommand).toContain('vitest.integration.config.ts');
+    expect(integrationCommand).toContain('--exclude tests/customer-lifecycle.integration.test.ts');
     expect(integrationCommand).toContain('--exclude tests/crm-adapter.test.ts');
+    expect(integrationCommand).toContain(
+      '&& vitest run --config vitest.integration.config.ts tests/customer-lifecycle.integration.test.ts',
+    );
     expect(integrationCommand).toContain(
       '&& vitest run --config vitest.integration.config.ts tests/crm-adapter.test.ts',
     );
