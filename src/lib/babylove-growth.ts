@@ -574,14 +574,13 @@ export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, 
   }
 }
 
-async function fetchApiJson(url: string, apiKey: string): Promise<unknown> {
-  const response = await fetch(url, {
-    headers: { 'X-API-Key': apiKey, 'Content-Type': 'application/json' },
-    signal: AbortSignal.timeout(API_TIMEOUT_MS),
-  });
-  if (!response.ok) throw new BabyLoveFailure(`api_${response.status}`);
-  return response.json();
-}
+// fetchApiJson was removed 2026-09-04, superseded by fetchApiJsonTracked.
+// It sent no User-Agent, which is why every call it made returned api_403:
+// an empty UA from a Cloudflare Worker IP is a standard bot-filter signature,
+// and a WAF answers that with 403 rather than the 401 BabyLoveGrowth's docs
+// describe for a bad key. Proven 2026-09-04 — the same key, same URL and same
+// headers succeeded from curl, which sends a UA of its own.
+// It also had no notion of the provider's two-request-per-window limit.
 
 // The provider has never committed to one envelope shape, and a shape we did
 // not recognize used to throw `api_list_invalid` before a single article was
@@ -616,6 +615,90 @@ function extractListing(payload: unknown): { listing: unknown[] | null; envelope
 
 const RECONCILE_BATCH = 50;
 
+/**
+ * The provider allows TWO requests per window (`RateLimit-Limit: 2`, observed
+ * live 2026-09-04). The original loop fetched the listing and then full detail
+ * for all 50 summaries on every run — 51 requests against a ceiling of 2 —
+ * with no backoff, so everything after the second call was throttled. Every
+ * run, since the function was written.
+ *
+ * Two changes make it fit inside the budget:
+ *
+ *   1. Ask the database which article ids already have a receipt BEFORE
+ *      spending any API calls. Detail is fetched only for genuinely new
+ *      articles. Steady state is now ONE request per run (just the listing),
+ *      because on most days nothing is new.
+ *
+ *   2. Stop when the budget is gone instead of hammering into throttling.
+ *      Reconciliation runs every six hours, so a backlog drains across runs.
+ *      Deferred work is reported, not silently dropped.
+ *
+ * Do not "optimize" this back into fetching detail up front. That is the bug.
+ */
+interface RateBudget {
+  remaining: number;
+  resetAt: number | null;
+}
+
+async function fetchApiJsonTracked(
+  url: string,
+  apiKey: string,
+  budget: RateBudget,
+): Promise<unknown> {
+  const response = await fetch(url, {
+    headers: {
+      'X-API-Key': apiKey,
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'User-Agent': 'parent-coach-desk-babylove-importer',
+    },
+    signal: AbortSignal.timeout(API_TIMEOUT_MS),
+  });
+
+  const remaining = Number(response.headers.get('RateLimit-Remaining'));
+  if (Number.isFinite(remaining)) budget.remaining = remaining;
+  else budget.remaining -= 1;
+  const reset = Number(response.headers.get('RateLimit-Reset'));
+  if (Number.isFinite(reset)) budget.resetAt = reset;
+
+  if (response.status === 429) throw new BabyLoveFailure('api_rate_limited');
+  if (!response.ok) throw new BabyLoveFailure(`api_${response.status}`);
+  return response.json();
+}
+
+/**
+ * Which of these provider article ids do we already have a receipt for, in any
+ * state other than a failure worth retrying? Answered in one query so the
+ * listing can be filtered without spending API calls.
+ */
+async function existingReceiptIds(db: D1Database, ids: string[]): Promise<Set<string>> {
+  if (!ids.length) return new Set();
+  const placeholders = ids.map(() => '?').join(',');
+  const rows = await db.prepare(
+    `SELECT DISTINCT provider_article_id FROM external_article_receipts
+     WHERE provider = 'babylovegrowth'
+       AND status IN ('published', 'quarantined', 'processing')
+       AND provider_article_id IN (${placeholders})`,
+  ).bind(...ids).all<{ provider_article_id: string }>();
+  return new Set((rows.results ?? []).map((r) => r.provider_article_id));
+}
+
+/**
+ * The listing carries a `published` flag. An article the provider has not
+ * published yet is a draft on their side and must not go live on ours.
+ * Observed 2026-09-04: article 812356 sat in the listing with
+ * `"published": false` while still being actively edited.
+ */
+function providerHasPublished(record: Record<string, unknown> | null): boolean {
+  if (!record) return false;
+  const flag = record.published;
+  if (typeof flag === 'boolean') return flag;
+  if (typeof flag === 'string') return flag.toLowerCase() === 'true';
+  // Field absent: older payload shape. Treat as publishable, matching the
+  // behaviour the webhook lane has always had.
+  return flag === undefined || flag === null;
+}
+
 export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ scanned: number; published: number; skipped: number; failed: number }> {
   if (!enabled(env.BABYLOVE_AUTOPUBLISH_ENABLED)) return { scanned: 0, published: 0, skipped: 0, failed: 0 };
   const missing = [
@@ -629,7 +712,9 @@ export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ sca
     console.error(JSON.stringify({ event: 'babylove_reconciliation_unavailable', missing }));
     throw new BabyLoveFailure('reconciliation_unavailable', `reconciliation_unavailable: ${missing.join(',')}`);
   }
-  const listingPayload = await fetchApiJson(API_BASE, env.BABYLOVE_API_KEY!);
+  // Two requests per window is the whole budget. The listing costs one.
+  const budget: RateBudget = { remaining: 2, resetAt: null };
+  const listingPayload = await fetchApiJsonTracked(API_BASE, env.BABYLOVE_API_KEY!, budget);
   const { listing, envelopeKeys } = extractListing(listingPayload);
   if (!listing) {
     console.error(JSON.stringify({
@@ -650,7 +735,12 @@ export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ sca
   let published = 0;
   let skipped = 0;
   let failed = 0;
+  let deferred = 0;
   const apiKey = env.BABYLOVE_API_KEY!;
+
+  // Pass 1 — no API calls. Identify every candidate, drop provider drafts, and
+  // ask the database which ones we already hold.
+  const candidates: Array<{ id: string; record: Record<string, unknown> | null }> = [];
   for (const summary of listing.slice(0, RECONCILE_BATCH)) {
     const record = objectValue(summary);
     const id = idValue(record?.id)
@@ -665,9 +755,26 @@ export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ sca
       }));
       continue;
     }
+    if (!providerHasPublished(record)) {
+      skipped += 1;
+      continue;
+    }
+    candidates.push({ id, record });
+  }
+
+  const known = await existingReceiptIds(env.PCD_OPS_DB!, candidates.map((c) => c.id));
+  const fresh = candidates.filter((c) => !known.has(c.id));
+  skipped += candidates.length - fresh.length;
+
+  // Pass 2 — spend the remaining request budget on genuinely new articles only.
+  for (const { id } of fresh) {
+    if (budget.remaining <= 0) {
+      deferred += 1;
+      continue;
+    }
     scanned += 1;
     try {
-      const detail = await fetchApiJson(`${API_BASE}/${encodeURIComponent(id)}`, apiKey);
+      const detail = await fetchApiJsonTracked(`${API_BASE}/${encodeURIComponent(id)}`, apiKey, budget);
       const article = parseBabyLoveArticle(detail);
       const accepted = await acceptArticle(env, article, 'api_reconciliation');
       if (accepted.receipt.status === 'published') {
@@ -677,18 +784,32 @@ export async function reconcileBabyLoveArticles(env: BabyLoveEnv): Promise<{ sca
       await publishReceipt(env, accepted.receipt, article);
       published += 1;
     } catch (error) {
-      failed += 1;
       const code = error instanceof BabyLoveFailure ? error.code : 'reconciliation_item_failed';
+      // Throttling is not this article's fault. Leave it for the next run
+      // rather than burning it as a failure.
+      if (code === 'api_rate_limited') {
+        budget.remaining = 0;
+        deferred += 1;
+        scanned -= 1;
+      } else {
+        failed += 1;
+      }
       console.error(JSON.stringify({ event: 'babylove_reconciliation_item_failed', article_id: id, code }));
     }
   }
+
   console.log(JSON.stringify({
     event: 'babylove_reconciliation_completed',
     listing_size: listing.length,
+    candidates: candidates.length,
+    fresh: fresh.length,
     scanned,
     published,
     skipped,
     failed,
+    deferred,
+    rate_remaining: budget.remaining,
+    rate_reset: budget.resetAt,
   }));
   return { scanned, published, skipped, failed };
 }
