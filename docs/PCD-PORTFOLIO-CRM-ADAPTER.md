@@ -41,7 +41,7 @@ returns without source reads, receiver calls, or writes while the adapter switch
 enabled, that minute pump performs the historical scan, bounded delivery, and at most one
 100-event historical reconciliation window; the existing six-hour job owns the live
 mixed-timestamp scan, rolling reconciliation, and completion check. Changing the schedule,
-applying migrations `0032` or `0033`, adding the Service Binding or secret, or enabling either
+applying migrations `0032` through `0034`, adding the Service Binding or secret, or enabling either
 switch remains a separately approved provider/data action.
 
 ## Guarantees and recovery
@@ -62,7 +62,8 @@ switch remains a separately approved provider/data action.
   rows, eligible dispositions do not equal outbox events, any event is pending/dead or lacks a
   receiver receipt, or two complete post-scan reconciliation passes do not cover the same exact
   run-linked event manifests with zero receiver findings;
-- dispatcher leases at most 10 rows, times out after five seconds and stops after eight attempts;
+- dispatcher leases at most 10 rows in source-sequence order through the partial actionable-status
+  index, sends them sequentially, times out after five seconds and stops after eight attempts;
 - 4xx is terminal; missing receiver, timeout and 5xx back off and retry;
 - reconciliation sends at most 100 hashes per request, durably advances only a green window, and
   restarts the second pass from sequence zero after every first-pass event has been covered;
@@ -71,8 +72,8 @@ switch remains a separately approved provider/data action.
 
 ## Performance review
 
-- approximate algorithmic complexity: O(o + c), with O(50) projection work and O(10) delivery
-  work per minute tick;
+- approximate algorithmic complexity: O(o + c) over a complete projection, with O(50) projection
+  work per minute tick and O(log n + 10) indexed claim work for each delivery tick;
 - DB query count: 0 when disabled; the first historical tick adds 2 aggregate source-count reads;
   an ordinary historical tick reads one source chunk and performs bounded control, dedupe, receipt,
   and cursor work; a post-delivery minute tick adds one 100-row reconciliation read and bounded
@@ -91,5 +92,14 @@ switch remains a separately approved provider/data action.
   staging pilot must measure receiver/D1 behavior before that limit changes; completion is based on
   accounting and reconciliation, never elapsed time.
 
-Dependency decision: native Web Crypto, D1 batch and Service Binding fetch were used; no new
-package cleared the repository's seven dependency questions or improved this bounded path.
+The fixed-scale local gate processed 200,000 synthetic organizations plus 108 synthetic contacts,
+classified all 108 contacts, delivered all 200,016 eligible events, completed 4,002 reconciliation
+windows, recovered one ambiguous response by replay, and detected/restored one deliberately missing
+receiver event. It completed in 1,091,641 ms across 47 restartable stages. This proves application
+accounting and bounded-memory behavior, not hosted D1 latency or physical durability; the disposable
+SQLite harness disables host fsync while retaining transaction boundaries.
+
+Dependency decision: npm and GitHub were checked for maintained HTTP load tools such as Autocannon;
+they benchmark HTTP concurrency but do not exercise this product's D1 cursor, durable outbox,
+idempotent replay, contact-disposition, and two-pass reconciliation contract. Native Web Crypto,
+Node SQLite, D1 batch and Service Binding fetch were therefore used with no new package.

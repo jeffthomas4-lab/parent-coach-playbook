@@ -2,8 +2,8 @@
 
 Status: **HOLD — READ-ONLY PREFLIGHT ONLY**  
 Observed: 2026-09-04  
-PCD implementation candidate: `c23b6e4baf950748e216906b995abbe463388dea`
-Candidate tree: `5088032c68724686b987891a410099abfc02abcb`
+PCD implementation candidate: `fc479dd7eda7c01932c25ffb7ba3a63b1e15ef76`
+Candidate tree: `ad6558e435d1f9fd8345506dd6888818abdecb26`
 
 No remote mutation was performed by this preflight.
 
@@ -27,7 +27,9 @@ The directory staging D1 contains 10 organizations and a maximum `updated_at` of
 `2026-07-19T05:57:35.564Z`. The aggregate query reported `changed_db: false`, 10 rows read, and
 zero rows written.
 
-The ops staging D1 has no `org_contacts` table. Wrangler reports 12 pending migration files:
+The ops staging D1 has no `org_contacts` table. The last read-only Wrangler preflight reported 12
+pending migration files; candidate `fc479dd7eda7c01932c25ffb7ba3a63b1e15ef76` adds migration
+`0034`, so the exact authorized set is now 13 files:
 
 1. `0023_affiliate_clicks.sql`
 2. `0024_editorial_opportunity_lifecycle.sql`
@@ -41,17 +43,19 @@ The ops staging D1 has no `org_contacts` table. Wrangler reports 12 pending migr
 10. `0031_crm_adapter_outbox.sql`
 11. `0032_crm_adapter_historical_backfill.sql`
 12. `0033_crm_adapter_backfill_reconciliation.sql`
+13. `0034_crm_adapter_outbox_claim_order.sql`
 
 Pending-set aggregate:
-`12129ae2a3dfd84d6d5ee9e8c221be2c34fa7e4c1c293f08329729f6adc31357`
+`0f862d2d4703aacb798393dc6a642afa465b183134031da03dcb855e0100b192`
 
 Aggregate algorithm:
 `sha256(utf8(compact-json(sorted [{name,sha256}])))`.
 
-The two CRM-specific migration hashes are:
+The three CRM-specific migration hashes are:
 
 - `0032`: `48a96fbccc0984af8ea435b27d1c0d3ad8d5956354f976643d3574e454a4d842`
 - `0033`: `b06535eb8b374f4a69106b371cb89680f0219251a54244d4b07cb30c46d8120d`
+- `0034`: `12723f74abe6123ad549ab021cde75ec1fea168671f8535f1cad456da237c092`
 
 The remaining component hashes, in the same sorted manifest, are:
 
@@ -75,8 +79,8 @@ authority table is absent, and the active Worker predates the repaired full-run 
 The next remote gate should remain infrastructure-only:
 
 1. retain a staging D1 backup/bookmark;
-2. authorize and apply exactly the observed 12-file pending migration set;
-3. deploy exact candidate `c23b6e4baf950748e216906b995abbe463388dea` with both adapter flags false;
+2. authorize and apply exactly the 13-file pending migration set recorded above;
+3. deploy exact candidate `fc479dd7eda7c01932c25ffb7ba3a63b1e15ef76` with both adapter flags false;
 4. prove migration ledger/schema, binding, secret-name, schedule, and disabled no-op behavior;
 5. stop before setting an activation boundary, seeding/copying pilot data, enabling either flag, or
    moving any organization/contact row.
