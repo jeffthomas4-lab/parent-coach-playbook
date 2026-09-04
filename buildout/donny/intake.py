@@ -649,6 +649,7 @@ def plan_contact_upsert(org_id: str, row: dict, source_name: str,
         "phone": phone or None,
         "is_public": 1,
         "is_shared_mailbox": 1 if shared else 0,
+        "contact_context": "professional",
         "source": "import",
         "source_url": row.get("source_url"),
         "source_name": source_name,
@@ -669,10 +670,10 @@ def contact_upsert_sql(plan: dict) -> tuple[str, list]:
     """
     sql = (
         "INSERT INTO org_contacts "
-        "(id, organization_id, full_name, role, email, phone, is_public, source, "
+        "(id, organization_id, full_name, role, email, phone, is_public, contact_context, source, "
         " source_url, confidence, verification_method, verified_at, verified_by, "
         " created_at, updated_at) "
-        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) "
+        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) "
         # The conflict target must repeat the predicate of the partial unique
         # index in 0028 (idx_org_contacts_org_email is scoped to live rows with
         # an email). Without the WHERE clause SQLite raises "ON CONFLICT clause
@@ -682,6 +683,8 @@ def contact_upsert_sql(plan: dict) -> tuple[str, list]:
         "  full_name = COALESCE(org_contacts.full_name, excluded.full_name), "
         "  role = CASE WHEN org_contacts.role = 'unknown' THEN excluded.role ELSE org_contacts.role END, "
         "  phone = COALESCE(org_contacts.phone, excluded.phone), "
+        "  contact_context = CASE WHEN org_contacts.contact_context = 'unknown' "
+        "    THEN excluded.contact_context ELSE org_contacts.contact_context END, "
         "  source_url = COALESCE(org_contacts.source_url, excluded.source_url), "
         "  verified_at = excluded.verified_at, "
         "  verified_by = excluded.verified_by, "
@@ -691,7 +694,7 @@ def contact_upsert_sql(plan: dict) -> tuple[str, list]:
     now = utcnow()
     params = [
         plan["id"], plan["organization_id"], plan["full_name"], plan["role"],
-        plan["email"], plan["phone"], plan["is_public"], plan["source"],
+        plan["email"], plan["phone"], plan["is_public"], plan["contact_context"], plan["source"],
         plan["source_url"], plan["confidence"], plan["verification_method"],
         plan["verified_at"], plan["verified_by"], now, now,
     ]

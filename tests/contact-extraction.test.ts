@@ -17,8 +17,10 @@
 //     left-to-right regex consumes "Coach Alicia" and never offers the real
 //     pair as a candidate.
 
-import { describe, it, expect } from 'vitest';
-import { extractContacts, findContactPages } from '../workers-activity-radar/enrichment-worker';
+import { afterAll, beforeAll, describe, it, expect } from 'vitest';
+import { extractContacts, findContactPages, writeContact } from '../workers-activity-radar/enrichment-worker';
+import { computeContentHash } from '../src/lib/org-contacts';
+import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 
 describe('extractContacts — finds the real person', () => {
   it('pairs each name with its OWN title on a multi-person staff page', () => {
@@ -158,5 +160,70 @@ describe('findContactPages', () => {
 
   it('returns nothing when there is nothing to follow', () => {
     expect(findContactPages('<p>no links here</p>', 'https://org.com/')).toEqual([]);
+  });
+});
+
+describe('writeContact — CRM context boundary', () => {
+  let resource: Awaited<ReturnType<typeof createDisposableOpsDatabase>>;
+
+  beforeAll(async () => {
+    resource = await createDisposableOpsDatabase('contact-enrichment-write-test');
+  });
+
+  afterAll(async () => {
+    await resource.mf.dispose();
+  });
+
+  const contact = {
+    fullName: 'Dana Reyes',
+    title: 'Camp Director',
+    role: 'director',
+    email: 'dana@example.invalid',
+    confidence: 'high' as const,
+    sourceUrl: 'https://club.example/staff',
+  };
+
+  it('classifies a newly extracted adult-role contact as professional', async () => {
+    await expect(writeContact(resource.db, 'org-new', contact, '2026-09-04T12:00:00.000Z')).resolves.toBe('created');
+    const row = await resource.db.prepare(
+      `SELECT contact_context, content_hash FROM org_contacts WHERE organization_id=?`,
+    ).bind('org-new').first<{ contact_context: string; content_hash: string }>();
+
+    expect(row?.contact_context).toBe('professional');
+    expect(row?.content_hash).toBe(await computeContentHash({
+      organization_id: 'org-new',
+      full_name: contact.fullName,
+      title: contact.title,
+      role: contact.role,
+      email: contact.email,
+      do_not_contact: 0,
+      contact_context: 'professional',
+    }));
+  });
+
+  it('upgrades only legacy unknown context', async () => {
+    await resource.db.prepare(
+      `INSERT INTO org_contacts (id, organization_id, full_name, role, email, source, contact_context)
+       VALUES ('unknown-contact','org-unknown','Dana Reyes','director',?,'enrichment','unknown')`,
+    ).bind(contact.email).run();
+
+    await expect(writeContact(resource.db, 'org-unknown', contact, '2026-09-04T12:01:00.000Z')).resolves.toBe('updated');
+    const row = await resource.db.prepare(
+      `SELECT contact_context FROM org_contacts WHERE id='unknown-contact'`,
+    ).first<{ contact_context: string }>();
+    expect(row?.contact_context).toBe('professional');
+  });
+
+  it('preserves an explicit guardian context', async () => {
+    await resource.db.prepare(
+      `INSERT INTO org_contacts (id, organization_id, full_name, role, email, source, contact_context)
+       VALUES ('guardian-contact','org-guardian','Dana Reyes','director',?,'enrichment','guardian')`,
+    ).bind(contact.email).run();
+
+    await expect(writeContact(resource.db, 'org-guardian', contact, '2026-09-04T12:02:00.000Z')).resolves.toBe('updated');
+    const row = await resource.db.prepare(
+      `SELECT contact_context FROM org_contacts WHERE id='guardian-contact'`,
+    ).first<{ contact_context: string }>();
+    expect(row?.contact_context).toBe('guardian');
   });
 });

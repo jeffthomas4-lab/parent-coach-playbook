@@ -8,3 +8,6 @@ ALTER TABLE org_contacts ADD COLUMN contact_context TEXT NOT NULL DEFAULT 'unkno
 
 CREATE INDEX IF NOT EXISTS idx_org_contacts_context
   ON org_contacts(contact_context) WHERE deleted_at IS NULL;
+
+CREATE INDEX IF NOT EXISTS idx_org_contacts_crm_projection_cursor
+  ON org_contacts(unixepoch(updated_at), id);

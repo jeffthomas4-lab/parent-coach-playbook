@@ -196,14 +196,14 @@ function receiverFetcher(receiver: DatabaseSync): CrmAdapterFetcher {
         assert.equal(existing.event_type, eventType);
         assert.equal(existing.payload_hash, payloadHash);
         if (sequence === RESPONSE_LOSS_SEQUENCE) writeControl(receiver, 'replayed_after_loss', 1);
-        return Response.json({ accepted: true, receiptId: `receipt-${eventId}`, eventId, replay: true });
+        return Response.json({ accepted: true, receiptId: `receipt-${eventId}`, eventId, sequence, replay: true });
       }
       eventInsert.run(eventId, sequence, eventType, payloadHash);
       if (sequence === RESPONSE_LOSS_SEQUENCE && readControl(receiver, 'response_loss_simulated') === 0) {
         writeControl(receiver, 'response_loss_simulated', 1);
         throw new DOMException('simulated response loss', 'AbortError');
       }
-      return Response.json({ accepted: true, receiptId: `receipt-${eventId}`, eventId }, { status: 202 });
+      return Response.json({ accepted: true, receiptId: `receipt-${eventId}`, eventId, sequence, replay: false }, { status: 202 });
     },
   };
 }

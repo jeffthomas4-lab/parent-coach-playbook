@@ -577,13 +577,15 @@ async function sha256Hex(input: string): Promise<string> {
  * Deliberately mirrors upsertOrgContact() in src/lib/org-contacts.ts rather
  * than importing it: this worker is a separate deploy unit with zero imports by
  * design. The rules that must stay identical in both places are (1) a
- * do_not_contact row is never written, and (2) is_public is hardcoded to 0. If
- * you change either one, change it in both files.
+ * do_not_contact row is never written, (2) is_public is hardcoded to 0, and
+ * (3) this adult-role extractor may promote unknown to professional but may
+ * never overwrite an explicit non-professional context. If you change any of
+ * them, change it in both files.
  *
  * Best-effort throughout. A missing binding or an unapplied 0028 returns false
  * and never breaks the camp scan that is this worker's actual job.
  */
-async function writeContact(
+export async function writeContact(
   opsDb: D1Database,
   organizationId: string,
   c: ScrapedContact,
@@ -594,17 +596,37 @@ async function writeContact(
   try {
     const existing = c.email
       ? await opsDb
-          .prepare(`SELECT id, do_not_contact FROM org_contacts WHERE organization_id = ? AND email = ? AND deleted_at IS NULL`)
+          .prepare(`SELECT id, program_id, full_name, title, role, email, phone, phone_ext,
+              do_not_contact, contact_context
+            FROM org_contacts WHERE organization_id = ? AND email = ? AND deleted_at IS NULL`)
           .bind(organizationId, c.email)
-          .first<{ id: string; do_not_contact: number }>()
+          .first<{
+            id: string; program_id: string | null; full_name: string | null; title: string | null;
+            role: string; email: string | null; phone: string | null; phone_ext: string | null;
+            do_not_contact: number; contact_context: string;
+          }>()
       : null;
 
     // The opt-out survives re-discovery. A scraper has no idea this person
     // asked to be left alone; the database does, and it wins.
     if (existing?.do_not_contact === 1) return 'suppressed';
 
+    const contactContext = existing?.contact_context && existing.contact_context !== 'unknown'
+      ? existing.contact_context
+      : 'professional';
     const contentHash = await sha256Hex(
-      [organizationId, '', c.fullName ?? '', c.title ?? '', c.role, c.email ?? '', '', '']
+      [
+        organizationId,
+        existing?.program_id ?? '',
+        c.fullName ?? existing?.full_name ?? '',
+        c.title ?? existing?.title ?? '',
+        existing?.role && existing.role !== 'unknown' ? existing.role : c.role,
+        existing?.email ?? c.email ?? '',
+        existing?.phone ?? '',
+        existing?.phone_ext ?? '',
+        'contactable',
+        contactContext,
+      ]
         .join(' ')
         .toLowerCase(),
     );
@@ -619,6 +641,7 @@ async function writeContact(
              role         = CASE WHEN role = 'unknown' THEN ? ELSE role END,
              source_url   = COALESCE(?, source_url),
              confidence   = ?,
+             contact_context = CASE WHEN contact_context = 'unknown' THEN 'professional' ELSE contact_context END,
              content_hash = ?,
              updated_at   = ?
            WHERE id = ?`,
@@ -632,9 +655,9 @@ async function writeContact(
       .prepare(
         `INSERT INTO org_contacts (
            id, organization_id, full_name, title, role, email,
-           is_primary, is_public, source, source_url, confidence,
+           is_primary, is_public, source, source_url, confidence, contact_context,
            verification_method, content_hash, created_at, updated_at
-         ) VALUES (?,?,?,?,?,?,0,0,'enrichment',?,?, 'website', ?,?,?)`,
+         ) VALUES (?,?,?,?,?,?,0,0,'enrichment',?,?,'professional','website',?,?,?)`,
       )
       .bind(
         crypto.randomUUID(), organizationId, c.fullName, c.title, c.role, c.email,

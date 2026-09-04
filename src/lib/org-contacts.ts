@@ -268,9 +268,13 @@ export async function upsertOrgContact(
 
     const contentHash = await computeContentHash({
       organization_id: organizationId,
-      program_id: input.programId ?? null,
-      full_name: fullName, title: input.title ?? null, role,
-      email, phone, phone_ext: input.phoneExt ?? null,
+      program_id: existing?.program_id ?? input.programId ?? null,
+      full_name: fullName ?? existing?.full_name ?? null,
+      title: input.title ?? existing?.title ?? null,
+      role: existing?.role && existing.role !== 'unknown' ? existing.role : role,
+      email: existing?.email ?? email,
+      phone: phone ?? existing?.phone ?? null,
+      phone_ext: input.phoneExt ?? existing?.phone_ext ?? null,
       do_not_contact: existing?.do_not_contact ?? 0,
       contact_context: contactContext,
     });

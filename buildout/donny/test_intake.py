@@ -317,6 +317,11 @@ class TestContactUpsert(unittest.TestCase):
         self.assertNotIn("consent", p)
         self.assertNotIn("do_not_contact", p)          # never asserted by this lane
 
+    def test_published_adult_role_is_explicitly_professional(self):
+        p = intake.plan_contact_upsert("org-aaa", srow(
+            1, "Club", source_contact_email="info@club.invalid"), "D")
+        self.assertEqual(p["contact_context"], "professional")
+
     def test_upsert_sql_cannot_weaken_suppression(self):
         sql, _ = intake.contact_upsert_sql(intake.plan_contact_upsert(
             "org-aaa", srow(1, "Club", source_contact_email="info@club.invalid"), "D"))
@@ -331,6 +336,7 @@ class TestContactUpsert(unittest.TestCase):
             CREATE TABLE org_contacts (
               id TEXT PRIMARY KEY, organization_id TEXT NOT NULL, full_name TEXT,
               role TEXT DEFAULT 'unknown', email TEXT, phone TEXT,
+              contact_context TEXT NOT NULL DEFAULT 'unknown',
               is_public INTEGER DEFAULT 0, do_not_contact INTEGER NOT NULL DEFAULT 0,
               do_not_contact_reason TEXT, source TEXT, source_url TEXT,
               confidence TEXT, verification_method TEXT, verified_at TEXT,
@@ -340,20 +346,21 @@ class TestContactUpsert(unittest.TestCase):
         """)
         con.execute(
             "INSERT INTO org_contacts (id, organization_id, email, do_not_contact, "
-            "do_not_contact_reason, role) VALUES (?,?,?,?,?,?)",
-            ("existing", "org-aaa", "info@club.invalid", 1, "unsubscribed", "director"))
+            "do_not_contact_reason, role, contact_context) VALUES (?,?,?,?,?,?,?)",
+            ("existing", "org-aaa", "info@club.invalid", 1, "unsubscribed", "director", "guardian"))
         plan = intake.plan_contact_upsert("org-aaa", srow(
             1, "Club", source_contact_email="info@club.invalid",
             source_contact_role="Registrar"), "D")
         sql, params = intake.contact_upsert_sql(plan)
         con.execute(sql, params)
         row = con.execute(
-            "SELECT do_not_contact, do_not_contact_reason, role, COUNT(*) "
+            "SELECT do_not_contact, do_not_contact_reason, role, contact_context, COUNT(*) "
             "FROM org_contacts WHERE organization_id='org-aaa'").fetchone()
         self.assertEqual(row[0], 1)                    # still suppressed
         self.assertEqual(row[1], "unsubscribed")       # reason intact
         self.assertEqual(row[2], "director")           # existing role not downgraded
-        self.assertEqual(row[3], 1)                    # no duplicate row
+        self.assertEqual(row[3], "guardian")           # explicit context not overwritten
+        self.assertEqual(row[4], 1)                    # no duplicate row
 
     def test_changed_contact_is_an_auditable_update(self):
         before = {"phone": None, "role": "unknown"}

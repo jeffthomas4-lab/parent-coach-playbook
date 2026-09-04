@@ -437,7 +437,7 @@ describe('PCD CRM adapter producer', () => {
     const deliveryFetcher: CrmAdapterFetcher = {
       fetch: vi.fn(async (_input, init) => {
         const body = JSON.parse(String(init?.body));
-        return Response.json({ accepted: true, receiptId: `recovered-${body.eventId}`, eventId: body.eventId });
+        return Response.json({ accepted: true, receiptId: `recovered-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
       }),
     };
     expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher: deliveryFetcher, now: now + 3 }))
@@ -596,6 +596,9 @@ describe('PCD CRM adapter producer', () => {
         const body = JSON.parse(String(init?.body));
         if (String(_input).endsWith('/reconcile')) {
           return Response.json({
+            producer: 'parent-coach-desk',
+            producerWorkspaceId: body.producerWorkspaceId,
+            declaredHighWater: body.declaredHighWater,
             receiverHighWater: body.declaredHighWater,
             missing: [],
             duplicate: [],
@@ -609,7 +612,7 @@ describe('PCD CRM adapter producer', () => {
           'x-ff-producer-workspace': 'pcd-activity-radar',
           'x-ff-service-scope': 'crm.adapters.pcd.events.v2',
         });
-        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId });
+        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
       }),
     };
     const delivered = await dispatchPcdCrmOutbox(adapterEnv, {
@@ -632,6 +635,53 @@ describe('PCD CRM adapter producer', () => {
       .first<{ count: number }>())?.count).toBe(1);
   });
 
+  it('rejects a delivery acknowledgement with foreign or unexpected scope fields', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-forged-ack', updatedAt: at });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1 });
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      return Response.json({
+        accepted: true,
+        receiptId: `receipt-${body.eventId}`,
+        eventId: body.eventId,
+        sequence: body.sequence,
+        replay: false,
+        producerWorkspaceId: 'foreign-workspace',
+      });
+    }) };
+
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 2 }))
+      .toMatchObject({ delivered: 0, retried: 1 });
+    expect(await ops.prepare(`SELECT status,receiver_receipt_id FROM crm_adapter_outbox`).first())
+      .toEqual({ status: 'retry', receiver_receipt_id: null });
+  });
+
+  it('rejects reconciliation identity and high-water claims outside the sent manifest', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-forged-reconcile', updatedAt: at });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1 });
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      return Response.json({
+        producer: 'parent-coach-desk',
+        producerWorkspaceId: 'foreign-workspace',
+        declaredHighWater: body.declaredHighWater,
+        receiverHighWater: body.declaredHighWater + 100,
+        missing: [], duplicate: [], stale: [], unauthorized: [], mismatch: [],
+      });
+    }) };
+
+    expect(await reconcilePcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 2 }))
+      .toEqual({ enabled: true, checked: false, missing: 0, mismatch: 0 });
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_reconciliation_receipts`)
+      .first<{ count: number }>())?.count).toBe(0);
+  });
+
   it('serializes the bounded delivery batch so receiver audit writes cannot contend', async () => {
     const { ops, intel } = await databases();
     const at = '2026-09-01T12:00:00.000Z';
@@ -649,7 +699,7 @@ describe('PCD CRM adapter producer', () => {
         await new Promise((resolve) => setTimeout(resolve, 1));
         inFlight -= 1;
         const body = JSON.parse(String(init?.body));
-        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId });
+        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
       }),
     };
 
@@ -672,14 +722,14 @@ describe('PCD CRM adapter producer', () => {
     let loseFirstResponse = true;
     const fetcher: CrmAdapterFetcher = {
       fetch: vi.fn(async (_input, init) => {
-        const body = JSON.parse(String(init?.body)) as { eventId: string };
+        const body = JSON.parse(String(init?.body)) as { eventId: string; sequence: number };
         if (loseFirstResponse) {
           loseFirstResponse = false;
           acceptedEventId = body.eventId;
           throw new DOMException('response lost after receiver commit', 'AbortError');
         }
         expect(body.eventId).toBe(acceptedEventId);
-        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId });
+        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
       }),
     };
 
@@ -725,6 +775,25 @@ describe('PCD CRM adapter producer', () => {
     expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
   });
 
+  it('uses bounded chronological cursor indexes for normal source projection', async () => {
+    const { ops, intel } = await databases();
+    const organizationPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM organizations INDEXED BY idx_organizations_crm_projection_cursor
+      WHERE unixepoch(updated_at)>=? AND (unixepoch(updated_at)>? OR id>?)
+      ORDER BY unixepoch(updated_at),id LIMIT ?`)
+      .bind(0, 0, '', 50).all<{ detail: string }>();
+    const contactPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
+      WHERE unixepoch(updated_at)>=? AND (unixepoch(updated_at)>? OR id>?)
+      ORDER BY unixepoch(updated_at),id LIMIT ?`)
+      .bind(0, 0, '', 50).all<{ detail: string }>();
+
+    for (const detail of [organizationPlan, contactPlan].map((plan) => plan.results.map((row) => row.detail).join('\n'))) {
+      expect(detail).toMatch(/SEARCH .* USING (?:COVERING )?INDEX/);
+      expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
+    }
+  });
+
   it('does not let a later event overtake an older event in backoff', async () => {
     const { ops, intel } = await databases();
     const at = Date.parse('2026-09-01T12:00:00.000Z');
@@ -738,11 +807,30 @@ describe('PCD CRM adapter producer', () => {
     const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
       const body = JSON.parse(String(init?.body));
       deliveredSequences.push(body.sequence);
-      return Response.json({ accepted: true, receiptId: `ordered-${body.eventId}`, eventId: body.eventId });
+      return Response.json({ accepted: true, receiptId: `ordered-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
     }) };
     expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: at + 2 })).toMatchObject({ claimed: 0 });
     expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: at + 60_001 })).toMatchObject({ delivered: 2 });
     expect(deliveredSequences).toEqual([1, 2]);
+  });
+
+  it('releases the remainder of a claimed batch when its first delivery must retry', async () => {
+    const { ops, intel } = await databases();
+    const at = Date.parse('2026-09-01T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-claimed-first', updatedAt: new Date(at).toISOString() });
+    await insertOrganization(intel, { id: 'org-claimed-second', updatedAt: new Date(at).toISOString() });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: at + 1, limit: 10 });
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async () => Response.json({ error: 'retry' }, { status: 503 })) };
+
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: at + 2, limit: 10 }))
+      .toMatchObject({ claimed: 2, delivered: 0, retried: 1, dead: 0 });
+    expect(await ops.prepare(`SELECT status,attempt_count FROM crm_adapter_outbox ORDER BY source_sequence`).all())
+      .toMatchObject({ results: [
+        { status: 'retry', attempt_count: 1 },
+        { status: 'pending', attempt_count: 0 },
+      ] });
+    expect(fetcher.fetch).toHaveBeenCalledTimes(1);
   });
 
   it('never claims another producer workspace outbox row', async () => {
@@ -774,6 +862,29 @@ describe('PCD CRM adapter producer', () => {
     expect(events.results).toHaveLength(2);
     expect(events.results[0]?.event_id).not.toBe(events.results[1]?.event_id);
     expect(JSON.parse(events.results[1]!.payload_json).payload.doNotContact).toBe(true);
+  });
+
+  it('retracts a previously projected contact when it is reclassified as minor', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const result = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-context-retraction', fullName: 'Morgan Director', role: 'director',
+      email: 'morgan@org-context-retraction.example', source: 'website',
+      sourceUrl: 'https://org-context-retraction.example/staff', contactContext: 'professional',
+    });
+    expect(result.ok).toBe(true);
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-context-retraction', fullName: 'Morgan Director', role: 'director',
+      email: 'morgan@org-context-retraction.example', source: 'website',
+      sourceUrl: 'https://org-context-retraction.example/staff', contactContext: 'minor',
+    })).resolves.toMatchObject({ ok: true, created: false });
+
+    const events = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox
+      WHERE subject_id=? ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{
+        event_type: string; payload_json: string;
+      }>();
+    expect(events.results.map((row) => row.event_type)).toEqual(['contact.observed.v1', 'contact.deleted.v1']);
+    expect(events.results[1]?.payload_json).not.toContain('morgan@org-context-retraction.example');
   });
 
   it('holds unknown and rejects family, guardian, minor, and roster contacts while preserving tombstones', async () => {
@@ -849,26 +960,42 @@ describe('PCD CRM adapter producer', () => {
 
     const missing = await dispatchPcdCrmOutbox(adapterEnv, { now: Date.parse(at) + 2, limit: 1 });
     expect(missing).toMatchObject({ claimed: 1, retried: 1 });
+    expect(await ops.prepare(`SELECT last_error_code FROM crm_adapter_outbox WHERE source_sequence=1`).first())
+      .toEqual({ last_error_code: 'receiver_unavailable' });
 
+    const attempts = new Map<number, number>();
     const fetcher: CrmAdapterFetcher = {
       fetch: vi.fn(async (_input, init) => {
-        const eventId = JSON.parse(String(init?.body)).eventId as string;
-        if (eventId.includes('client')) return Response.json({ error: 'invalid' }, { status: 422 });
-        if (eventId.includes('timeout')) throw new DOMException('timed out', 'AbortError');
-        return Response.json({ error: 'unavailable' }, { status: 503 });
+        const body = JSON.parse(String(init?.body)) as { eventId: string; sequence: number };
+        const attempt = (attempts.get(body.sequence) ?? 0) + 1;
+        attempts.set(body.sequence, attempt);
+        if (body.sequence === 1) return Response.json({ error: 'invalid' }, { status: 422 });
+        if (body.sequence === 2 && attempt === 1) return Response.json({ error: 'unavailable' }, { status: 503 });
+        if (body.sequence === 3 && attempt === 1) return Response.json({ error: 'unavailable' }, { status: 503 });
+        if (body.sequence === 4) throw new DOMException('timed out', 'AbortError');
+        return Response.json({
+          accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId,
+          sequence: body.sequence, replay: attempt > 1,
+        });
       }),
     };
-    const classified = await dispatchPcdCrmOutbox(adapterEnv, {
+    const clientFailure = await dispatchPcdCrmOutbox(adapterEnv, {
       fetcher,
       now: Date.parse(at) + 35_000,
       limit: 10,
     });
-    expect(classified.dead).toBeGreaterThanOrEqual(1);
-    expect(classified.retried).toBeGreaterThanOrEqual(2);
+    expect(clientFailure).toMatchObject({ dead: 1, retried: 0 });
     expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE status='dead' AND receiver_status=422`)
       .first<{ count: number }>())?.count).toBe(1);
-    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE last_error_code IN ('receiver_503','receiver_timeout','receiver_unavailable')`)
-      .first<{ count: number }>())?.count).toBeGreaterThanOrEqual(3);
+
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 35_001, limit: 10 }))
+      .toMatchObject({ delivered: 0, retried: 1 });
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 65_002, limit: 10 }))
+      .toMatchObject({ delivered: 1, retried: 1 });
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 95_003, limit: 10 }))
+      .toMatchObject({ delivered: 1, retried: 1 });
+    expect(await ops.prepare(`SELECT last_error_code FROM crm_adapter_outbox WHERE source_sequence=4`).first())
+      .toEqual({ last_error_code: 'receiver_timeout' });
 
     await ops.prepare(`UPDATE crm_adapter_outbox SET status='retry',attempt_count=7,next_attempt_at=0 WHERE status='retry'`).run();
     const ceiling = await dispatchPcdCrmOutbox(adapterEnv, {
