@@ -25,12 +25,17 @@ Required runtime bindings, none of which are declared or provisioned by Packet 6
 - `PCD_CRM_ADAPTER_HMAC_SECRET`: secret, never stored in source;
 - `PCD_CRM_PRODUCER_WORKSPACE_ID`: fixed producer workspace;
 - `PCD_CRM_TARGET_WORKSPACE_ID`: server-allowlisted CRM workspace;
-- `PCD_CRM_SOURCE_ID`: governed contact source ID.
+- `PCD_CRM_SOURCE_ID`: governed contact source ID;
+- `PCD_CRM_SOURCE_NOT_BEFORE_MS`: positive Unix-millisecond activation watermark. An enabled
+  adapter fails closed without it and will not scan or emit organization/contact source rows whose
+  `updated_at` precedes it.
 
 ## Guarantees and recovery
 
 - same-D1 contact create/update/suppression/tombstone plus outbox insert commits in one batch;
 - cross-D1 organization projection uses a durable bounded cursor and deterministic event IDs;
+- first activation applies the reviewed watermark before either cursor, preventing an implicit
+  historical backfill from an existing producer database;
 - dispatcher leases at most 10 rows, times out after five seconds and stops after eight attempts;
 - 4xx is terminal; missing receiver, timeout and 5xx back off and retry;
 - reconciliation sends at most 100 hashes and retains only bounded counts/result hash;

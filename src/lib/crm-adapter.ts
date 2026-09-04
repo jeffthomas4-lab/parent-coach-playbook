@@ -20,6 +20,7 @@ export interface PcdCrmAdapterEnv {
   PCD_CRM_PRODUCER_WORKSPACE_ID?: string;
   PCD_CRM_TARGET_WORKSPACE_ID?: string;
   PCD_CRM_SOURCE_ID?: string;
+  PCD_CRM_SOURCE_NOT_BEFORE_MS?: string;
 }
 
 interface OrganizationRow {
@@ -129,12 +130,24 @@ function requireConfig(env: PcdCrmAdapterEnv): {
   producerWorkspaceId: string;
   targetWorkspaceId: string;
   sourceId: string;
+  sourceNotBeforeMs: number;
 } | null {
   const producerWorkspaceId = env.PCD_CRM_PRODUCER_WORKSPACE_ID?.trim() ?? '';
   const targetWorkspaceId = env.PCD_CRM_TARGET_WORKSPACE_ID?.trim() ?? '';
   const sourceId = env.PCD_CRM_SOURCE_ID?.trim() ?? '';
-  if (!producerWorkspaceId || !targetWorkspaceId || !sourceId) return null;
-  return { producerWorkspaceId, targetWorkspaceId, sourceId };
+  const sourceNotBeforeRaw = env.PCD_CRM_SOURCE_NOT_BEFORE_MS?.trim() ?? '';
+  const sourceNotBeforeMs = Number(sourceNotBeforeRaw);
+  if (!producerWorkspaceId || !targetWorkspaceId || !sourceId
+    || !/^\d+$/.test(sourceNotBeforeRaw) || !Number.isSafeInteger(sourceNotBeforeMs) || sourceNotBeforeMs <= 0) return null;
+  return { producerWorkspaceId, targetWorkspaceId, sourceId, sourceNotBeforeMs };
+}
+
+function cursorAtOrAfterActivation(cursorAt: string, cursorId: string, sourceNotBeforeMs: number): { at: string; id: string } {
+  const sourceNotBefore = new Date(sourceNotBeforeMs).toISOString();
+  const parsedCursor = Date.parse(cursorAt);
+  return Number.isFinite(parsedCursor) && parsedCursor >= sourceNotBeforeMs
+    ? { at: cursorAt, id: cursorId }
+    : { at: sourceNotBefore, id: '' };
 }
 
 async function organizationDraft(row: OrganizationRow, targetWorkspaceId: string): Promise<EventDraft> {
@@ -344,7 +357,10 @@ export async function commitPcdContactMutation(
   }
   const config = requireConfig(env);
   if (!config) throw new Error('pcd_crm_adapter_configuration_missing');
-  const draft = await contactDraft(row, config.targetWorkspaceId, config.sourceId);
+  const rowUpdatedAt = Date.parse(row.updated_at);
+  const draft = Number.isFinite(rowUpdatedAt) && rowUpdatedAt >= config.sourceNotBeforeMs
+    ? await contactDraft(row, config.targetWorkspaceId, config.sourceId)
+    : null;
   await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
@@ -369,11 +385,21 @@ export async function projectPcdCrmEvents(
     FROM crm_adapter_controls WHERE producer_workspace_id=?`).bind(config.producerWorkspaceId)
     .first<{ organization_cursor_at: string; organization_cursor_id: string; contact_cursor_at: string; contact_cursor_id: string }>();
   if (!control) throw new Error('pcd_crm_adapter_control_missing');
+  const organizationCursor = cursorAtOrAfterActivation(
+    control.organization_cursor_at,
+    control.organization_cursor_id,
+    config.sourceNotBeforeMs,
+  );
+  const contactCursor = cursorAtOrAfterActivation(
+    control.contact_cursor_at,
+    control.contact_cursor_id,
+    config.sourceNotBeforeMs,
+  );
 
   const organizations = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
     record_status,is_claimed,content_hash,deleted_at,updated_at FROM organizations
     WHERE updated_at>? OR (updated_at=? AND id>?) ORDER BY updated_at,id LIMIT ?`)
-    .bind(control.organization_cursor_at, control.organization_cursor_at, control.organization_cursor_id, limit)
+    .bind(organizationCursor.at, organizationCursor.at, organizationCursor.id, limit)
     .all<OrganizationRow>();
   const organizationDrafts = await Promise.all(organizations.results.map((row) => organizationDraft(row, config.targetWorkspaceId)));
   const lastOrganization = organizations.results.at(-1);
@@ -388,7 +414,7 @@ export async function projectPcdCrmEvents(
   const contacts = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,
     source_url,confidence,verified_at,content_hash,deleted_at,updated_at FROM org_contacts
     WHERE updated_at>? OR (updated_at=? AND id>?) ORDER BY updated_at,id LIMIT ?`)
-    .bind(control.contact_cursor_at, control.contact_cursor_at, control.contact_cursor_id, limit)
+    .bind(contactCursor.at, contactCursor.at, contactCursor.id, limit)
     .all<PcdContactProjectionInput>();
   const contactCandidates = await Promise.all(
     contacts.results.map((row) => contactDraft(row, config.targetWorkspaceId, config.sourceId)),

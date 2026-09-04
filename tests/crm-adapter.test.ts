@@ -34,6 +34,7 @@ function env(ops: D1Database, intel: D1Database, extra: Partial<PcdCrmAdapterEnv
     PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
     PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
     PCD_CRM_SOURCE_ID: 'source-test',
+    PCD_CRM_SOURCE_NOT_BEFORE_MS: '1',
     ...extra,
   };
 }
@@ -135,6 +136,34 @@ describe('PCD CRM adapter producer', () => {
     expect(tombstone.contacts).toBe(1);
     expect(await ops.prepare(`SELECT event_type FROM crm_adapter_outbox WHERE subject_id='contact-authority-1'
       ORDER BY source_sequence DESC LIMIT 1`).first()).toEqual({ event_type: 'contact.deleted.v1' });
+  });
+
+  it('does not backfill source rows older than the explicit activation watermark', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const newAt = '2026-09-03T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-before-activation', updatedAt: oldAt });
+    await insertContact(ops, { id: 'contact-before-activation', organizationId: 'org-before-activation', updatedAt: oldAt });
+    await insertOrganization(intel, { id: 'org-after-activation', updatedAt: newAt });
+    await insertContact(ops, { id: 'contact-after-activation', organizationId: 'org-after-activation', updatedAt: newAt });
+
+    const result = await projectPcdCrmEvents(env(ops, intel, {
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    }), { now: Date.parse(newAt) + 1 });
+
+    expect(result).toMatchObject({ organizations: 1, contacts: 1 });
+    const subjects = await ops.prepare(`SELECT subject_id FROM crm_adapter_outbox ORDER BY source_sequence`)
+      .all<{ subject_id: string }>();
+    expect(subjects.results.map((row) => row.subject_id)).toEqual([
+      'org-after-activation',
+      'contact-after-activation',
+    ]);
+  });
+
+  it('fails closed when enabled without a valid activation watermark', async () => {
+    const { ops, intel } = await databases();
+    await expect(projectPcdCrmEvents(env(ops, intel, { PCD_CRM_SOURCE_NOT_BEFORE_MS: '' })))
+      .rejects.toThrow('pcd_crm_adapter_configuration_missing');
   });
 
   it('commits same-D1 contact writes and their outbox event in one batch', async () => {
