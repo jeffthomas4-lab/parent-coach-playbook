@@ -79,11 +79,11 @@ switch remains a separately approved provider/data action.
   receipt/cursor writes; while delivery is incomplete, indexed existence checks replace a repeated
   full-run count; finalization adds 2 source-count reads, 1 accounting read, and 2 coverage reads on
   the six-hour job only;
-- external API calls: 0 when disabled; at most 10 parallel Service Binding event calls per minute,
+- external API calls: 0 when disabled; at most 10 sequential Service Binding event calls per minute,
   plus at most 1 historical reconciliation call per minute and 1 rolling reconciliation call on
   each six-hour job;
 - queue jobs created: 0;
-- expected memory: O(100), bounded by a 50-row source chunk, 10 delivery responses, or one
+- expected memory: O(100), bounded by a 50-row source chunk, one in-flight delivery response, or one
   100-hash reconciliation window; every receiver response is capped at 4 KiB;
 - likely scaling bottleneck: the 10-event-per-minute receiver pump. At the 2026-09-04 inventory,
   198,287 organizations plus 16 currently channel-bearing contacts is approximately 198,303

@@ -2,8 +2,8 @@
 
 Status: **HOLD — READ-ONLY PREFLIGHT ONLY**  
 Observed: 2026-09-04  
-PCD implementation candidate: `5b68af4b6fd14b7093efe680ed1fe5b12aca5d3a`  
-Candidate tree: `11a702791a0b908f93a9820ba32f36600ffaccec`
+PCD implementation candidate: `c23b6e4baf950748e216906b995abbe463388dea`
+Candidate tree: `5088032c68724686b987891a410099abfc02abcb`
 
 No remote mutation was performed by this preflight.
 
@@ -76,7 +76,7 @@ The next remote gate should remain infrastructure-only:
 
 1. retain a staging D1 backup/bookmark;
 2. authorize and apply exactly the observed 12-file pending migration set;
-3. deploy exact candidate `5b68af4b6fd14b7093efe680ed1fe5b12aca5d3a` with both adapter flags false;
+3. deploy exact candidate `c23b6e4baf950748e216906b995abbe463388dea` with both adapter flags false;
 4. prove migration ledger/schema, binding, secret-name, schedule, and disabled no-op behavior;
 5. stop before setting an activation boundary, seeding/copying pilot data, enabling either flag, or
    moving any organization/contact row.
