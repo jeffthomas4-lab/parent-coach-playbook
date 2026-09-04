@@ -12,7 +12,7 @@ import {
   type CrmAdapterFetcher,
   type PcdCrmAdapterEnv,
 } from '../src/lib/crm-adapter';
-import { softDeleteOrgContact, upsertOrgContact } from '../src/lib/org-contacts';
+import { setDoNotContact, softDeleteOrgContact, upsertOrgContact } from '../src/lib/org-contacts';
 
 let opsResource: Awaited<ReturnType<typeof createDisposableOpsDatabase>>;
 let intelResource: Awaited<ReturnType<typeof createDisposableIntelDatabase>>;
@@ -99,11 +99,18 @@ async function insertOrganization(db: D1Database, input: { id: string; updatedAt
   ).run();
 }
 
-async function insertContact(db: D1Database, input: { id: string; organizationId: string; updatedAt: string; createdAt?: string; deletedAt?: string | null }) {
+async function insertContact(db: D1Database, input: {
+  id: string;
+  organizationId: string;
+  updatedAt: string;
+  createdAt?: string;
+  deletedAt?: string | null;
+  contactContext?: 'professional' | 'family' | 'guardian' | 'minor' | 'roster' | 'unknown';
+}) {
   await db.prepare(`INSERT INTO org_contacts
     (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
-     confidence,verified_at,content_hash,deleted_at,created_at,updated_at)
-    VALUES (?,?,?,'Club Director','director',?,1,0,0,'website',?,'high',?,NULL,?,?,?)`).bind(
+     confidence,verified_at,content_hash,deleted_at,created_at,updated_at,contact_context)
+    VALUES (?,?,?,'Club Director','director',?,0,0,0,'website',?,'high',?,NULL,?,?,?,?)`).bind(
     input.id,
     input.organizationId,
     'Taylor Director',
@@ -113,6 +120,7 @@ async function insertContact(db: D1Database, input: { id: string; organizationId
     input.deletedAt ?? null,
     input.createdAt ?? input.updatedAt,
     input.updatedAt,
+    input.contactContext ?? 'professional',
   ).run();
 }
 
@@ -277,9 +285,9 @@ describe('PCD CRM adapter producer', () => {
     await insertOrganization(intel, { id: 'org-contact-disposition', updatedAt: oldAt });
     await ops.prepare(`INSERT INTO org_contacts
       (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
-       confidence,verified_at,content_hash,deleted_at,created_at,updated_at)
+       confidence,verified_at,content_hash,deleted_at,created_at,updated_at,contact_context)
       VALUES ('contact-no-source','org-contact-disposition','Private Example','Director','director',
-        'private-value@test.example',0,0,0,'website',NULL,'medium',NULL,NULL,NULL,?,?)`).bind(oldAt, oldAt).run();
+        'private-value@test.example',0,0,0,'website',NULL,'medium',NULL,NULL,NULL,?,?,'professional')`).bind(oldAt, oldAt).run();
     const result = await projectPcdCrmBackfill(env(ops, intel, {
       PCD_CRM_BACKFILL_ENABLED: 'true',
       PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
@@ -423,6 +431,19 @@ describe('PCD CRM adapter producer', () => {
     expect((await ops.prepare('SELECT COUNT(*) count FROM crm_adapter_backfill_reconciliation_windows')
       .first<{ count: number }>())?.count).toBe(0);
     expect((await ops.prepare('SELECT missing_count FROM crm_adapter_reconciliation_receipts').first())?.missing_count).toBe(1);
+    expect(await ops.prepare(`SELECT status,last_error_code,receiver_receipt_id FROM crm_adapter_outbox`).first()).toEqual({
+      status: 'retry', last_error_code: 'receiver_missing_reconcile', receiver_receipt_id: null,
+    });
+    const deliveryFetcher: CrmAdapterFetcher = {
+      fetch: vi.fn(async (_input, init) => {
+        const body = JSON.parse(String(init?.body));
+        return Response.json({ accepted: true, receiptId: `recovered-${body.eventId}`, eventId: body.eventId });
+      }),
+    };
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher: deliveryFetcher, now: now + 3 }))
+      .toMatchObject({ claimed: 1, delivered: 1 });
+    expect(await reconcilePcdCrmBackfill(adapterEnv, { fetcher: successfulReconciliationFetcher(), now: now + 4 }))
+      .toMatchObject({ checked: true, missing: 0 });
   });
 
   it('refuses a changed historical boundary and skips a concurrently leased run', async () => {
@@ -550,6 +571,7 @@ describe('PCD CRM adapter producer', () => {
       source: 'website',
       sourceUrl: 'https://org-atomic.example/staff',
       confidence: 'high',
+      contactContext: 'professional',
       verifiedBy: 'operator',
       verificationMethod: 'website',
     });
@@ -686,12 +708,136 @@ describe('PCD CRM adapter producer', () => {
     const { ops } = await databases();
     const plan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id FROM crm_adapter_outbox
       INDEXED BY idx_crm_adapter_outbox_claim_sequence
-      WHERE status IN ('pending','retry','leased')
-        AND ((status IN ('pending','retry') AND next_attempt_at<=?) OR (status='leased' AND lease_expires_at<=?))
-        AND attempt_count<?
-      ORDER BY source_sequence LIMIT ?`).bind(Date.now(), Date.now(), 8, 10).all<{ detail: string }>();
-    expect(plan.results.map((row) => row.detail).join('\n')).toContain('idx_crm_adapter_outbox_claim_sequence');
-    expect(plan.results.map((row) => row.detail).join('\n')).not.toContain('USE TEMP B-TREE FOR ORDER BY');
+      WHERE producer_workspace_id=? AND status IN ('pending','retry','leased') AND attempt_count<?
+      ORDER BY source_sequence LIMIT ?`).bind('pcd-activity-radar', 8, 10).all<{ detail: string }>();
+    const detail = plan.results.map((row) => row.detail).join('\n');
+    expect(detail).toContain('SEARCH crm_adapter_outbox USING INDEX idx_crm_adapter_outbox_claim_sequence');
+    expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
+  });
+
+  it('uses the bounded backfill index for delivered reconciliation windows', async () => {
+    const { ops } = await databases();
+    const plan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT event_id,source_sequence,event_type,payload_hash
+      FROM crm_adapter_outbox WHERE backfill_run_id=? AND status='delivered' AND source_sequence>?
+      ORDER BY source_sequence LIMIT 100`).bind('run', 0).all<{ detail: string }>();
+    const detail = plan.results.map((row) => row.detail).join('\n');
+    expect(detail).toContain('SEARCH crm_adapter_outbox USING INDEX idx_crm_adapter_outbox_backfill');
+    expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
+  });
+
+  it('does not let a later event overtake an older event in backoff', async () => {
+    const { ops, intel } = await databases();
+    const at = Date.parse('2026-09-01T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-order-first', updatedAt: new Date(at).toISOString() });
+    await insertOrganization(intel, { id: 'org-order-second', updatedAt: new Date(at).toISOString() });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: at + 1, limit: 10 });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='retry',next_attempt_at=? WHERE source_sequence=1`)
+      .bind(at + 60_000).run();
+    const deliveredSequences: number[] = [];
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      deliveredSequences.push(body.sequence);
+      return Response.json({ accepted: true, receiptId: `ordered-${body.eventId}`, eventId: body.eventId });
+    }) };
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: at + 2 })).toMatchObject({ claimed: 0 });
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: at + 60_001 })).toMatchObject({ delivered: 2 });
+    expect(deliveredSequences).toEqual([1, 2]);
+  });
+
+  it('never claims another producer workspace outbox row', async () => {
+    const { ops, intel } = await databases();
+    const at = Date.parse('2026-09-01T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-foreign-producer', updatedAt: new Date(at).toISOString() });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: at + 1 });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET producer_workspace_id='foreign-workspace'`).run();
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async () => Response.json({ accepted: true })) };
+    expect(await dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: at + 2 })).toMatchObject({ claimed: 0 });
+    expect(fetcher.fetch).not.toHaveBeenCalled();
+  });
+
+  it('emits a distinct suppression event when a professional contact opts out', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const result = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-suppression', fullName: 'Morgan Director', role: 'director',
+      email: 'morgan@org-suppression.example', source: 'website',
+      sourceUrl: 'https://org-suppression.example/staff', contactContext: 'professional',
+    });
+    expect(result.ok).toBe(true);
+    expect(await setDoNotContact(adapterEnv, result.ok ? result.id : '', 'unsubscribed')).toBe(true);
+    const events = await ops.prepare(`SELECT event_id,payload_json FROM crm_adapter_outbox
+      WHERE subject_id=? ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{
+        event_id: string; payload_json: string;
+      }>();
+    expect(events.results).toHaveLength(2);
+    expect(events.results[0]?.event_id).not.toBe(events.results[1]?.event_id);
+    expect(JSON.parse(events.results[1]!.payload_json).payload.doNotContact).toBe(true);
+  });
+
+  it('holds unknown and rejects family, guardian, minor, and roster contacts while preserving tombstones', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-context-boundary', updatedAt: oldAt });
+    for (const contactContext of ['unknown', 'family', 'guardian', 'minor', 'roster'] as const) {
+      await insertContact(ops, {
+        id: `contact-${contactContext}`, organizationId: 'org-context-boundary', updatedAt: oldAt, contactContext,
+      });
+    }
+    await insertContact(ops, {
+      id: 'contact-context-tombstone', organizationId: 'org-context-boundary', updatedAt: oldAt,
+      deletedAt: oldAt, contactContext: 'minor',
+    });
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    }), { now: cutoff + 1, limit: 10 });
+    expect(result).toMatchObject({ contacts: 1, rejected: 5, scanCompleted: true });
+    expect(await ops.prepare(`SELECT subject_id,event_type FROM crm_adapter_outbox WHERE subject_type='contact'`).all())
+      .toMatchObject({ results: [{ subject_id: 'contact-context-tombstone', event_type: 'contact.deleted.v1' }] });
+    const chunk = await ops.prepare(`SELECT eligible_count,rejected_count FROM crm_adapter_backfill_chunks
+      WHERE subject_type='contact'`).first();
+    expect(chunk).toEqual({ eligible_count: 1, rejected_count: 5 });
+  });
+
+  it('namespaces event identity by producer and target workspace during retargeted backfills', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-retarget', updatedAt: oldAt });
+    const firstEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+      PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-one',
+    });
+    const secondEnv = { ...firstEnv, PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-two' };
+    await projectPcdCrmBackfill(firstEnv, { now: cutoff + 1, limit: 10 });
+    await projectPcdCrmBackfill(secondEnv, { now: cutoff + 2, limit: 10 });
+    const events = await ops.prepare(`SELECT event_id,backfill_run_id FROM crm_adapter_outbox
+      WHERE subject_id='org-retarget' ORDER BY source_sequence`).all();
+    expect(events.results).toHaveLength(2);
+    expect(events.results[0]?.event_id).not.toBe(events.results[1]?.event_id);
+    expect(events.results[0]?.backfill_run_id).not.toBe(events.results[1]?.backfill_run_id);
+  });
+
+  it('does not rescan source inventory after a backfill is already completed', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-completed-no-rescan', updatedAt: oldAt });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    await projectPcdCrmBackfill(adapterEnv, { now: cutoff + 1, limit: 10 });
+    await ops.prepare(`UPDATE crm_adapter_backfill_runs SET status='completed',reconciliation_complete=1`).run();
+    const noSourceReads = new Proxy(intel, {
+      get(_target, property) {
+        if (property === 'prepare') throw new Error('source_inventory_should_not_be_read');
+        return Reflect.get(intel, property);
+      },
+    });
+    await expect(finalizePcdCrmBackfill({ ...adapterEnv, DB: noSourceReads }, { now: cutoff + 2 }))
+      .resolves.toEqual({ enabled: true, completed: true, pending: 0, dead: 0, reconciled: true });
   });
 
   it('classifies missing receiver, 4xx, 5xx and timeout paths with an eight-attempt ceiling', async () => {

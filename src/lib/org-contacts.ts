@@ -43,6 +43,9 @@ export type OrgContactSource =
 
 export type OrgContactConfidence = 'high' | 'medium' | 'low';
 
+export type OrgContactContext =
+  | 'professional' | 'family' | 'guardian' | 'minor' | 'roster' | 'unknown';
+
 export type VerificationMethod =
   | 'website' | 'phone_call' | 'email_reply' | 'claim' | 'in_person' | 'other';
 
@@ -62,6 +65,7 @@ export interface OrgContact {
   do_not_contact: 0 | 1;
   do_not_contact_at: string | null;
   do_not_contact_reason: string | null;
+  contact_context: OrgContactContext;
   source: OrgContactSource;
   source_url: string | null;
   confidence: OrgContactConfidence;
@@ -94,6 +98,7 @@ export interface UpsertOrgContactInput {
   source?: OrgContactSource;
   sourceUrl?: string | null;
   confidence?: OrgContactConfidence;
+  contactContext?: OrgContactContext;
   verifiedBy?: string | null;
   verificationMethod?: VerificationMethod | null;
   notes?: string | null;
@@ -115,6 +120,9 @@ export type OrgContactResult =
 const ROLES: readonly OrgContactRole[] = [
   'owner', 'director', 'registrar', 'coach',
   'admin', 'marketing', 'billing', 'media', 'unknown',
+];
+const CONTACT_CONTEXTS: readonly OrgContactContext[] = [
+  'professional', 'family', 'guardian', 'minor', 'roster', 'unknown',
 ];
 
 const nowIso = (): string => new Date().toISOString();
@@ -139,10 +147,12 @@ export async function computeContentHash(c: {
   full_name?: string | null; title?: string | null; role?: string | null;
   email?: string | null; phone?: string | null; phone_ext?: string | null;
   organization_id?: string | null; program_id?: string | null;
+  do_not_contact?: number | boolean | null; contact_context?: string | null;
 }): Promise<string> {
   const canonical = [
     c.organization_id ?? '', c.program_id ?? '', c.full_name ?? '',
     c.title ?? '', c.role ?? '', c.email ?? '', c.phone ?? '', c.phone_ext ?? '',
+    Number(c.do_not_contact) === 1 ? 'suppressed' : 'contactable', c.contact_context ?? 'unknown',
   ].join(' ').toLowerCase();
   const bytes = new TextEncoder().encode(canonical);
   const digest = await crypto.subtle.digest('SHA-256', bytes);
@@ -234,6 +244,9 @@ export async function upsertOrgContact(
   const role: OrgContactRole = ROLES.includes(input.role as OrgContactRole)
     ? (input.role as OrgContactRole)
     : 'unknown';
+  if (input.contactContext && !CONTACT_CONTEXTS.includes(input.contactContext)) {
+    return { ok: false, reason: 'invalid' };
+  }
   const now = nowIso();
 
   try {
@@ -251,12 +264,15 @@ export async function upsertOrgContact(
     if (existing?.do_not_contact === 1) {
       return { ok: false, reason: 'suppressed' };
     }
+    const contactContext: OrgContactContext = input.contactContext ?? existing?.contact_context ?? 'unknown';
 
     const contentHash = await computeContentHash({
       organization_id: organizationId,
       program_id: input.programId ?? null,
       full_name: fullName, title: input.title ?? null, role,
       email, phone, phone_ext: input.phoneExt ?? null,
+      do_not_contact: existing?.do_not_contact ?? 0,
+      contact_context: contactContext,
     });
 
     if (existing) {
@@ -274,6 +290,7 @@ export async function upsertOrgContact(
              verified_at         = COALESCE(?, verified_at),
              verification_method = COALESCE(?, verification_method),
              notes               = COALESCE(?, notes),
+             contact_context     = ?,
              content_hash        = ?,
              updated_at          = ?
            WHERE id = ?`,
@@ -282,7 +299,7 @@ export async function upsertOrgContact(
           input.sourceUrl ?? null, input.confidence ?? 'medium',
           input.verifiedBy ?? null, input.verifiedBy ? now : null,
           input.verificationMethod ?? null, input.notes ?? null,
-          contentHash, now, existing.id,
+          contactContext, contentHash, now, existing.id,
         );
       const projected: PcdContactProjectionInput = {
         id: existing.id,
@@ -293,6 +310,7 @@ export async function upsertOrgContact(
         email: existing.email,
         phone: phone ?? existing.phone,
         do_not_contact: existing.do_not_contact,
+        contact_context: contactContext,
         source_url: input.sourceUrl ?? existing.source_url,
         confidence: input.confidence ?? existing.confidence,
         verified_at: input.verifiedBy ? now : existing.verified_at,
@@ -309,10 +327,10 @@ export async function upsertOrgContact(
         `INSERT INTO org_contacts (
            id, organization_id, program_id, full_name, title, role,
            email, phone, phone_ext, is_primary, is_public,
-           source, source_url, confidence,
+           source, source_url, confidence, contact_context,
            verified_by, verified_at, verification_method, notes,
            content_hash, created_at, updated_at
-         ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+         ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       ).bind(
         // is_public is hardcoded to 0 here, not read from input.isPublic. This
         // table is populated by daily agents reading an organization's own
@@ -324,7 +342,7 @@ export async function upsertOrgContact(
         // is_public = 0 always. Only a human flips it."
         id, organizationId, input.programId ?? null, fullName, input.title ?? null, role,
         email, phone, input.phoneExt ?? null, input.isPrimary ?? 0, 0,
-        input.source ?? 'manual_verification', input.sourceUrl ?? null, input.confidence ?? 'medium',
+        input.source ?? 'manual_verification', input.sourceUrl ?? null, input.confidence ?? 'medium', contactContext,
         input.verifiedBy ?? null, input.verifiedBy ? now : null,
         input.verificationMethod ?? null, input.notes ?? null,
         contentHash, now, now,
@@ -338,6 +356,7 @@ export async function upsertOrgContact(
       email,
       phone,
       do_not_contact: 0,
+      contact_context: contactContext,
       source_url: input.sourceUrl ?? null,
       confidence: input.confidence ?? 'medium',
       verified_at: input.verifiedBy ? now : null,
@@ -395,14 +414,22 @@ export async function setDoNotContact(
   try {
     const now = nowIso();
     const existing = await env.PCD_OPS_DB.prepare(`SELECT * FROM org_contacts WHERE id=?`).bind(id).first<OrgContact>();
+    const contentHash = existing ? await computeContentHash({
+      organization_id: existing.organization_id, program_id: existing.program_id,
+      full_name: existing.full_name, title: existing.title, role: existing.role,
+      email: existing.email, phone: existing.phone, phone_ext: existing.phone_ext,
+      do_not_contact: 1, contact_context: existing.contact_context,
+    }) : null;
     const statement = env.PCD_OPS_DB.prepare(
         `UPDATE org_contacts
             SET do_not_contact = 1, do_not_contact_at = ?, do_not_contact_reason = ?,
-                is_public = 0, updated_at = ?
+                is_public = 0, content_hash = COALESCE(?, content_hash), updated_at = ?
           WHERE id = ?`,
-      ).bind(now, reason, now, id);
+      ).bind(now, reason, contentHash, now, id);
     if (existing) {
-      await commitPcdContactMutation(env, statement, { ...existing, do_not_contact: 1, updated_at: now }, Date.parse(now));
+      await commitPcdContactMutation(env, statement, {
+        ...existing, do_not_contact: 1, content_hash: contentHash, updated_at: now,
+      }, Date.parse(now));
     } else {
       await statement.run();
     }

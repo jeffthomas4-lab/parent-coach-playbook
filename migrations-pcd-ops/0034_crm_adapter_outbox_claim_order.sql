@@ -4,6 +4,8 @@
 -- 200k pending set otherwise requires a full scan and temporary sort for every
 -- ten-row lease. Keep only actionable statuses in this compact ordering index.
 
+DROP INDEX IF EXISTS idx_crm_adapter_outbox_due;
+
 CREATE INDEX IF NOT EXISTS idx_crm_adapter_outbox_claim_sequence
-  ON crm_adapter_outbox(source_sequence)
+  ON crm_adapter_outbox(producer_workspace_id,source_sequence)
   WHERE status IN ('pending','retry','leased');

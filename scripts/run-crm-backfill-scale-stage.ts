@@ -109,8 +109,8 @@ function initialize(intel: DatabaseSync, ops: DatabaseSync, receiver: DatabaseSy
   applyOpsMigrations(ops);
   const contact = ops.prepare(`INSERT INTO org_contacts
     (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
-     confidence,verified_at,content_hash,deleted_at,created_at,updated_at)
-    VALUES (?,?,?,'Club Director','director',?,0,0,0,'website',?,'high',?,NULL,NULL,?,?)`);
+     confidence,verified_at,content_hash,deleted_at,created_at,updated_at,contact_context)
+    VALUES (?,?,?,'Club Director','director',?,0,0,0,'website',?,'high',?,NULL,NULL,?,?,'professional')`);
   ops.exec('BEGIN IMMEDIATE');
   for (let index = 1; index <= CONTACTS; index += 1) {
     const id = `contact-scale-${String(index).padStart(3, '0')}`;
@@ -130,9 +130,6 @@ function initialize(intel: DatabaseSync, ops: DatabaseSync, receiver: DatabaseSy
   receiver.exec(`CREATE TABLE receiver_events (
       event_id TEXT PRIMARY KEY, source_sequence INTEGER NOT NULL UNIQUE, event_type TEXT NOT NULL,
       payload_hash TEXT NOT NULL
-    );
-    CREATE TABLE held_receiver_events (
-      event_id TEXT PRIMARY KEY, source_sequence INTEGER NOT NULL, event_type TEXT NOT NULL, payload_hash TEXT NOT NULL
     );
     CREATE TABLE scale_controls (key TEXT PRIMARY KEY, value INTEGER NOT NULL);`);
 }
@@ -160,7 +157,6 @@ function writeControl(database: DatabaseSync, key: string, value: number): void 
 }
 
 function receiverFetcher(receiver: DatabaseSync): CrmAdapterFetcher {
-  const reconcileRead = receiver.prepare(`SELECT source_sequence,event_type,payload_hash FROM receiver_events WHERE event_id=?`);
   const highWaterRead = receiver.prepare('SELECT COALESCE(MAX(source_sequence),0) value FROM receiver_events');
   const eventRead = receiver.prepare(`SELECT source_sequence,event_type,payload_hash FROM receiver_events WHERE event_id=?`);
   const eventInsert = receiver.prepare(`INSERT INTO receiver_events (event_id,source_sequence,event_type,payload_hash) VALUES (?,?,?,?)`);
@@ -172,7 +168,7 @@ function receiverFetcher(receiver: DatabaseSync): CrmAdapterFetcher {
         const missing: unknown[] = [];
         const mismatch: unknown[] = [];
         for (const item of manifest) {
-          const stored = reconcileRead.get(item.eventId) as { source_sequence: number; event_type: string; payload_hash: string } | undefined;
+          const stored = eventRead.get(item.eventId) as { source_sequence: number; event_type: string; payload_hash: string } | undefined;
           if (!stored) missing.push(item);
           else if (Number(stored.source_sequence) !== item.sequence || stored.event_type !== item.eventType
             || stored.payload_hash !== item.payloadHash) mismatch.push(item);
@@ -277,17 +273,14 @@ try {
       output({ event: 'pcd_crm_scale_delivery_stage', complete: false, delivered, retried, remaining });
     } else {
       if (readControl(receiver, 'missing_receiver_recovered') === 0) {
-        receiver.exec(`BEGIN IMMEDIATE;
-          INSERT INTO held_receiver_events SELECT * FROM receiver_events WHERE source_sequence=1;
-          DELETE FROM receiver_events WHERE source_sequence=1;
-          COMMIT;`);
+        receiver.exec(`DELETE FROM receiver_events WHERE source_sequence=1;`);
         const missing = await reconcilePcdCrmBackfill(env, { fetcher, now: Date.now() });
         assert.equal(missing.missing, 1);
         assert.equal(Number((ops.prepare(`SELECT COUNT(*) value FROM crm_adapter_backfill_reconciliation_windows`).get() as { value: number }).value), 0);
-        receiver.exec(`BEGIN IMMEDIATE;
-          INSERT INTO receiver_events SELECT * FROM held_receiver_events;
-          DELETE FROM held_receiver_events;
-          COMMIT;`);
+        assert.equal((ops.prepare(`SELECT status FROM crm_adapter_outbox WHERE source_sequence=1`).get() as { status: string }).status, 'retry');
+        const repaired = await dispatchPcdCrmOutbox(env, { fetcher, limit: 10, now: Date.now() + 1 });
+        assert.equal(repaired.delivered, 1);
+        assert.equal(Number((receiver.prepare(`SELECT COUNT(*) value FROM receiver_events WHERE source_sequence=1`).get() as { value: number }).value), 1);
         writeControl(receiver, 'missing_receiver_recovered', 1);
       }
       let reconciliationComplete = false;
