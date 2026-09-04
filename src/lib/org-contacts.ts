@@ -261,10 +261,46 @@ export async function upsertOrgContact(
         .first<OrgContact>();
     }
 
-    if (existing?.do_not_contact === 1) {
-      return { ok: false, reason: 'suppressed' };
-    }
     const contactContext: OrgContactContext = input.contactContext ?? existing?.contact_context ?? 'unknown';
+
+    if (existing?.do_not_contact === 1) {
+      const safetyDowngrade = (existing.contact_context === 'professional' || existing.contact_context === 'unknown')
+        && ['family', 'guardian', 'minor', 'roster'].includes(contactContext);
+      if (!safetyDowngrade) return { ok: false, reason: 'suppressed' };
+      const contentHash = await computeContentHash({
+        organization_id: existing.organization_id,
+        program_id: existing.program_id,
+        full_name: existing.full_name,
+        title: existing.title,
+        role: existing.role,
+        email: existing.email,
+        phone: existing.phone,
+        phone_ext: existing.phone_ext,
+        do_not_contact: existing.do_not_contact,
+        contact_context: contactContext,
+      });
+      const statement = env.PCD_OPS_DB.prepare(`UPDATE org_contacts
+        SET contact_context=?,content_hash=?,updated_at=? WHERE id=?`)
+        .bind(contactContext, contentHash, now, existing.id);
+      await commitPcdContactMutation(env, statement, {
+        id: existing.id,
+        organization_id: existing.organization_id,
+        full_name: existing.full_name,
+        title: existing.title,
+        role: existing.role,
+        email: existing.email,
+        phone: existing.phone,
+        do_not_contact: existing.do_not_contact,
+        contact_context: contactContext,
+        source_url: existing.source_url,
+        confidence: existing.confidence,
+        verified_at: existing.verified_at,
+        content_hash: contentHash,
+        deleted_at: existing.deleted_at,
+        updated_at: now,
+      }, Date.parse(now));
+      return { ok: true, id: existing.id, created: false };
+    }
 
     const contentHash = await computeContentHash({
       organization_id: organizationId,

@@ -168,7 +168,7 @@ describe('writeContact — CRM context boundary', () => {
 
   beforeAll(async () => {
     resource = await createDisposableOpsDatabase('contact-enrichment-write-test');
-  });
+  }, 30_000);
 
   afterAll(async () => {
     await resource.mf.dispose();
@@ -199,6 +199,20 @@ describe('writeContact — CRM context boundary', () => {
       do_not_contact: 0,
       contact_context: 'professional',
     }));
+  });
+
+  it('holds an address with no adult professional role as unknown', async () => {
+    await expect(writeContact(resource.db, 'org-unknown-role', {
+      ...contact,
+      fullName: null,
+      title: null,
+      role: 'unknown',
+      email: 'person@example.invalid',
+    }, '2026-09-04T12:00:30.000Z')).resolves.toBe('created');
+    const row = await resource.db.prepare(
+      `SELECT contact_context FROM org_contacts WHERE organization_id=?`,
+    ).bind('org-unknown-role').first<{ contact_context: string }>();
+    expect(row?.contact_context).toBe('unknown');
   });
 
   it('upgrades only legacy unknown context', async () => {

@@ -319,6 +319,18 @@ class TestContactUpsert(unittest.TestCase):
 
     def test_published_adult_role_is_explicitly_professional(self):
         p = intake.plan_contact_upsert("org-aaa", srow(
+            1, "Club", source_contact_email="pat@club.invalid",
+            source_contact_role="Club Director"), "D")
+        self.assertEqual(p["contact_context"], "professional")
+
+    def test_blank_role_personal_address_is_held_as_unknown(self):
+        p = intake.plan_contact_upsert("org-aaa", srow(
+            1, "Club", source_contact_email="pat@club.invalid",
+            source_contact_name="Pat Example"), "D")
+        self.assertEqual(p["contact_context"], "unknown")
+
+    def test_shared_mailbox_without_named_role_is_professional(self):
+        p = intake.plan_contact_upsert("org-aaa", srow(
             1, "Club", source_contact_email="info@club.invalid"), "D")
         self.assertEqual(p["contact_context"], "professional")
 

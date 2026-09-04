@@ -611,9 +611,10 @@ export async function writeContact(
     // asked to be left alone; the database does, and it wins.
     if (existing?.do_not_contact === 1) return 'suppressed';
 
+    const extractedContext = c.role !== 'unknown' ? 'professional' : 'unknown';
     const contactContext = existing?.contact_context && existing.contact_context !== 'unknown'
       ? existing.contact_context
-      : 'professional';
+      : extractedContext;
     const contentHash = await sha256Hex(
       [
         organizationId,
@@ -641,12 +642,12 @@ export async function writeContact(
              role         = CASE WHEN role = 'unknown' THEN ? ELSE role END,
              source_url   = COALESCE(?, source_url),
              confidence   = ?,
-             contact_context = CASE WHEN contact_context = 'unknown' THEN 'professional' ELSE contact_context END,
+             contact_context = CASE WHEN contact_context = 'unknown' THEN ? ELSE contact_context END,
              content_hash = ?,
              updated_at   = ?
            WHERE id = ?`,
         )
-        .bind(c.fullName, c.title, c.role, c.sourceUrl, c.confidence, contentHash, now, existing.id)
+        .bind(c.fullName, c.title, c.role, c.sourceUrl, c.confidence, extractedContext, contentHash, now, existing.id)
         .run();
       return 'updated';
     }
@@ -657,11 +658,11 @@ export async function writeContact(
            id, organization_id, full_name, title, role, email,
            is_primary, is_public, source, source_url, confidence, contact_context,
            verification_method, content_hash, created_at, updated_at
-         ) VALUES (?,?,?,?,?,?,0,0,'enrichment',?,?,'professional','website',?,?,?)`,
+         ) VALUES (?,?,?,?,?,?,0,0,'enrichment',?,?,?,'website',?,?,?)`,
       )
       .bind(
         crypto.randomUUID(), organizationId, c.fullName, c.title, c.role, c.email,
-        c.sourceUrl, c.confidence, contentHash, now, now,
+        c.sourceUrl, c.confidence, extractedContext, contentHash, now, now,
       )
       .run();
     return 'created';

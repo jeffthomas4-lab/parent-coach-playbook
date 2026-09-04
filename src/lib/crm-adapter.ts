@@ -96,7 +96,7 @@ interface OutboxRow {
 }
 
 interface OutboxHeadRow extends OutboxRow {
-  status: 'pending' | 'retry' | 'leased';
+  status: 'pending' | 'retry' | 'leased' | 'dead';
   next_attempt_at: number;
   lease_expires_at: number | null;
 }
@@ -158,8 +158,11 @@ async function sha256(value: string): Promise<string> {
   return [...new Uint8Array(bytes)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
-async function hmacHex(secret: string, value: string): Promise<string> {
-  const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+async function importHmacKey(secret: string): Promise<CryptoKey> {
+  return crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+}
+
+async function hmacHex(key: CryptoKey, value: string): Promise<string> {
   const bytes = await crypto.subtle.sign('HMAC', key, encoder.encode(value));
   return [...new Uint8Array(bytes)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
@@ -397,7 +400,22 @@ async function enqueueDrafts(
     .bind(producerWorkspaceId).first<{ next_sequence: number }>();
   if (!control) throw new Error('crm_adapter_control_missing');
   const start = Number(control.next_sequence);
-  const statements: D1PreparedStatement[] = [...canonicalStatements];
+  const statements: D1PreparedStatement[] = [];
+  for (const draft of drafts.filter((item) => item.eventType === 'contact.deleted.v1')) {
+    statements.push(
+      db.prepare(`DELETE FROM crm_adapter_projection_receipts
+        WHERE subject_type='contact' AND subject_id=? AND last_event_id IN (
+          SELECT event_id FROM crm_adapter_outbox
+          WHERE producer_workspace_id=? AND subject_type='contact' AND subject_id=?
+            AND event_type='contact.observed.v1' AND status IN ('pending','retry','leased')
+        )`).bind(draft.subjectId, producerWorkspaceId, draft.subjectId),
+      db.prepare(`DELETE FROM crm_adapter_outbox
+        WHERE producer_workspace_id=? AND subject_type='contact' AND subject_id=?
+          AND event_type='contact.observed.v1' AND status IN ('pending','retry','leased')`)
+        .bind(producerWorkspaceId, draft.subjectId),
+    );
+  }
+  statements.push(...canonicalStatements);
   for (const [index, draft] of pending.entries()) {
     const sequence = start + index;
     const envelope = {
@@ -518,19 +536,26 @@ export async function projectPcdCrmEvents(
   );
   const namespace = await eventNamespace(config.producerWorkspaceId, config.targetWorkspaceId);
 
-  const organizationCursorSecond = Math.trunc(timestamp(organizationCursor.at) / 1000);
-  const contactCursorSecond = Math.trunc(timestamp(contactCursor.at) / 1000);
-  const organizations = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
+  const organizationSameTime = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
     record_status,is_claimed,content_hash,deleted_at,updated_at
     FROM organizations INDEXED BY idx_organizations_crm_projection_cursor
-    WHERE unixepoch(updated_at)>=? AND (unixepoch(updated_at)>? OR id>?)
-    ORDER BY unixepoch(updated_at),id LIMIT ?`)
-    .bind(organizationCursorSecond, organizationCursorSecond, organizationCursor.id, limit)
+    WHERE julianday(updated_at)=julianday(?) AND id>?
+    ORDER BY id LIMIT ?`)
+    .bind(organizationCursor.at, organizationCursor.id, limit)
     .all<OrganizationRow>();
-  const organizationDrafts = await Promise.all(organizations.results.map((row) => (
+  const organizationLater = organizationSameTime.results.length < limit
+    ? await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
+        record_status,is_claimed,content_hash,deleted_at,updated_at
+        FROM organizations INDEXED BY idx_organizations_crm_projection_cursor
+        WHERE julianday(updated_at)>julianday(?)
+        ORDER BY julianday(updated_at),id LIMIT ?`)
+      .bind(organizationCursor.at, limit - organizationSameTime.results.length).all<OrganizationRow>()
+    : { results: [] as OrganizationRow[] };
+  const organizationRows = [...organizationSameTime.results, ...organizationLater.results];
+  const organizationDrafts = await Promise.all(organizationRows.map((row) => (
     organizationDraft(row, namespace, config.targetWorkspaceId)
   )));
-  const lastOrganization = organizations.results.at(-1);
+  const lastOrganization = organizationRows.at(-1);
   const orgResult = await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
@@ -539,40 +564,58 @@ export async function projectPcdCrmEvents(
     lastOrganization ? { kind: 'organization', at: lastOrganization.updated_at, id: lastOrganization.id } : undefined,
   );
 
-  let contacts = { results: [] as PcdContactProjectionInput[] };
+  let contactRows: PcdContactProjectionInput[] = [];
   if (env.PCD_CRM_BACKFILL_ENABLED === 'true') {
     const historicalOrganizations = await env.PCD_OPS_DB.prepare(`SELECT organization_complete
       FROM crm_adapter_backfill_runs WHERE producer_workspace_id=? AND target_workspace_id=?`)
       .bind(config.producerWorkspaceId, config.targetWorkspaceId).first<{ organization_complete: number }>();
     if (historicalOrganizations?.organization_complete === 1) {
-      contacts = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
+      const sameTime = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
         source_url,confidence,verified_at,content_hash,deleted_at,updated_at
         FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
-        WHERE unixepoch(updated_at)>=? AND (unixepoch(updated_at)>? OR id>?)
-        ORDER BY unixepoch(updated_at),id LIMIT ?`)
-        .bind(contactCursorSecond, contactCursorSecond, contactCursor.id, limit).all<PcdContactProjectionInput>();
+        WHERE julianday(updated_at)=julianday(?) AND id>?
+        ORDER BY id LIMIT ?`)
+        .bind(contactCursor.at, contactCursor.id, limit).all<PcdContactProjectionInput>();
+      const later = sameTime.results.length < limit
+        ? await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
+            source_url,confidence,verified_at,content_hash,deleted_at,updated_at
+            FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
+            WHERE julianday(updated_at)>julianday(?)
+            ORDER BY julianday(updated_at),id LIMIT ?`)
+          .bind(contactCursor.at, limit - sameTime.results.length).all<PcdContactProjectionInput>()
+        : { results: [] as PcdContactProjectionInput[] };
+      contactRows = [...sameTime.results, ...later.results];
     }
   } else {
-    contacts = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
+    const sameTime = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
       source_url,confidence,verified_at,content_hash,deleted_at,updated_at
       FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
-      WHERE unixepoch(updated_at)>=? AND (unixepoch(updated_at)>? OR id>?)
-      ORDER BY unixepoch(updated_at),id LIMIT ?`)
-      .bind(contactCursorSecond, contactCursorSecond, contactCursor.id, limit).all<PcdContactProjectionInput>();
+      WHERE julianday(updated_at)=julianday(?) AND id>?
+      ORDER BY id LIMIT ?`)
+      .bind(contactCursor.at, contactCursor.id, limit).all<PcdContactProjectionInput>();
+    const later = sameTime.results.length < limit
+      ? await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
+          source_url,confidence,verified_at,content_hash,deleted_at,updated_at
+          FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
+          WHERE julianday(updated_at)>julianday(?)
+          ORDER BY julianday(updated_at),id LIMIT ?`)
+        .bind(contactCursor.at, limit - sameTime.results.length).all<PcdContactProjectionInput>()
+      : { results: [] as PcdContactProjectionInput[] };
+    contactRows = [...sameTime.results, ...later.results];
   }
   const previouslyObserved = await previouslyObservedContactIds(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
-    contacts.results,
+    contactRows,
   );
   const contactCandidates = await Promise.all(
-    contacts.results.map((row) => contactDraft(
+    contactRows.map((row) => contactDraft(
       row, namespace, config.targetWorkspaceId, config.sourceId,
       previouslyObserved.has(row.id),
     )),
   );
   const contactDrafts = contactCandidates.filter((draft): draft is EventDraft => draft !== null);
-  const lastContact = contacts.results.at(-1);
+  const lastContact = contactRows.at(-1);
   const contactResult = await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
@@ -932,14 +975,19 @@ export async function finalizePcdCrmBackfill(
   return { enabled: true, completed: true, pending: 0, dead: 0, reconciled: true };
 }
 
-async function readBoundedJson(response: Response): Promise<Record<string, unknown> | null> {
+async function readBoundedJson(response: Response, signal?: AbortSignal): Promise<Record<string, unknown> | null> {
   if (!response.body) return null;
   const reader = response.body.getReader();
   const chunks: Uint8Array[] = [];
   let total = 0;
+  let rejectAborted: ((reason?: unknown) => void) | undefined;
+  const aborted = new Promise<never>((_resolve, reject) => { rejectAborted = reject; });
+  const onAbort = () => rejectAborted?.(new DOMException('Response body timed out', 'AbortError'));
+  signal?.addEventListener('abort', onAbort, { once: true });
   try {
+    if (signal?.aborted) onAbort();
     while (true) {
-      const next = await reader.read();
+      const next = await Promise.race([reader.read(), aborted]);
       if (next.done) break;
       total += next.value.byteLength;
       if (total > MAX_RESPONSE_BYTES) {
@@ -949,6 +997,8 @@ async function readBoundedJson(response: Response): Promise<Record<string, unkno
       chunks.push(next.value);
     }
   } finally {
+    signal?.removeEventListener('abort', onAbort);
+    if (signal?.aborted) await reader.cancel().catch(() => undefined);
     reader.releaseLock();
   }
   const bytes = new Uint8Array(total);
@@ -1008,24 +1058,24 @@ function isValidReconciliationResult(
     });
 }
 
-async function signedFetch(
+async function signedFetchJson(
   fetcher: CrmAdapterFetcher,
-  secret: string,
+  key: CryptoKey,
   producerWorkspaceId: string,
   scope: string,
   idempotencyKey: string,
   path: string,
   body: string,
-): Promise<Response> {
+): Promise<{ response: Response; result: Record<string, unknown> | null }> {
   const timestampHeader = String(Date.now());
   const signature = await hmacHex(
-    secret,
+    key,
     `v2.${timestampHeader}.${PRODUCER}.${producerWorkspaceId}.${scope}.${idempotencyKey}.${body}`,
   );
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5_000);
   try {
-    return await fetcher.fetch(`https://crm.internal/api/internal/adapters/${path}`, {
+    const response = await fetcher.fetch(`https://crm.internal/api/internal/adapters/${path}`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -1039,6 +1089,7 @@ async function signedFetch(
       body,
       signal: controller.signal,
     });
+    return { response, result: await readBoundedJson(response, controller.signal) };
   } finally {
     clearTimeout(timeout);
   }
@@ -1072,6 +1123,7 @@ export async function reconcilePcdCrmBackfill(
     throw new Error('pcd_crm_adapter_configuration_missing');
   }
   const db = env.PCD_OPS_DB;
+  const hmacKey = await importHmacKey(secret);
   const now = options.now ?? Date.now();
   const run = await ensureBackfillRun(env, config, now);
   const pass = Number(run.reconciliation_pass);
@@ -1146,16 +1198,15 @@ export async function reconcilePcdCrmBackfill(
       events,
     };
     const body = JSON.stringify(manifest);
-    const response = await signedFetch(
+    const { response, result } = await signedFetchJson(
       fetcher,
-      secret,
+      hmacKey,
       config.producerWorkspaceId,
       RECONCILE_SCOPE,
       `pcd-backfill-reconcile-${run.id}-${pass}-${window}`,
       'reconcile',
       body,
     );
-    const result = await readBoundedJson(response);
     const validResult = isValidReconciliationResult(
       response,
       result,
@@ -1265,10 +1316,11 @@ export async function dispatchPcdCrmOutbox(
   const head = await env.PCD_OPS_DB.prepare(`SELECT id,event_id,source_sequence,event_type,payload_json,payload_hash,
       idempotency_key,attempt_count,status,next_attempt_at,lease_expires_at
     FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_claim_sequence
-    WHERE producer_workspace_id=? AND status IN ('pending','retry','leased') AND attempt_count<?
-    ORDER BY source_sequence LIMIT ?`).bind(config.producerWorkspaceId, MAX_ATTEMPTS, limit).all<OutboxHeadRow>();
+    WHERE producer_workspace_id=? AND status IN ('pending','retry','leased','dead')
+    ORDER BY source_sequence LIMIT ?`).bind(config.producerWorkspaceId, limit).all<OutboxHeadRow>();
   const duePrefix: OutboxHeadRow[] = [];
   for (const row of head.results) {
+    if (row.status === 'dead') break;
     const due = row.status === 'leased'
       ? row.lease_expires_at !== null && Number(row.lease_expires_at) <= now
       : Number(row.next_attempt_at) <= now;
@@ -1296,6 +1348,7 @@ export async function dispatchPcdCrmOutbox(
     code: string | null;
     receiptId: string | null;
   }> = [];
+  const hmacKey = fetcher ? await importHmacKey(secret) : null;
   let blocked = false;
   for (const row of claimed.results) {
     if (blocked) {
@@ -1308,15 +1361,16 @@ export async function dispatchPcdCrmOutbox(
       continue;
     }
     try {
-      const response = await signedFetch(fetcher, secret, config.producerWorkspaceId, EVENT_SCOPE, row.idempotency_key, 'events', row.payload_json);
-      const responseBody = await readBoundedJson(response);
+      const { response, result: responseBody } = await signedFetchJson(
+        fetcher, hmacKey!, config.producerWorkspaceId, EVENT_SCOPE, row.idempotency_key, 'events', row.payload_json,
+      );
       const accepted = isValidDeliveryAcknowledgement(responseBody, row);
-      const receiptId = accepted ? responseBody.receiptId as string : null;
+      const receiptId = accepted && responseBody ? responseBody.receiptId as string : null;
       if ((response.status === 200 || response.status === 202) && accepted) {
         outcomes.push({ row, kind: 'delivered', status: response.status, code: null, receiptId });
         continue;
       }
-      if (response.status >= 400 && response.status < 500) {
+      if (response.status >= 400 && response.status < 500 && ![408, 425, 429].includes(response.status)) {
         outcomes.push({ row, kind: 'dead', status: response.status, code: `receiver_${response.status}`, receiptId: null });
         blocked = true;
         continue;
@@ -1372,12 +1426,13 @@ export async function dispatchPcdCrmOutbox(
 export async function reconcilePcdCrmOutbox(
   env: PcdCrmAdapterEnv,
   options: { now?: number; fetcher?: CrmAdapterFetcher } = {},
-): Promise<{ enabled: boolean; checked: boolean; missing: number; mismatch: number }> {
-  if (env.PCD_CRM_ADAPTER_ENABLED !== 'true') return { enabled: false, checked: false, missing: 0, mismatch: 0 };
+): Promise<{ enabled: boolean; checked: boolean; clean: boolean; missing: number; duplicate: number; stale: number; unauthorized: number; mismatch: number }> {
+  const empty = { checked: false, clean: false, missing: 0, duplicate: 0, stale: 0, unauthorized: 0, mismatch: 0 };
+  if (env.PCD_CRM_ADAPTER_ENABLED !== 'true') return { enabled: false, ...empty };
   const config = requireConfig(env);
   const secret = env.PCD_CRM_ADAPTER_HMAC_SECRET?.trim() ?? '';
   const fetcher = options.fetcher ?? env.CRM_ADAPTER;
-  if (!config || !secret || !fetcher || !env.PCD_OPS_DB) return { enabled: true, checked: false, missing: 0, mismatch: 0 };
+  if (!config || !secret || !fetcher || !env.PCD_OPS_DB) return { enabled: true, ...empty };
   const rows = await env.PCD_OPS_DB.prepare(`SELECT event_id,source_sequence,event_type,payload_hash
     FROM crm_adapter_outbox WHERE producer_workspace_id=? ORDER BY source_sequence DESC LIMIT 100`)
     .bind(config.producerWorkspaceId)
@@ -1395,18 +1450,18 @@ export async function reconcilePcdCrmOutbox(
     })),
   };
   const body = JSON.stringify(manifest);
-  const response = await signedFetch(
+  const hmacKey = await importHmacKey(secret);
+  const { response, result } = await signedFetchJson(
     fetcher,
-    secret,
+    hmacKey,
     config.producerWorkspaceId,
     RECONCILE_SCOPE,
     `pcd-reconcile-${highWater}`,
     'reconcile',
     body,
   );
-  const result = await readBoundedJson(response);
   if (!isValidReconciliationResult(response, result, config.producerWorkspaceId, highWater, manifest.events)) {
-    return { enabled: true, checked: false, missing: 0, mismatch: 0 };
+    return { enabled: true, ...empty };
   }
   const count = (key: typeof RECONCILIATION_RESULT_ARRAYS[number]) => (result[key] as unknown[]).length;
   const checkedAt = options.now ?? Date.now();
@@ -1419,7 +1474,19 @@ export async function reconcilePcdCrmOutbox(
     count('missing'), count('duplicate'), count('stale'), count('unauthorized'), count('mismatch'),
     await sha256(stableJson(result)), checkedAt,
   ).run();
-  return { enabled: true, checked: true, missing: count('missing'), mismatch: count('mismatch') };
+  const findings = {
+    missing: count('missing'),
+    duplicate: count('duplicate'),
+    stale: count('stale'),
+    unauthorized: count('unauthorized'),
+    mismatch: count('mismatch'),
+  };
+  return {
+    enabled: true,
+    checked: true,
+    clean: Object.values(findings).every((value) => value === 0),
+    ...findings,
+  };
 }
 
 export async function runPcdCrmAdapter(
@@ -1433,7 +1500,7 @@ export async function runPcdCrmAdapter(
     : await projectPcdCrmEvents(env);
   const delivery = await dispatchPcdCrmOutbox(env);
   const reconciliation = options.backfillOnly
-    ? { checked: false, missing: 0, mismatch: 0 }
+    ? { checked: false, clean: false, missing: 0, duplicate: 0, stale: 0, unauthorized: 0, mismatch: 0 }
     : await reconcilePcdCrmOutbox(env);
   const backfillReconciliation = await reconcilePcdCrmBackfill(env);
   const backfillFinal = options.backfillOnly
@@ -1454,8 +1521,11 @@ export async function runPcdCrmAdapter(
     delivered: delivery.delivered,
     retried: delivery.retried,
     dead: delivery.dead,
-    reconciled: reconciliation.checked,
+    reconciled: reconciliation.checked && reconciliation.clean,
     missing: reconciliation.missing,
+    duplicate: reconciliation.duplicate,
+    stale: reconciliation.stale,
+    unauthorized: reconciliation.unauthorized,
     mismatch: reconciliation.mismatch,
     backfillReconciliationChecked: backfillReconciliation.checked,
     backfillReconciliationPass: backfillReconciliation.pass,
