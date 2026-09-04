@@ -60,6 +60,7 @@
     "test:unit": "vitest run --config vitest.unit.config.ts",
     "test:unit:coverage": "vitest run --config vitest.unit.config.ts --coverage",
     "test:integration": "vitest run --config vitest.integration.config.ts --exclude tests/customer-lifecycle.integration.test.ts --exclude tests/crm-adapter.test.ts && vitest run --config vitest.integration.config.ts tests/customer-lifecycle.integration.test.ts && vitest run --config vitest.integration.config.ts tests/crm-adapter.test.ts",
+    "test:crm-scale": "node scripts/run-crm-backfill-scale.mjs",
     "test:agent-preflight": "vitest run --config vitest.agent-preflight.config.ts",
     "git:unlock": "node scripts/clear-stale-git-locks.mjs",
     "test:watch": "vitest",

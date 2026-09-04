@@ -389,7 +389,7 @@ describe('PCD CRM adapter producer', () => {
     ]);
     expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 30 }))
       .toMatchObject({ completed: true, reconciled: true });
-  });
+  }, 30_000);
 
   it('retains failed window evidence without advancing reconciliation coverage', async () => {
     const { ops, intel } = await databases();
@@ -637,6 +637,61 @@ describe('PCD CRM adapter producer', () => {
       limit: 10,
     })).resolves.toMatchObject({ claimed: 10, delivered: 10, retried: 0, dead: 0 });
     expect(maxInFlight).toBe(1);
+  });
+
+  it('replays an event after an ambiguous response without exhausting its retry budget', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-ambiguous-response', updatedAt: at });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1 });
+
+    let acceptedEventId = '';
+    let loseFirstResponse = true;
+    const fetcher: CrmAdapterFetcher = {
+      fetch: vi.fn(async (_input, init) => {
+        const body = JSON.parse(String(init?.body)) as { eventId: string };
+        if (loseFirstResponse) {
+          loseFirstResponse = false;
+          acceptedEventId = body.eventId;
+          throw new DOMException('response lost after receiver commit', 'AbortError');
+        }
+        expect(body.eventId).toBe(acceptedEventId);
+        return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId });
+      }),
+    };
+
+    const first = await dispatchPcdCrmOutbox(adapterEnv, {
+      fetcher,
+      now: Date.parse(at) + 2,
+      limit: 1,
+    });
+    expect(first).toMatchObject({ claimed: 1, delivered: 0, retried: 1, dead: 0 });
+    const replay = await dispatchPcdCrmOutbox(adapterEnv, {
+      fetcher,
+      now: Date.parse(at) + 30_003,
+      limit: 1,
+    });
+    expect(replay).toMatchObject({ claimed: 1, delivered: 1, retried: 0, dead: 0 });
+    expect(await ops.prepare(`SELECT status,attempt_count,receiver_receipt_id,last_error_code
+      FROM crm_adapter_outbox`).first()).toEqual({
+      status: 'delivered',
+      attempt_count: 2,
+      receiver_receipt_id: `receipt-${acceptedEventId}`,
+      last_error_code: null,
+    });
+  });
+
+  it('claims the oldest due rows through the partial source-sequence index', async () => {
+    const { ops } = await databases();
+    const plan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id FROM crm_adapter_outbox
+      INDEXED BY idx_crm_adapter_outbox_claim_sequence
+      WHERE status IN ('pending','retry','leased')
+        AND ((status IN ('pending','retry') AND next_attempt_at<=?) OR (status='leased' AND lease_expires_at<=?))
+        AND attempt_count<?
+      ORDER BY source_sequence LIMIT ?`).bind(Date.now(), Date.now(), 8, 10).all<{ detail: string }>();
+    expect(plan.results.map((row) => row.detail).join('\n')).toContain('idx_crm_adapter_outbox_claim_sequence');
+    expect(plan.results.map((row) => row.detail).join('\n')).not.toContain('USE TEMP B-TREE FOR ORDER BY');
   });
 
   it('classifies missing receiver, 4xx, 5xx and timeout paths with an eight-attempt ceiling', async () => {

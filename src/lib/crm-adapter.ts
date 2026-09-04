@@ -1110,8 +1110,9 @@ export async function dispatchPcdCrmOutbox(
   const leaseId = `pcd-crm-lease:${crypto.randomUUID()}`;
   const claimed = await env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_outbox SET status='leased',lease_id=?,lease_expires_at=?,updated_at=?
     WHERE id IN (
-      SELECT id FROM crm_adapter_outbox
-      WHERE ((status IN ('pending','retry') AND next_attempt_at<=?) OR (status='leased' AND lease_expires_at<=?))
+      SELECT id FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_claim_sequence
+      WHERE status IN ('pending','retry','leased')
+        AND ((status IN ('pending','retry') AND next_attempt_at<=?) OR (status='leased' AND lease_expires_at<=?))
         AND attempt_count<?
       ORDER BY source_sequence LIMIT ?
     ) RETURNING id,event_id,source_sequence,event_type,payload_json,payload_hash,idempotency_key,attempt_count`)
