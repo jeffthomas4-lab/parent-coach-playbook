@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import policy from '../coordination/release-evidence/access-policy-export-pending.json';
 import probes from '../coordination/release-evidence/authenticated-access-probes-pending.json';
+import protectedRoutes from '../automation/protected-route-contract.json';
 import { validateAccessPolicyEvidence, validateAuthenticatedAccessEvidence } from '../scripts/access-evidence.mjs';
 
 describe('live Access evidence contracts', () => {
@@ -28,7 +29,8 @@ describe('live Access evidence contracts', () => {
       evidence_hash: 'b'.repeat(64), allowed_results: [], denied_results: [],
     };
     expect(validateAuthenticatedAccessEvidence(complete).errors).toEqual(expect.arrayContaining([
-      'allowed_results must cover all 59 routes', 'denied_results must cover all 59 routes',
+      `allowed_results must cover all ${protectedRoutes.routes.length} routes`,
+      `denied_results must cover all ${protectedRoutes.routes.length} routes`,
     ]));
   });
 });
