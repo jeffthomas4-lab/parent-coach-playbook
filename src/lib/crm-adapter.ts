@@ -958,59 +958,81 @@ export async function projectPcdCrmBackfill(
   const namespace = await eventNamespace(config.producerWorkspaceId, config.targetWorkspaceId);
   try {
     if (!run.organization_complete) {
-      const rows = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
+      const sameSecond = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
         record_status,is_claimed,content_hash,deleted_at,updated_at,
         unixepoch(created_at) crm_cursor_created_second
         FROM organizations INDEXED BY idx_organizations_crm_backfill_created
-        WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
-          OR (unixepoch(created_at)=? AND id>?))
-        ORDER BY unixepoch(created_at),id LIMIT ?`)
-        .bind(snapshotBeforeSecond, run.organization_cursor_created_second,
-          run.organization_cursor_created_second, run.organization_cursor_id, limit)
+        WHERE unixepoch(created_at)=? AND id>? AND unixepoch(created_at)<?
+        ORDER BY id LIMIT ?`)
+        .bind(run.organization_cursor_created_second, run.organization_cursor_id, snapshotBeforeSecond, limit)
         .all<OrganizationRow & { crm_cursor_created_second: number }>();
-      if (!rows.results.length) {
+      const organizationRows = [...sameSecond.results];
+      const remaining = limit - organizationRows.length;
+      if (remaining > 0) {
+        const laterSeconds = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
+          record_status,is_claimed,content_hash,deleted_at,updated_at,
+          unixepoch(created_at) crm_cursor_created_second
+          FROM organizations INDEXED BY idx_organizations_crm_backfill_created
+          WHERE unixepoch(created_at)>? AND unixepoch(created_at)<?
+          ORDER BY unixepoch(created_at),id LIMIT ?`)
+          .bind(run.organization_cursor_created_second, snapshotBeforeSecond, remaining)
+          .all<OrganizationRow & { crm_cursor_created_second: number }>();
+        organizationRows.push(...laterSeconds.results);
+      }
+      if (!organizationRows.length) {
         await markBackfillSubjectComplete(env.PCD_OPS_DB, run.id, 'organization', leaseId, now);
         organizationComplete = true;
       } else {
-        const drafts = await Promise.all(rows.results.map((row) => (
+        const drafts = await Promise.all(organizationRows.map((row) => (
           organizationDraft(row, namespace, config.targetWorkspaceId)
         )));
         const outbox = await enqueueDrafts(env.PCD_OPS_DB, config.producerWorkspaceId, drafts, now, undefined, [], run.id);
         const dispositions = drafts.map((draft) => ({ id: draft.subjectId, disposition: draft.eventType.endsWith('deleted.v1') ? 'tombstoned' : 'projected', contentHash: draft.contentHash }));
-        const last = rows.results.at(-1)!;
+        const last = organizationRows.at(-1)!;
         await recordBackfillChunk(
           env.PCD_OPS_DB, run, 'organization', run.organization_cursor_id, last.id,
-          Number(last.crm_cursor_created_second), rows.results.length,
+          Number(last.crm_cursor_created_second), organizationRows.length,
           drafts.length, outbox.projected, outbox.replayed, 0, await sha256(stableJson(dispositions)),
-          rows.results.length < limit, leaseId, now,
+          organizationRows.length < limit, leaseId, now,
         );
         organizations = drafts.length;
         replayed += outbox.replayed;
-        organizationComplete = rows.results.length < limit;
+        organizationComplete = organizationRows.length < limit;
       }
     }
 
     if (organizationComplete && !run.contact_complete) {
-      const rows = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,contact_context,
+      const sameSecond = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,contact_context,
         source_url,confidence,verified_at,content_hash,deleted_at,updated_at,
         unixepoch(created_at) crm_cursor_created_second
         FROM org_contacts INDEXED BY idx_org_contacts_crm_backfill_created
-        WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
-          OR (unixepoch(created_at)=? AND id>?))
-        ORDER BY unixepoch(created_at),id LIMIT ?`)
-        .bind(snapshotBeforeSecond, run.contact_cursor_created_second,
-          run.contact_cursor_created_second, run.contact_cursor_id, limit)
+        WHERE unixepoch(created_at)=? AND id>? AND unixepoch(created_at)<?
+        ORDER BY id LIMIT ?`)
+        .bind(run.contact_cursor_created_second, run.contact_cursor_id, snapshotBeforeSecond, limit)
         .all<PcdContactProjectionInput & { crm_cursor_created_second: number }>();
-      if (!rows.results.length) {
+      const contactRows = [...sameSecond.results];
+      const remaining = limit - contactRows.length;
+      if (remaining > 0) {
+        const laterSeconds = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,contact_context,
+          source_url,confidence,verified_at,content_hash,deleted_at,updated_at,
+          unixepoch(created_at) crm_cursor_created_second
+          FROM org_contacts INDEXED BY idx_org_contacts_crm_backfill_created
+          WHERE unixepoch(created_at)>? AND unixepoch(created_at)<?
+          ORDER BY unixepoch(created_at),id LIMIT ?`)
+          .bind(run.contact_cursor_created_second, snapshotBeforeSecond, remaining)
+          .all<PcdContactProjectionInput & { crm_cursor_created_second: number }>();
+        contactRows.push(...laterSeconds.results);
+      }
+      if (!contactRows.length) {
         await markBackfillSubjectComplete(env.PCD_OPS_DB, run.id, 'contact', leaseId, now);
       } else {
         const previouslyObserved = await previouslyObservedContactIds(
           env.PCD_OPS_DB,
           config.producerWorkspaceId,
           config.targetWorkspaceId,
-          rows.results,
+          contactRows,
         );
-        const classified = await Promise.all(rows.results.map(async (row) => {
+        const classified = await Promise.all(contactRows.map(async (row) => {
           const draft = await contactDraft(
             row, namespace, config.targetWorkspaceId, config.sourceId,
             previouslyObserved.has(row.id),
@@ -1032,13 +1054,13 @@ export async function projectPcdCrmBackfill(
           disposition,
           contentHash: draft?.contentHash ?? row.content_hash ?? await sha256(stableJson({ id: row.id, organizationId: row.organization_id, updatedAt: row.updated_at, disposition })),
         })));
-        const last = rows.results.at(-1)!;
+        const last = contactRows.at(-1)!;
         const rejectedCount = classified.length - drafts.length;
         await recordBackfillChunk(
           env.PCD_OPS_DB, run, 'contact', run.contact_cursor_id, last.id,
-          Number(last.crm_cursor_created_second), rows.results.length,
+          Number(last.crm_cursor_created_second), contactRows.length,
           drafts.length, outbox.projected, outbox.replayed, rejectedCount, await sha256(stableJson(dispositions)),
-          rows.results.length < limit, leaseId, now,
+          contactRows.length < limit, leaseId, now,
         );
         contacts = drafts.length;
         replayed += outbox.replayed;

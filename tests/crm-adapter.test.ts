@@ -1074,22 +1074,31 @@ describe('PCD CRM adapter producer', () => {
 
   it('uses creation-time keyset indexes for bounded historical projection', async () => {
     const { ops, intel } = await databases();
-    const organizationPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
+    const organizationSameSecondPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
       FROM organizations INDEXED BY idx_organizations_crm_backfill_created
-      WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
-        OR (unixepoch(created_at)=? AND id>?))
+      WHERE unixepoch(created_at)=? AND id>? AND unixepoch(created_at)<?
+      ORDER BY id LIMIT ?`)
+      .bind(-1, '', 2_000_000_000, 50).all<{ detail: string }>();
+    const organizationLaterPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM organizations INDEXED BY idx_organizations_crm_backfill_created
+      WHERE unixepoch(created_at)>? AND unixepoch(created_at)<?
       ORDER BY unixepoch(created_at),id LIMIT ?`)
-      .bind(2_000_000_000, -1, -1, '', 50).all<{ detail: string }>();
-    const contactPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
+      .bind(-1, 2_000_000_000, 50).all<{ detail: string }>();
+    const contactSameSecondPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
       FROM org_contacts INDEXED BY idx_org_contacts_crm_backfill_created
-      WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
-        OR (unixepoch(created_at)=? AND id>?))
+      WHERE unixepoch(created_at)=? AND id>? AND unixepoch(created_at)<?
+      ORDER BY id LIMIT ?`)
+      .bind(-1, '', 2_000_000_000, 50).all<{ detail: string }>();
+    const contactLaterPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM org_contacts INDEXED BY idx_org_contacts_crm_backfill_created
+      WHERE unixepoch(created_at)>? AND unixepoch(created_at)<?
       ORDER BY unixepoch(created_at),id LIMIT ?`)
-      .bind(2_000_000_000, -1, -1, '', 50).all<{ detail: string }>();
+      .bind(-1, 2_000_000_000, 50).all<{ detail: string }>();
 
-    for (const detail of [organizationPlan, contactPlan]
+    for (const detail of [organizationSameSecondPlan, organizationLaterPlan, contactSameSecondPlan, contactLaterPlan]
       .map((plan) => plan.results.map((row) => row.detail).join('\n'))) {
       expect(detail).toMatch(/SEARCH .* USING (?:COVERING )?INDEX/);
+      expect(detail).not.toContain('MULTI-INDEX OR');
       expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
     }
   });
