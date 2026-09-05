@@ -1,13 +1,13 @@
 # Parent Coach Desk portfolio CRM adapter
 
-Status: local implementation only; default off; no provider or remote resource configured.
+Status: staging infrastructure deployed; default off; production remains unconfigured; no data moved.
 
-Read-only production inventory on 2026-09-04 found 198,287 canonical organizations and 108
-extracted contact rows. Of those contacts, 16 currently have an email or phone channel, all 108
+Read-only production inventory refreshed on 2026-09-05 found 198,287 canonical organizations and
+141 extracted contact rows. Of those contacts, 35 currently have an email or phone channel, all 141
 have a source URL, none is suppressed, and none is tombstoned. These counts are an action-time
 snapshot, not a load receipt; extraction continues and the activation gate must refresh them.
 Production predates the contact-context migration and current writers set every discovered row to
-`is_public = 0`, so all 108 are presently private/unreviewed. Every row will receive a terminal
+`is_public = 0`, so all 141 are presently private/unreviewed. Every row will receive a terminal
 backfill disposition, but zero may become an active CRM contact until the public-professional
 eligibility gate is satisfied.
 
@@ -27,7 +27,8 @@ The exact serialized body is persisted before delivery. HMAC-SHA256 covers:
 
 `v2.<timestamp>.parent-coach-desk.<producer-workspace>.<scope>.<idempotency-key>.<raw-body>`
 
-Required runtime bindings, none of which are declared or provisioned by Packet 6:
+Required runtime bindings. Gate 9C-B provisioned and verified these in staging with both producer
+flags false; production remains unconfigured:
 
 - `CRM_ADAPTER`: Cloudflare Service Binding to the Ventures receiver;
 - `PCD_CRM_ADAPTER_ENABLED`: must equal `true`; absent/other values disable all work;
@@ -40,13 +41,14 @@ Required runtime bindings, none of which are declared or provisioned by Packet 6
   adapter fails closed without it and will not scan or emit organization/contact source rows whose
   `updated_at` precedes it.
 
-The committed configuration keeps both switches false. A dedicated minute cron is declared but
-returns without source reads, receiver calls, or writes while the adapter switch is false. When
-enabled, that minute pump performs the historical scan, bounded delivery, and at most one
-100-event historical reconciliation window; the existing six-hour job owns the live
-mixed-timestamp scan, rolling reconciliation, and completion check. Changing the schedule,
-applying migrations `0032` through `0034`, adding the Service Binding or secret, or enabling either
-switch remains a separately approved provider/data action.
+The committed configuration and active staging version keep both switches false. A dedicated
+minute cron is declared but returns without source reads, receiver calls, or writes while the
+adapter switch is false. When enabled, that minute pump performs the historical scan, bounded
+delivery, and at most one 100-event historical reconciliation window; the existing six-hour job
+owns the live mixed-timestamp scan, rolling reconciliation, and completion check. Staging now has
+the reviewed schema, Service Binding, and secret name. Enabling either switch, changing the
+schedule, or applying the corresponding production resources remains a separately approved
+provider/data action.
 
 ## Guarantees and recovery
 
@@ -91,18 +93,19 @@ switch remains a separately approved provider/data action.
 - queue jobs created: 0;
 - expected memory: O(100), bounded by a 50-row source chunk, one in-flight delivery response, or one
   100-hash reconciliation window; every receiver response is capped at 4 KiB;
-- likely scaling bottleneck: the 10-event-per-minute receiver pump. At the 2026-09-04 inventory,
+- likely scaling bottleneck: the 10-event-per-minute receiver pump. At the 2026-09-05 inventory,
   198,287 organizations plus zero currently public-reviewed contacts is 198,287 initially eligible
-  upsert events and a conservative 13.8-day initial drain with no retries. The 108 contact rows are
-  still dispositioned, while the 16 channel-bearing rows remain inactive pending human review. A bounded
-  staging pilot must measure receiver/D1 behavior before that limit changes; completion is based on
-  accounting and reconciliation, never elapsed time.
+  upsert events and a conservative 13.8-day initial drain with no retries. The 141 contact rows are
+  still dispositioned, while the 35 channel-bearing rows remain inactive pending human review. A
+  bounded staging pilot must measure receiver/D1 behavior before that limit changes; completion is
+  based on accounting and reconciliation, never elapsed time.
 
 The fixed-scale local gate processed 200,000 synthetic organizations plus 108 synthetic contacts,
 classified all 108 contacts, delivered all 200,016 eligible events, completed 4,002 reconciliation
 windows, recovered one ambiguous response by replay, and detected/restored one deliberately missing
 receiver event. It completed in 9,282,710 ms across 47 restartable stages. This proves application
-accounting and bounded-memory behavior, not hosted D1 latency or physical durability; the disposable
+accounting and bounded-memory behavior at the 2026-09-04 contact snapshot, not current exact-source
+cardinality, hosted D1 latency, or physical durability; the disposable
 SQLite harness disables host fsync while retaining transaction boundaries.
 
 Dependency decision: npm and GitHub were checked for maintained HTTP load tools such as Autocannon;
