@@ -358,7 +358,7 @@ describe('PCD CRM adapter producer', () => {
     expect(JSON.stringify(receipt)).not.toContain('private-value@test.example');
   });
 
-  it('keeps a historical backfill link when a pending observation is replaced by a safety tombstone', async () => {
+  it('keeps historical accounting when an unattempted observation is removed by a safety mutation', async () => {
     const { ops, intel } = await databases();
     const oldAt = '2026-09-01T12:00:00.000Z';
     const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
@@ -380,10 +380,11 @@ describe('PCD CRM adapter producer', () => {
       email: 'contact-backfill-retraction@test.example', source: 'website',
       sourceUrl: 'https://org-backfill-retraction.example/staff', contactContext: 'minor',
     })).resolves.toMatchObject({ ok: true, created: false });
-    expect(await ops.prepare(`SELECT event_type,backfill_run_id FROM crm_adapter_outbox
-      WHERE subject_id='contact-backfill-retraction'`).first()).toEqual({
-      event_type: 'contact.deleted.v1', backfill_run_id: before?.backfill_run_id,
-    });
+    expect(await ops.prepare(`SELECT event_type FROM crm_adapter_outbox
+      WHERE subject_id='contact-backfill-retraction'`).first()).toBeNull();
+    expect(await ops.prepare(`SELECT run_id FROM crm_adapter_backfill_subjects
+      WHERE subject_type='contact' AND subject_id='contact-backfill-retraction'`).first())
+      .toEqual({ run_id: before?.backfill_run_id });
     await expect(finalizePcdCrmBackfill(adapterEnv, { now: cutoff + 2 }))
       .resolves.toMatchObject({ completed: false, pending: 1 });
   });
@@ -1461,6 +1462,21 @@ describe('PCD CRM adapter producer', () => {
       WHERE event_type='contact.deleted.v1'`).first<{ payload_json: string; target_workspace_id: string }>();
     expect(tombstone?.target_workspace_id).toBe('workspace-one');
     expect(JSON.parse(tombstone?.payload_json ?? '{}').payload.workspaceId).toBe('workspace-one');
+  });
+
+  it('does not tombstone an old target when its observation was never attempted', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-03T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-retarget-unsent', updatedAt: at });
+    await insertContact(ops, { id: 'contact-retarget-unsent', organizationId: 'org-retarget-unsent', updatedAt: at });
+    const originalEnv = env(ops, intel, { PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-one' });
+    expect(await projectPcdCrmEvents(originalEnv, { now: Date.parse(at) + 1, limit: 10 }))
+      .toMatchObject({ organizations: 1, contacts: 1 });
+
+    const retargetedEnv = env(ops, intel, { PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-two' });
+    await expect(setDoNotContact(retargetedEnv, 'contact-retarget-unsent', 'privacy_request')).resolves.toBe(true);
+    expect(await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox
+      WHERE subject_id='contact-retarget-unsent'`).first()).toEqual({ count: 0 });
   });
 
   it('reports reconciliation findings as not clean', async () => {

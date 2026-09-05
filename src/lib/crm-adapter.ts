@@ -371,7 +371,8 @@ async function previouslyObservedContactIds(
   const placeholders = ids.map(() => '?').join(',');
   const observed = await db.prepare(`SELECT DISTINCT subject_id FROM crm_adapter_outbox
     WHERE subject_type='contact' AND event_type='contact.observed.v1'
-      AND producer_workspace_id=? AND target_workspace_id=? AND subject_id IN (${placeholders})`)
+      AND producer_workspace_id=? AND target_workspace_id=? AND subject_id IN (${placeholders})
+      AND (status!='pending' OR attempt_count>0)`)
     .bind(producerWorkspaceId, targetWorkspaceId, ...ids).all<{ subject_id: string }>();
   return new Set(observed.results.map((row) => row.subject_id));
 }
@@ -385,6 +386,7 @@ async function previouslyObservedContactTargets(
     INDEXED BY idx_crm_adapter_outbox_contact_targets
     WHERE producer_workspace_id=? AND subject_type='contact' AND event_type='contact.observed.v1'
       AND subject_id=? AND target_workspace_id IS NOT NULL
+      AND (status!='pending' OR attempt_count>0)
     GROUP BY target_workspace_id ORDER BY target_workspace_id LIMIT 9`)
     .bind(producerWorkspaceId, subjectId).all<{ target_workspace_id: string }>();
   if (targets.results.length > 8) throw new Error('pcd_crm_contact_target_history_limit');
@@ -404,6 +406,7 @@ async function enqueueDrafts(
   cursor?: { kind: 'organization' | 'contact'; revision: number },
   canonicalStatements: D1PreparedStatement[] = [],
   backfillRunId?: string,
+  restartReconciliation = false,
 ): Promise<{ projected: number; replayed: number; highWater: number }> {
   await ensureControl(db, producerWorkspaceId, now);
   const existingIds = new Set<string>();
@@ -440,7 +443,7 @@ async function enqueueDrafts(
       statements.push(db.prepare(`INSERT OR IGNORE INTO crm_adapter_backfill_subjects
         (run_id,subject_type,subject_id) VALUES (?,?,?)`).bind(backfillRunId, draft.subjectType, draft.subjectId));
     }
-    if (pending.length) {
+    if (pending.length && restartReconciliation) {
       statements.push(
         db.prepare(`DELETE FROM crm_adapter_backfill_reconciliation_windows WHERE run_id=?`).bind(backfillRunId),
         db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_pass=1,reconciliation_cursor_sequence=0,
@@ -534,18 +537,44 @@ export async function commitPcdContactMutation(
         priorTargets.includes(targetWorkspaceId),
       )))).filter((draft): draft is EventDraft => draft !== null)
     : [];
-  const activeBackfill = await env.PCD_OPS_DB.prepare(`SELECT subject.run_id FROM crm_adapter_backfill_subjects subject
+  const activeBackfill = await env.PCD_OPS_DB.prepare(`SELECT subject.run_id,run.status FROM crm_adapter_backfill_subjects subject
     JOIN crm_adapter_backfill_runs run ON run.id=subject.run_id AND run.status!='completed'
     WHERE subject.subject_type='contact' AND subject.subject_id=? LIMIT 1`)
-    .bind(row.id).first<{ run_id: string }>();
+    .bind(row.id).first<{ run_id: string; status: string }>();
+  const canonicalStatements = [canonicalStatement];
+  if (restricted && drafts.length === 0) {
+    canonicalStatements.push(
+      env.PCD_OPS_DB.prepare(`DELETE FROM crm_adapter_projection_receipts
+        WHERE subject_type='contact' AND subject_id=? AND last_event_id IN (
+          SELECT event_id FROM crm_adapter_outbox
+          WHERE producer_workspace_id=? AND subject_type='contact' AND subject_id=?
+            AND event_type='contact.observed.v1' AND status='pending' AND attempt_count=0
+        )`).bind(row.id, config.producerWorkspaceId, row.id),
+      env.PCD_OPS_DB.prepare(`DELETE FROM crm_adapter_outbox
+        WHERE producer_workspace_id=? AND subject_type='contact' AND subject_id=?
+          AND event_type='contact.observed.v1' AND status='pending' AND attempt_count=0`)
+        .bind(config.producerWorkspaceId, row.id),
+    );
+    if (activeBackfill?.status === 'scanned') {
+      canonicalStatements.push(
+        env.PCD_OPS_DB.prepare(`DELETE FROM crm_adapter_backfill_reconciliation_windows WHERE run_id=?`)
+          .bind(activeBackfill.run_id),
+        env.PCD_OPS_DB.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_pass=1,reconciliation_cursor_sequence=0,
+          reconciliation_window_ordinal=0,reconciliation_complete=0,reconciliation_failure_count=0,
+          reconciliation_next_attempt_at=0,reconciliation_halted=0,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+          WHERE id=? AND status='scanned'`).bind(now, activeBackfill.run_id),
+      );
+    }
+  }
   await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
     drafts,
     now,
     undefined,
-    [canonicalStatement],
+    canonicalStatements,
     activeBackfill?.run_id,
+    activeBackfill?.status === 'scanned',
   );
 }
 
