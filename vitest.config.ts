@@ -12,7 +12,7 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['tests/**/*.test.ts'],
-    // These two suites each own a real Miniflare/workerd native process
+    // These suites each own a real Miniflare/workerd native process
     // (see tests/helpers/disposable-ops-db.ts). This default config has no
     // pool/parallelism limits, so under `npm test` they can end up running
     // concurrently with each other, and customer-lifecycle even holds two
@@ -27,6 +27,7 @@ export default defineConfig({
     // isolates native runtimes correctly.
     exclude: [
       'tests/customer-lifecycle.integration.test.ts',
+      'tests/crm-staging-pilot.test.ts',
       'tests/editorial-records-migration.test.ts',
     ],
     globals: false,

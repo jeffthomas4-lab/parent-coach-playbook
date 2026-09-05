@@ -106,7 +106,7 @@ provider/data action.
 `npm run build:crm-staging-pilot -- --boundary-ms <action-time-ms> --output-dir <new-directory>`
 builds the separately gated staging packet. It has no default boundary, requires a positive
 second-aligned value within 15 minutes, refuses duplicate flags and existing output directories,
-uses exclusive file creation, and emits exact hashes for six SQL artifacts. Generation is local;
+uses exclusive file creation, and emits exact hashes for seven SQL artifacts. Generation is local;
 it does not execute Wrangler or access a provider.
 
 The verified staging deploy path rechecks the same 15-minute window before and after the build,
@@ -115,10 +115,15 @@ boundary that expires during either operation fails closed and never reaches the
 
 The packet first updates three existing fictional staging organizations. Its contact phase is a
 SQL no-op until projection receipts prove that the exact current-boundary event for each of those
-three organizations was delivered to the exact CRM workspace. It then inserts eight fictional
+three organizations was delivered to the exact CRM workspace. The receipt and outbox rows must
+match on subject, event, authority time, payload hash, and source sequence, and the outbox must
+carry a receiver receipt ID, successful 2xx status, and delivery timestamp. It then inserts eight fictional
 contacts: two public-professional records with channels and six fail-closed controls covering
 private, suppressed, minor, unknown-context, missing-source, and missing-channel paths. The normal
-local flow projects only the two eligible observations and defers all six controls.
+local flow projects the two eligible observations plus one raw-free DNC tombstone and defers the
+other five controls. The third read-only verification surface checks the central CRM for exactly
+three active organization projections, two active contact projections, one durable source-contact
+restriction, and no contact point for the suppressed identity.
 
 This generator is readiness evidence, not permission to run it against staging. The real boundary
 and artifact hashes must be regenerated and named in the execution gate; historical backfill stays

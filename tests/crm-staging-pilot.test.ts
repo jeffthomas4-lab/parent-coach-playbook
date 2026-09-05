@@ -74,6 +74,17 @@ describe('CRM staging synthetic pilot package', () => {
       expect(manifest.remoteExecutionAuthorized).toBe(false);
       expect(manifest.organizations).toHaveLength(3);
       expect(manifest.contacts).toHaveLength(8);
+      expect(manifest.expected).toMatchObject({
+        contactEvents: 3,
+        contactObservedEvents: 2,
+        contactSuppressionEvents: 1,
+        crm: {
+          activeOrganizationProjections: 3,
+          activeContactProjections: 2,
+          dncRestrictions: 1,
+          suppressedContactPoints: 0,
+        },
+      });
       expect(manifest.expected.contactDispositions).toEqual({
         projected: 2,
         rejected_private: 1,
@@ -87,6 +98,7 @@ describe('CRM staging synthetic pilot package', () => {
       const artifactContents = new Map(await Promise.all(manifest.artifacts.map(async ({ file }) => (
         [file, await readFile(join(outputDir, file))] as const
       ))));
+      const opsVerification = splitSqlStatements(String(artifactContents.get('91-ops-verification.sql')));
       for (const artifact of manifest.artifacts) {
         const bytes = artifactContents.get(artifact.file)!;
         expect(createHash('sha256').update(bytes).digest('hex')).toBe(artifact.sha256);
@@ -94,6 +106,7 @@ describe('CRM staging synthetic pilot package', () => {
       const packageText = [...artifactContents.values()].join('\n');
       expect(packageText).not.toMatch(/wrangler|deploy|PCD_CRM_ADAPTER_ENABLED|PCD_CRM_BACKFILL_ENABLED/i);
       expect(packageText).not.toMatch(/@(?!example\.invalid)/i);
+      expect(String(artifactContents.get('92-crm-verification.sql'))).toContain('adapter_contact_suppressions');
 
       await seedFixtureOrganizations(intelResource.db);
       const directorySql = String(artifactContents.get('01-directory-organizations.sql'));
@@ -144,6 +157,13 @@ describe('CRM staging synthetic pilot package', () => {
           ownEvent!.authority_updated_at, subjectId,
         ).run();
       }
+      await opsResource.db.prepare("UPDATE crm_adapter_outbox SET status='delivered' WHERE subject_type='organization'").run();
+      await runSql(opsResource.db, contactsSql);
+      expect(await opsResource.db.prepare(`SELECT COUNT(*) AS count FROM org_contacts
+        WHERE id LIKE 'crm-pilot-contact-%'`).first()).toEqual({ count: 0 });
+      const deliveredOrganizationsQuery = opsVerification.find((sql) => sql.includes('delivered_pilot_organizations'))!;
+      expect(await opsResource.db.prepare(deliveredOrganizationsQuery).first())
+        .toEqual({ delivered_pilot_organizations: 0 });
       await opsResource.db.prepare("UPDATE crm_adapter_outbox SET status='pending' WHERE subject_type='organization'").run();
 
       await dispatchPcdCrmOutbox({
@@ -180,7 +200,113 @@ describe('CRM staging synthetic pilot package', () => {
         PCD_CRM_SOURCE_ID: 'source-test',
         PCD_CRM_SOURCE_NOT_BEFORE_MS: String(boundaryMs),
       }, { now: boundaryMs + 5_000, limit: 50 });
-      expect(contactProjection).toMatchObject({ organizations: 0, contacts: 2, deferred: 6 });
+      expect(contactProjection).toMatchObject({ organizations: 0, contacts: 3, deferred: 5 });
+      const deliveredContacts: Record<string, unknown>[] = [];
+      let deliveredCount = 0;
+      for (let attempt = 0; attempt < 3; attempt += 1) {
+        const contactDispatch = await dispatchPcdCrmOutbox({
+          DB: intelResource.db,
+          PCD_OPS_DB: opsResource.db,
+          PCD_CRM_ADAPTER_ENABLED: 'true',
+          PCD_CRM_ADAPTER_HMAC_SECRET: 'pilot-test-secret',
+          PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
+          PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
+          PCD_CRM_SOURCE_ID: 'source-test',
+          PCD_CRM_SOURCE_NOT_BEFORE_MS: String(boundaryMs),
+        }, {
+          now: boundaryMs + 6_000 + attempt,
+          fetcher: { fetch: async (_input, init) => {
+            const body = JSON.parse(String(init?.body));
+            deliveredContacts.push(body);
+            return Response.json({
+              accepted: true,
+              receiptId: `pilot-contact-${body.eventId}`,
+              eventId: body.eventId,
+              sequence: body.sequence,
+              replay: false,
+            });
+          } },
+        });
+        expect(contactDispatch).toMatchObject({ retried: 0, dead: 0 });
+        deliveredCount += contactDispatch.delivered;
+      }
+      expect(deliveredCount).toBe(3);
+      const dnc = await opsResource.db.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox
+        WHERE subject_type='contact' AND subject_id='crm-pilot-contact-suppressed'`).first<{
+          event_type: string; payload_json: string;
+        }>();
+      expect(dnc?.event_type).toBe('contact.deleted.v1');
+      expect(JSON.parse(dnc?.payload_json ?? '{}').payload).toMatchObject({
+        id: 'crm-pilot-contact-suppressed', suppressionState: 'do_not_contact',
+      });
+      expect(Object.keys(JSON.parse(dnc?.payload_json ?? '{}').payload).sort()).toEqual([
+        'authorityUpdatedAt', 'id', 'organizationId', 'sourceVersion', 'suppressionState', 'workspaceId',
+      ]);
+      expect(dnc?.payload_json).not.toContain('crm-pilot-suppressed@example.invalid');
+      expect(await opsResource.db.prepare(`SELECT COUNT(*) count FROM org_contacts
+        WHERE id LIKE 'crm-pilot-contact-%' AND (
+          name_identity IS NULL OR (email IS NOT NULL AND email_identity IS NULL)
+          OR (phone IS NOT NULL AND phone_identity IS NULL)
+        )`).first()).toEqual({ count: 0 });
+
+      const deliveredDnc = deliveredContacts.find((event) => event.eventType === 'contact.deleted.v1') as {
+        payload?: Record<string, unknown>;
+      } | undefined;
+      expect(deliveredDnc?.payload).toEqual(JSON.parse(dnc?.payload_json ?? '{}').payload);
+
+      const eventCountsQuery = opsVerification.find((sql) => sql.includes('event_type,status,COUNT(*)'))!;
+      const eventPlan = await opsResource.db.prepare(`EXPLAIN QUERY PLAN ${eventCountsQuery}`)
+        .all<{ detail: string }>();
+      const eventPlanText = eventPlan.results.map(({ detail }) => detail).join('\n');
+      expect(eventPlanText).toContain('idx_crm_adapter_outbox_subject');
+      expect(eventPlanText).not.toContain('SCAN crm_adapter_outbox');
+      const rawFreeDncQuery = opsVerification.find((sql) => sql.includes('raw_free_dnc_events'))!;
+      expect(await opsResource.db.prepare(rawFreeDncQuery).first()).toEqual({ raw_free_dnc_events: 1 });
+      const validDncPayload = dnc!.payload_json;
+      await opsResource.db.prepare(`UPDATE crm_adapter_outbox SET payload_json=?
+        WHERE subject_type='contact' AND subject_id='crm-pilot-contact-suppressed'`)
+        .bind(JSON.stringify({ payload: { suppressionState: 'do_not_contact' } })).run();
+      expect(await opsResource.db.prepare(rawFreeDncQuery).first()).toEqual({ raw_free_dnc_events: 0 });
+      await opsResource.db.prepare(`UPDATE crm_adapter_outbox SET payload_json=?
+        WHERE subject_type='contact' AND subject_id='crm-pilot-contact-suppressed'`)
+        .bind(validDncPayload).run();
+
+      await runSql(opsResource.db, `
+        CREATE TABLE workspace_organizations (
+          workspace_id TEXT, organization_id TEXT, status TEXT, visibility_basis TEXT
+        );
+        CREATE TABLE workspace_contacts (
+          workspace_id TEXT, contact_point_id TEXT, status TEXT, visibility_basis TEXT
+        );
+        CREATE TABLE adapter_contact_suppressions (
+          producer TEXT, producer_workspace_id TEXT, source_contact_id TEXT,
+          target_workspace_id TEXT, restriction_type TEXT
+        );
+        CREATE TABLE contact_points (id TEXT);
+        INSERT INTO workspace_organizations VALUES
+          ('ws-sightsmash','fixture-org-soccer','active','pcd_adapter'),
+          ('ws-sightsmash','fixture-org-basketball','active','pcd_adapter'),
+          ('ws-sightsmash','fixture-org-swim','active','pcd_adapter');
+        INSERT INTO workspace_contacts VALUES
+          ('ws-sightsmash','contact_crm-pilot-contact-email','active','pcd_public_professional_observation'),
+          ('ws-sightsmash','contact_crm-pilot-contact-phone','active','pcd_public_professional_observation');
+        INSERT INTO adapter_contact_suppressions VALUES
+          ('parent-coach-desk','pcd-activity-radar','crm-pilot-contact-suppressed',
+            'ws-sightsmash','do_not_contact');
+      `);
+      const crmVerification = splitSqlStatements(String(artifactContents.get('92-crm-verification.sql')));
+      expect(crmVerification).toHaveLength(1);
+      const expectedCrmReadback = {
+        active_organization_projections: 3,
+        active_contact_projections: 2,
+        dnc_restrictions: 1,
+        suppressed_contact_points: 0,
+      };
+      expect(await opsResource.db.prepare(crmVerification[0]!).first()).toEqual(expectedCrmReadback);
+      await opsResource.db.prepare('DELETE FROM adapter_contact_suppressions').run();
+      expect(await opsResource.db.prepare(crmVerification[0]!).first()).toEqual({
+        ...expectedCrmReadback, dnc_restrictions: 0,
+      });
     } finally {
       await rm(root, { recursive: true, force: true });
     }

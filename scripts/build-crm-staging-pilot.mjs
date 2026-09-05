@@ -79,6 +79,14 @@ function idList(rows) {
   return rows.map(({ id }) => sqlValue(id)).join(',');
 }
 
+function normalizedContactIdentities(contact) {
+  return {
+    email: contact.email?.trim().toLowerCase() ?? null,
+    phone: contact.phone?.replace(/\D/g, '') || null,
+    name: contact.fullName.trim().toLowerCase().replace(/\s+/g, ' '),
+  };
+}
+
 function buildDirectoryMutation(boundaryMs, updatedAt) {
   const rows = ORGANIZATIONS.map(({ id, category }) => `UPDATE organizations
 SET website_url=${sqlValue(`https://example.invalid/crm-pilot/${boundaryMs}/${category}`)},
@@ -89,13 +97,17 @@ WHERE id=${sqlValue(id)} AND deleted_at IS NULL;`);
 }
 
 function buildContactsMutation(boundaryMs, createdAt) {
-  const values = CONTACTS.map((contact) => `(${[
-    contact.id, contact.organizationId, contact.fullName, 'CRM Pilot', contact.role,
-    contact.email, contact.phone, 0, contact.isPublic, contact.doNotContact,
-    contact.doNotContact ? createdAt : null, contact.doNotContact ? 'manual' : null,
-    'manual_verification', contact.sourceUrl, 'high', 'crm-staging-pilot', createdAt,
-    'other', null, createdAt, createdAt, contact.contactContext,
-  ].map(sqlValue).join(',')})`).join(',\n  ');
+  const values = CONTACTS.map((contact) => {
+    const identity = normalizedContactIdentities(contact);
+    return `(${[
+      contact.id, contact.organizationId, contact.fullName, 'CRM Pilot', contact.role,
+      contact.email, contact.phone, identity.email, identity.phone, identity.name,
+      0, contact.isPublic, contact.doNotContact,
+      contact.doNotContact ? createdAt : null, contact.doNotContact ? 'manual' : null,
+      'manual_verification', contact.sourceUrl, 'high', 'crm-staging-pilot', createdAt,
+      'other', null, createdAt, createdAt, contact.contactContext,
+    ].map(sqlValue).join(',')})`;
+  }).join(',\n  ');
   return `${header(boundaryMs)}
 WITH receipt_gate AS (
   SELECT COUNT(*)
@@ -104,6 +116,8 @@ WITH receipt_gate AS (
     AND event.subject_type=receipt.subject_type
     AND event.subject_id=receipt.subject_id
     AND event.authority_updated_at=receipt.authority_updated_at
+    AND event.payload_hash=receipt.content_hash
+    AND event.source_sequence=receipt.last_sequence
   WHERE receipt.subject_type='organization'
     AND receipt.subject_id IN (${idList(ORGANIZATIONS)})
     AND event.event_type='organization.upserted.v1'
@@ -111,16 +125,21 @@ WITH receipt_gate AS (
     AND event.target_workspace_id='ws-sightsmash'
     AND event.authority_updated_at=${boundaryMs + 1_000}
     AND event.status='delivered'
+    AND event.receiver_receipt_id IS NOT NULL
+    AND event.receiver_status BETWEEN 200 AND 299
+    AND event.delivered_at IS NOT NULL
   HAVING COUNT(*)=3
 ), pilot (
-  id,organization_id,full_name,title,role,email,phone,is_primary,is_public,do_not_contact,
+  id,organization_id,full_name,title,role,email,phone,email_identity,phone_identity,name_identity,
+  is_primary,is_public,do_not_contact,
   do_not_contact_at,do_not_contact_reason,source,source_url,confidence,verified_by,verified_at,
   verification_method,content_hash,created_at,updated_at,contact_context
 ) AS (VALUES
   ${values}
 )
 INSERT INTO org_contacts (
-  id,organization_id,full_name,title,role,email,phone,is_primary,is_public,do_not_contact,
+  id,organization_id,full_name,title,role,email,phone,email_identity,phone_identity,name_identity,
+  is_primary,is_public,do_not_contact,
   do_not_contact_at,do_not_contact_reason,source,source_url,confidence,verified_by,verified_at,
   verification_method,content_hash,created_at,updated_at,contact_context
 )
@@ -170,15 +189,76 @@ SELECT disposition,COUNT(*) AS row_count FROM (
 ) GROUP BY disposition ORDER BY disposition;
 
 SELECT event_type,status,COUNT(*) AS event_count
-FROM crm_adapter_outbox WHERE subject_id IN (${idList([...ORGANIZATIONS, ...CONTACTS])})
+FROM crm_adapter_outbox WHERE
+  (subject_type='organization' AND subject_id IN (${idList(ORGANIZATIONS)}))
+  OR (subject_type='contact' AND subject_id IN (${idList(CONTACTS)}))
 GROUP BY event_type,status ORDER BY event_type,status;
 
 SELECT COUNT(*) AS delivered_pilot_organizations
 FROM crm_adapter_projection_receipts receipt
 JOIN crm_adapter_outbox event ON event.event_id=receipt.last_event_id
+  AND event.subject_type=receipt.subject_type
+  AND event.subject_id=receipt.subject_id
+  AND event.authority_updated_at=receipt.authority_updated_at
+  AND event.payload_hash=receipt.content_hash
+  AND event.source_sequence=receipt.last_sequence
 WHERE receipt.subject_type='organization'
   AND receipt.subject_id IN (${idList(ORGANIZATIONS)})
-  AND event.status='delivered';
+  AND event.event_type='organization.upserted.v1'
+  AND event.producer_workspace_id='pcd-activity-radar'
+  AND event.target_workspace_id='ws-sightsmash'
+  AND event.authority_updated_at=${boundaryMs + 1_000}
+  AND event.status='delivered'
+  AND event.receiver_receipt_id IS NOT NULL
+  AND event.receiver_status BETWEEN 200 AND 299
+  AND event.delivered_at IS NOT NULL;
+
+SELECT COUNT(*) AS raw_free_dnc_events
+FROM crm_adapter_outbox
+WHERE subject_type='contact' AND subject_id='crm-pilot-contact-suppressed'
+  AND event_type='contact.deleted.v1'
+  AND json_extract(payload_json,'$.payload.suppressionState')='do_not_contact'
+  AND json_type(payload_json,'$.payload.value') IS NULL
+  AND json_type(payload_json,'$.payload.email') IS NULL
+  AND json_type(payload_json,'$.payload.phone') IS NULL
+  AND json_type(payload_json,'$.payload.id')='text'
+  AND json_type(payload_json,'$.payload.organizationId')='text'
+  AND json_type(payload_json,'$.payload.workspaceId')='text'
+  AND json_type(payload_json,'$.payload.sourceVersion')='text'
+  AND json_type(payload_json,'$.payload.authorityUpdatedAt')='integer'
+  AND (SELECT COUNT(*) FROM json_each(json_extract(payload_json,'$.payload')))=6
+  AND NOT EXISTS (
+    SELECT 1 FROM json_each(json_extract(payload_json,'$.payload'))
+    WHERE key NOT IN ('id','organizationId','workspaceId','sourceVersion',
+      'authorityUpdatedAt','suppressionState')
+  );
+
+SELECT COUNT(*) AS incomplete_contact_identities
+FROM org_contacts
+WHERE id IN (${idList(CONTACTS)}) AND (
+  name_identity IS NULL
+  OR (email IS NOT NULL AND email_identity IS NULL)
+  OR (phone IS NOT NULL AND phone_identity IS NULL)
+);
+`;
+}
+
+function buildCrmVerification(boundaryMs) {
+  return `${header(boundaryMs)}
+SELECT
+  (SELECT COUNT(*) FROM workspace_organizations
+    WHERE workspace_id='ws-sightsmash' AND organization_id IN (${idList(ORGANIZATIONS)})
+      AND status='active' AND visibility_basis='pcd_adapter') AS active_organization_projections,
+  (SELECT COUNT(*) FROM workspace_contacts
+    WHERE workspace_id='ws-sightsmash'
+      AND contact_point_id IN ('contact_crm-pilot-contact-email','contact_crm-pilot-contact-phone')
+      AND status='active' AND visibility_basis='pcd_public_professional_observation') AS active_contact_projections,
+  (SELECT COUNT(*) FROM adapter_contact_suppressions
+    WHERE producer='parent-coach-desk' AND producer_workspace_id='pcd-activity-radar'
+      AND source_contact_id='crm-pilot-contact-suppressed'
+      AND target_workspace_id='ws-sightsmash' AND restriction_type='do_not_contact') AS dnc_restrictions,
+  (SELECT COUNT(*) FROM contact_points
+    WHERE id='contact_crm-pilot-contact-suppressed') AS suppressed_contact_points;
 `;
 }
 
@@ -209,6 +289,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
     ['02-ops-contacts.sql', buildContactsMutation(boundaryMs, contactCreatedAt)],
     ['90-directory-verification.sql', buildDirectoryVerification(boundaryMs, organizationUpdatedAt)],
     ['91-ops-verification.sql', buildOpsVerification(boundaryMs)],
+    ['92-crm-verification.sql', buildCrmVerification(boundaryMs)],
   ];
   const dispositionCounts = Object.fromEntries(CONTACTS.map(({ disposition }) => [disposition, 0]));
   for (const { disposition } of CONTACTS) dispositionCounts[disposition] += 1;
@@ -229,7 +310,15 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
     contacts: CONTACTS.map(({ id, organizationId, disposition }) => ({ id, organizationId, disposition })),
     expected: {
       organizationEvents: 3,
-      contactEvents: 2,
+      contactEvents: 3,
+      contactObservedEvents: 2,
+      contactSuppressionEvents: 1,
+      crm: {
+        activeOrganizationProjections: 3,
+        activeContactProjections: 2,
+        dncRestrictions: 1,
+        suppressedContactPoints: 0,
+      },
       contactDispositions: dispositionCounts,
     },
     order: [
@@ -237,13 +326,14 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
       'Apply 01 only after a separately approved staging activation uses this exact sourceNotBeforeMs.',
       'Wait for all 3 organization events to be delivered and receipted; do not infer readiness from enqueue success.',
       'Apply 02 only after the organization receipt precondition passes.',
-      'Run both read-only verification files and compare every count with this manifest.',
+      'Run all three read-only verification files and compare every count with this manifest.',
     ],
     hardStops: [
       'No file in this packet authorizes remote execution.',
       'Do not enable historical backfill for this pilot.',
       'Do not substitute production organizations or contacts.',
       'Do not proceed from organizations to contacts without receiver receipts for all 3 organizations.',
+      'Stop if the raw-free DNC event or the CRM source-contact restriction is absent.',
     ],
     artifacts,
   };

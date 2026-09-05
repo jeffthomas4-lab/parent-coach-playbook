@@ -1,5 +1,6 @@
 export const integrationTests = [
   'tests/crm-adapter.test.ts',
+  'tests/crm-staging-pilot.test.ts',
   'tests/customer-lifecycle.integration.test.ts',
   'tests/customer-journey-monitor.test.ts',
   'tests/directory-idempotency-rehearsal.test.ts',
