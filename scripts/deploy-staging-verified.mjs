@@ -29,6 +29,7 @@ const STAGING_SERVICE_BINDINGS = [
 const STAGING_KV_BINDINGS = [
   { binding: 'SESSION', id: '59cbf275ba16459c8f76ff39b033f748' },
 ];
+const SOURCE_SHA_PATTERN = /^[0-9a-f]{40}$/;
 
 function normalized(value) {
   return String(value ?? '').replaceAll('\\', '/');
@@ -52,17 +53,28 @@ export function parseDeploymentArguments(args) {
     disabledConfirmed: false,
     activationConfirmed: false,
     expectedCrmSourceNotBeforeMs: undefined,
+    expectedSourceSha: undefined,
   };
   const seen = new Set();
   for (let index = 0; index < args.length; index += 1) {
     const argument = args[index];
-    if (!['--confirm', '--confirm-crm-activation', '--crm-activation-boundary-ms'].includes(argument)) {
+    if (![
+      '--confirm', '--confirm-crm-activation', '--crm-activation-boundary-ms', '--expected-source-sha',
+    ].includes(argument)) {
       throw new Error(`unknown deployment argument: ${argument}`);
     }
     if (seen.has(argument)) throw new Error(`duplicate deployment argument: ${argument}`);
     seen.add(argument);
     if (argument === '--confirm') parsed.disabledConfirmed = true;
     if (argument === '--confirm-crm-activation') parsed.activationConfirmed = true;
+    if (argument === '--expected-source-sha') {
+      const value = args[index + 1];
+      if (!value || value.startsWith('--')) {
+        throw new Error('--expected-source-sha requires the exact approved 40-character Git SHA');
+      }
+      parsed.expectedSourceSha = value;
+      index += 1;
+    }
     if (argument === '--crm-activation-boundary-ms') {
       const value = args[index + 1];
       if (!value || value.startsWith('--')) {
@@ -89,7 +101,89 @@ export function parseDeploymentArguments(args) {
     && !actionTimeActivationBoundary(parsed.expectedCrmSourceNotBeforeMs)) {
     throw new Error('activation boundary must be within 15 minutes of deployment');
   }
+  if (parsed.expectedSourceSha !== undefined && !SOURCE_SHA_PATTERN.test(parsed.expectedSourceSha)) {
+    throw new Error('expected source SHA must be exactly 40 lowercase hexadecimal characters');
+  }
+  if ((parsed.disabledConfirmed || parsed.activationConfirmed) && parsed.expectedSourceSha === undefined) {
+    throw new Error('confirmed staging deployment requires --expected-source-sha');
+  }
   return parsed;
+}
+
+function verifyExpectedSourceSha(expectedSourceSha, actualSourceSha) {
+  if (!SOURCE_SHA_PATTERN.test(String(expectedSourceSha ?? ''))) {
+    throw new Error('expected source SHA must be exactly 40 lowercase hexadecimal characters');
+  }
+  if (actualSourceSha !== expectedSourceSha) {
+    throw new Error(`checked-out source SHA does not match approved candidate ${expectedSourceSha}`);
+  }
+}
+
+function readCurrentSourceSha(projectRoot = process.cwd(), spawn = spawnSync) {
+  const result = spawn('git', ['rev-parse', 'HEAD'], {
+    cwd: projectRoot,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  if (result.error) throw result.error;
+  if (result.status !== 0) throw new Error(`git rev-parse HEAD exited with status ${result.status ?? 1}`);
+  const sourceSha = String(result.stdout ?? '').trim();
+  if (!SOURCE_SHA_PATTERN.test(sourceSha)) {
+    throw new Error('checked-out source SHA is unavailable or malformed');
+  }
+  return sourceSha;
+}
+
+export function verifyCleanCheckout(projectRoot = process.cwd(), spawn = spawnSync) {
+  const result = spawn('git', ['status', '--porcelain', '--untracked-files=normal'], {
+    cwd: projectRoot,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  if (result.error) throw result.error;
+  if (result.status !== 0) throw new Error(`git status exited with status ${result.status ?? 1}`);
+  if (String(result.stdout ?? '').trim() !== '') {
+    throw new Error('confirmed staging deployment requires a clean working tree');
+  }
+}
+
+export function validatePostBuildStatus(status) {
+  const allowedGeneratedPath = /^(?: M public\/link-manifest\.json|\?\? public\/og\/[a-z0-9-]+\.jpg)$/;
+  return String(status ?? '')
+    .split(/\r?\n/)
+    .filter(Boolean)
+    .filter((line) => !allowedGeneratedPath.test(line));
+}
+
+function verifyPostBuildCheckout(projectRoot = process.cwd(), spawn = spawnSync) {
+  const result = spawn('git', ['status', '--porcelain', '--untracked-files=normal'], {
+    cwd: projectRoot,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  if (result.error) throw result.error;
+  if (result.status !== 0) throw new Error(`git status exited with status ${result.status ?? 1}`);
+  if (validatePostBuildStatus(result.stdout).length > 0) {
+    throw new Error('checked-out source changed outside approved build-generated paths');
+  }
+}
+
+async function verifyBuildSourceSha(projectRoot, expectedSourceSha) {
+  let buildInfo;
+  try {
+    buildInfo = JSON.parse(await readFile(resolve(projectRoot, 'dist/client/build-info.json'), 'utf8'));
+  } catch {
+    throw new Error('built artifact source SHA is unavailable or malformed');
+  }
+  if (buildInfo?.commit !== expectedSourceSha) {
+    throw new Error(`built artifact source SHA does not match approved candidate ${expectedSourceSha}`);
+  }
+}
+
+async function verifyReleaseState(projectRoot, expectedSourceSha) {
+  verifyExpectedSourceSha(expectedSourceSha, readCurrentSourceSha(projectRoot));
+  verifyPostBuildCheckout(projectRoot);
+  await verifyBuildSourceSha(projectRoot, expectedSourceSha);
 }
 
 export function validateStagingDeploymentManifest(
@@ -201,7 +295,8 @@ function run(command, args, options) {
 export async function deployStagingManifest({
   manifest,
   projectRoot = process.cwd(),
-  expectedCrmSourceNotBeforeMs,
+  expectedCrmSourceNotBeforeMs = /** @type {string | undefined} */ (undefined),
+  expectedSourceSha,
   npmCli = process.env.npm_execpath,
   openConfig = open,
   unlinkConfig = unlink,
@@ -215,13 +310,15 @@ export async function deployStagingManifest({
   if (errors.length > 0) throw new Error(`staging deployment refused:\n- ${errors.join('\n- ')}`);
 
   const message = expectedCrmSourceNotBeforeMs === undefined
-    ? 'verified staging deployment'
-    : `Gate 9C-C CRM pilot activation ${expectedCrmSourceNotBeforeMs}`;
+    ? `exact candidate ${expectedSourceSha}; adapter and backfill disabled`
+    : `exact candidate ${expectedSourceSha}; Gate 9C-C CRM pilot activation ${expectedCrmSourceNotBeforeMs}`;
   if (expectedCrmSourceNotBeforeMs === undefined) {
+    await verifyReleaseState(projectRoot, expectedSourceSha);
     runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', resolve(projectRoot, 'dist/server/wrangler.json'), '--keep-vars', '--message', message], { cwd: projectRoot });
     return;
   }
 
+  await verifyReleaseState(projectRoot, expectedSourceSha);
   if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
     throw new Error('activation boundary must be within 15 minutes of deployment');
   }
@@ -241,6 +338,7 @@ export async function deployStagingManifest({
     if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
       throw new Error('activation boundary must be within 15 minutes of deployment');
     }
+    await verifyReleaseState(projectRoot, expectedSourceSha);
     runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', activationConfigPath, '--keep-vars', '--message', message], { cwd: projectRoot });
   } finally {
     await unlinkConfig(activationConfigPath);
@@ -288,18 +386,26 @@ export async function buildAndVerifyStagingManifest({
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const boundaryFlag = '--crm-activation-boundary-ms';
-  const { disabledConfirmed, activationConfirmed, expectedCrmSourceNotBeforeMs } = parseDeploymentArguments(
-    process.argv.slice(2),
-  );
+  const {
+    disabledConfirmed, activationConfirmed, expectedCrmSourceNotBeforeMs, expectedSourceSha,
+  } = parseDeploymentArguments(process.argv.slice(2));
+  const confirmed = expectedCrmSourceNotBeforeMs === undefined ? disabledConfirmed : activationConfirmed;
+  if (expectedSourceSha !== undefined) {
+    verifyExpectedSourceSha(expectedSourceSha, readCurrentSourceSha());
+  }
+  if (confirmed) verifyCleanCheckout();
   const manifest = await buildAndVerifyStagingManifest({ expectedCrmSourceNotBeforeMs });
   console.log(`Verified isolated staging manifest for ${manifest.name}.`);
-  const confirmed = expectedCrmSourceNotBeforeMs === undefined ? disabledConfirmed : activationConfirmed;
   if (!confirmed) {
     const instruction = expectedCrmSourceNotBeforeMs === undefined
-      ? '--confirm'
-      : `${boundaryFlag} ${expectedCrmSourceNotBeforeMs} --confirm-crm-activation`;
+      ? '--expected-source-sha <approved-40-character-sha> --confirm'
+      : `${boundaryFlag} ${expectedCrmSourceNotBeforeMs} --expected-source-sha <approved-40-character-sha> --confirm-crm-activation`;
     console.log(`No deploy performed. Re-run with ${instruction} after exact-SHA approval.`);
   } else {
-    await deployStagingManifest({ manifest, expectedCrmSourceNotBeforeMs });
+    await deployStagingManifest({
+      manifest,
+      expectedCrmSourceNotBeforeMs,
+      expectedSourceSha,
+    });
   }
 }

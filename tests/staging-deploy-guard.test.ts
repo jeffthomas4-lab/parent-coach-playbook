@@ -1,15 +1,26 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { execFileSync } from 'node:child_process';
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import type { PathLike } from 'node:fs';
 import type { FileHandle } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import {
   buildAndVerifyStagingManifest,
   deployStagingManifest,
   parseDeploymentArguments,
   prepareStagingDeploymentManifest,
+  validatePostBuildStatus,
   validateStagingDeploymentManifest,
+  verifyCleanCheckout,
 } from '../scripts/deploy-staging-verified.mjs';
 
 const actionBoundary = String(Math.floor(Date.now() / 1_000) * 1_000);
+const approvedSourceSha = 'abd0bea53554a3c832fddd0fb101d00602662491';
+let cleanRepoRoot = '';
+let cleanRepoSha = '';
+let cleanManifest: typeof valid;
+let exactSource: { expectedSourceSha: string };
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -38,6 +49,32 @@ const valid = {
   services: [{ binding: 'CRM_ADAPTER', service: 'field-forge-crm-staging' }],
   secrets: { required: ['PCD_CRM_ADAPTER_HMAC_SECRET'] },
 };
+
+beforeAll(() => {
+  cleanRepoRoot = mkdtempSync(join(tmpdir(), 'pcd-deploy-guard-'));
+  writeFileSync(join(cleanRepoRoot, 'wrangler.jsonc'), '{}\n');
+  writeFileSync(join(cleanRepoRoot, '.gitignore'), 'dist/\n');
+  execFileSync('git', ['init', '--quiet'], { cwd: cleanRepoRoot });
+  execFileSync('git', ['config', 'user.email', 'deploy-guard@example.invalid'], { cwd: cleanRepoRoot });
+  execFileSync('git', ['config', 'user.name', 'Deploy Guard Test'], { cwd: cleanRepoRoot });
+  execFileSync('git', ['add', '--', '.gitignore', 'wrangler.jsonc'], { cwd: cleanRepoRoot });
+  execFileSync('git', ['commit', '--quiet', '-m', 'fixture'], { cwd: cleanRepoRoot });
+  cleanRepoSha = execFileSync('git', ['rev-parse', 'HEAD'], {
+    cwd: cleanRepoRoot,
+    encoding: 'utf8',
+  }).trim();
+  mkdirSync(join(cleanRepoRoot, 'dist', 'client'), { recursive: true });
+  writeFileSync(join(cleanRepoRoot, 'dist', 'client', 'build-info.json'), JSON.stringify({
+    schemaVersion: 1,
+    commit: cleanRepoSha,
+  }));
+  cleanManifest = { ...structuredClone(valid), configPath: join(cleanRepoRoot, 'wrangler.jsonc') };
+  exactSource = { expectedSourceSha: cleanRepoSha };
+});
+
+afterAll(() => {
+  rmSync(cleanRepoRoot, { recursive: true, force: true });
+});
 
 describe('verified staging deployment guard', () => {
   it('accepts only the isolated staging manifest with safe feature defaults', () => {
@@ -198,7 +235,9 @@ describe('verified staging deployment guard', () => {
       '--crm-activation-boundary-ms', '1788566400001', '--confirm-crm-activation',
     ])).toThrow('activation boundary must be a positive second-aligned Unix millisecond value');
     expect(parseDeploymentArguments([
-      '--crm-activation-boundary-ms', actionBoundary, '--confirm-crm-activation',
+      '--crm-activation-boundary-ms', actionBoundary,
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm-crm-activation',
     ]).activationConfirmed).toBe(true);
     expect(() => parseDeploymentArguments([
       '--crm-activation-boundary-ms', String(Number(actionBoundary) - 16 * 60 * 1_000),
@@ -206,12 +245,141 @@ describe('verified staging deployment guard', () => {
     ])).toThrow('activation boundary must be within 15 minutes of deployment');
   });
 
+  it('requires an exact approved source SHA for every confirmed deployment', () => {
+    expect(() => parseDeploymentArguments(['--confirm']))
+      .toThrow('confirmed staging deployment requires --expected-source-sha');
+    expect(() => parseDeploymentArguments(['--expected-source-sha']))
+      .toThrow('--expected-source-sha requires the exact approved 40-character Git SHA');
+    expect(() => parseDeploymentArguments([
+      '--expected-source-sha', 'ABD0BEA53554A3C832FDDD0FB101D00602662491', '--confirm',
+    ])).toThrow('expected source SHA must be exactly 40 lowercase hexadecimal characters');
+    expect(() => parseDeploymentArguments([
+      '--expected-source-sha', approvedSourceSha,
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm',
+    ])).toThrow('duplicate deployment argument: --expected-source-sha');
+    expect(parseDeploymentArguments([
+      '--expected-source-sha', approvedSourceSha, '--confirm',
+    ]).expectedSourceSha).toBe(approvedSourceSha);
+  });
+
+  it('refuses a different checkout and carries the exact candidate in the deployment message', async () => {
+    const calls: string[][] = [];
+    await expect(deployStagingManifest({
+      manifest: cleanManifest,
+      projectRoot: cleanRepoRoot,
+      expectedSourceSha: approvedSourceSha,
+      actualSourceSha: '1111111111111111111111111111111111111111',
+      npmCli: 'npm-cli.js',
+      runCommand: (_command: string, args: string[]) => { calls.push(args); },
+    } as any)).rejects.toThrow(`checked-out source SHA does not match approved candidate ${approvedSourceSha}`);
+    expect(calls).toEqual([]);
+
+    await deployStagingManifest({
+      manifest: cleanManifest,
+      projectRoot: cleanRepoRoot,
+      expectedSourceSha: cleanRepoSha,
+      actualSourceSha: approvedSourceSha,
+      npmCli: 'npm-cli.js',
+      runCommand: (_command: string, args: string[]) => { calls.push(args); },
+    } as any);
+    const messageIndex = calls[0].indexOf('--message');
+    expect(calls[0][messageIndex + 1]).toContain(cleanRepoSha);
+    expect(calls[0][messageIndex + 1]).toContain('adapter and backfill disabled');
+  });
+
+  it('refuses a dirty approved checkout before building a confirmed deployment', () => {
+    const spawn = vi.fn(() => ({
+      status: 0,
+      stdout: ' M src/worker.ts\n?? public/unreviewed.js\n',
+      stderr: '',
+    }));
+    expect(() => verifyCleanCheckout('C:/workspace', spawn as any))
+      .toThrow('confirmed staging deployment requires a clean working tree');
+  });
+
+  it('allows only known generated assets after the build', () => {
+    expect(validatePostBuildStatus([
+      ' M public/link-manifest.json',
+      '?? public/og/generated-card.jpg',
+      '',
+    ].join('\n'))).toEqual([]);
+    expect(validatePostBuildStatus(' M src/worker.ts\n?? public/unreviewed.js\n')).toEqual([
+      ' M src/worker.ts',
+      '?? public/unreviewed.js',
+    ]);
+  });
+
+  it('rechecks the working tree at the mutating boundary', async () => {
+    const unexpectedPath = join(cleanRepoRoot, 'unexpected-worker.js');
+    writeFileSync(unexpectedPath, 'export default {}\n');
+    try {
+      await expect(deployStagingManifest({
+        manifest: cleanManifest,
+        projectRoot: cleanRepoRoot,
+        ...exactSource,
+        npmCli: 'npm-cli.js',
+        runCommand: () => {
+          throw new Error('wrangler must not run');
+        },
+      })).rejects.toThrow('checked-out source changed outside approved build-generated paths');
+    } finally {
+      rmSync(unexpectedPath, { force: true });
+    }
+  });
+
+  it('refuses a stale ignored build artifact at the mutating boundary', async () => {
+    const buildInfoPath = join(cleanRepoRoot, 'dist', 'client', 'build-info.json');
+    writeFileSync(buildInfoPath, JSON.stringify({ schemaVersion: 1, commit: approvedSourceSha }));
+    try {
+      await expect(deployStagingManifest({
+        manifest: cleanManifest,
+        projectRoot: cleanRepoRoot,
+        ...exactSource,
+        npmCli: 'npm-cli.js',
+        runCommand: () => {
+          throw new Error('wrangler must not run');
+        },
+      })).rejects.toThrow(`built artifact source SHA does not match approved candidate ${cleanRepoSha}`);
+    } finally {
+      writeFileSync(buildInfoPath, JSON.stringify({ schemaVersion: 1, commit: cleanRepoSha }));
+    }
+  });
+
+  it('rechecks the approved HEAD after writing the activation config', async () => {
+    const activation = prepareStagingDeploymentManifest(cleanManifest, actionBoundary);
+    try {
+      await expect(deployStagingManifest({
+        manifest: activation,
+        projectRoot: cleanRepoRoot,
+        ...exactSource,
+        expectedCrmSourceNotBeforeMs: actionBoundary,
+        npmCli: 'npm-cli.js',
+        openConfig: async () => ({
+          writeFile: async () => {
+            execFileSync('git', ['commit', '--quiet', '--allow-empty', '-m', 'concurrent change'], {
+              cwd: cleanRepoRoot,
+            });
+          },
+          close: async () => {},
+        } as unknown as FileHandle),
+        unlinkConfig: async () => {},
+        runCommand: () => {
+          throw new Error('wrangler invoked after HEAD changed');
+        },
+      })).rejects.toThrow(`checked-out source SHA does not match approved candidate ${cleanRepoSha}`);
+    } finally {
+      execFileSync('git', ['checkout', '--quiet', '--detach', cleanRepoSha], { cwd: cleanRepoRoot });
+    }
+  });
+
   it('refuses a stale activation boundary before opening a temporary config', async () => {
     const staleBoundary = String(Number(actionBoundary) - 16 * 60 * 1_000);
     const opened: string[] = [];
     await expect(deployStagingManifest({
-      manifest: prepareStagingDeploymentManifest(valid, staleBoundary),
-      projectRoot: 'C:/workspace',
+      manifest: prepareStagingDeploymentManifest(cleanManifest, staleBoundary),
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
       expectedCrmSourceNotBeforeMs: staleBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async (path: PathLike) => {
@@ -225,13 +393,14 @@ describe('verified staging deployment guard', () => {
   });
 
   it('rechecks activation freshness before config creation and immediately before deploy', async () => {
-    const activation = prepareStagingDeploymentManifest(valid, actionBoundary);
+    const activation = prepareStagingDeploymentManifest(cleanManifest, actionBoundary);
     const beforeOpen: string[] = [];
     vi.spyOn(Date, 'now')
       .mockReturnValue(Number(actionBoundary) + 16 * 60 * 1_000);
     await expect(deployStagingManifest({
       manifest: activation,
-      projectRoot: 'C:/workspace',
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
       expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async () => {
@@ -251,7 +420,8 @@ describe('verified staging deployment guard', () => {
       .mockReturnValue(Number(actionBoundary) + 16 * 60 * 1_000);
     await expect(deployStagingManifest({
       manifest: activation,
-      projectRoot: 'C:/workspace',
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
       expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async () => ({
@@ -280,7 +450,7 @@ describe('verified staging deployment guard', () => {
   });
 
   it('deploys the derived activation config and always removes its owned temporary file', async () => {
-    const activation = prepareStagingDeploymentManifest(valid, actionBoundary);
+    const activation = prepareStagingDeploymentManifest(cleanManifest, actionBoundary);
     const calls: string[] = [];
     let deployedArgs: string[] = [];
     let written = '';
@@ -295,7 +465,8 @@ describe('verified staging deployment guard', () => {
 
     await deployStagingManifest({
       manifest: activation,
-      projectRoot: 'C:/workspace',
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
       expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig,
@@ -312,11 +483,12 @@ describe('verified staging deployment guard', () => {
   });
 
   it('removes the activation config after deploy or post-open write failure', async () => {
-    const activation = prepareStagingDeploymentManifest(valid, actionBoundary);
+    const activation = prepareStagingDeploymentManifest(cleanManifest, actionBoundary);
     const removedAfterDeploy: string[] = [];
     await expect(deployStagingManifest({
       manifest: activation,
-      projectRoot: 'C:/workspace',
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
       expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async () => ({ writeFile: async () => {}, close: async () => {} } as unknown as FileHandle),
@@ -328,7 +500,8 @@ describe('verified staging deployment guard', () => {
     const calls: string[] = [];
     await expect(deployStagingManifest({
       manifest: activation,
-      projectRoot: 'C:/workspace',
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
       expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async () => ({
