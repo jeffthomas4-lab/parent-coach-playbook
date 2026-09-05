@@ -5,9 +5,9 @@ Recorded: 2026-09-05T08:12:15-07:00
 
 ## Candidate identity
 
-- PCD activation-overlay candidate: `5a3cc226661f24a6a4c7bd3dc5b997007c16ca04`
-- Candidate tree: `5a7366360c0bfdd75dcb71eb679ea078326cc685`
-- Parent evidence commit: `82455e6ae0b54fec1641b31791ca2519ffa873e1`
+- PCD activation-overlay and synthetic-pilot candidate: `100347e48a411387964065d5a6a700332688a370`
+- Candidate tree: `a42cec3611986665b52c1f912061cf12bcef466f`
+- Parent evidence commit: `bfa493c364db788b64b7189fc96c6c58bb6f068e`
 - CRM staging receiver remains candidate: `25342fffba8d3cfc9a8272211c8f0763ed404f7d`
 
 ## Action-time aggregate inventory
@@ -77,11 +77,49 @@ path or filename suffix.
 Dependency decision: no dependency was added. Native Node file handles and JSON plus the existing
 Wrangler command path provide the smallest testable implementation.
 
+## Synthetic pilot package readiness
+
+`scripts/build-crm-staging-pilot.mjs` now creates a new local directory containing six
+SHA-256-pinned SQL artifacts and a manifest. It accepts no implicit/default boundary: the supplied
+boundary must be a positive safe integer, second-aligned, and within 15 minutes of generation.
+Duplicate CLI flags fail rather than silently replacing the first value. The generated SQL has no
+Wrangler, deployment, or feature-flag command and uses only fictional `example.invalid` channels.
+
+The fixed pilot is intentionally small and two-phase:
+
+1. update the three existing staging fixture organizations (soccer, basketball, swimming) after
+   the exact boundary, yielding three live organization revisions;
+2. only after the current-boundary events for all three exact organizations are delivered and
+   receipted, insert eight synthetic contacts;
+3. expect two eligible observations (one email, one phone) and one fail-closed result for each of
+   private, suppressed, minor/nonprofessional, unknown-context hold, missing source, and missing
+   channel.
+
+Phase two enforces its own receipt precondition in SQL. Receipt and event must match on event ID,
+subject type, subject ID, and authority timestamp, and the event must also match the exact producer,
+target workspace, event type, boundary-derived timestamp, and delivered status. Zero, partial,
+forged/shared-event, wrong-type, wrong-subject, wrong-authority, wrong-producer, wrong-target, and
+non-delivered receipt sets insert zero contacts. The SQL remains a no-op instead of partially
+seeding when the gate is not satisfied.
+
+A local CLI dry run generated the full packet successfully. Its boundary and hashes are validation
+evidence only and are deliberately not an activation approval: the 15-minute action window has
+expired, so Gate 9C-C must generate and hash a fresh packet at execution time.
+
 ## Red-first and verification evidence
 
 - Activation derivation test: **1 failed / 9 total** before the overlay existed.
 - Derived-path and cleanup tests: **2 failed / 11 total** before the exclusive-handle repair.
 - Final focused suite: **PASS, 11/11**.
+- Synthetic-pilot red-first sequence: missing generator failed; the first implementation then
+  failed three retained cases for epoch boundary, duplicate CLI arguments, and early phase-two
+  insertion; the first receipt repair then failed the forged/shared-event case before subject
+  equality was added.
+- Final combined pilot/activation suite: **PASS, 14/14**.
+- Full CRM adapter integration suite: **PASS, 63/63** in 213.30 seconds.
+- TypeScript (`tsc --noEmit`): **PASS**. The activation-guard mocks were narrowed to the Node
+  `PathLike`/`FileHandle` test seam without changing runtime code; the 11 activation tests remained
+  green.
 - Full local activation dry run with fixed test boundary `1788566400000`: application build PASS,
   exact derived manifest PASS, no deploy performed, and exact activation-confirmation instruction
   printed. The build-generated manifest and seven untracked image artifacts were removed/restored;
@@ -89,24 +127,33 @@ Wrangler command path provide the smallest testable implementation.
 - `git diff --check`: PASS before candidate commit.
 - Independent QA: **CLEAN**, including injected open, write, close, and deploy failure probes.
 - Independent Security: **CLEAN**, including exact manifest, confirmation, cleanup, and path checks.
+- Independent pilot QA: **CLEAN** after finding the phase-order, epoch-boundary, duplicate-argument,
+  and forged-receipt defects. Its final negative matrix confirmed zero contact inserts for every
+  inexact receipt case and eight only for the exact gate.
+- Independent pilot data-safety review: **CLEAN** after independently reproducing and closing the
+  forged-receipt defect.
 - Efficiency: no material finding; shallow manifest copy and compact temporary JSON retained
-  bounded memory and file size.
+  bounded memory and file size. Pilot test artifact reads were reduced from 14 to 6.
 - Simplicity: removed the ownership boolean and test-only suffix input; the deployment seam remains
-  because it is required to prove cleanup failure paths locally without a provider action.
+  because it is required to prove cleanup failure paths locally without a provider action. The
+  pilot pass removed duplicate boundary parsing, a redundant date-range check, and unnecessary
+  `DISTINCT` work under the receipt primary key.
 
 ## PERFORMANCE REVIEW
 
-- approximate algorithmic complexity: `O(a + m)` over bounded CLI arguments and the generated
-  manifest; no source dataset is scanned
-- DB query count on primary path: `0` for the deploy tool; the separate preflight used five
+- approximate algorithmic complexity: `O(a + m)` over bounded CLI arguments and generated
+  manifests; pilot cardinality is fixed at 3 organizations, 8 contacts, and 6 artifacts; no source
+  dataset is scanned
+- DB query count on primary path: `0` for both local generators; the generated pilot packet contains
+  10 bounded statements (6 reads and 4 writes); the separate provider preflight used five
   successful aggregate `SELECT` readbacks plus three non-mutating failed attempts with stale
   schema names before the corrected statements ran
 - external API calls: `0` for invalid input and local dry run; a confirmed activation performs
   exactly one existing Wrangler deploy invocation, not exercised here; preflight used bounded D1
   and Worker-version readbacks
 - queue jobs created: `0`
-- expected memory behavior: `O(m)`, one shallow manifest copy with a copied `vars` object and one
-  compact JSON string bounded by deployment-manifest size
+- expected memory behavior: `O(m)`, one shallow deployment-manifest copy plus six small SQL strings
+  and one pilot manifest; all pilot structures have fixed cardinality
 - likely scaling bottleneck: the existing full application build and later 10-event-per-minute
   receiver pump, not overlay preparation
 
@@ -117,7 +164,8 @@ no producer flag was enabled, no Worker was deployed, and no export, send, secre
 production change occurred.
 
 Gate 9C-C still requires explicit authorization for an action-time boundary, backup/bookmarks,
-the exact pilot dataset and row hashes, deployment of candidate
-`5a3cc226661f24a6a4c7bd3dc5b997007c16ca04`, bounded activation observation, abort thresholds,
+the freshly generated exact pilot artifact hashes, deployment of candidate
+`100347e48a411387964065d5a6a700332688a370`, applying the two synthetic pilot phases, bounded
+activation observation, abort thresholds,
 and return to the disabled version. Full historical transfer remains a later gate and must refresh
 the complete production inventory at its own boundary.

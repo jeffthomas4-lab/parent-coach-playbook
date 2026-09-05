@@ -1,6 +1,7 @@
 # Parent Coach Desk portfolio CRM adapter
 
-Status: staging infrastructure deployed; default off; production remains unconfigured; no data moved.
+Status: staging infrastructure deployed; default off; synthetic pilot generator locally verified;
+production remains unconfigured; no data moved.
 
 Read-only production inventory refreshed on 2026-09-05 found 198,287 canonical organizations and
 141 extracted contact rows. Of those contacts, 35 currently have an email or phone channel, all 141
@@ -76,6 +77,25 @@ provider/data action.
   restarts the second pass from sequence zero after every first-pass event has been covered;
 - scheduled execution is isolated from the existing publishing and intelligence jobs;
 - contact notes are never exported; channel data stays inside the strict professional-contact schema.
+
+## Synthetic staging pilot
+
+`npm run build:crm-staging-pilot -- --boundary-ms <action-time-ms> --output-dir <new-directory>`
+builds the separately gated staging packet. It has no default boundary, requires a positive
+second-aligned value within 15 minutes, refuses duplicate flags and existing output directories,
+uses exclusive file creation, and emits exact hashes for six SQL artifacts. Generation is local;
+it does not execute Wrangler or access a provider.
+
+The packet first updates three existing fictional staging organizations. Its contact phase is a
+SQL no-op until projection receipts prove that the exact current-boundary event for each of those
+three organizations was delivered to the exact CRM workspace. It then inserts eight fictional
+contacts: two public-professional records with channels and six fail-closed controls covering
+private, suppressed, minor, unknown-context, missing-source, and missing-channel paths. The normal
+local flow projects only the two eligible observations and defers all six controls.
+
+This generator is readiness evidence, not permission to run it against staging. The real boundary
+and artifact hashes must be regenerated and named in the execution gate; historical backfill stays
+off throughout this pilot.
 
 ## Performance review
 
