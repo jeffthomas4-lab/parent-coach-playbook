@@ -181,9 +181,9 @@ describe('PCD CRM adapter producer', () => {
     await ops.prepare(`UPDATE org_contacts SET deleted_at=?,updated_at=? WHERE id='contact-authority-1'`)
       .bind(deletedAt, deletedAt).run();
     const tombstone = await projectPcdCrmEvents(env(ops, intel), { now: Date.parse(deletedAt) + 1 });
-    expect(tombstone.contacts).toBe(1);
-    expect(await ops.prepare(`SELECT event_type FROM crm_adapter_outbox WHERE subject_id='contact-authority-1'
-      ORDER BY source_sequence DESC LIMIT 1`).first()).toEqual({ event_type: 'contact.deleted.v1' });
+    expect(await ops.prepare(`SELECT event_type,status,target_workspace_id,send_attempt_count FROM crm_adapter_outbox WHERE subject_id='contact-authority-1'
+      ORDER BY source_sequence DESC LIMIT 1`).first()).toBeNull();
+    expect(tombstone.contacts).toBe(0);
   });
 
   it('does not backfill source rows older than the explicit activation watermark', async () => {
@@ -752,7 +752,7 @@ describe('PCD CRM adapter producer', () => {
     expect(await softDeleteOrgContact(adapterEnv, result.ok ? result.id : '')).toBe(true);
     expect(await ops.prepare(`SELECT event_type FROM crm_adapter_outbox WHERE subject_id=?
       ORDER BY source_sequence DESC LIMIT 1`).bind(result.ok ? result.id : '').first())
-      .toEqual({ event_type: 'contact.deleted.v1' });
+      .toBeNull();
   });
 
   it('delivers through the service binding, replays safely and records reconciliation', async () => {
@@ -931,7 +931,7 @@ describe('PCD CRM adapter producer', () => {
     const { ops } = await databases();
     const plan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id FROM crm_adapter_outbox
       INDEXED BY idx_crm_adapter_outbox_claim_sequence
-      WHERE producer_workspace_id=? AND status IN ('pending','retry','leased','dead')
+      WHERE producer_workspace_id=? AND cancelled_at IS NULL AND status IN ('pending','retry','leased','dead')
       ORDER BY source_sequence LIMIT ?`).bind('pcd-activity-radar', 10).all<{ detail: string }>();
     const detail = plan.results.map((row) => row.detail).join('\n');
     expect(detail).toContain('SEARCH crm_adapter_outbox USING INDEX idx_crm_adapter_outbox_claim_sequence');
@@ -972,14 +972,14 @@ describe('PCD CRM adapter producer', () => {
     const { ops } = await databases();
     const safetyPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id,source_sequence
       FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_safety_sequence
-      WHERE producer_workspace_id=? AND event_type='contact.deleted.v1'
+      WHERE producer_workspace_id=? AND cancelled_at IS NULL AND event_type='contact.deleted.v1'
         AND status IN ('pending','retry','leased')
       ORDER BY source_sequence LIMIT ?`).bind('pcd-activity-radar', 10).all<{ detail: string }>();
     const targetPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT target_workspace_id
       FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_contact_targets
       WHERE producer_workspace_id=? AND subject_type='contact' AND event_type='contact.observed.v1'
         AND subject_id=? AND target_workspace_id IS NOT NULL
-      GROUP BY target_workspace_id ORDER BY target_workspace_id LIMIT 9`)
+      GROUP BY target_workspace_id ORDER BY target_workspace_id`)
       .bind('pcd-activity-radar', 'contact-one').all<{ detail: string }>();
     const backfillPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT subject.run_id
       FROM crm_adapter_backfill_subjects subject
@@ -1122,7 +1122,7 @@ describe('PCD CRM adapter producer', () => {
     expect(await setDoNotContact(adapterEnv, result.ok ? result.id : '', 'unsubscribed')).toBe(true);
     const rows = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox WHERE subject_id=?`)
       .bind(result.ok ? result.id : '').all<{ event_type: string; payload_json: string }>();
-    expect(rows.results.map((row) => row.event_type)).toEqual(['contact.deleted.v1']);
+    expect(rows.results.map((row) => row.event_type)).toEqual([]);
     expect(JSON.stringify(rows.results)).not.toContain('private@org-unsent-suppression.example');
   });
 
@@ -1174,7 +1174,7 @@ describe('PCD CRM adapter producer', () => {
       WHERE subject_id=? ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{
         event_type: string; payload_json: string;
       }>();
-    expect(stored.results.map((row) => row.event_type)).toEqual(['contact.deleted.v1']);
+    expect(stored.results.map((row) => row.event_type)).toEqual([]);
     expect(JSON.stringify(stored.results)).not.toContain('private.person@org-unsent-retraction.example');
 
     const received: string[] = [];
@@ -1185,7 +1185,7 @@ describe('PCD CRM adapter producer', () => {
       return Response.json({ accepted: true, receiptId: `receipt-${event.eventId}`, eventId: event.eventId, sequence: event.sequence, replay: false });
     }) };
     await expect(dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.now(), limit: 10 }))
-      .resolves.toMatchObject({ delivered: 1 });
+      .resolves.toMatchObject({ delivered: 0 });
     expect(received.join('\n')).not.toContain('private.person@org-unsent-retraction.example');
   });
 
@@ -1212,8 +1212,7 @@ describe('PCD CRM adapter producer', () => {
     });
     const queued = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox WHERE subject_id=?
       ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{ event_type: string; payload_json: string }>();
-    expect(queued.results.at(-1)?.event_type).toBe('contact.deleted.v1');
-    expect(queued.results.at(-1)?.payload_json).not.toContain('original@org-suppressed-minor.example');
+    expect(queued.results).toEqual([]);
   });
 
   it.each([
@@ -1275,6 +1274,100 @@ describe('PCD CRM adapter producer', () => {
       .toMatchObject({ event_type: 'contact.deleted.v1', status: 'delivered', payload_json: expect.not.stringContaining('leased@org-leased-safety.example') });
   });
 
+  it('cancels a claimed contact that has not started sending before committing its safety mutation', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const first = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-claimed-cancel', fullName: 'First Contact', role: 'director',
+      email: 'first@org-claimed-cancel.example', source: 'website',
+      sourceUrl: 'https://org-claimed-cancel.example/staff', contactContext: 'professional',
+    });
+    const second = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-claimed-cancel', fullName: 'Second Contact', role: 'director',
+      email: 'second@org-claimed-cancel.example', source: 'website',
+      sourceUrl: 'https://org-claimed-cancel.example/staff', contactContext: 'professional',
+    });
+    expect(first.ok && second.ok).toBe(true);
+    let release!: () => void;
+    const held = new Promise<void>((resolve) => { release = resolve; });
+    let firstStarted!: () => void;
+    const started = new Promise<void>((resolve) => { firstStarted = resolve; });
+    const received: string[] = [];
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = String(init?.body);
+      received.push(body);
+      if (received.length === 1) {
+        firstStarted();
+        await held;
+      }
+      const event = JSON.parse(body);
+      return Response.json({ accepted: true, receiptId: `receipt-${event.eventId}`, eventId: event.eventId, sequence: event.sequence, replay: false });
+    }) };
+    const delivery = dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.now(), limit: 2 });
+    await started;
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-claimed-cancel', fullName: 'Second Contact', role: 'director',
+      email: 'second@org-claimed-cancel.example', source: 'website',
+      sourceUrl: 'https://org-claimed-cancel.example/staff', contactContext: 'minor',
+    })).resolves.toMatchObject({ ok: true, created: false });
+    release();
+    await expect(delivery).resolves.toMatchObject({ claimed: 2, delivered: 1 });
+    expect(received).toHaveLength(1);
+    expect(received.join('\n')).not.toContain('second@org-claimed-cancel.example');
+    expect(await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE subject_id=?`)
+      .bind(second.ok ? second.id : '').first()).toEqual({ count: 0 });
+  });
+
+  it('retracts every historical target without an eight-workspace safety failure', async () => {
+    const { ops, intel } = await databases();
+    const at = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertContact(ops, { id: 'contact-nine-targets', organizationId: 'org-nine-targets', updatedAt: new Date(at).toISOString() });
+    const statements = Array.from({ length: 9 }, (_, index) => ops.prepare(`INSERT INTO crm_adapter_outbox
+      (id,producer_workspace_id,event_id,source_sequence,event_type,subject_type,subject_id,authority_updated_at,
+        payload_json,payload_hash,idempotency_key,status,attempt_count,next_attempt_at,receiver_receipt_id,receiver_status,
+        delivered_at,created_at,updated_at,target_workspace_id,send_attempt_count)
+      VALUES (?,?,?,?,?,'contact','contact-nine-targets',?,'{}',?,?, 'delivered',1,0,?,202,?,?,?, ?,1)`)
+      .bind(
+        `nine-target-row-${index}`, 'pcd-activity-radar', `nine-target-event-${index}`, index + 1,
+        'contact.observed.v1', at, 'a'.repeat(64), `nine-target-key-${index}`, `receipt-${index}`,
+        at, at, at, `workspace-${index}`,
+      ));
+    statements.push(ops.prepare(`INSERT INTO crm_adapter_controls
+      (producer_workspace_id,next_sequence,updated_at) VALUES ('pcd-activity-radar',10,?)`).bind(at));
+    await ops.batch(statements);
+    const adapterEnv = env(ops, intel);
+    await expect(setDoNotContact(adapterEnv, 'contact-nine-targets', 'privacy_request')).resolves.toBe(true);
+    expect(await ops.prepare(`SELECT do_not_contact FROM org_contacts WHERE id='contact-nine-targets'`).first())
+      .toEqual({ do_not_contact: 1 });
+    const targets = await ops.prepare(`SELECT target_workspace_id FROM crm_adapter_outbox
+      WHERE subject_id='contact-nine-targets' AND event_type='contact.deleted.v1'
+      ORDER BY target_workspace_id`).all<{ target_workspace_id: string }>();
+    expect(targets.results.map((row) => row.target_workspace_id))
+      .toEqual(Array.from({ length: 9 }, (_, index) => `workspace-${index}`));
+  });
+
+  it('retains ambiguous observation evidence while queuing its safety tombstone', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel, { PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-one' });
+    const contact = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-ambiguous-safety', fullName: 'Ambiguous Contact', role: 'director',
+      email: 'ambiguous@org.example', source: 'website', sourceUrl: 'https://org.example/staff',
+      contactContext: 'professional',
+    });
+    expect(contact.ok).toBe(true);
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='retry',attempt_count=1,send_attempt_count=1,
+      last_error_code='receiver_timeout' WHERE subject_id=?`).bind(contact.ok ? contact.id : '').run();
+    await expect(setDoNotContact(
+      { ...adapterEnv, PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-two' }, contact.ok ? contact.id : '', 'privacy_request',
+    )).resolves.toBe(true);
+    const rows = await ops.prepare(`SELECT event_type,status,cancelled_at,target_workspace_id FROM crm_adapter_outbox
+      WHERE subject_id=? ORDER BY source_sequence`).bind(contact.ok ? contact.id : '').all();
+    expect(rows.results).toMatchObject([
+      { event_type: 'contact.observed.v1', status: 'retry', cancelled_at: expect.any(Number), target_workspace_id: 'workspace-one' },
+      { event_type: 'contact.deleted.v1', status: 'pending', cancelled_at: null, target_workspace_id: 'workspace-one' },
+    ]);
+  });
+
   it('holds unknown and rejects family, guardian, minor, and roster contacts while preserving tombstones', async () => {
     const { ops, intel } = await databases();
     const oldAt = '2026-09-01T12:00:00.000Z';
@@ -1292,12 +1385,12 @@ describe('PCD CRM adapter producer', () => {
     const result = await projectPcdCrmBackfill(env(ops, intel, {
       PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
     }), { now: cutoff + 1, limit: 10 });
-    expect(result).toMatchObject({ contacts: 1, rejected: 5, scanCompleted: true });
+    expect(result).toMatchObject({ contacts: 0, rejected: 6, scanCompleted: true });
     expect(await ops.prepare(`SELECT subject_id,event_type FROM crm_adapter_outbox WHERE subject_type='contact'`).all())
-      .toMatchObject({ results: [{ subject_id: 'contact-context-tombstone', event_type: 'contact.deleted.v1' }] });
+      .toMatchObject({ results: [] });
     const chunk = await ops.prepare(`SELECT eligible_count,rejected_count FROM crm_adapter_backfill_chunks
       WHERE subject_type='contact'`).first();
-    expect(chunk).toEqual({ eligible_count: 1, rejected_count: 5 });
+    expect(chunk).toEqual({ eligible_count: 0, rejected_count: 6 });
   });
 
   it('namespaces event identity by producer and target workspace during retargeted backfills', async () => {
@@ -1433,7 +1526,8 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-safety-bypass.example/staff', contactContext: 'professional',
     });
     expect(contact.ok).toBe(true);
-    await ops.prepare(`UPDATE crm_adapter_outbox SET status='dead',attempt_count=1 WHERE event_type='contact.observed.v1'`).run();
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='dead',attempt_count=1,send_attempt_count=1
+      WHERE event_type='contact.observed.v1'`).run();
     expect(await setDoNotContact(adapterEnv, contact.ok ? contact.id : '', 'privacy_request')).toBe(true);
     const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
       const body = JSON.parse(String(init?.body));

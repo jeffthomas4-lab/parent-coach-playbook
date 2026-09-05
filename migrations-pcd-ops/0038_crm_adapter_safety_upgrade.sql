@@ -54,14 +54,22 @@ BEGIN
 END;
 
 ALTER TABLE crm_adapter_outbox ADD COLUMN target_workspace_id TEXT;
+ALTER TABLE crm_adapter_outbox ADD COLUMN cancelled_at INTEGER CHECK(cancelled_at IS NULL OR cancelled_at >= 0);
+ALTER TABLE crm_adapter_outbox ADD COLUMN send_attempt_count INTEGER NOT NULL DEFAULT 0
+  CHECK(send_attempt_count >= 0);
 UPDATE crm_adapter_outbox
   SET target_workspace_id=json_extract(payload_json,'$.payload.workspaceId')
   WHERE target_workspace_id IS NULL;
+UPDATE crm_adapter_outbox SET send_attempt_count=attempt_count WHERE attempt_count>0;
 CREATE INDEX idx_crm_adapter_outbox_contact_targets
   ON crm_adapter_outbox(producer_workspace_id,subject_type,event_type,subject_id,target_workspace_id);
+DROP INDEX IF EXISTS idx_crm_adapter_outbox_claim_sequence;
+CREATE INDEX idx_crm_adapter_outbox_claim_sequence
+  ON crm_adapter_outbox(producer_workspace_id,source_sequence)
+  WHERE cancelled_at IS NULL AND status IN ('pending','retry','leased','dead');
 CREATE INDEX idx_crm_adapter_outbox_safety_sequence
   ON crm_adapter_outbox(producer_workspace_id,source_sequence)
-  WHERE event_type='contact.deleted.v1' AND status IN ('pending','retry','leased');
+  WHERE cancelled_at IS NULL AND event_type='contact.deleted.v1' AND status IN ('pending','retry','leased');
 
 CREATE TABLE crm_adapter_backfill_subjects (
   run_id TEXT NOT NULL REFERENCES crm_adapter_backfill_runs(id),
