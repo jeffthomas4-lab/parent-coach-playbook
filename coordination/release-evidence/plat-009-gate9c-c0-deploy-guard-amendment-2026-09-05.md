@@ -57,6 +57,11 @@ The following failures were observed before their retained repairs passed:
 - Focused deploy-guard suite: **PASS, 21/21** after the final repair and simplicity deletion.
 - TypeScript (`tsc --noEmit`): **PASS**.
 - `git diff --check`: **PASS**.
+- Exact-candidate non-deploying path: **PASS** from detached candidate
+  `2c7300ae5cc8b29abd02b07bd848ded64ee5a77f`. The full application build stamped that exact SHA,
+  verified the isolated staging manifest, and exited with `No deploy performed` because no
+  confirmation flag was supplied. Its one tracked link manifest and seven untracked OG cards were
+  restored or removed afterward.
 - Earlier full unit run in this lane: **1293/1298 PASS**; the five failures are pre-existing stale
   release/access evidence expectations (expired packet, 59-versus-69 protected-route count, and
   stale Access CLI/evidence files), not failures in this deploy guard.
