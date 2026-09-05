@@ -329,6 +329,7 @@ function pickOrgEmail(emails: string[]): string | null {
 // match a later word in the same title.
 const ROLE_PATTERNS: [RegExp, string][] = [
   [/\b(owner|founder|co-?founder|proprietor|president|ceo|principal)\b/i, 'owner'],
+  [/\b(chief operating officer|chief operations officer|coo)\b/i, 'admin'],
   [/\b(executive director|camp director|program director|athletic director|director|head of|superintendent)\b/i, 'director'],
   [/\b(registrar|registration|enrollment|admissions)\b/i, 'registrar'],
   [/\b(head coach|assistant coach|coach|instructor|trainer|teacher|counselor)\b/i, 'coach'],
@@ -364,7 +365,7 @@ const NOT_A_NAME_RE = /\b(contact|about|home|our|the|read|learn|sign|get|click|v
 // Any word that belongs to a job title rather than to a person. A name
 // candidate containing one of these is a boundary artifact, not a human:
 // "Alicia Moreau Head Coach" otherwise yields the pair "Moreau Head".
-const TITLE_WORD_RE = /\b(executive|camp|program|athletic|aquatic|aquatics|head|assistant|associate|senior|deputy|interim|general|office|business|operations|marketing|communications|admissions|enrollment|membership|facility|volunteer|director|coach|coaching|registrar|owner|founder|cofounder|president|ceo|principal|manager|administrator|administrative|coordinator|supervisor|secretary|instructor|trainer|teacher|counselor|billing|accounts|accounting|finance|bursar|treasurer|media|press|photographer|videographer|publicity|outreach|social|registration|staff|team|contact|email|phone)\b/i;
+const TITLE_WORD_RE = /\b(chief|operating|officer|executive|camp|program|athletic|aquatic|aquatics|head|assistant|associate|senior|deputy|interim|general|office|business|operations|marketing|communications|admissions|enrollment|membership|facility|volunteer|director|coach|coaching|registrar|owner|founder|cofounder|president|ceo|principal|manager|administrator|administrative|coordinator|supervisor|secretary|instructor|trainer|teacher|counselor|billing|accounts|accounting|finance|bursar|treasurer|media|press|photographer|videographer|publicity|outreach|social|registration|staff|team|contact|email|phone)\b/i;
 
 const NAME_TOKEN_RE = /^(?:Mc|Mac|O['’]|Van|Von|De|Del|La)?[A-Z][A-Za-z'’\-]{1,19}$/;
 const INITIAL_RE = /^[A-Z]\.?$/;
@@ -423,7 +424,7 @@ const MINOR_RISK_URL_RE = /\/(roster|rosters|players?|athletes?|students?|partic
  * footers routinely contain "Parent Resources" and "Student Programs" beside
  * an otherwise unambiguous professional staff card.
  */
-const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|(?:parent|guardian) of|(?:parent|guardian|student)\s+(?:volunteer\s+)?(?:owner|director|registrar|coach|instructor|trainer|teacher|counselor|administrator|coordinator|manager))\b/i;
+const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|(?:parent|guardian) of|team\s+parent|(?:parent|guardian|student)\s+(?:and\s+)?(?:volunteer\s+)?(?:assistant\s+)?(?:owner|director|registrar|coach|instructor|trainer|teacher|counselor|administrator|coordinator|manager))\b/i;
 
 export interface ScrapedContact {
   fullName: string | null;
@@ -472,10 +473,6 @@ export function extractContacts(html: string, pageUrl: string, isStaffPage: bool
     const context = before + ' | ' + after;
     const emailAt = before.length;
 
-    // Context that reads like it is describing a child is dropped, whatever
-    // else it contains.
-    if (MINOR_RISK_TEXT_RE.test(context)) continue;
-
     // The LAST title BEFORE the address wins, not the first one in the window.
     // The window reaches back over the previous person's card, so taking the
     // first match would staple the previous person's title, and then their
@@ -501,19 +498,30 @@ export function extractContacts(html: string, pageUrl: string, isStaffPage: bool
     }
 
     let fullName: string | null = null;
+    let fullNameIndex: number | null = null;
     if (title && titleMatch && !isRoleMailbox) {
       let best: string | null = null;
+      let bestIndex: number | null = null;
       let bestDist = Infinity;
       for (const cand of candidateNames(context)) {
         // Prefer the name nearest the title; that pairing is what a staff
         // listing actually looks like.
         const dist = Math.abs(cand.index - titleMatch.index);
-        if (dist < bestDist) { bestDist = dist; best = cand.name; }
+        if (dist < bestDist) { bestDist = dist; best = cand.name; bestIndex = cand.index; }
       }
       // A name more than ~120 chars from its title is probably a different
       // person in a different block.
-      if (best && bestDist <= 120) fullName = best.slice(0, 160);
+      if (best && bestDist <= 120) {
+        fullName = best.slice(0, 160);
+        fullNameIndex = bestIndex;
+      }
     }
+
+    // Apply child/family signals only to this candidate's own block: from its
+    // chosen name/title through the email. A fixed whole-page window lets a
+    // previous participant card or global navigation veto an unrelated adult.
+    const riskStart = fullNameIndex ?? titleMatch?.index ?? Math.max(0, emailAt - 160);
+    if (MINOR_RISK_TEXT_RE.test(context.slice(riskStart, Math.min(context.length, emailAt + 80)))) continue;
 
     // A role mailbox with no name is a channel, not a person. It is already
     // captured as organizations.email and does not need a contact row.

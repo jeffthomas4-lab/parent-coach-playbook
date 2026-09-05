@@ -71,6 +71,7 @@ interface EventDraft {
   eventType: PcdEventType;
   subjectType: 'organization' | 'contact';
   subjectId: string;
+  targetWorkspaceId: string;
   authorityUpdatedAt: number;
   contentHash: string;
   occurredAt: number;
@@ -192,8 +193,9 @@ async function stableEventId(
   namespace: string,
   subjectId: string,
   contentHash: string,
+  authorityUpdatedAt: number,
 ): Promise<string> {
-  const raw = `pcd:${namespace}:${prefix}:${subjectId}:${contentHash.slice(0, 32)}`;
+  const raw = `pcd:${namespace}:${prefix}:${subjectId}:${authorityUpdatedAt}:${contentHash}`;
   return raw.length <= 180 ? raw : `pcd:${prefix}:${await sha256(raw)}`;
 }
 
@@ -226,7 +228,7 @@ async function organizationDraft(
   targetWorkspaceId: string,
 ): Promise<EventDraft> {
   const authorityUpdatedAt = timestamp(row.updated_at);
-  const contentHash = row.content_hash || await sha256(stableJson({
+  const contentHash = await sha256(stableJson({
     id: row.id,
     name: row.name,
     organizationType: row.organization_type,
@@ -242,11 +244,12 @@ async function organizationDraft(
   const deleted = !!row.deleted_at;
   return {
     eventId: await stableEventId(
-      deleted ? 'organization-deleted' : 'organization-upserted', namespace, row.id, contentHash,
+      deleted ? 'organization-deleted' : 'organization-upserted', namespace, row.id, contentHash, authorityUpdatedAt,
     ),
     eventType: deleted ? 'organization.deleted.v1' : 'organization.upserted.v1',
     subjectType: 'organization',
     subjectId: row.id,
+    targetWorkspaceId,
     authorityUpdatedAt,
     contentHash,
     occurredAt: authorityUpdatedAt,
@@ -302,10 +305,11 @@ async function contactDraft(
   const restricted = Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
   if (row.deleted_at || (restricted && previouslyObserved)) {
     return {
-      eventId: await stableEventId('contact-deleted', namespace, row.id, contentHash),
+      eventId: await stableEventId('contact-deleted', namespace, row.id, contentHash, authorityUpdatedAt),
       eventType: 'contact.deleted.v1',
       subjectType: 'contact',
       subjectId: row.id,
+      targetWorkspaceId,
       authorityUpdatedAt,
       contentHash,
       occurredAt: authorityUpdatedAt,
@@ -323,10 +327,11 @@ async function contactDraft(
   const value = row.email ?? row.phone;
   if (!type || !value || !row.source_url) return null;
   return {
-    eventId: await stableEventId('contact-observed', namespace, row.id, contentHash),
+    eventId: await stableEventId('contact-observed', namespace, row.id, contentHash, authorityUpdatedAt),
     eventType: 'contact.observed.v1',
     subjectType: 'contact',
     subjectId: row.id,
+    targetWorkspaceId,
     authorityUpdatedAt,
     contentHash,
     occurredAt: authorityUpdatedAt,
@@ -356,6 +361,7 @@ async function contactDraft(
 async function previouslyObservedContactIds(
   db: D1Database,
   producerWorkspaceId: string,
+  targetWorkspaceId: string,
   rows: PcdContactProjectionInput[],
 ): Promise<Set<string>> {
   const ids = [...new Set(rows
@@ -365,9 +371,24 @@ async function previouslyObservedContactIds(
   const placeholders = ids.map(() => '?').join(',');
   const observed = await db.prepare(`SELECT DISTINCT subject_id FROM crm_adapter_outbox
     WHERE subject_type='contact' AND event_type='contact.observed.v1'
-      AND producer_workspace_id=? AND subject_id IN (${placeholders})`)
-    .bind(producerWorkspaceId, ...ids).all<{ subject_id: string }>();
+      AND producer_workspace_id=? AND target_workspace_id=? AND subject_id IN (${placeholders})`)
+    .bind(producerWorkspaceId, targetWorkspaceId, ...ids).all<{ subject_id: string }>();
   return new Set(observed.results.map((row) => row.subject_id));
+}
+
+async function previouslyObservedContactTargets(
+  db: D1Database,
+  producerWorkspaceId: string,
+  subjectId: string,
+): Promise<string[]> {
+  const targets = await db.prepare(`SELECT target_workspace_id FROM crm_adapter_outbox
+    INDEXED BY idx_crm_adapter_outbox_contact_targets
+    WHERE producer_workspace_id=? AND subject_type='contact' AND event_type='contact.observed.v1'
+      AND subject_id=? AND target_workspace_id IS NOT NULL
+    GROUP BY target_workspace_id ORDER BY target_workspace_id LIMIT 9`)
+    .bind(producerWorkspaceId, subjectId).all<{ target_workspace_id: string }>();
+  if (targets.results.length > 8) throw new Error('pcd_crm_contact_target_history_limit');
+  return targets.results.map((row) => row.target_workspace_id);
 }
 
 async function ensureControl(db: D1Database, producerWorkspaceId: string, now: number): Promise<void> {
@@ -393,22 +414,6 @@ async function enqueueDrafts(
       .bind(producerWorkspaceId, ...drafts.map((draft) => draft.eventId)).all<{ event_id: string }>();
     for (const row of existing.results) existingIds.add(row.event_id);
   }
-  const inheritedBackfillRunIds = new Map<string, string>();
-  const retractions = drafts.filter((draft) => draft.eventType === 'contact.deleted.v1');
-  if (!backfillRunId && retractions.length) {
-    const subjectIds = [...new Set(retractions.map((draft) => draft.subjectId))];
-    const placeholders = subjectIds.map(() => '?').join(',');
-    const replaced = await db.prepare(`SELECT outbox.subject_id,outbox.backfill_run_id
-      FROM crm_adapter_outbox outbox
-      JOIN crm_adapter_backfill_runs run ON run.id=outbox.backfill_run_id AND run.status!='completed'
-      WHERE outbox.producer_workspace_id=? AND outbox.subject_type='contact'
-        AND outbox.subject_id IN (${placeholders}) AND outbox.event_type='contact.observed.v1'
-      ORDER BY outbox.source_sequence`).bind(producerWorkspaceId, ...subjectIds)
-      .all<{ subject_id: string; backfill_run_id: string }>();
-    for (const row of replaced.results) {
-      if (!inheritedBackfillRunIds.has(row.subject_id)) inheritedBackfillRunIds.set(row.subject_id, row.backfill_run_id);
-    }
-  }
   const pending = drafts.filter((draft) => !existingIds.has(draft.eventId));
   const control = await db.prepare(`SELECT next_sequence FROM crm_adapter_controls WHERE producer_workspace_id=?`)
     .bind(producerWorkspaceId).first<{ next_sequence: number }>();
@@ -430,6 +435,21 @@ async function enqueueDrafts(
     );
   }
   statements.push(...canonicalStatements);
+  if (backfillRunId) {
+    for (const draft of drafts) {
+      statements.push(db.prepare(`INSERT OR IGNORE INTO crm_adapter_backfill_subjects
+        (run_id,subject_type,subject_id) VALUES (?,?,?)`).bind(backfillRunId, draft.subjectType, draft.subjectId));
+    }
+    if (pending.length) {
+      statements.push(
+        db.prepare(`DELETE FROM crm_adapter_backfill_reconciliation_windows WHERE run_id=?`).bind(backfillRunId),
+        db.prepare(`UPDATE crm_adapter_backfill_runs SET reconciliation_pass=1,reconciliation_cursor_sequence=0,
+          reconciliation_window_ordinal=0,reconciliation_complete=0,reconciliation_failure_count=0,
+          reconciliation_next_attempt_at=0,reconciliation_halted=0,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+          WHERE id=? AND status='scanned'`).bind(now, backfillRunId),
+      );
+    }
+  }
   for (const [index, draft] of pending.entries()) {
     const sequence = start + index;
     const envelope = {
@@ -443,16 +463,16 @@ async function enqueueDrafts(
     };
     const payloadJson = JSON.stringify(envelope);
     const payloadHash = await sha256(stableJson(envelope));
-    const draftBackfillRunId = backfillRunId ?? inheritedBackfillRunIds.get(draft.subjectId);
+    const draftBackfillRunId = backfillRunId;
     const backfillColumn = draftBackfillRunId ? ',backfill_run_id' : '';
     const backfillPlaceholder = draftBackfillRunId ? ',?' : '';
     statements.push(
       db.prepare(`INSERT INTO crm_adapter_outbox
-        (id,producer_workspace_id,event_id,source_sequence,event_type,subject_type,subject_id,authority_updated_at,payload_json,payload_hash,idempotency_key,status,attempt_count,next_attempt_at,created_at,updated_at${backfillColumn})
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending',0,?,?,?${backfillPlaceholder})`).bind(
+        (id,producer_workspace_id,event_id,source_sequence,event_type,subject_type,subject_id,authority_updated_at,payload_json,payload_hash,idempotency_key,status,attempt_count,next_attempt_at,created_at,updated_at,target_workspace_id${backfillColumn})
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending',0,?,?,?,?${backfillPlaceholder})`).bind(
         `pcd-outbox:${draft.eventId}`, producerWorkspaceId, draft.eventId, sequence, draft.eventType,
         draft.subjectType, draft.subjectId, draft.authorityUpdatedAt, payloadJson, payloadHash, draft.eventId,
-        now, now, now, ...(draftBackfillRunId ? [draftBackfillRunId] : []),
+        now, now, now, draft.targetWorkspaceId, ...(draftBackfillRunId ? [draftBackfillRunId] : []),
       ),
       db.prepare(`INSERT INTO crm_adapter_projection_receipts
         (subject_type,subject_id,content_hash,last_event_id,last_sequence,authority_updated_at,projected_at)
@@ -474,14 +494,6 @@ async function enqueueDrafts(
     statements.push(db.prepare(`UPDATE crm_adapter_outbox SET backfill_run_id=?
       WHERE producer_workspace_id=? AND backfill_run_id IS NULL AND event_id IN (${placeholders})`)
       .bind(backfillRunId, producerWorkspaceId, ...existingIds));
-  }
-  for (const draft of drafts.filter((item) => existingIds.has(item.eventId))) {
-    const inheritedBackfillRunId = inheritedBackfillRunIds.get(draft.subjectId);
-    if (!backfillRunId && inheritedBackfillRunId) {
-      statements.push(db.prepare(`UPDATE crm_adapter_outbox SET backfill_run_id=?
-        WHERE producer_workspace_id=? AND event_id=? AND backfill_run_id IS NULL`)
-        .bind(inheritedBackfillRunId, producerWorkspaceId, draft.eventId));
-    }
   }
   if (cursor) {
     const column = cursor.kind === 'organization'
@@ -508,28 +520,32 @@ export async function commitPcdContactMutation(
   const config = requireConfig(env);
   if (!config) throw new Error('pcd_crm_adapter_configuration_missing');
   const rowUpdatedAt = Date.parse(row.updated_at);
-  const namespace = await eventNamespace(config.producerWorkspaceId, config.targetWorkspaceId);
-  const previouslyObserved = await previouslyObservedContactIds(
-    env.PCD_OPS_DB,
-    config.producerWorkspaceId,
-    [row],
-  );
-  const draft = Number.isFinite(rowUpdatedAt) && rowUpdatedAt >= config.sourceNotBeforeMs
-    ? await contactDraft(
+  const restricted = !!row.deleted_at || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
+  const priorTargets = restricted
+    ? await previouslyObservedContactTargets(env.PCD_OPS_DB, config.producerWorkspaceId, row.id)
+    : [];
+  const targetWorkspaceIds = priorTargets.length ? priorTargets : [config.targetWorkspaceId];
+  const drafts = Number.isFinite(rowUpdatedAt) && rowUpdatedAt >= config.sourceNotBeforeMs
+    ? (await Promise.all(targetWorkspaceIds.map(async (targetWorkspaceId) => contactDraft(
         row,
-        namespace,
-        config.targetWorkspaceId,
+        await eventNamespace(config.producerWorkspaceId, targetWorkspaceId),
+        targetWorkspaceId,
         config.sourceId,
-        previouslyObserved.has(row.id),
-      )
-    : null;
+        priorTargets.includes(targetWorkspaceId),
+      )))).filter((draft): draft is EventDraft => draft !== null)
+    : [];
+  const activeBackfill = await env.PCD_OPS_DB.prepare(`SELECT subject.run_id FROM crm_adapter_backfill_subjects subject
+    JOIN crm_adapter_backfill_runs run ON run.id=subject.run_id AND run.status!='completed'
+    WHERE subject.subject_type='contact' AND subject.subject_id=? LIMIT 1`)
+    .bind(row.id).first<{ run_id: string }>();
   await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
-    draft ? [draft] : [],
+    drafts,
     now,
     undefined,
     [canonicalStatement],
+    activeBackfill?.run_id,
   );
 }
 
@@ -548,19 +564,19 @@ export async function projectPcdCrmEvents(
     .first<{ organization_revision_cursor: number; contact_revision_cursor: number }>();
   if (!control) throw new Error('pcd_crm_adapter_control_missing');
   const namespace = await eventNamespace(config.producerWorkspaceId, config.targetWorkspaceId);
-  const sourceNotBefore = new Date(config.sourceNotBeforeMs).toISOString();
 
-  const organizationRows = (await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
+  const organizationPage = (await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
     record_status,is_claimed,content_hash,deleted_at,updated_at,crm_projection_revision
     FROM organizations INDEXED BY idx_organizations_crm_projection_revision
-    WHERE crm_projection_revision>0 AND crm_projection_revision>? AND julianday(updated_at)>=julianday(?)
+    WHERE crm_projection_revision>0 AND crm_projection_revision>?
     ORDER BY crm_projection_revision LIMIT ?`)
-    .bind(control.organization_revision_cursor, sourceNotBefore, limit)
+    .bind(control.organization_revision_cursor, limit)
     .all<OrganizationRow>()).results;
+  const organizationRows = organizationPage.filter((row) => Date.parse(row.updated_at) >= config.sourceNotBeforeMs);
   const organizationDrafts = await Promise.all(organizationRows.map((row) => (
     organizationDraft(row, namespace, config.targetWorkspaceId)
   )));
-  const lastOrganization = organizationRows.at(-1);
+  const lastOrganization = organizationPage.at(-1);
   const orgResult = await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
@@ -569,7 +585,7 @@ export async function projectPcdCrmEvents(
     lastOrganization ? { kind: 'organization', revision: Number(lastOrganization.crm_projection_revision) } : undefined,
   );
 
-  let contactRows: PcdContactProjectionInput[] = [];
+  let contactPage: PcdContactProjectionInput[] = [];
   let canProjectContacts = true;
   if (env.PCD_CRM_BACKFILL_ENABLED === 'true') {
     const historicalOrganizations = await env.PCD_OPS_DB.prepare(`SELECT organization_complete
@@ -578,16 +594,32 @@ export async function projectPcdCrmEvents(
     canProjectContacts = historicalOrganizations?.organization_complete === 1;
   }
   if (canProjectContacts) {
-    contactRows = (await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
+    contactPage = (await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
       source_url,confidence,verified_at,content_hash,deleted_at,updated_at,crm_projection_revision
       FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_revision
-      WHERE crm_projection_revision>0 AND crm_projection_revision>? AND julianday(updated_at)>=julianday(?)
+      WHERE crm_projection_revision>0 AND crm_projection_revision>?
       ORDER BY crm_projection_revision LIMIT ?`)
-      .bind(control.contact_revision_cursor, sourceNotBefore, limit).all<PcdContactProjectionInput>()).results;
+      .bind(control.contact_revision_cursor, limit).all<PcdContactProjectionInput>()).results;
   }
+  const eligibleContactRows = contactPage.filter((row) => Date.parse(row.updated_at) >= config.sourceNotBeforeMs);
+  const organizationIds = [...new Set(eligibleContactRows.map((row) => row.organization_id))];
+  const readyOrganizationIds = new Set<string>();
+  if (organizationIds.length) {
+    const placeholders = organizationIds.map(() => '?').join(',');
+    const receipts = await env.PCD_OPS_DB.prepare(`SELECT subject_id FROM crm_adapter_projection_receipts
+      WHERE subject_type='organization' AND subject_id IN (${placeholders})`).bind(...organizationIds)
+      .all<{ subject_id: string }>();
+    for (const receipt of receipts.results) readyOrganizationIds.add(receipt.subject_id);
+  }
+  const blockedAt = contactPage.findIndex((row) => (
+    Date.parse(row.updated_at) >= config.sourceNotBeforeMs && !readyOrganizationIds.has(row.organization_id)
+  ));
+  const examinedContactRows = blockedAt < 0 ? contactPage : contactPage.slice(0, blockedAt);
+  const contactRows = examinedContactRows.filter((row) => Date.parse(row.updated_at) >= config.sourceNotBeforeMs);
   const previouslyObserved = await previouslyObservedContactIds(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
+    config.targetWorkspaceId,
     contactRows,
   );
   const contactCandidates = await Promise.all(
@@ -597,7 +629,7 @@ export async function projectPcdCrmEvents(
     )),
   );
   const contactDrafts = contactCandidates.filter((draft): draft is EventDraft => draft !== null);
-  const lastContact = contactRows.at(-1);
+  const lastContact = examinedContactRows.at(-1);
   const contactResult = await enqueueDrafts(
     env.PCD_OPS_DB,
     config.producerWorkspaceId,
@@ -610,7 +642,7 @@ export async function projectPcdCrmEvents(
     organizations: orgResult.projected,
     contacts: contactResult.projected,
     replayed: orgResult.replayed + contactResult.replayed,
-    deferred: contactCandidates.length - contactDrafts.length,
+    deferred: contactCandidates.length - contactDrafts.length + contactPage.length - examinedContactRows.length,
   };
 }
 
@@ -811,6 +843,7 @@ export async function projectPcdCrmBackfill(
         const previouslyObserved = await previouslyObservedContactIds(
           env.PCD_OPS_DB,
           config.producerWorkspaceId,
+          config.targetWorkspaceId,
           rows.results,
         );
         const classified = await Promise.all(rows.results.map(async (row) => {
@@ -875,20 +908,30 @@ export async function finalizePcdCrmBackfill(
   let run = await ensureBackfillRun(env, config, now);
   if (run.status === 'completed') return { enabled: true, completed: true, pending: 0, dead: 0, reconciled: true };
   if (run.status !== 'scanned') return { enabled: true, completed: false, pending: 0, dead: 0, reconciled: false };
+  if (run.reconciliation_complete !== 1) {
+    const state = await env.PCD_OPS_DB.prepare(`SELECT
+      EXISTS(SELECT 1 FROM crm_adapter_outbox WHERE backfill_run_id=? AND status='dead' LIMIT 1) dead,
+      EXISTS(SELECT 1 FROM crm_adapter_outbox WHERE backfill_run_id=? AND status!='delivered' LIMIT 1) pending`)
+      .bind(run.id, run.id).first<{ pending: number; dead: number }>();
+    const dead = Number(state?.dead ?? 0);
+    const pending = Number(state?.pending ?? 0);
+    if (dead) throw new Error('pcd_crm_backfill_dead_letters_present');
+    return { enabled: true, completed: false, pending, dead, reconciled: false };
+  }
   run = await ensureBackfillRun(env, config, now, true);
 
   const accounting = await env.PCD_OPS_DB.prepare(`SELECT
       COALESCE((SELECT SUM(eligible_count) FROM crm_adapter_backfill_chunks WHERE run_id=?),0) eligible,
       COALESCE((SELECT SUM(rows_seen) FROM crm_adapter_backfill_chunks WHERE run_id=? AND subject_type='organization'),0) organization_seen,
       COALESCE((SELECT SUM(rows_seen) FROM crm_adapter_backfill_chunks WHERE run_id=? AND subject_type='contact'),0) contact_seen,
-      COUNT(DISTINCT subject_type || X'1F' || subject_id) subject_total,
+      COALESCE((SELECT COUNT(*) FROM crm_adapter_backfill_subjects WHERE run_id=?),0) subject_total,
       COUNT(*) outbox_total,
       SUM(CASE WHEN status='delivered' AND receiver_receipt_id IS NOT NULL THEN 1 ELSE 0 END) delivered,
       SUM(CASE WHEN status='dead' THEN 1 ELSE 0 END) dead,
       SUM(CASE WHEN status!='delivered' THEN 1 ELSE 0 END) pending,
       COALESCE(MIN(source_sequence),0) low_water,
       COALESCE(MAX(source_sequence),0) high_water
-    FROM crm_adapter_outbox WHERE backfill_run_id=?`).bind(run.id, run.id, run.id, run.id)
+    FROM crm_adapter_outbox WHERE backfill_run_id=?`).bind(run.id, run.id, run.id, run.id, run.id)
     .first<{ eligible: number; organization_seen: number; contact_seen: number; subject_total: number; outbox_total: number; delivered: number; dead: number; pending: number; low_water: number; high_water: number }>();
   const eligible = Number(accounting?.eligible ?? 0);
   const organizationSeen = Number(accounting?.organization_seen ?? 0);
@@ -907,9 +950,6 @@ export async function finalizePcdCrmBackfill(
   if (dead > 0) throw new Error('pcd_crm_backfill_dead_letters_present');
   if (pending > 0 || delivered !== outboxTotal) return { enabled: true, completed: false, pending, dead, reconciled: false };
 
-  if (run.reconciliation_complete !== 1) {
-    return { enabled: true, completed: false, pending: 0, dead: 0, reconciled: false };
-  }
   const coverage = await env.PCD_OPS_DB.prepare(`SELECT
       COALESCE(SUM(CASE WHEN pass_number=1 THEN manifest_count ELSE 0 END),0) pass_one_count,
       COALESCE(SUM(CASE WHEN pass_number=2 THEN manifest_count ELSE 0 END),0) pass_two_count,
@@ -1329,19 +1369,33 @@ export async function dispatchPcdCrmOutbox(
   const now = options.now ?? Date.now();
   const limit = Math.max(1, Math.min(10, Math.trunc(options.limit ?? 10)));
   const leaseId = `pcd-crm-lease:${crypto.randomUUID()}`;
-  const head = await env.PCD_OPS_DB.prepare(`SELECT id,event_id,source_sequence,event_type,payload_json,payload_hash,
+  const safetyHead = await env.PCD_OPS_DB.prepare(`SELECT id,event_id,source_sequence,event_type,payload_json,payload_hash,
       idempotency_key,attempt_count,status,next_attempt_at,lease_expires_at
-    FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_claim_sequence
-    WHERE producer_workspace_id=? AND status IN ('pending','retry','leased','dead')
+    FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_safety_sequence
+    WHERE producer_workspace_id=? AND event_type='contact.deleted.v1' AND status IN ('pending','retry','leased')
     ORDER BY source_sequence LIMIT ?`).bind(config.producerWorkspaceId, limit).all<OutboxHeadRow>();
   const duePrefix: OutboxHeadRow[] = [];
-  for (const row of head.results) {
-    if (row.status === 'dead') break;
+  for (const row of safetyHead.results) {
     const due = row.status === 'leased'
       ? row.lease_expires_at !== null && Number(row.lease_expires_at) <= now
       : Number(row.next_attempt_at) <= now;
     if (!due) break;
     duePrefix.push(row);
+  }
+  if (!duePrefix.length) {
+    const head = await env.PCD_OPS_DB.prepare(`SELECT id,event_id,source_sequence,event_type,payload_json,payload_hash,
+        idempotency_key,attempt_count,status,next_attempt_at,lease_expires_at
+      FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_claim_sequence
+      WHERE producer_workspace_id=? AND status IN ('pending','retry','leased','dead')
+      ORDER BY source_sequence LIMIT ?`).bind(config.producerWorkspaceId, limit).all<OutboxHeadRow>();
+    for (const row of head.results) {
+      if (row.status === 'dead') break;
+      const due = row.status === 'leased'
+        ? row.lease_expires_at !== null && Number(row.lease_expires_at) <= now
+        : Number(row.next_attempt_at) <= now;
+      if (!due) break;
+      duePrefix.push(row);
+    }
   }
   if (!duePrefix.length) return { enabled: true, claimed: 0, delivered: 0, retried: 0, dead: 0 };
   const placeholders = duePrefix.map(() => '?').join(',');

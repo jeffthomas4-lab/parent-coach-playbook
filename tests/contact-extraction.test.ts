@@ -141,6 +141,12 @@ describe('extractContacts — child-safety guardrails', () => {
     },
   );
 
+  it('drops an explicit team-parent role even when the same card also says assistant coach', () => {
+    const html = `<h3>Taylor Example</h3><p>Team Parent and Assistant Coach</p>
+      <a href="mailto:taylor@realclub.org">Email</a>`;
+    expect(extractContacts(html, 'https://realclub.org/staff', true)).toEqual([]);
+  });
+
   it.each(['Parent Resources', 'Student Programs'])(
     'keeps a valid professional staff card when unrelated page furniture says %s',
     (pageFurniture) => {
@@ -151,6 +157,22 @@ describe('extractContacts — child-safety guardrails', () => {
       }]);
     },
   );
+
+  it('recognizes a chief operating officer as an adult professional role', () => {
+    const html = `<article><h3>Morgan Rivera</h3><p>Chief Operating Officer</p>
+      <a href="mailto:morgan@club.example">Email</a></article>`;
+    expect(extractContacts(html, 'https://club.example/staff', true)).toMatchObject([{
+      fullName: 'Morgan Rivera', title: 'Chief Operating Officer', role: 'admin', email: 'morgan@club.example',
+    }]);
+  });
+
+  it('does not let an adjacent participant card veto a separate adult staff card', () => {
+    const html = `<article><p>Jordan Child</p><p>5th grade participant</p></article>
+      <article><p>Dana Reyes</p><p>Camp Director</p><a href="mailto:dana@club.example">Email</a></article>`;
+    expect(extractContacts(html, 'https://club.example/staff', true)).toMatchObject([{
+      fullName: 'Dana Reyes', title: 'Camp Director', role: 'director', email: 'dana@club.example',
+    }]);
+  });
 
   it('never marks a scraped contact public', () => {
     const html = `<p>Dana Reyes</p><p>Camp Director</p><p><a href="mailto:d@org.com">e</a></p>`;
