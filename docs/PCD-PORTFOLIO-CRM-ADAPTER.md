@@ -92,6 +92,14 @@ provider/data action.
   restarts the second pass from sequence zero after every first-pass event has been covered;
 - scheduled execution is isolated from the existing publishing and intelligence jobs;
 - contact notes are never exported; channel data stays inside the strict professional-contact schema.
+- a PCD do-not-contact row emits a raw-free `contact.deleted.v1` payload with
+  `suppressionState: "do_not_contact"` even when no observation was previously sent; the CRM persists
+  the source-subject restriction without inventing a contact point or waiting for the related
+  organization projection; PCD reuses suppressed email, normalized phone, and known person-name
+  identities even after soft deletion so same- or cross-channel rediscovery cannot mint an
+  unsuppressed source ID; tombstones expose an opaque revision/time version rather than a bare hash
+  of predictable PII; private, minor, roster, family, guardian, and unknown-context rows still cross
+  only when retracting an attempted projection;
 
 ## Synthetic staging pilot
 

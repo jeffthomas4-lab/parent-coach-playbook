@@ -164,6 +164,16 @@ const normEmail = (v?: string | null): string | null => {
   return t && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t) ? t : null;
 };
 
+const normPhoneIdentity = (v?: string | null): string | null => {
+  const digits = (v ?? '').replace(/\D/g, '');
+  return digits.length >= 7 ? digits : null;
+};
+
+const normNameIdentity = (v?: string | null): string | null => {
+  const normalized = (v ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+  return normalized || null;
+};
+
 /** All live contacts for one organization. Returns [] when the layer isn't wired up. */
 export async function listOrgContacts(
   env: OrgContactsEnv,
@@ -219,12 +229,13 @@ export async function listOrgContactsForOrgs(
 }
 
 /**
- * Insert a contact, or update the existing one with the same (organization_id,
- * email). Best-effort: never throws.
+ * Insert a contact, or update the existing one with the same organization and
+ * normalized email/phone identity. Best-effort: never throws.
  *
  * Refuses to write when the matching row is marked do_not_contact — a
- * suppression must survive re-discovery by an agent that has no idea the person
- * opted out. That is the single most important rule in this file.
+ * suppression must survive phone-only discovery and re-discovery after soft
+ * deletion by an agent that has no idea the person opted out. That is the
+ * single most important rule in this file.
  */
 export async function upsertOrgContact(
   env: OrgContactsEnv,
@@ -236,6 +247,8 @@ export async function upsertOrgContact(
   const fullName = (input.fullName ?? '').trim() || null;
   const email = normEmail(input.email);
   const phone = (input.phone ?? '').trim() || null;
+  const phoneIdentity = normPhoneIdentity(phone);
+  const nameIdentity = normNameIdentity(fullName);
 
   // Mirrors the table CHECK: a row with no name and no channel is noise.
   if (!organizationId) return { ok: false, reason: 'invalid' };
@@ -250,16 +263,22 @@ export async function upsertOrgContact(
   const now = nowIso();
 
   try {
-    let existing: OrgContact | null = null;
-    if (email) {
-      existing = await env.PCD_OPS_DB
-        .prepare(
-          `SELECT * FROM org_contacts
-            WHERE organization_id = ? AND email = ? AND deleted_at IS NULL`,
+    const existing = email || phoneIdentity || nameIdentity
+      ? await env.PCD_OPS_DB.prepare(`SELECT * FROM org_contacts
+          WHERE organization_id=? AND (deleted_at IS NULL OR do_not_contact=1) AND (
+            (? IS NOT NULL AND (email_identity=? OR (email_identity IS NULL AND lower(trim(email))=?))) OR
+            (? IS NOT NULL AND (phone_identity=? OR (phone_identity IS NULL AND phone=?))) OR
+            (? IS NOT NULL AND (name_identity=? OR (name_identity IS NULL AND lower(trim(full_name))=?)))
+          )
+          ORDER BY do_not_contact DESC,deleted_at IS NOT NULL,updated_at DESC LIMIT 1`)
+        .bind(
+          organizationId,
+          email, email, email,
+          phoneIdentity, phoneIdentity, phone,
+          nameIdentity, nameIdentity, nameIdentity,
         )
-        .bind(organizationId, email)
-        .first<OrgContact>();
-    }
+        .first<OrgContact>()
+      : null;
 
     const contactContext: OrgContactContext = input.contactContext ?? existing?.contact_context ?? 'unknown';
 
@@ -324,6 +343,9 @@ export async function upsertOrgContact(
              title               = COALESCE(?, title),
              role                = CASE WHEN role = 'unknown' THEN ? ELSE role END,
              phone               = COALESCE(?, phone),
+             email_identity      = COALESCE(email_identity, ?),
+             phone_identity      = COALESCE(?, phone_identity),
+             name_identity       = COALESCE(?, name_identity),
              phone_ext           = COALESCE(?, phone_ext),
              source_url          = COALESCE(?, source_url),
              confidence          = ?,
@@ -336,7 +358,7 @@ export async function upsertOrgContact(
              updated_at          = ?
            WHERE id = ?`,
         ).bind(
-          fullName, input.title ?? null, role, phone, input.phoneExt ?? null,
+          fullName, input.title ?? null, role, phone, email, phoneIdentity, nameIdentity, input.phoneExt ?? null,
           input.sourceUrl ?? null, input.confidence ?? 'medium',
           input.verifiedBy ?? null, input.verifiedBy ? now : null,
           input.verificationMethod ?? null, input.notes ?? null,
@@ -368,11 +390,11 @@ export async function upsertOrgContact(
     const statement = env.PCD_OPS_DB.prepare(
         `INSERT INTO org_contacts (
            id, organization_id, program_id, full_name, title, role,
-           email, phone, phone_ext, is_primary, is_public,
+           email, phone, email_identity, phone_identity, name_identity, phone_ext, is_primary, is_public,
            source, source_url, confidence, contact_context,
            verified_by, verified_at, verification_method, notes,
            content_hash, created_at, updated_at
-         ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+         ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       ).bind(
         // is_public is hardcoded to 0 here, not read from input.isPublic. This
         // table is populated by daily agents reading an organization's own
@@ -383,7 +405,7 @@ export async function upsertOrgContact(
         // this file header's PII rules and CONTACT-DATA-MAP.md, "Agents write
         // is_public = 0 always. Only a human flips it."
         id, organizationId, input.programId ?? null, fullName, input.title ?? null, role,
-        email, phone, input.phoneExt ?? null, input.isPrimary ?? 0, 0,
+        email, phone, email, phoneIdentity, nameIdentity, input.phoneExt ?? null, input.isPrimary ?? 0, 0,
         input.source ?? 'manual_verification', input.sourceUrl ?? null, input.confidence ?? 'medium', contactContext,
         input.verifiedBy ?? null, input.verifiedBy ? now : null,
         input.verificationMethod ?? null, input.notes ?? null,
@@ -457,25 +479,22 @@ export async function setDoNotContact(
   try {
     const now = nowIso();
     const existing = await env.PCD_OPS_DB.prepare(`SELECT * FROM org_contacts WHERE id=?`).bind(id).first<OrgContact>();
-    const contentHash = existing ? await computeContentHash({
+    if (!existing) return false;
+    const contentHash = await computeContentHash({
       organization_id: existing.organization_id, program_id: existing.program_id,
       full_name: existing.full_name, title: existing.title, role: existing.role,
       email: existing.email, phone: existing.phone, phone_ext: existing.phone_ext,
       do_not_contact: 1, contact_context: existing.contact_context,
-    }) : null;
+    });
     const statement = env.PCD_OPS_DB.prepare(
         `UPDATE org_contacts
             SET do_not_contact = 1, do_not_contact_at = ?, do_not_contact_reason = ?,
                 is_public = 0, content_hash = COALESCE(?, content_hash), updated_at = ?
           WHERE id = ?`,
       ).bind(now, reason, contentHash, now, id);
-    if (existing) {
-      await commitPcdContactMutation(env, statement, {
-        ...existing, is_public: 0, do_not_contact: 1, content_hash: contentHash, updated_at: now,
-      }, Date.parse(now));
-    } else {
-      await statement.run();
-    }
+    await commitPcdContactMutation(env, statement, {
+      ...existing, is_public: 0, do_not_contact: 1, content_hash: contentHash, updated_at: now,
+    }, Date.parse(now));
     return true;
   } catch (err) {
     if (!isMissingTable(err)) log('error', { requestId: crypto.randomUUID(), route: 'lib/org-contacts', action: 'suppression_failed', id, error: err });

@@ -10,6 +10,11 @@ Current state: an isolated staging database is migrated and rehearsed through `0
 
 `0042` binds each historical run to the exact approved manifest hash, source and target D1 identities, source Time Travel bookmarks, and contact-policy version. A partial unique index makes one nonempty manifest authorize only one run/target while remaining upgrade-safe for legacy empty rows. The migration enables nothing; runtime refuses to create or resume a historical run unless every approval identity is present and matches the retained row.
 
+`0043` backfills normalized email, phone, and person-name identities on `org_contacts` and indexes
+them by organization. DNC lookup includes soft-deleted suppressed rows, so same-channel or
+cross-channel rediscovery cannot mint a fresh, unsuppressed source ID for the same known person.
+The migration enables no producer or send path.
+
 Until the legacy `migrations/` lineage is retired or split through a separately reviewed repository migration, CI requires migrations `0011` through `0014` to remain byte-identical to their legacy locations. New PCD operational migrations, beginning with `0015`, belong only here and must not be added to the directory-data lineage.
 
 Remaining activation sequence:

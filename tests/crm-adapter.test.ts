@@ -114,17 +114,19 @@ async function insertContact(db: D1Database, input: {
   createdAt?: string;
   deletedAt?: string | null;
   isPublic?: boolean;
+  doNotContact?: boolean;
   contactContext?: 'professional' | 'family' | 'guardian' | 'minor' | 'roster' | 'unknown';
 }) {
   await db.prepare(`INSERT INTO org_contacts
     (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
      confidence,verified_at,content_hash,deleted_at,created_at,updated_at,contact_context)
-    VALUES (?,?,?,'Club Director','director',?,0,?,0,'website',?,'high',?,NULL,?,?,?,?)`).bind(
+    VALUES (?,?,?,'Club Director','director',?,0,?,?,'website',?,'high',?,NULL,?,?,?,?)`).bind(
     input.id,
     input.organizationId,
     'Taylor Director',
     `${input.id}@test.example`,
     input.isPublic === false ? 0 : 1,
+    input.doNotContact === true ? 1 : 0,
     `https://${input.organizationId}.example/staff`,
     input.updatedAt,
     input.deletedAt ?? null,
@@ -443,6 +445,36 @@ describe('PCD CRM adapter producer', () => {
       WHERE subject_type='contact'`).first<{ eligible_count: number; rejected_count: number; disposition_hash: string }>();
     expect(receipt).toMatchObject({ eligible_count: 0, rejected_count: 1 });
     expect(JSON.stringify(receipt)).not.toContain('private-value@test.example');
+  });
+
+  it('preserves a historical do-not-contact restriction without copying its channel', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-suppressed-contact', updatedAt: oldAt });
+    await insertContact(ops, {
+      id: 'contact-suppressed-historical',
+      organizationId: 'org-suppressed-contact',
+      updatedAt: oldAt,
+      doNotContact: true,
+    });
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    }), { now: Date.parse(oldAt) + 1 });
+    expect(result).toMatchObject({ contacts: 1, rejected: 0, scanCompleted: true, completed: false });
+    const event = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox
+      WHERE subject_id='contact-suppressed-historical'`).first<{ event_type: string; payload_json: string }>();
+    expect(event?.event_type).toBe('contact.deleted.v1');
+    const payload = JSON.parse(event?.payload_json ?? '{}').payload;
+    expect(payload).toMatchObject({
+      id: 'contact-suppressed-historical',
+      suppressionState: 'do_not_contact',
+    });
+    expect(payload.sourceVersion).toMatch(/^(?:revision|authority):\d+$/);
+    expect(payload.sourceVersion).not.toMatch(/^[a-f0-9]{64}$/);
+    expect(event?.payload_json).not.toContain('contact-suppressed-historical@test.example');
+    expect(await ops.prepare(`SELECT eligible_count,rejected_count FROM crm_adapter_backfill_chunks
+      WHERE subject_type='contact'`).first()).toEqual({ eligible_count: 1, rejected_count: 0 });
   });
 
   it('terminally dispositions a historical soft-deleted contact without resurrecting its channel', async () => {
@@ -1325,8 +1357,77 @@ describe('PCD CRM adapter producer', () => {
     expect(await setDoNotContact(adapterEnv, result.ok ? result.id : '', 'unsubscribed')).toBe(true);
     const rows = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox WHERE subject_id=?`)
       .bind(result.ok ? result.id : '').all<{ event_type: string; payload_json: string }>();
-    expect(rows.results.map((row) => row.event_type)).toEqual([]);
+    expect(rows.results.map((row) => row.event_type)).toEqual(['contact.deleted.v1']);
+    expect(JSON.parse(rows.results[0]?.payload_json ?? '{}').payload).toMatchObject({
+      id: result.ok ? result.id : '',
+      suppressionState: 'do_not_contact',
+    });
     expect(JSON.stringify(rows.results)).not.toContain('private@org-unsent-suppression.example');
+  });
+
+  it('does not mint an unsuppressed identity when a phone-only DNC contact is rediscovered', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const first = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-phone-dnc', fullName: 'Phone Contact', role: 'director',
+      phone: '+1 (555) 555-0199', source: 'website', sourceUrl: 'https://org-phone-dnc.example/staff',
+      contactContext: 'professional',
+    });
+    expect(first.ok).toBe(true);
+    expect(await setDoNotContact(adapterEnv, first.ok ? first.id : '', 'unsubscribed')).toBe(true);
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-phone-dnc', fullName: 'Rediscovered Contact', role: 'coach',
+      phone: '+1 (555) 555-0199', source: 'website', sourceUrl: 'https://org-phone-dnc.example/new',
+      contactContext: 'professional',
+    })).resolves.toEqual({ ok: false, reason: 'suppressed' });
+    expect(await ops.prepare(`SELECT COUNT(*) count FROM org_contacts
+      WHERE organization_id='org-phone-dnc'`).first()).toEqual({ count: 1 });
+  });
+
+  it('does not mint an unsuppressed identity when a deleted DNC email is rediscovered', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const first = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-deleted-dnc', fullName: 'Deleted Contact', role: 'director',
+      email: 'deleted@org-deleted-dnc.example', source: 'website',
+      sourceUrl: 'https://org-deleted-dnc.example/staff', contactContext: 'professional',
+    });
+    expect(first.ok).toBe(true);
+    expect(await setDoNotContact(adapterEnv, first.ok ? first.id : '', 'privacy_request')).toBe(true);
+    expect(await softDeleteOrgContact(adapterEnv, first.ok ? first.id : '')).toBe(true);
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-deleted-dnc', fullName: 'Rediscovered Contact', role: 'coach',
+      email: 'deleted@org-deleted-dnc.example', source: 'website',
+      sourceUrl: 'https://org-deleted-dnc.example/new', contactContext: 'professional',
+    })).resolves.toEqual({ ok: false, reason: 'suppressed' });
+    expect(await ops.prepare(`SELECT COUNT(*) count FROM org_contacts
+      WHERE organization_id='org-deleted-dnc'`).first()).toEqual({ count: 1 });
+  });
+
+  it('does not mint an unsuppressed identity when the same named DNC contact is found on another channel', async () => {
+    const { ops, intel } = await databases();
+    const adapterEnv = env(ops, intel);
+    const first = await upsertOrgContact(adapterEnv, {
+      organizationId: 'org-cross-channel-dnc', fullName: 'Cross Channel Contact', role: 'director',
+      email: 'cross-channel@org.example', source: 'website', sourceUrl: 'https://org.example/staff',
+      contactContext: 'professional',
+    });
+    expect(first.ok).toBe(true);
+    expect(await setDoNotContact(adapterEnv, first.ok ? first.id : '', 'privacy_request')).toBe(true);
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-cross-channel-dnc', fullName: '  CROSS   CHANNEL CONTACT ', role: 'director',
+      phone: '+1 555 555 0107', source: 'website', sourceUrl: 'https://org.example/directory',
+      contactContext: 'professional',
+    })).resolves.toEqual({ ok: false, reason: 'suppressed' });
+    expect(await ops.prepare(`SELECT COUNT(*) count FROM org_contacts
+      WHERE organization_id='org-cross-channel-dnc'`).first()).toEqual({ count: 1 });
+  });
+
+  it('reports a missing contact instead of falsely succeeding a do-not-contact mutation', async () => {
+    const { ops, intel } = await databases();
+    await expect(setDoNotContact(env(ops, intel), 'contact-does-not-exist', 'privacy_request')).resolves.toBe(false);
+    expect(await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox
+      WHERE subject_id='contact-does-not-exist'`).first()).toEqual({ count: 0 });
   });
 
   it('retracts a previously projected contact when it is reclassified as minor', async () => {
@@ -1419,7 +1520,11 @@ describe('PCD CRM adapter producer', () => {
     });
     const queued = await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox WHERE subject_id=?
       ORDER BY source_sequence`).bind(result.ok ? result.id : '').all<{ event_type: string; payload_json: string }>();
-    expect(queued.results).toEqual([]);
+    expect(queued.results).toHaveLength(1);
+    expect(queued.results[0]?.event_type).toBe('contact.deleted.v1');
+    expect(JSON.parse(queued.results[0]?.payload_json ?? '{}').payload.suppressionState).toBe('do_not_contact');
+    expect(JSON.stringify(queued.results)).not.toContain('original@org-suppressed-minor.example');
+    expect(JSON.stringify(queued.results)).not.toContain('Replacement Name');
   });
 
   it.each([
@@ -1568,7 +1673,10 @@ describe('PCD CRM adapter producer', () => {
       WHERE subject_id='contact-many-targets' AND event_type='contact.deleted.v1'
       ORDER BY target_workspace_id`).all<{ target_workspace_id: string }>();
     expect(targets.results.map((row) => row.target_workspace_id))
-      .toEqual(Array.from({ length: 25 }, (_, index) => `workspace-${String(index).padStart(2, '0')}`));
+      .toEqual([
+        ...Array.from({ length: 25 }, (_, index) => `workspace-${String(index).padStart(2, '0')}`),
+        'ws-sightsmash',
+      ]);
     expect(await ops.prepare(`SELECT status FROM crm_contact_retraction_runs WHERE subject_id='contact-many-targets'`).first())
       .toEqual({ status: 'completed' });
   });
@@ -1594,6 +1702,7 @@ describe('PCD CRM adapter producer', () => {
     expect(rows.results).toMatchObject([
       { event_type: 'contact.observed.v1', status: 'retry', cancelled_at: expect.any(Number), target_workspace_id: 'workspace-one' },
       { event_type: 'contact.deleted.v1', status: 'pending', cancelled_at: null, target_workspace_id: 'workspace-one' },
+      { event_type: 'contact.deleted.v1', status: 'pending', cancelled_at: null, target_workspace_id: 'workspace-two' },
     ]);
   });
 
@@ -1801,7 +1910,7 @@ describe('PCD CRM adapter producer', () => {
     expect(JSON.parse(tombstone?.payload_json ?? '{}').payload.workspaceId).toBe('workspace-one');
   });
 
-  it('does not tombstone an old target when its observation was never attempted', async () => {
+  it('does not tombstone an unattempted old target while preserving suppression in the current target', async () => {
     const { ops, intel } = await databases();
     const at = '2026-09-03T12:00:00.000Z';
     await insertOrganization(intel, { id: 'org-retarget-unsent', updatedAt: at });
@@ -1812,8 +1921,10 @@ describe('PCD CRM adapter producer', () => {
 
     const retargetedEnv = env(ops, intel, { PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-two' });
     await expect(setDoNotContact(retargetedEnv, 'contact-retarget-unsent', 'privacy_request')).resolves.toBe(true);
-    expect(await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox
-      WHERE subject_id='contact-retarget-unsent'`).first()).toEqual({ count: 0 });
+    expect(await ops.prepare(`SELECT event_type,target_workspace_id FROM crm_adapter_outbox
+      WHERE subject_id='contact-retarget-unsent'`).all()).toMatchObject({ results: [
+      { event_type: 'contact.deleted.v1', target_workspace_id: 'workspace-two' },
+    ] });
   });
 
   it('reports reconciliation findings as not clean', async () => {

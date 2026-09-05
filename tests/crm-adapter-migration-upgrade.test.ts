@@ -36,12 +36,17 @@ describe('CRM adapter migration upgrade', () => {
       JSON.stringify({ payload: { workspaceId: 'ws-sightsmash' } }), 'a'.repeat(64),
       'idempotency-upgrade', 'retry', 2, at, at, at, 'ws-sightsmash',
     ).run();
+    await db.prepare(`INSERT INTO org_contacts
+      (id,organization_id,full_name,phone,do_not_contact,contact_context,created_at,updated_at)
+      VALUES ('contact-unicode-phone','org-upgrade','Unicode Phone','1 555 555‑0199',1,'professional',?,?)`)
+      .bind(new Date(at).toISOString(), new Date(at).toISOString()).run();
 
     for (const name of [
       '0039_crm_adapter_atomic_send_cancellation.sql',
       '0040_crm_adapter_bounded_retractions.sql',
       '0041_crm_backfill_created_cursor_and_public_contact_safety.sql',
       '0042_crm_backfill_approval_manifest.sql',
+      '0043_org_contact_dnc_identity.sql',
     ]) {
       const sql = await readFile(new URL(name, directory), 'utf8');
       for (const statement of splitSqlStatements(sql)) await db.prepare(statement).run();
@@ -68,6 +73,16 @@ describe('CRM adapter migration upgrade', () => {
     expect(await db.prepare(`SELECT sql FROM sqlite_master
       WHERE type='index' AND name='idx_crm_adapter_backfill_manifest'`).first())
       .toMatchObject({ sql: expect.stringContaining('UNIQUE INDEX') });
+    for (const name of ['email_identity', 'phone_identity', 'name_identity']) {
+      expect(await db.prepare(`SELECT 1 FROM pragma_table_info('org_contacts') WHERE name=?`)
+        .bind(name).first()).toEqual({ 1: 1 });
+    }
+    for (const name of ['idx_org_contacts_email_identity', 'idx_org_contacts_phone_identity', 'idx_org_contacts_name_identity']) {
+      expect(await db.prepare(`SELECT 1 FROM sqlite_master WHERE type='index' AND name=?`)
+        .bind(name).first()).toEqual({ 1: 1 });
+    }
+    expect(await db.prepare(`SELECT phone_identity FROM org_contacts
+      WHERE id='contact-unicode-phone'`).first()).toEqual({ phone_identity: '15555550199' });
     await db.prepare(`INSERT INTO org_contacts (id,organization_id,full_name,contact_context)
       VALUES ('contact-upgrade','org-upgrade','Upgrade Contact','professional')`).run();
     const before = await db.prepare(`SELECT crm_projection_revision FROM org_contacts WHERE id=?`)
