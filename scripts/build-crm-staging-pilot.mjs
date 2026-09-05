@@ -98,7 +98,7 @@ function buildContactsMutation(boundaryMs, createdAt) {
   ].map(sqlValue).join(',')})`).join(',\n  ');
   return `${header(boundaryMs)}
 WITH receipt_gate AS (
-  SELECT COUNT(*) AS ready
+  SELECT COUNT(*)
   FROM crm_adapter_projection_receipts receipt
   JOIN crm_adapter_outbox event ON event.event_id=receipt.last_event_id
     AND event.subject_type=receipt.subject_type
@@ -202,17 +202,17 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
   const outputDir = resolve(rawOutputDir);
   const organizationUpdatedAt = new Date(boundaryMs + 1_000).toISOString();
   const contactCreatedAt = new Date(boundaryMs + 4_000).toISOString();
-  const files = new Map([
+  const files = [
     ['00-directory-preflight.sql', buildDirectoryPreflight(boundaryMs)],
     ['00-ops-preflight.sql', buildOpsPreflight(boundaryMs)],
     ['01-directory-organizations.sql', buildDirectoryMutation(boundaryMs, organizationUpdatedAt)],
     ['02-ops-contacts.sql', buildContactsMutation(boundaryMs, contactCreatedAt)],
     ['90-directory-verification.sql', buildDirectoryVerification(boundaryMs, organizationUpdatedAt)],
     ['91-ops-verification.sql', buildOpsVerification(boundaryMs)],
-  ]);
+  ];
   const dispositionCounts = Object.fromEntries(CONTACTS.map(({ disposition }) => [disposition, 0]));
   for (const { disposition } of CONTACTS) dispositionCounts[disposition] += 1;
-  const artifacts = [...files].map(([file, contents]) => ({
+  const artifacts = files.map(([file, contents]) => ({
     file, sha256: sha256(contents), bytes: Buffer.byteLength(contents),
   }));
   const manifest = {

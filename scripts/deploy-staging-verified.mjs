@@ -39,6 +39,10 @@ function validActivationBoundary(value) {
   return /^\d+$/.test(String(value ?? '')) && Number.isSafeInteger(parsed) && parsed > 0 && parsed % 1000 === 0;
 }
 
+function actionTimeActivationBoundary(value) {
+  return validActivationBoundary(value) && Math.abs(Date.now() - Number(value)) <= 15 * 60 * 1_000;
+}
+
 function hasExactBinding(actual, expected, fields) {
   return actual.some((binding) => fields.every((field) => binding?.[field] === expected[field]));
 }
@@ -80,6 +84,10 @@ export function parseDeploymentArguments(args) {
   if (parsed.expectedCrmSourceNotBeforeMs !== undefined
     && !validActivationBoundary(parsed.expectedCrmSourceNotBeforeMs)) {
     throw new Error('activation boundary must be a positive second-aligned Unix millisecond value');
+  }
+  if (parsed.expectedCrmSourceNotBeforeMs !== undefined
+    && !actionTimeActivationBoundary(parsed.expectedCrmSourceNotBeforeMs)) {
+    throw new Error('activation boundary must be within 15 minutes of deployment');
   }
   return parsed;
 }
@@ -214,6 +222,10 @@ export async function deployStagingManifest({
     return;
   }
 
+  if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
+    throw new Error('activation boundary must be within 15 minutes of deployment');
+  }
+
   const activationConfigPath = resolve(
     projectRoot,
     'dist/server',
@@ -226,6 +238,9 @@ export async function deployStagingManifest({
     } finally {
       await handle.close();
     }
+    if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
+      throw new Error('activation boundary must be within 15 minutes of deployment');
+    }
     runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', activationConfigPath, '--keep-vars', '--message', message], { cwd: projectRoot });
   } finally {
     await unlinkConfig(activationConfigPath);
@@ -235,17 +250,27 @@ export async function deployStagingManifest({
 export async function buildAndVerifyStagingManifest({
   projectRoot = process.cwd(),
   expectedCrmSourceNotBeforeMs,
+  npmCli = process.env.npm_execpath,
+  runCommand = run,
+  readManifest = readFile,
 } = {}) {
   if (expectedCrmSourceNotBeforeMs !== undefined
     && !validActivationBoundary(expectedCrmSourceNotBeforeMs)) {
     throw new Error('activation boundary must be a positive second-aligned Unix millisecond value');
   }
-  const npmCli = process.env.npm_execpath;
+  if (expectedCrmSourceNotBeforeMs !== undefined
+    && !actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
+    throw new Error('activation boundary must be within 15 minutes of deployment');
+  }
   if (!npmCli) throw new Error('deploy-staging-verified.mjs must be run through npm');
   const buildEnvironment = { ...process.env, PCD_OWNER_AUTH_PROOF_ENABLED: 'false' };
   delete buildEnvironment.WRANGLER_CONFIG_PATH;
-  run(process.execPath, [npmCli, 'run', 'build'], { cwd: projectRoot, env: buildEnvironment });
-  const baseManifest = JSON.parse(await readFile(resolve(projectRoot, 'dist/server/wrangler.json'), 'utf8'));
+  runCommand(process.execPath, [npmCli, 'run', 'build'], { cwd: projectRoot, env: buildEnvironment });
+  if (expectedCrmSourceNotBeforeMs !== undefined
+    && !actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
+    throw new Error('activation boundary must be within 15 minutes of deployment');
+  }
+  const baseManifest = JSON.parse(await readManifest(resolve(projectRoot, 'dist/server/wrangler.json'), 'utf8'));
   const baseErrors = validateStagingDeploymentManifest(baseManifest, {
     expectedConfigPath: resolve(projectRoot, 'wrangler.jsonc'),
   });

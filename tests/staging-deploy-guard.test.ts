@@ -1,12 +1,19 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { PathLike } from 'node:fs';
 import type { FileHandle } from 'node:fs/promises';
 import {
+  buildAndVerifyStagingManifest,
   deployStagingManifest,
   parseDeploymentArguments,
   prepareStagingDeploymentManifest,
   validateStagingDeploymentManifest,
 } from '../scripts/deploy-staging-verified.mjs';
+
+const actionBoundary = String(Math.floor(Date.now() / 1_000) * 1_000);
+
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 const valid = {
   configPath: 'C:/workspace/wrangler.jsonc',
@@ -190,10 +197,90 @@ describe('verified staging deployment guard', () => {
     expect(() => parseDeploymentArguments([
       '--crm-activation-boundary-ms', '1788566400001', '--confirm-crm-activation',
     ])).toThrow('activation boundary must be a positive second-aligned Unix millisecond value');
+    expect(parseDeploymentArguments([
+      '--crm-activation-boundary-ms', actionBoundary, '--confirm-crm-activation',
+    ]).activationConfirmed).toBe(true);
+    expect(() => parseDeploymentArguments([
+      '--crm-activation-boundary-ms', String(Number(actionBoundary) - 16 * 60 * 1_000),
+      '--confirm-crm-activation',
+    ])).toThrow('activation boundary must be within 15 minutes of deployment');
+  });
+
+  it('refuses a stale activation boundary before opening a temporary config', async () => {
+    const staleBoundary = String(Number(actionBoundary) - 16 * 60 * 1_000);
+    const opened: string[] = [];
+    await expect(deployStagingManifest({
+      manifest: prepareStagingDeploymentManifest(valid, staleBoundary),
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: staleBoundary,
+      npmCli: 'npm-cli.js',
+      openConfig: async (path: PathLike) => {
+        opened.push(String(path));
+        return { writeFile: async () => {}, close: async () => {} } as unknown as FileHandle;
+      },
+      unlinkConfig: async () => {},
+      runCommand: () => {},
+    })).rejects.toThrow('activation boundary must be within 15 minutes of deployment');
+    expect(opened).toEqual([]);
+  });
+
+  it('rechecks activation freshness before config creation and immediately before deploy', async () => {
+    const activation = prepareStagingDeploymentManifest(valid, actionBoundary);
+    const beforeOpen: string[] = [];
+    vi.spyOn(Date, 'now')
+      .mockReturnValue(Number(actionBoundary) + 16 * 60 * 1_000);
+    await expect(deployStagingManifest({
+      manifest: activation,
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: actionBoundary,
+      npmCli: 'npm-cli.js',
+      openConfig: async () => {
+        beforeOpen.push('open');
+        return { writeFile: async () => {}, close: async () => {} } as unknown as FileHandle;
+      },
+      unlinkConfig: async () => { beforeOpen.push('unlink'); },
+      runCommand: () => { beforeOpen.push('deploy'); },
+    })).rejects.toThrow('activation boundary must be within 15 minutes of deployment');
+    expect(beforeOpen).toEqual([]);
+    vi.restoreAllMocks();
+
+    const beforeDeploy: string[] = [];
+    vi.spyOn(Date, 'now')
+      .mockReturnValueOnce(Number(actionBoundary))
+      .mockReturnValueOnce(Number(actionBoundary))
+      .mockReturnValue(Number(actionBoundary) + 16 * 60 * 1_000);
+    await expect(deployStagingManifest({
+      manifest: activation,
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: actionBoundary,
+      npmCli: 'npm-cli.js',
+      openConfig: async () => ({
+        writeFile: async () => { beforeDeploy.push('write'); },
+        close: async () => { beforeDeploy.push('close'); },
+      } as unknown as FileHandle),
+      unlinkConfig: async () => { beforeDeploy.push('unlink'); },
+      runCommand: () => { beforeDeploy.push('deploy'); },
+    })).rejects.toThrow('activation boundary must be within 15 minutes of deployment');
+    expect(beforeDeploy).toEqual(['write', 'close', 'unlink']);
+  });
+
+  it('rechecks activation freshness after the application build', async () => {
+    vi.spyOn(Date, 'now')
+      .mockReturnValueOnce(Number(actionBoundary))
+      .mockReturnValue(Number(actionBoundary) + 16 * 60 * 1_000);
+    const calls: string[] = [];
+    await expect(buildAndVerifyStagingManifest({
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: actionBoundary,
+      npmCli: 'npm-cli.js',
+      runCommand: () => { calls.push('build'); },
+      readManifest: async () => JSON.stringify(valid),
+    } as any)).rejects.toThrow('activation boundary must be within 15 minutes of deployment');
+    expect(calls).toEqual(['build']);
   });
 
   it('deploys the derived activation config and always removes its owned temporary file', async () => {
-    const activation = prepareStagingDeploymentManifest(valid, '1788566400000');
+    const activation = prepareStagingDeploymentManifest(valid, actionBoundary);
     const calls: string[] = [];
     let deployedArgs: string[] = [];
     let written = '';
@@ -209,7 +296,7 @@ describe('verified staging deployment guard', () => {
     await deployStagingManifest({
       manifest: activation,
       projectRoot: 'C:/workspace',
-      expectedCrmSourceNotBeforeMs: '1788566400000',
+      expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig,
       unlinkConfig,
@@ -225,12 +312,12 @@ describe('verified staging deployment guard', () => {
   });
 
   it('removes the activation config after deploy or post-open write failure', async () => {
-    const activation = prepareStagingDeploymentManifest(valid, '1788566400000');
+    const activation = prepareStagingDeploymentManifest(valid, actionBoundary);
     const removedAfterDeploy: string[] = [];
     await expect(deployStagingManifest({
       manifest: activation,
       projectRoot: 'C:/workspace',
-      expectedCrmSourceNotBeforeMs: '1788566400000',
+      expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async () => ({ writeFile: async () => {}, close: async () => {} } as unknown as FileHandle),
       unlinkConfig: async (path: PathLike) => { removedAfterDeploy.push(String(path)); },
@@ -242,7 +329,7 @@ describe('verified staging deployment guard', () => {
     await expect(deployStagingManifest({
       manifest: activation,
       projectRoot: 'C:/workspace',
-      expectedCrmSourceNotBeforeMs: '1788566400000',
+      expectedCrmSourceNotBeforeMs: actionBoundary,
       npmCli: 'npm-cli.js',
       openConfig: async () => ({
         writeFile: async () => { throw new Error('disk full'); },
