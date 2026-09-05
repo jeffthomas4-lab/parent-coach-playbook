@@ -966,7 +966,7 @@ export async function projectPcdCrmBackfill(
         ORDER BY id LIMIT ?`)
         .bind(run.organization_cursor_created_second, run.organization_cursor_id, snapshotBeforeSecond, limit)
         .all<OrganizationRow & { crm_cursor_created_second: number }>();
-      const organizationRows = [...sameSecond.results];
+      const organizationRows = sameSecond.results;
       const remaining = limit - organizationRows.length;
       if (remaining > 0) {
         const laterSeconds = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
@@ -1010,7 +1010,7 @@ export async function projectPcdCrmBackfill(
         ORDER BY id LIMIT ?`)
         .bind(run.contact_cursor_created_second, run.contact_cursor_id, snapshotBeforeSecond, limit)
         .all<PcdContactProjectionInput & { crm_cursor_created_second: number }>();
-      const contactRows = [...sameSecond.results];
+      const contactRows = sameSecond.results;
       const remaining = limit - contactRows.length;
       if (remaining > 0) {
         const laterSeconds = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,contact_context,
