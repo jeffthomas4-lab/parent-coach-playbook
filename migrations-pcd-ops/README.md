@@ -8,6 +8,8 @@ Current state: an isolated staging database is migrated and rehearsed through `0
 
 `0034` indexes actionable outbox claims in source-sequence order. `0035` adds bounded contact context needed to prove a contact is public and professional rather than inferring eligibility from a channel alone. `0036` through `0040` add the safety indexes, state, atomic cancellation, and bounded retraction controls retained by the adapter attack suites. `0041` moves historical cursors to the immutable `(created second, id)` key and records public-contact safety policy in the backfill run. Existing discovered contacts remain private by default; applying these migrations cannot make a contact active without the application eligibility checks and a human-set public decision.
 
+`0042` binds each historical run to the exact approved manifest hash, source and target D1 identities, source Time Travel bookmarks, and contact-policy version. A partial unique index makes one nonempty manifest authorize only one run/target while remaining upgrade-safe for legacy empty rows. The migration enables nothing; runtime refuses to create or resume a historical run unless every approval identity is present and matches the retained row.
+
 Until the legacy `migrations/` lineage is retired or split through a separately reviewed repository migration, CI requires migrations `0011` through `0014` to remain byte-identical to their legacy locations. New PCD operational migrations, beginning with `0015`, belong only here and must not be added to the directory-data lineage.
 
 Remaining activation sequence:

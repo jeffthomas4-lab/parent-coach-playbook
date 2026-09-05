@@ -22,6 +22,13 @@ export interface PcdCrmAdapterEnv {
   PCD_CRM_TARGET_WORKSPACE_ID?: string;
   PCD_CRM_SOURCE_ID?: string;
   PCD_CRM_SOURCE_NOT_BEFORE_MS?: string;
+  PCD_CRM_BACKFILL_MANIFEST_SHA256?: string;
+  PCD_CRM_DIRECTORY_DATABASE_ID?: string;
+  PCD_CRM_OPS_DATABASE_ID?: string;
+  PCD_CRM_TARGET_DATABASE_ID?: string;
+  PCD_CRM_DIRECTORY_BOOKMARK?: string;
+  PCD_CRM_OPS_BOOKMARK?: string;
+  PCD_CRM_SOURCE_POLICY_VERSION?: string;
 }
 
 interface OrganizationRow {
@@ -108,6 +115,13 @@ interface OutboxHeadRow extends OutboxRow {
 interface BackfillRunRow {
   id: string;
   snapshot_before_ms: number;
+  approval_manifest_sha256: string;
+  directory_database_id: string;
+  ops_database_id: string;
+  target_database_id: string;
+  directory_bookmark: string;
+  ops_bookmark: string;
+  source_policy_version: string;
   expected_organization_rows: number;
   expected_contact_rows: number;
   status: 'running' | 'scanned' | 'completed';
@@ -222,6 +236,16 @@ interface PcdAdapterConfig {
   sourceNotBeforeMs: number;
 }
 
+interface BackfillApprovalConfig {
+  manifestSha256: string;
+  directoryDatabaseId: string;
+  opsDatabaseId: string;
+  targetDatabaseId: string;
+  directoryBookmark: string;
+  opsBookmark: string;
+  sourcePolicyVersion: string;
+}
+
 function requireConfig(env: PcdCrmAdapterEnv): PcdAdapterConfig | null {
   const producerWorkspaceId = env.PCD_CRM_PRODUCER_WORKSPACE_ID?.trim() ?? '';
   const targetWorkspaceId = env.PCD_CRM_TARGET_WORKSPACE_ID?.trim() ?? '';
@@ -232,6 +256,31 @@ function requireConfig(env: PcdCrmAdapterEnv): PcdAdapterConfig | null {
     || !/^\d+$/.test(sourceNotBeforeRaw) || !Number.isSafeInteger(sourceNotBeforeMs)
     || sourceNotBeforeMs <= 0 || sourceNotBeforeMs % 1000 !== 0) return null;
   return { producerWorkspaceId, targetWorkspaceId, sourceId, sourceNotBeforeMs };
+}
+
+function requireBackfillApproval(env: PcdCrmAdapterEnv): BackfillApprovalConfig | null {
+  const manifestSha256 = env.PCD_CRM_BACKFILL_MANIFEST_SHA256?.trim() ?? '';
+  const directoryDatabaseId = env.PCD_CRM_DIRECTORY_DATABASE_ID?.trim() ?? '';
+  const opsDatabaseId = env.PCD_CRM_OPS_DATABASE_ID?.trim() ?? '';
+  const targetDatabaseId = env.PCD_CRM_TARGET_DATABASE_ID?.trim() ?? '';
+  const directoryBookmark = env.PCD_CRM_DIRECTORY_BOOKMARK?.trim() ?? '';
+  const opsBookmark = env.PCD_CRM_OPS_BOOKMARK?.trim() ?? '';
+  const sourcePolicyVersion = env.PCD_CRM_SOURCE_POLICY_VERSION?.trim() ?? '';
+  const uuid = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/;
+  const bookmark = /^[a-f0-9]{8}(?:-[a-f0-9]{8}){2}-[a-f0-9]{32}$/;
+  if (!/^[a-f0-9]{64}$/.test(manifestSha256)
+    || !uuid.test(directoryDatabaseId) || !uuid.test(opsDatabaseId) || !uuid.test(targetDatabaseId)
+    || !bookmark.test(directoryBookmark) || !bookmark.test(opsBookmark)
+    || !/^[A-Za-z0-9][A-Za-z0-9._:-]{0,79}$/.test(sourcePolicyVersion)) return null;
+  return {
+    manifestSha256,
+    directoryDatabaseId,
+    opsDatabaseId,
+    targetDatabaseId,
+    directoryBookmark,
+    opsBookmark,
+    sourcePolicyVersion,
+  };
 }
 
 async function organizationDraft(
@@ -803,8 +852,17 @@ async function ensureBackfillRun(
 ): Promise<BackfillRunRow> {
   if (!env.DB || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
   const db = env.PCD_OPS_DB;
-  const runId = `pcd-backfill:${await sha256(`${config.producerWorkspaceId}:${config.targetWorkspaceId}:${config.sourceNotBeforeMs}`)}`;
-  let run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
+  const approval = requireBackfillApproval(env);
+  if (!approval) throw new Error('pcd_crm_backfill_approval_configuration_missing');
+  const runId = `pcd-backfill:${await sha256(stableJson({
+    producerWorkspaceId: config.producerWorkspaceId,
+    targetWorkspaceId: config.targetWorkspaceId,
+    sourceNotBeforeMs: config.sourceNotBeforeMs,
+    ...approval,
+  }))}`;
+  let run = await db.prepare(`SELECT id,snapshot_before_ms,approval_manifest_sha256,directory_database_id,
+    ops_database_id,target_database_id,directory_bookmark,ops_bookmark,source_policy_version,
+    expected_organization_rows,expected_contact_rows,
     status,organization_cursor_id,contact_cursor_id,organization_cursor_created_second,contact_cursor_created_second,
     organization_complete,contact_complete,lease_id,lease_expires_at,
     reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete,
@@ -829,12 +887,17 @@ async function ensureBackfillRun(
     }
     await db.prepare(`INSERT OR IGNORE INTO crm_adapter_backfill_runs
       (id,producer_workspace_id,target_workspace_id,snapshot_before_ms,expected_organization_rows,
-       expected_contact_rows,status,started_at,updated_at)
-      VALUES (?,?,?,?,?,?,'running',?,?)`).bind(
+       expected_contact_rows,approval_manifest_sha256,directory_database_id,ops_database_id,target_database_id,
+       directory_bookmark,ops_bookmark,source_policy_version,status,started_at,updated_at)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'running',?,?)`).bind(
       runId, config.producerWorkspaceId, config.targetWorkspaceId, config.sourceNotBeforeMs,
-      Number(organizations?.count ?? 0), Number(contacts?.count ?? 0), now, now,
+      Number(organizations?.count ?? 0), Number(contacts?.count ?? 0), approval.manifestSha256,
+      approval.directoryDatabaseId, approval.opsDatabaseId, approval.targetDatabaseId,
+      approval.directoryBookmark, approval.opsBookmark, approval.sourcePolicyVersion, now, now,
     ).run();
-    run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
+    run = await db.prepare(`SELECT id,snapshot_before_ms,approval_manifest_sha256,directory_database_id,
+      ops_database_id,target_database_id,directory_bookmark,ops_bookmark,source_policy_version,
+      expected_organization_rows,expected_contact_rows,
       status,organization_cursor_id,contact_cursor_id,organization_cursor_created_second,contact_cursor_created_second,
       organization_complete,contact_complete,lease_id,lease_expires_at,
       reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete,
@@ -843,7 +906,14 @@ async function ensureBackfillRun(
       WHERE producer_workspace_id=? AND target_workspace_id=?`).bind(config.producerWorkspaceId, config.targetWorkspaceId)
       .first<BackfillRunRow>();
   }
-  if (!run || Number(run.snapshot_before_ms) !== config.sourceNotBeforeMs || run.id !== runId) {
+  if (!run || Number(run.snapshot_before_ms) !== config.sourceNotBeforeMs || run.id !== runId
+    || run.approval_manifest_sha256 !== approval.manifestSha256
+    || run.directory_database_id !== approval.directoryDatabaseId
+    || run.ops_database_id !== approval.opsDatabaseId
+    || run.target_database_id !== approval.targetDatabaseId
+    || run.directory_bookmark !== approval.directoryBookmark
+    || run.ops_bookmark !== approval.opsBookmark
+    || run.source_policy_version !== approval.sourcePolicyVersion) {
     throw new Error('pcd_crm_backfill_boundary_conflict');
   }
   if (verifyInventory) {

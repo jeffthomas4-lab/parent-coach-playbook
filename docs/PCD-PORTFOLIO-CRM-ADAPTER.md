@@ -41,6 +41,18 @@ flags false; production remains unconfigured:
 - `PCD_CRM_SOURCE_NOT_BEFORE_MS`: positive Unix-millisecond activation watermark. An enabled
   adapter fails closed without it and will not scan or emit organization/contact source rows whose
   `updated_at` precedes it.
+- `PCD_CRM_BACKFILL_MANIFEST_SHA256`: exact lowercase digest of the approved historical-run
+  manifest;
+- `PCD_CRM_DIRECTORY_DATABASE_ID`, `PCD_CRM_OPS_DATABASE_ID`, and
+  `PCD_CRM_TARGET_DATABASE_ID`: exact source and target D1 identities named by that manifest;
+- `PCD_CRM_DIRECTORY_BOOKMARK` and `PCD_CRM_OPS_BOOKMARK`: exact source Time Travel bookmarks;
+- `PCD_CRM_SOURCE_POLICY_VERSION`: bounded policy identifier used for the contact dispositions.
+
+The seven historical approval fields are required only when both adapter switches are true. They
+are validated before the first source inventory query, incorporated into the immutable run ID,
+and persisted on the run. A database uniqueness constraint prevents one manifest from authorizing
+two targets, including under concurrent attempts. Any missing, malformed, changed, or retargeted
+identity prevents creation or resume before a cursor or outbox row can mutate.
 
 The committed configuration and active staging version keep both switches false. A dedicated
 minute cron is declared but returns without source reads, receiver calls, or writes while the
@@ -62,6 +74,9 @@ provider/data action.
   records only counts plus a hash of each chunk's
   dispositions; later `updated_at` changes stay in that frozen membership and also flow through the
   live event cursor;
+- the historical run is permanently bound to the exact approval-manifest hash, source/target D1
+  identities, source bookmarks, policy version, workspace pair, and activation boundary; it cannot
+  be silently resumed under a different snapshot or policy;
 - historical organizations are queued before either historical or live contacts, preventing a
   contact from reaching the CRM before its organization;
 - a 60-second lease prevents concurrent cursor advancement, and every chunk/cursor update verifies
@@ -106,6 +121,7 @@ off throughout this pilot.
 - approximate algorithmic complexity: O(o + c) over a complete projection, with O(50) projection
   work per minute tick and O(log n + 10) indexed claim work for each delivery tick;
 - DB query count: 0 when disabled; the first historical tick adds 2 aggregate source-count reads;
+  approval validation adds 0 queries and only extends the existing bounded run lookup/insert;
   an ordinary historical tick reads one source chunk and performs bounded control, dedupe, receipt,
   and cursor work; a post-delivery minute tick adds one 100-row reconciliation read and bounded
   receipt/cursor writes; while delivery is incomplete, indexed existence checks replace a repeated

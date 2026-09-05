@@ -135,7 +135,9 @@
     "PCD_COMMERCE_TEST_MODE_ENABLED": "false",
     "PCD_CRM_ADAPTER_ENABLED": "false",
     // Historical projection remains separately disabled. Enabling it also
-    // requires an exact action-time PCD_CRM_SOURCE_NOT_BEFORE_MS boundary.
+    // requires an exact action-time PCD_CRM_SOURCE_NOT_BEFORE_MS boundary plus
+    // the manifest hash, three D1 identities, two source bookmarks, and policy
+    // version documented in docs/PCD-PORTFOLIO-CRM-ADAPTER.md.
     "PCD_CRM_BACKFILL_ENABLED": "false",
     "PCD_CRM_PRODUCER_WORKSPACE_ID": "pcd-activity-radar",
     "PCD_CRM_TARGET_WORKSPACE_ID": "ws-sightsmash",

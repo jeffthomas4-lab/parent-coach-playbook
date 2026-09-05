@@ -41,6 +41,7 @@ describe('CRM adapter migration upgrade', () => {
       '0039_crm_adapter_atomic_send_cancellation.sql',
       '0040_crm_adapter_bounded_retractions.sql',
       '0041_crm_backfill_created_cursor_and_public_contact_safety.sql',
+      '0042_crm_backfill_approval_manifest.sql',
     ]) {
       const sql = await readFile(new URL(name, directory), 'utf8');
       for (const statement of splitSqlStatements(sql)) await db.prepare(statement).run();
@@ -59,6 +60,14 @@ describe('CRM adapter migration upgrade', () => {
       expect(await db.prepare(`SELECT 1 FROM pragma_table_info('crm_adapter_backfill_runs')
         WHERE name=?`).bind(name).first()).toEqual({ 1: 1 });
     }
+    const backfillColumns = await db.prepare(`SELECT name FROM pragma_table_info('crm_adapter_backfill_runs')`).all<{ name: string }>();
+    expect(backfillColumns.results.map(({ name }) => name)).toEqual(expect.arrayContaining([
+      'approval_manifest_sha256', 'directory_database_id', 'ops_database_id', 'target_database_id',
+      'directory_bookmark', 'ops_bookmark', 'source_policy_version',
+    ]));
+    expect(await db.prepare(`SELECT sql FROM sqlite_master
+      WHERE type='index' AND name='idx_crm_adapter_backfill_manifest'`).first())
+      .toMatchObject({ sql: expect.stringContaining('UNIQUE INDEX') });
     await db.prepare(`INSERT INTO org_contacts (id,organization_id,full_name,contact_context)
       VALUES ('contact-upgrade','org-upgrade','Upgrade Contact','professional')`).run();
     const before = await db.prepare(`SELECT crm_projection_revision FROM org_contacts WHERE id=?`)

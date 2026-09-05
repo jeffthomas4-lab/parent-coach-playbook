@@ -60,6 +60,13 @@ function env(ops: D1Database, intel: D1Database, extra: Partial<PcdCrmAdapterEnv
     PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
     PCD_CRM_SOURCE_ID: 'source-test',
     PCD_CRM_SOURCE_NOT_BEFORE_MS: '1000',
+    PCD_CRM_BACKFILL_MANIFEST_SHA256: 'a'.repeat(64),
+    PCD_CRM_DIRECTORY_DATABASE_ID: '11111111-1111-4111-8111-111111111111',
+    PCD_CRM_OPS_DATABASE_ID: '22222222-2222-4222-8222-222222222222',
+    PCD_CRM_TARGET_DATABASE_ID: '33333333-3333-4333-8333-333333333333',
+    PCD_CRM_DIRECTORY_BOOKMARK: '00000001-00000000-00000000-11111111111111111111111111111111',
+    PCD_CRM_OPS_BOOKMARK: '00000002-00000000-00000000-22222222222222222222222222222222',
+    PCD_CRM_SOURCE_POLICY_VERSION: 'pcd-public-professional-v1',
     ...extra,
   };
 }
@@ -317,6 +324,49 @@ describe('PCD CRM adapter producer', () => {
     expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_backfill_runs`).first<{ count: number }>())?.count).toBe(0);
   });
 
+  it('fails closed before creating a historical run without its sealed approval manifest', async () => {
+    const { ops, intel } = await databases();
+    await expect(projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_BACKFILL_MANIFEST_SHA256: '',
+    }))).rejects.toThrow('pcd_crm_backfill_approval_configuration_missing');
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_backfill_runs`)
+      .first<{ count: number }>())?.count).toBe(0);
+  });
+
+  it.each([
+    ['manifest digest', { PCD_CRM_BACKFILL_MANIFEST_SHA256: 'A'.repeat(64) }],
+    ['directory database identity', { PCD_CRM_DIRECTORY_DATABASE_ID: 'not-a-database-id' }],
+    ['ops bookmark', { PCD_CRM_OPS_BOOKMARK: 'not-a-bookmark' }],
+    ['policy version', { PCD_CRM_SOURCE_POLICY_VERSION: 'policy version with spaces' }],
+  ])('rejects malformed historical approval %s before creating a run', async (_label, override) => {
+    const { ops, intel } = await databases();
+    await expect(projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      ...override,
+    }))).rejects.toThrow('pcd_crm_backfill_approval_configuration_missing');
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_backfill_runs`)
+      .first<{ count: number }>())?.count).toBe(0);
+  });
+
+  it('refuses to resume an existing historical run under a different approved manifest', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    await insertOrganization(intel, {
+      id: 'org-manifest-bound',
+      updatedAt: '2026-09-01T12:00:00.000Z',
+    });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    await expect(projectPcdCrmBackfill(adapterEnv, { now: cutoff + 1 })).resolves.toMatchObject({ enabled: true });
+    await expect(projectPcdCrmBackfill({
+      ...adapterEnv,
+      PCD_CRM_BACKFILL_MANIFEST_SHA256: 'b'.repeat(64),
+    }, { now: cutoff + 2 })).rejects.toThrow('pcd_crm_backfill_boundary_conflict');
+  });
+
   it('backfills only pre-activation rows with durable bounded receipts and resumes to completion', async () => {
     const { ops, intel } = await databases();
     const oldAt = '2026-09-01T12:00:00.000Z';
@@ -353,6 +403,17 @@ describe('PCD CRM adapter producer', () => {
       contact_cursor_id: 'contact-historical',
       organization_complete: 1,
       contact_complete: 1,
+    });
+    expect(await ops.prepare(`SELECT approval_manifest_sha256,directory_database_id,ops_database_id,
+      target_database_id,directory_bookmark,ops_bookmark,source_policy_version
+      FROM crm_adapter_backfill_runs`).first()).toEqual({
+      approval_manifest_sha256: 'a'.repeat(64),
+      directory_database_id: '11111111-1111-4111-8111-111111111111',
+      ops_database_id: '22222222-2222-4222-8222-222222222222',
+      target_database_id: '33333333-3333-4333-8333-333333333333',
+      directory_bookmark: '00000001-00000000-00000000-11111111111111111111111111111111',
+      ops_bookmark: '00000002-00000000-00000000-22222222222222222222222222222222',
+      source_policy_version: 'pcd-public-professional-v1',
     });
     const chunks = await ops.prepare(`SELECT subject_type,rows_seen,eligible_count,rejected_count,length(disposition_hash) hash_length
       FROM crm_adapter_backfill_chunks ORDER BY subject_type,chunk_ordinal`).all();
@@ -1561,7 +1622,7 @@ describe('PCD CRM adapter producer', () => {
     expect(chunk).toEqual({ eligible_count: 0, rejected_count: 6 });
   });
 
-  it('namespaces event identity by producer and target workspace during retargeted backfills', async () => {
+  it('refuses to reuse a sealed historical manifest for a different target workspace', async () => {
     const { ops, intel } = await databases();
     const oldAt = '2026-09-01T12:00:00.000Z';
     const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
@@ -1572,12 +1633,13 @@ describe('PCD CRM adapter producer', () => {
     });
     const secondEnv = { ...firstEnv, PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-two' };
     await projectPcdCrmBackfill(firstEnv, { now: cutoff + 1, limit: 10 });
-    await projectPcdCrmBackfill(secondEnv, { now: cutoff + 2, limit: 10 });
+    await expect(projectPcdCrmBackfill(secondEnv, { now: cutoff + 2, limit: 10 }))
+      .rejects.toThrow('pcd_crm_backfill_boundary_conflict');
     const events = await ops.prepare(`SELECT event_id,backfill_run_id FROM crm_adapter_outbox
       WHERE subject_id='org-retarget' ORDER BY source_sequence`).all();
-    expect(events.results).toHaveLength(2);
-    expect(events.results[0]?.event_id).not.toBe(events.results[1]?.event_id);
-    expect(events.results[0]?.backfill_run_id).not.toBe(events.results[1]?.backfill_run_id);
+    expect(events.results).toHaveLength(1);
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_backfill_runs`)
+      .first<{ count: number }>())?.count).toBe(1);
   });
 
   it('does not rescan source inventory after a backfill is already completed', async () => {
