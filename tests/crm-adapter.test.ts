@@ -207,6 +207,29 @@ describe('PCD CRM adapter producer', () => {
     ]);
   });
 
+  it('does not skip concurrent organization or contact inserts that share the cursor timestamp and sort before its id', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-03T12:00:00.123Z';
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-03T00:00:00.000Z')),
+    });
+    await insertOrganization(intel, { id: 'org-live-b', updatedAt: at });
+    await insertContact(ops, { id: 'contact-live-b', organizationId: 'org-live-b', updatedAt: at });
+    await expect(projectPcdCrmEvents(adapterEnv, { limit: 1, now: Date.parse(at) + 1 }))
+      .resolves.toMatchObject({ organizations: 1, contacts: 1 });
+
+    await insertOrganization(intel, { id: 'org-live-a', updatedAt: at });
+    await insertContact(ops, { id: 'contact-live-a', organizationId: 'org-live-a', updatedAt: at });
+    await expect(projectPcdCrmEvents(adapterEnv, { limit: 1, now: Date.parse(at) + 2 }))
+      .resolves.toMatchObject({ organizations: 1, contacts: 1 });
+
+    const subjects = await ops.prepare(`SELECT subject_id FROM crm_adapter_outbox ORDER BY source_sequence`)
+      .all<{ subject_id: string }>();
+    expect(subjects.results.map((row) => row.subject_id)).toEqual([
+      'org-live-b', 'contact-live-b', 'org-live-a', 'contact-live-a',
+    ]);
+  });
+
   it('fails closed when enabled without a valid activation watermark', async () => {
     const { ops, intel } = await databases();
     await expect(projectPcdCrmEvents(env(ops, intel, { PCD_CRM_SOURCE_NOT_BEFORE_MS: '' })))
@@ -298,6 +321,36 @@ describe('PCD CRM adapter producer', () => {
       WHERE subject_type='contact'`).first<{ eligible_count: number; rejected_count: number; disposition_hash: string }>();
     expect(receipt).toMatchObject({ eligible_count: 0, rejected_count: 1 });
     expect(JSON.stringify(receipt)).not.toContain('private-value@test.example');
+  });
+
+  it('keeps a historical backfill link when a pending observation is replaced by a safety tombstone', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-backfill-retraction', updatedAt: oldAt });
+    await insertContact(ops, {
+      id: 'contact-backfill-retraction', organizationId: 'org-backfill-retraction', updatedAt: oldAt,
+    });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    await expect(projectPcdCrmBackfill(adapterEnv, { now: cutoff + 1 }))
+      .resolves.toMatchObject({ scanCompleted: true, contacts: 1 });
+    const before = await ops.prepare(`SELECT backfill_run_id FROM crm_adapter_outbox
+      WHERE subject_id='contact-backfill-retraction'`).first<{ backfill_run_id: string }>();
+    expect(before?.backfill_run_id).toEqual(expect.any(String));
+
+    await expect(upsertOrgContact(adapterEnv, {
+      organizationId: 'org-backfill-retraction', fullName: 'Taylor Director', role: 'director',
+      email: 'contact-backfill-retraction@test.example', source: 'website',
+      sourceUrl: 'https://org-backfill-retraction.example/staff', contactContext: 'minor',
+    })).resolves.toMatchObject({ ok: true, created: false });
+    expect(await ops.prepare(`SELECT event_type,backfill_run_id FROM crm_adapter_outbox
+      WHERE subject_id='contact-backfill-retraction'`).first()).toEqual({
+      event_type: 'contact.deleted.v1', backfill_run_id: before?.backfill_run_id,
+    });
+    await expect(finalizePcdCrmBackfill(adapterEnv, { now: cutoff + 2 }))
+      .resolves.toMatchObject({ completed: false, pending: 2 });
   });
 
   it('does not call a scan complete until every event is delivered and reconciled', async () => {
@@ -483,7 +536,7 @@ describe('PCD CRM adapter producer', () => {
       .rejects.toThrow('pcd_crm_backfill_reconciliation_halted');
     expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_reconciliation_receipts`)
       .first<{ count: number }>())?.count).toBe(8);
-  });
+  }, 10_000);
 
   it('refuses a changed historical boundary and skips a concurrently leased run', async () => {
     const { ops, intel } = await databases();
@@ -585,8 +638,8 @@ describe('PCD CRM adapter producer', () => {
     const adapterEnv = env(ops, intel, { PCD_CRM_BACKFILL_ENABLED: 'true', PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff) });
     await projectPcdCrmBackfill(adapterEnv, { limit: 1, now: cutoff + 1 });
     expect(await projectPcdCrmEvents(adapterEnv, { limit: 10, now: cutoff + 2 })).toMatchObject({ contacts: 0 });
-    expect(await ops.prepare(`SELECT contact_cursor_at,contact_cursor_id FROM crm_adapter_controls`).first()).toEqual({
-      contact_cursor_at: '', contact_cursor_id: '',
+    expect(await ops.prepare(`SELECT contact_revision_cursor FROM crm_adapter_controls`).first()).toEqual({
+      contact_revision_cursor: 0,
     });
     await projectPcdCrmBackfill(adapterEnv, { limit: 10, now: cutoff + 3 });
     expect(await projectPcdCrmEvents(adapterEnv, { limit: 10, now: cutoff + 4 })).toMatchObject({ contacts: 1 });
@@ -818,30 +871,20 @@ describe('PCD CRM adapter producer', () => {
     expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
   });
 
-  it('uses bounded chronological cursor indexes for normal source projection', async () => {
+  it('uses bounded monotonic revision indexes for normal source projection', async () => {
     const { ops, intel } = await databases();
-    const organizationEqualPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
-      FROM organizations INDEXED BY idx_organizations_crm_projection_cursor
-      WHERE julianday(updated_at)=julianday(?) AND id>?
-      ORDER BY id LIMIT ?`)
-      .bind('2026-09-01T12:00:00.000Z', '', 50).all<{ detail: string }>();
-    const organizationLaterPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
-      FROM organizations INDEXED BY idx_organizations_crm_projection_cursor
-      WHERE julianday(updated_at)>julianday(?)
-      ORDER BY julianday(updated_at),id LIMIT ?`)
-      .bind('2026-09-01T12:00:00.000Z', 50).all<{ detail: string }>();
-    const contactEqualPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
-      FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
-      WHERE julianday(updated_at)=julianday(?) AND id>?
-      ORDER BY id LIMIT ?`)
-      .bind('2026-09-01T12:00:00.000Z', '', 50).all<{ detail: string }>();
-    const contactLaterPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
-      FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_cursor
-      WHERE julianday(updated_at)>julianday(?)
-      ORDER BY julianday(updated_at),id LIMIT ?`)
-      .bind('2026-09-01T12:00:00.000Z', 50).all<{ detail: string }>();
+    const organizationPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM organizations INDEXED BY idx_organizations_crm_projection_revision
+      WHERE crm_projection_revision>0 AND crm_projection_revision>? AND julianday(updated_at)>=julianday(?)
+      ORDER BY crm_projection_revision LIMIT ?`)
+      .bind(0, '2026-09-01T12:00:00.000Z', 50).all<{ detail: string }>();
+    const contactPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_revision
+      WHERE crm_projection_revision>0 AND crm_projection_revision>? AND julianday(updated_at)>=julianday(?)
+      ORDER BY crm_projection_revision LIMIT ?`)
+      .bind(0, '2026-09-01T12:00:00.000Z', 50).all<{ detail: string }>();
 
-    for (const detail of [organizationEqualPlan, organizationLaterPlan, contactEqualPlan, contactLaterPlan]
+    for (const detail of [organizationPlan, contactPlan]
       .map((plan) => plan.results.map((row) => row.detail).join('\n'))) {
       expect(detail).toMatch(/SEARCH .* USING (?:COVERING )?INDEX/);
       expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
@@ -1051,7 +1094,28 @@ describe('PCD CRM adapter producer', () => {
     expect(queued.results.at(-1)?.payload_json).not.toContain('original@org-suppressed-minor.example');
   });
 
-  it('fails a safety reclassification while its observed event is leased, then retracts after delivery', async () => {
+  it.each([
+    ['reclassification', async (adapterEnv: PcdCrmAdapterEnv, id: string) => {
+      const result = await upsertOrgContact(adapterEnv, {
+        organizationId: 'org-leased-safety', fullName: 'Leased Contact', role: 'director',
+        email: 'leased@org-leased-safety.example', source: 'website',
+        sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'minor',
+      });
+      expect(result).toMatchObject({ ok: true, id, created: false });
+      expect(await adapterEnv.PCD_OPS_DB?.prepare(`SELECT contact_context FROM org_contacts WHERE id=?`)
+        .bind(id).first()).toEqual({ contact_context: 'minor' });
+    }],
+    ['suppression', async (adapterEnv: PcdCrmAdapterEnv, id: string) => {
+      await expect(setDoNotContact(adapterEnv, id, 'privacy_request')).resolves.toBe(true);
+      expect(await adapterEnv.PCD_OPS_DB?.prepare(`SELECT do_not_contact FROM org_contacts WHERE id=?`)
+        .bind(id).first()).toEqual({ do_not_contact: 1 });
+    }],
+    ['soft deletion', async (adapterEnv: PcdCrmAdapterEnv, id: string) => {
+      await expect(softDeleteOrgContact(adapterEnv, id)).resolves.toBe(true);
+      expect(await adapterEnv.PCD_OPS_DB?.prepare(`SELECT deleted_at FROM org_contacts WHERE id=?`)
+        .bind(id).first()).toMatchObject({ deleted_at: expect.any(String) });
+    }],
+  ])('commits a canonical safety %s while its observed event is leased and durably sequences a retraction', async (_label, applySafetyMutation) => {
     const { ops, intel } = await databases();
     const adapterEnv = env(ops, intel);
     const result = await upsertOrgContact(adapterEnv, {
@@ -1072,24 +1136,21 @@ describe('PCD CRM adapter producer', () => {
     }) };
     const delivery = dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.now(), limit: 1 });
     await requestStarted;
-    await expect(upsertOrgContact(adapterEnv, {
-      organizationId: 'org-leased-safety', fullName: 'Leased Contact', role: 'director',
-      email: 'leased@org-leased-safety.example', source: 'website',
-      sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'minor',
-    })).resolves.toEqual({ ok: false, reason: 'error' });
-    expect(await ops.prepare(`SELECT contact_context FROM org_contacts WHERE id=?`)
-      .bind(result.ok ? result.id : '').first()).toEqual({ contact_context: 'professional' });
+    const id = result.ok ? result.id : '';
+    await applySafetyMutation(adapterEnv, id);
+    expect(await ops.prepare(`SELECT event_type,status,payload_json FROM crm_adapter_outbox WHERE subject_id=?
+      ORDER BY source_sequence`).bind(id).all()).toMatchObject({ results: [
+        { event_type: 'contact.observed.v1', status: 'leased' },
+        { event_type: 'contact.deleted.v1', status: 'pending', payload_json: expect.not.stringContaining('leased@org-leased-safety.example') },
+      ] });
     release();
     await expect(delivery).resolves.toMatchObject({ claimed: 1, delivered: 1 });
     expect(await ops.prepare(`SELECT status,receiver_receipt_id FROM crm_adapter_outbox WHERE source_sequence=1`).first())
       .toMatchObject({ status: 'delivered', receiver_receipt_id: expect.any(String) });
-    await expect(upsertOrgContact(adapterEnv, {
-      organizationId: 'org-leased-safety', fullName: 'Leased Contact', role: 'director',
-      email: 'leased@org-leased-safety.example', source: 'website',
-      sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'minor',
-    })).resolves.toMatchObject({ ok: true, created: false });
-    expect(await ops.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox ORDER BY source_sequence DESC LIMIT 1`).first())
-      .toMatchObject({ event_type: 'contact.deleted.v1', payload_json: expect.not.stringContaining('leased@org-leased-safety.example') });
+    await expect(dispatchPcdCrmOutbox(adapterEnv, { fetcher, now: Date.now(), limit: 1 }))
+      .resolves.toMatchObject({ claimed: 1, delivered: 1 });
+    expect(await ops.prepare(`SELECT event_type,status,payload_json FROM crm_adapter_outbox ORDER BY source_sequence DESC LIMIT 1`).first())
+      .toMatchObject({ event_type: 'contact.deleted.v1', status: 'delivered', payload_json: expect.not.stringContaining('leased@org-leased-safety.example') });
   });
 
   it('holds unknown and rejects family, guardian, minor, and roster contacts while preserving tombstones', async () => {

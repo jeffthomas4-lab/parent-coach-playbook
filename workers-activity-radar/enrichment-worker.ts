@@ -359,7 +359,7 @@ function roleFromTitle(title: string): string {
 
 // Capitalized pairs that are page furniture, not people. Cheap guard that kills
 // the bulk of false positives before the title check even runs.
-const NOT_A_NAME_RE = /\b(contact|about|home|our|the|read|learn|sign|get|click|view|more|us|we|you|your|new|summer|winter|spring|fall|camp|camps|youth|sports|team|teams|program|programs|register|registration|privacy|policy|terms|service|copyright|rights|reserved|main|office|front|desk|phone|email|address|street|avenue|road|suite|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
+const NOT_A_NAME_RE = /\b(contact|about|home|our|the|read|learn|sign|get|click|view|more|us|we|you|your|new|summer|winter|spring|fall|camp|camps|club|youth|sports|team|teams|program|programs|register|registration|privacy|policy|terms|service|copyright|rights|reserved|main|office|front|desk|phone|email|address|street|avenue|road|suite|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
 
 // Any word that belongs to a job title rather than to a person. A name
 // candidate containing one of these is a boundary artifact, not a human:
@@ -417,8 +417,13 @@ function candidateNames(context: string): { name: string; index: number }[] {
  */
 const MINOR_RISK_URL_RE = /\/(roster|rosters|players?|athletes?|students?|participants?|kids?|campers?|teams?\/|our-?kids|meet-the-(?:team|players|kids))/i;
 
-/** Signals inside a text window that it is describing a child, not a staffer. */
-const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|parent of|parent|guardian|student)\b/i;
+/**
+ * Signals that the candidate itself is a child/family contact. Bare words like
+ * "Parent" or "Student" are deliberately insufficient: global navigation and
+ * footers routinely contain "Parent Resources" and "Student Programs" beside
+ * an otherwise unambiguous professional staff card.
+ */
+const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|(?:parent|guardian) of|(?:parent|guardian|student)\s+(?:volunteer\s+)?(?:owner|director|registrar|coach|instructor|trainer|teacher|counselor|administrator|coordinator|manager))\b/i;
 
 export interface ScrapedContact {
   fullName: string | null;

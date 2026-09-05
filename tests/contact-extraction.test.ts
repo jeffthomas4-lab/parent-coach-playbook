@@ -141,6 +141,17 @@ describe('extractContacts — child-safety guardrails', () => {
     },
   );
 
+  it.each(['Parent Resources', 'Student Programs'])(
+    'keeps a valid professional staff card when unrelated page furniture says %s',
+    (pageFurniture) => {
+      const html = `<nav>${pageFurniture}</nav><article><p>Dana Reyes</p><p>Club Director</p>
+        <p><a href="mailto:dana@club.example">Email</a></p></article>`;
+      expect(extractContacts(html, 'https://club.example/staff', true)).toMatchObject([{
+        fullName: 'Dana Reyes', title: 'Director', role: 'director', email: 'dana@club.example',
+      }]);
+    },
+  );
+
   it('never marks a scraped contact public', () => {
     const html = `<p>Dana Reyes</p><p>Camp Director</p><p><a href="mailto:d@org.com">e</a></p>`;
     const out = extractContacts(html, 'https://org.com/staff', true);
