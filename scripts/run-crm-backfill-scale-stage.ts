@@ -106,11 +106,12 @@ function initialize(intel: DatabaseSync, ops: DatabaseSync, receiver: DatabaseSy
   SELECT printf('org-scale-%06d',n),printf('org-scale-%06d',n),printf('Scale Organization %d',n),
     'club_league',printf('https://org-scale-%06d.invalid',n),'Tacoma','WA','98401','["volleyball"]',
     'manual','active',0,90,'${SOURCE_AT}','${SOURCE_AT}',NULL,NULL FROM scale_rows;`);
+  intel.exec(readFileSync(new URL('../migrations-activity-radar/0019_crm_backfill_created_cursor.sql', import.meta.url), 'utf8'));
   applyOpsMigrations(ops);
   const contact = ops.prepare(`INSERT INTO org_contacts
     (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
      confidence,verified_at,content_hash,deleted_at,created_at,updated_at,contact_context)
-    VALUES (?,?,?,'Club Director','director',?,0,0,0,'website',?,'high',?,NULL,NULL,?,?,'professional')`);
+    VALUES (?,?,?,'Club Director','director',?,0,?,0,'website',?,'high',?,NULL,NULL,?,?,'professional')`);
   ops.exec('BEGIN IMMEDIATE');
   for (let index = 1; index <= CONTACTS; index += 1) {
     const id = `contact-scale-${String(index).padStart(3, '0')}`;
@@ -120,6 +121,7 @@ function initialize(intel: DatabaseSync, ops: DatabaseSync, receiver: DatabaseSy
       orgId,
       `Scale Director ${index}`,
       index <= ELIGIBLE_CONTACTS ? `${id}@scale.invalid` : null,
+      index <= ELIGIBLE_CONTACTS ? 1 : 0,
       `https://${orgId}.invalid/staff`,
       SOURCE_AT,
       SOURCE_AT,

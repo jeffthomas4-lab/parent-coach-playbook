@@ -49,6 +49,7 @@ export interface PcdContactProjectionInput {
   role: string;
   email: string | null;
   phone: string | null;
+  is_public: number;
   do_not_contact: number;
   contact_context: 'professional' | 'family' | 'guardian' | 'minor' | 'roster' | 'unknown';
   source_url: string | null;
@@ -112,6 +113,8 @@ interface BackfillRunRow {
   status: 'running' | 'scanned' | 'completed';
   organization_cursor_id: string;
   contact_cursor_id: string;
+  organization_cursor_created_second: number;
+  contact_cursor_created_second: number;
   organization_complete: number;
   contact_complete: number;
   lease_id: string | null;
@@ -297,7 +300,8 @@ async function contactDraft(
   // Legacy stored hashes predate the suppression and context fields. Derive
   // the projection hash from every field that affects CRM safety.
   const contentHash = await contactProjectionHash(row);
-  const restricted = !!row.deleted_at || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
+  const restricted = !!row.deleted_at || Number(row.is_public) !== 1
+    || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
   if ((row.deleted_at || restricted) && previouslyObserved) {
     return contactRetractionDraft(
       row.id, row.organization_id, contentHash, authorityUpdatedAt, namespace, targetWorkspaceId,
@@ -348,6 +352,7 @@ async function contactProjectionHash(row: PcdContactProjectionInput): Promise<st
     role: row.role,
     email: row.email,
     phone: row.phone,
+    isPublic: Number(row.is_public) === 1,
     doNotContact: Number(row.do_not_contact) === 1,
     contactContext: row.contact_context,
     sourceUrl: row.source_url,
@@ -391,7 +396,8 @@ async function previouslyObservedContactIds(
   rows: PcdContactProjectionInput[],
 ): Promise<Set<string>> {
   const ids = [...new Set(rows
-    .filter((row) => !!row.deleted_at || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional')
+    .filter((row) => !!row.deleted_at || Number(row.is_public) !== 1
+      || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional')
     .map((row) => row.id))];
   if (!ids.length) return new Set();
   const placeholders = ids.map(() => '?').join(',');
@@ -621,7 +627,8 @@ export async function commitPcdContactMutation(
   const config = requireConfig(env);
   if (!config) throw new Error('pcd_crm_adapter_configuration_missing');
   const rowUpdatedAt = Date.parse(row.updated_at);
-  const restricted = !!row.deleted_at || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
+  const restricted = !!row.deleted_at || Number(row.is_public) !== 1
+    || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
   if (restricted && Number.isFinite(rowUpdatedAt) && rowUpdatedAt >= config.sourceNotBeforeMs) {
     const contentHash = await contactProjectionHash(row);
     const retractionId = `pcd-retraction:${await sha256(`${config.producerWorkspaceId}:${row.id}:${rowUpdatedAt}:${contentHash}`)}`;
@@ -729,7 +736,7 @@ export async function projectPcdCrmEvents(
     canProjectContacts = historicalOrganizations?.organization_complete === 1;
   }
   if (canProjectContacts) {
-    contactPage = (await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
+    contactPage = (await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,contact_context,
       source_url,confidence,verified_at,content_hash,deleted_at,updated_at,crm_projection_revision
       FROM org_contacts INDEXED BY idx_org_contacts_crm_projection_revision
       WHERE crm_projection_revision>0 AND crm_projection_revision>?
@@ -798,7 +805,8 @@ async function ensureBackfillRun(
   const db = env.PCD_OPS_DB;
   const runId = `pcd-backfill:${await sha256(`${config.producerWorkspaceId}:${config.targetWorkspaceId}:${config.sourceNotBeforeMs}`)}`;
   let run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
-    status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete,lease_id,lease_expires_at,
+    status,organization_cursor_id,contact_cursor_id,organization_cursor_created_second,contact_cursor_created_second,
+    organization_complete,contact_complete,lease_id,lease_expires_at,
     reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete,
     reconciliation_failure_count,reconciliation_next_attempt_at,reconciliation_halted
     FROM crm_adapter_backfill_runs
@@ -827,7 +835,8 @@ async function ensureBackfillRun(
       Number(organizations?.count ?? 0), Number(contacts?.count ?? 0), now, now,
     ).run();
     run = await db.prepare(`SELECT id,snapshot_before_ms,expected_organization_rows,expected_contact_rows,
-      status,organization_cursor_id,contact_cursor_id,organization_complete,contact_complete,lease_id,lease_expires_at,
+      status,organization_cursor_id,contact_cursor_id,organization_cursor_created_second,contact_cursor_created_second,
+      organization_complete,contact_complete,lease_id,lease_expires_at,
       reconciliation_pass,reconciliation_cursor_sequence,reconciliation_window_ordinal,reconciliation_complete,
       reconciliation_failure_count,reconciliation_next_attempt_at,reconciliation_halted
       FROM crm_adapter_backfill_runs
@@ -866,6 +875,7 @@ async function recordBackfillChunk(
   subjectType: 'organization' | 'contact',
   afterCursorId: string,
   lastCursorId: string,
+  lastCursorCreatedSecond: number,
   rowsSeen: number,
   eligibleCount: number,
   newEventCount: number,
@@ -881,6 +891,8 @@ async function recordBackfillChunk(
     .first<{ ordinal: number }>();
   const ordinal = Number(ordinalRow?.ordinal ?? 1);
   const cursorColumn = subjectType === 'organization' ? 'organization_cursor_id' : 'contact_cursor_id';
+  const cursorSecondColumn = subjectType === 'organization'
+    ? 'organization_cursor_created_second' : 'contact_cursor_created_second';
   const completeColumn = subjectType === 'organization' ? 'organization_complete' : 'contact_complete';
   const results = await db.batch([
     db.prepare(`INSERT INTO crm_adapter_backfill_chunks
@@ -893,8 +905,9 @@ async function recordBackfillChunk(
       eligibleCount, newEventCount, replayedEventCount, rejectedCount, dispositionHash, now,
       run.id, leaseId, now,
     ),
-    db.prepare(`UPDATE crm_adapter_backfill_runs SET ${cursorColumn}=?,${completeColumn}=?,updated_at=?
-      WHERE id=? AND lease_id=? AND lease_expires_at>=?`).bind(lastCursorId, complete ? 1 : 0, now, run.id, leaseId, now),
+    db.prepare(`UPDATE crm_adapter_backfill_runs SET ${cursorColumn}=?,${cursorSecondColumn}=?,${completeColumn}=?,updated_at=?
+      WHERE id=? AND lease_id=? AND lease_expires_at>=?`)
+      .bind(lastCursorId, lastCursorCreatedSecond, complete ? 1 : 0, now, run.id, leaseId, now),
   ]);
   if (Number(results[0]?.meta.changes ?? 0) !== 1 || Number(results[1]?.meta.changes ?? 0) !== 1) {
     throw new Error('pcd_crm_backfill_lease_lost');
@@ -946,9 +959,15 @@ export async function projectPcdCrmBackfill(
   try {
     if (!run.organization_complete) {
       const rows = await env.DB.prepare(`SELECT id,name,organization_type,website_url,city,state,zip,categories,
-        record_status,is_claimed,content_hash,deleted_at,updated_at FROM organizations
-        WHERE id>? AND unixepoch(created_at)<? ORDER BY id LIMIT ?`)
-        .bind(run.organization_cursor_id, snapshotBeforeSecond, limit).all<OrganizationRow>();
+        record_status,is_claimed,content_hash,deleted_at,updated_at,
+        unixepoch(created_at) crm_cursor_created_second
+        FROM organizations INDEXED BY idx_organizations_crm_backfill_created
+        WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
+          OR (unixepoch(created_at)=? AND id>?))
+        ORDER BY unixepoch(created_at),id LIMIT ?`)
+        .bind(snapshotBeforeSecond, run.organization_cursor_created_second,
+          run.organization_cursor_created_second, run.organization_cursor_id, limit)
+        .all<OrganizationRow & { crm_cursor_created_second: number }>();
       if (!rows.results.length) {
         await markBackfillSubjectComplete(env.PCD_OPS_DB, run.id, 'organization', leaseId, now);
         organizationComplete = true;
@@ -960,7 +979,8 @@ export async function projectPcdCrmBackfill(
         const dispositions = drafts.map((draft) => ({ id: draft.subjectId, disposition: draft.eventType.endsWith('deleted.v1') ? 'tombstoned' : 'projected', contentHash: draft.contentHash }));
         const last = rows.results.at(-1)!;
         await recordBackfillChunk(
-          env.PCD_OPS_DB, run, 'organization', run.organization_cursor_id, last.id, rows.results.length,
+          env.PCD_OPS_DB, run, 'organization', run.organization_cursor_id, last.id,
+          Number(last.crm_cursor_created_second), rows.results.length,
           drafts.length, outbox.projected, outbox.replayed, 0, await sha256(stableJson(dispositions)),
           rows.results.length < limit, leaseId, now,
         );
@@ -971,10 +991,16 @@ export async function projectPcdCrmBackfill(
     }
 
     if (organizationComplete && !run.contact_complete) {
-      const rows = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,do_not_contact,contact_context,
-        source_url,confidence,verified_at,content_hash,deleted_at,updated_at FROM org_contacts
-        WHERE id>? AND unixepoch(created_at)<? ORDER BY id LIMIT ?`)
-        .bind(run.contact_cursor_id, snapshotBeforeSecond, limit).all<PcdContactProjectionInput>();
+      const rows = await env.PCD_OPS_DB.prepare(`SELECT id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,contact_context,
+        source_url,confidence,verified_at,content_hash,deleted_at,updated_at,
+        unixepoch(created_at) crm_cursor_created_second
+        FROM org_contacts INDEXED BY idx_org_contacts_crm_backfill_created
+        WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
+          OR (unixepoch(created_at)=? AND id>?))
+        ORDER BY unixepoch(created_at),id LIMIT ?`)
+        .bind(snapshotBeforeSecond, run.contact_cursor_created_second,
+          run.contact_cursor_created_second, run.contact_cursor_id, limit)
+        .all<PcdContactProjectionInput & { crm_cursor_created_second: number }>();
       if (!rows.results.length) {
         await markBackfillSubjectComplete(env.PCD_OPS_DB, run.id, 'contact', leaseId, now);
       } else {
@@ -993,9 +1019,10 @@ export async function projectPcdCrmBackfill(
             ? draft.eventType === 'contact.deleted.v1' ? 'tombstoned' : 'projected'
             : row.deleted_at ? 'tombstoned_no_projection'
               : Number(row.do_not_contact) === 1 ? 'rejected_suppressed'
-              : row.contact_context === 'unknown' ? 'held_context_review'
-              : row.contact_context !== 'professional' ? 'rejected_nonprofessional_context'
-                : row.email || row.phone ? 'rejected_missing_source' : 'rejected_missing_channel';
+              : Number(row.is_public) !== 1 ? 'rejected_private'
+                : row.contact_context === 'unknown' ? 'held_context_review'
+                  : row.contact_context !== 'professional' ? 'rejected_nonprofessional_context'
+                    : row.email || row.phone ? 'rejected_missing_source' : 'rejected_missing_channel';
           return { row, draft, disposition };
         }));
         const drafts = classified.flatMap((item) => item.draft ? [item.draft] : []);
@@ -1008,7 +1035,8 @@ export async function projectPcdCrmBackfill(
         const last = rows.results.at(-1)!;
         const rejectedCount = classified.length - drafts.length;
         await recordBackfillChunk(
-          env.PCD_OPS_DB, run, 'contact', run.contact_cursor_id, last.id, rows.results.length,
+          env.PCD_OPS_DB, run, 'contact', run.contact_cursor_id, last.id,
+          Number(last.crm_cursor_created_second), rows.results.length,
           drafts.length, outbox.projected, outbox.replayed, rejectedCount, await sha256(stableJson(dispositions)),
           rows.results.length < limit, leaseId, now,
         );

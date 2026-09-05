@@ -40,6 +40,7 @@ describe('CRM adapter migration upgrade', () => {
     for (const name of [
       '0039_crm_adapter_atomic_send_cancellation.sql',
       '0040_crm_adapter_bounded_retractions.sql',
+      '0041_crm_backfill_created_cursor_and_public_contact_safety.sql',
     ]) {
       const sql = await readFile(new URL(name, directory), 'utf8');
       for (const statement of splitSqlStatements(sql)) await db.prepare(statement).run();
@@ -54,5 +55,17 @@ describe('CRM adapter migration upgrade', () => {
       WHERE name='target_workspace_id'`).first()).toEqual({ 1: 1 });
     expect(await db.prepare(`SELECT 1 FROM sqlite_master WHERE type='table'
       AND name='crm_contact_retraction_runs'`).first()).toEqual({ 1: 1 });
+    for (const name of ['organization_cursor_created_second', 'contact_cursor_created_second']) {
+      expect(await db.prepare(`SELECT 1 FROM pragma_table_info('crm_adapter_backfill_runs')
+        WHERE name=?`).bind(name).first()).toEqual({ 1: 1 });
+    }
+    await db.prepare(`INSERT INTO org_contacts (id,organization_id,full_name,contact_context)
+      VALUES ('contact-upgrade','org-upgrade','Upgrade Contact','professional')`).run();
+    const before = await db.prepare(`SELECT crm_projection_revision FROM org_contacts WHERE id=?`)
+      .bind('contact-upgrade').first<{ crm_projection_revision: number }>();
+    await db.prepare(`UPDATE org_contacts SET is_public=1 WHERE id=?`).bind('contact-upgrade').run();
+    const after = await db.prepare(`SELECT crm_projection_revision FROM org_contacts WHERE id=?`)
+      .bind('contact-upgrade').first<{ crm_projection_revision: number }>();
+    expect(Number(after?.crm_projection_revision)).toBeGreaterThan(Number(before?.crm_projection_revision));
   }, 30_000);
 });

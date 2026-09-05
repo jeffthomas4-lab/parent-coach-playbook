@@ -290,6 +290,7 @@ export async function upsertOrgContact(
         role: existing.role,
         email: existing.email,
         phone: existing.phone,
+        is_public: existing.is_public,
         do_not_contact: existing.do_not_contact,
         contact_context: contactContext,
         source_url: existing.source_url,
@@ -349,6 +350,7 @@ export async function upsertOrgContact(
         role: existing.role === 'unknown' ? role : existing.role,
         email: existing.email,
         phone: phone ?? existing.phone,
+        is_public: existing.is_public,
         do_not_contact: existing.do_not_contact,
         contact_context: contactContext,
         source_url: input.sourceUrl ?? existing.source_url,
@@ -395,6 +397,7 @@ export async function upsertOrgContact(
       role,
       email,
       phone,
+      is_public: 0,
       do_not_contact: 0,
       contact_context: contactContext,
       source_url: input.sourceUrl ?? null,
@@ -468,7 +471,7 @@ export async function setDoNotContact(
       ).bind(now, reason, contentHash, now, id);
     if (existing) {
       await commitPcdContactMutation(env, statement, {
-        ...existing, do_not_contact: 1, content_hash: contentHash, updated_at: now,
+        ...existing, is_public: 0, do_not_contact: 1, content_hash: contentHash, updated_at: now,
       }, Date.parse(now));
     } else {
       await statement.run();

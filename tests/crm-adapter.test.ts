@@ -106,16 +106,18 @@ async function insertContact(db: D1Database, input: {
   updatedAt: string;
   createdAt?: string;
   deletedAt?: string | null;
+  isPublic?: boolean;
   contactContext?: 'professional' | 'family' | 'guardian' | 'minor' | 'roster' | 'unknown';
 }) {
   await db.prepare(`INSERT INTO org_contacts
     (id,organization_id,full_name,title,role,email,is_primary,is_public,do_not_contact,source,source_url,
      confidence,verified_at,content_hash,deleted_at,created_at,updated_at,contact_context)
-    VALUES (?,?,?,'Club Director','director',?,0,0,0,'website',?,'high',?,NULL,?,?,?,?)`).bind(
+    VALUES (?,?,?,'Club Director','director',?,0,?,0,'website',?,'high',?,NULL,?,?,?,?)`).bind(
     input.id,
     input.organizationId,
     'Taylor Director',
     `${input.id}@test.example`,
+    input.isPublic === false ? 0 : 1,
     `https://${input.organizationId}.example/staff`,
     input.updatedAt,
     input.deletedAt ?? null,
@@ -137,6 +139,16 @@ async function readyOrganizationProjection(
   await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='ready-organization',
     receiver_status=202,delivered_at=?,updated_at=? WHERE subject_type='organization' AND subject_id=?`)
     .bind(Date.now(), Date.now(), organizationId).run();
+}
+
+async function publishContactForTest(
+  ops: D1Database,
+  adapterEnv: PcdCrmAdapterEnv,
+  id: string,
+  updatedAt = new Date().toISOString(),
+): Promise<void> {
+  await ops.prepare(`UPDATE org_contacts SET is_public=1,updated_at=? WHERE id=?`).bind(updatedAt, id).run();
+  await projectPcdCrmEvents(adapterEnv, { now: Date.parse(updatedAt) + 1, limit: 50 });
 }
 
 describe('PCD CRM adapter producer', () => {
@@ -393,6 +405,57 @@ describe('PCD CRM adapter producer', () => {
       WHERE subject_type='contact'`).all();
     expect(chunks.results).toEqual([{ eligible_count: 0, rejected_count: 1 }]);
     expect(JSON.stringify(chunks.results)).not.toContain('contact-deleted-historical@test.example');
+  });
+
+  it('terminally dispositions a historical private contact without copying its channel', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-private-contact', updatedAt: oldAt });
+    await insertContact(ops, {
+      id: 'contact-private-historical',
+      organizationId: 'org-private-contact',
+      updatedAt: oldAt,
+      isPublic: false,
+    });
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    }), { now: Date.parse(oldAt) + 1 });
+    expect(result).toMatchObject({ contacts: 0, rejected: 1, scanCompleted: true, completed: false });
+    expect(await ops.prepare(`SELECT 1 FROM crm_adapter_outbox
+      WHERE subject_id='contact-private-historical'`).first()).toBeNull();
+    const chunks = await ops.prepare(`SELECT eligible_count,rejected_count,disposition_hash FROM crm_adapter_backfill_chunks
+      WHERE subject_type='contact'`).all();
+    expect(chunks.results).toMatchObject([{ eligible_count: 0, rejected_count: 1 }]);
+    expect(JSON.stringify(chunks.results)).not.toContain('contact-private-historical@test.example');
+  });
+
+  it('retracts a public professional contact when the authority marks it private', async () => {
+    const { ops, intel } = await databases();
+    const firstAt = '2026-09-03T12:00:00.000Z';
+    const privateAt = '2026-09-03T12:01:00.000Z';
+    await insertOrganization(intel, { id: 'org-public-to-private', updatedAt: firstAt });
+    await insertContact(ops, {
+      id: 'contact-public-to-private', organizationId: 'org-public-to-private', updatedAt: firstAt,
+    });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-03T00:00:00.000Z')),
+    });
+    await expect(projectPcdCrmEvents(adapterEnv, { now: Date.parse(firstAt) + 1, limit: 10 }))
+      .resolves.toMatchObject({ contacts: 1 });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='public-before-private',
+      receiver_status=202,delivered_at=?,send_attempt_count=1 WHERE subject_id='contact-public-to-private'`)
+      .bind(Date.parse(firstAt) + 2).run();
+
+    await ops.prepare(`UPDATE org_contacts SET is_public=0,updated_at=? WHERE id='contact-public-to-private'`)
+      .bind(privateAt).run();
+    await expect(projectPcdCrmEvents(adapterEnv, { now: Date.parse(privateAt) + 1, limit: 10 }))
+      .resolves.toMatchObject({ contacts: 1 });
+    expect(await ops.prepare(`SELECT event_type FROM crm_adapter_outbox
+      WHERE subject_id='contact-public-to-private' ORDER BY source_sequence`).all()).toMatchObject({ results: [
+      { event_type: 'contact.observed.v1' },
+      { event_type: 'contact.deleted.v1' },
+    ] });
   });
 
   it('keeps historical accounting when an unattempted observation is removed by a safety mutation', async () => {
@@ -765,7 +828,7 @@ describe('PCD CRM adapter producer', () => {
     ]);
   });
 
-  it('commits same-D1 contact writes and their outbox event in one batch', async () => {
+  it('keeps extractor contact writes private until a human publication revision', async () => {
     const { ops, intel } = await databases();
     const adapterEnv = env(ops, intel);
     await readyOrganizationProjection(ops, intel, adapterEnv, 'org-atomic');
@@ -785,6 +848,9 @@ describe('PCD CRM adapter producer', () => {
     expect(result.ok).toBe(true);
     expect((await ops.prepare(`SELECT COUNT(*) count FROM org_contacts WHERE organization_id='org-atomic'`)
       .first<{ count: number }>())?.count).toBe(1);
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE subject_id=?`)
+      .bind(result.ok ? result.id : '').first<{ count: number }>())?.count).toBe(0);
+    await publishContactForTest(ops, adapterEnv, result.ok ? result.id : '');
     expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE subject_id=?`)
       .bind(result.ok ? result.id : '').first<{ count: number }>())?.count).toBe(1);
     expect(await softDeleteOrgContact(adapterEnv, result.ok ? result.id : '')).toBe(true);
@@ -1006,6 +1072,28 @@ describe('PCD CRM adapter producer', () => {
     }
   });
 
+  it('uses creation-time keyset indexes for bounded historical projection', async () => {
+    const { ops, intel } = await databases();
+    const organizationPlan = await intel.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM organizations INDEXED BY idx_organizations_crm_backfill_created
+      WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
+        OR (unixepoch(created_at)=? AND id>?))
+      ORDER BY unixepoch(created_at),id LIMIT ?`)
+      .bind(2_000_000_000, -1, -1, '', 50).all<{ detail: string }>();
+    const contactPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id
+      FROM org_contacts INDEXED BY idx_org_contacts_crm_backfill_created
+      WHERE unixepoch(created_at)<? AND (unixepoch(created_at)>?
+        OR (unixepoch(created_at)=? AND id>?))
+      ORDER BY unixepoch(created_at),id LIMIT ?`)
+      .bind(2_000_000_000, -1, -1, '', 50).all<{ detail: string }>();
+
+    for (const detail of [organizationPlan, contactPlan]
+      .map((plan) => plan.results.map((row) => row.detail).join('\n'))) {
+      expect(detail).toMatch(/SEARCH .* USING (?:COVERING )?INDEX/);
+      expect(detail).not.toContain('USE TEMP B-TREE FOR ORDER BY');
+    }
+  });
+
   it('uses bounded indexes for safety delivery, prior targets, and active backfill lookup', async () => {
     const { ops } = await databases();
     const safetyPlan = await ops.prepare(`EXPLAIN QUERY PLAN SELECT id,source_sequence
@@ -1136,6 +1224,7 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-suppression.example/staff', contactContext: 'professional',
     });
     expect(result.ok).toBe(true);
+    await publishContactForTest(ops, adapterEnv, result.ok ? result.id : '');
     const deliveredFetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
       const body = JSON.parse(String(init?.body));
       return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
@@ -1180,6 +1269,7 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-context-retraction.example/staff', contactContext: 'professional',
     });
     expect(result.ok).toBe(true);
+    await publishContactForTest(ops, adapterEnv, result.ok ? result.id : '');
     const deliveredFetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
       const body = JSON.parse(String(init?.body));
       return Response.json({ accepted: true, receiptId: `receipt-${body.eventId}`, eventId: body.eventId, sequence: body.sequence, replay: false });
@@ -1293,6 +1383,7 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-leased-safety.example/staff', contactContext: 'professional',
     });
     expect(result.ok).toBe(true);
+    await publishContactForTest(ops, adapterEnv, result.ok ? result.id : '');
     let release!: () => void;
     const held = new Promise<void>((resolve) => { release = resolve; });
     let started!: () => void;
@@ -1338,6 +1429,8 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-claimed-cancel.example/staff', contactContext: 'professional',
     });
     expect(first.ok && second.ok).toBe(true);
+    await publishContactForTest(ops, adapterEnv, first.ok ? first.id : '');
+    await publishContactForTest(ops, adapterEnv, second.ok ? second.id : '');
     let release!: () => void;
     const held = new Promise<void>((resolve) => { release = resolve; });
     let firstStarted!: () => void;
@@ -1420,6 +1513,7 @@ describe('PCD CRM adapter producer', () => {
       contactContext: 'professional',
     });
     expect(contact.ok).toBe(true);
+    await publishContactForTest(ops, adapterEnv, contact.ok ? contact.id : '');
     await ops.prepare(`UPDATE crm_adapter_outbox SET status='retry',attempt_count=1,send_attempt_count=1,
       last_error_code='receiver_timeout' WHERE subject_id=?`).bind(contact.ok ? contact.id : '').run();
     await expect(setDoNotContact(
@@ -1591,6 +1685,7 @@ describe('PCD CRM adapter producer', () => {
       sourceUrl: 'https://org-safety-bypass.example/staff', contactContext: 'professional',
     });
     expect(contact.ok).toBe(true);
+    await publishContactForTest(ops, adapterEnv, contact.ok ? contact.id : '');
     await ops.prepare(`UPDATE crm_adapter_outbox SET status='dead',attempt_count=1,send_attempt_count=1
       WHERE event_type='contact.observed.v1'`).run();
     expect(await setDoNotContact(adapterEnv, contact.ok ? contact.id : '', 'privacy_request')).toBe(true);
@@ -1614,17 +1709,20 @@ describe('PCD CRM adapter producer', () => {
       contactContext: 'professional',
     });
     expect(contact.ok).toBe(true);
+    await publishContactForTest(ops, firstEnv, contact.ok ? contact.id : '');
     await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='workspace-one',delivered_at=1`).run();
     const secondEnv = { ...firstEnv, PCD_CRM_TARGET_WORKSPACE_ID: 'workspace-two' };
-    await expect(upsertOrgContact(secondEnv, {
+    const retargetedContact = await upsertOrgContact(secondEnv, {
       organizationId: 'org-retarget-contact', fullName: 'Retarget Contact', role: 'director',
       email: 'retarget-updated@org.example', source: 'website', sourceUrl: 'https://org.example/staff',
       contactContext: 'professional',
-    })).resolves.toMatchObject({ ok: true });
+    });
+    expect(retargetedContact).toMatchObject({ ok: true });
+    await publishContactForTest(ops, secondEnv, retargetedContact.ok ? retargetedContact.id : '');
     const newTarget = await ops.prepare(`SELECT event_type FROM crm_adapter_outbox
       WHERE target_workspace_id='workspace-two' ORDER BY source_sequence`).all<{ event_type: string }>();
     expect(newTarget.results.map((row) => row.event_type))
-      .toEqual(['organization.upserted.v1', 'contact.observed.v1']);
+      .toEqual(['organization.upserted.v1', 'contact.observed.v1', 'contact.observed.v1']);
     expect(await setDoNotContact(secondEnv, contact.ok ? contact.id : '', 'privacy_request')).toBe(true);
     const tombstone = await ops.prepare(`SELECT payload_json,target_workspace_id FROM crm_adapter_outbox
       WHERE event_type='contact.deleted.v1'`).first<{ payload_json: string; target_workspace_id: string }>();
