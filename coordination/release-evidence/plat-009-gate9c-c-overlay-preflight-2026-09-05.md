@@ -5,9 +5,9 @@ Recorded: 2026-09-05T08:12:15-07:00
 
 ## Candidate identity
 
-- PCD activation-overlay and synthetic-pilot candidate: `100347e48a411387964065d5a6a700332688a370`
-- Candidate tree: `a42cec3611986665b52c1f912061cf12bcef466f`
-- Parent evidence commit: `bfa493c364db788b64b7189fc96c6c58bb6f068e`
+- PCD activation-overlay and synthetic-pilot candidate: `51faf31aa69040d927aae58456be8269ada17c55`
+- Candidate tree: `85461f58c466cbe056019871be2a73905947617c`
+- Previous evidence commit: `d034ea6f55540f446ea5f1f9e1dcfd8f91b87459`
 - CRM staging receiver remains candidate: `25342fffba8d3cfc9a8272211c8f0763ed404f7d`
 
 ## Action-time aggregate inventory
@@ -70,6 +70,13 @@ For an explicitly supplied positive second-aligned boundary, the verified deploy
    `dist/server`, writes the derived manifest, deploys only that file, and unconditionally removes
    the owned file after success or any post-open failure.
 
+Activation boundaries must also remain within 15 minutes of the current clock. Freshness is
+checked while parsing the CLI, before and immediately after the application build, before the
+temporary activation config is created, and again after that config is closed immediately before
+the Wrangler command. If the clock crosses the window during the build, the manifest is not read
+or accepted. If it crosses during config I/O, the owned file is closed and removed and Wrangler is
+not invoked.
+
 An open failure owns no file and therefore removes nothing. Write, close, and deployment failures
 all stop before false success and attempt owned-file cleanup. The caller cannot supply the temporary
 path or filename suffix.
@@ -115,15 +122,17 @@ expired, so Gate 9C-C must generate and hash a fresh packet at execution time.
   failed three retained cases for epoch boundary, duplicate CLI arguments, and early phase-two
   insertion; the first receipt repair then failed the forged/shared-event case before subject
   equality was added.
-- Final combined pilot/activation suite: **PASS, 14/14**.
+- Deploy-freshness red-first sequence: stale-at-entry initially reached config creation, then an
+  independently reproduced clock advance during config I/O still reached the deploy command.
+  Retained regressions now cover expiry before open, during build, and after write/close.
+- Final combined pilot/activation suite: **PASS, 17/17**.
 - Full CRM adapter integration suite: **PASS, 63/63** in 213.30 seconds.
 - TypeScript (`tsc --noEmit`): **PASS**. The activation-guard mocks were narrowed to the Node
   `PathLike`/`FileHandle` test seam without changing runtime code; the 11 activation tests remained
   green.
-- Full local activation dry run with fixed test boundary `1788566400000`: application build PASS,
-  exact derived manifest PASS, no deploy performed, and exact activation-confirmation instruction
-  printed. The build-generated manifest and seven untracked image artifacts were removed/restored;
-  no activation config remained.
+- Earlier full local activation dry run (before the freshness repair) built the application and
+  exact derived manifest without deployment. The current retained tests use a live action-time
+  boundary and exercise the complete build/deploy seams without invoking a provider.
 - `git diff --check`: PASS before candidate commit.
 - Independent QA: **CLEAN**, including injected open, write, close, and deploy failure probes.
 - Independent Security: **CLEAN**, including exact manifest, confirmation, cleanup, and path checks.
@@ -132,12 +141,17 @@ expired, so Gate 9C-C must generate and hash a fresh packet at execution time.
   inexact receipt case and eight only for the exact gate.
 - Independent pilot data-safety review: **CLEAN** after independently reproducing and closing the
   forged-receipt defect.
+- Independent activation QA and data-safety reviews: **CLEAN** after both reproduced the
+  build/config-I/O freshness gap. Final evidence proves stale-before-open creates nothing,
+  stale-during-build does not read/accept a manifest, and stale-after-write performs
+  write/close/unlink without a deploy command.
 - Efficiency: no material finding; shallow manifest copy and compact temporary JSON retained
   bounded memory and file size. Pilot test artifact reads were reduced from 14 to 6.
 - Simplicity: removed the ownership boolean and test-only suffix input; the deployment seam remains
   because it is required to prove cleanup failure paths locally without a provider action. The
   pilot pass removed duplicate boundary parsing, a redundant date-range check, and unnecessary
-  `DISTINCT` work under the receipt primary key.
+  `DISTINCT` work under the receipt primary key. The final pass removed an unused aggregate alias,
+  one `Map` allocation, and one redundant freshness check while preserving both TOCTOU barriers.
 
 ## PERFORMANCE REVIEW
 
@@ -165,7 +179,7 @@ production change occurred.
 
 Gate 9C-C still requires explicit authorization for an action-time boundary, backup/bookmarks,
 the freshly generated exact pilot artifact hashes, deployment of candidate
-`100347e48a411387964065d5a6a700332688a370`, applying the two synthetic pilot phases, bounded
+`51faf31aa69040d927aae58456be8269ada17c55`, applying the two synthetic pilot phases, bounded
 activation observation, abort thresholds,
 and return to the disabled version. Full historical transfer remains a later gate and must refresh
 the complete production inventory at its own boundary.

@@ -86,6 +86,10 @@ second-aligned value within 15 minutes, refuses duplicate flags and existing out
 uses exclusive file creation, and emits exact hashes for six SQL artifacts. Generation is local;
 it does not execute Wrangler or access a provider.
 
+The verified staging deploy path rechecks the same 15-minute window before and after the build,
+before creating its temporary activation config, and immediately before invoking Wrangler. A
+boundary that expires during either operation fails closed and never reaches the provider command.
+
 The packet first updates three existing fictional staging organizations. Its contact phase is a
 SQL no-op until projection receipts prove that the exact current-boundary event for each of those
 three organizations was delivered to the exact CRM workspace. It then inserts eight fictional
