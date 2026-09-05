@@ -37,13 +37,22 @@ describe('CRM adapter migration upgrade', () => {
       'idempotency-upgrade', 'retry', 2, at, at, at, 'ws-sightsmash',
     ).run();
 
-    const sql = await readFile(new URL('0039_crm_adapter_atomic_send_cancellation.sql', directory), 'utf8');
-    for (const statement of splitSqlStatements(sql)) await db.prepare(statement).run();
+    for (const name of [
+      '0039_crm_adapter_atomic_send_cancellation.sql',
+      '0040_crm_adapter_bounded_retractions.sql',
+    ]) {
+      const sql = await readFile(new URL(name, directory), 'utf8');
+      for (const statement of splitSqlStatements(sql)) await db.prepare(statement).run();
+    }
 
     expect(await db.prepare(`SELECT cancelled_at,send_attempt_count FROM crm_adapter_outbox
       WHERE id='outbox-upgrade'`).first()).toEqual({ cancelled_at: null, send_attempt_count: 2 });
     const index = await db.prepare(`SELECT sql FROM sqlite_master
       WHERE type='index' AND name='idx_crm_adapter_outbox_claim_sequence'`).first<{ sql: string }>();
     expect(index?.sql).toContain('cancelled_at IS NULL');
+    expect(await db.prepare(`SELECT 1 FROM pragma_table_info('crm_adapter_controls')
+      WHERE name='target_workspace_id'`).first()).toEqual({ 1: 1 });
+    expect(await db.prepare(`SELECT 1 FROM sqlite_master WHERE type='table'
+      AND name='crm_contact_retraction_runs'`).first()).toEqual({ 1: 1 });
   }, 30_000);
 });
