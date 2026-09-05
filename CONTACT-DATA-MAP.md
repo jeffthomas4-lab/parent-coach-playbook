@@ -112,6 +112,7 @@ cannot resurrect somebody who opted out.
 | `scripts/backfill_external_keys.py` | Written, verified idempotent and deterministic |
 | Agents capturing contacts | `activityradar-enrichment` capture path built and unit-tested 2026-07-31. `EVERGREEN-PROMPT.md` rewritten with a contacts section the same day. **Both ship default-off** (`CONTACT_CAPTURE_ENABLED = "false"`). |
 | Contact extraction regression tests | `tests/contact-extraction.test.ts`, 20 cases |
+| Portfolio CRM historical move | Local exact-scale PASS at 200,000 organizations plus all 108 contact dispositions. Production currently has 198,287 organizations and 108 private/unreviewed contacts; no remote row has moved, and zero contact rows are active until human public-professional review. |
 | Exporter to `directory_source_records` | Not started, blocked on SightSmash H-053 |
 | CRM | **External CRM, PCD syncs to it** (decided 2026-07-31). Specific vendor not yet chosen; the `crm_*` columns are vendor-neutral and already in place. |
 | `DATA-MAP.md` | Updated 2026-07-30 with `org_contacts`, its retention, and its deletion path |

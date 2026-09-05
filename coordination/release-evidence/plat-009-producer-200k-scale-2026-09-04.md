@@ -1,11 +1,13 @@
 # PLAT-009 producer 200k scale evidence
 
-Status: **LOCAL PASS; HOSTED AND DATA-MOVEMENT GATES REMAIN HOLD**  
-Observed: 2026-09-04  
-PCD implementation candidate: `fc479dd7eda7c01932c25ffb7ba3a63b1e15ef76`  
-Candidate tree: `ad6558e435d1f9fd8345506dd6888818abdecb26`  
-Migration `0034` SHA-256: `12723f74abe6123ad549ab021cde75ec1fea168671f8535f1cad456da237c092`  
-Pending 13-file migration aggregate: `0f862d2d4703aacb798393dc6a642afa465b183134031da03dcb855e0100b192`
+Status: **LOCAL PASS; HOSTED AND DATA-MOVEMENT GATES REMAIN HOLD**
+Observed: 2026-09-04 through 2026-09-05
+PCD implementation candidate: `f96abf77fd6707a328a6a5ba5fc3a1b23dc26cd5`
+Candidate tree: `011fe506c5d080d5fec2c5f251e30d95994ce781`
+Ops migration `0041` SHA-256: `551ad75ad3dde5844535d808d28cd62ae28dfce34c646533e757ec6012477e4d`
+Directory migration `0019` SHA-256: `fa822c02f74226073e503e9d08f670b87e9100b2a6f640880dd8dab2eef1f95c`
+Pending 20-file ops aggregate: `e06a06ec1f0effa9756b19a9895add862d042d3b40849772746cd7787dc7f930`
+Directory `0017`/`0018`/`0019` aggregate: `bd2994a2cdbca16b9c023dc8c4ed2621dfb840b28909cca7a5ae6dbc83a692ae`
 
 No remote database, Worker, binding, secret, flag, activation watermark, organization, or contact was
 changed by this gate.
@@ -14,8 +16,10 @@ changed by this gate.
 
 The gate uses the production projection, dispatch, historical reconciliation, and finalization
 functions against file-backed disposable databases. It creates 200,000 canonical organization rows
-and 108 extracted professional-contact rows. Sixteen contacts have a usable professional channel;
-the other 92 must receive a `rejected_missing_channel` disposition without entering the receiver.
+and 108 extracted professional-contact rows. Sixteen fixtures are intentionally public,
+professional, source-backed, and channel-bearing. The other 92 exercise private/restricted or
+missing-channel paths and must receive a hash-only terminal disposition without entering the
+receiver.
 
 The run must:
 
@@ -44,26 +48,33 @@ The run must:
 - A later run reached the correct 200,016 deliveries and 4,002 windows but exited red because the
   final SQLite accounting row used the same null prototype. The receipt now normalizes that wrapper;
   the exact run was repeated and had to exit zero before this file recorded PASS.
+- A native Node SQLite plan test then exposed `MULTI-INDEX OR` and `USE TEMP B-TREE` in the
+  created-time keyset query, despite the Miniflare plan test being green. The implementation now
+  uses two bounded indexed reads: the remainder of the current created second followed by later
+  created seconds. The native cross-engine regression remains retained because it uniquely caught
+  the O(n-squared) scale failure.
 
 ## Final evidence
 
 `npm.cmd run test:crm-scale` exited 0 and emitted:
 
 ```json
-{"event":"pcd_crm_scale_final","stages":47,"durationMs":1091641,"complete":true,"organizations":200000,"contacts":108,"eligibleContacts":16,"rejectedContacts":92,"events":200016,"delivered":200016,"reconciliationWindows":4002,"simulatedResponseLosses":1,"detectedAndRecoveredMissingEvents":1}
+{"event":"pcd_crm_scale_final","stages":47,"durationMs":9282710,"complete":true,"organizations":200000,"contacts":108,"eligibleContacts":16,"rejectedContacts":92,"events":200016,"delivered":200016,"reconciliationWindows":4002,"simulatedResponseLosses":1,"detectedAndRecoveredMissingEvents":1}
 ```
 
-`npx.cmd vitest run tests/crm-adapter.test.ts --reporter=verbose --hookTimeout=30000` exited 0:
+The final producer suite, using the stable single-worker thread pool, exited 0:
 
 ```text
 Test Files  1 passed (1)
-Tests       23 passed (23)
-Duration    72.95s
+Tests       63 passed (63)
+Duration    215.85s
 ```
 
-`npx.cmd tsc --noEmit` and `git diff --check` both exited 0. The exhaustive 101-event two-pass unit
-test has its own 30-second ceiling because it took 17.27 seconds on the resource-constrained host;
-the timeout was not changed globally.
+The migration-upgrade test and native SQLite keyset-plan test each passed. Focused TypeScript
+checking passed for the CRM adapter, contact access layer, scale harness, and native plan test.
+The repository-wide raw `tsc --noEmit` remains blocked by pre-existing absent Astro-generated
+modules (`astro:content`, `astro:middleware`, and `ImportMeta.env`); that unrelated environment
+failure is not represented as a green CRM result. `git diff --check` passed.
 
 ## Review and cost profile
 
@@ -72,15 +83,18 @@ the timeout was not changed globally.
 - Security: no family lead, roster, guardian, minor, note, inferred identity, unrestricted channel,
   or secret is present in the synthetic receiver contract. Restricted and missing-channel contacts
   remain fail-closed in the existing adapter tests.
-- Efficiency: the primary claim changed from a full scan plus sort per ten rows to the partial
-  source-sequence index. No N+1 external calls were added; sequential sends are deliberate to
-  preserve the receiver audit chain.
+- Efficiency: both source keyset branches are bounded indexed searches and the outbox claim uses
+  the partial source-sequence index. No N+1 external calls were added; sequential sends are
+  deliberate to preserve the receiver audit chain. The receiver's three sequential conflict
+  probes per event remain a non-blocking Medium optimization opportunity after safe activation.
 - Simplicity: no runtime dependency, queue, new adapter layer, or alternative authority was added.
   The scale harness directly calls the existing product functions.
-- approximate algorithmic complexity: O(o + c) projection; O(log n + 10) per indexed claim; O(e)
+- approximate algorithmic complexity: O(o + c) projection; O(log n + 50) per source page;
+  O(log n + 10) per indexed claim; O(e)
   delivery; O(e) for each complete reconciliation pass.
-- DB query count on the delivery primary path: one indexed claim/update-returning query and one
-  bounded result-update batch per at-most-ten-row tick; reconciliation reads at most 100 events.
+- DB query count on the measured paths: a steady projection page uses 11-12 D1 calls / 162-163
+  statements; delivery uses 85 calls / 134 statements per ten events; reconciliation uses 9 calls /
+  11 statements per 100-event window.
 - external API calls: at most 10 sequential Service Binding event calls plus at most one 100-event
   reconciliation call per scheduled tick when enabled; zero while disabled.
 - queue jobs created: 0.

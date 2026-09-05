@@ -6,6 +6,10 @@ Read-only production inventory on 2026-09-04 found 198,287 canonical organizatio
 extracted contact rows. Of those contacts, 16 currently have an email or phone channel, all 108
 have a source URL, none is suppressed, and none is tombstoned. These counts are an action-time
 snapshot, not a load receipt; extraction continues and the activation gate must refresh them.
+Production predates the contact-context migration and current writers set every discovered row to
+`is_public = 0`, so all 108 are presently private/unreviewed. Every row will receive a terminal
+backfill disposition, but zero may become an active CRM contact until the public-professional
+eligibility gate is satisfied.
 
 PCD is the organization and professional-contact producer. Activity Radar `organizations.id`
 and `org_contacts.id` are the only subject identifiers. Names, domains, addresses and contact
@@ -51,7 +55,8 @@ switch remains a separately approved provider/data action.
 - first activation applies the reviewed watermark before either cursor, preventing an implicit
   historical backfill from an existing producer database;
 - the historical run freezes exact counts of rows created before the boundary, scans each source in
-  stable ID order in chunks of at most 50, and records only counts plus a hash of each chunk's
+  created-second plus ID order in chunks of at most 50 using two bounded indexed branches, and
+  records only counts plus a hash of each chunk's
   dispositions; later `updated_at` changes stay in that frozen membership and also flow through the
   live event cursor;
 - historical organizations are queued before either historical or live contacts, preventing a
@@ -87,15 +92,16 @@ switch remains a separately approved provider/data action.
 - expected memory: O(100), bounded by a 50-row source chunk, one in-flight delivery response, or one
   100-hash reconciliation window; every receiver response is capped at 4 KiB;
 - likely scaling bottleneck: the 10-event-per-minute receiver pump. At the 2026-09-04 inventory,
-  198,287 organizations plus 16 currently channel-bearing contacts is approximately 198,303
-  eligible upsert events and a conservative 13.8-day initial drain with no retries. A bounded
+  198,287 organizations plus zero currently public-reviewed contacts is 198,287 initially eligible
+  upsert events and a conservative 13.8-day initial drain with no retries. The 108 contact rows are
+  still dispositioned, while the 16 channel-bearing rows remain inactive pending human review. A bounded
   staging pilot must measure receiver/D1 behavior before that limit changes; completion is based on
   accounting and reconciliation, never elapsed time.
 
 The fixed-scale local gate processed 200,000 synthetic organizations plus 108 synthetic contacts,
 classified all 108 contacts, delivered all 200,016 eligible events, completed 4,002 reconciliation
 windows, recovered one ambiguous response by replay, and detected/restored one deliberately missing
-receiver event. It completed in 1,091,641 ms across 47 restartable stages. This proves application
+receiver event. It completed in 9,282,710 ms across 47 restartable stages. This proves application
 accounting and bounded-memory behavior, not hosted D1 latency or physical durability; the disposable
 SQLite harness disables host fsync while retaining transaction boundaries.
 

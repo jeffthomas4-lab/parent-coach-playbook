@@ -1,6 +1,12 @@
 # Migrations
 
 Cloudflare D1 schema migrations for the **shared activity database** (`activity-radar`).
+
+`0017` and `0018` add the disabled CRM projection cursor and revision bookkeeping. `0019` upgrades
+the historical cursor to immutable `(created second, id)` ordering so a 50-row page cannot skip
+same-second rows or admit post-boundary rows. The isolated staging fixture currently has an empty
+migration ledger despite containing data, so these three files require an explicit forward-only
+execution there; do not run the full lineage blindly.
 Forward-only SQL, sequence-prefixed so Wrangler applies them in order.
 
 | File | What it creates |
