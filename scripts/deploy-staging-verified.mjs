@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { open, readFile, unlink } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -169,10 +169,67 @@ export function validateStagingDeploymentManifest(
   return errors;
 }
 
+export function prepareStagingDeploymentManifest(manifest, expectedCrmSourceNotBeforeMs) {
+  if (!validActivationBoundary(expectedCrmSourceNotBeforeMs)) {
+    throw new Error('activation boundary must be a positive second-aligned Unix millisecond value');
+  }
+  return {
+    ...manifest,
+    vars: {
+      ...manifest.vars,
+      PCD_CRM_ADAPTER_ENABLED: 'true',
+      PCD_CRM_BACKFILL_ENABLED: 'false',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(expectedCrmSourceNotBeforeMs),
+    },
+  };
+}
+
 function run(command, args, options) {
   const result = spawnSync(command, args, { stdio: 'inherit', ...options });
   if (result.error) throw result.error;
-  if (result.status !== 0) process.exit(result.status ?? 1);
+  if (result.status !== 0) throw new Error(`${command} exited with status ${result.status ?? 1}`);
+}
+
+export async function deployStagingManifest({
+  manifest,
+  projectRoot = process.cwd(),
+  expectedCrmSourceNotBeforeMs,
+  npmCli = process.env.npm_execpath,
+  openConfig = open,
+  unlinkConfig = unlink,
+  runCommand = run,
+}) {
+  if (!npmCli) throw new Error('deploy-staging-verified.mjs must be run through npm');
+  const errors = validateStagingDeploymentManifest(manifest, {
+    expectedConfigPath: resolve(projectRoot, 'wrangler.jsonc'),
+    expectedCrmSourceNotBeforeMs,
+  });
+  if (errors.length > 0) throw new Error(`staging deployment refused:\n- ${errors.join('\n- ')}`);
+
+  const message = expectedCrmSourceNotBeforeMs === undefined
+    ? 'verified staging deployment'
+    : `Gate 9C-C CRM pilot activation ${expectedCrmSourceNotBeforeMs}`;
+  if (expectedCrmSourceNotBeforeMs === undefined) {
+    runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', resolve(projectRoot, 'dist/server/wrangler.json'), '--keep-vars', '--message', message], { cwd: projectRoot });
+    return;
+  }
+
+  const activationConfigPath = resolve(
+    projectRoot,
+    'dist/server',
+    `.wrangler.crm-activation-${process.pid}-${Date.now()}.json`,
+  );
+  const handle = await openConfig(activationConfigPath, 'wx');
+  try {
+    try {
+      await handle.writeFile(`${JSON.stringify(manifest)}\n`);
+    } finally {
+      await handle.close();
+    }
+    runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', activationConfigPath, '--keep-vars', '--message', message], { cwd: projectRoot });
+  } finally {
+    await unlinkConfig(activationConfigPath);
+  }
 }
 
 export async function buildAndVerifyStagingManifest({
@@ -188,7 +245,14 @@ export async function buildAndVerifyStagingManifest({
   const buildEnvironment = { ...process.env, PCD_OWNER_AUTH_PROOF_ENABLED: 'false' };
   delete buildEnvironment.WRANGLER_CONFIG_PATH;
   run(process.execPath, [npmCli, 'run', 'build'], { cwd: projectRoot, env: buildEnvironment });
-  const manifest = JSON.parse(await readFile(resolve(projectRoot, 'dist/server/wrangler.json'), 'utf8'));
+  const baseManifest = JSON.parse(await readFile(resolve(projectRoot, 'dist/server/wrangler.json'), 'utf8'));
+  const baseErrors = validateStagingDeploymentManifest(baseManifest, {
+    expectedConfigPath: resolve(projectRoot, 'wrangler.jsonc'),
+  });
+  if (baseErrors.length > 0) throw new Error(`staging deployment refused:\n- ${baseErrors.join('\n- ')}`);
+  if (expectedCrmSourceNotBeforeMs === undefined) return baseManifest;
+
+  const manifest = prepareStagingDeploymentManifest(baseManifest, expectedCrmSourceNotBeforeMs);
   const errors = validateStagingDeploymentManifest(manifest, {
     expectedConfigPath: resolve(projectRoot, 'wrangler.jsonc'),
     expectedCrmSourceNotBeforeMs,
@@ -211,11 +275,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       : `${boundaryFlag} ${expectedCrmSourceNotBeforeMs} --confirm-crm-activation`;
     console.log(`No deploy performed. Re-run with ${instruction} after exact-SHA approval.`);
   } else {
-    const npmCli = process.env.npm_execpath;
-    if (!npmCli) throw new Error('deploy-staging-verified.mjs must be run through npm');
-    const message = expectedCrmSourceNotBeforeMs === undefined
-      ? 'verified staging deployment'
-      : `Gate 9C-C CRM pilot activation ${expectedCrmSourceNotBeforeMs}`;
-    run(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', 'dist/server/wrangler.json', '--keep-vars', '--message', message], { cwd: process.cwd() });
+    await deployStagingManifest({ manifest, expectedCrmSourceNotBeforeMs });
   }
 }

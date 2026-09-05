@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { parseDeploymentArguments, validateStagingDeploymentManifest } from '../scripts/deploy-staging-verified.mjs';
+import {
+  deployStagingManifest,
+  parseDeploymentArguments,
+  prepareStagingDeploymentManifest,
+  validateStagingDeploymentManifest,
+} from '../scripts/deploy-staging-verified.mjs';
 
 const valid = {
   configPath: 'C:/workspace/wrangler.jsonc',
@@ -89,6 +94,19 @@ describe('verified staging deployment guard', () => {
     })).toContain('PCD_CRM_SOURCE_NOT_BEFORE_MS does not match the approved activation boundary');
   });
 
+  it('derives the approved pilot manifest without mutating the committed disabled manifest', () => {
+    const activation = prepareStagingDeploymentManifest(valid, '1788566400000');
+
+    expect(valid.vars.PCD_CRM_ADAPTER_ENABLED).toBe('false');
+    expect(valid.vars).not.toHaveProperty('PCD_CRM_SOURCE_NOT_BEFORE_MS');
+    expect(activation.vars.PCD_CRM_ADAPTER_ENABLED).toBe('true');
+    expect(activation.vars.PCD_CRM_BACKFILL_ENABLED).toBe('false');
+    expect(activation.vars.PCD_CRM_SOURCE_NOT_BEFORE_MS).toBe('1788566400000');
+    expect(validateStagingDeploymentManifest(activation, {
+      expectedCrmSourceNotBeforeMs: '1788566400000',
+    })).toEqual([]);
+  });
+
   it('rejects missing, malformed, sub-second, stale disabled, and historical-backfill activation state', () => {
     const activation = structuredClone(valid) as any;
     activation.vars.PCD_CRM_ADAPTER_ENABLED = 'true';
@@ -170,5 +188,67 @@ describe('verified staging deployment guard', () => {
     expect(() => parseDeploymentArguments([
       '--crm-activation-boundary-ms', '1788566400001', '--confirm-crm-activation',
     ])).toThrow('activation boundary must be a positive second-aligned Unix millisecond value');
+  });
+
+  it('deploys the derived activation config and always removes its owned temporary file', async () => {
+    const activation = prepareStagingDeploymentManifest(valid, '1788566400000');
+    const calls: string[] = [];
+    let deployedArgs: string[] = [];
+    let written = '';
+    const openConfig = async (path: string, flags: string) => {
+      calls.push(`open:${path}:${flags}`);
+      return {
+        writeFile: async (value: string) => { written = value; calls.push('write'); },
+        close: async () => { calls.push('close'); },
+      };
+    };
+    const unlinkConfig = async (path: string) => { calls.push(`unlink:${path}`); };
+
+    await deployStagingManifest({
+      manifest: activation,
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: '1788566400000',
+      npmCli: 'npm-cli.js',
+      openConfig,
+      unlinkConfig,
+      runCommand: (_command: string, args: string[]) => { deployedArgs = args; },
+    });
+
+    const configIndex = deployedArgs.indexOf('--config');
+    expect(configIndex).toBeGreaterThan(-1);
+    expect(deployedArgs[configIndex + 1]).toContain('.wrangler.crm-activation-');
+    expect(JSON.parse(written).vars.PCD_CRM_ADAPTER_ENABLED).toBe('true');
+    expect(calls).toEqual(expect.arrayContaining(['write', 'close']));
+    expect(calls.at(-1)).toContain('unlink:');
+  });
+
+  it('removes the activation config after deploy or post-open write failure', async () => {
+    const activation = prepareStagingDeploymentManifest(valid, '1788566400000');
+    const removedAfterDeploy: string[] = [];
+    await expect(deployStagingManifest({
+      manifest: activation,
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: '1788566400000',
+      npmCli: 'npm-cli.js',
+      openConfig: async () => ({ writeFile: async () => {}, close: async () => {} }),
+      unlinkConfig: async (path: string) => { removedAfterDeploy.push(path); },
+      runCommand: () => { throw new Error('deploy failed'); },
+    })).rejects.toThrow('deploy failed');
+    expect(removedAfterDeploy).toHaveLength(1);
+
+    const calls: string[] = [];
+    await expect(deployStagingManifest({
+      manifest: activation,
+      projectRoot: 'C:/workspace',
+      expectedCrmSourceNotBeforeMs: '1788566400000',
+      npmCli: 'npm-cli.js',
+      openConfig: async () => ({
+        writeFile: async () => { throw new Error('disk full'); },
+        close: async () => { calls.push('close'); },
+      }),
+      unlinkConfig: async () => { calls.push('unlink'); },
+      runCommand: () => { calls.push('deploy'); },
+    })).rejects.toThrow('disk full');
+    expect(calls).toEqual(['close', 'unlink']);
   });
 });
