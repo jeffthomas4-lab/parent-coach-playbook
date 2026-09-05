@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import type { PathLike } from 'node:fs';
+import type { FileHandle } from 'node:fs/promises';
 import {
   deployStagingManifest,
   parseDeploymentArguments,
@@ -195,14 +197,14 @@ describe('verified staging deployment guard', () => {
     const calls: string[] = [];
     let deployedArgs: string[] = [];
     let written = '';
-    const openConfig = async (path: string, flags: string) => {
-      calls.push(`open:${path}:${flags}`);
+    const openConfig = async (path: PathLike, flags?: string | number) => {
+      calls.push(`open:${String(path)}:${flags}`);
       return {
         writeFile: async (value: string) => { written = value; calls.push('write'); },
         close: async () => { calls.push('close'); },
-      };
+      } as unknown as FileHandle;
     };
-    const unlinkConfig = async (path: string) => { calls.push(`unlink:${path}`); };
+    const unlinkConfig = async (path: PathLike) => { calls.push(`unlink:${String(path)}`); };
 
     await deployStagingManifest({
       manifest: activation,
@@ -230,8 +232,8 @@ describe('verified staging deployment guard', () => {
       projectRoot: 'C:/workspace',
       expectedCrmSourceNotBeforeMs: '1788566400000',
       npmCli: 'npm-cli.js',
-      openConfig: async () => ({ writeFile: async () => {}, close: async () => {} }),
-      unlinkConfig: async (path: string) => { removedAfterDeploy.push(path); },
+      openConfig: async () => ({ writeFile: async () => {}, close: async () => {} } as unknown as FileHandle),
+      unlinkConfig: async (path: PathLike) => { removedAfterDeploy.push(String(path)); },
       runCommand: () => { throw new Error('deploy failed'); },
     })).rejects.toThrow('deploy failed');
     expect(removedAfterDeploy).toHaveLength(1);
@@ -245,7 +247,7 @@ describe('verified staging deployment guard', () => {
       openConfig: async () => ({
         writeFile: async () => { throw new Error('disk full'); },
         close: async () => { calls.push('close'); },
-      }),
+      } as unknown as FileHandle),
       unlinkConfig: async () => { calls.push('unlink'); },
       runCommand: () => { calls.push('deploy'); },
     })).rejects.toThrow('disk full');
