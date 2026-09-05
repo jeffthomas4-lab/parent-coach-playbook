@@ -372,6 +372,29 @@ describe('PCD CRM adapter producer', () => {
     expect(JSON.stringify(receipt)).not.toContain('private-value@test.example');
   });
 
+  it('terminally dispositions a historical soft-deleted contact without resurrecting its channel', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    await insertOrganization(intel, { id: 'org-deleted-contact', updatedAt: oldAt });
+    await insertContact(ops, {
+      id: 'contact-deleted-historical',
+      organizationId: 'org-deleted-contact',
+      updatedAt: oldAt,
+      deletedAt: oldAt,
+    });
+    const result = await projectPcdCrmBackfill(env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    }), { now: Date.parse(oldAt) + 1 });
+    expect(result).toMatchObject({ contacts: 0, rejected: 1, scanCompleted: true, completed: false });
+    expect(await ops.prepare(`SELECT 1 FROM crm_adapter_outbox
+      WHERE subject_id='contact-deleted-historical'`).first()).toBeNull();
+    const chunks = await ops.prepare(`SELECT eligible_count,rejected_count FROM crm_adapter_backfill_chunks
+      WHERE subject_type='contact'`).all();
+    expect(chunks.results).toEqual([{ eligible_count: 0, rejected_count: 1 }]);
+    expect(JSON.stringify(chunks.results)).not.toContain('contact-deleted-historical@test.example');
+  });
+
   it('keeps historical accounting when an unattempted observation is removed by a safety mutation', async () => {
     const { ops, intel } = await databases();
     const oldAt = '2026-09-01T12:00:00.000Z';

@@ -297,7 +297,7 @@ async function contactDraft(
   // Legacy stored hashes predate the suppression and context fields. Derive
   // the projection hash from every field that affects CRM safety.
   const contentHash = await contactProjectionHash(row);
-  const restricted = Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
+  const restricted = !!row.deleted_at || Number(row.do_not_contact) === 1 || row.contact_context !== 'professional';
   if ((row.deleted_at || restricted) && previouslyObserved) {
     return contactRetractionDraft(
       row.id, row.organization_id, contentHash, authorityUpdatedAt, namespace, targetWorkspaceId,
