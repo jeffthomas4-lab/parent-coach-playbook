@@ -302,6 +302,16 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
     environment: 'staging',
     dataClassification: 'synthetic_nonproduction',
     remoteExecutionAuthorized: false,
+    readOnlyD1Transport: {
+      requiredFlag: '--command',
+      prohibitedFlags: ['--file'],
+      requiredMeta: {
+        success: true,
+        changes: 0,
+        rows_written: 0,
+        changed_db: false,
+      },
+    },
     sourceNotBeforeMs: boundaryMs,
     sourceNotBeforeIso: new Date(boundaryMs).toISOString(),
     organizationUpdatedAt,
@@ -330,6 +340,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
     ],
     hardStops: [
       'No file in this packet authorizes remote execution.',
+      'Execute every remote read-only D1 preflight via --command; --file uses the import endpoint and is prohibited.',
       'Do not enable historical backfill for this pilot.',
       'Do not substitute production organizations or contacts.',
       'Do not proceed from organizations to contacts without receiver receipts for all 3 organizations.',
