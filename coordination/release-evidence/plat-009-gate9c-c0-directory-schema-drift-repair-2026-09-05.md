@@ -68,6 +68,10 @@ schema read. Callers cannot inject a replacement production schema reader.
 
 Verification:
 
+- `tests/crm-directory-schema-repair.test.ts`: PASS, 4/4 against a real SQLite reproduction of
+  the 10-row staging fixture shape with `0017` through `0019` already applied; proves `0015` completes,
+  preserves base values, assigns only its declared defaults, keeps historical revisions at zero,
+  and makes the pre-existing tombstone trigger functional
 - `tests/staging-deploy-guard.test.ts`: PASS, 26/26
 - `tests/crm-staging-pilot.integration.test.ts`: PASS, 3/3
 - `node --check scripts/deploy-staging-verified.mjs`: PASS
