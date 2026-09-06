@@ -29,6 +29,65 @@ const STAGING_SERVICE_BINDINGS = [
 const STAGING_KV_BINDINGS = [
   { binding: 'SESSION', id: '59cbf275ba16459c8f76ff39b033f748' },
 ];
+const CRM_DIRECTORY_COLUMNS = [
+  'id', 'name', 'organization_type', 'website_url', 'city', 'state', 'zip', 'categories',
+  'record_status', 'is_claimed', 'content_hash', 'deleted_at', 'updated_at',
+  'crm_projection_revision',
+];
+const CRM_DIRECTORY_OBJECTS = [
+  {
+    type: 'table', name: 'crm_organization_projection_revisions', table: 'crm_organization_projection_revisions',
+    definition: `CREATE TABLE crm_organization_projection_revisions (
+      singleton INTEGER PRIMARY KEY CHECK(singleton=1),
+      next_revision INTEGER NOT NULL CHECK(next_revision > 0)
+    )`,
+  },
+  {
+    type: 'index', name: 'idx_organizations_crm_projection_revision', table: 'organizations',
+    definition: `CREATE INDEX idx_organizations_crm_projection_revision
+      ON organizations(crm_projection_revision) WHERE crm_projection_revision > 0`,
+  },
+  {
+    type: 'trigger', name: 'crm_organization_projection_insert', table: 'organizations',
+    definition: `CREATE TRIGGER crm_organization_projection_insert
+      AFTER INSERT ON organizations
+      BEGIN
+        UPDATE crm_organization_projection_revisions SET next_revision=next_revision+1 WHERE singleton=1;
+        UPDATE organizations SET crm_projection_revision=(
+          SELECT next_revision-1 FROM crm_organization_projection_revisions WHERE singleton=1
+        ) WHERE id=NEW.id;
+      END`,
+  },
+  {
+    type: 'trigger', name: 'crm_organization_projection_update', table: 'organizations',
+    definition: `CREATE TRIGGER crm_organization_projection_update
+      AFTER UPDATE OF name,organization_type,website_url,city,state,zip,categories,
+        record_status,is_claimed,deleted_at ON organizations
+      WHEN NEW.name IS NOT OLD.name
+        OR NEW.organization_type IS NOT OLD.organization_type
+        OR NEW.website_url IS NOT OLD.website_url
+        OR NEW.city IS NOT OLD.city
+        OR NEW.state IS NOT OLD.state
+        OR NEW.zip IS NOT OLD.zip
+        OR NEW.categories IS NOT OLD.categories
+        OR NEW.record_status IS NOT OLD.record_status
+        OR NEW.is_claimed IS NOT OLD.is_claimed
+        OR NEW.deleted_at IS NOT OLD.deleted_at
+      BEGIN
+        UPDATE crm_organization_projection_revisions SET next_revision=next_revision+1 WHERE singleton=1;
+        UPDATE organizations SET crm_projection_revision=(
+          SELECT next_revision-1 FROM crm_organization_projection_revisions WHERE singleton=1
+        ) WHERE id=NEW.id;
+      END`,
+  },
+];
+const CRM_DIRECTORY_SCHEMA_SQL = `PRAGMA table_info("organizations");
+SELECT type,name,tbl_name,sql FROM sqlite_schema WHERE name IN (
+  'crm_organization_projection_revisions',
+  'idx_organizations_crm_projection_revision',
+  'crm_organization_projection_insert',
+  'crm_organization_projection_update'
+) ORDER BY type,name;`;
 const SOURCE_SHA_PATTERN = /^[0-9a-f]{40}$/;
 
 function normalized(value) {
@@ -46,6 +105,62 @@ function actionTimeActivationBoundary(value) {
 
 function hasExactBinding(actual, expected, fields) {
   return actual.some((binding) => fields.every((field) => binding?.[field] === expected[field]));
+}
+
+function normalizedSchemaDefinition(value) {
+  return String(value ?? '')
+    .trim()
+    .replace(/;$/, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*([(),=+>])\s*/g, '$1')
+    .toLowerCase();
+}
+
+export function validateCrmDirectorySchemaReadback(readback) {
+  if (!Array.isArray(readback) || readback.length !== 2
+    || !readback.every((result) => result?.success === true && Array.isArray(result.results))) {
+    return ['staging directory schema readback is malformed or unsuccessful'];
+  }
+  const columns = new Set(readback[0].results.map((row) => row?.name).filter(Boolean));
+  const errors = [
+    ...CRM_DIRECTORY_COLUMNS
+      .filter((column) => !columns.has(column))
+      .map((column) => `organizations.${column} is missing`),
+  ];
+  for (const expected of CRM_DIRECTORY_OBJECTS) {
+    const object = readback[1].results.find((row) => (
+      row?.type === expected.type && row?.name === expected.name
+    ));
+    if (!object) {
+      errors.push(`${expected.type} ${expected.name} is missing`);
+    } else if (object.tbl_name !== expected.table) {
+      errors.push(`${expected.type} ${expected.name} does not belong to ${expected.table}`);
+    } else if (normalizedSchemaDefinition(object.sql) !== normalizedSchemaDefinition(expected.definition)) {
+      errors.push(`${expected.type} ${expected.name} definition is incompatible`);
+    }
+  }
+  return errors;
+}
+
+export function readStagingDirectorySchema({ projectRoot, npmCli, spawn = spawnSync }) {
+  const result = spawn(process.execPath, [
+    npmCli, 'exec', '--', 'wrangler', 'd1', 'execute', STAGING_D1_BINDINGS[0].database_id,
+    '--remote', '--command', CRM_DIRECTORY_SCHEMA_SQL, '--json',
+    '--config', resolve(projectRoot, 'wrangler.jsonc'),
+  ], {
+    cwd: projectRoot,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+    timeout: 60_000,
+  });
+  if (result.error || result.status !== 0) {
+    throw new Error('staging directory schema metadata read failed');
+  }
+  try {
+    return JSON.parse(String(result.stdout ?? ''));
+  } catch {
+    throw new Error('staging directory schema metadata read was not valid JSON');
+  }
 }
 
 export function parseDeploymentArguments(args) {
@@ -319,6 +434,15 @@ export async function deployStagingManifest({
   }
 
   await verifyReleaseState(projectRoot, expectedSourceSha);
+  if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
+    throw new Error('activation boundary must be within 15 minutes of deployment');
+  }
+  const schemaErrors = validateCrmDirectorySchemaReadback(readStagingDirectorySchema({
+    projectRoot, npmCli,
+  }));
+  if (schemaErrors.length > 0) {
+    throw new Error(`staging deployment refused:\n- ${schemaErrors.join('\n- ')}`);
+  }
   if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
     throw new Error('activation boundary must be within 15 minutes of deployment');
   }

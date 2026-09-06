@@ -10,13 +10,77 @@ import {
   deployStagingManifest,
   parseDeploymentArguments,
   prepareStagingDeploymentManifest,
+  readStagingDirectorySchema,
+  validateCrmDirectorySchemaReadback,
   validatePostBuildStatus,
   validateStagingDeploymentManifest,
   verifyCleanCheckout,
 } from '../scripts/deploy-staging-verified.mjs';
 
+const schemaProcess = vi.hoisted(() => ({ readback: null as unknown }));
+vi.mock('node:child_process', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('node:child_process')>();
+  return {
+    ...actual,
+    spawnSync: (command: string, args?: readonly string[], options?: unknown) => {
+      if (args?.includes('wrangler') && args.includes('d1') && args.includes('execute')) {
+        return { status: 0, stdout: JSON.stringify(schemaProcess.readback), stderr: '' };
+      }
+      return actual.spawnSync(command, args, options as any);
+    },
+  };
+});
+
 const actionBoundary = String(Math.floor(Date.now() / 1_000) * 1_000);
 const approvedSourceSha = 'abd0bea53554a3c832fddd0fb101d00602662491';
+const requiredCrmDirectoryColumns = [
+  'id', 'name', 'organization_type', 'website_url', 'city', 'state', 'zip', 'categories',
+  'record_status', 'is_claimed', 'content_hash', 'deleted_at', 'updated_at',
+  'crm_projection_revision',
+];
+const revisionTableSql = `CREATE TABLE crm_organization_projection_revisions (
+  singleton INTEGER PRIMARY KEY CHECK(singleton=1),
+  next_revision INTEGER NOT NULL CHECK(next_revision > 0)
+)`;
+const projectionIndexSql = `CREATE INDEX idx_organizations_crm_projection_revision
+  ON organizations(crm_projection_revision) WHERE crm_projection_revision > 0`;
+const projectionInsertTriggerSql = `CREATE TRIGGER crm_organization_projection_insert
+AFTER INSERT ON organizations
+BEGIN
+  UPDATE crm_organization_projection_revisions SET next_revision=next_revision+1 WHERE singleton=1;
+  UPDATE organizations SET crm_projection_revision=(
+    SELECT next_revision-1 FROM crm_organization_projection_revisions WHERE singleton=1
+  ) WHERE id=NEW.id;
+END`;
+const projectionUpdateTriggerSql = `CREATE TRIGGER crm_organization_projection_update
+AFTER UPDATE OF name,organization_type,website_url,city,state,zip,categories,
+  record_status,is_claimed,deleted_at ON organizations
+WHEN NEW.name IS NOT OLD.name
+  OR NEW.organization_type IS NOT OLD.organization_type
+  OR NEW.website_url IS NOT OLD.website_url
+  OR NEW.city IS NOT OLD.city
+  OR NEW.state IS NOT OLD.state
+  OR NEW.zip IS NOT OLD.zip
+  OR NEW.categories IS NOT OLD.categories
+  OR NEW.record_status IS NOT OLD.record_status
+  OR NEW.is_claimed IS NOT OLD.is_claimed
+  OR NEW.deleted_at IS NOT OLD.deleted_at
+BEGIN
+  UPDATE crm_organization_projection_revisions SET next_revision=next_revision+1 WHERE singleton=1;
+  UPDATE organizations SET crm_projection_revision=(
+    SELECT next_revision-1 FROM crm_organization_projection_revisions WHERE singleton=1
+  ) WHERE id=NEW.id;
+END`;
+const requiredCrmDirectoryObjects = [
+  { type: 'table', name: 'crm_organization_projection_revisions', tbl_name: 'crm_organization_projection_revisions', sql: revisionTableSql },
+  { type: 'index', name: 'idx_organizations_crm_projection_revision', tbl_name: 'organizations', sql: projectionIndexSql },
+  { type: 'trigger', name: 'crm_organization_projection_insert', tbl_name: 'organizations', sql: projectionInsertTriggerSql },
+  { type: 'trigger', name: 'crm_organization_projection_update', tbl_name: 'organizations', sql: projectionUpdateTriggerSql },
+];
+const compatibleCrmDirectorySchema = [
+  { success: true, results: requiredCrmDirectoryColumns.map((name) => ({ name })) },
+  { success: true, results: requiredCrmDirectoryObjects },
+];
 let cleanRepoRoot = '';
 let cleanRepoSha = '';
 let cleanManifest: typeof valid;
@@ -24,6 +88,7 @@ let exactSource: { expectedSourceSha: string };
 
 afterEach(() => {
   vi.restoreAllMocks();
+  schemaProcess.readback = compatibleCrmDirectorySchema;
 });
 
 const valid = {
@@ -70,6 +135,7 @@ beforeAll(() => {
   }));
   cleanManifest = { ...structuredClone(valid), configPath: join(cleanRepoRoot, 'wrangler.jsonc') };
   exactSource = { expectedSourceSha: cleanRepoSha };
+  schemaProcess.readback = compatibleCrmDirectorySchema;
 });
 
 afterAll(() => {
@@ -77,6 +143,116 @@ afterAll(() => {
 });
 
 describe('verified staging deployment guard', () => {
+  it('fails closed when the staging directory lacks the deleted_at tombstone contract', () => {
+    const missingDeletedAt = structuredClone(compatibleCrmDirectorySchema);
+    missingDeletedAt[0]!.results = missingDeletedAt[0]!.results.filter(({ name }) => name !== 'deleted_at');
+
+    expect(validateCrmDirectorySchemaReadback(missingDeletedAt)).toContain(
+      'organizations.deleted_at is missing',
+    );
+    expect(validateCrmDirectorySchemaReadback(compatibleCrmDirectorySchema)).toEqual([]);
+  });
+
+  it('rejects name-only decoy projection objects and an incomplete revision control table', () => {
+    const decoy = structuredClone(compatibleCrmDirectorySchema);
+    decoy[1]!.results = decoy[1]!.results.map((row) => {
+      if (row.name === 'crm_organization_projection_revisions') {
+        return { ...row, sql: 'CREATE TABLE crm_organization_projection_revisions (singleton INTEGER PRIMARY KEY)' };
+      }
+      return row.name === 'idx_organizations_crm_projection_revision'
+        ? { ...row, tbl_name: 'decoy_organizations' }
+        : row;
+    });
+
+    expect(validateCrmDirectorySchemaReadback(decoy)).toEqual(expect.arrayContaining([
+      'table crm_organization_projection_revisions definition is incompatible',
+      'index idx_organizations_crm_projection_revision does not belong to organizations',
+    ]));
+  });
+
+  it('rejects partial or comment-spoofed projection trigger definitions', () => {
+    const spoofed = structuredClone(compatibleCrmDirectorySchema);
+    spoofed[1]!.results = spoofed[1]!.results.map((row) => {
+      if (row.name === 'crm_organization_projection_insert') {
+        return { ...row, sql: `CREATE TRIGGER crm_organization_projection_insert
+          AFTER INSERT ON organizations BEGIN SELECT 1;
+          /* UPDATE crm_organization_projection_revisions SET next_revision=next_revision+1 WHERE singleton=1;
+             UPDATE organizations SET crm_projection_revision=0 WHERE id=NEW.id; */ END` };
+      }
+      if (row.name === 'crm_organization_projection_update') {
+        return { ...row, sql: `CREATE TRIGGER crm_organization_projection_update
+          AFTER UPDATE OF deleted_at ON organizations BEGIN
+          UPDATE crm_organization_projection_revisions SET next_revision=next_revision+1 WHERE singleton=1;
+          UPDATE organizations SET crm_projection_revision=0 WHERE id=NEW.id; END` };
+      }
+      return row;
+    });
+
+    expect(validateCrmDirectorySchemaReadback(spoofed)).toEqual(expect.arrayContaining([
+      'trigger crm_organization_projection_insert definition is incompatible',
+      'trigger crm_organization_projection_update definition is incompatible',
+    ]));
+  });
+
+  it('refuses CRM activation before creating a config when directory schema is incompatible', async () => {
+    const missingDeletedAt = structuredClone(compatibleCrmDirectorySchema);
+    missingDeletedAt[0]!.results = missingDeletedAt[0]!.results.filter(({ name }) => name !== 'deleted_at');
+    const opened: string[] = [];
+    const deployed: string[] = [];
+    schemaProcess.readback = missingDeletedAt;
+
+    await expect(deployStagingManifest({
+      manifest: prepareStagingDeploymentManifest(cleanManifest, actionBoundary),
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
+      expectedCrmSourceNotBeforeMs: actionBoundary,
+      npmCli: 'npm-cli.js',
+      openConfig: async (path: PathLike) => {
+        opened.push(String(path));
+        return { writeFile: async () => {}, close: async () => {} } as unknown as FileHandle;
+      },
+      runCommand: () => { deployed.push('deploy'); },
+    })).rejects.toThrow('organizations.deleted_at is missing');
+    expect(opened).toEqual([]);
+    expect(deployed).toEqual([]);
+  });
+
+  it('reads only schema metadata from the exact staging directory database', () => {
+    let command = '';
+    let args: string[] = [];
+    const result = readStagingDirectorySchema({
+      projectRoot: 'C:/workspace',
+      npmCli: 'npm-cli.js',
+      spawn: (nextCommand: string, nextArgs: string[]) => {
+        command = nextCommand;
+        args = nextArgs;
+        return { status: 0, stdout: JSON.stringify(compatibleCrmDirectorySchema), stderr: '' };
+      },
+    } as any);
+
+    expect(result).toEqual(compatibleCrmDirectorySchema);
+    expect(command).toBe(process.execPath);
+    expect(args).toEqual(expect.arrayContaining([
+      'npm-cli.js', 'exec', '--', 'wrangler', 'd1', 'execute',
+      '6aa26d4d-d545-4eb7-bf50-34d45f2182ad', '--remote', '--json',
+      '--config', 'C:\\workspace\\wrangler.jsonc',
+    ]));
+    expect(args[args.indexOf('--command') + 1]).toContain('PRAGMA table_info("organizations")');
+    expect(args[args.indexOf('--command') + 1]).toContain('FROM sqlite_schema');
+
+    expect(() => readStagingDirectorySchema({
+      projectRoot: 'C:/workspace', npmCli: 'npm-cli.js',
+      spawn: () => ({ status: 1, stdout: '', stderr: 'private provider detail' }),
+    } as any)).toThrow('staging directory schema metadata read failed');
+    expect(() => readStagingDirectorySchema({
+      projectRoot: 'C:/workspace', npmCli: 'npm-cli.js',
+      spawn: () => ({ status: 0, stdout: 'not-json', stderr: '' }),
+    } as any)).toThrow('staging directory schema metadata read was not valid JSON');
+    expect(validateCrmDirectorySchemaReadback([])).toEqual([
+      'staging directory schema readback is malformed or unsuccessful',
+    ]);
+  });
+
   it('accepts only the isolated staging manifest with safe feature defaults', () => {
     expect(validateStagingDeploymentManifest(valid)).toEqual([]);
   });
