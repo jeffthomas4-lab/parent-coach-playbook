@@ -1,8 +1,13 @@
 # PLAT-009 Gate 9C-C1 synthetic staging pilot proposal
 
-Status: **LOCAL PLAN PASS / REMOTE PILOT HOLD**
+Status: **SUPERSEDED APPROVAL WORDING / REMOTE PILOT HOLD**
 
 Recorded: 2026-09-05 Pacific / 2026-09-06 UTC
+
+The execution design and exclusions below remain the hosted-pilot contract, but its one-step
+approval wording is superseded by `plat-009-gate9c-c1-hash-gate-amendment-2026-09-05.md`. The
+packet must now be frozen under Gate 9C-C1-A and named by exact hash in a separate Gate 9C-C1-B
+approval before any remote mutation.
 
 ## Purpose
 
