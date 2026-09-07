@@ -111,7 +111,7 @@ provider/data action.
 `npm run build:crm-staging-pilot -- --boundary-ms <action-time-ms> --output-dir <new-directory>`
 builds the separately gated staging packet. It has no default boundary, requires a positive
 second-aligned value within 15 minutes, refuses duplicate flags and existing output directories,
-uses exclusive file creation, and emits exact hashes for seven SQL artifacts. Generation is local;
+uses exclusive file creation, and emits exact hashes for eight SQL artifacts. Generation is local;
 it does not execute Wrangler or access a provider.
 
 The verified staging deploy path rechecks the same 15-minute window before and after the build,
@@ -129,6 +129,13 @@ local flow projects the two eligible observations plus one raw-free DNC tombston
 other five controls. The third read-only verification surface checks the central CRM for exactly
 three active organization projections, two active contact projections, one durable source-contact
 restriction, and no contact point for the suppressed identity.
+
+After the first three contact receipts are recorded, the replay phase fails closed unless the exact
+two observations and raw-free DNC event are each delivered once with distinct event, idempotency,
+and receipt identifiers. It then resets only those three synthetic rows to `retry` without changing
+their payloads, event IDs, sequences, or idempotency keys. The ordinary signed dispatcher must return
+the same receiver receipt IDs on replay, after which the existing six-event reconciliation contract
+must report no missing, duplicate, stale, unauthorized, or mismatched event.
 
 This generator is readiness evidence, not permission to run it against staging. The real boundary
 and artifact hashes must be regenerated and named in the execution gate; historical backfill stays

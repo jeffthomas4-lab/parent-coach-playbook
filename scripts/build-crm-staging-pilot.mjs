@@ -163,6 +163,61 @@ FROM org_contacts WHERE id IN (${idList(CONTACTS)});
 `;
 }
 
+function buildOpsReplay(boundaryMs) {
+  return `${header(boundaryMs)}
+WITH replay_gate AS (
+  SELECT COUNT(*) AS replayable_events
+  FROM crm_adapter_outbox
+  WHERE producer_workspace_id='pcd-activity-radar'
+    AND target_workspace_id='ws-sightsmash'
+    AND subject_type='contact'
+    AND authority_updated_at=${boundaryMs + 4_000}
+    AND (
+      (event_type='contact.observed.v1'
+        AND subject_id IN ('crm-pilot-contact-email','crm-pilot-contact-phone'))
+      OR (event_type='contact.deleted.v1'
+        AND subject_id='crm-pilot-contact-suppressed')
+    )
+    AND status='delivered'
+    AND attempt_count=1
+    AND send_attempt_count=1
+    AND receiver_receipt_id IS NOT NULL
+    AND receiver_status BETWEEN 200 AND 299
+    AND delivered_at IS NOT NULL
+    AND last_error_code IS NULL
+    AND lease_id IS NULL
+    AND lease_expires_at IS NULL
+    AND cancelled_at IS NULL
+  HAVING COUNT(*)=3
+    AND COUNT(DISTINCT subject_id)=3
+    AND COUNT(DISTINCT event_id)=3
+    AND COUNT(DISTINCT idempotency_key)=3
+    AND COUNT(DISTINCT receiver_receipt_id)=3
+)
+UPDATE crm_adapter_outbox
+SET status='retry',
+    next_attempt_at=0,
+    receiver_receipt_id=NULL,
+    receiver_status=NULL,
+    last_error_code='pilot_idempotency_replay',
+    delivered_at=NULL,
+    lease_id=NULL,
+    lease_expires_at=NULL,
+    updated_at=${boundaryMs + 8_000}
+WHERE producer_workspace_id='pcd-activity-radar'
+  AND target_workspace_id='ws-sightsmash'
+  AND subject_type='contact'
+  AND authority_updated_at=${boundaryMs + 4_000}
+  AND (
+    (event_type='contact.observed.v1'
+      AND subject_id IN ('crm-pilot-contact-email','crm-pilot-contact-phone'))
+    OR (event_type='contact.deleted.v1'
+      AND subject_id='crm-pilot-contact-suppressed')
+  )
+  AND EXISTS (SELECT 1 FROM replay_gate);
+`;
+}
+
 function buildDirectoryVerification(boundaryMs, updatedAt) {
   return `${header(boundaryMs)}
 SELECT COUNT(*) AS exact_fixture_rows,
@@ -287,6 +342,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
     ['00-ops-preflight.sql', buildOpsPreflight(boundaryMs)],
     ['01-directory-organizations.sql', buildDirectoryMutation(boundaryMs, organizationUpdatedAt)],
     ['02-ops-contacts.sql', buildContactsMutation(boundaryMs, contactCreatedAt)],
+    ['03-ops-replay.sql', buildOpsReplay(boundaryMs)],
     ['90-directory-verification.sql', buildDirectoryVerification(boundaryMs, organizationUpdatedAt)],
     ['91-ops-verification.sql', buildOpsVerification(boundaryMs)],
     ['92-crm-verification.sql', buildCrmVerification(boundaryMs)],
@@ -323,6 +379,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
       contactEvents: 3,
       contactObservedEvents: 2,
       contactSuppressionEvents: 1,
+      replayedContactEvents: 3,
       crm: {
         activeOrganizationProjections: 3,
         activeContactProjections: 2,
@@ -336,6 +393,8 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
       'Apply 01 only after a separately approved staging activation uses this exact sourceNotBeforeMs.',
       'Wait for all 3 organization events to be delivered and receipted; do not infer readiness from enqueue success.',
       'Apply 02 only after the organization receipt precondition passes.',
+      'Apply 03 exactly once only after recording the first three contact receipt IDs; require exactly three changed rows.',
+      'Wait for the same three event IDs and idempotency keys to return the same receipt IDs through receiver replay.',
       'Run all three read-only verification files and compare every count with this manifest.',
     ],
     hardStops: [
@@ -344,6 +403,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
       'Do not enable historical backfill for this pilot.',
       'Do not substitute production organizations or contacts.',
       'Do not proceed from organizations to contacts without receiver receipts for all 3 organizations.',
+      'Do not apply the replay phase unless all 3 contact events have exactly one successful send and distinct receipts.',
       'Stop if the raw-free DNC event or the CRM source-contact restriction is absent.',
     ],
     artifacts,

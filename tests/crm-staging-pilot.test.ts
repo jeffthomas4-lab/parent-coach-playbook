@@ -66,18 +66,20 @@ describe('CRM staging synthetic pilot package', () => {
     ])).toThrow('duplicate_argument:--output-dir');
   });
 
-  it('emits hash-pinned synthetic-only two-phase SQL and exercises every disposition', async () => {
+  it('emits hash-pinned synthetic-only phased SQL and exercises every disposition plus replay', async () => {
     const root = await mkdtemp(join(tmpdir(), 'crm-staging-pilot-test-'));
     const outputDir = join(root, 'packet');
     try {
       const manifest = await buildCrmStagingPilot({ boundaryMs, outputDir });
       expect(manifest.remoteExecutionAuthorized).toBe(false);
+      expect(manifest.artifacts).toHaveLength(8);
       expect(manifest.organizations).toHaveLength(3);
       expect(manifest.contacts).toHaveLength(8);
       expect(manifest.expected).toMatchObject({
         contactEvents: 3,
         contactObservedEvents: 2,
         contactSuppressionEvents: 1,
+        replayedContactEvents: 3,
         crm: {
           activeOrganizationProjections: 3,
           activeContactProjections: 2,
@@ -98,6 +100,7 @@ describe('CRM staging synthetic pilot package', () => {
       const artifactContents = new Map(await Promise.all(manifest.artifacts.map(async ({ file }) => (
         [file, await readFile(join(outputDir, file))] as const
       ))));
+      expect([...artifactContents.keys()]).toContain('03-ops-replay.sql');
       const opsVerification = splitSqlStatements(String(artifactContents.get('91-ops-verification.sql')));
       for (const artifact of manifest.artifacts) {
         const bytes = artifactContents.get(artifact.file)!;
@@ -231,6 +234,76 @@ describe('CRM staging synthetic pilot package', () => {
         deliveredCount += contactDispatch.delivered;
       }
       expect(deliveredCount).toBe(3);
+      const replaySql = String(artifactContents.get('03-ops-replay.sql'));
+      const deliveredBeforeReplay = await opsResource.db.prepare(`SELECT subject_id,event_id,idempotency_key,
+          receiver_receipt_id,attempt_count,send_attempt_count
+        FROM crm_adapter_outbox
+        WHERE subject_type='contact' AND status='delivered'
+        ORDER BY subject_id`).all<{
+          subject_id: string; event_id: string; idempotency_key: string; receiver_receipt_id: string;
+          attempt_count: number; send_attempt_count: number;
+        }>();
+      expect(deliveredBeforeReplay.results).toHaveLength(3);
+
+      await opsResource.db.prepare(`UPDATE crm_adapter_outbox SET status='dead'
+        WHERE subject_type='contact' AND subject_id='crm-pilot-contact-phone'`).run();
+      await runSql(opsResource.db, replaySql);
+      expect(await opsResource.db.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox
+        WHERE subject_type='contact' AND status='retry'`).first()).toEqual({ count: 0 });
+      await opsResource.db.prepare(`UPDATE crm_adapter_outbox SET status='delivered'
+        WHERE subject_type='contact' AND subject_id='crm-pilot-contact-phone'`).run();
+
+      await runSql(opsResource.db, replaySql);
+      expect(await opsResource.db.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox
+        WHERE subject_type='contact' AND status='retry'
+          AND receiver_receipt_id IS NULL AND delivered_at IS NULL
+          AND last_error_code='pilot_idempotency_replay'`).first()).toEqual({ count: 3 });
+      const replayedReceipts: string[] = [];
+      let replayDelivered = 0;
+      for (let attempt = 0; attempt < 3; attempt += 1) {
+        const replayDispatch = await dispatchPcdCrmOutbox({
+          DB: intelResource.db,
+          PCD_OPS_DB: opsResource.db,
+          PCD_CRM_ADAPTER_ENABLED: 'true',
+          PCD_CRM_ADAPTER_HMAC_SECRET: 'pilot-test-secret',
+          PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
+          PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
+          PCD_CRM_SOURCE_ID: 'source-test',
+          PCD_CRM_SOURCE_NOT_BEFORE_MS: String(boundaryMs),
+        }, {
+          now: boundaryMs + 8_000 + attempt,
+          fetcher: { fetch: async (_input, init) => {
+            const body = JSON.parse(String(init?.body));
+            const original = deliveredBeforeReplay.results.find(({ event_id }) => event_id === body.eventId)!;
+            expect(body.idempotencyKey).toBeUndefined();
+            replayedReceipts.push(original.receiver_receipt_id);
+            return Response.json({
+              accepted: true,
+              receiptId: original.receiver_receipt_id,
+              eventId: body.eventId,
+              sequence: body.sequence,
+              replay: true,
+            });
+          } },
+        });
+        expect(replayDispatch).toMatchObject({ retried: 0, dead: 0 });
+        replayDelivered += replayDispatch.delivered;
+      }
+      expect(replayDelivered).toBe(3);
+      expect(replayedReceipts.sort()).toEqual(
+        deliveredBeforeReplay.results.map(({ receiver_receipt_id }) => receiver_receipt_id).sort(),
+      );
+      const deliveredAfterReplay = await opsResource.db.prepare(`SELECT subject_id,event_id,idempotency_key,
+          receiver_receipt_id,attempt_count,send_attempt_count
+        FROM crm_adapter_outbox
+        WHERE subject_type='contact' AND status='delivered'
+        ORDER BY subject_id`).all<typeof deliveredBeforeReplay.results[number]>();
+      expect(deliveredAfterReplay.results.map(({ subject_id, event_id, idempotency_key, receiver_receipt_id }) => ({
+        subject_id, event_id, idempotency_key, receiver_receipt_id,
+      }))).toEqual(deliveredBeforeReplay.results.map(({
+        subject_id, event_id, idempotency_key, receiver_receipt_id,
+      }) => ({ subject_id, event_id, idempotency_key, receiver_receipt_id })));
+      expect(deliveredAfterReplay.results.every((row) => row.attempt_count === 2 && row.send_attempt_count === 2)).toBe(true);
       const dnc = await opsResource.db.prepare(`SELECT event_type,payload_json FROM crm_adapter_outbox
         WHERE subject_type='contact' AND subject_id='crm-pilot-contact-suppressed'`).first<{
           event_type: string; payload_json: string;
