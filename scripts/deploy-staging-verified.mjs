@@ -1,6 +1,7 @@
-import { open, readFile, unlink } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { lstat, open, readFile, readdir, unlink } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
-import { resolve } from 'node:path';
+import { relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const STAGING_WORKER = 'parent-coach-desk-staging';
@@ -89,6 +90,7 @@ SELECT type,name,tbl_name,sql FROM sqlite_schema WHERE name IN (
   'crm_organization_projection_update'
 ) ORDER BY type,name;`;
 const SOURCE_SHA_PATTERN = /^[0-9a-f]{40}$/;
+const BUILD_ARTIFACT_SHA256_PATTERN = /^[0-9a-f]{64}$/;
 
 function normalized(value) {
   return String(value ?? '').replaceAll('\\', '/');
@@ -167,14 +169,19 @@ export function parseDeploymentArguments(args) {
   const parsed = {
     disabledConfirmed: false,
     activationConfirmed: false,
+    prepareCrmActivationArtifact: false,
+    reuseVerifiedBuild: false,
     expectedCrmSourceNotBeforeMs: undefined,
     expectedSourceSha: undefined,
+    expectedBuildArtifactSha256: undefined,
   };
   const seen = new Set();
   for (let index = 0; index < args.length; index += 1) {
     const argument = args[index];
     if (![
       '--confirm', '--confirm-crm-activation', '--crm-activation-boundary-ms', '--expected-source-sha',
+      '--prepare-crm-activation-artifact', '--reuse-verified-build',
+      '--expected-build-artifact-sha256',
     ].includes(argument)) {
       throw new Error(`unknown deployment argument: ${argument}`);
     }
@@ -182,6 +189,8 @@ export function parseDeploymentArguments(args) {
     seen.add(argument);
     if (argument === '--confirm') parsed.disabledConfirmed = true;
     if (argument === '--confirm-crm-activation') parsed.activationConfirmed = true;
+    if (argument === '--prepare-crm-activation-artifact') parsed.prepareCrmActivationArtifact = true;
+    if (argument === '--reuse-verified-build') parsed.reuseVerifiedBuild = true;
     if (argument === '--expected-source-sha') {
       const value = args[index + 1];
       if (!value || value.startsWith('--')) {
@@ -198,6 +207,14 @@ export function parseDeploymentArguments(args) {
       parsed.expectedCrmSourceNotBeforeMs = value;
       index += 1;
     }
+    if (argument === '--expected-build-artifact-sha256') {
+      const value = args[index + 1];
+      if (!value || value.startsWith('--')) {
+        throw new Error('--expected-build-artifact-sha256 requires the exact approved SHA-256');
+      }
+      parsed.expectedBuildArtifactSha256 = value;
+      index += 1;
+    }
   }
   if (parsed.disabledConfirmed && parsed.activationConfirmed) {
     throw new Error('choose one staging deployment confirmation mode');
@@ -207,6 +224,25 @@ export function parseDeploymentArguments(args) {
   }
   if (parsed.activationConfirmed && parsed.expectedCrmSourceNotBeforeMs === undefined) {
     throw new Error('--confirm-crm-activation requires --crm-activation-boundary-ms');
+  }
+  if (parsed.prepareCrmActivationArtifact && (parsed.disabledConfirmed || parsed.activationConfirmed)) {
+    throw new Error('--prepare-crm-activation-artifact cannot be combined with a deployment confirmation');
+  }
+  if (parsed.prepareCrmActivationArtifact && (
+    parsed.expectedCrmSourceNotBeforeMs !== undefined
+    || parsed.reuseVerifiedBuild
+    || parsed.expectedBuildArtifactSha256 !== undefined
+  )) {
+    throw new Error('--prepare-crm-activation-artifact must build a disabled, unbound staging artifact');
+  }
+  if (parsed.reuseVerifiedBuild && parsed.expectedBuildArtifactSha256 === undefined) {
+    throw new Error('--reuse-verified-build requires --expected-build-artifact-sha256');
+  }
+  if (!parsed.reuseVerifiedBuild && parsed.expectedBuildArtifactSha256 !== undefined) {
+    throw new Error('--expected-build-artifact-sha256 requires --reuse-verified-build');
+  }
+  if (parsed.reuseVerifiedBuild && !parsed.activationConfirmed) {
+    throw new Error('--reuse-verified-build is restricted to confirmed CRM activation');
   }
   if (parsed.expectedCrmSourceNotBeforeMs !== undefined
     && !validActivationBoundary(parsed.expectedCrmSourceNotBeforeMs)) {
@@ -219,8 +255,15 @@ export function parseDeploymentArguments(args) {
   if (parsed.expectedSourceSha !== undefined && !SOURCE_SHA_PATTERN.test(parsed.expectedSourceSha)) {
     throw new Error('expected source SHA must be exactly 40 lowercase hexadecimal characters');
   }
+  if (parsed.expectedBuildArtifactSha256 !== undefined
+    && !BUILD_ARTIFACT_SHA256_PATTERN.test(parsed.expectedBuildArtifactSha256)) {
+    throw new Error('expected build artifact SHA-256 must be exactly 64 lowercase hexadecimal characters');
+  }
   if ((parsed.disabledConfirmed || parsed.activationConfirmed) && parsed.expectedSourceSha === undefined) {
     throw new Error('confirmed staging deployment requires --expected-source-sha');
+  }
+  if (parsed.prepareCrmActivationArtifact && parsed.expectedSourceSha === undefined) {
+    throw new Error('--prepare-crm-activation-artifact requires --expected-source-sha');
   }
   return parsed;
 }
@@ -299,6 +342,84 @@ async function verifyReleaseState(projectRoot, expectedSourceSha) {
   verifyExpectedSourceSha(expectedSourceSha, readCurrentSourceSha(projectRoot));
   verifyPostBuildCheckout(projectRoot);
   await verifyBuildSourceSha(projectRoot, expectedSourceSha);
+}
+
+async function collectBuildArtifactFiles(artifactRoot, directory = artifactRoot) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  entries.sort((left, right) => left.name.localeCompare(right.name, 'en'));
+  const files = [];
+  for (const entry of entries) {
+    const path = resolve(directory, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await collectBuildArtifactFiles(artifactRoot, path));
+    } else if (entry.isFile()) {
+      files.push(path);
+    } else {
+      throw new Error(`build artifact contains unsupported filesystem entry: ${normalized(relative(artifactRoot, path))}`);
+    }
+  }
+  return files;
+}
+
+export async function hashBuildArtifact(projectRoot, { excludePaths = [] } = {}) {
+  const artifactRoot = resolve(projectRoot, 'dist');
+  const excluded = new Set(excludePaths.map((path) => normalized(resolve(path))));
+  const files = (await collectBuildArtifactFiles(artifactRoot))
+    .filter((path) => !excluded.has(normalized(resolve(path))));
+  if (files.length === 0) throw new Error('prebuilt build artifact is empty');
+
+  const hash = createHash('sha256');
+  hash.update('parent-coach-desk-build-artifact-v1\n');
+  for (const path of files) {
+    const artifactPath = normalized(relative(artifactRoot, path));
+    const before = await lstat(path);
+    if (!before.isFile()) {
+      throw new Error(`build artifact contains unsupported filesystem entry: ${artifactPath}`);
+    }
+    hash.update(`${Buffer.byteLength(artifactPath, 'utf8')}:${artifactPath}:${before.size}\n`);
+    const content = await readFile(path);
+    if (content.length !== before.size) {
+      throw new Error(`build artifact changed while hashing: ${artifactPath}`);
+    }
+    hash.update(content);
+    hash.update('\n');
+    const after = await lstat(path);
+    if (!after.isFile() || after.size !== before.size || after.mtimeMs !== before.mtimeMs) {
+      throw new Error(`build artifact changed while hashing: ${artifactPath}`);
+    }
+  }
+  return hash.digest('hex');
+}
+
+async function verifyBuildArtifactSha256(projectRoot, expectedBuildArtifactSha256, options) {
+  if (!BUILD_ARTIFACT_SHA256_PATTERN.test(String(expectedBuildArtifactSha256 ?? ''))) {
+    throw new Error('expected build artifact SHA-256 must be exactly 64 lowercase hexadecimal characters');
+  }
+  const actualBuildArtifactSha256 = await hashBuildArtifact(projectRoot, options);
+  if (actualBuildArtifactSha256 !== expectedBuildArtifactSha256) {
+    throw new Error('prebuilt build artifact SHA-256 does not match approved hash');
+  }
+}
+
+export async function readAndVerifyPrebuiltStagingManifest({
+  projectRoot = process.cwd(),
+  expectedSourceSha = /** @type {string | undefined} */ (undefined),
+  expectedBuildArtifactSha256 = /** @type {string | undefined} */ (undefined),
+  readManifest = readFile,
+} = {}) {
+  await verifyReleaseState(projectRoot, expectedSourceSha);
+  await verifyBuildArtifactSha256(projectRoot, expectedBuildArtifactSha256);
+  let manifest;
+  try {
+    manifest = JSON.parse(await readManifest(resolve(projectRoot, 'dist/server/wrangler.json'), 'utf8'));
+  } catch {
+    throw new Error('prebuilt staging manifest is unavailable or malformed');
+  }
+  const errors = validateStagingDeploymentManifest(manifest, {
+    expectedConfigPath: resolve(projectRoot, 'wrangler.jsonc'),
+  });
+  if (errors.length > 0) throw new Error(`staging deployment refused:\n- ${errors.join('\n- ')}`);
+  return manifest;
 }
 
 export function validateStagingDeploymentManifest(
@@ -411,13 +532,17 @@ export async function deployStagingManifest({
   manifest,
   projectRoot = process.cwd(),
   expectedCrmSourceNotBeforeMs = /** @type {string | undefined} */ (undefined),
-  expectedSourceSha,
+  expectedSourceSha = /** @type {string | undefined} */ (undefined),
+  expectedBuildArtifactSha256 = /** @type {string | undefined} */ (undefined),
   npmCli = process.env.npm_execpath,
   openConfig = open,
   unlinkConfig = unlink,
   runCommand = run,
 }) {
   if (!npmCli) throw new Error('deploy-staging-verified.mjs must be run through npm');
+  if (expectedBuildArtifactSha256 !== undefined && expectedCrmSourceNotBeforeMs === undefined) {
+    throw new Error('prebuilt build artifact reuse is restricted to CRM activation');
+  }
   const errors = validateStagingDeploymentManifest(manifest, {
     expectedConfigPath: resolve(projectRoot, 'wrangler.jsonc'),
     expectedCrmSourceNotBeforeMs,
@@ -446,7 +571,6 @@ export async function deployStagingManifest({
   if (!actionTimeActivationBoundary(expectedCrmSourceNotBeforeMs)) {
     throw new Error('activation boundary must be within 15 minutes of deployment');
   }
-
   const activationConfigPath = resolve(
     projectRoot,
     'dist/server',
@@ -463,6 +587,11 @@ export async function deployStagingManifest({
       throw new Error('activation boundary must be within 15 minutes of deployment');
     }
     await verifyReleaseState(projectRoot, expectedSourceSha);
+    if (expectedBuildArtifactSha256 !== undefined) {
+      await verifyBuildArtifactSha256(projectRoot, expectedBuildArtifactSha256, {
+        excludePaths: [activationConfigPath],
+      });
+    }
     runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', activationConfigPath, '--keep-vars', '--message', message], { cwd: projectRoot });
   } finally {
     await unlinkConfig(activationConfigPath);
@@ -511,16 +640,30 @@ export async function buildAndVerifyStagingManifest({
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const boundaryFlag = '--crm-activation-boundary-ms';
   const {
-    disabledConfirmed, activationConfirmed, expectedCrmSourceNotBeforeMs, expectedSourceSha,
+    disabledConfirmed, activationConfirmed, prepareCrmActivationArtifact, reuseVerifiedBuild,
+    expectedCrmSourceNotBeforeMs, expectedSourceSha, expectedBuildArtifactSha256,
   } = parseDeploymentArguments(process.argv.slice(2));
   const confirmed = expectedCrmSourceNotBeforeMs === undefined ? disabledConfirmed : activationConfirmed;
   if (expectedSourceSha !== undefined) {
     verifyExpectedSourceSha(expectedSourceSha, readCurrentSourceSha());
   }
-  if (confirmed) verifyCleanCheckout();
-  const manifest = await buildAndVerifyStagingManifest({ expectedCrmSourceNotBeforeMs });
+  if (prepareCrmActivationArtifact || (confirmed && !reuseVerifiedBuild)) verifyCleanCheckout();
+  const baseManifest = reuseVerifiedBuild
+    ? await readAndVerifyPrebuiltStagingManifest({
+      expectedSourceSha,
+      expectedBuildArtifactSha256,
+    })
+    : await buildAndVerifyStagingManifest({ expectedCrmSourceNotBeforeMs });
+  const manifest = reuseVerifiedBuild
+    ? prepareStagingDeploymentManifest(baseManifest, expectedCrmSourceNotBeforeMs)
+    : baseManifest;
   console.log(`Verified isolated staging manifest for ${manifest.name}.`);
-  if (!confirmed) {
+  if (prepareCrmActivationArtifact) {
+    await verifyReleaseState(process.cwd(), expectedSourceSha);
+    const buildArtifactSha256 = await hashBuildArtifact(process.cwd());
+    console.log(`Frozen complete dist artifact SHA-256: ${buildArtifactSha256}`);
+    console.log('No deploy performed. Freeze this hash with the fresh C1-A packet before requesting C1-B.');
+  } else if (!confirmed) {
     const instruction = expectedCrmSourceNotBeforeMs === undefined
       ? '--expected-source-sha <approved-40-character-sha> --confirm'
       : `${boundaryFlag} ${expectedCrmSourceNotBeforeMs} --expected-source-sha <approved-40-character-sha> --confirm-crm-activation`;
@@ -530,6 +673,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       manifest,
       expectedCrmSourceNotBeforeMs,
       expectedSourceSha,
+      expectedBuildArtifactSha256,
     });
   }
 }

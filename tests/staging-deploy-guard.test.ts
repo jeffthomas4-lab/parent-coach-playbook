@@ -8,8 +8,10 @@ import { join } from 'node:path';
 import {
   buildAndVerifyStagingManifest,
   deployStagingManifest,
+  hashBuildArtifact,
   parseDeploymentArguments,
   prepareStagingDeploymentManifest,
+  readAndVerifyPrebuiltStagingManifest,
   readStagingDirectorySchema,
   validateCrmDirectorySchemaReadback,
   validatePostBuildStatus,
@@ -33,6 +35,7 @@ vi.mock('node:child_process', async (importOriginal) => {
 
 const actionBoundary = String(Math.floor(Date.now() / 1_000) * 1_000);
 const approvedSourceSha = 'abd0bea53554a3c832fddd0fb101d00602662491';
+const approvedBuildArtifactSha256 = 'a'.repeat(64);
 const requiredCrmDirectoryColumns = [
   'id', 'name', 'organization_type', 'website_url', 'city', 'state', 'zip', 'categories',
   'record_status', 'is_claimed', 'content_hash', 'deleted_at', 'updated_at',
@@ -129,11 +132,14 @@ beforeAll(() => {
     encoding: 'utf8',
   }).trim();
   mkdirSync(join(cleanRepoRoot, 'dist', 'client'), { recursive: true });
+  mkdirSync(join(cleanRepoRoot, 'dist', 'server'), { recursive: true });
   writeFileSync(join(cleanRepoRoot, 'dist', 'client', 'build-info.json'), JSON.stringify({
     schemaVersion: 1,
     commit: cleanRepoSha,
   }));
   cleanManifest = { ...structuredClone(valid), configPath: join(cleanRepoRoot, 'wrangler.jsonc') };
+  writeFileSync(join(cleanRepoRoot, 'dist', 'server', 'wrangler.json'), JSON.stringify(cleanManifest));
+  writeFileSync(join(cleanRepoRoot, 'dist', 'server', 'entry.mjs'), 'export default {}\n');
   exactSource = { expectedSourceSha: cleanRepoSha };
   schemaProcess.readback = compatibleCrmDirectorySchema;
 });
@@ -437,6 +443,112 @@ describe('verified staging deployment guard', () => {
     expect(parseDeploymentArguments([
       '--expected-source-sha', approvedSourceSha, '--confirm',
     ]).expectedSourceSha).toBe(approvedSourceSha);
+  });
+
+  it('bug-plat-009 refuses unbound prebuilt artifacts and ambiguous preparation modes', () => {
+    expect(() => parseDeploymentArguments([
+      '--reuse-verified-build',
+      '--crm-activation-boundary-ms', actionBoundary,
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm-crm-activation',
+    ])).toThrow('--reuse-verified-build requires --expected-build-artifact-sha256');
+    expect(() => parseDeploymentArguments([
+      '--expected-build-artifact-sha256', approvedBuildArtifactSha256,
+      '--crm-activation-boundary-ms', actionBoundary,
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm-crm-activation',
+    ])).toThrow('--expected-build-artifact-sha256 requires --reuse-verified-build');
+    expect(() => parseDeploymentArguments([
+      '--prepare-crm-activation-artifact',
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm',
+    ])).toThrow('--prepare-crm-activation-artifact cannot be combined with a deployment confirmation');
+    expect(() => parseDeploymentArguments([
+      '--reuse-verified-build',
+      '--expected-build-artifact-sha256', 'A'.repeat(64),
+      '--crm-activation-boundary-ms', actionBoundary,
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm-crm-activation',
+    ])).toThrow('expected build artifact SHA-256 must be exactly 64 lowercase hexadecimal characters');
+
+    expect(parseDeploymentArguments([
+      '--reuse-verified-build',
+      '--expected-build-artifact-sha256', approvedBuildArtifactSha256,
+      '--crm-activation-boundary-ms', actionBoundary,
+      '--expected-source-sha', approvedSourceSha,
+      '--confirm-crm-activation',
+    ])).toMatchObject({
+      reuseVerifiedBuild: true,
+      expectedBuildArtifactSha256: approvedBuildArtifactSha256,
+    });
+    expect(parseDeploymentArguments([
+      '--prepare-crm-activation-artifact',
+      '--expected-source-sha', approvedSourceSha,
+    ])).toMatchObject({
+      prepareCrmActivationArtifact: true,
+      expectedSourceSha: approvedSourceSha,
+    });
+    expect(() => parseDeploymentArguments(['--prepare-crm-activation-artifact']))
+      .toThrow('--prepare-crm-activation-artifact requires --expected-source-sha');
+  });
+
+  it('bug-plat-009 verifies the complete prebuilt artifact without rebuilding and rejects drift', async () => {
+    const artifactSha256 = await hashBuildArtifact(cleanRepoRoot);
+    const manifest = await readAndVerifyPrebuiltStagingManifest({
+      projectRoot: cleanRepoRoot,
+      expectedSourceSha: cleanRepoSha,
+      expectedBuildArtifactSha256: artifactSha256,
+    });
+    expect(manifest).toEqual(cleanManifest);
+
+    const entryPath = join(cleanRepoRoot, 'dist', 'server', 'entry.mjs');
+    writeFileSync(entryPath, 'export default { tampered: true }\n');
+    try {
+      await expect(readAndVerifyPrebuiltStagingManifest({
+        projectRoot: cleanRepoRoot,
+        expectedSourceSha: cleanRepoSha,
+        expectedBuildArtifactSha256: artifactSha256,
+      })).rejects.toThrow('prebuilt build artifact SHA-256 does not match approved hash');
+    } finally {
+      writeFileSync(entryPath, 'export default {}\n');
+    }
+  });
+
+  it('bug-plat-009 refuses artifact reuse for an ordinary disabled deployment', async () => {
+    await expect(deployStagingManifest({
+      manifest: cleanManifest,
+      projectRoot: cleanRepoRoot,
+      ...exactSource,
+      expectedBuildArtifactSha256: await hashBuildArtifact(cleanRepoRoot),
+      npmCli: 'npm-cli.js',
+      runCommand: () => { throw new Error('wrangler must not run'); },
+    })).rejects.toThrow('prebuilt build artifact reuse is restricted to CRM activation');
+  });
+
+  it('bug-plat-009 rechecks the frozen artifact immediately before Wrangler deploy', async () => {
+    const artifactSha256 = await hashBuildArtifact(cleanRepoRoot);
+    const activation = prepareStagingDeploymentManifest(cleanManifest, actionBoundary);
+    const entryPath = join(cleanRepoRoot, 'dist', 'server', 'entry.mjs');
+    const deploy = vi.fn();
+    try {
+      await expect(deployStagingManifest({
+        manifest: activation,
+        projectRoot: cleanRepoRoot,
+        ...exactSource,
+        expectedCrmSourceNotBeforeMs: actionBoundary,
+        expectedBuildArtifactSha256: artifactSha256,
+        npmCli: 'npm-cli.js',
+        openConfig: async () => ({
+          writeFile: async () => { writeFileSync(entryPath, 'export default { changed: true }\n'); },
+          close: async () => {},
+        } as unknown as FileHandle),
+        unlinkConfig: async () => {},
+        runCommand: deploy,
+      })).rejects.toThrow('prebuilt build artifact SHA-256 does not match approved hash');
+      expect(deploy).not.toHaveBeenCalled();
+    } finally {
+      writeFileSync(entryPath, 'export default {}\n');
+    }
   });
 
   it('refuses a different checkout and carries the exact candidate in the deployment message', async () => {
