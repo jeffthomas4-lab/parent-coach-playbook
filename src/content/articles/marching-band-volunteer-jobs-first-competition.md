@@ -13,7 +13,9 @@ sport: "band"
 age: "all-ages"
 publishedAt: 2026-09-07
 featured: false
-draft: true
+draft: false
+hero: "/illustrations/band-marching-field-distance.webp"
+heroAlt: "A marching band formation spreads across a practice field seen from very high and far away at dusk, figures small and anonymous."
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -25,7 +27,7 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-04
-  status: draft
+  status: claude-reviewed
   reviewerNotes: "Date lane, editorial-queue.md, target 2026-09-07. Verified against src/content/seasonCalendars/hs-marching-band-fall.md (September note: 'Volunteer signups: pit crew, uniforms, feeding the band') and against three live band-booster sites (Tom C Clark Cougar Band, McNeil HS Band, KRHS Bands) for what each role actually involves. Checked existing coverage first: youth-marching-band-what-parents-need-to-know.md and band-marching-band-camp.md both mention volunteering in one line each ('sign up for something,' 'you will be asked to volunteer') as part of a broader new-family overview. Neither walks through what the four jobs are or when signups close. marching-band-competition-packing-list.md covers what to pack, not who staffs the crew packing it. This piece is the first to cover the roles themselves, so it's additive rather than duplicate."
   factCheckGoodThrough: 2027-09-04
 ---

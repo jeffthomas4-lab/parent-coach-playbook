@@ -10,7 +10,9 @@ phase: drive-there
 sport: lacrosse
 age: all-ages
 publishedAt: 2026-09-08
-draft: true
+draft: false
+hero: "/illustrations/lacrosse-stick-ball-grass.webp"
+heroAlt: "A lacrosse stick lies across grass with a plain ball in the head, dew coating the blades in low morning light."
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -22,7 +24,7 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-06
-  status: draft
+  status: claude-reviewed
   reviewerNotes: "Date lane, editorial-queue.md, target 2026-09-08. The queue row assumed lacrosse fall ball mirrors is-fall-ball-worth-it.md and fall-ball-softball-whats-different.md ('same low-stakes, free-substitution shape'). Verified that assumption before writing and it does not hold: baseball and softball fall ball both run under one governing body (Little League) with one national pitch-count/innings rule, which is what gives those two pieces their 'here is the one thing that doesn't relax' hook. Lacrosse fall ball has no equivalent single sponsor. Checked src/content/seasonCalendars/hs-lacrosse-spring-boys.md and hs-lacrosse-spring-girls.md directly: boys fall ball runs Aug-Nov and sits in the same September window as the calendar's own recommended two-week full rest period; girls fall ball is Sept-Oct clinics/play days, framed in the girls calendar's own body copy as roughly a tenth the price of summer club ($1,500-4,000). Checking rule verified against NFHS boys lacrosse rules coverage (nfhs.org rules changes pages, cross-checked via USA Lacrosse's published rules interpretation): legal body check requires both hands on the crosse, contact from front or side, shoulders to waist, no head/neck contact, no in-season exception. Cost range ($25-$680) pulled from live registration pages for six current youth/HS-adjacent lacrosse programs (Lincoln Youth Lacrosse, Orchard Park, Hilton Fire Lacrosse, St. Paul Youth Lacrosse, Coventry Boys Lacrosse, Spring Branch-Memorial), used only to show the spread is real, not as a single quoted figure. Rewrote the angle around decentralization, the checking-rule constant, and the September rest-window conflict for boys specifically, rather than forcing the baseball/softball template onto a sport where it doesn't fit. Piece covers both boys and girls under sport: lacrosse (generic enum value) since the two differ enough in rules and cost that a single gender-specific tag would misrepresent half the piece."
 ---
 

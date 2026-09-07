@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-29T21:41:10.141Z",
-  "count": 807,
+  "generatedAt": "2026-09-07T14:34:46.271Z",
+  "count": 821,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -348,6 +348,12 @@
       ]
     },
     {
+      "url": "https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/how-to-budget-for-the-costs-of-youth-sports",
+      "sources": [
+        "src/content/articles/team-budget-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://bjsm.bmj.com/",
       "sources": [
         "src/pages/about/sources.astro"
@@ -589,6 +595,12 @@
       ]
     },
     {
+      "url": "https://envelopebudget.com/blog/how-to-budget-for-kids-sports-fees-envelope-method/",
+      "sources": [
+        "src/content/articles/team-budget-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://g-form.com/products/v2-soccer-shin-guard-youth",
       "sources": [
         "src/content/articles/best-kids-shin-guards.md"
@@ -797,6 +809,18 @@
       ]
     },
     {
+      "url": "https://nfhs.org/stories/new-process-for-distributing-cards-among-13-changes-in-high-school-soccer-rules",
+      "sources": [
+        "src/content/news/nfhs-soccer-rule-changes-2026-27.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/prohibition-on-slapping-the-head-now-applies-to-all-players-in-high-school-football",
+      "sources": [
+        "src/content/news/nfhs-football-head-slap-rule-all-players-2026.md"
+      ]
+    },
+    {
       "url": "https://nfhs.org/stories/rules-changes-approved-for-high-school-track-and-field-cross-country",
       "sources": [
         "src/content/news/nfhs-track-field-throwing-warmup-safety-2027.md"
@@ -951,6 +975,12 @@
       "url": "https://pitchmark.com/support/how-to-mark-a-pitch/",
       "sources": [
         "src/content/articles/squaring-soccer-field-corners-with-the-3-4-5-method.md"
+      ]
+    },
+    {
+      "url": "https://pitchtrainingbaseball.com/blogs/news/role-of-testimonials-in-sports-training",
+      "sources": [
+        "src/content/articles/tryout-results-email-youth.md"
       ]
     },
     {
@@ -1166,6 +1196,12 @@
       ]
     },
     {
+      "url": "https://signaturelocker.com/blogs/program-directors-playbook/the-3-things-families-hear-in-every-placement-email",
+      "sources": [
+        "src/content/articles/tryout-results-email-youth.md"
+      ]
+    },
+    {
       "url": "https://sports.yahoo.com/worth-10-questions-athletes-consider-120952288.html",
       "sources": [
         "src/content/articles/travel-soccer-costs.md"
@@ -1175,6 +1211,12 @@
       "url": "https://squareup.com/us/en/hardware",
       "sources": [
         "src/data/affiliates.json (slug: square-card-reader)"
+      ]
+    },
+    {
+      "url": "https://teamgenius.com/how-to-tell-a-player-they-didnt-make-the-lacrosse-team/",
+      "sources": [
+        "src/content/articles/tryout-results-email-youth.md"
       ]
     },
     {
@@ -1490,6 +1532,12 @@
       "url": "https://wendylebolt.com/coaching/how-to-develop-the-volleyball-athlete-focus-changes-with-age-and-stage/",
       "sources": [
         "src/content/articles/youth-volleyball-drills.md"
+      ]
+    },
+    {
+      "url": "https://withcentro.com/blog/communicate-tryout-results-families",
+      "sources": [
+        "src/content/articles/tryout-results-email-youth.md"
       ]
     },
     {
@@ -3519,7 +3567,7 @@
       ]
     },
     {
-      "url": "https://www.itftennis.com/juniors",
+      "url": "https://www.itftennis.com/en/tours/world-tennis-tour-juniors/",
       "sources": [
         "src/content/body/youth-tennis-safety-briefing.md"
       ]
@@ -4036,6 +4084,12 @@
       ]
     },
     {
+      "url": "https://www.newyorklife.com/newsroom/financial-tips-for-parents-supporting-youth-athletes",
+      "sources": [
+        "src/content/articles/team-budget-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://www.nfhs.org/",
       "sources": [
         "src/content/body/banned-substances-hs-college.md",
@@ -4141,6 +4195,12 @@
       "url": "https://www.njcaa.org/sports/fball/index",
       "sources": [
         "src/content/recruiting/football.md"
+      ]
+    },
+    {
+      "url": "https://www.northwesternmutual.com/life-and-money/youth-sports-costs-budgeting-tips/",
+      "sources": [
+        "src/content/articles/team-budget-youth-sports.md"
       ]
     },
     {
@@ -4271,6 +4331,12 @@
       "sources": [
         "src/content/body/aed-location-field-readiness.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.providencejournal.com/story/sports/youth/2026/08/12/are-youth-sports-becoming-unaffordable-heres-what-we-found/91188359007/",
+      "sources": [
+        "src/content/articles/team-budget-youth-sports.md"
       ]
     },
     {
@@ -4666,6 +4732,12 @@
       "url": "https://www.uiltexas.org/health/info/heat-stress-and-athletic-participation",
       "sources": [
         "src/content/news/texas-uil-heat-rule-mandatory-2026.md"
+      ]
+    },
+    {
+      "url": "https://www.uiltexas.org/policy/2026-27-policy-info/rule-changes",
+      "sources": [
+        "src/content/news/uil-texas-foreign-exchange-varsity-ban-2026.md"
       ]
     },
     {
@@ -5106,10 +5178,21 @@
       ]
     },
     {
+      "url": "https://www.usbank.com/financial-education/spend/managing-costs-youth-sports.html",
+      "sources": [
+        "src/content/articles/team-budget-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://www.uscg.mil/Boating-Safety/",
+      "sources": [
+        "src/content/body/youth-triathlon-swim-safety.md"
+      ]
+    },
+    {
       "url": "https://www.uscg.mil/water-safety/",
       "sources": [
         "src/content/body/open-water-swim-safety.md",
-        "src/content/body/youth-triathlon-swim-safety.md",
         "src/pages/governing-bodies.astro"
       ]
     },

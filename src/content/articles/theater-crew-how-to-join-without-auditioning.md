@@ -12,7 +12,9 @@ age: "11-12"
 seasonPhase: "pre-season"
 publishedAt: 2026-09-07
 featured: false
-draft: true
+draft: false
+hero: "/illustrations/theater-stage-marks-tape.webp"
+heroAlt: "Colored spike tape marks a black stage floor under raking light, a folding chair sitting at the edge."
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -24,7 +26,7 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-05
-  status: draft
+  status: claude-reviewed
   reviewerNotes: "Process/how-it-works piece, no factual claims requiring external citation. Cross-checked against src/content/articles/theater-auditions-what-to-expect.md (cast-side audition process) and theater-tech-week-survival.md (rehearsal week logistics). Neither covers how a kid gets onto crew in the first place. Fills that gap per src/content/seasonCalendars/school-theater-production-year.md, September note: crew is full membership, not a consolation prize."
 ---
 
