@@ -504,6 +504,39 @@ function isQuarantineCode(code: string): boolean {
   return code === 'slug_collision' || code.startsWith('invalid_') || code === 'unsupported_language';
 }
 
+/**
+ * Credential failures on OUR side. Not the sender's problem, and never fixed
+ * by them resending.
+ *
+ * WHY THIS EXISTS (2026-09-07). On 2026-09-02 the GITHUB_TOKEN expired.
+ * Article 793309 (youth-sports-safety) failed with `github_read_401`, which
+ * was not a quarantine code, so the webhook answered 503. Per the comment on
+ * the response below, BabyLoveGrowth reads 5xx as "this endpoint is
+ * unhealthy" and stops delivering. It stopped. Seven days, zero articles,
+ * including 812356 (coach-pitch-drills) which never arrived. Rotating the
+ * token on 2026-09-04 fixed the cause and did nothing about the state,
+ * because the sender had already disabled us.
+ *
+ * This is the SECOND time that deadlock has run. The first was 2026-08-21 to
+ * 2026-08-26 and was fixed by making quarantines answer 200 (05b81759). That
+ * fix was right and too narrow: it covered the failures we decide on, not the
+ * failures we cause.
+ *
+ * A 401 or 403 from GitHub means our token is dead. Replaying the identical
+ * payload in an hour hits the identical dead token. Telling the sender to
+ * retry is not just useless, it is actively harmful — it costs the whole
+ * delivery lane. The receipt is already written to D1 as `retryable_failure`,
+ * so nothing is lost: reconciliation backfills it, and the watchdog alerts on
+ * it the next morning. Answer 200, keep the lane open, fix the token.
+ *
+ * Deliberately NOT included: github_read_404 / github_write_404 (the repo or
+ * path is wrong, which is a real misconfiguration worth surfacing loudly) and
+ * 5xx from GitHub (genuinely transient — a retry is the correct advice).
+ */
+function isOurCredentialFailure(code: string): boolean {
+  return /^github_(read|write)_40[13]$/.test(code);
+}
+
 async function acceptArticle(env: BabyLoveEnv, article: BabyLoveArticle, source: 'webhook' | 'api_reconciliation'): Promise<{ receipt: ReceiptRow; replay: boolean }> {
   if (!env.PCD_OPS_DB) throw new BabyLoveFailure('database_missing');
   const fingerprint = await articleFingerprint(article);
@@ -564,6 +597,19 @@ export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, 
         const code = error instanceof BabyLoveFailure ? error.code : 'publish_failed';
         if (isQuarantineCode(code)) {
           return json({ ok: true, accepted: false, quarantined: true, error: code });
+        }
+        if (isOurCredentialFailure(code)) {
+          // Our credential is dead, not their payload. Take the article, keep
+          // the lane open, let reconciliation and the watchdog do the rest.
+          // See isOurCredentialFailure for the seven days this cost.
+          console.error(JSON.stringify({
+            event: 'babylove_webhook_credential_failure',
+            code,
+            article_id: article.id,
+            slug: article.slug,
+            note: 'answered 200 to keep the delivery lane open; receipt left retryable_failure for reconciliation',
+          }));
+          return json({ ok: true, accepted: false, deferred: true, error: code });
         }
         return json({ ok: false, error: 'publish_failed', retryable: true }, 503);
       }
