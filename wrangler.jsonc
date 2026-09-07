@@ -134,6 +134,10 @@
     "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
     "PCD_COMMERCE_TEST_MODE_ENABLED": "false",
     "PCD_CRM_ADAPTER_ENABLED": "false",
+    // Only the derived, hash-verified staging pilot config may set this true.
+    // It makes the minute cron run the complete live adapter path while the
+    // fixed synthetic packet is under bounded observation.
+    "PCD_CRM_PILOT_MODE": "false",
     // Historical projection remains separately disabled. Enabling it also
     // requires an exact action-time PCD_CRM_SOURCE_NOT_BEFORE_MS boundary plus
     // the manifest hash, three D1 identities, two source bookmarks, and policy

@@ -90,6 +90,21 @@ describe('src/worker.ts composed scheduled handler', () => {
     expect(runOrgSweep).not.toHaveBeenCalled();
   });
 
+  it('bug-plat-009 runs the complete CRM adapter on the minute tick only in explicit staging pilot mode', async () => {
+    const { ctx, waited } = fakeContext();
+    const env = { PCD_CRM_PILOT_MODE: 'true' } as any;
+    await scheduledReconciliationAndIntelSweep(
+      { cron: '* * * * *' } as ScheduledController,
+      env,
+      ctx,
+    );
+    await settleAll(waited);
+    expect(runPcdCrmAdapter).toHaveBeenCalledTimes(1);
+    expect(runPcdCrmAdapter).toHaveBeenCalledWith(env);
+    expect(reconcileBabyLoveArticles).not.toHaveBeenCalled();
+    expect(runOrgSweep).not.toHaveBeenCalled();
+  });
+
   it('still runs the intel sweep when BabyLove reconciliation throws', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     (reconcileBabyLoveArticles as any).mockRejectedValue(new Error('babylove exploded'));

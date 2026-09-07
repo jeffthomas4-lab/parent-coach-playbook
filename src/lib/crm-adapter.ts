@@ -17,6 +17,7 @@ export interface PcdCrmAdapterEnv {
   CRM_ADAPTER?: CrmAdapterFetcher;
   PCD_CRM_ADAPTER_ENABLED?: string;
   PCD_CRM_BACKFILL_ENABLED?: string;
+  PCD_CRM_PILOT_MODE?: string;
   PCD_CRM_ADAPTER_HMAC_SECRET?: string;
   PCD_CRM_PRODUCER_WORKSPACE_ID?: string;
   PCD_CRM_TARGET_WORKSPACE_ID?: string;

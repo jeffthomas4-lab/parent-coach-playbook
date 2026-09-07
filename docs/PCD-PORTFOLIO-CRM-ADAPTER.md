@@ -34,6 +34,9 @@ flags false; production remains unconfigured:
 - `CRM_ADAPTER`: Cloudflare Service Binding to the Ventures receiver;
 - `PCD_CRM_ADAPTER_ENABLED`: must equal `true`; absent/other values disable all work;
 - `PCD_CRM_BACKFILL_ENABLED`: a second switch for rows older than the activation watermark;
+- `PCD_CRM_PILOT_MODE`: staging-only and false in the committed manifest. The verified derived
+  pilot manifest sets it true so the one-minute cron runs live projection and rolling
+  reconciliation during the bounded synthetic observation window. Production omits it.
 - `PCD_CRM_ADAPTER_HMAC_SECRET`: secret, never stored in source;
 - `PCD_CRM_PRODUCER_WORKSPACE_ID`: fixed producer workspace;
 - `PCD_CRM_TARGET_WORKSPACE_ID`: server-allowlisted CRM workspace;
@@ -54,11 +57,13 @@ and persisted on the run. A database uniqueness constraint prevents one manifest
 two targets, including under concurrent attempts. Any missing, malformed, changed, or retargeted
 identity prevents creation or resume before a cursor or outbox row can mutate.
 
-The committed configuration and active staging version keep both switches false. A dedicated
-minute cron is declared but returns without source reads, receiver calls, or writes while the
-adapter switch is false. When enabled, that minute pump performs the historical scan, bounded
-delivery, and at most one 100-event historical reconciliation window; the existing six-hour job
-owns the live mixed-timestamp scan, rolling reconciliation, and completion check. Staging now has
+The committed configuration and active staging version keep both switches and pilot mode false. A
+dedicated minute cron is declared but returns without source reads, receiver calls, or writes while
+the adapter switch is false. When historical transfer is enabled, that minute pump performs the
+historical scan, bounded delivery, and at most one 100-event historical reconciliation window; the
+existing six-hour job owns the live mixed-timestamp scan, rolling reconciliation, and completion
+check. Only the exact derived staging-pilot manifest makes the minute cron run the complete live
+path so a ten-minute hosted observation can prove projection and reconciliation. Staging now has
 the reviewed schema, Service Binding, and secret name. Enabling either switch, changing the
 schedule, or applying the corresponding production resources remains a separately approved
 provider/data action.

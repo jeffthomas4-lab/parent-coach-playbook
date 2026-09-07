@@ -104,6 +104,7 @@ const valid = {
     DEMAND_TELEMETRY_ENABLED: 'false', IDEMPOTENCY_CLEANUP_ENABLED: 'false',
     PCD_CUSTOMER_FOUNDATION_ENABLED: 'false', PCD_COMMERCE_TEST_MODE_ENABLED: 'false',
     PCD_CRM_ADAPTER_ENABLED: 'false', PCD_CRM_BACKFILL_ENABLED: 'false',
+    PCD_CRM_PILOT_MODE: 'false',
     PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
     PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
     PCD_CRM_SOURCE_ID: 'source-pcd-activity-radar',
@@ -309,6 +310,7 @@ describe('verified staging deployment guard', () => {
   it('accepts a pilot activation only when its exact second-aligned boundary is supplied', () => {
     const activation = structuredClone(valid) as any;
     activation.vars.PCD_CRM_ADAPTER_ENABLED = 'true';
+    activation.vars.PCD_CRM_PILOT_MODE = 'true';
     activation.vars.PCD_CRM_SOURCE_NOT_BEFORE_MS = '1788566400000';
 
     expect(validateStagingDeploymentManifest(activation, {
@@ -326,9 +328,11 @@ describe('verified staging deployment guard', () => {
     const activation = prepareStagingDeploymentManifest(valid, '1788566400000');
 
     expect(valid.vars.PCD_CRM_ADAPTER_ENABLED).toBe('false');
+    expect(valid.vars.PCD_CRM_PILOT_MODE).toBe('false');
     expect(valid.vars).not.toHaveProperty('PCD_CRM_SOURCE_NOT_BEFORE_MS');
     expect(activation.vars.PCD_CRM_ADAPTER_ENABLED).toBe('true');
     expect(activation.vars.PCD_CRM_BACKFILL_ENABLED).toBe('false');
+    expect(activation.vars.PCD_CRM_PILOT_MODE).toBe('true');
     expect(activation.vars.PCD_CRM_SOURCE_NOT_BEFORE_MS).toBe('1788566400000');
     expect(validateStagingDeploymentManifest(activation, {
       expectedCrmSourceNotBeforeMs: '1788566400000',
@@ -338,6 +342,7 @@ describe('verified staging deployment guard', () => {
   it('rejects missing, malformed, sub-second, stale disabled, and historical-backfill activation state', () => {
     const activation = structuredClone(valid) as any;
     activation.vars.PCD_CRM_ADAPTER_ENABLED = 'true';
+    activation.vars.PCD_CRM_PILOT_MODE = 'true';
 
     expect(validateStagingDeploymentManifest(activation, {
       expectedCrmSourceNotBeforeMs: '1788566400000',
@@ -368,6 +373,12 @@ describe('verified staging deployment guard', () => {
     expect(validateStagingDeploymentManifest(activation, {
       expectedCrmSourceNotBeforeMs: '1788566400000',
     })).toContain('PCD_CRM_BACKFILL_ENABLED must remain false for staging deployment');
+
+    activation.vars.PCD_CRM_BACKFILL_ENABLED = 'false';
+    activation.vars.PCD_CRM_PILOT_MODE = 'false';
+    expect(validateStagingDeploymentManifest(activation, {
+      expectedCrmSourceNotBeforeMs: '1788566400000',
+    })).toContain('PCD_CRM_PILOT_MODE must be true for the approved CRM pilot activation');
   });
 
   it('rejects extra resources and wrong staging D1 identities', () => {

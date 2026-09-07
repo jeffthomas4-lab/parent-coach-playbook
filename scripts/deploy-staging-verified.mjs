@@ -442,6 +442,7 @@ export function validateStagingDeploymentManifest(
     if (manifest.vars?.[flag] !== 'false') errors.push(`${flag} must remain false for staging deployment`);
   }
   const adapterEnabled = manifest.vars?.PCD_CRM_ADAPTER_ENABLED;
+  const pilotMode = manifest.vars?.PCD_CRM_PILOT_MODE;
   const activationBoundary = manifest.vars?.PCD_CRM_SOURCE_NOT_BEFORE_MS;
   if (expectedCrmSourceNotBeforeMs === undefined) {
     if (adapterEnabled !== 'false') {
@@ -449,6 +450,9 @@ export function validateStagingDeploymentManifest(
     }
     if (activationBoundary !== undefined) {
       errors.push('PCD_CRM_SOURCE_NOT_BEFORE_MS must be absent while the CRM adapter is disabled');
+    }
+    if (pilotMode !== 'false') {
+      errors.push('PCD_CRM_PILOT_MODE must remain false outside an approved CRM pilot activation');
     }
   } else {
     if (adapterEnabled !== 'true') {
@@ -459,6 +463,9 @@ export function validateStagingDeploymentManifest(
     }
     if (!validActivationBoundary(expectedCrmSourceNotBeforeMs)) {
       errors.push('PCD_CRM_SOURCE_NOT_BEFORE_MS must be a positive second-aligned Unix millisecond value');
+    }
+    if (pilotMode !== 'true') {
+      errors.push('PCD_CRM_PILOT_MODE must be true for the approved CRM pilot activation');
     }
   }
   const d1Bindings = manifest.d1_databases ?? [];
@@ -517,6 +524,7 @@ export function prepareStagingDeploymentManifest(manifest, expectedCrmSourceNotB
       ...manifest.vars,
       PCD_CRM_ADAPTER_ENABLED: 'true',
       PCD_CRM_BACKFILL_ENABLED: 'false',
+      PCD_CRM_PILOT_MODE: 'true',
       PCD_CRM_SOURCE_NOT_BEFORE_MS: String(expectedCrmSourceNotBeforeMs),
     },
   };

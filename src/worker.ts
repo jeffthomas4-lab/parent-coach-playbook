@@ -102,7 +102,10 @@ export async function scheduledReconciliationAndIntelSweep(
   context: ExecutionContext,
 ): Promise<void> {
   if (controller.cron === CRM_BACKFILL_CRON) {
-    context.waitUntil(runPcdCrmAdapter(env, { backfillOnly: true }).catch((error) => {
+    const crmRun = env.PCD_CRM_PILOT_MODE === 'true'
+      ? runPcdCrmAdapter(env)
+      : runPcdCrmAdapter(env, { backfillOnly: true });
+    context.waitUntil(crmRun.catch((error) => {
       console.error(JSON.stringify({
         event: 'pcd_crm_adapter_failed',
         code: error instanceof Error ? error.message.slice(0, 80) : 'unknown',
