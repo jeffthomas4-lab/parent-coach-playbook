@@ -61,7 +61,7 @@ describe('deployment authority', () => {
       readFile('wrangler.production.jsonc', 'utf8'),
       readFile('wrangler.jsonc', 'utf8'),
     ]);
-    const expected = [
+    const existingProductionSecrets = [
       'AGENT_RUNS_TOKEN',
       'BABYLOVE_API_KEY',
       'BABYLOVE_WEBHOOK_TOKEN',
@@ -70,11 +70,26 @@ describe('deployment authority', () => {
       'GITHUB_TOKEN',
     ];
     expect(production).toContain('"secrets"');
-    for (const name of expected) expect(production).toContain(`"${name}"`);
+    for (const name of [...existingProductionSecrets, 'PCD_CRM_ADAPTER_HMAC_SECRET']) {
+      expect(production).toContain(`"${name}"`);
+    }
     expect(staging).toContain('"secrets"');
     expect(staging).toContain('"PCD_CRM_ADAPTER_HMAC_SECRET"');
-    for (const name of expected) expect(staging).not.toContain(`"${name}"`);
+    for (const name of existingProductionSecrets) expect(staging).not.toContain(`"${name}"`);
     expect(staging).not.toMatch(/PCD_CRM_ADAPTER_HMAC_SECRET"\s*:\s*"/);
-    expect(production).not.toMatch(/(?:AGENT_RUNS_TOKEN|BABYLOVE_API_KEY|BABYLOVE_WEBHOOK_TOKEN|BULK_IMPORT_TOKEN|CRON_KEY|GITHUB_TOKEN)"\s*:\s*"/);
+    expect(production).not.toMatch(/(?:AGENT_RUNS_TOKEN|BABYLOVE_API_KEY|BABYLOVE_WEBHOOK_TOKEN|BULK_IMPORT_TOKEN|CRON_KEY|GITHUB_TOKEN|PCD_CRM_ADAPTER_HMAC_SECRET)"\s*:\s*"/);
+  });
+
+  it('prepares the production CRM producer but keeps both producer modes disabled', async () => {
+    const production = await readFile('wrangler.production.jsonc', 'utf8');
+    expect(production).toContain('"binding": "CRM_ADAPTER"');
+    expect(production).toContain('"service": "field-forge-crm"');
+    expect(production).toContain('"PCD_CRM_ADAPTER_ENABLED": "false"');
+    expect(production).toContain('"PCD_CRM_BACKFILL_ENABLED": "false"');
+    expect(production).toContain('"PCD_CRM_PRODUCER_WORKSPACE_ID": "pcd-activity-radar"');
+    expect(production).toContain('"PCD_CRM_TARGET_WORKSPACE_ID": "ws-sightsmash"');
+    expect(production).toContain('"PCD_CRM_SOURCE_ID": "source-pcd-activity-radar"');
+    expect(production).not.toContain('PCD_CRM_SOURCE_NOT_BEFORE_MS');
+    expect(production).toContain('"* * * * *"');
   });
 });

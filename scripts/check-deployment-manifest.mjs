@@ -31,6 +31,13 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
     failures.push(`config path is not wrangler.production.jsonc: ${manifest.configPath ?? '(missing)'}`);
   }
   expectBindings('D1 bindings', manifest.d1_databases, ['DB', 'FORGE_DB', 'PCD_OPS_DB']);
+  expectBindings('CRM service bindings', manifest.services, ['CRM_ADAPTER']);
+  expectEqual('CRM_ADAPTER service', manifest.services?.[0]?.service, 'field-forge-crm');
+  expectEqual(
+    'production cron triggers',
+    JSON.stringify([...(manifest.triggers?.crons ?? [])].sort()),
+    JSON.stringify(['17 */6 * * *', '* * * * *'].sort()),
+  );
   expectBindings('R2 bindings', manifest.r2_buckets, ['PHOTOS']);
   expectBindings('KV bindings', manifest.kv_namespaces, ['SESSION']);
   expectBindings('rate-limit bindings', manifest.ratelimits, [
@@ -65,6 +72,7 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
       'BULK_IMPORT_TOKEN',
       'CRON_KEY',
       'GITHUB_TOKEN',
+      'PCD_CRM_ADAPTER_HMAC_SECRET',
     ]),
   );
 
@@ -81,9 +89,22 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
     'IDEMPOTENCY_CLEANUP_ENABLED',
     'PCD_CUSTOMER_FOUNDATION_ENABLED',
     'PCD_COMMERCE_TEST_MODE_ENABLED',
+    'PCD_CRM_ADAPTER_ENABLED',
+    'PCD_CRM_BACKFILL_ENABLED',
     'EDITORIAL_LIFECYCLE_ENABLED',
   ]) {
     expectEqual(`${key} safe default`, manifest.vars?.[key], 'false');
+  }
+
+  for (const [key, expected] of Object.entries({
+    PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
+    PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
+    PCD_CRM_SOURCE_ID: 'source-pcd-activity-radar',
+  })) {
+    expectEqual(`${key} production identity`, manifest.vars?.[key], expected);
+  }
+  if (Object.hasOwn(manifest.vars ?? {}, 'PCD_CRM_SOURCE_NOT_BEFORE_MS')) {
+    failures.push('PCD_CRM_SOURCE_NOT_BEFORE_MS must remain absent before exact activation');
   }
 
   for (const key of Object.keys(manifest.vars ?? {})) {

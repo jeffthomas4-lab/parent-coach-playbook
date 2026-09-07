@@ -17,6 +17,8 @@ const VALID_MANIFEST = {
     ],
   },
   d1_databases: [{ binding: 'DB' }, { binding: 'FORGE_DB' }, { binding: 'PCD_OPS_DB' }],
+  services: [{ binding: 'CRM_ADAPTER', service: 'field-forge-crm' }],
+  triggers: { crons: ['17 */6 * * *', '* * * * *'] },
   r2_buckets: [{ binding: 'PHOTOS' }],
   kv_namespaces: [{ binding: 'SESSION' }],
   ratelimits: [
@@ -36,6 +38,7 @@ const VALID_MANIFEST = {
       'BULK_IMPORT_TOKEN',
       'CRON_KEY',
       'GITHUB_TOKEN',
+      'PCD_CRM_ADAPTER_HMAC_SECRET',
     ],
   },
   vars: {
@@ -51,6 +54,11 @@ const VALID_MANIFEST = {
     PCD_CUSTOMER_FOUNDATION_ENABLED: 'false',
     PCD_COMMERCE_TEST_MODE_ENABLED: 'false',
     EDITORIAL_LIFECYCLE_ENABLED: 'false',
+    PCD_CRM_ADAPTER_ENABLED: 'false',
+    PCD_CRM_BACKFILL_ENABLED: 'false',
+    PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
+    PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
+    PCD_CRM_SOURCE_ID: 'source-pcd-activity-radar',
   },
 };
 
@@ -72,6 +80,9 @@ describe('production deployment manifest contract', () => {
     unsafe.vars.CAMP_CLAIMS_ENABLED = 'true';
     unsafe.vars.PCD_CUSTOMER_FOUNDATION_ENABLED = 'true';
     unsafe.vars.PCD_COMMERCE_TEST_MODE_ENABLED = 'true';
+    unsafe.services = [];
+    unsafe.triggers.crons = ['17 */6 * * *'];
+    unsafe.vars.PCD_CRM_ADAPTER_ENABLED = 'true';
     const failures = verifyDeploymentManifest(unsafe);
     expect(failures).toEqual(expect.arrayContaining([
       expect.stringContaining('Worker name'),
@@ -83,6 +94,9 @@ describe('production deployment manifest contract', () => {
       expect.stringContaining('CAMP_CLAIMS_ENABLED'),
       expect.stringContaining('PCD_CUSTOMER_FOUNDATION_ENABLED'),
       expect.stringContaining('PCD_COMMERCE_TEST_MODE_ENABLED'),
+      expect.stringContaining('CRM service bindings'),
+      expect.stringContaining('production cron triggers'),
+      expect.stringContaining('PCD_CRM_ADAPTER_ENABLED'),
     ]));
   });
 
