@@ -95,3 +95,5 @@ reports/editorial/editorial-refresh-queue.json
 # and served at /build-info.json. Derived from the commit, so tracking it would
 # conflict on every branch for the same reason the file above does.
 public/build-info.json
+
+mcp-servers/
