@@ -1,16 +1,16 @@
 ---
 title: "A Parent Code of Conduct Every Family Can Actually Follow"
-seoTitle: "A Parent Code of Conduct Every Family"
+seoTitle: "A Parent Code of Conduct"
 seoDescription: "Establish a solid parent code of conduct by committing in writing and engaging in preseason meetings. Foster a supportive sports environment!"
-dek: "A Parent Code of Conduct Every Family Can Actually Follow ! Decorative title card illustration for youth sports parenting article Sign it, read it, and show up for the preseason."
+dek: "Decorative title card illustration for youth sports parenting article Sign it, read it, and show up for the preseason."
 bluf: "Sign it, read it, and show up for the preseason walkthrough. That is the entire job. A good parent code of conduct only works when parents actually commit to it in writing and hear it explained out loud before the first game, not just skim it once at registration and forget it."
 topic: "game-day"
 format: "essay"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/sideline-two-parents-talking.webp"
+heroAlt: "Two parents stand a few feet apart on a youth practice field sideline in late afternoon, both turned toward the field mid-conversation."
 publishedAt: 2026-08-21
 draft: false
 externalSource:

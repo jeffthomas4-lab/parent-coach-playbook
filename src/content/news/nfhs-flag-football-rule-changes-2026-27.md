@@ -1,6 +1,6 @@
 ---
 headline: "High school flag football gets 8 new rules this fall, including a comeback play"
-summary: "NFHS approved eight flag football rule changes for the 2026-27 season, the fast-growing sport's first major rules update since most states sanctioned it. A trailing team can now choose to keep the ball after scoring and start fourth down at its own 20 instead of kicking off. States get a fourth field-size option, every team must start with exactly seven players, and instant replay is now limited to state postseason play only, never the regular season. If your daughter just started playing, expect these to come up in your first few games."
+summary: "NFHS approved eight flag football rule changes for the 2026-27 season, the sport's first major rules update since most states sanctioned it. A trailing team can now keep the ball after scoring and start fourth down at its own 20 instead of kicking off. States get a fourth field-size option, every team starts exactly seven players, and instant replay is limited to state postseason play."
 category: "rule-change"
 sport: "flag-football"
 sourceUrl: "https://www.maxpreps.com/news/i9wsp57-j0uNVb_DAe9OVA/high-school-flag-football-nfhs-approves-eight-rule-changes-for-2026-27-seasons.htm"

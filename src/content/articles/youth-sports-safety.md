@@ -1,14 +1,14 @@
 ---
 title: "Parent Toolkit: 5 Immediate Steps for Youth Sports Safety"
-seoTitle: "Parent Toolkit: 5 Immediate Steps for"
+seoTitle: "Parent Toolkit: 5 Immediate Steps"
 seoDescription: "Act now to protect your child: five immediate safety steps plus printable checklists and coach scripts parents can use this season with Parentcoachdesk."
-dek: "Parent Toolkit: 5 Immediate Steps for Youth Sports Safety ! Youth sports safety title card illustration The five things that matter most: pull any child with a suspected concussion immediately, confirm protective gear."
+dek: "Youth sports safety title card illustration The five things that matter most: pull any child with a suspected concussion immediately, confirm protective gear."
 bluf: "The five things that matter most: pull any child with a suspected concussion immediately, confirm protective gear fits correctly, verify your coach has first-aid training and a written emergency plan, manage training load instead of letting one sport run year-round, and set a hydration and heat plan before the first hot practice. Everything else supports these five. Guidance from CDC HEADS UP, AAOS/OrthoInfo, and Safe Kids backs each one, and Parentcoachdesk turns them into steps you can."
 topic: "equipment"
 format: "essay"
 phase: "game"
 sport: "multi-sport"
-age: "all-ages"
+age: "5-7"
 hero: "/illustrations/guide-parent-coach-gear.webp"
 heroAlt: "A youth sports gear bag and equipment arranged for a parent checklist."
 publishedAt: 2026-08-31

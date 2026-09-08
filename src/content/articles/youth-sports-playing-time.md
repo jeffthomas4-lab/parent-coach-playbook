@@ -1,16 +1,16 @@
 ---
 title: "Youth Sports Playing Time: A Fair Rotation Plan"
-seoTitle: "Youth Sports Playing Time: A Fair"
+seoTitle: "Youth Sports Playing Time"
 seoDescription: "Ensure fairness in youth sports playing time with a clear rotation plan. Keep kids engaged and improving on the field with these expert tips."
-dek: "Youth Sports Playing Time: A Fair Rotation Plan ! Decorative youth sports fairness theme title card Aim for equal or demonstrably fair playing time, adjusted for age, not raw."
+dek: "Decorative youth sports fairness theme title card Aim for equal or demonstrably fair playing time, adjusted for age, not raw."
 bluf: "Aim for equal or demonstrably fair playing time, adjusted for age, not raw talent. That's the recommendation backed by NAYS and the Aspen Institute's Project Play, and it's the approach that keeps kids in the game longer. You don't need to wait for a crisis to act on it. Do these three things."
 topic: "game-day"
 format: "essay"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/sideline-two-parents-talking.webp"
+heroAlt: "Two parents stand a few feet apart on a youth practice field sideline in late afternoon, both turned toward the field mid-conversation."
 publishedAt: 2026-08-20
 draft: false
 externalSource:

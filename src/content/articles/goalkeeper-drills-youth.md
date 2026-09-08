@@ -2,15 +2,15 @@
 title: "Goalkeeper Drills Youth Coaches Can Run in 30 Minutes"
 seoTitle: "Goalkeeper Drills Youth Coaches Can Run"
 seoDescription: "Discover 30-minute drills that enhance youth goalkeeper skills like handling, footwork, and shot-stopping. Engage your keepers today!. Practical guidance…"
-dek: "Goalkeeper Drills Youth Coaches Can Run in 30 Minutes ! Decorative goalkeeper training title card illustration Use a selection of core drills and a plan around 30 minutes long to build handling, footwork, shot-stopping."
+dek: "Decorative goalkeeper training title card illustration Use a selection of core drills and a plan around 30 minutes long to build handling, footwork, shot-stopping."
 bluf: "Use a selection of core drills and a plan around 30 minutes long to build handling, footwork, shot-stopping, and distribution skills in keepers approximately aged 6 to 14. The best sessions rotate through several proven goalkeeper drills that youth players enjoy."
 topic: "communication"
 format: "essay"
 phase: "game"
-sport: "multi-sport"
+sport: "soccer"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/soccer-goal-net-empty.webp"
+heroAlt: "An empty soccer goal is photographed from behind the net at dusk, the grass worn in the goalmouth and the field stretching away."
 publishedAt: 2026-08-23
 draft: false
 externalSource:

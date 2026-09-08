@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "volleyball"
 age: "13-14"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/volleyball-net-empty-gym.webp"
+heroAlt: "A volleyball net stretches across an empty gym court, shot from the floor at one post with light falling from high windows."
 publishedAt: 2026-08-14
 draft: false
 externalSource:

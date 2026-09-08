@@ -1,16 +1,16 @@
 ---
 title: "45 Minute Tee Ball Practice and 8 Quick Drills for Parent Coaches"
-seoTitle: "45 Minute Tee Ball Practice and 8 Quick"
+seoTitle: "45 Minute Tee Ball Practice"
 seoDescription: "Volunteer parent coaches can copy a ready 45 minute practice, eight quick tee ball drills, and a simple 10 week progression you can run with minimal gear."
-dek: "45 Minute Tee Ball Practice and 8 Quick Drills for Parent Coaches ! Decorative tee ball practice title card The best tee ball drills are the ones that get every kid swinging, throwing, and running before boredom sets."
+dek: "Decorative tee ball practice title card The best tee ball drills are the ones that get every kid swinging, throwing, and running before boredom sets."
 bluf: "The best tee ball drills are the ones that get every kid swinging, throwing, and running before boredom sets in: tee hitting on three or four stations at once, partner toss, bucket-target throwing, rolling ground balls, and a base-running game to close things out. Run them station-based in short blocks, keep the mood fun-first over technical, and cap practice at a maximum time recommended for these age groups, shorter for 3 and 4-year-olds and longer for 5 to 7-year-olds. That single framework."
 topic: "season-ops"
 format: "essay"
 phase: "team-parent"
-sport: "multi-sport"
-age: "8-10"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+sport: "baseball"
+age: "t-ball"
+hero: "/illustrations/baseball-infield-dirt-morning.webp"
+heroAlt: "A youth baseball infield shows freshly raked dirt and chalk baselines in early morning, bases set and nobody on the field."
 publishedAt: 2026-09-05
 draft: false
 externalSource:

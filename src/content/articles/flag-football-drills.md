@@ -1,16 +1,16 @@
 ---
 title: "3 Practice Templates and 8 Flag Football Drills for Parent Coaches"
-seoTitle: "3 Practice Templates and 8 Flag"
+seoTitle: "3 Practice Templates: a parent guide"
 seoDescription: "A parent-coach toolkit with 8 plug-and-play flag football drills, 3 ready practice templates (30/45/60 min), age tweaks for 5–13, and a printable checklist."
-dek: "3 Practice Templates and 8 Flag Football Drills for Parent Coaches ! Flag football coaching practice title card Run these first: a two-line passing warm-up, a gauntlet flag-pull drill, a route tree relay, cone shuttle."
+dek: "Flag football coaching practice title card Run these first: a two-line passing warm-up, a gauntlet flag-pull drill, a route tree relay, cone shuttle."
 bluf: "Run these first: a two-line passing warm-up, a gauntlet flag-pull drill, a route tree relay, cone shuttle cuts, a catch-and-score small game, mirror coverage, and circle handoffs. Together they cover throwing, catching, flag technique, and footwork in one session. Pick the 30, 45, or 60-minute template below based on your practice window, then scale reps to your players'."
 topic: "communication"
 format: "essay"
 phase: "game"
-sport: "football"
+sport: "flag-football"
 age: "13-14"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/flag-football-belts-grass.webp"
+heroAlt: "Flag football belts with plain colored flags lie on grass beside a ball, dew visible in morning light."
 publishedAt: 2026-09-02
 draft: false
 externalSource:

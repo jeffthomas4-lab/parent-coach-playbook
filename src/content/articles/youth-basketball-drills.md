@@ -1,16 +1,16 @@
 ---
 title: "Youth Basketball Drills: A Parent Coach's Ready-to-Run Guide"
-seoTitle: "Youth Basketball Drills: A Parent"
+seoTitle: "Youth Basketball Drills"
 seoDescription: "Discover effective youth basketball drills with this ready-to-run 60-minute practice plan for skill development and fun games!. Practical guidance and clear…"
-dek: "Youth Basketball Drills: A Parent Coach's Ready-to-Run Guide ! Decorative youth basketball coaching title card illustration Here is your 45–60 minute practice blueprint, ready to run."
+dek: "Decorative youth basketball coaching title card illustration Here is your 45–60 minute practice blueprint, ready to run."
 bluf: "Here is your 45–60 minute practice blueprint, ready to run today. Warm up for 10 minutes, spend 30 minutes rotating through skill drills in small groups, then close with 15–20 minutes of small-sided games. That's the whole structure. Everything below fills."
 topic: "communication"
 format: "essay"
 phase: "game"
 sport: "basketball"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/basketball-shoes-baseline.webp"
+heroAlt: "A pair of worn court shoes and a rolled towel sit on a gym baseline beside a water bottle under hard overhead light."
 publishedAt: 2026-08-06
 draft: false
 externalSource:

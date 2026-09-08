@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-07T14:34:46.271Z",
-  "count": 821,
+  "generatedAt": "2026-09-08T18:30:15.712Z",
+  "count": 872,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -348,6 +348,18 @@
       ]
     },
     {
+      "url": "https://baseballpositive.com/plans-tee-ball/",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
+      ]
+    },
+    {
+      "url": "https://battingleadoff.com/how-to-execute-rundown-baseball/",
+      "sources": [
+        "src/content/articles/coach-pitch-drills.md"
+      ]
+    },
+    {
       "url": "https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/how-to-budget-for-the-costs-of-youth-sports",
       "sources": [
         "src/content/articles/team-budget-youth-sports.md"
@@ -531,6 +543,12 @@
       ]
     },
     {
+      "url": "https://couchanddumbells.com/collections/outdoor-play-equipment",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
+      ]
+    },
+    {
       "url": "https://cpr.heart.org/",
       "sources": [
         "src/content/body/cpr-for-parents.md",
@@ -595,9 +613,27 @@
       ]
     },
     {
+      "url": "https://elybc.com/wp-content/uploads/2025/05/8U-Kid-Pitch-Rules.pdf",
+      "sources": [
+        "src/content/articles/coach-vs-kid-pitch.md"
+      ]
+    },
+    {
+      "url": "https://emaildesigner.usssa.com/email-template/8u-kid-pitch-sent-1-12/",
+      "sources": [
+        "src/content/articles/coach-vs-kid-pitch.md"
+      ]
+    },
+    {
       "url": "https://envelopebudget.com/blog/how-to-budget-for-kids-sports-fees-envelope-method/",
       "sources": [
         "src/content/articles/team-budget-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://fracture-club.com/post/rock-climbing-injury-prevention-why-rest-builds-strength-and-keeps-you-on-the-wall",
+      "sources": [
+        "src/content/articles/goalkeeper-drills-youth.md"
       ]
     },
     {
@@ -629,6 +665,12 @@
       "url": "https://htktrainingco.wpcomstaging.com/2026/07/31/plyometric-exercises-for-athletes",
       "sources": [
         "src/content/articles/youth-volleyball-practice-plan.md"
+      ]
+    },
+    {
+      "url": "https://i-trx.com/post/tips-for-filming-youth-sports-without-missing-the-excitement",
+      "sources": [
+        "src/content/articles/coach-pitch-drills.md"
       ]
     },
     {
@@ -666,6 +708,12 @@
       "url": "https://jissn.biomedcentral.com/",
       "sources": [
         "src/content/body/creatine-youth-athletes.md"
+      ]
+    },
+    {
+      "url": "https://joinstriveon.com/blog/tee-ball-practice-plan",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
       ]
     },
     {
@@ -709,6 +757,12 @@
       "url": "https://journals.sagepub.com/home/ojs",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://jr.nba.com/category/basketball-skills-and-drills/",
+      "sources": [
+        "src/content/articles/youth-basketball-drills.md"
       ]
     },
     {
@@ -791,6 +845,12 @@
       ]
     },
     {
+      "url": "https://napervilleparks.org/upload/Athletics/Baseball_Softball/CPMPManual.pdf",
+      "sources": [
+        "src/content/articles/coach-pitch-drills.md"
+      ]
+    },
+    {
       "url": "https://nccsir.unc.edu/",
       "sources": [
         "src/content/body/youth-cheer-stunt-safety-briefing.md"
@@ -806,6 +866,18 @@
       "url": "https://nextgencards.shop/blogs/collectors-guide/best-starter-baseball-card-series-for-kids-in-2026",
       "sources": [
         "src/content/articles/baseball-throwing-drill.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/coaches-should-address-playing-time-issues-ahead-of-season",
+      "sources": [
+        "src/content/articles/youth-sports-playing-time.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/libero-rules-adjusted-in-high-school-volleyball",
+      "sources": [
+        "src/content/news/nfhs-volleyball-libero-rule-2026-27.md"
       ]
     },
     {
@@ -830,6 +902,12 @@
       "url": "https://nfhslearn.com/",
       "sources": [
         "src/content/body/coach-coach-conflicts.md"
+      ]
+    },
+    {
+      "url": "https://nflflag.com/football-drills",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
       ]
     },
     {
@@ -960,6 +1038,12 @@
       ]
     },
     {
+      "url": "https://owllba.ca/Public/Documents/owll_t-ball_guidelines_2026.pdf",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
+      ]
+    },
+    {
       "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
       "sources": [
         "src/pages/newsletter.astro"
@@ -981,6 +1065,18 @@
       "url": "https://pitchtrainingbaseball.com/blogs/news/role-of-testimonials-in-sports-training",
       "sources": [
         "src/content/articles/tryout-results-email-youth.md"
+      ]
+    },
+    {
+      "url": "https://pitchtrainingbaseball.com/blogs/news/why-invest-in-youth-sports-equipment-a-parents-guide",
+      "sources": [
+        "src/content/articles/dealing-with-sports-parents.md"
+      ]
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11113040/",
+      "sources": [
+        "src/content/articles/youth-sports-safety.md"
       ]
     },
     {
@@ -1166,6 +1262,12 @@
       ]
     },
     {
+      "url": "https://rnkapparel.com/blogs/rnk-news/why-youth-athletes-need-durable-gear",
+      "sources": [
+        "src/content/articles/youth-sports-safety.md"
+      ]
+    },
+    {
       "url": "https://schema.org",
       "sources": [
         "src/pages/body/[slug].astro",
@@ -1232,6 +1334,12 @@
       ]
     },
     {
+      "url": "https://thompsonlittleleague.org/Default.aspx?tabid=2115443",
+      "sources": [
+        "src/content/articles/parent-code-of-conduct.md"
+      ]
+    },
+    {
       "url": "https://tiemposoccer.com/is-my-kid-ready-for-travel-soccer/",
       "sources": [
         "src/content/articles/travel-soccer-costs.md"
@@ -1274,6 +1382,12 @@
       ]
     },
     {
+      "url": "https://truesport.org/respect-accountability/dealing-disrespectful-parents-fans-stands/",
+      "sources": [
+        "src/content/articles/parent-code-of-conduct.md"
+      ]
+    },
+    {
       "url": "https://truesport.org/wp-content/uploads/Parent_Code-of-Conduct.pdf",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
@@ -1290,6 +1404,12 @@
       "sources": [
         "src/content/adaptive/inclusion-rules-what-parents-need-to-know.md",
         "src/content/rules/flag-football.md"
+      ]
+    },
+    {
+      "url": "https://usafootball.com/coaches-organizations/practice-guidelines",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
       ]
     },
     {
@@ -3018,9 +3138,21 @@
       ]
     },
     {
+      "url": "https://www.aspeninstitute.org/wp-content/uploads/2018/09/Aspen-Institute-Project-Play-Report.pdf",
+      "sources": [
+        "src/content/articles/youth-sports-playing-time.md"
+      ]
+    },
+    {
       "url": "https://www.aspeninstitute.org/wp-content/uploads/2025/06/National-Youth-Sports-Parent-Survey-FINAL.pdf",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://www.asphaltgreen.org/blog/the-car-ride-home-the-most-important-ten-minutes-in-youth-sports/",
+      "sources": [
+        "src/content/articles/dealing-with-sports-parents.md"
       ]
     },
     {
@@ -3085,6 +3217,18 @@
       ]
     },
     {
+      "url": "https://www.baseball-fever.com/forum/general-baseball/baseball-101-coaching-fundamentals/87592-7u-pitching-machine-kid-or-coach-pitch",
+      "sources": [
+        "src/content/articles/coach-vs-kid-pitch.md"
+      ]
+    },
+    {
+      "url": "https://www.baseballmonkey.com/learn/baseball-pickle-rundown",
+      "sources": [
+        "src/content/articles/coach-pitch-drills.md"
+      ]
+    },
+    {
       "url": "https://www.bbb.org/",
       "sources": [
         "src/content/body/private-trainer-vetting.md",
@@ -3095,6 +3239,12 @@
       "url": "https://www.bnq.ca/en/",
       "sources": [
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.breakthroughbasketball.com/coaching/teach-youth",
+      "sources": [
+        "src/content/articles/youth-basketball-drills.md"
       ]
     },
     {
@@ -3157,6 +3307,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/heads-up/data/index.html",
+      "sources": [
+        "src/content/articles/youth-sports-safety.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/headsup",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -3213,6 +3369,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/traumatic-brain-injury/data-research/comparing-head-impacts/index.html",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/westnile/",
       "sources": [
         "src/content/body/mosquito-borne-illness.md"
@@ -3247,6 +3409,12 @@
       "url": "https://www.childwelfare.gov/resources/mandatory-reporting-child-abuse-and-neglect/",
       "sources": [
         "src/content/articles/how-to-vet-a-camp-for-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.chop.edu/news/flag-football-growing-fast-benefits-safety-and-common-injuries-kids-and-teens",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
       ]
     },
     {
@@ -3427,6 +3595,12 @@
       "url": "https://www.firsttee.org/",
       "sources": [
         "src/content/guides/golf.md"
+      ]
+    },
+    {
+      "url": "https://www.flexleagueplus.com/blog/league-code-of-conduct",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
       ]
     },
     {
@@ -3629,6 +3803,12 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/play-little-league/coach-pitch/",
+      "sources": [
+        "src/content/articles/coach-vs-kid-pitch.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org/play-little-league/league-finder/",
       "sources": [
         "src/content/articles/tee-ball-strikeouts.md"
@@ -3689,7 +3869,8 @@
     {
       "url": "https://www.littleleague.org/university/articles/local-league-parents-code-of-conduct-help-make-parents-families-and-fans-accountable-for-their-behavior/",
       "sources": [
-        "src/content/articles/parent-coach-ethics.md"
+        "src/content/articles/parent-coach-ethics.md",
+        "src/content/articles/parent-code-of-conduct.md"
       ]
     },
     {
@@ -3702,6 +3883,24 @@
       "url": "https://www.littleleague.org/university/articles/playing-equipment-inspection-baseball-softball-bats/",
       "sources": [
         "src/content/articles/youth-baseball-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/wp-content/uploads/2018/01/Tee-Ball-Parents-Guide.pdf",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/wp-content/uploads/2018/05/Coach-Pitch-12-Week-Program.pdf",
+      "sources": [
+        "src/content/articles/coach-pitch-drills.md"
+      ]
+    },
+    {
+      "url": "https://www.littleleague.org/wp-content/uploads/LL-Tee-Ball-Program.pdf",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
       ]
     },
     {
@@ -3720,6 +3919,12 @@
       "url": "https://www.marketplace.org/story/2026/07/16/youth-sports-in-the-us-grow-prohibitively-expensive",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://www.maxpreps.com/news/i9wsp57-j0uNVb_DAe9OVA/high-school-flag-football-nfhs-approves-eight-rule-changes-for-2026-27-seasons.htm",
+      "sources": [
+        "src/content/news/nfhs-flag-football-rule-changes-2026-27.md"
       ]
     },
     {
@@ -3895,9 +4100,22 @@
       ]
     },
     {
+      "url": "https://www.nays.org/about-nays/national-standards-for-youth-sports/",
+      "sources": [
+        "src/content/articles/dealing-with-sports-parents.md"
+      ]
+    },
+    {
       "url": "https://www.nays.org/upload/editor/pdf/National%20Standards%20for%20Youth%20Sports%202017%20%282%29.pdf",
       "sources": [
-        "src/content/articles/parent-coach-ethics.md"
+        "src/content/articles/parent-coach-ethics.md",
+        "src/content/articles/youth-sports-playing-time.md"
+      ]
+    },
+    {
+      "url": "https://www.nba.com/news/nba-usa-basketball-youth-basektball-rules",
+      "sources": [
+        "src/content/articles/youth-basketball-drills.md"
       ]
     },
     {
@@ -4084,6 +4302,12 @@
       ]
     },
     {
+      "url": "https://www.neworleanssaints.com/video/flag-football-drills-2025-pulling-flags",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
+      ]
+    },
+    {
       "url": "https://www.newyorklife.com/newsroom/financial-tips-for-parents-supporting-youth-athletes",
       "sources": [
         "src/content/articles/team-budget-youth-sports.md"
@@ -4183,6 +4407,12 @@
       ]
     },
     {
+      "url": "https://www.niwotyouthsports.org/wp-content/uploads/2020/07/NYS-Parent-Code-of-Conduct.pdf",
+      "sources": [
+        "src/content/articles/parent-code-of-conduct.md"
+      ]
+    },
+    {
       "url": "https://www.njcaa.org/",
       "sources": [
         "src/content/recruiting/the-recruiting-process.md",
@@ -4268,6 +4498,18 @@
       ]
     },
     {
+      "url": "https://www.pediatricsportsandspine.com/content/overuse-injuries-in-children",
+      "sources": [
+        "src/content/articles/youth-sports-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.perfectgame.org/Events/tournaments/rules.aspx?event=136538",
+      "sources": [
+        "src/content/articles/coach-vs-kid-pitch.md"
+      ]
+    },
+    {
       "url": "https://www.pgajrleague.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -4289,6 +4531,12 @@
       "url": "https://www.plantscience.psu.edu/research/centers/ssrc",
       "sources": [
         "src/content/body/artificial-turf-temperatures-burn-risk.md"
+      ]
+    },
+    {
+      "url": "https://www.playingtimecalculator.com/",
+      "sources": [
+        "src/content/articles/youth-sports-playing-time.md"
       ]
     },
     {
@@ -4424,6 +4672,12 @@
       ]
     },
     {
+      "url": "https://www.rogersar.gov/DocumentCenter/View/9556/T-Ball-Drills-PDF",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
+      ]
+    },
+    {
       "url": "https://www.royalacademyofdance.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -4433,6 +4687,12 @@
       "url": "https://www.royalacademyofdance.org/",
       "sources": [
         "src/content/guides/ballet.md"
+      ]
+    },
+    {
+      "url": "https://www.safekids.org/preventing-sports-related-injuries",
+      "sources": [
+        "src/content/articles/youth-sports-safety.md"
       ]
     },
     {
@@ -4519,6 +4779,12 @@
       "url": "https://www.specialolympicsusa.org/",
       "sources": [
         "src/content/adaptive/unified-sports-what-parents-need-to-know.md"
+      ]
+    },
+    {
+      "url": "https://www.sportplan.net/drills/Football/guides/football-team-selection-game-time.jsp",
+      "sources": [
+        "src/content/articles/youth-sports-playing-time.md"
       ]
     },
     {
@@ -4758,6 +5024,12 @@
       "url": "https://www.usab.com/news/2026/04/play/player-resources",
       "sources": [
         "src/content/articles/basketball-levels-rec-school-club-aau.md"
+      ]
+    },
+    {
+      "url": "https://www.usab.com/play/player-resources/skills-drills-players",
+      "sources": [
+        "src/content/articles/youth-basketball-drills.md"
       ]
     },
     {
@@ -5147,6 +5419,12 @@
       ]
     },
     {
+      "url": "https://www.usatoday.com/story/sports/2024/09/07/10-unwritten-rules-of-youth-sports/75109944007/",
+      "sources": [
+        "src/content/articles/dealing-with-sports-parents.md"
+      ]
+    },
+    {
       "url": "https://www.usatriathlon.org/",
       "sources": [
         "src/content/body/youth-triathlon-swim-safety.md"
@@ -5362,9 +5640,27 @@
       ]
     },
     {
+      "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/Development-of-a-Goalkeeper-The-progression-from-a-beginning-goalkeeper-to-a-college-goalkeeper.pdf",
+      "sources": [
+        "src/content/articles/goalkeeper-drills-youth.md"
+      ]
+    },
+    {
+      "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/Official-US-Youth-Soccer-Coaching-Manual-1.pdf",
+      "sources": [
+        "src/content/articles/flag-football-drills.md"
+      ]
+    },
+    {
       "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/US-Youth-Soccer-Code-of-Conduct-4.23.22-1.pdf",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
+      ]
+    },
+    {
+      "url": "https://www.veo.com/en-us/article/youth-baseball-coaching-tips",
+      "sources": [
+        "src/content/articles/coach-pitch-drills.md"
       ]
     },
     {
@@ -5445,9 +5741,22 @@
       ]
     },
     {
+      "url": "https://ymcanwnc.org/sites/default/files/2021-09/Basketball-Coaching-Resource-Book.pdf",
+      "sources": [
+        "src/content/articles/youth-basketball-drills.md"
+      ]
+    },
+    {
       "url": "https://youthguidelines.nba.com/",
       "sources": [
+        "src/content/articles/youth-basketball-drills.md",
         "src/content/articles/youth-basketball-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://youthsports.rutgers.edu/articles/model-athletic-code-of-conduct/",
+      "sources": [
+        "src/content/articles/parent-code-of-conduct.md"
       ]
     }
   ]

@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/bleachers-two-parents-side.webp"
+heroAlt: "Two adults sit a seat apart on aluminum bleachers, shot from behind and below, a bright field beyond them."
 publishedAt: 2026-08-04
 draft: false
 externalSource:

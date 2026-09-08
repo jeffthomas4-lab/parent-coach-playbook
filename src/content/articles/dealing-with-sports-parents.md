@@ -1,16 +1,16 @@
 ---
 title: "Dealing With Sports Parents: A Coach's Playbook That Works"
-seoTitle: "Dealing With Sports Parents: A Coach's"
+seoTitle: "Dealing With Sports Parents"
 seoDescription: "Navigate conflicts with sports parents effectively using proven strategies. Set clear expectations and maintain calm communication throughout the season."
-dek: "Dealing With Sports Parents: A Coach's Playbook That Works ! Decorative title card illustration with sports coaching elements Invoke the 24-hour rule the moment a conflict flares, then schedule a calm follow-up meeting."
-bluf: "Invoke the 24-hour rule the moment a conflict flares, then schedule a calm follow-up meeting once tempers cool. Lean on the code of conduct every parent signed before the season and jot down a quick note about what happened and when. For the follow-up itself, Parentcoachdesk keeps ready scripts so you're not scrambling for words while emotions are still."
+dek: "Decorative title card illustration with sports coaching elements Invoke the 24-hour rule the moment a conflict flares, then schedule a calm follow-up meeting."
+bluf: "Invoke the 24-hour rule the moment a conflict flares, then schedule a calm follow-up meeting once tempers cool. Lean on the code of conduct every parent signed before the season and jot down a quick note about what happened and when. For the follow-up itself, Parentcoachdesk keeps ready scripts so you're not scrambling for words while emotions."
 topic: "rules-of-play"
 format: "essay"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/sideline-two-parents-talking.webp"
+heroAlt: "Two parents stand a few feet apart on a youth practice field sideline in late afternoon, both turned toward the field mid-conversation."
 publishedAt: 2026-08-25
 draft: false
 externalSource:

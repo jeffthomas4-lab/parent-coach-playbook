@@ -1,6 +1,6 @@
 ---
 title: "The Best Post Game Snacks Kids Actually Eat (And Refuel On)"
-seoTitle: "The Best Post Game Snacks Kids Actually"
+seoTitle: "The Best Post Game Snacks Kids"
 seoDescription: "Discover the best post-game snacks kids love that refuel energy and taste great. Keep them happy and healthy after the game!. Practical guidance and clear…"
 dek: "Discover the best post-game snacks kids love that refuel energy and taste great. Keep them happy and healthy after the game!. Practical guidance."
 bluf: "The best post game snacks for kids are low-fat chocolate milk, bananas, string cheese, apple slices, clementines or orange slices, and Greek yogurt. Every one of these pairs carbohydrates with protein, travels well in a cooler, and needs zero prep beyond opening a bag. The single hydration rule to remember: water comes first for most youth activity, and sports drinks only earn a spot on the sideline during long, intense, or repeated same-day."
@@ -9,8 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/bleachers-two-parents-side.webp"
+heroAlt: "Two adults sit a seat apart on aluminum bleachers, shot from behind and below, a bright field beyond them."
 publishedAt: 2026-08-17
 draft: false
 externalSource:

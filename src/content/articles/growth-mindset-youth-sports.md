@@ -1,6 +1,6 @@
 ---
 title: "Growth Mindset in Youth Sports: Scripts Parents Can Use This Week"
-seoTitle: "Growth Mindset in Youth Sports: Scripts"
+seoTitle: "Growth Mindset in Youth Sports"
 seoDescription: "Transform your child's sports experience this week with growth mindset phrases. Boost resilience and progress through focused praise!. Practical guidance…"
 dek: "Transform your child's sports experience this week with growth mindset phrases. Boost resilience and progress through focused praise!. Practical."
 bluf: "The single highest-impact move you can make this week is swapping outcome praise (\"You're so talented\") for process praise (\"I saw you adjust your footwork after that first miss\"). Growth mindset in youth sports isn't a lecture you give once. It's a handful of phrases, repeated until they become how your family talks about effort."
@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/sideline-two-parents-talking.webp"
+heroAlt: "Two parents stand a few feet apart on a youth practice field sideline in late afternoon, both turned toward the field mid-conversation."
 publishedAt: 2026-08-19
 draft: false
 externalSource:

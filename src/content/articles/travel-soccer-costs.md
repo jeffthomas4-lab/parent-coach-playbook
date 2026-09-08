@@ -1,6 +1,6 @@
 ---
 title: "Travel Soccer Costs: A Parent's Complete Budget Guide"
-seoTitle: "Travel Soccer Costs: A Parent's"
+seoTitle: "Travel Soccer Costs: a parent guide"
 seoDescription: "Discover all the hidden travel soccer costs. Our complete budget guide helps families prepare for expenses from registration to travel. Practical guidance…"
 dek: "Discover all the hidden travel soccer costs. Our complete budget guide helps families prepare for expenses from registration to travel. Practical."
 bluf: "Most families pay somewhere between $2,500 and $15,000+ per year for travel soccer, depending on the program level. Recreational soccer runs $200–$700 annually. Competitive club programs start around $2,500. Premier and elite pathways through ECNL or MLS NEXT regularly push past $8,000 once you add everything."
@@ -9,8 +9,8 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "all-ages"
-hero: "/illustrations/travel-vs-rec-diptych.webp"
-heroAlt: "A neighborhood recreation field beside a larger travel-sports complex."
+hero: "/illustrations/soccer-cleats-shinguards-bench.webp"
+heroAlt: "Worn soccer cleats and rolled shin guards sit on a wooden bench beside a ball in morning light through a fence."
 publishedAt: 2026-08-03
 draft: false
 externalSource:

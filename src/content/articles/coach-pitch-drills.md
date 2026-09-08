@@ -1,16 +1,16 @@
 ---
 title: "45 Min Coach Pitch Drills: Printable 12 Week Plan for Parent Coaches"
-seoTitle: "45 Min Coach Pitch Drills: Printable 12"
+seoTitle: "45 Min Coach Pitch Drills"
 seoDescription: "Parent coaches: grab a printable 45 minute coach pitch practice with station drills, one word coaching cues, and a compact 12 week progression to run the..."
-dek: "45 Min Coach Pitch Drills: Printable 12 Week Plan for Parent Coaches ! Coach pitch practice title card Run a station based practice lasting around 40 to 45 minutes that opens with a structured throwing warmup, rotates."
-bluf: "Run a station based practice lasting around 40 to 45 minutes that opens with a structured throwing warmup, rotates three stations approximately every 8 minutes, and closes with live at bats or a quick situational game. The three drills to lean on immediately are a close range throwing progression, coach knee or tee hitting, and an alligator hands fielding drill. At coach pitch ages, roughly 5 to 9, prioritize movement and confidence over mechanics. Run this plan, then adjust it week by."
+dek: "Coach pitch practice title card Run a station based practice lasting around 40 to 45 minutes that opens with a structured throwing warmup, rotates."
+bluf: "Run a station based practice lasting around 40 to 45 minutes that opens with a structured throwing warmup, rotates three stations approximately every 8 minutes, and closes with live at bats or a quick situational game. The three drills to lean on immediately are a close range throwing progression, coach knee or tee hitting, and an alligator hands fielding drill. At coach pitch ages, roughly 5 to 9, prioritize movement and confidence over mechanics. Run this plan, then adjust it week."
 topic: "communication"
 format: "essay"
 phase: "game"
-sport: "multi-sport"
+sport: "baseball"
 age: "11-12"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/baseball-infield-dirt-morning.webp"
+heroAlt: "A youth baseball infield shows freshly raked dirt and chalk baselines in early morning, bases set and nobody on the field."
 publishedAt: 2026-09-04
 draft: false
 externalSource:

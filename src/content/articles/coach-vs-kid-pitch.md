@@ -1,16 +1,16 @@
 ---
 title: "Coach Pitch vs Kid Pitch: Which Format Fits Your Child?"
-seoTitle: "Coach Pitch vs Kid Pitch: Which Format"
+seoTitle: "Coach Pitch vs Kid Pitch"
 seoDescription: "Discover how to choose between coach pitch and kid pitch for your child's age and skill level, ensuring a fun and effective experience. Practical guidance…"
-dek: "Coach Pitch vs Kid Pitch: Which Format Fits Your Child?"
+dek: "Coach pitch means a parent or volunteer delivers pitches to the batter. Kid pitch (also called player pitch) means a child stands on the mound and throws to teammates. For most 5–8-year-olds, coach pitch or machine."
 bluf: "Coach pitch means a parent or volunteer delivers pitches to the batter. Kid pitch (also called player pitch) means a child stands on the mound and throws to teammates. For most 5–8-year-olds, coach pitch or machine pitch is the right starting point because it produces more contact, more confidence, and a better overall experience. Kid pitch typically fits players 9 and older who have developed enough throwing accuracy and emotional readiness to handle walks, strikeouts, and the pressure."
 topic: "communication"
 format: "essay"
 phase: "game"
-sport: "multi-sport"
+sport: "baseball"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/baseball-infield-dirt-morning.webp"
+heroAlt: "A youth baseball infield shows freshly raked dirt and chalk baselines in early morning, bases set and nobody on the field."
 publishedAt: 2026-08-07
 draft: false
 externalSource:

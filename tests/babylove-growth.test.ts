@@ -149,9 +149,14 @@ Keep this section.
     const seoTitle = markdown.match(/^seoTitle: "(.+)"$/m)?.[1] ?? '';
     const seoDescription = markdown.match(/^seoDescription: "(.+)"$/m)?.[1] ?? '';
 
-    expect(seoTitle.length).toBeGreaterThanOrEqual(25);
+    // Lowered from 25/45 on 2026-09-08. seoTitle now prefers a complete phrase
+    // over a longer fragment, and a complete headline sometimes lands at 22-24
+    // characters. Padding those back over 25 produced filler like "A Parent
+    // Code of Conduct: a parent guide", which is worse copy than a 44-character
+    // title Google displays in full. See ensureWindow in babylove-growth.ts.
+    expect(seoTitle.length).toBeGreaterThanOrEqual(22);
     expect(seoTitle.length).toBeLessThanOrEqual(40);
-    expect(`${seoTitle} | Parent Coach Desk`.length).toBeGreaterThanOrEqual(45);
+    expect(`${seoTitle} | Parent Coach Desk`.length).toBeGreaterThanOrEqual(42);
     expect(`${seoTitle} | Parent Coach Desk`.length).toBeLessThanOrEqual(60);
     expect(seoDescription.length).toBeGreaterThanOrEqual(140);
     expect(seoDescription.length).toBeLessThanOrEqual(160);
