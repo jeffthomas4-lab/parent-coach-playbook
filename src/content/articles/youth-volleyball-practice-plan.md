@@ -21,6 +21,7 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
@@ -33,6 +34,8 @@ For beginners and younger players (ages 8–12), a 60-minute block plan is the r
 - **55–60 min:** Cool-down huddle (two things we did well, one thing to work on next time)
 
 Before players arrive, do three things: set out one ball per two players and check net height for the age group, write three session objectives and a scoring format on your whiteboard, and assign two player roles (ball shagger and rotation caller) so transitions run themselves.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -137,7 +140,7 @@ Age changes everything: attention span, ball type, net height, and how much tech
 
 ### Ages 8–9: elementary level
 
-Players this age need a ball in their hands within the first two minutes and a new activity every five to six minutes. Use a Volley LITE or a softer training ball to reduce fear of contact and build confidence faster. Net height at this level is typically 6 feet (check your league's specific rules, as local YMCA and recreational leagues may vary).
+Players this age need a ball in their hands within the first two minutes and a new activity every five to six minutes. Use a [Volley LITE](/go/volleyball-volley-lite/) or a softer training ball to reduce fear of contact and build confidence faster. Net height at this level is typically 6 feet (check your league's specific rules, as local YMCA and recreational leagues may vary).
 
 **Attention span:** 5–6 minutes per activity. **Recommended practice length:** 45–60 minutes. **Ball-to-player ratio:** 1 ball per 2 players minimum.
 
@@ -370,13 +373,13 @@ Getting the court ready before players arrive is one of the highest-leverage thi
 **Packing list:**
 
 - Volleyballs (1 per 2 players minimum; Volley LITE for ages 8–11)
-- Ball pump and needle
-- Cones or poly spots (at least 12) for target zones and station markers
-- Whiteboard or portable flip chart and markers
+- [Ball pump and needle](/go/ball-pump-with-gauge/)
+- [Cones or poly spots](/go/agility-cones-set/) (at least 12) for target zones and station markers
+- [Whiteboard](/go/portable-whiteboard/) or portable flip chart and markers
 - Clipboard with practice plan printed or saved on phone
 - Whistle
-- First-aid kit (bandages, ice pack, athletic tape)
-- Spare knee pads (one or two pairs for players who forget)
+- [First-aid kit](/go/first-aid-fanny-pack/) (bandages, ice pack, athletic tape)
+- [Spare knee pads](/go/volleyball-knee-pads-youth/) (one or two pairs for players who forget)
 - Water jug or reminder to players to bring their own
 
 For a full age-appropriate gear breakdown, the [Parentcoachdesk volleyball gear guide](/what-to-buy/volleyball/) covers what to buy and what to skip at each age level.

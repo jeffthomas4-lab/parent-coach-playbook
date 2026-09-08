@@ -211,6 +211,94 @@
       "after": "Fill and label [reusable water bottles](/go/multi-sport-water-bottle/), load chocolate milk boxes into the cooler with ice packs",
       "asin": "B08TQQ9RTS (pre-existing catalog entry, reused, not re-sourced)",
       "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 716666, published 2026-08-14) never previously touched by Arnie. Added the FTC disclosure sentence to the visible body, placed after the opening paragraph and before the first affiliate link. Set editorial.affiliateDisclosurePresent: true in frontmatter.",
+      "before": "No disclosure sentence present anywhere in the body.",
+      "after": "Added: 'This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.' as its own paragraph directly after the opening paragraph.",
+      "asin": null,
+      "browserVerification": "Not applicable, no product page."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "insert-existing-catalog-link",
+      "slug": "volleyball-volley-lite",
+      "anchorText": "Volley LITE",
+      "location": "'Ages 8-9: elementary level' section",
+      "before": "Use a Volley LITE or a softer training ball to reduce fear of contact and build confidence faster.",
+      "after": "Use a [Volley LITE](/go/volleyball-volley-lite/) or a softer training ball to reduce fear of contact and build confidence faster.",
+      "asin": "B000PGHAZW (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "insert-existing-catalog-link",
+      "slug": "ball-pump-with-gauge",
+      "anchorText": "Ball pump and needle",
+      "location": "Equipment and court setup checklist, packing list",
+      "before": "Ball pump and needle",
+      "after": "[Ball pump and needle](/go/ball-pump-with-gauge/)",
+      "asin": "B07MYF9QVV (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "Cones or poly spots",
+      "location": "Equipment and court setup checklist, packing list",
+      "before": "Cones or poly spots (at least 12) for target zones and station markers",
+      "after": "[Cones or poly spots](/go/agility-cones-set/) (at least 12) for target zones and station markers",
+      "asin": "B0CLNGGXBC (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "insert-existing-catalog-link",
+      "slug": "portable-whiteboard",
+      "anchorText": "Whiteboard",
+      "location": "Equipment and court setup checklist, packing list",
+      "before": "Whiteboard or portable flip chart and markers",
+      "after": "[Whiteboard](/go/portable-whiteboard/) or portable flip chart and markers",
+      "asin": "B09FXVSMSD (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "insert-existing-catalog-link",
+      "slug": "first-aid-fanny-pack",
+      "anchorText": "First-aid kit",
+      "location": "Equipment and court setup checklist, packing list",
+      "before": "First-aid kit (bandages, ice pack, athletic tape)",
+      "after": "[First-aid kit](/go/first-aid-fanny-pack/) (bandages, ice pack, athletic tape)",
+      "asin": "B08BJY3KV8 (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered. Packing-list 'bring one' item, not a mid-play safety directive, so no-links-in-safety-directives rule does not block it."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "insert-existing-catalog-link",
+      "slug": "volleyball-knee-pads-youth",
+      "anchorText": "Spare knee pads",
+      "location": "Equipment and court setup checklist, packing list",
+      "before": "Spare knee pads (one or two pairs for players who forget)",
+      "after": "[Spare knee pads](/go/volleyball-knee-pads-youth/) (one or two pairs for players who forget)",
+      "asin": "B00P9OJF9E (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-07",
+      "articleSlug": "youth-volleyball-practice-plan",
+      "action": "no-link-skip",
+      "details": "'Water jug or reminder to players to bring their own' in the packing list has no catalog match. Catalog has multi-sport-water-bottle (individual bottle) but not a team-size water jug/dispenser; treated as a distinct product category rather than stretching the water-bottle slug onto it. Not sourced new this run (would require live Amazon verification for a jug/dispenser specifically). Logged for a future sourcing pass, not the gap queue, since the article is otherwise fully monetized."
     }
   ]
 }

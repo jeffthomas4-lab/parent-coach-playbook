@@ -221,6 +221,56 @@
       "reason": "Re-checked on the 2026-08-16 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
       "loggedAt": "2026-08-16",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "744753",
+      "slug": "baseball-throwing-drill",
+      "title": "Baseball Throwing Drills for Youth Coaches and Parents",
+      "sport": "baseball",
+      "topic": "communication",
+      "reason": "New BabyLoveGrowth article, published 2026-08-21, never previously touched by Arnie (3-week run gap, last Arnie run was 2026-08-16). Full read confirms zero nameable, buyable products: every drill uses generic equipment (bucket, cone, wall, hula hoop) with no brand or model named anywhere in the body. Not a monetization gap in the gear-guide sense. Flagged separately for Jeff: the 'Recommended' section links to https://nextgencards.shop/blogs/collectors-guide/best-starter-baseball-card-series-for-kids-in-2026, an external retailer's own blog post (not a specific buyable product page), inserted by the BabyLoveGrowth webhook. It doesn't meet the 'buyable product' bar for competitor-link replacement under this task's scope, so left untouched, but it's an outbound content link to a commerce site Jeff may want to review independently.",
+      "loggedAt": "2026-09-07",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "736489",
+      "slug": "growth-mindset-youth-sports",
+      "title": "Growth Mindset in Youth Sports: Scripts Parents Can Use This Week",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "New BabyLoveGrowth article, published 2026-08-19, never previously touched by Arnie. Full read confirms zero nameable, buyable products; it's a scripts-and-language article (notebook, notes app, index cards mentioned only as generic tools, no brand or model named). All outbound links are research citations (AASP, PMC, Quest journal) or internal PCD pages, protected. Not a gap in the gear-guide sense, logged for completeness.",
+      "loggedAt": "2026-09-07",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "782681",
+      "slug": "team-budget-youth-sports",
+      "title": "Copyable Team Budget for Youth Sports: Table, Scripts & Calculator",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "New BabyLoveGrowth article, published 2026-08-30, never previously touched by Arnie. Full read confirms zero nameable, buyable products; this is a budgeting and money-conversation article. Even where gear is mentioned in passing ('gear guides for lower-cost equivalents'), the framing is explicitly about spending less, which is a protected no-link context under the governance rule regardless of catalog matches. All outbound links are financial-education citations (US Bank, Bank of America, New York Life, Northwestern Mutual, Providence Journal) or internal PCD pages, protected. Logged for completeness.",
+      "loggedAt": "2026-09-07",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "787226",
+      "slug": "tryout-results-email-youth",
+      "title": "Youth Tryout Results Emails: Templates + 6 Item Checklist",
+      "sport": "multi-sport",
+      "topic": "tryouts",
+      "reason": "New BabyLoveGrowth article, published 2026-08-31, never previously touched by Arnie. Full read confirms zero nameable, buyable products; it's a communication-templates article (email and phone scripts). All outbound links are third-party guidance sources (Centro, TeamGenius, Signature Locker, a training-testimonials blog) cited as reference/sourcing, not buyable product pages, so none qualify for competitor-link replacement. Logged for completeness.",
+      "loggedAt": "2026-09-07",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "679124",
+      "slug": "travel-soccer-costs",
+      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
+      "sport": "soccer",
+      "topic": "rec-vs-travel",
+      "reason": "Re-checked on the 2026-09-07 run after a 3-week gap since the last Arnie run (2026-08-16). File changed once in the interim (2026-08-20, a dead-link fix unrelated to products) but content is otherwise the same as previously assessed: gear nouns (cleats, turf shoes, shin guards, a ball) appear only in a tournament-weekend packing note with no brand or model named, and the article's whole point is minimizing and planning for cost, which is a protected spending-less context under the governance rule regardless. No confident single-product match, skip re-confirmed.",
+      "loggedAt": "2026-09-07",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }
