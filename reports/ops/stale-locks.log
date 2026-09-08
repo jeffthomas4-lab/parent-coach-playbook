@@ -463,3 +463,6 @@
 2026-09-08T06:05:51.149Z	git:unlock	manual	cleared	.git/HEAD.lock	age=37m
 2026-09-08T06:09:43Z	safe-commit	main	cleared	.git/index.lock
 2026-09-08T06:13:43Z	safe-commit	main	cleared	.git/HEAD.lock
+2026-09-08T17:53:18.403Z	git:unlock	manual	cleared	.git\HEAD.lock	age=11.7h
+2026-09-08T17:53:18.403Z	git:unlock	manual	evacuated	.git\HEAD.lock.stale.3	age=unknown
+2026-09-08T17:53:18.403Z	git:unlock	manual	evacuated	.git\index.lock.stale.3	age=unknown
