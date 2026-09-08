@@ -11,7 +11,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-09-07
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -24,8 +24,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-07
   factCheckGoodThrough: 2027-09-07
-  status: draft
-  reviewerNotes: "Evergreen pull from CONTENT_ROADMAP.md, Rec league vs travel ball strand, row explicitly marked 'genuinely uncovered... next run should draft this one' as of 2026-09-03. Checked src/content/articles for overlap: the-missing-rec-layer.md covers the structural rec-to-travel gap at 13, not this family-decision framing; rec-soccer-vs-travel-soccer.md and siblings are sport-specific comparisons, not the cross-sport no-judgment framework. No overlap found. Two verified factual claims: the 70%-more-likely single-sport injury stat (NFHS-cited study, cross-checked via AOSSM early-specialization guidance) and the $60-140/hr private pitching lesson range (cross-checked across two 2026 lesson-pricing sources). node scripts/check-voice-rubric.mjs run directly (found at repo root, contrary to SKILL.md's manual-check fallback assumption): failed three times first pass (a 4-sentence paragraph, two sentence-rhythm spreads, dek at 17 words) and passed clean on the fourth after fixes. Also fixed a same-paragraph 'There's...There's' repeat and a singular-'me' voice slip in the opening (Editorial is plural). node scripts/check-content-field-lengths.mjs run clean, no fields near cap."
+  status: published
+  reviewerNotes: "PASS (Penny, 2026-09-07): check-voice-rubric.mjs re-run independently, clean; reader items A3/4/5/7/8/9 pass on close read; no em dashes, no banned patterns, dek 14 words, schema-valid (phase/sport/age enums, no flags). Independently re-verified the 70% single-sport injury stat against NFHS/Univ. of Wisconsin study and AOSSM early-specialization guidance, and the $60-140/hr pitching-lesson range against current 2026 lesson-pricing sources; both hold up."
 ---
 
 A mom at a swim meet asked us last month if her family was ruining their daughter by paying $180 an hour for a private stroke coach twice a week. Another dad asked us the opposite question about his son's baseball team: was he ruining the kid by refusing to pay for it at all.
