@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
 The best tee ball drills are the ones that get every kid swinging, throwing, and running before boredom sets in: tee hitting on three or four stations at once, partner toss, bucket-target throwing, rolling ground balls, and a base-running game to close things out. Run them station-based in short blocks, keep the mood fun-first over technical, and cap practice at a maximum time recommended for these age groups, shorter for 3 and 4-year-olds and longer for 5 to 7-year-olds. That single framework solves most of what makes tee ball practice hard to plan.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -194,7 +197,7 @@ Keep a simple equipment checklist for each week taped inside your gear bag. It s
 
 ## What to Pack and How to Keep Practice Safe
 
-A tee ball practice runs on a short list of gear, most of which fits in one bag. Pack: helmets for every batter, 3 to 4 tees, extra bats sized for small hands, wiffle or soft balls, cones for target drills, buckets for ball storage and target practice, and enough water for the whole group.
+A tee ball practice runs on a short list of gear, most of which fits in one bag. Pack: [helmets](/go/baseball-helmet-youth/) for every batter, 3 to 4 [tees](/go/baseball-batting-tee-youth-grow-with-me/), extra [bats](/go/baseball-bat-teeball/) sized for small hands, [wiffle or soft balls](/go/baseball-balls-wiffle/), [cones](/go/agility-cones-set/) for target drills, [buckets](/go/baseball-ball-bucket-with-lid/) for ball storage and target practice, and enough water for the whole group.
 
 Safety at this age comes down to spacing more than anything else. Keep the "on deck" kid well behind the batter, never beside the tee. No running with bats, ever, and make that rule loud and repeated every single practice. Give each tee station enough room, at least 10 feet apart, so a wild swing at one station doesn't reach the next.
 
@@ -207,7 +210,7 @@ Assign parent helpers specific roles before practice starts: a tee manager, a bu
 
 **Pro Tip:** *Print a one-page role sheet and hand it to helpers as they arrive. Even a rough checklist beats explaining each job fresh every single week.*
 
-For a full rundown of what's worth buying versus skipping, [Parent Coach Desk's youth baseball gear guide by age](/what-to-buy/baseball/) breaks down exactly what fits a tee ball budget. And if you're sourcing cones, buckets, or other low-cost practice props, [Couch & Dumbbells' outdoor play equipment collection](https://couchanddumbells.com/collections/outdoor-play-equipment) is a solid place to look.
+For a full rundown of what's worth buying versus skipping, [Parent Coach Desk's youth baseball gear guide by age](/what-to-buy/baseball/) breaks down exactly what fits a tee ball budget. And if you're sourcing cones or a ball bucket for storage, our [practice props picks](/go/agility-cones-set/) are a solid place to start.
 
 ## Practical Coaching Scripts and Where to Learn More
 

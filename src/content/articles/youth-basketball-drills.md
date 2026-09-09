@@ -21,17 +21,20 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
 Here is your 45–60 minute practice blueprint, ready to run today. Warm up for 10 minutes, spend 30 minutes rotating through skill drills in small groups, then close with 15–20 minutes of small-sided games. That's the whole structure. Everything below fills in the details.
 
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+
 **Quick setup checklist before players arrive:**
 
-- One ball per player (correct size for age — see the equipment table below)
-- 8–12 cones to mark stations and boundaries
-- Pinnies or colored vests to split teams
-- Water bottles and a first-aid kit at the sideline
+- One [ball](/go/basketball-ball-rubber/) per player (correct size for age — see the equipment table below)
+- 8–12 [cones](/go/agility-cones-set/) to mark stations and boundaries
+- [Pinnies or colored vests](/go/scrimmage-pennies/) to split teams
+- [Water bottles](/go/multi-sport-water-bottle/) and a [first-aid kit](/go/first-aid-fanny-pack/) at the sideline
 - A whistle and a printed practice plan
 
 **Age-specific quick notes:**

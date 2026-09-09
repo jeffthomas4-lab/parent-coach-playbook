@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
 Run these first: a two-line passing warm-up, a gauntlet flag-pull drill, a route tree relay, cone shuttle cuts, a catch-and-score small game, mirror coverage, and circle handoffs. Together they cover throwing, catching, flag technique, and footwork in one session. Pick the 30, 45, or 60-minute template below based on your practice window, then scale reps to your players' ages.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -55,7 +58,7 @@ Run these first: a two-line passing warm-up, a gauntlet flag-pull drill, a route
 
 You don't need forty drills. You need eight or nine that hit every core skill, plus a couple of small games that keep kids from tuning out. Here's the toolkit.
 
-- **Two-line passing warm-up:** Two lines face off 10–15 feet apart, throwing and catching on the move. Setup: cones marking lines, one ball per pair. 5 minutes, 15–20 reps per player. Age tweak: 5–7 year-olds start at 8 feet with underhand tosses; 11–13 year-olds add a step-and-throw.
+- **Two-line passing warm-up:** Two lines face off 10–15 feet apart, throwing and catching on the move. Setup: [cones](/go/agility-cones-set/) marking lines, one [ball](/go/football-rubber-youth/) per pair. 5 minutes, 15–20 reps per player. Age tweak: 5–7 year-olds start at 8 feet with underhand tosses; 11–13 year-olds add a step-and-throw.
 - **Gauntlet flag-pull:** A ball carrier runs a 15-yard lane while defenders pull flags one at a time. Setup: two cone lines forming the lane. 8 minutes, 6–8 reps per group. Age tweak: younger players walk the lane first; older players sprint full speed.
 - **Route tree relay:** Receivers run a slant, a post, and a flag route against air, then against a defender. Setup: five cones per route tree. 10 minutes. Age tweak: 8–10 year-olds run two routes max; 11–13 year-olds run the full tree.
 - **Cone shuttle cuts:** Players sprint to a cone, plant, and cut at a sharp angle to a second cone. Setup: three cones in an L shape. 5 minutes, 4 reps per player.
@@ -131,7 +134,7 @@ If your league's scoring or down rules feel fuzzy, [Parent Coach Desk's rules gu
 
 - Run the full dynamic warm-up before any cutting or sprinting drill, no exceptions.
 - Offer water every 15 to 20 minutes, not just at the midpoint break.
-- Require cleats or turf shoes with proper tread; sneakers slip on wet grass.
+- Require [cleats or turf shoes](/go/multi-sport-cleats-youth/) with proper tread; sneakers slip on wet grass.
 - Stop or modify a drill immediately if a player reports pain, per CHOP's injury-prevention guidance.
 - Skip full-contact tackling drills entirely. Flag football's whole safety advantage rests on avoiding them, since tackle football athletes ages 6 to 14 sustain [15 times more head impacts](https://www.cdc.gov/traumatic-brain-injury/data-research/comparing-head-impacts/index.html) than flag players.
 - Cap high-speed pursuit reps per player and follow [USA Football's Levels of Contact framework](https://usafootball.com/coaches-organizations/practice-guidelines) to keep intensity age-appropriate.
@@ -143,7 +146,7 @@ The Parent Coach Desk practice pack includes an equipment checklist, a station m
 - Print it single-page and laminate it if you'll reuse it weekly.
 - Assign one volunteer parent per station using the ratios in the table above.
 - Set up cones and lanes 10 minutes before players arrive so you're not building the field while kids wait.
-- Pair the pack with [Parent Coach Desk's gear guide](/what-to-buy/football/) to confirm you have flags, belts, and cones before week one, and with the [first-season guide](/drive-there/first-season-of-flag-football/) if this is your first year coaching.
+- Pair the pack with [Parent Coach Desk's gear guide](/what-to-buy/football/) to confirm you have [flags and belts](/go/flag-football-belt-set/) and cones before week one, and with the [first-season guide](/drive-there/first-season-of-flag-football/) if this is your first year coaching.
 
 ## What Youth Flag Coaches Get Wrong About Drills
 

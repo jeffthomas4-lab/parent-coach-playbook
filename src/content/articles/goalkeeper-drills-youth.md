@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
 Use a selection of core drills and a plan around 30 minutes long to build handling, footwork, shot-stopping, and distribution skills in keepers approximately aged 6 to 14. The best sessions rotate through several proven goalkeeper drills that youth players enjoy repeating.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 - Examples include rolling ball scoops for handling, color reaction drills to improve decision-making, footwork patterns for positioning and quick steps, low dive drills teaching safe falling mechanics, quick reaction shots to develop reflexes, and distribution drills focusing on throwing and rolling accuracy.
 
@@ -56,7 +59,7 @@ Short, age-matched drills paired with a timed 30-minute plan build handling, foo
 
 ## What You'll Need for Youth Goalkeeper Training
 
-You do not need a large amount of gear to run a solid session. A short checklist includes appropriately sized balls (smaller sizes for younger kids, larger for older), small goals or cones to mark goal width; several cones or flat markers for footwork; pinnies if there are multiple keepers; optional gloves; and a first-aid kit.
+You do not need a large amount of gear to run a solid session. A short checklist includes appropriately sized [balls](/go/soccer-ball-size4/) (smaller sizes for younger kids, larger for older), small goals or [cones](/go/agility-cones-set/) to mark goal width; several cones or flat markers for footwork; [pinnies](/go/scrimmage-pennies/) if there are multiple keepers; optional [gloves](/go/soccer-goalie-gloves-youth/); and a [first-aid kit](/go/first-aid-fanny-pack/).
 
 Check the practice surface for holes, rocks, or standing water before diving drills begin. One coach can supervise a small group of keepers comfortably if drills are well structured with clear rotations.
 

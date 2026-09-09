@@ -299,6 +299,393 @@
       "articleSlug": "youth-volleyball-practice-plan",
       "action": "no-link-skip",
       "details": "'Water jug or reminder to players to bring their own' in the packing list has no catalog match. Catalog has multi-sport-water-bottle (individual bottle) but not a team-size water jug/dispenser; treated as a distinct product category rather than stretching the water-bottle slug onto it. Not sourced new this run (would require live Amazon verification for a jug/dispenser specifically). Logged for a future sourcing pass, not the gap queue, since the article is otherwise fully monetized."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 815674, published 2026-09-05, pulled to local main 2026-09-08 via commit f74d1f36). Added the FTC disclosure sentence to the visible body, placed after the opening paragraph, before the first affiliate link. Set editorial.affiliateDisclosurePresent: true in frontmatter."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-helmet-youth",
+      "anchorText": "helmets",
+      "location": "'What to Pack and How to Keep Practice Safe' section, gear packing sentence",
+      "before": "Pack: helmets for every batter, 3 to 4 tees,",
+      "after": "Pack: [helmets](/go/baseball-helmet-youth/) for every batter, 3 to 4 [tees](/go/baseball-batting-tee-youth-grow-with-me/),"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "source-new-product",
+      "slug": "baseball-batting-tee-youth-grow-with-me",
+      "asin": "B07HJSHT8P",
+      "productTitle": "Franklin Sports Grow-with-Me Kids Baseball Batting Tee + Stand Set for Youth + Toddlers",
+      "destination": "https://www.amazon.com/dp/B07HJSHT8P?tag=parentcoachpl-20",
+      "browserVerification": "Opened product page in Claude in Chrome. Confirmed live listing, In Stock, title matches article's tee ball batting tee (Amazon Overall Pick for the search query, ages 3+, matches article's 3-7 age range), ASIN B07HJSHT8P read directly from the product page Additional Information block.",
+      "anchorText": "tees",
+      "location": "'What to Pack and How to Keep Practice Safe' section, gear packing sentence"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-bat-teeball",
+      "anchorText": "bats",
+      "location": "'What to Pack and How to Keep Practice Safe' section, gear packing sentence",
+      "before": "extra bats sized for small hands,",
+      "after": "extra [bats](/go/baseball-bat-teeball/) sized for small hands,"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-balls-wiffle",
+      "anchorText": "wiffle or soft balls",
+      "location": "'What to Pack and How to Keep Practice Safe' section, gear packing sentence",
+      "before": "wiffle or soft balls, cones for target drills,",
+      "after": "[wiffle or soft balls](/go/baseball-balls-wiffle/), [cones](/go/agility-cones-set/) for target drills,"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cones",
+      "location": "'What to Pack and How to Keep Practice Safe' section, gear packing sentence",
+      "before": "cones for target drills, buckets for ball storage",
+      "after": "[cones](/go/agility-cones-set/) for target drills, [buckets](/go/baseball-ball-bucket-with-lid/) for ball storage"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "source-new-product",
+      "slug": "baseball-ball-bucket-with-lid",
+      "asin": "B0000BZF04",
+      "productTitle": "WILSON Sporting Goods Ball Bucket with Lid, White",
+      "destination": "https://www.amazon.com/dp/B0000BZF04?tag=parentcoachpl-20",
+      "browserVerification": "Opened product page in Claude in Chrome. Confirmed live listing, only 10 left in stock (more on the way), title and product description match the article's 'buckets for ball storage and target practice', ASIN B0000BZF04 read directly from the URL and page.",
+      "anchorText": "buckets",
+      "location": "'What to Pack and How to Keep Practice Safe' section, gear packing sentence"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "tee-ball-drills",
+      "action": "competitor-link-replaced",
+      "competitorRetailer": "Couch & Dumbbells",
+      "competitorUrl": "https://couchanddumbells.com/collections/outdoor-play-equipment",
+      "slug": "agility-cones-set",
+      "location": "'Practical Coaching Scripts and Where to Learn More' area / gear-guide closing paragraph",
+      "before": "And if you're sourcing cones, buckets, or other low-cost practice props, [Couch & Dumbbells' outdoor play equipment collection](https://couchanddumbells.com/collections/outdoor-play-equipment) is a solid place to look.",
+      "after": "And if you're sourcing cones or a ball bucket for storage, our [practice props picks](/go/agility-cones-set/) are a solid place to start."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 812356, published 2026-09-04, pulled to local main via commit 58b23ad1). Added the FTC disclosure sentence to the visible body after the opening paragraph, before the first affiliate link. Set editorial.affiliateDisclosurePresent: true."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "source-new-product",
+      "slug": "baseball-l-screen-pitching-net",
+      "asin": "B00NG1ECBS",
+      "productTitle": "PowerNet Baseball & Softball Practice Net 7x7 FT, Outdoor Baseball Training Equipment for Pitching & Batting Practice (Red Net)",
+      "destination": "https://www.amazon.com/dp/B00NG1ECBS?tag=parentcoachpl-20",
+      "browserVerification": "Opened product page in Claude in Chrome. Confirmed live listing, In Stock, #1 Best Seller in Baseball & Softball Practice Net Systems, 6,780 reviews at 4.7 stars. Description and reviews confirm it functions as pitcher/coach protection during pitching practice ('functions as a portable backstop, providing a large coverage area for added protection'), matching the article's L-screen recommendation. Chose this over a first-result TARUMG L-screen (ASIN B0G3H1TQRS) after a review on that listing described the net tearing and a ball getting through to hit a player -- not an acceptable risk for a safety-equipment recommendation.",
+      "anchorText": "L-screen",
+      "location": "'Equipment, Setup, and Safety Checklist' bullet list"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-helmet-youth",
+      "anchorText": "Helmets",
+      "location": "'Equipment, Setup, and Safety Checklist' bullet list",
+      "before": "Helmets on for every swing, tee work included, no exceptions.",
+      "after": "[Helmets](/go/baseball-helmet-youth/) on for every swing, tee work included, no exceptions."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "Cones",
+      "location": "'Equipment, Setup, and Safety Checklist' bullet list",
+      "before": "Cones for stations and base markers.",
+      "after": "[Cones](/go/agility-cones-set/) for stations and base markers."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-bat-youth",
+      "anchorText": "bats",
+      "location": "'Equipment, Setup, and Safety Checklist' bullet list",
+      "before": "Extra bats and balls so a broken bat or lost ball doesn't stall a station.",
+      "after": "Extra [bats](/go/baseball-bat-youth/) and [balls](/go/baseball-balls-wiffle/) so a broken bat or lost ball doesn't stall a station."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-balls-wiffle",
+      "anchorText": "balls",
+      "location": "'Equipment, Setup, and Safety Checklist' bullet list",
+      "before": "see above",
+      "after": "see above"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-pitch-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "first-aid-fanny-pack",
+      "anchorText": "first aid kit",
+      "location": "'Equipment, Setup, and Safety Checklist' bullet list",
+      "before": "A basic first aid kit within reach of whoever's running the field.",
+      "after": "A basic [first aid kit](/go/first-aid-fanny-pack/) within reach of whoever's running the field."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "flag-football-drills",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 802221, published 2026-09-02, pulled to local main via commit a228edef). Added the FTC disclosure sentence after the opening paragraph, before the first affiliate link. Set editorial.affiliateDisclosurePresent: true."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "flag-football-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cones",
+      "location": "'Top Flag Football Drills at a Glance', two-line passing warm-up setup line",
+      "before": "Setup: cones marking lines, one ball per pair.",
+      "after": "Setup: [cones](/go/agility-cones-set/) marking lines, one [ball](/go/football-rubber-youth/) per pair."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "flag-football-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "football-rubber-youth",
+      "anchorText": "ball",
+      "location": "'Top Flag Football Drills at a Glance', two-line passing warm-up setup line",
+      "before": "see above",
+      "after": "see above"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "flag-football-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-cleats-youth",
+      "anchorText": "cleats or turf shoes",
+      "location": "'Safety Checklist Before Every Practice'",
+      "before": "Require cleats or turf shoes with proper tread; sneakers slip on wet grass.",
+      "after": "Require [cleats or turf shoes](/go/multi-sport-cleats-youth/) with proper tread; sneakers slip on wet grass."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "flag-football-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "flag-football-belt-set",
+      "anchorText": "flags and belts",
+      "location": "'Printable Practice Pack From Parent Coach Desk'",
+      "before": "Pair the pack with Parent Coach Desk's gear guide to confirm you have flags, belts, and cones before week one",
+      "after": "Pair the pack with Parent Coach Desk's gear guide to confirm you have [flags and belts](/go/flag-football-belt-set/) and cones before week one"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-safety",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 793309, published 2026-08-31, pulled to local main via commit ff2deab6). Added the FTC disclosure sentence after the opening paragraph, before the first affiliate link. Set editorial.affiliateDisclosurePresent: true. Note: deliberately did NOT insert links in the 'Equipment Fit Checks' section (helmet/mouthguard/pad condition checks) because that section explicitly instructs replacing damaged gear ('Cracks, faded padding, or a helmet older than the manufacturer's stated lifespan are all replace-it signals') -- a direct match for the governance rule against turning a safety/replace directive into a purchase prompt. Links were placed only in the two proactive packing lists."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-safety",
+      "action": "insert-existing-catalog-link",
+      "slug": "first-aid-fanny-pack",
+      "anchorText": "first-aid kit",
+      "location": "'Youth Sports Safety Checklist and Packing List', pack-for-every-practice list",
+      "before": "A basic first-aid kit (gauze, tape, ice pack, antiseptic wipes)",
+      "after": "A basic [first-aid kit](/go/first-aid-fanny-pack/) (gauze, tape, ice pack, antiseptic wipes)"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-safety",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-mouthguard-youth",
+      "anchorText": "mouthguard",
+      "location": "'Youth Sports Safety Checklist and Packing List', pack-for-every-practice list",
+      "before": "A spare mouthguard and any custom equipment your child relies on",
+      "after": "A spare [mouthguard](/go/multi-sport-mouthguard-youth/) and any custom equipment your child relies on"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-safety",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "water bottles",
+      "location": "'Youth Sports Safety Checklist and Packing List', pack-for-every-practice list",
+      "before": "Two water bottles, sun protection, and a cooling towel for warm months",
+      "after": "Two [water bottles](/go/multi-sport-water-bottle/), [sun protection](/go/sunscreen-travel/), and a cooling towel for warm months"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-safety",
+      "action": "insert-existing-catalog-link",
+      "slug": "sunscreen-travel",
+      "anchorText": "sun protection",
+      "location": "'Youth Sports Safety Checklist and Packing List', pack-for-every-practice list",
+      "before": "see above",
+      "after": "see above"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-safety",
+      "action": "insert-existing-catalog-link",
+      "slug": "electrolyte-tablets",
+      "anchorText": "electrolyte packets",
+      "location": "'How Do You Prevent Heat-Related Illness at Practice?', summer packing list bullet",
+      "before": "Add electrolyte packets, a cooling towel, and a wide-brim hat to your packing list for summer sessions.",
+      "after": "Add [electrolyte packets](/go/electrolyte-tablets/), a cooling towel, and a wide-brim hat to your packing list for summer sessions."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "dealing-with-sports-parents",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 774783, published 2026-08-25, pulled to local main via commit f5de9473). Read the full body: a coach communication/conflict-resolution playbook (24-hour rule, code of conduct, documentation, car-ride-home scripts). No specific, nameable, buyable products discussed. One external link, pitchtrainingbaseball.com/blogs/news/..., points to that retailer's blog article (not a product page), so it is not a competitor product link under the governance definition and was left as-is. No links inserted, no disclosure needed."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "goalkeeper-drills-youth",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 765145, published 2026-08-23, pulled to local main via commit e9799cfc). Added the FTC disclosure sentence after the opening paragraph, before the first affiliate link. Set editorial.affiliateDisclosurePresent: true."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "goalkeeper-drills-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "soccer-ball-size4",
+      "anchorText": "balls",
+      "location": "'What You'll Need for Youth Goalkeeper Training' checklist sentence",
+      "before": "A short checklist includes appropriately sized balls (smaller sizes for younger kids, larger for older),",
+      "after": "A short checklist includes appropriately sized [balls](/go/soccer-ball-size4/) (smaller sizes for younger kids, larger for older),"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "goalkeeper-drills-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cones",
+      "location": "'What You'll Need for Youth Goalkeeper Training' checklist sentence",
+      "before": "small goals or cones to mark goal width;",
+      "after": "small goals or [cones](/go/agility-cones-set/) to mark goal width;"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "goalkeeper-drills-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "scrimmage-pennies",
+      "anchorText": "pinnies",
+      "location": "'What You'll Need for Youth Goalkeeper Training' checklist sentence",
+      "before": "pinnies if there are multiple keepers;",
+      "after": "[pinnies](/go/scrimmage-pennies/) if there are multiple keepers;"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "goalkeeper-drills-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "soccer-goalie-gloves-youth",
+      "anchorText": "gloves",
+      "location": "'What You'll Need for Youth Goalkeeper Training' checklist sentence",
+      "before": "optional gloves; and a first-aid kit.",
+      "after": "optional [gloves](/go/soccer-goalie-gloves-youth/); and a [first-aid kit](/go/first-aid-fanny-pack/)."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "goalkeeper-drills-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "first-aid-fanny-pack",
+      "anchorText": "first-aid kit",
+      "location": "'What You'll Need for Youth Goalkeeper Training' checklist sentence",
+      "before": "see above",
+      "after": "see above"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "parent-code-of-conduct",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 757190, published 2026-08-21, pulled to local main via commit fb4cfcaa). Read the full body: parent code-of-conduct guidance, sample pledges, enforcement steps. No specific, nameable, buyable products discussed anywhere in the piece. No links inserted, no disclosure needed."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-sports-playing-time",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 754004, published 2026-08-20, pulled to local main via commit 68a1d5d3). Read the full body: playing-time policy and rotation guidance. No specific, nameable, buyable products discussed. External link to playingtimecalculator.com is a free web tool, not a purchase, so it's out of scope. No links inserted, no disclosure needed."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "coach-vs-kid-pitch",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 695323, published 2026-08-07, pulled to local main via commit 0f2ec5ad). Read the full body: format/rules comparison (coach pitch vs kid pitch), league policy and readiness checklist. 'Pitching machine' is discussed conceptually as a format choice, not as a specific buyable product recommendation, so it was not linked. No specific, nameable products discussed. No links inserted, no disclosure needed."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-basketball-drills",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 692347, published 2026-08-06, pulled to local main via commit e425e825). Added the FTC disclosure sentence after the opening paragraph, before the first affiliate link. Set editorial.affiliateDisclosurePresent: true."
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-basketball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "basketball-ball-rubber",
+      "anchorText": "ball",
+      "location": "'Quick setup checklist before players arrive', opening bullet list",
+      "before": "One ball per player (correct size for age \u2014 see the equipment table below)",
+      "after": "One [ball](/go/basketball-ball-rubber/) per player (correct size for age \u2014 see the equipment table below)"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-basketball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cones",
+      "location": "'Quick setup checklist before players arrive', opening bullet list",
+      "before": "8\u201312 cones to mark stations and boundaries",
+      "after": "8\u201312 [cones](/go/agility-cones-set/) to mark stations and boundaries"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-basketball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "scrimmage-pennies",
+      "anchorText": "Pinnies or colored vests",
+      "location": "'Quick setup checklist before players arrive', opening bullet list",
+      "before": "Pinnies or colored vests to split teams",
+      "after": "[Pinnies or colored vests](/go/scrimmage-pennies/) to split teams"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-basketball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "Water bottles",
+      "location": "'Quick setup checklist before players arrive', opening bullet list",
+      "before": "Water bottles and a first-aid kit at the sideline",
+      "after": "[Water bottles](/go/multi-sport-water-bottle/) and a [first-aid kit](/go/first-aid-fanny-pack/) at the sideline"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "youth-basketball-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "first-aid-fanny-pack",
+      "anchorText": "first-aid kit",
+      "location": "'Quick setup checklist before players arrive', opening bullet list",
+      "before": "see above",
+      "after": "see above"
     }
   ]
 }

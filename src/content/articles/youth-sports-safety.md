@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
 The five things that matter most: pull any child with a suspected concussion immediately, confirm protective gear fits correctly, verify your coach has first-aid training and a written emergency plan, manage training load instead of letting one sport run year-round, and set a hydration and heat plan before the first hot practice. Everything else supports these five. Guidance from [CDC HEADS UP](https://www.cdc.gov/heads-up/data/index.html), AAOS/OrthoInfo, and [Safe Kids](https://www.safekids.org/preventing-sports-related-injuries) backs each one, and Parentcoachdesk turns them into steps you can actually use this week.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -69,9 +72,9 @@ Season and game-day checks, in priority order:
 
 Pack for every practice and game:
 
-- A basic first-aid kit (gauze, tape, ice pack, antiseptic wipes)
-- A spare mouthguard and any custom equipment your child relies on
-- Two water bottles, sun protection, and a cooling towel for warm months
+- A basic [first-aid kit](/go/first-aid-fanny-pack/) (gauze, tape, ice pack, antiseptic wipes)
+- A spare [mouthguard](/go/multi-sport-mouthguard-youth/) and any custom equipment your child relies on
+- Two [water bottles](/go/multi-sport-water-bottle/), [sun protection](/go/sunscreen-travel/), and a cooling towel for warm months
 - A signed medical release/consent form, especially for tournaments with substitute coaches
 
 **Pro Tip:** *Store emergency contacts and medical release forms two ways: a printed card in the equipment bag and a photo saved to your phone's lock screen. Wifi drops. Paper doesn't.*
@@ -133,7 +136,7 @@ Early heat illness looks like fatigue, headache, muscle cramping, and skin that'
 
 Simple policies prevent most of this. Set a fixed water schedule instead of relying on kids to ask. Build in shaded rest breaks every 15 to 20 minutes during peak heat. Reduce practice intensity, not just length, on the hottest days. Competition injury and illness rates run higher than practice rates generally, which is one more reason game-day heat rules matter as much as practice rules.
 
-- Add electrolyte packets, a cooling towel, and a wide-brim hat to your packing list for summer sessions.
+- Add [electrolyte packets](/go/electrolyte-tablets/), a cooling towel, and a wide-brim hat to your packing list for summer sessions.
 - Agree in advance with the coach on what temperature or heat-index reading triggers a shortened practice.
 
 ## What Should You Ask Coaches Before Your Child Joins a Team?

@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
+  affiliateDisclosurePresent: true
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
 ---
 
 Run a station based practice lasting around 40 to 45 minutes that opens with a structured throwing warmup, rotates three stations approximately every 8 minutes, and closes with live at bats or a quick situational game. The three drills to lean on immediately are a close range throwing progression, coach knee or tee hitting, and an alligator hands fielding drill. At coach pitch ages, roughly 5 to 9, prioritize movement and confidence over mechanics. Run this plan, then adjust it week by week.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -137,11 +140,11 @@ Players who are ready to move beyond coach pitch mechanics sometimes get bumped 
 
 Safety at coach pitch age comes down to a handful of repeatable habits, not a long rulebook. The L-screen matters most: position it 25 to 30 feet in front of home plate, and pitch from a knee so hitters can track the ball at a consistent height, a setup Little League's program specifically calls for.
 
-- L-screen, positioned and checked before every hitting station.
-- Helmets on for every swing, tee work included, no exceptions.
-- Cones for stations and base markers.
-- Extra bats and balls so a broken bat or lost ball doesn't stall a station.
-- A basic first aid kit within reach of whoever's running the field.
+- [L-screen](/go/baseball-l-screen-pitching-net/), positioned and checked before every hitting station.
+- [Helmets](/go/baseball-helmet-youth/) on for every swing, tee work included, no exceptions.
+- [Cones](/go/agility-cones-set/) for stations and base markers.
+- Extra [bats](/go/baseball-bat-youth/) and [balls](/go/baseball-balls-wiffle/) so a broken bat or lost ball doesn't stall a station.
+- A basic [first aid kit](/go/first-aid-fanny-pack/) within reach of whoever's running the field.
 
 | Item | Why it matters |
 |---|---|
