@@ -118,7 +118,7 @@ Lighter touch, with explicit links out to professionals (AASP, SafeSport).
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| The kid who throws up before tryouts | Editorial | Drive There | PIPELINE |
+| The kid who throws up before tryouts | Editorial | Drive There | drafted 2026-09-08 (src/content/articles/the-kid-who-throws-up-before-tryouts.md; distinct from pre-game-anxiety-normal.md, which covers recurring in-season game-day nerves, and the-performance-anxiety-conversation-at-12.md, which covers in-game freeze/yips; this is the single acute pre-tryout vomiting episode and the sick-versus-anxious gut check, checked src/content/articles for throw up/vomit/nausea/nauseous/sick to stomach, no existing coverage; flagSensitiveTopic true, routed ready-for-jeff; no hero, OPENAI_API_KEY not set this run, pcd-hero-image-backfill disabled since 2026-07-31) |
 | When to involve a sport psychologist | Editorial | Foundations · Mental health | PIPELINE |
 | Identity and burnout: the kid who quits at 14 | Editorial | Drive Home (cornerstone) | PIPELINE |
 | Specialization vs. multi-sport, by age | Editorial | Foundations | PIPELINE |
