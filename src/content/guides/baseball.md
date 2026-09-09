@@ -11,6 +11,13 @@ seasonNote: "Spring is the main season. Fall ball is optional and often shorter.
 hero: "/illustrations/guide-baseball-gear.webp"
 heroAlt: "A broken-in glove, a scuffed baseball, a wooden bat, batting gloves, a helmet, and rolled socks arranged in a flat lay on weathered planks."
 publishedAt: 2026-01-12
+updatedAt: 2026-09-08
+editorial:
+  citationCheckPassed: true
+  claudeReviewedAt: 2026-09-08
+  status: claude-reviewed
+  reviewerNotes: "2026-09-08 Flo refresh: verified clean. All 26 /go/ affiliate slugs resolve in affiliates.json, internal pathway and season-calendar links resolve. USSSA 14U rule change (national events require BBCOR -3 or wood as of Jan 1 2026, replacing the old -5 standard) confirmed still current. No changes needed."
+  factCheckGoodThrough: 2027-01-01
 ---
 
 So your kid wants to play baseball. Or your kid signed up because their friend signed up. Either way, you are now staring at a sporting-goods aisle that has six glove sizes, fourteen bat lengths, and helmets in every color but the one your kid wants.

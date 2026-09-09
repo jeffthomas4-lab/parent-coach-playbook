@@ -6,13 +6,14 @@ format: "sport-briefing"
 sportTags: ["cheer", "stunt"]
 ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-01-16
+updatedAt: 2026-09-08
 governingBodies:
   - name: "USA Cheer"
     url: "https://www.usacheer.org/"
   - name: "USASF (US All Star Federation)"
     url: "https://www.usasf.net/"
-  - name: "AACCA (American Association of Cheerleading Coaches and Administrators)"
-    url: "https://aacca.org/"
+  - name: "AACCA (American Association of Cheerleading Coaches and Administrators, now part of USA Cheer)"
+    url: "https://usacheer.org/aacca-is-now-usa-cheer"
   - name: "National Center for Catastrophic Sport Injury Research"
     url: "https://nccsir.unc.edu/"
 editorial:
@@ -26,7 +27,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-16
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. USA Cheer, USASF, AACCA, NCCSIR cited. The catastrophic-injury data is widely published; framed honestly."
+  reviewerNotes: "Sensitive flagged. USA Cheer, USASF, AACCA, NCCSIR cited. The catastrophic-injury data is widely published; framed honestly. 2026-09-08 Flo refresh: aacca.org is a dead domain (AACCA merged into USA Cheer in March 2018), governingBodies link swapped to usacheer.org/aacca-is-now-usa-cheer. USASF, NCCSIR links confirmed live. Body text still treats AACCA as a distinct certifying body in several places (e.g. 'USA Cheer or AACCA certified,' the parent-question list) -- flagged separately for a substantive pass on that framing, since it affects the actual advice, not just the citation."
+  factCheckGoodThrough: 2027-03-01
 ---
 
 Cheer and competitive stunt have produced more catastrophic injuries in female high school athletes than any other sport over the past three decades per the National Center for Catastrophic Sport Injury Research at UNC. The injuries that produce permanent disability or death are rare. The injuries that produce concussion, fractures, and dislocations are not rare.

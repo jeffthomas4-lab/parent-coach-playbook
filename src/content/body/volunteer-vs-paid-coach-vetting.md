@@ -7,13 +7,14 @@ format: "topic"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]
 publishedAt: 2026-01-17
+updatedAt: 2026-09-08
 governingBodies:
   - name: "U.S. Center for SafeSport"
     url: "https://uscenterforsafesport.org/"
   - name: "Little League: Child Protection Program"
     url: "https://www.littleleague.org/player-safety/child-protection-program/"
-  - name: "AAU Youth Protection Policy"
-    url: "https://aausports.org/aau-youth-protection-policy/"
+  - name: "AAU Athlete Protection and Abuse Prevention Policy"
+    url: "https://www.aausports.org/athlete-protection-and-abuse-prevention-policy/"
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -25,7 +26,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-17
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. Frames the gap between volunteer and paid coach vetting honestly. No naming of specific organizations as bad actors."
+  reviewerNotes: "Sensitive flagged. Frames the gap between volunteer and paid coach vetting honestly. No naming of specific organizations as bad actors. 2026-09-08 Flo refresh: AAU renamed its policy from 'Youth Protection Policy' to 'Athlete Protection and Abuse Prevention Policy'; old URL slug is stale, link updated. SafeSport and Little League links confirmed live. Flagged separately: ProPublica reporting on AAU's enforcement gap is relevant context this piece doesn't mention."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 A paid head coach at a club program typically goes through SafeSport training, a fingerprint background check, and an annual policy refresh. A volunteer assistant coach in the same league sometimes goes through none of that.

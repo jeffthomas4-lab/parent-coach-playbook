@@ -11,6 +11,7 @@ age: 15-plus
 hero: "/illustrations/hockey-gear-drying-garage.webp"
 heroAlt: "Youth hockey gear hangs to dry on hooks in a garage, pads and a plain helmet visible with skates on the floor in cold morning light."
 publishedAt: 2026-02-25
+updatedAt: 2026-09-08
 featured: false
 editorial:
   qualityGrade: 8
@@ -23,7 +24,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-07
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "2026-09-08 Flo refresh: verified clean. Internal links (/what-to-buy/hockey/, /go/hockey-puck/) resolve, hero image exists. $20-40 baking price checked against current pro-shop pricing, still in range. No changes."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 At fifteen and up, if your kid is serious about hockey, baked skates are non-negotiable. It's not optional. It's the single biggest difference between playing okay and playing well.

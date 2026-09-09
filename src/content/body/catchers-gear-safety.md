@@ -7,6 +7,7 @@ format: "topic"
 sportTags: ["baseball", "softball"]
 ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-01-15
+updatedAt: 2026-09-08
 governingBodies:
   - name: "Little League: Catcher's Equipment"
     url: "https://www.littleleague.org/player-safety/"
@@ -25,8 +26,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-15
   status: claude-reviewed
-  reviewerNotes: "Little League rule on the dangling throat protector is the most useful actionable piece. NOCSAE on the mask, USA Baseball on the system."
-  factCheckGoodThrough: 2027-09-01
+  reviewerNotes: "Little League rule on the dangling throat protector is the most useful actionable piece. NOCSAE on the mask, USA Baseball on the system. 2026-09-08 Flo refresh: verified clean. Little League dangling-throat-guard rule, NOCSAE certification framework, and all three governing-body links confirmed current."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 The kid behind the plate at 10 years old stops 90 mph foul tips with their face for two hours. The gear is what stands between that kid and a dental clinic. Most parents have never inspected it.

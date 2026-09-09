@@ -7,6 +7,7 @@ format: "topic"
 sportTags: ["multi-sport"]
 ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-01-13
+updatedAt: 2026-09-08
 featured: true
 governingBodies:
   - name: "U.S. Center for SafeSport: Minor Athlete Abuse Prevention Policies"
@@ -24,7 +25,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-13
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. The MAAPP rule is sourced directly. Stays informational, no shaming, no panic framing."
+  reviewerNotes: "Sensitive flagged. The MAAPP rule is sourced directly. Stays informational, no shaming, no panic framing. 2026-09-08 Flo refresh: verified clean. SafeSport Helpline number (833-587-7233) and uscenterforsafesport.org confirmed live and current. MAAPP framework unchanged."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 The U.S. Center for SafeSport publishes the Minor Athlete Abuse Prevention Policies, the federal-level rules for adult-minor communication in NGB-affiliated youth sports. The communication rule is one of the load-bearing pieces.
