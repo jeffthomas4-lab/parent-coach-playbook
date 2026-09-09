@@ -96,7 +96,7 @@ WHERE id=${sqlValue(id)} AND deleted_at IS NULL;`);
   return `${header(boundaryMs)}\n${rows.join('\n\n')}\n`;
 }
 
-function buildContactsMutation(boundaryMs, createdAt) {
+function buildContactsMutation(boundaryMs, createdAt, organizationAuthorityUpdatedAt) {
   const values = CONTACTS.map((contact) => {
     const identity = normalizedContactIdentities(contact);
     return `(${[
@@ -116,14 +116,14 @@ WITH receipt_gate AS (
     AND event.subject_type=receipt.subject_type
     AND event.subject_id=receipt.subject_id
     AND event.authority_updated_at=receipt.authority_updated_at
-    AND event.payload_hash=receipt.content_hash
+    AND json_extract(event.payload_json,'$.payload.sourceVersion')=receipt.content_hash
     AND event.source_sequence=receipt.last_sequence
   WHERE receipt.subject_type='organization'
     AND receipt.subject_id IN (${idList(ORGANIZATIONS)})
     AND event.event_type='organization.upserted.v1'
     AND event.producer_workspace_id='pcd-activity-radar'
     AND event.target_workspace_id='ws-sightsmash'
-    AND event.authority_updated_at=${boundaryMs + 1_000}
+    AND event.authority_updated_at=${organizationAuthorityUpdatedAt}
     AND event.status='delivered'
     AND event.receiver_receipt_id IS NOT NULL
     AND event.receiver_status BETWEEN 200 AND 299
@@ -156,10 +156,30 @@ FROM organizations WHERE id IN (${idList(ORGANIZATIONS)});
 `;
 }
 
-function buildOpsPreflight(boundaryMs) {
+function buildOpsPreflight(boundaryMs, organizationAuthorityUpdatedAt, expectedOrganizationReceipts) {
   return `${header(boundaryMs)}
-SELECT COUNT(*) AS existing_pilot_contact_rows
-FROM org_contacts WHERE id IN (${idList(CONTACTS)});
+SELECT
+  (SELECT COUNT(*) FROM org_contacts WHERE id IN (${idList(CONTACTS)}))
+    AS existing_pilot_contact_rows,
+  (SELECT COUNT(*)
+   FROM crm_adapter_projection_receipts receipt
+   JOIN crm_adapter_outbox event ON event.event_id=receipt.last_event_id
+     AND event.subject_type=receipt.subject_type
+     AND event.subject_id=receipt.subject_id
+     AND event.authority_updated_at=receipt.authority_updated_at
+     AND json_extract(event.payload_json,'$.payload.sourceVersion')=receipt.content_hash
+     AND event.source_sequence=receipt.last_sequence
+   WHERE receipt.subject_type='organization'
+     AND receipt.subject_id IN (${idList(ORGANIZATIONS)})
+     AND event.event_type='organization.upserted.v1'
+     AND event.producer_workspace_id='pcd-activity-radar'
+     AND event.target_workspace_id='ws-sightsmash'
+     AND event.authority_updated_at=${organizationAuthorityUpdatedAt}
+     AND event.status='delivered'
+     AND event.receiver_receipt_id IS NOT NULL
+     AND event.receiver_status BETWEEN 200 AND 299
+     AND event.delivered_at IS NOT NULL) AS delivered_pilot_organizations,
+  ${expectedOrganizationReceipts} AS expected_delivered_pilot_organizations;
 `;
 }
 
@@ -227,7 +247,7 @@ FROM organizations WHERE id IN (${idList(ORGANIZATIONS)});
 `;
 }
 
-function buildOpsVerification(boundaryMs) {
+function buildOpsVerification(boundaryMs, organizationAuthorityUpdatedAt) {
   return `${header(boundaryMs)}
 SELECT disposition,COUNT(*) AS row_count FROM (
   SELECT CASE
@@ -255,14 +275,14 @@ JOIN crm_adapter_outbox event ON event.event_id=receipt.last_event_id
   AND event.subject_type=receipt.subject_type
   AND event.subject_id=receipt.subject_id
   AND event.authority_updated_at=receipt.authority_updated_at
-  AND event.payload_hash=receipt.content_hash
+  AND json_extract(event.payload_json,'$.payload.sourceVersion')=receipt.content_hash
   AND event.source_sequence=receipt.last_sequence
 WHERE receipt.subject_type='organization'
   AND receipt.subject_id IN (${idList(ORGANIZATIONS)})
   AND event.event_type='organization.upserted.v1'
   AND event.producer_workspace_id='pcd-activity-radar'
   AND event.target_workspace_id='ws-sightsmash'
-  AND event.authority_updated_at=${boundaryMs + 1_000}
+  AND event.authority_updated_at=${organizationAuthorityUpdatedAt}
   AND event.status='delivered'
   AND event.receiver_receipt_id IS NOT NULL
   AND event.receiver_status BETWEEN 200 AND 299
@@ -329,24 +349,63 @@ export function parsePilotBoundary(value) {
   return boundaryMs;
 }
 
-export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDir: rawOutputDir }) {
+export function parseOrganizationReceiptBoundary(value, sourceNotBeforeMs) {
+  if (typeof value !== 'string' || !/^\d+$/.test(value)) {
+    throw new Error('crm_pilot_organization_receipt_boundary_must_be_an_explicit_integer_ms');
+  }
+  const boundaryMs = Number(value);
+  if (!Number.isSafeInteger(boundaryMs) || boundaryMs % 1_000 !== 0 || boundaryMs <= 0
+      || boundaryMs >= sourceNotBeforeMs) {
+    throw new Error('crm_pilot_organization_receipt_boundary_must_precede_activation');
+  }
+  return boundaryMs;
+}
+
+/**
+ * @param {{
+ *   boundaryMs: string | number,
+ *   organizationReceiptBoundaryMs?: string | number,
+ *   outputDir: string,
+ * }} options
+ */
+export async function buildCrmStagingPilot({
+  boundaryMs: rawBoundaryMs,
+  organizationReceiptBoundaryMs: rawOrganizationReceiptBoundaryMs = undefined,
+  outputDir: rawOutputDir,
+}) {
   const boundaryMs = parsePilotBoundary(String(rawBoundaryMs));
+  const phaseTwoResume = rawOrganizationReceiptBoundaryMs !== undefined;
+  const organizationReceiptBoundaryMs = phaseTwoResume
+    ? parseOrganizationReceiptBoundary(String(rawOrganizationReceiptBoundaryMs), boundaryMs)
+    : boundaryMs;
+  const organizationAuthorityUpdatedAt = organizationReceiptBoundaryMs + 1_000;
   if (typeof rawOutputDir !== 'string' || !rawOutputDir.trim()) {
     throw new Error('crm_pilot_output_directory_required');
   }
   const outputDir = resolve(rawOutputDir);
-  const organizationUpdatedAt = new Date(boundaryMs + 1_000).toISOString();
+  const organizationUpdatedAt = new Date(organizationAuthorityUpdatedAt).toISOString();
   const contactCreatedAt = new Date(boundaryMs + 4_000).toISOString();
-  const files = [
-    ['00-directory-preflight.sql', buildDirectoryPreflight(boundaryMs)],
-    ['00-ops-preflight.sql', buildOpsPreflight(boundaryMs)],
-    ['01-directory-organizations.sql', buildDirectoryMutation(boundaryMs, organizationUpdatedAt)],
-    ['02-ops-contacts.sql', buildContactsMutation(boundaryMs, contactCreatedAt)],
+  const files = [];
+  if (!phaseTwoResume) files.push(['00-directory-preflight.sql', buildDirectoryPreflight(boundaryMs)]);
+  files.push(['00-ops-preflight.sql', buildOpsPreflight(
+    boundaryMs, organizationAuthorityUpdatedAt, phaseTwoResume ? 3 : 0,
+  )]);
+  if (!phaseTwoResume) {
+    files.push(['01-directory-organizations.sql', buildDirectoryMutation(boundaryMs, organizationUpdatedAt)]);
+  }
+  files.push(
+    ['02-ops-contacts.sql', buildContactsMutation(
+      boundaryMs, contactCreatedAt, organizationAuthorityUpdatedAt,
+    )],
     ['03-ops-replay.sql', buildOpsReplay(boundaryMs)],
-    ['90-directory-verification.sql', buildDirectoryVerification(boundaryMs, organizationUpdatedAt)],
-    ['91-ops-verification.sql', buildOpsVerification(boundaryMs)],
+  );
+  if (!phaseTwoResume) {
+    files.push(['90-directory-verification.sql', buildDirectoryVerification(boundaryMs, organizationUpdatedAt)]);
+  }
+  files.push(
+    ['91-ops-verification.sql', buildOpsVerification(boundaryMs, organizationAuthorityUpdatedAt)],
     ['92-crm-verification.sql', buildCrmVerification(boundaryMs)],
-  ];
+  );
   const dispositionCounts = Object.fromEntries(CONTACTS.map(({ disposition }) => [disposition, 0]));
   for (const { disposition } of CONTACTS) dispositionCounts[disposition] += 1;
   const artifacts = files.map(([file, contents]) => ({
@@ -355,6 +414,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
   const manifest = {
     schemaVersion: 1,
     kind: 'pcd-crm-staging-synthetic-pilot',
+    mode: phaseTwoResume ? 'phase_two_resume' : 'full',
     environment: 'staging',
     dataClassification: 'synthetic_nonproduction',
     remoteExecutionAuthorized: false,
@@ -370,6 +430,8 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
     },
     sourceNotBeforeMs: boundaryMs,
     sourceNotBeforeIso: new Date(boundaryMs).toISOString(),
+    organizationReceiptBoundaryMs,
+    organizationReceiptBoundaryIso: new Date(organizationReceiptBoundaryMs).toISOString(),
     organizationUpdatedAt,
     contactCreatedAt,
     organizations: ORGANIZATIONS.map(({ id }) => ({ id, expectedEvent: 'organization.upserted.v1' })),
@@ -389,9 +451,13 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
       contactDispositions: dispositionCounts,
     },
     order: [
-      'Run both read-only preflights and confirm 3 live, unprojected organizations and 0 existing pilot contacts.',
-      'Apply 01 only after a separately approved staging activation uses this exact sourceNotBeforeMs.',
-      'Wait for all 3 organization events to be delivered and receipted; do not infer readiness from enqueue success.',
+      phaseTwoResume
+        ? 'Run the operations and CRM read-only preflights; require 3 matching delivered organization receipts, 3 active CRM organization projections, and 0 pilot contacts.'
+        : 'Run both read-only preflights and confirm 3 live, unprojected organizations, 0 delivered pilot organization receipts, and 0 existing pilot contacts.',
+      ...phaseTwoResume ? [] : [
+        'Apply 01 only after a separately approved staging activation uses this exact sourceNotBeforeMs.',
+        'Wait for all 3 organization events to be delivered and receipted; do not infer readiness from enqueue success.',
+      ],
       'Apply 02 only after the organization receipt precondition passes.',
       'Apply 03 exactly once only after recording the first three contact receipt IDs; require exactly three changed rows.',
       'Wait for the same three event IDs and idempotency keys to return the same receipt IDs through receiver replay.',
@@ -402,6 +468,7 @@ export async function buildCrmStagingPilot({ boundaryMs: rawBoundaryMs, outputDi
       'Execute every remote read-only D1 preflight via --command; --file uses the import endpoint and is prohibited.',
       'Do not enable historical backfill for this pilot.',
       'Do not substitute production organizations or contacts.',
+      ...(phaseTwoResume ? ['Do not apply a directory mutation in phase-two resume mode.'] : []),
       'Do not proceed from organizations to contacts without receiver receipts for all 3 organizations.',
       'Do not apply the replay phase unless all 3 contact events have exactly one successful send and distinct receipts.',
       'Stop if the raw-free DNC event or the CRM source-contact restriction is absent.',
@@ -430,7 +497,9 @@ export function parsePilotArguments(argv) {
   const values = {};
   for (let index = 0; index < argv.length; index += 1) {
     const flag = argv[index];
-    if (flag !== '--boundary-ms' && flag !== '--output-dir') throw new Error(`unknown_argument:${flag}`);
+    if (!['--boundary-ms', '--organization-receipt-boundary-ms', '--output-dir'].includes(flag)) {
+      throw new Error(`unknown_argument:${flag}`);
+    }
     if (Object.hasOwn(values, flag)) throw new Error(`duplicate_argument:${flag}`);
     const value = argv[index + 1];
     if (!value || value.startsWith('--')) throw new Error(`missing_value:${flag}`);
@@ -444,6 +513,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const args = parsePilotArguments(process.argv.slice(2));
   const manifest = await buildCrmStagingPilot({
     boundaryMs: args['--boundary-ms'],
+    organizationReceiptBoundaryMs: args['--organization-receipt-boundary-ms'],
     outputDir: args['--output-dir'],
   });
   process.stdout.write(`${JSON.stringify({

@@ -144,9 +144,10 @@ export function validateCrmDirectorySchemaReadback(readback) {
   return errors;
 }
 
-export function readStagingDirectorySchema({ projectRoot, npmCli, spawn = spawnSync }) {
+export function readStagingDirectorySchema({ projectRoot, spawn = spawnSync }) {
   const result = spawn(process.execPath, [
-    npmCli, 'exec', '--', 'wrangler', 'd1', 'execute', STAGING_D1_BINDINGS[0].database_id,
+    resolve(projectRoot, 'node_modules', 'wrangler', 'bin', 'wrangler.js'),
+    'd1', 'execute', STAGING_D1_BINDINGS[0].database_id,
     '--remote', '--command', CRM_DIRECTORY_SCHEMA_SQL, '--json',
     '--config', resolve(projectRoot, 'wrangler.jsonc'),
   ], {
@@ -562,7 +563,8 @@ export async function deployStagingManifest({
     : `exact candidate ${expectedSourceSha}; Gate 9C-C CRM pilot activation ${expectedCrmSourceNotBeforeMs}`;
   if (expectedCrmSourceNotBeforeMs === undefined) {
     await verifyReleaseState(projectRoot, expectedSourceSha);
-    runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', resolve(projectRoot, 'dist/server/wrangler.json'), '--keep-vars', '--message', message], { cwd: projectRoot });
+    runCommand(process.execPath, [resolve(projectRoot, 'node_modules', 'wrangler', 'bin', 'wrangler.js'),
+      'deploy', '--config', resolve(projectRoot, 'dist/server/wrangler.json'), '--keep-vars', '--message', message], { cwd: projectRoot });
     return;
   }
 
@@ -600,7 +602,8 @@ export async function deployStagingManifest({
         excludePaths: [activationConfigPath],
       });
     }
-    runCommand(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', activationConfigPath, '--keep-vars', '--message', message], { cwd: projectRoot });
+    runCommand(process.execPath, [resolve(projectRoot, 'node_modules', 'wrangler', 'bin', 'wrangler.js'),
+      'deploy', '--config', activationConfigPath, '--keep-vars', '--message', message], { cwd: projectRoot });
   } finally {
     await unlinkConfig(activationConfigPath);
   }

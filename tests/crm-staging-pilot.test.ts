@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import type { D1Database } from '@cloudflare/workers-types';
 import {
   buildCrmStagingPilot,
+  parseOrganizationReceiptBoundary,
   parsePilotArguments,
   parsePilotBoundary,
 } from '../scripts/build-crm-staging-pilot.mjs';
@@ -55,6 +56,11 @@ describe('CRM staging synthetic pilot package', () => {
       expect(() => parsePilotBoundary(value)).toThrow(/boundary/i);
     }
     expect(parsePilotBoundary(String(boundaryMs))).toBe(boundaryMs);
+    expect(parseOrganizationReceiptBoundary(String(boundaryMs - 1_000), boundaryMs))
+      .toBe(boundaryMs - 1_000);
+    for (const value of ['', 'not-a-number', '0', String(boundaryMs), String(boundaryMs + 1_000)]) {
+      expect(() => parseOrganizationReceiptBoundary(value, boundaryMs)).toThrow(/boundary/i);
+    }
   });
 
   it('rejects duplicate CLI flags instead of silently replacing an approved value', () => {
@@ -64,6 +70,38 @@ describe('CRM staging synthetic pilot package', () => {
     expect(() => parsePilotArguments([
       '--boundary-ms', String(boundaryMs), '--output-dir', 'one', '--output-dir', 'two',
     ])).toThrow('duplicate_argument:--output-dir');
+  });
+
+  it('emits a phase-two-only packet when three organization receipts already exist', async () => {
+    const phaseOneBoundaryMs = boundaryMs - 60_000;
+    const root = await mkdtemp(join(tmpdir(), 'crm-staging-pilot-resume-test-'));
+    const outputDir = join(root, 'packet');
+    try {
+      const manifest = await buildCrmStagingPilot({
+        boundaryMs,
+        organizationReceiptBoundaryMs: phaseOneBoundaryMs,
+        outputDir,
+      });
+      expect(manifest.mode).toBe('phase_two_resume');
+      expect(manifest.organizationReceiptBoundaryMs).toBe(phaseOneBoundaryMs);
+      expect(manifest.artifacts.map(({ file }) => file)).toEqual([
+        '00-ops-preflight.sql',
+        '02-ops-contacts.sql',
+        '03-ops-replay.sql',
+        '91-ops-verification.sql',
+        '92-crm-verification.sql',
+      ]);
+      const contactsSql = await readFile(join(outputDir, '02-ops-contacts.sql'), 'utf8');
+      expect(contactsSql).toContain(`event.authority_updated_at=${phaseOneBoundaryMs + 1_000}`);
+      expect(contactsSql).toContain("json_extract(event.payload_json,'$.payload.sourceVersion')=receipt.content_hash");
+      expect(() => parsePilotArguments([
+        '--boundary-ms', String(boundaryMs),
+        '--organization-receipt-boundary-ms', String(phaseOneBoundaryMs),
+        '--output-dir', outputDir,
+      ])).not.toThrow();
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
   });
 
   it('emits hash-pinned synthetic-only phased SQL and exercises every disposition plus replay', async () => {
@@ -149,14 +187,17 @@ describe('CRM staging synthetic pilot package', () => {
       expect(await opsResource.db.prepare(`SELECT COUNT(*) AS count FROM org_contacts
         WHERE id LIKE 'crm-pilot-contact-%'`).first()).toEqual({ count: 0 });
       for (const subjectId of ['fixture-org-soccer', 'fixture-org-basketball', 'fixture-org-swim']) {
-        const ownEvent = await opsResource.db.prepare(`SELECT event_id,source_sequence,payload_hash,authority_updated_at
+        const ownEvent = await opsResource.db.prepare(`SELECT event_id,source_sequence,payload_hash,
+            json_extract(payload_json,'$.payload.sourceVersion') AS source_version,authority_updated_at
           FROM crm_adapter_outbox WHERE subject_type='organization' AND subject_id=?`).bind(subjectId).first<{
-            event_id: string; source_sequence: number; payload_hash: string; authority_updated_at: number;
+            event_id: string; source_sequence: number; payload_hash: string; source_version: string;
+            authority_updated_at: number;
           }>();
+        expect(ownEvent!.payload_hash).not.toBe(ownEvent!.source_version);
         await opsResource.db.prepare(`UPDATE crm_adapter_projection_receipts
           SET content_hash=?,last_event_id=?,last_sequence=?,authority_updated_at=?
           WHERE subject_type='organization' AND subject_id=?`).bind(
-          ownEvent!.payload_hash, ownEvent!.event_id, ownEvent!.source_sequence,
+          ownEvent!.source_version, ownEvent!.event_id, ownEvent!.source_sequence,
           ownEvent!.authority_updated_at, subjectId,
         ).run();
       }

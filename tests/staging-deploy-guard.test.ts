@@ -4,7 +4,7 @@ import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import type { PathLike } from 'node:fs';
 import type { FileHandle } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import {
   buildAndVerifyStagingManifest,
   deployStagingManifest,
@@ -25,7 +25,7 @@ vi.mock('node:child_process', async (importOriginal) => {
   return {
     ...actual,
     spawnSync: (command: string, args?: readonly string[], options?: unknown) => {
-      if (args?.includes('wrangler') && args.includes('d1') && args.includes('execute')) {
+      if (args?.some((arg) => arg.endsWith('wrangler.js')) && args.includes('d1') && args.includes('execute')) {
         return { status: 0, stdout: JSON.stringify(schemaProcess.readback), stderr: '' };
       }
       return actual.spawnSync(command, args, options as any);
@@ -240,10 +240,11 @@ describe('verified staging deployment guard', () => {
     expect(result).toEqual(compatibleCrmDirectorySchema);
     expect(command).toBe(process.execPath);
     expect(args).toEqual(expect.arrayContaining([
-      'npm-cli.js', 'exec', '--', 'wrangler', 'd1', 'execute',
+      resolve('C:/workspace', 'node_modules', 'wrangler', 'bin', 'wrangler.js'), 'd1', 'execute',
       '6aa26d4d-d545-4eb7-bf50-34d45f2182ad', '--remote', '--json',
       '--config', 'C:\\workspace\\wrangler.jsonc',
     ]));
+    expect(args).not.toEqual(expect.arrayContaining(['npm-cli.js', 'exec', '--', 'wrangler']));
     expect(args[args.indexOf('--command') + 1]).toContain('PRAGMA table_info("organizations")');
     expect(args[args.indexOf('--command') + 1]).toContain('FROM sqlite_schema');
 
