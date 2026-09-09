@@ -7,8 +7,10 @@ const UUID = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/;
 const BOOKMARK = /^[a-f0-9]{8}(?:-[a-f0-9]{8}){2}-[a-f0-9]{32}$/;
 const GIT_SHA = /^[a-f0-9]{40}$/;
 const POLICY_VERSION = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,79}$/;
+const ENVIRONMENTS = new Set(['staging', 'production']);
 const FLAGS = new Set([
   '--boundary-ms',
+  '--environment',
   '--output-file',
   '--producer-candidate',
   '--receiver-candidate',
@@ -77,8 +79,15 @@ function exactMatch(value, pattern, error) {
   return normalized;
 }
 
+function exactEnvironment(value) {
+  const environment = requiredText(value, 'crm_backfill_environment_invalid');
+  if (!ENVIRONMENTS.has(environment)) throw new Error('crm_backfill_environment_invalid');
+  return environment;
+}
+
 export async function buildCrmBackfillManifest(input) {
   const outputFile = resolve(requiredText(input.outputFile, 'crm_backfill_output_file_required'));
+  const environment = exactEnvironment(input.environment);
   const sourceNotBeforeMs = parseBackfillManifestBoundary(String(input.sourceNotBeforeMs));
   const producerCandidate = exactMatch(
     input.producerCandidate, GIT_SHA, 'crm_backfill_producer_candidate_invalid',
@@ -123,7 +132,7 @@ export async function buildCrmBackfillManifest(input) {
   const manifest = {
     schemaVersion: 1,
     kind: 'pcd-crm-historical-backfill',
-    environment: 'staging',
+    environment,
     dataClassification: 'governed_source_projection',
     remoteExecutionAuthorized: false,
     sourceNotBeforeMs,
@@ -188,6 +197,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const args = parseBackfillManifestArguments(process.argv.slice(2));
   const result = await buildCrmBackfillManifest({
     outputFile: resolveBackfillManifestOutput(args['--output-file']),
+    environment: args['--environment'],
     sourceNotBeforeMs: args['--boundary-ms'],
     producerCandidate: args['--producer-candidate'],
     receiverCandidate: args['--receiver-candidate'],

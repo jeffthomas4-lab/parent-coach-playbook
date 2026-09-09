@@ -16,6 +16,7 @@ const boundaryMs = Math.floor(Date.now() / 1_000) * 1_000;
 function input(outputFile: string) {
   return {
     outputFile,
+    environment: 'production',
     sourceNotBeforeMs: boundaryMs,
     producerCandidate: '1'.repeat(40),
     receiverCandidate: '2'.repeat(40),
@@ -72,7 +73,7 @@ describe('CRM historical backfill manifest', () => {
     expect(result.manifest).toMatchObject({
       schemaVersion: 1,
       kind: 'pcd-crm-historical-backfill',
-      environment: 'staging',
+      environment: 'production',
       dataClassification: 'governed_source_projection',
       remoteExecutionAuthorized: false,
       sourceNotBeforeMs: boundaryMs,
@@ -116,5 +117,9 @@ describe('CRM historical backfill manifest', () => {
       ...input(outputFile),
       sourcePolicyVersion: 'policy with spaces',
     })).rejects.toThrow('crm_backfill_source_policy_version_invalid');
+    await expect(buildCrmBackfillManifest({
+      ...input(outputFile),
+      environment: 'preview',
+    })).rejects.toThrow('crm_backfill_environment_invalid');
   });
 });
