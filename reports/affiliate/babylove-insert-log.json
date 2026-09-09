@@ -686,6 +686,12 @@
       "location": "'Quick setup checklist before players arrive', opening bullet list",
       "before": "see above",
       "after": "see above"
+    },
+    {
+      "date": "2026-09-09",
+      "articleSlug": "run-summary",
+      "action": "branch-drift-deferred-sync",
+      "details": "After committing 566e897e (6 articles, 33 links, 3 new catalog entries), attempted git fetch + pull --rebase origin main to sync in 1 remaining unpulled article (826711 / youth-baseball-throwing-drills, live on origin as cf43f4e4, not yet in local HEAD). Rebase was not attempted: working tree carried pre-existing uncommitted changes not mine (src/lib/babylove-growth.ts + tests/babylove-growth.test.ts, a real in-progress fix per Dana's 43f86d60 note) which block `git pull --rebase`, and `git stash` failed silently (exit 1, no output) on this filesystem. Backed up the 3 dirty files to /tmp before attempting anything, then abandoned the stash/checkout plan rather than risk discarding someone else's uncommitted work under a live, actively-refreshing .git/HEAD.lock from a concurrent agent process. `git push origin main` also confirmed the known structural block already documented by Dana: `fatal: could not read Username for 'https://github.com': No such device or address` -- this Cowork sandbox has no GitHub credentials, so nothing pushes from here regardless of rebase state. Left everything local. youth-baseball-throwing-drills (826711) carries next run: sourced 1 catalog gap (a resistance band + a gloves/bucket/cones equipment-list opportunity), not yet inserted -- treat as new-queue, not backfill, next run."
     }
   ]
 }
