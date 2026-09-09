@@ -230,7 +230,12 @@ describe('BabyLoveGrowth webhook boundary', () => {
     )).toBe(true);
   });
 
-  it('returns a retryable failure when GitHub rejects a production publish', async () => {
+  // Renamed and re-pointed 2026-09-08. This asserted 503 until commit 3dc6132e
+  // (2026-09-07) deliberately made our own credential failures answer 200:
+  // BabyLoveGrowth reads 5xx as "this endpoint is unhealthy" and stops
+  // delivering, which cost seven days of articles twice. The receipt is still
+  // written as retryable_failure, so nothing is lost. See isOurCredentialFailure.
+  it('keeps the delivery lane open when our GitHub token is dead', async () => {
     const fake = makeFakeD1();
     const fetchMock = vi.fn().mockResolvedValueOnce(new Response('unauthorized', { status: 401 }));
     vi.stubGlobal('fetch', fetchMock);
@@ -244,8 +249,8 @@ describe('BabyLoveGrowth webhook boundary', () => {
       executionContext([]),
     );
 
-    expect(response.status).toBe(503);
-    expect(await response.json()).toEqual({ ok: false, error: 'publish_failed', retryable: true });
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ ok: true, accepted: false, deferred: true, error: 'github_read_401' });
     expect(fake.calls.some((call) =>
       call.sql.includes('UPDATE external_article_receipts')
       && call.params[0] === 'retryable_failure'

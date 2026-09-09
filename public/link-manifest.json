@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-08T18:30:15.712Z",
-  "count": 872,
+  "generatedAt": "2026-09-09T16:28:41.621Z",
+  "count": 874,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -39,12 +39,6 @@
       "url": "https://aaafoundation.org/",
       "sources": [
         "src/content/body/driver-fatigue-team-trips.md"
-      ]
-    },
-    {
-      "url": "https://aacca.org/",
-      "sources": [
-        "src/content/body/youth-cheer-stunt-safety-briefing.md"
       ]
     },
     {
@@ -90,9 +84,9 @@
       ]
     },
     {
-      "url": "https://aausports.org/aau-youth-protection-policy/",
+      "url": "https://about.fiba.basketball/en/our-sport/official-basketball-rules",
       "sources": [
-        "src/content/body/volunteer-vs-paid-coach-vetting.md"
+        "src/content/rules/basketball.md"
       ]
     },
     {
@@ -540,12 +534,6 @@
         "src/content/body/concussion-protocol-basics.md",
         "src/content/body/suspected-concussion-right-now.md",
         "src/pages/governing-bodies.astro"
-      ]
-    },
-    {
-      "url": "https://couchanddumbells.com/collections/outdoor-play-equipment",
-      "sources": [
-        "src/content/articles/tee-ball-drills.md"
       ]
     },
     {
@@ -1400,6 +1388,12 @@
       ]
     },
     {
+      "url": "https://usacheer.org/aacca-is-now-usa-cheer",
+      "sources": [
+        "src/content/body/youth-cheer-stunt-safety-briefing.md"
+      ]
+    },
+    {
       "url": "https://usafootball.com",
       "sources": [
         "src/content/adaptive/inclusion-rules-what-parents-need-to-know.md",
@@ -1584,15 +1578,15 @@
       ]
     },
     {
-      "url": "https://usrowing.org/sports/2016/6/1/719_132107062844861099.aspx",
+      "url": "https://usrowing.org/resources/rules-of-rowing",
       "sources": [
-        "src/content/guides/crew.md"
+        "src/content/rules/crew.md"
       ]
     },
     {
-      "url": "https://usrowing.org/sports/2017/12/4/rules-of-rowing.aspx",
+      "url": "https://usrowing.org/sports/2016/6/1/719_132107062844861099.aspx",
       "sources": [
-        "src/content/rules/crew.md"
+        "src/content/guides/crew.md"
       ]
     },
     {
@@ -1788,6 +1782,12 @@
       ]
     },
     {
+      "url": "https://www.aausports.org/athlete-protection-and-abuse-prevention-policy/",
+      "sources": [
+        "src/content/body/volunteer-vs-paid-coach-vetting.md"
+      ]
+    },
+    {
       "url": "https://www.aausports.org/boys-basketball/2026-aau-boys-basketball-eligibility",
       "sources": [
         "src/content/articles/basketball-levels-rec-school-club-aau.md"
@@ -1947,6 +1947,12 @@
       "url": "https://www.amazon.com/dp/B0000BY937?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: scrimmage-pennies)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0000BZF04?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-ball-bucket-with-lid)"
       ]
     },
     {
@@ -2176,6 +2182,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B00NG1ECBS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-l-screen-pitching-net)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B00P9OJF9E?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: volleyball-knee-pads-youth)"
@@ -2348,6 +2360,12 @@
       "url": "https://www.amazon.com/dp/B07GZX6Y6S?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: wrestling-headgear)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07HJSHT8P?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-batting-tee-youth-grow-with-me)"
       ]
     },
     {
@@ -3565,12 +3583,6 @@
       "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
       "sources": [
         "src/content/body/restaurant-food-allergies-travel.md"
-      ]
-    },
-    {
-      "url": "https://www.fiba.basketball/basketballrules",
-      "sources": [
-        "src/content/rules/basketball.md"
       ]
     },
     {

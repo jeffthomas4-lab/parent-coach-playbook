@@ -978,10 +978,18 @@ async function fetchApiJsonTracked(
     signal: AbortSignal.timeout(API_TIMEOUT_MS),
   });
 
-  const remaining = Number(response.headers.get('RateLimit-Remaining'));
+  // A missing header is not a budget of zero. `Number(null)` is 0 and passes
+  // Number.isFinite, so an absent RateLimit-Remaining zeroed the budget and
+  // deferred every remaining article in the batch. That is the silent-no-op
+  // signature this whole function exists to prevent, and it is why ten
+  // reconciliation tests have been red since 2026-09-04. Read the header,
+  // then decide.
+  const remainingHeader = response.headers.get('RateLimit-Remaining');
+  const remaining = remainingHeader === null ? Number.NaN : Number(remainingHeader);
   if (Number.isFinite(remaining)) budget.remaining = remaining;
   else budget.remaining -= 1;
-  const reset = Number(response.headers.get('RateLimit-Reset'));
+  const resetHeader = response.headers.get('RateLimit-Reset');
+  const reset = resetHeader === null ? Number.NaN : Number(resetHeader);
   if (Number.isFinite(reset)) budget.resetAt = reset;
 
   if (response.status === 429) throw new BabyLoveFailure('api_rate_limited');
