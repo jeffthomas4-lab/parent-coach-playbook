@@ -1,0 +1,175 @@
+{
+  "run_date": "2026-09-05",
+  "method": "Full population scored, not a rotating sample -- live sitemap-camps.xml collapsed to 21 URLs (from 218 on 2026-08-03), below the 40-60 slice size the charter assumes.",
+  "rubric": "Same as 2026-08-03: +20 complete normalized record, +20 cross-listing at address, +15 real sport-specific gear/equipment block, +15 substantive About block (>=40 words, not a repeated fragment), +10 verification stamp; -15 raw category token visible in UI, -15 About block under 40 words, -15 title is a scraped/status fragment, -10 ages not provided.",
+  "rows": [
+    {
+      "n": 1,
+      "url": "https://parentcoachdesk.com/camps/twisters-gymnastics-port-hadlock-wa-7519-august-31-september-7-summer-classes-start-september-8-2026-08-31/",
+      "category_token_raw": "Arts_crafts",
+      "adult_only_disqualifier": false,
+      "score": 0,
+      "note": "Title and About block are both the identical scraped date fragment (\"August 31 - September 7...\"); zero real description; raw category CSS artifact leaks into visible text (unscoped #block-... style rule rendered as plain text)."
+    },
+    {
+      "n": 2,
+      "url": "https://parentcoachdesk.com/camps/nike-adult-tennis-camp-at-weston-racquet-club-adult-beginner-tennis-crash-course/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": true,
+      "score": 30,
+      "note": "Adult-only (\"Adult Beginner Tennis Crash Course\"). Fails CAMPS_APPROVAL_THRESHOLD.md hard disqualifier (not-youth-activity) but is live and approved."
+    },
+    {
+      "n": 3,
+      "url": "https://parentcoachdesk.com/camps/camp-fire-vallejo-ca-1190-get-involved-with-camp-fire-and-help-camp-gold-hollow-do-more-2026-10-03/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 0,
+      "note": "Camp Fire Vallejo, real nonprofit. Thin About block, no price."
+    },
+    {
+      "n": 4,
+      "url": "https://parentcoachdesk.com/camps/nike-adult-tennis-camp-at-la-quinta-resort-club-oct-9-11-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": true,
+      "score": 30,
+      "note": "Adult-only Nike tennis. Same disqualifier violation as #2, #9, #11, #14, #15."
+    },
+    {
+      "n": 5,
+      "url": "https://parentcoachdesk.com/camps/i9-sports-puyallup-baseball-league-fall-2026/",
+      "category_token_raw": "Baseball_softball",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "i9 Sports league listing, functional record, under-40-word About block only by a margin."
+    },
+    {
+      "n": 6,
+      "url": "https://parentcoachdesk.com/camps/i9-sports-puyallup-flag-football-league-fall-2026-mcq3/",
+      "category_token_raw": "Other",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "i9 Sports league listing, complete fields."
+    },
+    {
+      "n": 7,
+      "url": "https://parentcoachdesk.com/camps/i9-sports-kent-flag-football-league-fall-2026-7zv6/",
+      "category_token_raw": "Other",
+      "adult_only_disqualifier": false,
+      "score": 0,
+      "note": "i9 Sports league listing, About block is 39 words, one word short of the August substantive-description cutoff."
+    },
+    {
+      "n": 8,
+      "url": "https://parentcoachdesk.com/camps/nike-volleyball-camp-at-community-wellness-center-with-volleyball-elite-training-ngxq/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Volleyball, complete fields, no gear layer."
+    },
+    {
+      "n": 9,
+      "url": "https://parentcoachdesk.com/camps/nike-adult-tennis-camp-at-la-quinta-resort-club-nov-6-8-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": true,
+      "score": 30,
+      "note": "Adult-only Nike tennis. Disqualifier violation."
+    },
+    {
+      "n": 10,
+      "url": "https://parentcoachdesk.com/camps/puget-sound-guitar-workshop-bellingham-wa-3001-all-2026-psgw-summer-camp-weeks-are-full-2026-11-05/",
+      "category_token_raw": "Arts_crafts",
+      "adult_only_disqualifier": false,
+      "score": 0,
+      "note": "Title reads \"All 2026 PSGW Summer Camp Weeks Are Full\" -- the page is actively advertising a sold-out camp with no waitlist or next-season pointer. No price, ages not provided."
+    },
+    {
+      "n": 11,
+      "url": "https://parentcoachdesk.com/camps/nike-adult-tennis-camp-at-pinehurst-resort-country-club-day-camp-nov-13-15-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": true,
+      "score": 30,
+      "note": "Adult-only Nike tennis. Disqualifier violation."
+    },
+    {
+      "n": 12,
+      "url": "https://parentcoachdesk.com/camps/nike-soccer-camp-in-northbrook-nov-23-25-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Soccer, complete fields."
+    },
+    {
+      "n": 13,
+      "url": "https://parentcoachdesk.com/camps/nike-indoor-soccer-camp-with-hub-sports-at-rancho-solano-prep-school-thanksgivin/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Indoor Soccer (HUB Sports), complete fields."
+    },
+    {
+      "n": 14,
+      "url": "https://parentcoachdesk.com/camps/nike-adult-tennis-camp-at-weston-racquet-club-doubles-tennis-matchplay-master-co-tjpp/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": true,
+      "score": 30,
+      "note": "Adult-only Nike tennis. Disqualifier violation."
+    },
+    {
+      "n": 15,
+      "url": "https://parentcoachdesk.com/camps/nike-adult-tennis-camp-at-la-quinta-resort-club-dec-11-13-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": true,
+      "score": 30,
+      "note": "Adult-only Nike tennis. Disqualifier violation."
+    },
+    {
+      "n": 16,
+      "url": "https://parentcoachdesk.com/camps/nike-indoor-soccer-camp-with-hub-sports-at-rancho-solano-prep-school-winter-brea-pc89/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Indoor Soccer, complete fields, duplicate venue/template of #13/#18."
+    },
+    {
+      "n": 17,
+      "url": "https://parentcoachdesk.com/camps/nike-soccer-camp-in-schaumburg-winter-break-dec-21-23-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Soccer Schaumburg, complete fields."
+    },
+    {
+      "n": 18,
+      "url": "https://parentcoachdesk.com/camps/nike-indoor-soccer-camp-with-hub-sports-at-rancho-solano-prep-school-winter-brea-ng2b/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Indoor Soccer, complete fields, duplicate venue/template of #13/#16."
+    },
+    {
+      "n": 19,
+      "url": "https://parentcoachdesk.com/camps/nike-soccer-camp-with-next-step-training-norfolk-dec-28-30-2026/",
+      "category_token_raw": "Camp_sports",
+      "adult_only_disqualifier": false,
+      "score": 30,
+      "note": "Nike Soccer Norfolk, complete fields."
+    },
+    {
+      "n": 20,
+      "url": "https://parentcoachdesk.com/camps/pro-football-camp-colorado-spgs-co-5884-21st-annual-pro-football-camp-june-21-23-2027-john-venezia-community-park-colora/",
+      "category_token_raw": "Football",
+      "adult_only_disqualifier": false,
+      "score": 40,
+      "note": "Only page of 21 with a real \"Equipment for this camp\" block. No raw category token. No price listed. Genuine community/volunteer-coached camp, ages stated in prose (7-14)."
+    },
+    {
+      "n": 21,
+      "url": "https://parentcoachdesk.com/camps/pacific-arts-association-blaine-wa-1463-the-camp-2027-07-11/",
+      "category_token_raw": "Music",
+      "adult_only_disqualifier": false,
+      "score": 0,
+      "note": "Pacific Arts Association. Title is the literal fragment \"The camp\", ages not provided."
+    }
+  ]
+}

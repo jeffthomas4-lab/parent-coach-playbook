@@ -23,9 +23,9 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-09-02
-  status: draft
-  reviewerNotes: "Personal essay, no factual claims requiring citation. Cross-checked against src/content/articles/the-assistant-coach-relationship.md, which covers setting up the head coach/assistant coach relationship at the start of a season, and confirmed this piece covers different ground: the friendship's end, not its setup. flagSensitiveTopic set true for the loss/grief framing, consistent with the-hardest-player-to-coach-is-me.md."
+  claudeReviewedAt: 2026-09-07
+  status: ready-for-jeff
+  reviewerNotes: "HOLD, not a voice failure: flagSensitiveTopic is true (grief/loss framing over a friendship's end) per VOICE-RUBRIC hard-holds, routing to Jeff rather than auto-publish regardless of quality. Mechanical checks passed: dek 12 words, seoTitle 49 chars, seoDescription 131 chars, no em dashes, required schema fields present (title, phase, publishedAt). Prior reviewerNotes (cross-check against the-assistant-coach-relationship.md, no duplication) preserved in substance above. Voice/structure sections not scored per hold rule; Jeff's call on whether grief content about a coaching-friendship ending is fit to publish as-is."
 ---
 
 My co-coach told me over text in June that he wasn't coming back. Two lines. His son had aged out of the age group, and there was no reason left for him to give up four nights a week to a team that wasn't his anymore.

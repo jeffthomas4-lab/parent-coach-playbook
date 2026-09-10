@@ -1,6 +1,6 @@
 ---
 title: "Best Youth Softball Gloves: Sized Right for 8–12U"
-seoTitle: "Best Youth Softball Gloves: Sized Right"
+seoTitle: "Best Youth Softball Gloves"
 seoDescription: "Discover the best youth softball gloves for 8–12U players. Find perfectly sized gloves that prioritize comfort and performance this season!."
 dek: "Discover the best youth softball gloves for 8–12U players. Find perfectly sized gloves that prioritize comfort and performance."
 bluf: "The best youth softball gloves are the ones sized correctly for right now, not for next season. Parentcoachdesk's top picks prioritize correct sizing and hand-friendly break-in over price or brand prestige. Here's the short version for parents who need to buy."
@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "softball"
 age: "11-12"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/softball-circle-chalk.webp"
+heroAlt: "A youth softball field's pitching circle shows fresh chalk in morning light, a plain yellow ball resting in the dirt."
 publishedAt: 2026-08-05
 draft: false
 externalSource:

@@ -1,6 +1,6 @@
 ---
 title: "Youth Volleyball Drills: 15 Fun, Age-Appropriate Drills"
-seoTitle: "Youth Volleyball Drills: 15 Fun"
+seoTitle: "Youth Volleyball Drills"
 seoDescription: "Elevate youth volleyball skills with 15 engaging drills! Start with fun practices to boost ball control and foot movement for all ages. Practical guidance…"
 dek: "Elevate youth volleyball skills with 15 engaging drills! Start with fun practices to boost ball control and foot movement for all ages. Practical."
 bluf: "Start your next practice with these three drills and you'll cover the two things that matter most for beginners: getting comfortable with the ball and moving their feet. Pepper (two players, continuous pass-set-hit), Serve and Shag (solo serving to a target zone), and Bump Circle (small group, keep the ball in the air) give every player immediate ball contact, require almost no setup, and work for ages 8."
@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "volleyball"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/volleyball-knee-pads-bench.webp"
+heroAlt: "Rolled knee pads, a plain volleyball, and a water bottle sit on a gym bench under side light with a worn floor beneath."
 publishedAt: 2026-08-16
 draft: false
 externalSource:

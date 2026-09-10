@@ -1,16 +1,16 @@
 ---
 title: "Youth Tryout Results Emails: Templates + 6 Item Checklist"
-seoTitle: "Youth Tryout Results Emails: Templates"
+seoTitle: "Youth Tryout Results Emails"
 seoDescription: "Templates and short call scripts for youth tryout results emails—made, not selected, waitlist—plus a six item send checklist coaches can drop into their..."
-dek: "Templates and short call scripts for youth tryout results emails—made, not selected, waitlist—plus a six item send checklist coaches can drop into."
+dek: "Templates and short call scripts for youth tryout results emails—made, not selected, waitlist—plus a six item send checklist coaches can drop."
 bluf: "Call the families whose kids didn't make it, whenever you have the staff to do it, and email everyone else with a message written for that one child, not a mail merge. Send it inside the window you promised at registration, never later. Every message, whether spoken or typed, opens with the outcome, then a specific observation, then a real next step, because that order is what keeps a hard conversation from becoming a longer."
 topic: "tryouts"
 format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
-age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+age: "5-7"
+hero: "/illustrations/kitchen-phone-group-thread.webp"
+heroAlt: "A parent holds a phone at a kitchen island in the evening with a messaging thread open, dinner half cleared behind them."
 publishedAt: 2026-08-31
 draft: false
 externalSource:

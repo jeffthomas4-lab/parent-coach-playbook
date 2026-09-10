@@ -25,8 +25,9 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Basketball"
   url: "https://www.usab.com/"
-ruleBookUrl: "https://www.fiba.basketball/basketballrules"
+ruleBookUrl: "https://about.fiba.basketball/en/our-sport/official-basketball-rules"
 publishedAt: 2026-04-26
+updatedAt: 2026-09-08
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -38,7 +39,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Charge/block clarification and the over-the-back myth-bust are the most-useful practical content. Rule format works well for basketball."
+  reviewerNotes: "Charge/block clarification and the over-the-back myth-bust are the most-useful practical content. Rule format works well for basketball. 2026-09-08 Flo refresh: ruleBookUrl was dead (fiba.basketball/basketballrules no longer resolves), replaced with current FIBA rules landing page. usab.com link confirmed live. Youth rule content (rim heights, ball sizes, bonus thresholds) checked against current USA Basketball/FIBA guidance, no substantive changes."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 A few specifics.

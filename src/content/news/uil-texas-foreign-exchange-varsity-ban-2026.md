@@ -6,5 +6,5 @@ sport: "multi-sport"
 sourceUrl: "https://www.uiltexas.org/policy/2026-27-policy-info/rule-changes"
 sourceLabel: "University Interscholastic League (UIL) — 2026-27 Rule Changes"
 publishedAt: 2026-09-01
-draft: true
+draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Baseball Throwing Drills for Youth Coaches and Parents"
-seoTitle: "Baseball Throwing Drills for Youth"
+seoTitle: "Baseball Throwing Drills"
 seoDescription: "Discover effective baseball throwing drills to enhance skills and safety for youth players, ensuring a fun and productive practice. Practical guidance…"
 dek: "Discover effective baseball throwing drills to enhance skills and safety for youth players, ensuring a fun and productive practice. Practical."
 bluf: "The best baseball throwing drill picks depend on what you're fixing: use a quick game of catch to warm up, accuracy target throws to sharpen precision, the one-knee drill to isolate arm slot, crow-hop long toss to build distance safely, and knee or split-step throws to groove trunk rotation. Each one targets a different piece of the puzzle, so rotating through several in one practice covers more ground than repeating one drill for 20."
@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "baseball"
 age: "all-ages"
-hero: "/illustrations/guide-baseball-gear.webp"
-heroAlt: "Youth baseball glove, bat, helmet, and ball arranged for a pre-season equipment check."
+hero: "/illustrations/baseball-glove-ball-bench.webp"
+heroAlt: "A broken-in leather glove with a scuffed baseball in the pocket rests on a dugout bench under hard side light."
 publishedAt: 2026-08-21
 draft: false
 externalSource:

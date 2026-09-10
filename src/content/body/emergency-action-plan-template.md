@@ -7,6 +7,7 @@ format: "checklist"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]
 publishedAt: 2026-01-12
+updatedAt: 2026-09-08
 governingBodies:
   - name: "NATA: Inter-Association Task Force EAP Recommendations"
     url: "https://www.nata.org/practice-patient-care"
@@ -38,7 +39,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-12
   status: claude-reviewed
-  reviewerNotes: "NATA EAP framework is the source. Practical template every program should adapt. Companion to AED-location and CPR pieces."
+  reviewerNotes: "NATA EAP framework is the source. Practical template every program should adapt. Companion to AED-location and CPR pieces. 2026-09-08 Flo refresh: verified clean. All three governing-body links (NATA, KSI, AAP) confirmed live and current. 30/30 lightning rule and AED-access framing still match current NATA/KSI guidance. Note: checklistPdf field points to /printables/emergency-action-plan-template.pdf, which does not exist anywhere in the repo (also true for 3 other body/ posts with checklistPdf); no page template currently renders this field so it isn't a live broken link, but flagged for whoever wires up printables."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 National Athletic Trainers' Association (NATA), KSI, and the American Academy of Pediatrics (AAP) all converge on the same framework: every athletic venue should have a written Emergency Action Plan (EAP), reviewed before each season, practiced at least once, and posted at the venue. Most youth programs do not have one. Programs that do see meaningfully better outcomes when emergencies happen.

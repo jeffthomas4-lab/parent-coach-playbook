@@ -149,9 +149,14 @@ Keep this section.
     const seoTitle = markdown.match(/^seoTitle: "(.+)"$/m)?.[1] ?? '';
     const seoDescription = markdown.match(/^seoDescription: "(.+)"$/m)?.[1] ?? '';
 
-    expect(seoTitle.length).toBeGreaterThanOrEqual(25);
+    // Lowered from 25/45 on 2026-09-08. seoTitle now prefers a complete phrase
+    // over a longer fragment, and a complete headline sometimes lands at 22-24
+    // characters. Padding those back over 25 produced filler like "A Parent
+    // Code of Conduct: a parent guide", which is worse copy than a 44-character
+    // title Google displays in full. See ensureWindow in babylove-growth.ts.
+    expect(seoTitle.length).toBeGreaterThanOrEqual(22);
     expect(seoTitle.length).toBeLessThanOrEqual(40);
-    expect(`${seoTitle} | Parent Coach Desk`.length).toBeGreaterThanOrEqual(45);
+    expect(`${seoTitle} | Parent Coach Desk`.length).toBeGreaterThanOrEqual(42);
     expect(`${seoTitle} | Parent Coach Desk`.length).toBeLessThanOrEqual(60);
     expect(seoDescription.length).toBeGreaterThanOrEqual(140);
     expect(seoDescription.length).toBeLessThanOrEqual(160);
@@ -225,7 +230,12 @@ describe('BabyLoveGrowth webhook boundary', () => {
     )).toBe(true);
   });
 
-  it('returns a retryable failure when GitHub rejects a production publish', async () => {
+  // Renamed and re-pointed 2026-09-08. This asserted 503 until commit 3dc6132e
+  // (2026-09-07) deliberately made our own credential failures answer 200:
+  // BabyLoveGrowth reads 5xx as "this endpoint is unhealthy" and stops
+  // delivering, which cost seven days of articles twice. The receipt is still
+  // written as retryable_failure, so nothing is lost. See isOurCredentialFailure.
+  it('keeps the delivery lane open when our GitHub token is dead', async () => {
     const fake = makeFakeD1();
     const fetchMock = vi.fn().mockResolvedValueOnce(new Response('unauthorized', { status: 401 }));
     vi.stubGlobal('fetch', fetchMock);
@@ -239,8 +249,8 @@ describe('BabyLoveGrowth webhook boundary', () => {
       executionContext([]),
     );
 
-    expect(response.status).toBe(503);
-    expect(await response.json()).toEqual({ ok: false, error: 'publish_failed', retryable: true });
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ ok: true, accepted: false, deferred: true, error: 'github_read_401' });
     expect(fake.calls.some((call) =>
       call.sql.includes('UPDATE external_article_receipts')
       && call.params[0] === 'retryable_failure'

@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "volleyball"
 age: "all-ages"
-hero: "/illustrations/guide-parent-coach-gear.webp"
-heroAlt: "A youth sports gear bag and equipment arranged for a parent checklist."
+hero: "/illustrations/volleyball-net-empty-gym.webp"
+heroAlt: "A volleyball net stretches across an empty gym court, shot from the floor at one post with light falling from high windows."
 publishedAt: 2026-08-07
 draft: false
 externalSource:

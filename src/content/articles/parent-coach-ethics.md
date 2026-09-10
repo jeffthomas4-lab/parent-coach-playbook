@@ -9,8 +9,8 @@ format: "essay"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
-hero: "/illustrations/receipts-on-counter.webp"
-heroAlt: "Youth sports receipts, a calendar, and a family budget arranged on a kitchen counter."
+hero: "/illustrations/kitchen-phone-group-thread.webp"
+heroAlt: "A parent holds a phone at a kitchen island in the evening with a messaging thread open, dinner half cleared behind them."
 publishedAt: 2026-08-12
 draft: false
 externalSource:

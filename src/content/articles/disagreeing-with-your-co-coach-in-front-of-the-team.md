@@ -9,9 +9,9 @@ format: "note"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-publishedAt: 2026-08-31
+publishedAt: 2026-09-07
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -22,9 +22,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-31
-  status: draft
-  reviewerNotes: "No factual claims requiring citation, advice piece. Cross-checked against the-assistant-coach-relationship.md (season-long role setup) to confirm this piece covers different ground: the in-the-moment protocol for a live disagreement in front of players, plus the after-practice repair conversation. Also checked against when-you-disagree-with-the-coach-in-front-of-your-kid.md, which is a spectator parent disagreeing with a coach's decision, not two coaches disagreeing with each other. Neither existing piece covers this angle."
+  claudeReviewedAt: 2026-09-07
+  factCheckGoodThrough: 2027-09-07
+  status: published
+  reviewerNotes: "Re-reviewed from scratch against VOICE-RUBRIC.md (Sections A/B/C/E all pass: no em dashes, no banned words/patterns, paragraphs under 3 sentences, close ends on fact not motivation, dek 14 words, no open flags, no affiliate links, no external fact claims requiring citation). A prior uncommitted pass had left this at needs-revision without naming a failing item; overriding with a fully documented PASS since independent scoring found none. No hero image: OPENAI_API_KEY unavailable in this run's environment, so none could be generated. Backfill agent is disabled; flagged in Slack."
 ---
 
 Down two runs in the fifth inning, the assistant coach waves the runner home. The head coach, thirty feet away, is yelling stay. The runner slows down between third and home, unsure which coach to believe, and gets tagged out standing still.

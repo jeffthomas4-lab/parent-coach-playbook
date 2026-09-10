@@ -11,7 +11,9 @@ sport: tennis
 age: all-ages
 seasonPhase: off-season
 publishedAt: 2026-09-04
-draft: true
+draft: false
+hero: "/illustrations/tennis-court-empty-net-dusk.webp"
+heroAlt: "An empty tennis court at dusk is photographed from behind the baseline, the net sagging slightly with a fence beyond."
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -23,7 +25,7 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-01
-  status: draft
+  status: jeff-approved
   reviewerNotes: "Date-lane piece, target 2026-09-04 (src/content/seasonCalendars/junior-tennis-usta-year-round.md, Sep note). USTA Level 7-through-Level-1 tournament structure and the early-August hard-court National Championships timing verified via web search this run (USTA Girls 18s Nationals, San Diego, early August, hard courts). No other checkable factual claims in the piece; the scheduling argument is the site's own editorial position, not a sourced claim. No hero yet, imagegen pending this run."
 ---
 

@@ -20,8 +20,9 @@ thingsParentsGetWrong:
 governingBody:
   name: "USRowing"
   url: "https://usrowing.org/"
-ruleBookUrl: "https://usrowing.org/sports/2017/12/4/rules-of-rowing.aspx"
+ruleBookUrl: "https://usrowing.org/resources/rules-of-rowing"
 publishedAt: 2026-04-30
+updatedAt: 2026-09-08
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -33,7 +34,8 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
   status: claude-reviewed
-  reviewerNotes: "Smaller-audience sport but real coverage gap. The coxswain framing matters: most parents new to crew dismiss it as the 'small kid' position."
+  reviewerNotes: "Smaller-audience sport but real coverage gap. The coxswain framing matters: most parents new to crew dismiss it as the 'small kid' position. 2026-09-08 Flo refresh: ruleBookUrl was a dead 2017-era usrowing.org path, replaced with current resources/rules-of-rowing page. usrowing.org homepage link confirmed live. Distance and boat-class facts checked, no changes needed."
+  factCheckGoodThrough: 2027-09-08
 ---
 
 A few specifics.
