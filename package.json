@@ -27,6 +27,7 @@
     "check:staging-manifest": "npm run build && node scripts/check-staging-deployment-manifest.mjs",
     "check:secrets": "node scripts/scan-secrets.mjs --history",
     "check:protected-routes": "node scripts/check-protected-routes.mjs",
+    "check:babylove-partner-links": "node scripts/check-babylove-partner-links.mjs",
     "check:public-policy": "node scripts/check-public-policy-contract.mjs",
     "preview": "astro preview",
     "astro": "astro",
