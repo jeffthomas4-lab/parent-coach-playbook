@@ -1,6 +1,8 @@
+import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 import {
   PRODUCTION_CRM_IDENTITIES,
+  validateProductionCrmDisabledLiveSnapshot,
   validateProductionCrmDisabledManifest,
 } from '../scripts/verify-production-crm-disabled-release.mjs';
 
@@ -50,6 +52,40 @@ function manifest() {
   };
 }
 
+function liveVersion(id = '11111111-1111-4111-8111-111111111111') {
+  return {
+    id,
+    annotations: { 'workers/tag': 'crm-p17-disabled-candidate' },
+    resources: {
+      bindings: [
+        { name: 'DB', type: 'd1', database_id: PRODUCTION_CRM_IDENTITIES.directoryDatabaseId },
+        { name: 'FORGE_DB', type: 'd1', database_id: PRODUCTION_CRM_IDENTITIES.forgeDatabaseId },
+        { name: 'PCD_OPS_DB', type: 'd1', database_id: PRODUCTION_CRM_IDENTITIES.opsDatabaseId },
+        { name: 'CRM_ADAPTER', type: 'service', service: PRODUCTION_CRM_IDENTITIES.receiverService, environment: 'production' },
+        { name: 'PCD_CRM_ADAPTER_HMAC_SECRET', type: 'secret_text' },
+        { name: 'PCD_CRM_ADAPTER_ENABLED', type: 'plain_text', text: 'false' },
+        { name: 'PCD_CRM_BACKFILL_ENABLED', type: 'plain_text', text: 'false' },
+        { name: 'PCD_CRM_PRODUCER_WORKSPACE_ID', type: 'plain_text', text: 'pcd-activity-radar' },
+        { name: 'PCD_CRM_TARGET_WORKSPACE_ID', type: 'plain_text', text: 'ws-sightsmash' },
+        { name: 'PCD_CRM_SOURCE_ID', type: 'plain_text', text: 'source-pcd-activity-radar' },
+      ],
+    },
+  };
+}
+
+function liveSnapshot(activeVersionId = '11111111-1111-4111-8111-111111111111') {
+  return {
+    expectedVersionId: '11111111-1111-4111-8111-111111111111',
+    expectedVersionTag: 'crm-p17-disabled-candidate',
+    deployments: [{
+      id: '22222222-2222-4222-8222-222222222222',
+      created_on: '2026-09-11T04:05:12.420Z',
+      versions: [{ version_id: activeVersionId, percentage: 100 }],
+    }],
+    version: liveVersion(activeVersionId),
+  };
+}
+
 describe('disabled production CRM producer release', () => {
   it('accepts the exact production identities with both producer modes disabled', () => {
     expect(validateProductionCrmDisabledManifest(manifest())).toEqual([]);
@@ -65,5 +101,30 @@ describe('disabled production CRM producer release', () => {
     const value = manifest();
     mutate(value);
     expect(validateProductionCrmDisabledManifest(value).length).toBeGreaterThan(0);
+  });
+
+  it('accepts only the exact uploaded version as the sole active disabled producer', () => {
+    expect(validateProductionCrmDisabledLiveSnapshot(liveSnapshot())).toEqual([]);
+  });
+
+  it('rejects a follow-on active version that drops CRM_ADAPTER', () => {
+    const snapshot = liveSnapshot('33333333-3333-4333-8333-333333333333');
+    snapshot.version.resources.bindings = snapshot.version.resources.bindings
+      .filter((binding) => binding.name !== 'CRM_ADAPTER');
+    expect(validateProductionCrmDisabledLiveSnapshot(snapshot)).toEqual(expect.arrayContaining([
+      expect.stringContaining('active version must equal the exact uploaded version'),
+      expect.stringContaining('CRM_ADAPTER'),
+    ]));
+  });
+
+  it('uses an immutable version upload, explicit promotion, and two live readbacks', async () => {
+    const source = await readFile(new URL('../scripts/deploy-production-crm-disabled.ps1', import.meta.url), 'utf8');
+    expect(source).toContain('versions upload');
+    expect(source).toContain('--strict');
+    expect(source).toContain('--tag $versionTag');
+    expect(source).toContain('versions deploy');
+    expect(source).toContain('Assert-LiveDisabledVersion');
+    expect(source).toContain('Start-Sleep -Seconds 15');
+    expect(source).not.toMatch(/\$wranglerPath deploy\s/);
   });
 });

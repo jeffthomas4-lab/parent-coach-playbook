@@ -16,6 +16,15 @@ function exactBinding(entries, binding) {
   return (entries ?? []).find((entry) => entry?.binding === binding);
 }
 
+function liveBinding(entries, name) {
+  return (entries ?? []).find((entry) => entry?.name === name);
+}
+
+function newestDeployment(deployments) {
+  return [...(deployments ?? [])].sort((left, right) =>
+    String(right?.created_on ?? '').localeCompare(String(left?.created_on ?? '')))[0];
+}
+
 export function validateProductionCrmDisabledManifest(manifest, serverEntry = '') {
   const failures = [...verifyDeploymentManifest(manifest, serverEntry)];
   const expectedD1 = [
@@ -51,16 +60,101 @@ export function validateProductionCrmDisabledManifest(manifest, serverEntry = ''
   return [...new Set(failures)];
 }
 
+export function validateProductionCrmDisabledVersion(version, expectedVersionId, expectedVersionTag) {
+  const failures = [];
+  if (version?.id !== expectedVersionId) {
+    failures.push('version readback must equal the exact uploaded version');
+  }
+  if (version?.annotations?.['workers/tag'] !== expectedVersionTag) {
+    failures.push('version readback must retain the exact candidate tag');
+  }
+
+  const bindings = version?.resources?.bindings;
+  if (!Array.isArray(bindings)) {
+    return [...failures, 'version readback must contain Worker bindings'];
+  }
+  const expectedD1 = [
+    ['DB', PRODUCTION_CRM_IDENTITIES.directoryDatabaseId],
+    ['FORGE_DB', PRODUCTION_CRM_IDENTITIES.forgeDatabaseId],
+    ['PCD_OPS_DB', PRODUCTION_CRM_IDENTITIES.opsDatabaseId],
+  ];
+  for (const [name, databaseId] of expectedD1) {
+    const actual = liveBinding(bindings, name);
+    if (actual?.type !== 'd1' || actual?.database_id !== databaseId) {
+      failures.push(`${name} live binding must target production D1 ${databaseId}`);
+    }
+  }
+
+  const service = liveBinding(bindings, 'CRM_ADAPTER');
+  if (service?.type !== 'service'
+    || service?.service !== PRODUCTION_CRM_IDENTITIES.receiverService
+    || service?.environment !== 'production') {
+    failures.push('CRM_ADAPTER live binding must target field-forge-crm production');
+  }
+  if (liveBinding(bindings, 'PCD_CRM_ADAPTER_HMAC_SECRET')?.type !== 'secret_text') {
+    failures.push('PCD_CRM_ADAPTER_HMAC_SECRET must be a live secret binding');
+  }
+
+  const expectedVars = [
+    ['PCD_CRM_ADAPTER_ENABLED', 'false'],
+    ['PCD_CRM_BACKFILL_ENABLED', 'false'],
+    ['PCD_CRM_PRODUCER_WORKSPACE_ID', 'pcd-activity-radar'],
+    ['PCD_CRM_TARGET_WORKSPACE_ID', 'ws-sightsmash'],
+    ['PCD_CRM_SOURCE_ID', 'source-pcd-activity-radar'],
+  ];
+  for (const [name, text] of expectedVars) {
+    const actual = liveBinding(bindings, name);
+    if (actual?.type !== 'plain_text' || actual?.text !== text) {
+      failures.push(`${name} live binding must equal ${text}`);
+    }
+  }
+  if (liveBinding(bindings, 'PCD_CRM_SOURCE_NOT_BEFORE_MS')) {
+    failures.push('PCD_CRM_SOURCE_NOT_BEFORE_MS must remain absent from the live version');
+  }
+  return [...new Set(failures)];
+}
+
+export function validateProductionCrmDisabledLiveSnapshot(snapshot) {
+  const failures = validateProductionCrmDisabledVersion(
+    snapshot?.version,
+    snapshot?.expectedVersionId,
+    snapshot?.expectedVersionTag,
+  );
+  if (snapshot?.requireActive === false) return failures;
+
+  const deployment = newestDeployment(snapshot?.deployments);
+  const activeVersions = deployment?.versions ?? [];
+  if (activeVersions.length !== 1 || activeVersions[0]?.percentage !== 100) {
+    failures.push('latest deployment must route exactly one version at 100 percent');
+  } else if (activeVersions[0]?.version_id !== snapshot?.expectedVersionId) {
+    failures.push('active version must equal the exact uploaded version');
+  }
+  return [...new Set(failures)];
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const manifestIndex = process.argv.indexOf('--manifest');
-  const manifestPath = resolve(manifestIndex >= 0 ? process.argv[manifestIndex + 1] ?? '' : 'dist/server/wrangler.json');
-  const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-  const serverEntry = await readFile(resolve(manifestPath, '..', 'entry.mjs'), 'utf8');
-  const failures = validateProductionCrmDisabledManifest(manifest, serverEntry);
-  if (failures.length > 0) {
-    process.stderr.write(`Disabled production CRM release verification failed:\n- ${failures.join('\n- ')}\n`);
-    process.exitCode = 1;
+  const liveSnapshotIndex = process.argv.indexOf('--live-snapshot');
+  if (liveSnapshotIndex >= 0) {
+    const snapshotPath = resolve(process.argv[liveSnapshotIndex + 1] ?? '');
+    const snapshot = JSON.parse(await readFile(snapshotPath, 'utf8'));
+    const failures = validateProductionCrmDisabledLiveSnapshot(snapshot);
+    if (failures.length > 0) {
+      process.stderr.write(`Disabled production CRM live-version verification failed:\n- ${failures.join('\n- ')}\n`);
+      process.exitCode = 1;
+    } else {
+      process.stdout.write('Disabled production CRM live version verified.\n');
+    }
   } else {
-    process.stdout.write('Disabled production CRM release manifest verified.\n');
+    const manifestIndex = process.argv.indexOf('--manifest');
+    const manifestPath = resolve(manifestIndex >= 0 ? process.argv[manifestIndex + 1] ?? '' : 'dist/server/wrangler.json');
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    const serverEntry = await readFile(resolve(manifestPath, '..', 'entry.mjs'), 'utf8');
+    const failures = validateProductionCrmDisabledManifest(manifest, serverEntry);
+    if (failures.length > 0) {
+      process.stderr.write(`Disabled production CRM release verification failed:\n- ${failures.join('\n- ')}\n`);
+      process.exitCode = 1;
+    } else {
+      process.stdout.write('Disabled production CRM release manifest verified.\n');
+    }
   }
 }

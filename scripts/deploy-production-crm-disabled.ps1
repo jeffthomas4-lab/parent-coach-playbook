@@ -50,6 +50,51 @@ function Get-ValueFingerprint([string]$Value) {
   }
 }
 
+function Invoke-WranglerJson([string[]]$Arguments, [string]$Label) {
+  $output = @(& node.exe $wranglerPath @Arguments)
+  if ($LASTEXITCODE -ne 0) { throw "$Label failed" }
+  try {
+    return (($output -join [Environment]::NewLine) | ConvertFrom-Json)
+  } catch {
+    throw "$Label returned invalid JSON"
+  }
+}
+
+function Assert-LiveDisabledVersion(
+  [string]$ExpectedVersionId,
+  [string]$ExpectedVersionTag,
+  [bool]$RequireActive
+) {
+  $version = Invoke-WranglerJson @(
+    'versions', 'view', $ExpectedVersionId,
+    '--name', $workerName, '--config', $manifestPath, '--json'
+  ) 'Wrangler version readback'
+  $deployments = @()
+  if ($RequireActive) {
+    $deployments = @(Invoke-WranglerJson @(
+      'deployments', 'list', '--name', $workerName, '--config', $manifestPath, '--json'
+    ) 'Wrangler deployment readback')
+  }
+
+  $snapshotPath = Join-Path $projectRoot (
+    "backups\pcd-crm-production-live-snapshot-{0}.json" -f [Guid]::NewGuid().ToString('N')
+  )
+  try {
+    $snapshot = [ordered]@{
+      expectedVersionId = $ExpectedVersionId
+      expectedVersionTag = $ExpectedVersionTag
+      requireActive = $RequireActive
+      deployments = $deployments
+      version = $version
+    } | ConvertTo-Json -Depth 100
+    [IO.File]::WriteAllText($snapshotPath, $snapshot, [Text.UTF8Encoding]::new($false))
+    & node.exe $verifierPath --live-snapshot $snapshotPath | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw 'disabled production CRM live-version verification failed' }
+  } finally {
+    if (Test-Path -LiteralPath $snapshotPath) { Remove-Item -Force -LiteralPath $snapshotPath }
+  }
+}
+
 if ($Execute -and $ValidatePack) { throw '-Execute and -ValidatePack are mutually exclusive' }
 if ($Execute -and $TypeConfirmation -cne $expectedConfirmation) {
   throw "-TypeConfirmation must exactly equal '$expectedConfirmation'"
@@ -147,11 +192,43 @@ try {
   $writer.Flush()
   $stream.Flush($true)
 
-  & node.exe $wranglerPath deploy --config $manifestPath --secrets-file $ephemeralPath --keep-vars --message 'CRM production producer exact candidate; adapter and backfill disabled'
-  if ($LASTEXITCODE -ne 0) { throw 'Wrangler production deployment failed' }
+  $versionTag = "crm-p17-disabled-$ExpectedCandidate"
+  $versionMessage = 'CRM production producer exact candidate; adapter and backfill disabled'
+  $existingVersions = @(Invoke-WranglerJson @(
+    'versions', 'list', '--name', $workerName, '--config', $manifestPath, '--json'
+  ) 'Wrangler pre-upload version list')
+  $existingTagMatches = @($existingVersions | Where-Object {
+    $_.annotations.'workers/tag' -ceq $versionTag
+  })
+  if ($existingTagMatches.Count -ne 0) { throw 'exact candidate version tag already exists' }
+
+  & node.exe $wranglerPath versions upload --config $manifestPath --secrets-file $ephemeralPath `
+    --keep-vars --strict --tag $versionTag --message $versionMessage
+  if ($LASTEXITCODE -ne 0) { throw 'Wrangler production version upload failed' }
+
+  $uploadedVersions = @(Invoke-WranglerJson @(
+    'versions', 'list', '--name', $workerName, '--config', $manifestPath, '--json'
+  ) 'Wrangler post-upload version list')
+  $uploadedTagMatches = @($uploadedVersions | Where-Object {
+    $_.annotations.'workers/tag' -ceq $versionTag
+  })
+  if ($uploadedTagMatches.Count -ne 1) { throw 'exact candidate version tag did not resolve uniquely' }
+  $uploadedVersionId = [string]$uploadedTagMatches[0].id
+  if ($uploadedVersionId -notmatch '^[a-f0-9-]{36}$') { throw 'uploaded version ID is malformed' }
+
+  Assert-LiveDisabledVersion $uploadedVersionId $versionTag $false
+  & node.exe $wranglerPath versions deploy --version-id $uploadedVersionId --percentage 100 `
+    --name $workerName --config $manifestPath --yes --message $versionMessage
+  if ($LASTEXITCODE -ne 0) { throw 'Wrangler production version promotion failed' }
+
+  Assert-LiveDisabledVersion $uploadedVersionId $versionTag $true
+  Start-Sleep -Seconds 15
+  Assert-LiveDisabledVersion $uploadedVersionId $versionTag $true
 
   [ordered]@{
     deployed = $true
+    versionId = $uploadedVersionId
+    versionTag = $versionTag
     candidate = $ExpectedCandidate
     artifactSha256 = $ExpectedArtifactSha256
     secretFingerprint = $expectedSecretFingerprint
