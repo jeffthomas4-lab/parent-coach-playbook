@@ -1,5 +1,6 @@
 import { bearerCredential, secretsMatch } from './secrets';
 import { decodeBase64, encodeBase64, isSafeSlug, REPO, BRANCH } from './publish';
+import { SITE } from '../data/site.ts';
 
 const PROVIDER = 'babylovegrowth';
 const MAX_WEBHOOK_BYTES = 512 * 1024;
@@ -135,6 +136,17 @@ export function sanitizeExternalMarkdown(markdown: string): string {
     const canonicalPath = pathname === '/' || pathname.endsWith('/') ? pathname : `${pathname}/`;
     return `[${label}](${canonicalPath}${fragment ? `#${fragment}` : ''})`;
   });
+  // BabyLoveGrowth generates cross-links between its own articles using
+  // whatever URL it has on file for the target, and that has always been its
+  // own fallback guess of https://blog.parentcoachdesk.com/blog/<slug>/ — a
+  // subdomain this site has never served. The true canonical route needs the
+  // target article's phase, which is not available here (this sanitizes one
+  // article's body, not the whole collection), so this rewrites to the
+  // slug-only /blog/<slug>/ form that src/pages/blog/[slug].ts resolves and
+  // 301s from at request time.
+  value = value.replace(/\[([^\]]+)\]\(https?:\/\/blog\.parentcoachdesk\.com\/blog\/([a-z0-9-]+)\/?(#[^)]*)?\)/gi, (_match, label, slug, fragment = '') => {
+    return `[${label}](/blog/${slug}/${fragment})`;
+  });
   value = value.replace(/^#\s+/gm, '## ');
   value = decodeEntities(value);
   // Visible provider promotion is not part of Parent Coach Desk editorial
@@ -251,6 +263,17 @@ function inferClassification(article: BabyLoveArticle): { phase: 'drive-there' |
   if (/rule|penalt|official|referee|umpire/.test(haystack)) return { phase: 'game', topic: 'rules-of-play' };
   if (/coach|say|conversation|communicat/.test(haystack)) return { phase: 'game', topic: 'communication' };
   return { phase: 'game', topic: 'game-day' };
+}
+
+// BabyLoveGrowth's response contract: an optional `link` field is the URL it
+// stores as the article's live location, uses for its own internal
+// cross-linking, and checks to verify backlink-exchange placements. It only
+// accepts a link on the site's own domain or a subdomain of it, so this must
+// be the real published route, not a guess. The route is deterministic from
+// the same classification publishReceipt uses to build `route` on the receipt.
+export function babyLoveArticleUrl(article: BabyLoveArticle): string {
+  const { phase } = inferClassification(article);
+  return `${SITE.url}/${phase}/${article.slug}/`;
 }
 
 // BaseLayout appends " | Parent Coach Desk" (20 characters), and the content
@@ -891,7 +914,18 @@ export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, 
         return json({ ok: false, error: 'publish_failed', retryable: true }, 503);
       }
     }
-    return json({ ok: true, accepted: true, replayed: accepted.replay });
+    // BabyLoveGrowth's response contract (optional `success` boolean, optional
+    // `link` string) is how it decides whether a placement is "online." It
+    // stores `link` as the article's live URL, uses it for its own
+    // cross-linking between articles, and re-checks it to verify
+    // backlink-exchange placements — but only when the URL is on this site's
+    // domain or a subdomain of it. Every accepted response used to omit both
+    // fields, so BabyLoveGrowth fell back to its own
+    // blog.parentcoachdesk.com/blog/<slug> guess, a subdomain this site has
+    // never served. On 2026-09-11 that showed all 12 exchange placements as
+    // "Not online yet" in BabyLoveGrowth's dashboard, with zero credits
+    // earned despite every one of them having published successfully here.
+    return json({ ok: true, accepted: true, replayed: accepted.replay, success: true, link: babyLoveArticleUrl(article) });
   } catch {
     return json({ ok: false, error: 'receipt_unavailable' }, 503);
   }
