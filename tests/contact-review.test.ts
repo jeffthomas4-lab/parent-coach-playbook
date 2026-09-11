@@ -272,6 +272,41 @@ describe('CRM contact review', () => {
     expect(updated?.content_hash).toBe(await computeContentHash({ ...row, contact_context: 'minor' }));
   });
 
+  it('commits the receipt, publication revision, organization event, and contact event atomically when the adapter is enabled', async () => {
+    const row = await insertContact();
+    const result = await reviewOrgContact({
+      ...env,
+      PCD_CRM_ADAPTER_ENABLED: 'true',
+      PCD_CRM_ADAPTER_HMAC_SECRET: 'test-pcd-adapter-secret',
+      PCD_CRM_PRODUCER_WORKSPACE_ID: 'pcd-activity-radar',
+      PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
+      PCD_CRM_SOURCE_ID: 'source-test',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: '1000',
+    }, {
+      id: row.id as string,
+      expectedUpdatedAt: row.updated_at as string,
+      expectedContentHash: row.content_hash as string,
+      decision: 'approve_professional',
+      actorEmail: ADMIN,
+      environment: 'test',
+      requestId: 'req-enabled-adapter',
+    });
+    expect(result).toMatchObject({ ok: true, decision: 'approve_professional' });
+    const approved = await ops.prepare(`SELECT is_public,contact_context,crm_projection_revision
+      FROM org_contacts WHERE id=?`).bind(row.id).first<{
+        is_public: number; contact_context: string; crm_projection_revision: number;
+      }>();
+    expect(approved).toMatchObject({
+      is_public: 1,
+      contact_context: 'professional',
+    });
+    expect(approved?.crm_projection_revision).toBeGreaterThan(0);
+    expect(await ops.prepare(`SELECT COUNT(*) AS n FROM admin_action_receipts
+      WHERE request_id='req-enabled-adapter' AND result='success'`).first()).toEqual({ n: 1 });
+    expect(await ops.prepare(`SELECT COUNT(*) AS n FROM crm_adapter_outbox
+      WHERE subject_id IN ('org-1','contact-1')`).first()).toEqual({ n: 2 });
+  });
+
   it('lists a bounded keyset page and resolves organizations in one batched directory query', async () => {
     for (let i = 0; i < 4; i += 1) {
       await insertContact({
