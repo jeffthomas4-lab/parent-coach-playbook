@@ -18,6 +18,7 @@
 // this sanitizer missed.
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { isLive } from '../../lib/publishFilter';
 
 export const prerender = false;
 
@@ -25,7 +26,7 @@ export const GET: APIRoute = async ({ params }) => {
   const slug = params.slug;
   if (!slug) return new Response('Not found', { status: 404 });
 
-  const articles = await getCollection('articles', ({ id }) => id === slug);
+  const articles = await getCollection('articles', ({ id, data }) => id === slug && isLive(data));
   const article = articles[0];
   if (!article) return new Response('Not found', { status: 404 });
 

@@ -262,7 +262,6 @@ describe('BabyLoveGrowth webhook boundary', () => {
       accepted: true,
       replayed: false,
       success: true,
-      link: babyLoveArticleUrl(parseBabyLoveArticle(PAYLOAD)),
     });
     expect(pending).toHaveLength(0);
     expect(fake.calls.some((call) =>

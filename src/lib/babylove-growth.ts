@@ -1,6 +1,6 @@
 import { bearerCredential, secretsMatch } from './secrets';
 import { decodeBase64, encodeBase64, isSafeSlug, REPO, BRANCH } from './publish';
-import { SITE } from '../data/site.ts';
+import { SITE } from '../data/site';
 
 const PROVIDER = 'babylovegrowth';
 const MAX_WEBHOOK_BYTES = 512 * 1024;
@@ -925,7 +925,20 @@ export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, 
     // never served. On 2026-09-11 that showed all 12 exchange placements as
     // "Not online yet" in BabyLoveGrowth's dashboard, with zero credits
     // earned despite every one of them having published successfully here.
-    return json({ ok: true, accepted: true, replayed: accepted.replay, success: true, link: babyLoveArticleUrl(article) });
+    //
+    // Only include `link` when the article actually published. With autopublish
+    // off, publishReceipt leaves the receipt `held` and nothing reaches GitHub,
+    // so babyLoveArticleUrl's route is a guess, not a live page — handing it to
+    // BabyLoveGrowth would have it verify a URL that 404s. The held case still
+    // answers `success: true` (received and understood, not an error) but omits
+    // `link` until a real publish happens.
+    return json({
+      ok: true,
+      accepted: true,
+      replayed: accepted.replay,
+      success: true,
+      ...(enabled(env.BABYLOVE_AUTOPUBLISH_ENABLED) ? { link: babyLoveArticleUrl(article) } : {}),
+    });
   } catch {
     return json({ ok: false, error: 'receipt_unavailable' }, 503);
   }
