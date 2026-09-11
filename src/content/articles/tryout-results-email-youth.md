@@ -158,6 +158,6 @@ Pair the templates with the site's age-specific guides, coaching 7 to 9 year old
 ## Recommended
 
 - [Youth Volleyball Practice Plan](/game/youth-volleyball-practice-plan/)
-- [Youth Sports Playing Time: A Fair Rotation Plan](/game/playing-time-fairness/)
-- [Youth Basketball Drills: A Parent Coach's Ready-to-Run Guide](/sports/basketball/)
+- [Youth Sports Playing Time: A Fair Rotation Plan](/game/youth-sports-playing-time/)
+- [Youth Basketball Drills: A Parent Coach's Ready-to-Run Guide](/game/youth-basketball-drills/)
 - [Cheer Tryouts: What to Expect as a Parent](/drive-there/cheer-tryouts-what-to-expect/)

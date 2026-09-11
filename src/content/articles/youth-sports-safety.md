@@ -254,4 +254,4 @@ This article is general information, not a substitute for advice from a qualifie
 - [Start here: the parents' guide to youth sports](/start-here/)
 - [First Season of Youth Football: Parent's Real Guide (2026)](/drive-there/first-season-of-youth-football/)
 - [First-year sports parent guide: what to know before you start](/drive-there/first-year-sports-parent-guide/)
-- [A Parent Code of Conduct Every Family Can Actually Follow](https://blog.parentcoachdesk.com/blog/parent-code-of-conduct/)
+- [A Parent Code of Conduct Every Family Can Actually Follow](/game/parent-code-of-conduct/)
