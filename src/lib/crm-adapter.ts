@@ -692,15 +692,25 @@ async function processPendingContactRetractions(
   return drafts.length;
 }
 
+/**
+ * Commit the PCD authority mutation and its adapter bookkeeping together.
+ * Same-database invariants such as a tamper-resistant admin receipt may be
+ * supplied as prefix statements; any prefix failure aborts the whole D1 batch.
+ */
 export async function commitPcdContactMutation(
   env: PcdCrmAdapterEnv,
   canonicalStatement: D1PreparedStatement,
   row: PcdContactProjectionInput,
   now: number,
+  atomicPrefixStatements: D1PreparedStatement[] = [],
 ): Promise<void> {
   if (!env.PCD_OPS_DB) throw new Error('pcd_ops_db_missing');
   if (env.PCD_CRM_ADAPTER_ENABLED !== 'true') {
-    await canonicalStatement.run();
+    if (atomicPrefixStatements.length) {
+      await env.PCD_OPS_DB.batch([...atomicPrefixStatements, canonicalStatement]);
+    } else {
+      await canonicalStatement.run();
+    }
     return;
   }
   const config = requireConfig(env);
@@ -712,6 +722,7 @@ export async function commitPcdContactMutation(
     const contentHash = await contactProjectionHash(row);
     const retractionId = `pcd-retraction:${await sha256(`${config.producerWorkspaceId}:${row.id}:${rowUpdatedAt}:${contentHash}`)}`;
     await env.PCD_OPS_DB.batch([
+      ...atomicPrefixStatements,
       canonicalStatement,
       env.PCD_OPS_DB.prepare(`INSERT OR IGNORE INTO crm_contact_retraction_runs
         (id,producer_workspace_id,subject_id,organization_id,content_hash,authority_updated_at,created_at,updated_at)
@@ -766,7 +777,7 @@ export async function commitPcdContactMutation(
     drafts,
     now,
     undefined,
-    [canonicalStatement],
+    [...atomicPrefixStatements, canonicalStatement],
     activeBackfill?.run_id,
     activeBackfill?.status === 'scanned',
   );

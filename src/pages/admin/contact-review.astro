@@ -1,0 +1,204 @@
+---
+import { env as cfEnv } from 'cloudflare:workers';
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { requireAdmin } from '../../lib/admin-auth';
+import { listContactReviewQueue, type ContactReviewEnv } from '../../lib/contact-review';
+
+export const prerender = false;
+
+const env = cfEnv as (ContactReviewEnv & {
+  ADMIN_EMAILS?: string;
+  ACCESS_TEAM_DOMAIN?: string;
+  ACCESS_AUD?: string;
+}) | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+
+let page = null;
+let loadError: string | null = null;
+if (!env?.DB || !env.PCD_OPS_DB) {
+  loadError = 'CRM review databases are unavailable.';
+} else {
+  try {
+    page = await listContactReviewQueue(env, {
+      limit: 25,
+      cursor: Astro.url.searchParams.get('cursor'),
+    });
+  } catch (error) {
+    console.error('contact review queue failed', error);
+    loadError = 'The contact review queue could not be loaded.';
+  }
+}
+
+const sourceHref = (value: string | null): string | null => {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : null;
+  } catch {
+    return null;
+  }
+};
+---
+
+<AdminLayout
+  title="Contact review"
+  description="Human approval boundary for extracted organization contacts"
+  email={auth.email}
+  detail={page ? `${page.rows.length} contacts on this page.` : undefined}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">
+        <a href="/admin/" class="hover:underline">Admin</a> · CRM contact review
+      </p>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">Review extracted contacts</h1>
+      <p class="font-display text-ink-soft mt-3 max-w-3xl leading-snug">
+        Every extracted contact starts private. Approve only a public professional channel that the linked source proves.
+        Family, guardian, minor, and roster identities stay private and can never be approved for CRM projection here.
+      </p>
+      <p class="font-display italic text-rust mt-3 max-w-3xl text-sm font-medium">
+        This screen authorizes CRM eligibility, not consent or permission to send.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {loadError ? (
+        <p class="font-display italic text-rust font-medium">{loadError}</p>
+      ) : page && page.rows.length ? (
+        <ul class="grid gap-5">
+          {page.rows.map((contact) => {
+            const source = sourceHref(contact.source_url);
+            return (
+              <li
+                class="contact-review-row border border-bone bg-paper p-5"
+                data-id={contact.id}
+                data-updated-at={contact.updated_at}
+                data-content-hash={contact.content_hash ?? ''}
+              >
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <h2 class="t-h2 font-display text-ink font-medium">{contact.full_name ?? 'Unnamed contact'}</h2>
+                    <p class="font-display text-ink-soft mt-1 text-sm">
+                      {contact.title ?? contact.role} · {contact.organization?.name ?? contact.organization_id}
+                      {contact.organization?.city ? ` · ${contact.organization.city}, ${contact.organization.state ?? '—'}` : ''}
+                    </p>
+                    <p class="font-mono text-xs text-ink-soft mt-2">
+                      {contact.email ?? 'no email'} · {contact.phone ?? 'no phone'}
+                    </p>
+                    <p class="font-display text-ink-soft mt-2 text-sm">
+                      Context: <strong>{contact.contact_context}</strong> · confidence: {contact.confidence} · source: {contact.source}
+                    </p>
+                    {source ? (
+                      <a href={source} target="_blank" rel="noopener noreferrer" class="font-display text-rust text-sm mt-2 inline-block hover:underline">
+                        Open source evidence ↗
+                      </a>
+                    ) : (
+                      <p class="font-display italic text-rust text-sm mt-2">No valid web source is attached.</p>
+                    )}
+                  </div>
+                  <span class="font-display italic text-rust text-xs border border-bone bg-paper-warm px-2 py-1 font-medium">
+                    private · pending review
+                  </span>
+                </div>
+
+                {contact.approvalBlocks.length ? (
+                  <p class="font-display italic text-ink-soft text-sm mt-4">
+                    Approval blocked: {contact.approvalBlocks.join(', ')}.
+                  </p>
+                ) : null}
+
+                <div class="mt-5 flex flex-wrap items-end gap-3">
+                  <button
+                    type="button"
+                    class="min-h-11 px-4 border border-sage text-sage font-display italic font-medium disabled:opacity-50"
+                    data-review-action="approve_professional"
+                    disabled={!contact.approvalEligible}
+                  >
+                    Approve professional contact
+                  </button>
+                  <label class="font-display text-ink-soft text-sm">
+                    Protected private context
+                    <select data-private-context class="block mt-1 min-h-11 border border-bone bg-paper px-3 text-ink">
+                      <option value="family">Family</option>
+                      <option value="guardian">Guardian</option>
+                      <option value="minor">Minor</option>
+                      <option value="roster">Roster</option>
+                    </select>
+                  </label>
+                  <button
+                    type="button"
+                    class="min-h-11 px-4 border border-rust text-rust font-display italic font-medium"
+                    data-review-action="classify_private"
+                  >
+                    Confirm private
+                  </button>
+                </div>
+                <p class="contact-review-status font-display italic text-sm mt-3" aria-live="polite"></p>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div class="border border-bone bg-paper p-6">
+          <h2 class="t-h2 font-display text-ink font-medium">Queue clear</h2>
+          <p class="font-display text-ink-soft mt-2">No unreviewed professional or unknown contacts remain on this page.</p>
+        </div>
+      )}
+
+      {page?.hasMore && page.nextCursor ? (
+        <a
+          href={`/admin/contact-review?cursor=${encodeURIComponent(page.nextCursor)}`}
+          class="inline-flex min-h-11 items-center mt-6 px-4 border border-ink text-ink font-display italic font-medium hover:bg-ink hover:text-paper"
+        >
+          Next 25 contacts →
+        </a>
+      ) : null}
+    </div>
+  </section>
+</AdminLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.contact-review-row').forEach((row) => {
+    row.querySelectorAll<HTMLButtonElement>('[data-review-action]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const status = row.querySelector<HTMLElement>('.contact-review-status');
+        const buttons = row.querySelectorAll<HTMLButtonElement>('button');
+        const disabledBeforeRequest = Array.from(buttons, (item) => item.disabled);
+        const decision = button.dataset.reviewAction;
+        if (!status || !decision) return;
+        buttons.forEach((item) => { item.disabled = true; });
+        status.textContent = 'Saving review…';
+        status.className = 'contact-review-status font-display italic text-sm mt-3 text-ink-soft';
+        const privateContextElement = row.querySelector('[data-private-context]');
+        const privateContext = privateContextElement && 'value' in privateContextElement
+          ? String((privateContextElement as unknown as { value: unknown }).value)
+          : undefined;
+        try {
+          const response = await fetch('/api/admin/contacts/review', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              id: row.dataset.id,
+              expected_updated_at: row.dataset.updatedAt,
+              expected_content_hash: row.dataset.contentHash,
+              decision,
+              ...(decision === 'classify_private' ? { private_context: privateContext } : {}),
+            }),
+          });
+          const payload = await response.json().catch(() => null) as { error?: string } | null;
+          if (!response.ok) throw new Error(payload?.error || 'Review failed');
+          status.textContent = decision === 'approve_professional' ? 'Approved for CRM eligibility.' : 'Confirmed private.';
+          status.className = 'contact-review-status font-display italic text-sm mt-3 text-sage';
+          window.setTimeout(() => row.remove(), 500);
+        } catch (error) {
+          status.textContent = error instanceof Error ? error.message : 'Review failed';
+          status.className = 'contact-review-status font-display italic text-sm mt-3 text-rust';
+          buttons.forEach((item, index) => { item.disabled = disabledBeforeRequest[index] ?? false; });
+        }
+      });
+    });
+  });
+</script>

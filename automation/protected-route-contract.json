@@ -13,11 +13,23 @@
       "control": "app-auth"
     },
     {
+      "source": "src/pages/admin/contact-review.astro",
+      "control": "app-auth"
+    },
+    {
       "source": "src/pages/api/admin/agents/[id]/update.ts",
       "control": "mutation"
     },
     {
       "source": "src/pages/api/admin/data-quality/fix.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/contacts/review.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/babylove/reconcile.ts",
       "control": "mutation"
     },
     {
