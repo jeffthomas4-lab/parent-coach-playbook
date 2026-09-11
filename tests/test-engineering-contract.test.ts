@@ -47,9 +47,9 @@ describe('test engineering contract', () => {
     expect(pkg.scripts['ci:release']).toContain('npm run audit:gate');
   });
 
-  it('runs each integration process in one deterministic worker fork', async () => {
+  it('runs each integration process in one deterministic worker thread', async () => {
     const config = await read('vitest.integration.config.ts');
-    expect(config).toContain("pool: 'forks'");
+    expect(config).toContain("pool: 'threads'");
     expect(config).toContain('maxWorkers: 1');
     expect(config).toContain('fileParallelism: false');
   });

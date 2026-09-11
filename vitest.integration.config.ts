@@ -8,9 +8,9 @@ export default defineConfig({
     include: integrationTests,
     globals: false,
     // The disposable D1 suite owns a Miniflare runtime. Keep the integration
-    // boundary in one fork so native workerd failures cannot take down the
-    // Vitest coordinator or be reported as a successful partial run on Windows.
-    pool: 'forks',
+    // boundary in one thread: a forked child can exit after a partial green run
+    // on Windows, while the single-thread pool completes the same CRM suite.
+    pool: 'threads',
     maxWorkers: 1,
     fileParallelism: false,
     // Explicit, generous bounds so a hung hook or test (e.g. a workerd
