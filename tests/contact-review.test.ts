@@ -4,6 +4,8 @@ import {
   reviewOrgContact,
   type ContactReviewEnv,
 } from '../src/lib/contact-review';
+import { computeContentHash } from '../src/lib/org-contacts';
+import { createDisposableIntelDatabase } from './helpers/disposable-intel-db';
 import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 
 const ADMIN = 'jeffthomas@pugetsound.edu';
@@ -25,19 +27,28 @@ function directoryDb(rows: Array<Record<string, unknown>>, calls: { count: numbe
 describe('CRM contact review', () => {
   let mf: Awaited<ReturnType<typeof createDisposableOpsDatabase>>['mf'];
   let ops: D1Database;
+  let intel: Awaited<ReturnType<typeof createDisposableIntelDatabase>>;
+  let directory: D1Database;
   let env: ContactReviewEnv;
 
   beforeAll(async () => {
     ({ mf, db: ops } = await createDisposableOpsDatabase(`contact-review-${crypto.randomUUID()}`));
-    env = { PCD_OPS_DB: ops, PCD_CRM_ADAPTER_ENABLED: 'false' };
+    intel = await createDisposableIntelDatabase();
+    directory = intel.db;
+    env = { DB: directory, PCD_OPS_DB: ops, PCD_CRM_ADAPTER_ENABLED: 'false' };
   }, 120_000);
 
   beforeEach(async () => {
     await ops.prepare(`DELETE FROM org_contacts`).run();
+    await directory.prepare(`DELETE FROM organizations`).run();
+    await directory.prepare(`INSERT INTO organizations
+      (id,slug,name,record_status,created_at,updated_at)
+      VALUES ('org-1','org-1','Organization one','active',?,?)`).bind(NOW, NOW).run();
   });
 
   afterAll(async () => {
     await mf.dispose();
+    intel.sqlite.close();
   });
 
   async function insertContact(overrides: Record<string, unknown> = {}) {
@@ -61,6 +72,9 @@ describe('CRM contact review', () => {
       updated_at: NOW,
       ...overrides,
     };
+    if (!Object.hasOwn(overrides, 'content_hash')) {
+      row.content_hash = await computeContentHash(row);
+    }
     await ops.prepare(`INSERT INTO org_contacts
       (id,organization_id,full_name,title,role,email,phone,is_public,do_not_contact,
        contact_context,source,source_url,confidence,content_hash,deleted_at,created_at,updated_at)
@@ -191,6 +205,71 @@ describe('CRM contact review', () => {
       is_public: 0,
       contact_context: 'unknown',
     });
+  });
+
+  it.each([
+    ['missing', async () => directory.prepare(`DELETE FROM organizations WHERE id='org-1'`).run()],
+    ['deleted', async () => directory.prepare(`UPDATE organizations SET deleted_at=? WHERE id='org-1'`).bind(NOW).run()],
+  ])('never approves a contact whose organization is %s', async (_state, arrange) => {
+    const row = await insertContact();
+    await arrange();
+    const result = await reviewOrgContact(env, {
+      id: row.id as string,
+      expectedUpdatedAt: row.updated_at as string,
+      expectedContentHash: row.content_hash as string,
+      decision: 'approve_professional',
+      actorEmail: ADMIN,
+      environment: 'test',
+      requestId: `req-organization-${_state}`,
+    });
+    expect(result).toMatchObject({ ok: false, code: 'not_eligible', reason: 'organization_not_live' });
+    expect(await ops.prepare(`SELECT is_public FROM org_contacts WHERE id=?`).bind(row.id).first()).toEqual({ is_public: 0 });
+  });
+
+  it('never approves a contact whose stored hash does not match its current authority fields', async () => {
+    const row = await insertContact({ content_hash: 'a'.repeat(64) });
+    const result = await reviewOrgContact(env, {
+      id: row.id as string,
+      expectedUpdatedAt: row.updated_at as string,
+      expectedContentHash: row.content_hash as string,
+      decision: 'approve_professional',
+      actorEmail: ADMIN,
+      environment: 'test',
+      requestId: 'req-corrupt-content-hash',
+    });
+    expect(result).toMatchObject({ ok: false, code: 'not_eligible', reason: 'content_hash_mismatch' });
+    expect(await ops.prepare(`SELECT is_public FROM org_contacts WHERE id=?`).bind(row.id).first()).toEqual({ is_public: 0 });
+  });
+
+  it('marks an orphaned queue row ineligible before the admin can submit approval', async () => {
+    await insertContact();
+    await directory.prepare(`DELETE FROM organizations WHERE id='org-1'`).run();
+    const page = await listContactReviewQueue(env);
+    expect(page.rows).toHaveLength(1);
+    expect(page.rows[0]).toMatchObject({
+      organization: null,
+      approvalEligible: false,
+      approvalBlocks: expect.arrayContaining(['organization_not_live']),
+    });
+  });
+
+  it('allows a safety downgrade to repair a corrupt stored hash', async () => {
+    const row = await insertContact({ content_hash: 'a'.repeat(64) });
+    const result = await reviewOrgContact(env, {
+      id: row.id as string,
+      expectedUpdatedAt: row.updated_at as string,
+      expectedContentHash: row.content_hash as string,
+      decision: 'classify_private',
+      privateContext: 'minor',
+      actorEmail: ADMIN,
+      environment: 'test',
+      requestId: 'req-corrupt-hash-safety-downgrade',
+    });
+    expect(result).toMatchObject({ ok: true, decision: 'classify_private', contactContext: 'minor' });
+    const updated = await ops.prepare(`SELECT is_public,contact_context,content_hash FROM org_contacts WHERE id=?`)
+      .bind(row.id).first<{ is_public: number; contact_context: string; content_hash: string }>();
+    expect(updated).toMatchObject({ is_public: 0, contact_context: 'minor' });
+    expect(updated?.content_hash).toBe(await computeContentHash({ ...row, contact_context: 'minor' }));
   });
 
   it('lists a bounded keyset page and resolves organizations in one batched directory query', async () => {

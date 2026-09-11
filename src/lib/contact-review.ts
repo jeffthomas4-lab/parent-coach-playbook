@@ -149,16 +149,19 @@ export async function listContactReviewQueue(
   if (env.DB && organizationIds.length) {
     const placeholders = organizationIds.map(() => '?').join(',');
     const directory = await env.DB.prepare(
-      `SELECT id,name,city,state FROM organizations WHERE id IN (${placeholders})`,
+      `SELECT id,name,city,state FROM organizations
+        WHERE deleted_at IS NULL AND id IN (${placeholders})`,
     ).bind(...organizationIds).all<DirectoryOrganization>();
     for (const row of directory.results ?? []) organizations.set(row.id, row);
   }
 
   const rows = contacts.map((contact): ContactReviewQueueRow => {
     const approvalBlocks = contactApprovalBlocks(contact);
+    const organization = organizations.get(contact.organization_id) ?? null;
+    if (!organization) approvalBlocks.push('organization_not_live');
     return {
       ...contact,
-      organization: organizations.get(contact.organization_id) ?? null,
+      organization,
       approvalEligible: approvalBlocks.length === 0,
       approvalBlocks,
     };
@@ -219,7 +222,9 @@ async function prepareSuccessReceipt(
          SELECT 1 FROM org_contacts
           WHERE id=? AND updated_at=? AND content_hash IS ? AND deleted_at IS ?
             AND is_public=? AND do_not_contact=? AND contact_context=?
-            AND source_url IS ? AND email IS ? AND phone IS ?
+            AND organization_id IS ? AND program_id IS ? AND full_name IS ?
+            AND title IS ? AND role IS ? AND email IS ? AND phone IS ? AND phone_ext IS ?
+            AND source_url IS ?
        ) THEN ? ELSE '' END,
        ?,?,?,?,?,?,?,'success',NULL,?,?,
        CASE WHEN COALESCE((SELECT row_hash FROM admin_action_receipts ORDER BY id DESC LIMIT 1),?)=?
@@ -228,7 +233,9 @@ async function prepareSuccessReceipt(
   ).bind(
     input.id, input.expectedUpdatedAt, input.expectedContentHash, existing.deleted_at,
     existing.is_public, existing.do_not_contact, existing.contact_context,
-    existing.source_url, existing.email, existing.phone, row.environment,
+    existing.organization_id, existing.program_id, existing.full_name,
+    existing.title, existing.role, existing.email, existing.phone, existing.phone_ext,
+    existing.source_url, row.environment,
     row.actor_email_digest, row.actor_email_domain, row.action, row.resource_type,
     row.resource_id, row.request_id, row.authorization_context,
     row.before_summary, row.after_summary,
@@ -278,11 +285,35 @@ export async function reviewOrgContact(
   let nextContext: OrgContactContext;
   let nextPublic: 0 | 1;
   if (input.decision === 'approve_professional') {
+    const currentContentHash = await computeContentHash({
+      organization_id: existing.organization_id,
+      program_id: existing.program_id,
+      full_name: existing.full_name,
+      title: existing.title,
+      role: existing.role,
+      email: existing.email,
+      phone: existing.phone,
+      phone_ext: existing.phone_ext,
+      do_not_contact: existing.do_not_contact,
+      contact_context: existing.contact_context,
+    });
+    if (currentContentHash !== existing.content_hash) {
+      await recordBlocked(db, input, 'content_hash_mismatch');
+      return { ok: false, code: 'not_eligible', reason: 'content_hash_mismatch' };
+    }
     const blocks = contactApprovalBlocks(existing);
     if (blocks.length) {
       const reason = `approval_blocked:${blocks.join(',')}`;
       await recordBlocked(db, input, reason);
       return { ok: false, code: 'not_eligible', reason };
+    }
+    if (!env.DB) throw new Error('directory_db_missing');
+    const organization = await env.DB.prepare(
+      `SELECT id FROM organizations WHERE id=? AND deleted_at IS NULL`,
+    ).bind(existing.organization_id).first<{ id: string }>();
+    if (!organization) {
+      await recordBlocked(db, input, 'organization_not_live');
+      return { ok: false, code: 'not_eligible', reason: 'organization_not_live' };
     }
     nextContext = 'professional';
     nextPublic = 1;
