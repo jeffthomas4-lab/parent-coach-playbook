@@ -136,4 +136,10 @@ describe('disabled production CRM producer release', () => {
     expect(source).not.toContain('ProtectedData');
     expect(source).not.toContain('pcd-crm-production-secret-');
   });
+
+  it('treats Wrangler versions without a tag annotation as untagged under strict mode', async () => {
+    const source = await readFile(new URL('../scripts/deploy-production-crm-disabled.ps1', import.meta.url), 'utf8');
+    expect(source).toContain("$_.annotations.PSObject.Properties['workers/tag']");
+    expect(source).not.toContain("$_.annotations.'workers/tag' -ceq $versionTag");
+  });
 });
