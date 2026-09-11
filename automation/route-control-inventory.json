@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 176,
+  "route_count": 178,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -140,6 +140,16 @@
         "GET"
       ],
       "source": "admin/claims/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/contact-review",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/contact-review.astro",
       "cache_class": "admin_preview",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -430,6 +440,16 @@
         "POST"
       ],
       "source": "api/admin/claims/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/contacts/review",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/contacts/review.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
