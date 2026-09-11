@@ -82,7 +82,7 @@ Keep your corrections simple and concise, using brief cues like "Elbow," "Step,"
 
 **Pro Tip:** *If a throwing drill keeps breaking down, don't add more instruction. Shrink the distance instead. A kid who can't hit a target at 25 feet often nails it at 15.*
 
-For more throwing progressions you can rotate in from week to week, A [baseball throwing drills guide](https://blog.parentcoachdesk.com/blog/baseball-throwing-drill/) has additional variations built for this exact age group.
+For more throwing progressions you can rotate in from week to week, A [baseball throwing drills guide](/game/baseball-throwing-drill/) has additional variations built for this exact age group.
 
 ## Hitting Drills: Coach on Knee and Tee Work
 

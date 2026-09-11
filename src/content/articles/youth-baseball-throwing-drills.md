@@ -153,7 +153,7 @@ The mantra I'd hand any new parent-coach: slow is the drill, fast is the game. P
 
 This resource gives you the next step without the guesswork of piecing together advice from five different club websites. If you're coaching the 7 to 9 crowd, the Coaching 7 to 9 Year Olds: The Golden Age of Youth Sports guide breaks down what realistic skill growth looks like at that age, including how throwing fits into the bigger picture of a fun, low-pressure season.
 
-If your team has aged into more competitive territory, the [Coaching 10 to 12 Year Olds](/team-parent/coaching-10-12-year-olds-competitive-prep/) guide covers how to scale intensity without burning kids out. And for printable checklists you can bring straight to the field, the [baseball throwing drill page](https://blog.parentcoachdesk.com/blog/baseball-throwing-drill/) has the full drill breakdown in a format built for a folder in your bag. Start with whichever age guide matches your roster and build your season plan from there.
+If your team has aged into more competitive territory, the [Coaching 10 to 12 Year Olds](/team-parent/coaching-10-12-year-olds-competitive-prep/) guide covers how to scale intensity without burning kids out. And for printable checklists you can bring straight to the field, the [baseball throwing drill page](/game/baseball-throwing-drill/) has the full drill breakdown in a format built for a folder in your bag. Start with whichever age guide matches your roster and build your season plan from there.
 
 ## Sources
 
@@ -163,7 +163,7 @@ If your team has aged into more competitive territory, the [Coaching 10 to 12 Ye
 
 ## Recommended
 
-- [Baseball Throwing Drills for Youth](https://blog.parentcoachdesk.com/blog/baseball-throwing-drill/)
+- [Baseball Throwing Drills for Youth](/game/baseball-throwing-drill/)
 - [Coaching 10–12 Year Olds: Preparing Kids for Competitive Sports](/team-parent/coaching-10-12-year-olds-competitive-prep/)
 - [The 10-Minute Parent Meeting Script Every Coach Can Use](/team-parent/10-minute-parent-meeting-script/)
 - [The 60-Minute Practice Blueprint Every Parent Coach Can Use](/team-parent/60-minute-practice-blueprint/)
