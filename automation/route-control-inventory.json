@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 174,
+  "route_count": 176,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -350,6 +350,16 @@
         "POST"
       ],
       "source": "api/admin/agents/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/babylove/reconcile",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/babylove/reconcile.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -957,6 +967,16 @@
       "cache_class": "api",
       "auth_boundary": "public",
       "public_write_limiter": "TRUST_RATE_LIMITER"
+    },
+    {
+      "route": "/blog/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "blog/[slug].ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
     },
     {
       "route": "/body/:slug",

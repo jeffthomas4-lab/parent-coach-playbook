@@ -162,6 +162,9 @@ Keep this section.
       title: 'Tryout Day Nerves: What to Say Beforehand',
       slug: 'tryout-day-nerves-what-to-say-beforehand',
       meta_description: 'How to prepare a kid for tryout day without adding pressure they did not ask for.',
+      // The shared PAYLOAD excerpt says "ride home after a difficult game",
+      // which classifies as drive-home before tryout is ever checked.
+      excerpt: 'What to say the night before tryouts.',
     });
     expect(babyLoveArticleUrl(article)).toBe(
       'https://parentcoachdesk.com/drive-there/tryout-day-nerves-what-to-say-beforehand/',
