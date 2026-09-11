@@ -210,7 +210,7 @@ Assign parent helpers specific roles before practice starts: a tee manager, a bu
 
 **Pro Tip:** *Print a one-page role sheet and hand it to helpers as they arrive. Even a rough checklist beats explaining each job fresh every single week.*
 
-For a full rundown of what's worth buying versus skipping, [Parent Coach Desk's youth baseball gear guide by age](/what-to-buy/baseball/) breaks down exactly what fits a tee ball budget. And if you're sourcing cones or a ball bucket for storage, our [practice props picks](/go/agility-cones-set/) are a solid place to start.
+For a full rundown of what's worth buying versus skipping, [Parent Coach Desk's youth baseball gear guide by age](/what-to-buy/baseball/) breaks down exactly what fits a tee ball budget. And if you're sourcing cones, buckets, or other low-cost practice props, [Couch & Dumbbells' outdoor play equipment collection](https://couchanddumbells.com/collections/outdoor-play-equipment) is a solid place to look.
 
 ## Practical Coaching Scripts and Where to Learn More
 

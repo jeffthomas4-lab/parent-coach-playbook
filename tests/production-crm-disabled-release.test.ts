@@ -127,4 +127,13 @@ describe('disabled production CRM producer release', () => {
     expect(source).toContain('Start-Sleep -Seconds 15');
     expect(source).not.toMatch(/\$wranglerPath deploy\s/);
   });
+
+  it('inherits the installed adapter secret without reading or writing local secret material', async () => {
+    const source = await readFile(new URL('../scripts/deploy-production-crm-disabled.ps1', import.meta.url), 'utf8');
+    expect(source).toContain('--keep-vars');
+    expect(source).not.toContain('SecretPackPath');
+    expect(source).not.toContain('--secrets-file');
+    expect(source).not.toContain('ProtectedData');
+    expect(source).not.toContain('pcd-crm-production-secret-');
+  });
 });

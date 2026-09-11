@@ -236,5 +236,5 @@ These are the official pages and rule documents worth bookmarking before you tal
 
 - [Youth Baseball Gear List by Age: What to Buy (and Skip) | Parent Coach Desk](/what-to-buy/baseball/)
 - [Decisions parents face | Parent Coach Desk](/decisions/)
-- [USA vs USSSA Bats: Which One Does Your Kid Need?](https://blog.parentcoachdesk.com/blog/usa-vs-usssa-bats/)
+- [USA vs USSSA Bats: Which One Does Your Kid Need?](/game/usa-vs-usssa-bats/)
 - [Parent Coach Desk: Sideline notes for parents in the middle of it.](/)

@@ -72,6 +72,18 @@ describe('BabyLoveGrowth publishing contract', () => {
     expect(staging).toContain('"BABYLOVE_AUTOPUBLISH_ENABLED": "false"');
   });
 
+  // BabyLoveGrowth's documented response contract: an optional `success`
+  // boolean (only `false` fails the publish) and an optional `link` string it
+  // stores as the article's live URL, uses for its own cross-linking, and
+  // checks to verify backlink-exchange placements. Omitting both on the
+  // accepted path was why 12 exchange placements showed "Not online yet" on
+  // 2026-09-11 despite every one of them having actually published.
+  it('returns BabyLoveGrowth success and link on the accepted publish path', () => {
+    const lib = readFileSync(resolve(root, 'src/lib/babylove-growth.ts'), 'utf8');
+    expect(lib).toContain('success: true');
+    expect(lib).toMatch(/link:\s*babyLoveArticleUrl\(article\)/);
+  });
+
   it('has no CI deploy or normalize step behind provider publishes', () => {
     for (const workflow of [
       '.github/workflows/babylove-normalize.yml',
