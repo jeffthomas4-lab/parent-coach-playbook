@@ -127,7 +127,8 @@ $existingVersions = @(Invoke-WranglerJson @(
   'versions', 'list', '--name', $workerName, '--config', $manifestPath, '--json'
 ) 'Wrangler pre-upload version list')
 $existingTagMatches = @($existingVersions | Where-Object {
-  $_.annotations.'workers/tag' -ceq $versionTag
+  $tagProperty = $_.annotations.PSObject.Properties['workers/tag']
+  $null -ne $tagProperty -and [string]$tagProperty.Value -ceq $versionTag
 })
 if ($existingTagMatches.Count -ne 0) { throw 'exact candidate version tag already exists' }
 
@@ -141,7 +142,8 @@ $uploadedVersions = @(Invoke-WranglerJson @(
   'versions', 'list', '--name', $workerName, '--config', $manifestPath, '--json'
 ) 'Wrangler post-upload version list')
 $uploadedTagMatches = @($uploadedVersions | Where-Object {
-  $_.annotations.'workers/tag' -ceq $versionTag
+  $tagProperty = $_.annotations.PSObject.Properties['workers/tag']
+  $null -ne $tagProperty -and [string]$tagProperty.Value -ceq $versionTag
 })
 if ($uploadedTagMatches.Count -ne 1) { throw 'exact candidate version tag did not resolve uniquely' }
 $uploadedVersionId = [string]$uploadedTagMatches[0].id
