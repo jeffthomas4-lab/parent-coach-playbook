@@ -19,7 +19,7 @@ const EXPECTED_POLICY = 'pcd-public-professional-v1';
 const EXPECTED_RECEIVER = '4dd8794b8006c075bcda6905f5a4dda283a0378a';
 const FLAG_NAMES = new Set([
   '--sha', '--artifact-sha256', '--manifest-sha256', '--backfill-manifest',
-  '--receiver-candidate', '--receipt-out', '--receipt-timestamp',
+  '--receiver-candidate', '--rollback-version-id', '--receipt-out', '--receipt-timestamp',
   '--confirm-production-backfill', '--type-confirmation',
 ]);
 
@@ -49,6 +49,7 @@ export function parseProductionBackfillDeployArgs(argv) {
     manifestSha256: null,
     backfillManifest: null,
     receiverCandidate: null,
+    rollbackVersionId: null,
     receiptOut: null,
     receiptTimestamp: null,
     confirmProductionBackfill: false,
@@ -71,6 +72,7 @@ export function parseProductionBackfillDeployArgs(argv) {
     else if (flag === '--manifest-sha256') options.manifestSha256 = value;
     else if (flag === '--backfill-manifest') options.backfillManifest = value;
     else if (flag === '--receiver-candidate') options.receiverCandidate = value;
+    else if (flag === '--rollback-version-id') options.rollbackVersionId = value;
     else if (flag === '--receipt-out') options.receiptOut = value;
     else if (flag === '--receipt-timestamp') options.receiptTimestamp = value;
     else if (flag === '--type-confirmation') options.typeConfirmation = value;
@@ -207,6 +209,89 @@ export function validateProductionBackfillDeploymentManifest(manifest, approval,
   return [...new Set(failures)];
 }
 
+function liveBinding(bindings, name) {
+  return (bindings ?? []).find((binding) => binding?.name === name);
+}
+
+function newestDeployment(deployments) {
+  return [...(deployments ?? [])].sort((left, right) =>
+    String(right?.created_on ?? '').localeCompare(String(left?.created_on ?? '')))[0];
+}
+
+export function validateExactActiveVersion(deployments, expectedVersionId) {
+  const activeVersions = newestDeployment(deployments)?.versions ?? [];
+  if (activeVersions.length !== 1 || activeVersions[0]?.percentage !== 100) {
+    return ['latest deployment must route exactly one version at 100 percent'];
+  }
+  if (activeVersions[0]?.version_id !== expectedVersionId) {
+    return ['active version must equal the exact rollback version'];
+  }
+  return [];
+}
+
+export function validateProductionBackfillLiveSnapshot(snapshot) {
+  const failures = [];
+  const version = snapshot?.version;
+  const expectedVersionId = snapshot?.expectedVersionId;
+  const expectedVersionTag = snapshot?.expectedVersionTag;
+  const approval = snapshot?.approval;
+  const manifestSha256 = snapshot?.backfillManifestSha256;
+  if (version?.id !== expectedVersionId) {
+    failures.push('version readback must equal the exact uploaded version');
+  }
+  if (version?.annotations?.['workers/tag'] !== expectedVersionTag) {
+    failures.push('version readback must retain the exact backfill tag');
+  }
+
+  const bindings = version?.resources?.bindings;
+  if (!Array.isArray(bindings)) {
+    return [...failures, 'version readback must contain Worker bindings'];
+  }
+  const expectedD1 = [
+    ['DB', PRODUCTION_CRM_IDENTITIES.directoryDatabaseId],
+    ['FORGE_DB', PRODUCTION_CRM_IDENTITIES.forgeDatabaseId],
+    ['PCD_OPS_DB', PRODUCTION_CRM_IDENTITIES.opsDatabaseId],
+  ];
+  for (const [name, databaseId] of expectedD1) {
+    const binding = liveBinding(bindings, name);
+    if (binding?.type !== 'd1' || binding?.database_id !== databaseId) {
+      failures.push(`${name} live binding must target production D1 ${databaseId}`);
+    }
+  }
+  const service = liveBinding(bindings, 'CRM_ADAPTER');
+  if (service?.type !== 'service'
+    || service?.service !== PRODUCTION_CRM_IDENTITIES.receiverService
+    || service?.environment !== 'production') {
+    failures.push('CRM_ADAPTER live binding must target field-forge-crm production');
+  }
+  if (liveBinding(bindings, 'PCD_CRM_ADAPTER_HMAC_SECRET')?.type !== 'secret_text') {
+    failures.push('PCD_CRM_ADAPTER_HMAC_SECRET must remain a live secret binding');
+  }
+  for (const [name, text] of Object.entries(approval?.requiredRuntime ?? {})) {
+    const binding = liveBinding(bindings, name);
+    if (binding?.type !== 'plain_text' || binding?.text !== text) {
+      failures.push(`${name} live binding must match the frozen backfill manifest`);
+    }
+  }
+  const digest = liveBinding(bindings, 'PCD_CRM_BACKFILL_MANIFEST_SHA256');
+  if (digest?.type !== 'plain_text' || digest?.text !== manifestSha256) {
+    failures.push('PCD_CRM_BACKFILL_MANIFEST_SHA256 live binding must match the frozen manifest');
+  }
+  if (liveBinding(bindings, 'PCD_CRM_PILOT_MODE')) {
+    failures.push('PCD_CRM_PILOT_MODE must remain absent from the live production version');
+  }
+
+  if (snapshot?.requireActive !== false) {
+    const activeVersions = newestDeployment(snapshot?.deployments)?.versions ?? [];
+    if (activeVersions.length !== 1 || activeVersions[0]?.percentage !== 100) {
+      failures.push('latest deployment must route exactly one version at 100 percent');
+    } else if (activeVersions[0]?.version_id !== expectedVersionId) {
+      failures.push('active version must equal the exact uploaded version');
+    }
+  }
+  return [...new Set(failures)];
+}
+
 function runCaptured(command, args, options = {}) {
   const result = spawnSync(command, args, { encoding: 'utf8', ...options });
   if (result.error) throw result.error;
@@ -214,15 +299,57 @@ function runCaptured(command, args, options = {}) {
   return String(result.stdout ?? '');
 }
 
+function runWranglerJson(wranglerPath, args, projectRoot, label) {
+  const output = runCaptured(process.execPath, [wranglerPath, ...args], { cwd: projectRoot });
+  try {
+    return JSON.parse(output);
+  } catch {
+    throw new Error(`${label} returned invalid JSON`);
+  }
+}
+
+function assertLiveBackfillVersion({
+  wranglerPath,
+  configPath,
+  projectRoot,
+  expectedVersionId,
+  expectedVersionTag,
+  approval,
+  backfillManifestSha256,
+  requireActive,
+}) {
+  const version = runWranglerJson(wranglerPath, [
+    'versions', 'view', expectedVersionId,
+    '--name', 'parent-coach-desk', '--config', configPath, '--json',
+  ], projectRoot, 'Wrangler version readback');
+  const deployments = requireActive ? runWranglerJson(wranglerPath, [
+    'deployments', 'list', '--name', 'parent-coach-desk', '--config', configPath, '--json',
+  ], projectRoot, 'Wrangler deployment readback') : [];
+  const snapshot = {
+    expectedVersionId,
+    expectedVersionTag,
+    requireActive,
+    approval,
+    backfillManifestSha256,
+    version,
+    deployments,
+  };
+  const failures = validateProductionBackfillLiveSnapshot(snapshot);
+  if (failures.length > 0) {
+    throw new Error(`production backfill live-version verification failed:\n- ${failures.join('\n- ')}`);
+  }
+  return { version, deployment: requireActive ? newestDeployment(deployments) : null };
+}
+
+function wait(milliseconds) {
+  return new Promise((resolveWait) => setTimeout(resolveWait, milliseconds));
+}
+
 function validateStatus(output) {
   return output.split(/\r?\n/).filter(Boolean).filter((line) => (
     !/^ M public\/link-manifest\.json$/.test(line)
     && !/^\?\? public\/og\/[a-z0-9-]+\.jpg$/.test(line)
   ));
-}
-
-function extractVersionId(output) {
-  return output.match(/Version ID:\s*([0-9a-f-]{36})/i)?.[1] ?? null;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
@@ -235,6 +362,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   if (!SHA256.test(expectedArtifactSha256)) throw new Error('--artifact-sha256 is malformed');
   if (!SHA256.test(expectedManifestSha256)) throw new Error('--manifest-sha256 is malformed');
   const receiverCandidate = requiredString(options.receiverCandidate, '--receiver-candidate');
+  const rollbackVersionId = requiredString(options.rollbackVersionId, '--rollback-version-id');
+  if (!/^[a-f0-9-]{36}$/.test(rollbackVersionId)) throw new Error('--rollback-version-id is malformed');
   const approvalPath = resolve(requiredString(options.backfillManifest, '--backfill-manifest'));
   const approvalBytes = await readFile(approvalPath);
   const approval = JSON.parse(approvalBytes.toString('utf8'));
@@ -271,6 +400,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     dryRun: true,
     producerCandidate: expectedSha,
     receiverCandidate,
+    rollbackVersionId,
     artifactSha256: expectedArtifactSha256,
     backfillManifestSha256: expectedManifestSha256,
     sourceNotBeforeMs: approval.sourceNotBeforeMs,
@@ -293,6 +423,9 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   await mkdir(dirname(receiptOut), { recursive: true });
   const temporaryConfig = resolve(projectRoot, 'dist/server', `.wrangler.crm-production-backfill-${randomUUID()}.json`);
+  const wranglerPath = resolve(projectRoot, 'node_modules/wrangler/bin/wrangler.js');
+  const versionTag = `crm-p17b-${expectedManifestSha256.slice(0, 40)}`;
+  const versionMessage = `CRM production historical backfill ${expectedManifestSha256}`;
   const handle = await open(temporaryConfig, 'wx');
   try {
     await handle.writeFile(`${JSON.stringify(deploymentManifest)}\n`);
@@ -301,21 +434,72 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   }
   let receiptHandle;
   let deployed = false;
+  let promotionAttempted = false;
   try {
     receiptHandle = await open(receiptOut, 'wx');
     if (!freshBoundary(approval.sourceNotBeforeMs)) throw new Error('production backfill boundary expired before deployment');
+    const initialDeployments = runWranglerJson(wranglerPath, [
+      'deployments', 'list', '--name', 'parent-coach-desk', '--config', temporaryConfig, '--json',
+    ], projectRoot, 'Wrangler activation preflight deployment readback');
+    const activeFailures = validateExactActiveVersion(initialDeployments, rollbackVersionId);
+    if (activeFailures.length > 0) {
+      throw new Error(`production backfill rollback precondition failed:\n- ${activeFailures.join('\n- ')}`);
+    }
+    const existingVersions = runWranglerJson(wranglerPath, [
+      'versions', 'list', '--name', 'parent-coach-desk', '--config', temporaryConfig, '--json',
+    ], projectRoot, 'Wrangler pre-upload version list');
+    if (existingVersions.some((version) => version?.annotations?.['workers/tag'] === versionTag)) {
+      throw new Error('exact production backfill version tag already exists');
+    }
+
+    const uploadOutput = runCaptured(process.execPath, [
+      wranglerPath,
+      'versions', 'upload', '--config', temporaryConfig, '--keep-vars', '--strict',
+      '--tag', versionTag, '--message', versionMessage,
+    ], { cwd: projectRoot });
+    process.stdout.write(uploadOutput);
+    const uploadedVersions = runWranglerJson(wranglerPath, [
+      'versions', 'list', '--name', 'parent-coach-desk', '--config', temporaryConfig, '--json',
+    ], projectRoot, 'Wrangler post-upload version list');
+    const tagMatches = uploadedVersions.filter(
+      (version) => version?.annotations?.['workers/tag'] === versionTag,
+    );
+    if (tagMatches.length !== 1 || !/^[a-f0-9-]{36}$/.test(tagMatches[0]?.id ?? '')) {
+      throw new Error('exact production backfill version tag did not resolve uniquely');
+    }
+    const versionId = tagMatches[0].id;
+    assertLiveBackfillVersion({
+      wranglerPath, configPath: temporaryConfig, projectRoot,
+      expectedVersionId: versionId, expectedVersionTag: versionTag,
+      approval, backfillManifestSha256: expectedManifestSha256, requireActive: false,
+    });
+    if (!freshBoundary(approval.sourceNotBeforeMs)) throw new Error('production backfill boundary expired before promotion');
+    promotionAttempted = true;
     const deployOutput = runCaptured(process.execPath, [
-      resolve(projectRoot, 'node_modules/wrangler/bin/wrangler.js'),
-      'deploy', '--config', temporaryConfig, '--keep-vars',
-      '--message', `CRM production historical backfill ${expectedManifestSha256}`,
+      wranglerPath,
+      'versions', 'deploy', '--version-id', versionId, '--percentage', '100',
+      '--name', 'parent-coach-desk', '--config', temporaryConfig, '--yes', '--message', versionMessage,
     ], { cwd: projectRoot });
     process.stdout.write(deployOutput);
+    assertLiveBackfillVersion({
+      wranglerPath, configPath: temporaryConfig, projectRoot,
+      expectedVersionId: versionId, expectedVersionTag: versionTag,
+      approval, backfillManifestSha256: expectedManifestSha256, requireActive: true,
+    });
+    await wait(15_000);
+    const finalReadback = assertLiveBackfillVersion({
+      wranglerPath, configPath: temporaryConfig, projectRoot,
+      expectedVersionId: versionId, expectedVersionTag: versionTag,
+      approval, backfillManifestSha256: expectedManifestSha256, requireActive: true,
+    });
     const receipt = {
       schemaVersion: 1,
       worker: 'parent-coach-desk',
       producerCandidate: expectedSha,
       receiverCandidate,
-      versionId: extractVersionId(deployOutput),
+      versionId,
+      versionTag,
+      deploymentId: finalReadback.deployment?.id ?? null,
       artifactSha256: expectedArtifactSha256,
       backfillManifestSha256: expectedManifestSha256,
       sourceNotBeforeMs: approval.sourceNotBeforeMs,
@@ -326,6 +510,26 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     await receiptHandle.writeFile(`${JSON.stringify(receipt, null, 2)}\n`, 'utf8');
     deployed = true;
     process.stdout.write(`Production backfill deployment receipt written beneath backups.\n`);
+  } catch (error) {
+    if (promotionAttempted) {
+      try {
+        const rollbackOutput = runCaptured(process.execPath, [
+          wranglerPath,
+          'versions', 'deploy', '--version-id', rollbackVersionId, '--percentage', '100',
+          '--name', 'parent-coach-desk', '--config', temporaryConfig, '--yes',
+          '--message', `CRM production backfill automatic rollback ${expectedManifestSha256}`,
+        ], { cwd: projectRoot });
+        process.stderr.write(rollbackOutput);
+        const rollbackDeployments = runWranglerJson(wranglerPath, [
+          'deployments', 'list', '--name', 'parent-coach-desk', '--config', temporaryConfig, '--json',
+        ], projectRoot, 'Wrangler rollback deployment readback');
+        const rollbackFailures = validateExactActiveVersion(rollbackDeployments, rollbackVersionId);
+        if (rollbackFailures.length > 0) throw new Error(rollbackFailures.join('; '));
+      } catch (rollbackError) {
+        throw new Error(`production backfill rollback failed after activation error: ${error.message}; ${rollbackError.message}`);
+      }
+    }
+    throw error;
   } finally {
     if (receiptHandle) await receiptHandle.close();
     if (!deployed) await unlink(receiptOut).catch(() => {});

@@ -1,10 +1,13 @@
+import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 import {
   parseProductionBackfillDeployArgs,
   prepareProductionBackfillDeploymentManifest,
   resolveBackfillReceiptOutput,
+  validateExactActiveVersion,
   validateProductionBackfillApproval,
   validateProductionBackfillDeploymentManifest,
+  validateProductionBackfillLiveSnapshot,
 } from '../scripts/deploy-production-crm-backfill-verified.mjs';
 import { PRODUCTION_CRM_IDENTITIES } from '../scripts/verify-production-crm-disabled-release.mjs';
 
@@ -81,6 +84,39 @@ function baseManifest() {
   };
 }
 
+function liveSnapshot(activeVersionId = '11111111-1111-4111-8111-111111111111') {
+  const approved = approval();
+  const expectedVersionId = '11111111-1111-4111-8111-111111111111';
+  const expectedVersionTag = `crm-p17b-${digest.slice(0, 40)}`;
+  return {
+    expectedVersionId,
+    expectedVersionTag,
+    requireActive: true,
+    backfillManifestSha256: digest,
+    approval: approved,
+    deployments: [{
+      id: '22222222-2222-4222-8222-222222222222',
+      created_on: '2026-09-11T05:00:00.000Z',
+      versions: [{ version_id: activeVersionId, percentage: 100 }],
+    }],
+    version: {
+      id: expectedVersionId,
+      annotations: { 'workers/tag': expectedVersionTag },
+      resources: {
+        bindings: [
+          { name: 'DB', type: 'd1', database_id: PRODUCTION_CRM_IDENTITIES.directoryDatabaseId },
+          { name: 'FORGE_DB', type: 'd1', database_id: PRODUCTION_CRM_IDENTITIES.forgeDatabaseId },
+          { name: 'PCD_OPS_DB', type: 'd1', database_id: PRODUCTION_CRM_IDENTITIES.opsDatabaseId },
+          { name: 'CRM_ADAPTER', type: 'service', service: PRODUCTION_CRM_IDENTITIES.receiverService, environment: 'production' },
+          { name: 'PCD_CRM_ADAPTER_HMAC_SECRET', type: 'secret_text' },
+          ...Object.entries(approved.requiredRuntime).map(([name, text]) => ({ name, type: 'plain_text', text })),
+          { name: 'PCD_CRM_BACKFILL_MANIFEST_SHA256', type: 'plain_text', text: digest },
+        ],
+      },
+    },
+  };
+}
+
 describe('production CRM historical backfill deployment guard', () => {
   it('accepts the exact production approval contract', () => {
     expect(validateProductionBackfillApproval(approval(), {
@@ -130,7 +166,49 @@ describe('production CRM historical backfill deployment guard', () => {
   it('rejects unknown and duplicate CLI arguments and keeps receipts under backups', () => {
     expect(() => parseProductionBackfillDeployArgs(['--unknown'])).toThrow(/unknown argument/);
     expect(() => parseProductionBackfillDeployArgs(['--sha', producer, '--sha', producer])).toThrow(/duplicate/);
+    expect(parseProductionBackfillDeployArgs([
+      '--rollback-version-id', '44444444-4444-4444-8444-444444444444',
+    ])).toMatchObject({ rollbackVersionId: '44444444-4444-4444-8444-444444444444' });
     expect(resolveBackfillReceiptOutput('backups/run/receipt.json', 'C:/repo')).toBe('C:\\repo\\backups\\run\\receipt.json');
     expect(() => resolveBackfillReceiptOutput('../receipt.json', 'C:/repo')).toThrow(/beneath backups/);
+  });
+
+  it('requires the gate-frozen rollback version to be solely active', () => {
+    const rollbackVersionId = '44444444-4444-4444-8444-444444444444';
+    expect(validateExactActiveVersion([{
+      created_on: '2026-09-11T05:00:00.000Z',
+      versions: [{ version_id: rollbackVersionId, percentage: 100 }],
+    }], rollbackVersionId)).toEqual([]);
+    expect(validateExactActiveVersion([{
+      created_on: '2026-09-11T05:00:00.000Z',
+      versions: [{ version_id: '55555555-5555-4555-8555-555555555555', percentage: 100 }],
+    }], rollbackVersionId)).toContain('active version must equal the exact rollback version');
+  });
+
+  it('accepts only the exact uploaded activation version as the sole active version', () => {
+    expect(validateProductionBackfillLiveSnapshot(liveSnapshot())).toEqual([]);
+  });
+
+  it('rejects a follow-on active version that drops the CRM service binding', () => {
+    const snapshot = liveSnapshot('33333333-3333-4333-8333-333333333333');
+    snapshot.version.resources.bindings = snapshot.version.resources.bindings
+      .filter((binding) => binding.name !== 'CRM_ADAPTER');
+    expect(validateProductionBackfillLiveSnapshot(snapshot)).toEqual(expect.arrayContaining([
+      expect.stringContaining('active version must equal the exact uploaded version'),
+      expect.stringContaining('CRM_ADAPTER'),
+    ]));
+  });
+
+  it('uses immutable version upload, exact promotion, and repeated live verification', async () => {
+    const source = await readFile(new URL('../scripts/deploy-production-crm-backfill-verified.mjs', import.meta.url), 'utf8');
+    expect(source).toContain("'versions', 'upload'");
+    expect(source).toContain("'--strict'");
+    expect(source).toContain("'--tag', versionTag");
+    expect(source).toContain("'versions', 'deploy'");
+    expect(source).toContain('validateProductionBackfillLiveSnapshot');
+    expect(source).toContain('await wait(15_000)');
+    expect(source).toContain("'--rollback-version-id'");
+    expect(source).toContain('production backfill rollback failed');
+    expect(source).not.toMatch(/'deploy', '--config'/);
   });
 });
