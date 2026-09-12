@@ -107,6 +107,28 @@ async function insertOrganization(db: D1Database, input: { id: string; updatedAt
   ).run();
 }
 
+async function insertOrganizationSeries(
+  db: D1Database,
+  input: { prefix: string; count: number; updatedAt: string },
+): Promise<void> {
+  await db.prepare(`WITH RECURSIVE sequence(value) AS (
+      SELECT 0 UNION ALL SELECT value+1 FROM sequence WHERE value+1<?
+    )
+    INSERT INTO organizations
+      (id,slug,name,organization_type,website_url,city,state,zip,categories,record_source,record_status,is_claimed,
+       confidence_score,created_at,updated_at,content_hash,deleted_at)
+    SELECT ?||printf('%03d',value),?||printf('%03d',value),'Organization '||?||printf('%03d',value),
+      'club_league','https://example.test','Tacoma','WA','98401','["volleyball"]','manual','active',0,90,?,?,NULL,NULL
+    FROM sequence`).bind(
+    input.count,
+    input.prefix,
+    input.prefix,
+    input.prefix,
+    input.updatedAt,
+    input.updatedAt,
+  ).run();
+}
+
 async function insertContact(db: D1Database, input: {
   id: string;
   organizationId: string;
@@ -424,6 +446,19 @@ describe('PCD CRM adapter producer', () => {
       { subject_type: 'organization', rows_seen: 2, eligible_count: 2, rejected_count: 0, hash_length: 64 },
       { subject_type: 'organization', rows_seen: 1, eligible_count: 1, rejected_count: 0, hash_length: 64 },
     ]);
+  });
+
+  it('scans the safe 50-row historical page by default', async () => {
+    const { ops, intel } = await databases();
+    const oldAt = '2026-09-01T12:00:00.000Z';
+    await insertOrganizationSeries(intel, { prefix: 'org-default-page-', count: 51, updatedAt: oldAt });
+    const adapterEnv = env(ops, intel, {
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(Date.parse('2026-09-02T00:00:00.000Z')),
+    });
+
+    await expect(projectPcdCrmBackfill(adapterEnv, { now: Date.parse(oldAt) + 86_400_001 }))
+      .resolves.toMatchObject({ organizations: 50, scanCompleted: false, busy: false });
   });
 
   it('accounts for rejected historical contacts without copying their raw values into receipts', async () => {
@@ -1000,6 +1035,36 @@ describe('PCD CRM adapter producer', () => {
       enabled: true, checked: true, clean: true, missing: 0, duplicate: 0, stale: 0, unauthorized: 0, mismatch: 0,
     });
     expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_reconciliation_receipts`)
+      .first<{ count: number }>())?.count).toBe(1);
+  });
+
+  it.each([
+    ['by default', undefined],
+    ['when an oversized limit is requested', 1_000],
+  ])('delivers the approved 25-event service-binding batch %s', async (_case, requestedLimit) => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-01T12:00:00.000Z';
+    await insertOrganizationSeries(intel, { prefix: 'org-bounded-dispatch-', count: 26, updatedAt: at });
+    const adapterEnv = env(ops, intel);
+    await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1, limit: 50 });
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body));
+      return Response.json({
+        accepted: true,
+        receiptId: `receipt-${body.eventId}`,
+        eventId: body.eventId,
+        sequence: body.sequence,
+        replay: false,
+      });
+    }) };
+    await expect(dispatchPcdCrmOutbox(adapterEnv, {
+      fetcher,
+      now: Date.parse(at) + 2,
+      ...(requestedLimit === undefined ? {} : { limit: requestedLimit }),
+    }))
+      .resolves.toMatchObject({ claimed: 25, delivered: 25, retried: 0, dead: 0 });
+    expect(fetcher.fetch).toHaveBeenCalledTimes(25);
+    expect((await ops.prepare(`SELECT COUNT(*) count FROM crm_adapter_outbox WHERE status='pending'`)
       .first<{ count: number }>())?.count).toBe(1);
   });
 

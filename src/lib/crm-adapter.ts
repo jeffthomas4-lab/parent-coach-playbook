@@ -6,6 +6,8 @@ const EVENT_SCOPE = 'crm.adapters.pcd.events.v2';
 const RECONCILE_SCOPE = 'crm.adapters.pcd.reconcile.v2';
 const MAX_ATTEMPTS = 8;
 const MAX_RESPONSE_BYTES = 4096;
+const BACKFILL_SCAN_LIMIT = 50;
+const OUTBOX_DISPATCH_LIMIT = 25;
 
 export interface CrmAdapterFetcher {
   fetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
@@ -1048,7 +1050,7 @@ export async function projectPcdCrmBackfill(
   const config = requireConfig(env);
   if (!config || !env.DB || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
   const now = options.now ?? Date.now();
-  const limit = Math.max(1, Math.min(50, Math.trunc(options.limit ?? 25)));
+  const limit = Math.max(1, Math.min(BACKFILL_SCAN_LIMIT, Math.trunc(options.limit ?? BACKFILL_SCAN_LIMIT)));
   const run = await ensureBackfillRun(env, config, now);
   if (run.status !== 'running') {
     return { ...disabledBackfill(), enabled: true, scanCompleted: true, completed: run.status === 'completed' };
@@ -1676,7 +1678,7 @@ export async function dispatchPcdCrmOutbox(
   const fetcher = options.fetcher ?? env.CRM_ADAPTER;
   if (!config || !secret || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
   const now = options.now ?? Date.now();
-  const limit = Math.max(1, Math.min(10, Math.trunc(options.limit ?? 10)));
+  const limit = Math.max(1, Math.min(OUTBOX_DISPATCH_LIMIT, Math.trunc(options.limit ?? OUTBOX_DISPATCH_LIMIT)));
   await processPendingContactRetractions(
     env.PCD_OPS_DB, config.producerWorkspaceId, config.targetWorkspaceId, now,
   );
