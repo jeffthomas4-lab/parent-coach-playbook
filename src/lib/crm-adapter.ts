@@ -8,6 +8,7 @@ const MAX_ATTEMPTS = 8;
 const MAX_RESPONSE_BYTES = 4096;
 const BACKFILL_SCAN_LIMIT = 50;
 const OUTBOX_DISPATCH_LIMIT = 25;
+const BACKFILL_RECONCILIATION_WINDOWS_PER_TICK = 5;
 
 export interface CrmAdapterFetcher {
   fetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
@@ -1890,10 +1891,34 @@ export async function runPcdCrmAdapter(
     ? { organizations: 0, contacts: 0, deferred: 0 }
     : await projectPcdCrmEvents(env);
   const delivery = await dispatchPcdCrmOutbox(env);
-  const reconciliation = options.backfillOnly
+  const reconciliation = options.backfillOnly || delivery.claimed > 0
     ? { checked: false, clean: false, missing: 0, duplicate: 0, stale: 0, unauthorized: 0, mismatch: 0 }
     : await reconcilePcdCrmOutbox(env);
-  const backfillReconciliation = await reconcilePcdCrmBackfill(env);
+  let backfillReconciliation = disabledBackfillReconciliation();
+  let backfillReconciliationWindowsChecked = 0;
+  const reconciliationWindowLimit = delivery.claimed > 0
+    ? 0
+    : options.backfillOnly
+      ? BACKFILL_RECONCILIATION_WINDOWS_PER_TICK
+      : 1;
+  // The dedicated minute cron may advance several durable 100-event windows,
+  // but ordinary reconciliation keeps its existing single-call cost. Empty
+  // calls only transition between the two passes and are also hard-bounded.
+  for (let attempt = 0;
+    attempt < reconciliationWindowLimit + 2
+      && backfillReconciliationWindowsChecked < reconciliationWindowLimit;
+    attempt += 1) {
+    backfillReconciliation = await reconcilePcdCrmBackfill(env);
+    if (backfillReconciliation.checked) backfillReconciliationWindowsChecked += 1;
+    if (!backfillReconciliation.enabled
+      || backfillReconciliation.completed
+      || backfillReconciliation.pending > 0
+      || backfillReconciliation.missing > 0
+      || backfillReconciliation.mismatch > 0
+      || (!backfillReconciliation.checked && !backfillReconciliation.passCompleted)) {
+      break;
+    }
+  }
   const backfillFinal = options.backfillOnly
     ? { completed: false }
     : await finalizePcdCrmBackfill(env);
@@ -1919,6 +1944,7 @@ export async function runPcdCrmAdapter(
     unauthorized: reconciliation.unauthorized,
     mismatch: reconciliation.mismatch,
     backfillReconciliationChecked: backfillReconciliation.checked,
+    backfillReconciliationWindowsChecked,
     backfillReconciliationPass: backfillReconciliation.pass,
     backfillReconciliationWindow: backfillReconciliation.window,
     backfillReconciliationPassCompleted: backfillReconciliation.passCompleted,

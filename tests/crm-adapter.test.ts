@@ -9,6 +9,7 @@ import {
   projectPcdCrmEvents,
   reconcilePcdCrmBackfill,
   reconcilePcdCrmOutbox,
+  runPcdCrmAdapter,
   type CrmAdapterFetcher,
   type PcdCrmAdapterEnv,
 } from '../src/lib/crm-adapter';
@@ -715,6 +716,84 @@ describe('PCD CRM adapter producer', () => {
     expect(await finalizePcdCrmBackfill(adapterEnv, { now: now + 30 }))
       .toMatchObject({ completed: true, reconciled: true });
   }, 30_000);
+
+  it('uses five bounded reconciliation windows on the dedicated backfill tick', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const now = Date.parse('2026-09-03T12:00:00.000Z');
+    const fetcher = successfulReconciliationFetcher();
+    const adapterEnv = env(ops, intel, {
+      CRM_ADAPTER: fetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now })).toMatchObject({ scanCompleted: true });
+    const run = await ops.prepare('SELECT id FROM crm_adapter_backfill_runs').first<{ id: string }>();
+    await ops.prepare(`WITH RECURSIVE sequence(value) AS (
+        SELECT 1 UNION ALL SELECT value+1 FROM sequence WHERE value<251
+      )
+      INSERT INTO crm_adapter_outbox
+        (id,producer_workspace_id,event_id,source_sequence,event_type,subject_type,subject_id,authority_updated_at,
+         payload_json,payload_hash,idempotency_key,status,attempt_count,next_attempt_at,receiver_receipt_id,receiver_status,
+         delivered_at,created_at,updated_at,target_workspace_id,send_attempt_count,backfill_run_id)
+      SELECT printf('batch-row-%03d',value),'pcd-activity-radar',printf('batch-event-%03d',value),value,
+        'organization.upserted.v1','organization',printf('batch-org-%03d',value),?,'{}',?,
+        printf('batch-key-%03d',value),'delivered',1,0,printf('batch-receipt-%03d',value),202,?,?,?,
+        'ws-sightsmash',1,?
+      FROM sequence`).bind(now, 'a'.repeat(64), now, now, now, run!.id).run();
+    vi.spyOn(console, 'log').mockImplementation(() => undefined);
+
+    await runPcdCrmAdapter(adapterEnv, { backfillOnly: true });
+
+    expect(fetcher.fetch).toHaveBeenCalledTimes(5);
+    expect(await ops.prepare(`SELECT reconciliation_pass,reconciliation_cursor_sequence,
+      reconciliation_window_ordinal,reconciliation_complete FROM crm_adapter_backfill_runs`).first())
+      .toEqual({
+        reconciliation_pass: 2,
+        reconciliation_cursor_sequence: 200,
+        reconciliation_window_ordinal: 2,
+        reconciliation_complete: 0,
+      });
+  }, 10_000);
+
+  it('defers accelerated reconciliation until a dedicated backfill tick sends no events', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const now = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, {
+      id: 'org-recon-after-delivery',
+      updatedAt: '2026-09-01T12:00:00.000Z',
+    });
+    const fetcher: CrmAdapterFetcher = {
+      fetch: vi.fn(async (_input, init) => {
+        const event = JSON.parse(String(init?.body));
+        return Response.json({
+          accepted: true,
+          receiptId: `receipt-${event.eventId}`,
+          eventId: event.eventId,
+          sequence: event.sequence,
+          replay: false,
+        });
+      }),
+    };
+    const adapterEnv = env(ops, intel, {
+      CRM_ADAPTER: fetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now })).toMatchObject({ scanCompleted: true });
+    vi.spyOn(console, 'log').mockImplementation(() => undefined);
+
+    await runPcdCrmAdapter(adapterEnv, { backfillOnly: true });
+
+    expect(fetcher.fetch).toHaveBeenCalledTimes(1);
+    expect(await ops.prepare(`SELECT reconciliation_cursor_sequence,reconciliation_window_ordinal,
+      reconciliation_complete FROM crm_adapter_backfill_runs`).first()).toEqual({
+        reconciliation_cursor_sequence: 0,
+        reconciliation_window_ordinal: 0,
+        reconciliation_complete: 0,
+      });
+  }, 10_000);
 
   it('restarts both reconciliation passes when a run-linked safety event arrives between them', async () => {
     const { ops, intel } = await databases();
