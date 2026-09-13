@@ -6,7 +6,7 @@ sport: "volleyball"
 sourceUrl: "https://nfhs.org/stories/libero-rules-adjusted-in-high-school-volleyball"
 sourceLabel: "National Federation of State High School Associations (NFHS)"
 publishedAt: 2026-09-08
-draft: true
+draft: false
 editorial:
   flagInappropriateness: false
   flagIpRisk: false
@@ -14,8 +14,8 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-09-08
-  status: draft
-  reviewerNotes: "Verified directly against nfhs.org's own story on the volleyball rules changes (Jan 11-13 committee meeting, seven changes total for 2026-27). Picked the one change a sideline parent will actually notice: two liberos allowed per set instead of one, plus the uniform-bottom change since it explains why the libero no longer looks visually distinct below the waist. Left out other committee-meeting procedural changes not visible from the stands. New topic, not previously logged in CONTENT_ROADMAP.md's Rules Watch queue."
+  claudeReviewedAt: 2026-09-13
+  status: published
+  reviewerNotes: "PASS (Claude standing in for Penny, 2026-09-13): re-verified against nfhs.org story (Rule 6-4-2 zero/one/two liberos per set, one on court at a time; Rule 4-2-1i(3) libero bottoms any color). Sections A/B/C/E pass, no changes to copy. Ed 09-08 notes follow. Verified directly against nfhs.org's own story on the volleyball rules changes (Jan 11-13 committee meeting, seven changes total for 2026-27). Picked the one change a sideline parent will actually notice: two liberos allowed per set instead of one, plus the uniform-bottom change since it explains why the libero no longer looks visually distinct below the waist. Left out other committee-meeting procedural changes not visible from the stands. New topic, not previously logged in CONTENT_ROADMAP.md's Rules Watch queue."
   factCheckGoodThrough: 2027-06-01
 ---
