@@ -12,7 +12,7 @@ age: "all-ages"
 seasonPhase: "off-season"
 publishedAt: 2026-09-02
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,9 +23,15 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
+  jeffReviewedAt: 2026-09-13
   claudeReviewedAt: 2026-09-07
-  status: ready-for-jeff
-  reviewerNotes: "HOLD, not a voice failure: flagSensitiveTopic is true (grief/loss framing over a friendship's end) per VOICE-RUBRIC hard-holds, routing to Jeff rather than auto-publish regardless of quality. Mechanical checks passed: dek 12 words, seoTitle 49 chars, seoDescription 131 chars, no em dashes, required schema fields present (title, phase, publishedAt). Prior reviewerNotes (cross-check against the-assistant-coach-relationship.md, no duplication) preserved in substance above. Voice/structure sections not scored per hold rule; Jeff's call on whether grief content about a coaching-friendship ending is fit to publish as-is."
+  status: published
+  flagResolutions:
+    - flag: "SENS"
+      reason: "Jeff approved 2026-09-13. Sensitive-topic hold was for grief framing over a friendship ending; no death, no health content, ends on a concrete next action."
+      date: "2026-09-13"
+      admin: "eepskalla@gmail.com"
+  reviewerNotes: "PUBLISHED (Jeff approval relayed via Claude, 2026-09-13): cut the duplicated Quietly fragment and the doubled soft line, tightened the close. Rubric script clean. HOLD, not a voice failure: flagSensitiveTopic is true (grief/loss framing over a friendship's end) per VOICE-RUBRIC hard-holds, routing to Jeff rather than auto-publish regardless of quality. Mechanical checks passed: dek 12 words, seoTitle 49 chars, seoDescription 131 chars, no em dashes, required schema fields present (title, phase, publishedAt). Prior reviewerNotes (cross-check against the-assistant-coach-relationship.md, no duplication) preserved in substance above. Voice/structure sections not scored per hold rule; Jeff's call on whether grief content about a coaching-friendship ending is fit to publish as-is."
 ---
 
 My co-coach told me over text in June that he wasn't coming back. Two lines. His son had aged out of the age group, and there was no reason left for him to give up four nights a week to a team that wasn't his anymore.
@@ -46,7 +52,7 @@ When a marriage ends, people know what to do. When a friend moves away, there's 
 
 The kids don't grieve it either. They liked the guy fine, but he wasn't their coach the way the parent running the whole show was. The other parents barely notice, and from the sideline it looks like nothing more than a roster change.
 
-That's what makes it heavier instead of lighter: a real loss that has no name, no ritual, and no line on anyone's calendar marking that it happened, and it keeps costing something long after the season moves on without him. Quietly. Longer than you'd guess.
+That's what makes it heavier instead of lighter: a real loss with no name, no ritual, and no line on anyone's calendar marking that it happened. And it keeps costing you long after the season moves on without him. Quietly.
 
 ## What actually happens if you let it slide
 
@@ -62,12 +68,12 @@ Any partnership built to solve a season's logistics can turn into a real friends
 
 ## Say it before it goes quiet
 
-Call him before next season starts this time, not after the whole thing has already gone quiet on its own. Ask him to something that has nothing to do with the team.
+Call him before next season starts, not after the whole thing has gone quiet on its own. Ask him to something that has nothing to do with the team.
 
 A game on TV. A kid's birthday party you'd go to anyway. Anything that has nothing to do with a whistle, a roster, or a Tuesday practice schedule.
 
-Say the actual thing, too. "I'm going to miss coaching with you" is a real sentence, and most guys never say it out loud because it sounds soft. Say it anyway, even if it feels soft to say out loud.
+Say the actual thing, too. "I'm going to miss coaching with you" is a real sentence, and most guys never say it because it sounds soft. Say it anyway.
 
-He's probably thinking the same thing and waiting for you to go first. The friendship doesn't have to end just because the reason you started it did, not if somebody actually picks up the phone and builds a new reason before the old one finishes disappearing for good.
+He's probably thinking the same thing and waiting for you to go first. The friendship doesn't have to end just because the reason you started it did. But somebody has to pick up the phone.
 
 [The assistant coach relationship](/team-parent/the-assistant-coach-relationship/) covers how to set the partnership up right in the first place. What happens when a good one ends gets almost no attention at all.
