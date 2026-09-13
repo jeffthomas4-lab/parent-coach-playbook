@@ -13,13 +13,16 @@ import {
 
 const SHA256 = /^[a-f0-9]{64}$/;
 const GIT_SHA = /^[a-f0-9]{40}$/;
+const BACKFILL_RUN_ID = /^pcd-backfill:[a-f0-9]{64}$/;
 const BOOKMARK = /^[a-f0-9]{8}(?:-[a-f0-9]{8}){2}-[a-f0-9]{32}$/;
 const REQUIRED_CONFIRMATION = 'ACTIVATE parent-coach-desk CRM PRODUCTION BACKFILL';
 const EXPECTED_POLICY = 'pcd-public-professional-v1';
 const EXPECTED_RECEIVER = '4dd8794b8006c075bcda6905f5a4dda283a0378a';
+const MAX_RESUME_AUTHORIZATION_MS = 24 * 60 * 60 * 1_000;
 const FLAG_NAMES = new Set([
   '--sha', '--artifact-sha256', '--manifest-sha256', '--backfill-manifest',
   '--receiver-candidate', '--rollback-version-id', '--receipt-out', '--receipt-timestamp',
+  '--resume-authorization', '--resume-authorization-sha256',
   '--confirm-production-backfill', '--type-confirmation',
 ]);
 
@@ -34,8 +37,12 @@ function exactCount(value, label) {
 }
 
 function freshBoundary(value, now = Date.now()) {
-  return Number.isSafeInteger(value) && value > 0 && value % 1_000 === 0
+  return validBoundary(value)
     && Math.abs(now - value) <= 15 * 60 * 1_000;
+}
+
+function validBoundary(value) {
+  return Number.isSafeInteger(value) && value > 0 && value % 1_000 === 0;
 }
 
 function pushMismatch(failures, condition, message) {
@@ -52,6 +59,8 @@ export function parseProductionBackfillDeployArgs(argv) {
     rollbackVersionId: null,
     receiptOut: null,
     receiptTimestamp: null,
+    resumeAuthorization: null,
+    resumeAuthorizationSha256: null,
     confirmProductionBackfill: false,
     typeConfirmation: null,
   };
@@ -75,6 +84,8 @@ export function parseProductionBackfillDeployArgs(argv) {
     else if (flag === '--rollback-version-id') options.rollbackVersionId = value;
     else if (flag === '--receipt-out') options.receiptOut = value;
     else if (flag === '--receipt-timestamp') options.receiptTimestamp = value;
+    else if (flag === '--resume-authorization') options.resumeAuthorization = value;
+    else if (flag === '--resume-authorization-sha256') options.resumeAuthorizationSha256 = value;
     else if (flag === '--type-confirmation') options.typeConfirmation = value;
   }
   return options;
@@ -98,6 +109,7 @@ export function resolveBackfillReceiptOutput(value, projectRoot = process.cwd())
  *   expectedManifestSha256?: string,
  *   manifestBytes?: Uint8Array | string,
  *   now?: number,
+ *   allowExpiredBoundary?: boolean,
  * }} [options]
  */
 export function validateProductionBackfillApproval(
@@ -108,6 +120,7 @@ export function validateProductionBackfillApproval(
     expectedManifestSha256,
     manifestBytes,
     now = Date.now(),
+    allowExpiredBoundary = false,
   } = {},
 ) {
   const failures = [];
@@ -125,7 +138,11 @@ export function validateProductionBackfillApproval(
   pushMismatch(failures, manifest?.targetWorkspaceId === 'ws-sightsmash', 'target workspace mismatch');
   pushMismatch(failures, manifest?.sourceId === 'source-pcd-activity-radar', 'source identity mismatch');
   pushMismatch(failures, manifest?.sourcePolicyVersion === EXPECTED_POLICY, 'source policy version mismatch');
-  pushMismatch(failures, freshBoundary(boundary, now), 'production backfill boundary is stale or malformed');
+  pushMismatch(
+    failures,
+    validBoundary(boundary) && (allowExpiredBoundary || freshBoundary(boundary, now)),
+    'production backfill boundary is stale or malformed',
+  );
   const boundaryIso = Number.isSafeInteger(boundary) ? new Date(boundary).toISOString() : null;
   pushMismatch(failures, manifest?.sourceNotBeforeIso === boundaryIso, 'boundary ISO value mismatch');
 
@@ -176,6 +193,173 @@ export function validateProductionBackfillApproval(
     const actual = createHash('sha256').update(manifestBytes).digest('hex');
     pushMismatch(failures, actual === expectedManifestSha256, 'backfill manifest byte hash mismatch');
   }
+  return failures;
+}
+
+/**
+ * @param {any} authorization
+ * @param {{
+ *   now?: number,
+ *   expectedResumeProducerCandidate?: string,
+ *   expectedOriginalProducerCandidate?: string,
+ *   expectedReceiverCandidate?: string,
+ *   expectedRollbackVersionId?: string,
+ *   expectedManifestSha256?: string,
+ * }} [options]
+ */
+export function validateProductionBackfillResumeAuthorization(
+  authorization,
+  {
+    now = Date.now(),
+    expectedResumeProducerCandidate,
+    expectedOriginalProducerCandidate,
+    expectedReceiverCandidate = EXPECTED_RECEIVER,
+    expectedRollbackVersionId,
+    expectedManifestSha256,
+  } = {},
+) {
+  const failures = [];
+  pushMismatch(failures, authorization?.schemaVersion === 1, 'resume authorization schemaVersion must be 1');
+  pushMismatch(
+    failures,
+    authorization?.kind === 'pcd-crm-historical-backfill-resume',
+    'resume authorization kind mismatch',
+  );
+  pushMismatch(failures, authorization?.environment === 'production', 'resume authorization environment must be production');
+  pushMismatch(
+    failures,
+    GIT_SHA.test(expectedResumeProducerCandidate ?? '')
+      && authorization?.resumeProducerCandidate === expectedResumeProducerCandidate,
+    'resume producer candidate mismatch',
+  );
+  pushMismatch(
+    failures,
+    GIT_SHA.test(expectedOriginalProducerCandidate ?? '')
+      && authorization?.originalProducerCandidate === expectedOriginalProducerCandidate,
+    'original producer candidate mismatch',
+  );
+  pushMismatch(
+    failures,
+    GIT_SHA.test(expectedReceiverCandidate ?? '')
+      && authorization?.receiverCandidate === expectedReceiverCandidate,
+    'resume receiver candidate mismatch',
+  );
+  pushMismatch(
+    failures,
+    /^[a-f0-9-]{36}$/.test(expectedRollbackVersionId ?? '')
+      && authorization?.rollbackVersionId === expectedRollbackVersionId,
+    'resume rollback version mismatch',
+  );
+  pushMismatch(
+    failures,
+    SHA256.test(expectedManifestSha256 ?? '')
+      && authorization?.backfillManifestSha256 === expectedManifestSha256,
+    'resume backfill manifest hash mismatch',
+  );
+  pushMismatch(failures, BACKFILL_RUN_ID.test(authorization?.runId ?? ''), 'resume run id is malformed');
+
+  const authorizedAt = Date.parse(authorization?.authorizedAt ?? '');
+  const expiresAt = Date.parse(authorization?.expiresAt ?? '');
+  const validWindow = Number.isFinite(authorizedAt) && Number.isFinite(expiresAt)
+    && authorizedAt <= now + 60_000 && expiresAt >= now
+    && expiresAt > authorizedAt && expiresAt - authorizedAt <= MAX_RESUME_AUTHORIZATION_MS;
+  pushMismatch(failures, validWindow, 'resume authorization has expired or is not yet active');
+
+  const checkpoint = authorization?.checkpoint ?? {};
+  pushMismatch(failures, checkpoint.status === 'running', 'resume checkpoint status must be running');
+  for (const field of [
+    'organizationRowsSeen', 'organizationEligible', 'organizationRejected',
+    'contactRowsSeen', 'contactEligible', 'contactRejected', 'outboxTotal',
+    'delivered', 'pending', 'dead', 'organizationComplete', 'contactComplete',
+    'reconciliationPass', 'reconciliationCursorSequence', 'reconciliationWindowOrdinal',
+    'reconciliationComplete', 'reconciliationFailureCount', 'reconciliationHalted',
+  ]) {
+    try {
+      exactCount(checkpoint[field], `resume checkpoint ${field}`);
+    } catch (error) {
+      failures.push(error.message);
+    }
+  }
+  pushMismatch(
+    failures,
+    checkpoint.organizationEligible + checkpoint.organizationRejected === checkpoint.organizationRowsSeen,
+    'resume organization disposition accounting mismatch',
+  );
+  pushMismatch(
+    failures,
+    checkpoint.contactEligible + checkpoint.contactRejected === checkpoint.contactRowsSeen,
+    'resume contact disposition accounting mismatch',
+  );
+  pushMismatch(
+    failures,
+    checkpoint.delivered + checkpoint.pending + checkpoint.dead === checkpoint.outboxTotal,
+    'resume outbox accounting mismatch',
+  );
+  pushMismatch(failures, checkpoint.dead === 0, 'resume checkpoint must have zero dead events');
+  pushMismatch(failures, checkpoint.leaseId === null, 'resume checkpoint must not retain an active lease');
+  pushMismatch(failures, checkpoint.reconciliationHalted === 0, 'resume checkpoint must not be halted');
+  return [...new Set(failures)];
+}
+
+export function validateReadOnlyD1Response(response, label = 'D1 readback') {
+  const envelopes = Array.isArray(response) ? response : [response];
+  if (envelopes.length === 0) throw new Error(`${label} returned no result envelopes`);
+  const rows = [];
+  for (const envelope of envelopes) {
+    if (envelope?.success !== true) throw new Error(`${label} must report success=true`);
+    if (Number(envelope?.meta?.changes) !== 0) throw new Error(`${label} must report changes=0`);
+    if (Number(envelope?.meta?.rows_written) !== 0) throw new Error(`${label} must report rows_written=0`);
+    if (envelope?.meta?.changed_db !== false) throw new Error(`${label} must report changed_db=false`);
+    if (!Array.isArray(envelope?.results)) throw new Error(`${label} must return a results array`);
+    rows.push(...envelope.results);
+  }
+  return rows;
+}
+
+export function validateProductionBackfillResumeCheckpoint(row, authorization, approval) {
+  const failures = [];
+  const expected = authorization?.checkpoint ?? {};
+  const exactText = [
+    ['runId', authorization?.runId, 'resume run id changed'],
+    ['status', expected.status, 'resume run status changed'],
+    ['approvalManifestSha256', authorization?.backfillManifestSha256, 'resume manifest binding changed'],
+    ['producerWorkspaceId', approval?.producerWorkspaceId, 'resume producer workspace changed'],
+    ['targetWorkspaceId', approval?.targetWorkspaceId, 'resume target workspace changed'],
+    ['directoryDatabaseId', approval?.databaseIds?.directory, 'resume directory database changed'],
+    ['opsDatabaseId', approval?.databaseIds?.operations, 'resume operations database changed'],
+    ['targetDatabaseId', approval?.databaseIds?.target, 'resume target database changed'],
+    ['directoryBookmark', approval?.sourceBookmarks?.directory, 'resume directory bookmark changed'],
+    ['opsBookmark', approval?.sourceBookmarks?.operations, 'resume operations bookmark changed'],
+    ['sourcePolicyVersion', approval?.sourcePolicyVersion, 'resume source policy changed'],
+  ];
+  for (const [field, value, message] of exactText) pushMismatch(failures, row?.[field] === value, message);
+  const exactNumbers = [
+    ['snapshotBeforeMs', approval?.sourceNotBeforeMs],
+    ['expectedOrganizationRows', approval?.sourceInventory?.organizations],
+    ['expectedContactRows', approval?.sourceInventory?.contacts],
+    ['organizationRowsSeen', expected.organizationRowsSeen],
+    ['organizationEligible', expected.organizationEligible],
+    ['organizationRejected', expected.organizationRejected],
+    ['contactRowsSeen', expected.contactRowsSeen],
+    ['contactEligible', expected.contactEligible],
+    ['contactRejected', expected.contactRejected],
+    ['outboxTotal', expected.outboxTotal],
+    ['delivered', expected.delivered],
+    ['pending', expected.pending],
+    ['dead', expected.dead],
+    ['organizationComplete', expected.organizationComplete],
+    ['contactComplete', expected.contactComplete],
+    ['reconciliationPass', expected.reconciliationPass],
+    ['reconciliationCursorSequence', expected.reconciliationCursorSequence],
+    ['reconciliationWindowOrdinal', expected.reconciliationWindowOrdinal],
+    ['reconciliationComplete', expected.reconciliationComplete],
+    ['reconciliationFailureCount', expected.reconciliationFailureCount],
+    ['reconciliationHalted', expected.reconciliationHalted],
+  ];
+  for (const [field, value] of exactNumbers) {
+    pushMismatch(failures, Number(row?.[field]) === value, `resume checkpoint ${field} changed`);
+  }
+  pushMismatch(failures, row?.leaseId === null, 'resume checkpoint acquired a lease');
   return failures;
 }
 
@@ -308,6 +492,105 @@ function runWranglerJson(wranglerPath, args, projectRoot, label) {
   }
 }
 
+function runReadOnlyD1Rows(wranglerPath, configPath, projectRoot, binding, sql, label) {
+  const response = runWranglerJson(wranglerPath, [
+    'd1', 'execute', binding, '--remote', '--config', configPath,
+    '--command', sql, '--json',
+  ], projectRoot, label);
+  return validateReadOnlyD1Response(response, label);
+}
+
+function assertResumePreflight({
+  wranglerPath,
+  configPath,
+  projectRoot,
+  authorization,
+  approval,
+}) {
+  const runId = authorization.runId;
+  if (!BACKFILL_RUN_ID.test(runId)) throw new Error('resume run id is malformed');
+  const checkpointSql = `SELECT
+    r.id AS runId,r.status,r.producer_workspace_id AS producerWorkspaceId,
+    r.target_workspace_id AS targetWorkspaceId,r.snapshot_before_ms AS snapshotBeforeMs,
+    r.approval_manifest_sha256 AS approvalManifestSha256,
+    r.directory_database_id AS directoryDatabaseId,r.ops_database_id AS opsDatabaseId,
+    r.target_database_id AS targetDatabaseId,r.directory_bookmark AS directoryBookmark,
+    r.ops_bookmark AS opsBookmark,r.source_policy_version AS sourcePolicyVersion,
+    r.expected_organization_rows AS expectedOrganizationRows,
+    r.expected_contact_rows AS expectedContactRows,
+    r.organization_complete AS organizationComplete,r.contact_complete AS contactComplete,
+    r.lease_id AS leaseId,r.reconciliation_pass AS reconciliationPass,
+    r.reconciliation_cursor_sequence AS reconciliationCursorSequence,
+    r.reconciliation_window_ordinal AS reconciliationWindowOrdinal,
+    r.reconciliation_complete AS reconciliationComplete,
+    r.reconciliation_failure_count AS reconciliationFailureCount,
+    r.reconciliation_halted AS reconciliationHalted,
+    COALESCE((SELECT SUM(rows_seen) FROM crm_adapter_backfill_chunks c
+      WHERE c.run_id=r.id AND c.subject_type='organization'),0) AS organizationRowsSeen,
+    COALESCE((SELECT SUM(eligible_count) FROM crm_adapter_backfill_chunks c
+      WHERE c.run_id=r.id AND c.subject_type='organization'),0) AS organizationEligible,
+    COALESCE((SELECT SUM(rejected_count) FROM crm_adapter_backfill_chunks c
+      WHERE c.run_id=r.id AND c.subject_type='organization'),0) AS organizationRejected,
+    COALESCE((SELECT SUM(rows_seen) FROM crm_adapter_backfill_chunks c
+      WHERE c.run_id=r.id AND c.subject_type='contact'),0) AS contactRowsSeen,
+    COALESCE((SELECT SUM(eligible_count) FROM crm_adapter_backfill_chunks c
+      WHERE c.run_id=r.id AND c.subject_type='contact'),0) AS contactEligible,
+    COALESCE((SELECT SUM(rejected_count) FROM crm_adapter_backfill_chunks c
+      WHERE c.run_id=r.id AND c.subject_type='contact'),0) AS contactRejected,
+    COALESCE((SELECT COUNT(*) FROM crm_adapter_outbox o
+      WHERE o.backfill_run_id=r.id AND o.cancelled_at IS NULL),0) AS outboxTotal,
+    COALESCE((SELECT SUM(CASE WHEN status='delivered' AND receiver_receipt_id IS NOT NULL THEN 1 ELSE 0 END)
+      FROM crm_adapter_outbox o WHERE o.backfill_run_id=r.id AND o.cancelled_at IS NULL),0) AS delivered,
+    COALESCE((SELECT SUM(CASE WHEN status IN ('pending','retry','leased') THEN 1 ELSE 0 END)
+      FROM crm_adapter_outbox o WHERE o.backfill_run_id=r.id AND o.cancelled_at IS NULL),0) AS pending,
+    COALESCE((SELECT SUM(CASE WHEN status='dead' THEN 1 ELSE 0 END)
+      FROM crm_adapter_outbox o WHERE o.backfill_run_id=r.id AND o.cancelled_at IS NULL),0) AS dead
+    FROM crm_adapter_backfill_runs r WHERE r.id='${runId}'`;
+  const checkpointRows = runReadOnlyD1Rows(
+    wranglerPath, configPath, projectRoot, 'PCD_OPS_DB', checkpointSql, 'CRM resume checkpoint readback',
+  );
+  if (checkpointRows.length !== 1) throw new Error('CRM resume checkpoint must return exactly one run');
+  const checkpointFailures = validateProductionBackfillResumeCheckpoint(
+    checkpointRows[0], authorization, approval,
+  );
+  if (checkpointFailures.length > 0) {
+    throw new Error(`CRM resume checkpoint drifted:\n- ${checkpointFailures.join('\n- ')}`);
+  }
+
+  const snapshotBeforeSecond = approval.sourceNotBeforeMs / 1_000;
+  const directoryRows = runReadOnlyD1Rows(
+    wranglerPath,
+    configPath,
+    projectRoot,
+    'DB',
+    `SELECT SUM(CASE WHEN unixepoch(created_at)<${snapshotBeforeSecond} THEN 1 ELSE 0 END) AS count,
+      SUM(CASE WHEN unixepoch(created_at) IS NULL OR unixepoch(updated_at) IS NULL THEN 1 ELSE 0 END) AS invalid
+      FROM organizations`,
+    'CRM resume directory inventory readback',
+  );
+  const contactRows = runReadOnlyD1Rows(
+    wranglerPath,
+    configPath,
+    projectRoot,
+    'PCD_OPS_DB',
+    `SELECT SUM(CASE WHEN unixepoch(created_at)<${snapshotBeforeSecond} THEN 1 ELSE 0 END) AS count,
+      SUM(CASE WHEN unixepoch(created_at) IS NULL OR unixepoch(updated_at) IS NULL THEN 1 ELSE 0 END) AS invalid
+      FROM org_contacts`,
+    'CRM resume contact inventory readback',
+  );
+  if (directoryRows.length !== 1 || contactRows.length !== 1) {
+    throw new Error('CRM resume source inventory must return exactly one row per source');
+  }
+  if (Number(directoryRows[0].invalid) !== 0 || Number(contactRows[0].invalid) !== 0) {
+    throw new Error('CRM resume source inventory contains invalid timestamps');
+  }
+  if (Number(directoryRows[0].count) !== approval.sourceInventory.organizations
+    || Number(contactRows[0].count) !== approval.sourceInventory.contacts) {
+    throw new Error('CRM resume source inventory changed');
+  }
+  return checkpointRows[0];
+}
+
 function assertLiveBackfillVersion({
   wranglerPath,
   configPath,
@@ -367,13 +650,69 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const approvalPath = resolve(requiredString(options.backfillManifest, '--backfill-manifest'));
   const approvalBytes = await readFile(approvalPath);
   const approval = JSON.parse(approvalBytes.toString('utf8'));
+  const resumeMode = Boolean(options.resumeAuthorization || options.resumeAuthorizationSha256);
+  if (Boolean(options.resumeAuthorization) !== Boolean(options.resumeAuthorizationSha256)) {
+    throw new Error('--resume-authorization and --resume-authorization-sha256 must be provided together');
+  }
+  let resumeAuthorization = null;
+  let resumeAuthorizationSha256 = null;
+  if (resumeMode) {
+    resumeAuthorizationSha256 = requiredString(
+      options.resumeAuthorizationSha256, '--resume-authorization-sha256',
+    );
+    if (!SHA256.test(resumeAuthorizationSha256)) {
+      throw new Error('--resume-authorization-sha256 is malformed');
+    }
+    const resumeAuthorizationPath = resolve(
+      requiredString(options.resumeAuthorization, '--resume-authorization'),
+    );
+    const resumeAuthorizationBytes = await readFile(resumeAuthorizationPath);
+    const actualResumeAuthorizationSha256 = createHash('sha256')
+      .update(resumeAuthorizationBytes).digest('hex');
+    if (actualResumeAuthorizationSha256 !== resumeAuthorizationSha256) {
+      throw new Error('resume authorization byte hash mismatch');
+    }
+    resumeAuthorization = JSON.parse(resumeAuthorizationBytes.toString('utf8'));
+  }
   const approvalFailures = validateProductionBackfillApproval(approval, {
-    expectedProducerCandidate: expectedSha,
+    expectedProducerCandidate: resumeMode ? approval.producerCandidate : expectedSha,
     expectedReceiverCandidate: receiverCandidate,
     expectedManifestSha256,
     manifestBytes: approvalBytes,
+    allowExpiredBoundary: resumeMode,
   });
   if (approvalFailures.length > 0) throw new Error(`production backfill approval refused:\n- ${approvalFailures.join('\n- ')}`);
+  if (resumeMode) {
+    const resumeFailures = validateProductionBackfillResumeAuthorization(resumeAuthorization, {
+      expectedResumeProducerCandidate: expectedSha,
+      expectedOriginalProducerCandidate: approval.producerCandidate,
+      expectedReceiverCandidate: receiverCandidate,
+      expectedRollbackVersionId: rollbackVersionId,
+      expectedManifestSha256,
+    });
+    if (resumeFailures.length > 0) {
+      throw new Error(`production backfill resume authorization refused:\n- ${resumeFailures.join('\n- ')}`);
+    }
+  }
+
+  const assertActionFresh = () => {
+    if (!resumeMode) {
+      if (!freshBoundary(approval.sourceNotBeforeMs)) {
+        throw new Error('production backfill boundary expired before deployment');
+      }
+      return;
+    }
+    const resumeFailures = validateProductionBackfillResumeAuthorization(resumeAuthorization, {
+      expectedResumeProducerCandidate: expectedSha,
+      expectedOriginalProducerCandidate: approval.producerCandidate,
+      expectedReceiverCandidate: receiverCandidate,
+      expectedRollbackVersionId: rollbackVersionId,
+      expectedManifestSha256,
+    });
+    if (resumeFailures.length > 0) {
+      throw new Error(`production backfill resume authorization expired or drifted:\n- ${resumeFailures.join('\n- ')}`);
+    }
+  };
 
   const status = runCaptured('git', ['status', '--porcelain', '--untracked-files=normal'], { cwd: projectRoot });
   const unexpectedStatus = validateStatus(status);
@@ -408,6 +747,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     databaseIds: approval.databaseIds,
     sourceBookmarks: approval.sourceBookmarks,
     runtime: deploymentManifest.vars,
+    resume: resumeMode ? {
+      authorizationSha256: resumeAuthorizationSha256,
+      runId: resumeAuthorization.runId,
+      checkpoint: resumeAuthorization.checkpoint,
+      expiresAt: resumeAuthorization.expiresAt,
+    } : null,
   };
   if (!options.confirmProductionBackfill) {
     process.stdout.write(`${JSON.stringify(dryRun, null, 2)}\nDry run only. No deployment was attempted.\n`);
@@ -419,13 +764,17 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const receiptTimestamp = requiredString(options.receiptTimestamp, '--receipt-timestamp');
   if (Number.isNaN(Date.parse(receiptTimestamp))) throw new Error('--receipt-timestamp must be ISO-8601');
   const receiptOut = resolveBackfillReceiptOutput(options.receiptOut, projectRoot);
-  if (!freshBoundary(approval.sourceNotBeforeMs)) throw new Error('production backfill boundary expired before deployment');
+  assertActionFresh();
 
   await mkdir(dirname(receiptOut), { recursive: true });
   const temporaryConfig = resolve(projectRoot, 'dist/server', `.wrangler.crm-production-backfill-${randomUUID()}.json`);
   const wranglerPath = resolve(projectRoot, 'node_modules/wrangler/bin/wrangler.js');
-  const versionTag = `crm-p17b-${expectedManifestSha256.slice(0, 40)}`;
-  const versionMessage = `CRM production historical backfill ${expectedManifestSha256}`;
+  const versionTag = resumeMode
+    ? `crm-p17b-resume-${resumeAuthorizationSha256.slice(0, 40)}`
+    : `crm-p17b-${expectedManifestSha256.slice(0, 40)}`;
+  const versionMessage = resumeMode
+    ? `CRM production historical backfill resume ${resumeAuthorizationSha256}`
+    : `CRM production historical backfill ${expectedManifestSha256}`;
   const handle = await open(temporaryConfig, 'wx');
   try {
     await handle.writeFile(`${JSON.stringify(deploymentManifest)}\n`);
@@ -437,13 +786,22 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   let promotionAttempted = false;
   try {
     receiptHandle = await open(receiptOut, 'wx');
-    if (!freshBoundary(approval.sourceNotBeforeMs)) throw new Error('production backfill boundary expired before deployment');
+    assertActionFresh();
     const initialDeployments = runWranglerJson(wranglerPath, [
       'deployments', 'list', '--name', 'parent-coach-desk', '--config', temporaryConfig, '--json',
     ], projectRoot, 'Wrangler activation preflight deployment readback');
     const activeFailures = validateExactActiveVersion(initialDeployments, rollbackVersionId);
     if (activeFailures.length > 0) {
       throw new Error(`production backfill rollback precondition failed:\n- ${activeFailures.join('\n- ')}`);
+    }
+    if (resumeMode) {
+      assertResumePreflight({
+        wranglerPath,
+        configPath: temporaryConfig,
+        projectRoot,
+        authorization: resumeAuthorization,
+        approval,
+      });
     }
     const existingVersions = runWranglerJson(wranglerPath, [
       'versions', 'list', '--name', 'parent-coach-desk', '--config', temporaryConfig, '--json',
@@ -473,7 +831,16 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       expectedVersionId: versionId, expectedVersionTag: versionTag,
       approval, backfillManifestSha256: expectedManifestSha256, requireActive: false,
     });
-    if (!freshBoundary(approval.sourceNotBeforeMs)) throw new Error('production backfill boundary expired before promotion');
+    assertActionFresh();
+    if (resumeMode) {
+      assertResumePreflight({
+        wranglerPath,
+        configPath: temporaryConfig,
+        projectRoot,
+        authorization: resumeAuthorization,
+        approval,
+      });
+    }
     promotionAttempted = true;
     const deployOutput = runCaptured(process.execPath, [
       wranglerPath,
@@ -506,6 +873,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       deployedAt: receiptTimestamp,
       adapterEnabled: true,
       backfillEnabled: true,
+      resumeAuthorizationSha256,
+      resumedRunId: resumeMode ? resumeAuthorization.runId : null,
     };
     await receiptHandle.writeFile(`${JSON.stringify(receipt, null, 2)}\n`, 'utf8');
     deployed = true;

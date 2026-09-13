@@ -5,6 +5,9 @@ import {
   prepareProductionBackfillDeploymentManifest,
   resolveBackfillReceiptOutput,
   validateExactActiveVersion,
+  validateProductionBackfillResumeAuthorization,
+  validateProductionBackfillResumeCheckpoint,
+  validateReadOnlyD1Response,
   validateProductionBackfillApproval,
   validateProductionBackfillDeploymentManifest,
   validateProductionBackfillLiveSnapshot,
@@ -15,6 +18,9 @@ const boundary = Math.floor(Date.now() / 1_000) * 1_000;
 const producer = '1'.repeat(40);
 const receiver = '4dd8794b8006c075bcda6905f5a4dda283a0378a';
 const digest = 'a'.repeat(64);
+const resumeProducer = '2'.repeat(40);
+const rollbackVersionId = '44444444-4444-4444-8444-444444444444';
+const runId = `pcd-backfill:${'b'.repeat(64)}`;
 
 function approval() {
   const directory = PRODUCTION_CRM_IDENTITIES.directoryDatabaseId;
@@ -84,6 +90,44 @@ function baseManifest() {
   };
 }
 
+function resumeAuthorization(now = Date.now()) {
+  return {
+    schemaVersion: 1,
+    kind: 'pcd-crm-historical-backfill-resume',
+    environment: 'production',
+    authorizedAt: new Date(now - 60_000).toISOString(),
+    expiresAt: new Date(now + 4 * 60 * 60_000).toISOString(),
+    resumeProducerCandidate: resumeProducer,
+    originalProducerCandidate: producer,
+    receiverCandidate: receiver,
+    rollbackVersionId,
+    backfillManifestSha256: digest,
+    runId,
+    checkpoint: {
+      status: 'running',
+      organizationRowsSeen: 93_700,
+      organizationEligible: 93_700,
+      organizationRejected: 0,
+      contactRowsSeen: 0,
+      contactEligible: 0,
+      contactRejected: 0,
+      outboxTotal: 93_700,
+      delivered: 45_837,
+      pending: 47_863,
+      dead: 0,
+      organizationComplete: 0,
+      contactComplete: 0,
+      leaseId: null as string | null,
+      reconciliationPass: 1,
+      reconciliationCursorSequence: 0,
+      reconciliationWindowOrdinal: 0,
+      reconciliationComplete: 0,
+      reconciliationFailureCount: 0,
+      reconciliationHalted: 0,
+    },
+  };
+}
+
 function liveSnapshot(activeVersionId = '11111111-1111-4111-8111-111111111111') {
   const approved = approval();
   const expectedVersionId = '11111111-1111-4111-8111-111111111111';
@@ -124,6 +168,111 @@ describe('production CRM historical backfill deployment guard', () => {
       expectedReceiverCandidate: receiver,
       expectedManifestSha256: digest,
     })).toEqual([]);
+  });
+
+  it('permits an expired original boundary only through a fresh exact resume authorization', () => {
+    const now = boundary + 24 * 60 * 60_000;
+    expect(validateProductionBackfillApproval(approval(), {
+      expectedProducerCandidate: producer,
+      expectedReceiverCandidate: receiver,
+      expectedManifestSha256: digest,
+      now,
+    })).toContain('production backfill boundary is stale or malformed');
+    expect(validateProductionBackfillApproval(approval(), {
+      expectedProducerCandidate: producer,
+      expectedReceiverCandidate: receiver,
+      expectedManifestSha256: digest,
+      now,
+      allowExpiredBoundary: true,
+    })).toEqual([]);
+    expect(validateProductionBackfillResumeAuthorization(resumeAuthorization(now), {
+      now,
+      expectedResumeProducerCandidate: resumeProducer,
+      expectedOriginalProducerCandidate: producer,
+      expectedReceiverCandidate: receiver,
+      expectedRollbackVersionId: rollbackVersionId,
+      expectedManifestSha256: digest,
+    })).toEqual([]);
+  });
+
+  it('rejects expired, drifting, or unsafe resume authorization', () => {
+    const now = boundary + 24 * 60 * 60_000;
+    const expired = resumeAuthorization(now);
+    expired.expiresAt = new Date(now - 1).toISOString();
+    expect(validateProductionBackfillResumeAuthorization(expired, {
+      now,
+      expectedResumeProducerCandidate: resumeProducer,
+      expectedOriginalProducerCandidate: producer,
+      expectedReceiverCandidate: receiver,
+      expectedRollbackVersionId: rollbackVersionId,
+      expectedManifestSha256: digest,
+    })).toContain('resume authorization has expired or is not yet active');
+
+    const unsafe = resumeAuthorization(now);
+    unsafe.checkpoint.dead = 1;
+    unsafe.checkpoint.leaseId = 'active-lease';
+    expect(validateProductionBackfillResumeAuthorization(unsafe, {
+      now,
+      expectedResumeProducerCandidate: resumeProducer,
+      expectedOriginalProducerCandidate: producer,
+      expectedReceiverCandidate: receiver,
+      expectedRollbackVersionId: rollbackVersionId,
+      expectedManifestSha256: digest,
+    })).toEqual(expect.arrayContaining([
+      'resume checkpoint must have zero dead events',
+      'resume checkpoint must not retain an active lease',
+    ]));
+  });
+
+  it('requires mutation-free D1 transport and exact paused checkpoint parity', () => {
+    const authorized = resumeAuthorization();
+    const response = [{
+      success: true,
+      results: [{
+        runId,
+        status: 'running',
+        producerWorkspaceId: 'pcd-activity-radar',
+        targetWorkspaceId: 'ws-sightsmash',
+        snapshotBeforeMs: boundary,
+        approvalManifestSha256: digest,
+        directoryDatabaseId: PRODUCTION_CRM_IDENTITIES.directoryDatabaseId,
+        opsDatabaseId: PRODUCTION_CRM_IDENTITIES.opsDatabaseId,
+        targetDatabaseId: '9ea593e2-b5ca-40d8-b7fa-8172e02edb3d',
+        directoryBookmark: '00000001-00000000-00000000-11111111111111111111111111111111',
+        opsBookmark: '00000002-00000000-00000000-22222222222222222222222222222222',
+        sourcePolicyVersion: 'pcd-public-professional-v1',
+        expectedOrganizationRows: 198_287,
+        expectedContactRows: 141,
+        organizationRowsSeen: 93_700,
+        organizationEligible: 93_700,
+        organizationRejected: 0,
+        contactRowsSeen: 0,
+        contactEligible: 0,
+        contactRejected: 0,
+        outboxTotal: 93_700,
+        delivered: 45_837,
+        pending: 47_863,
+        dead: 0,
+        organizationComplete: 0,
+        contactComplete: 0,
+        leaseId: null,
+        reconciliationPass: 1,
+        reconciliationCursorSequence: 0,
+        reconciliationWindowOrdinal: 0,
+        reconciliationComplete: 0,
+        reconciliationFailureCount: 0,
+        reconciliationHalted: 0,
+      }],
+      meta: { changes: 0, rows_written: 0, changed_db: false },
+    }];
+    expect(validateReadOnlyD1Response(response, 'checkpoint')).toHaveLength(1);
+    expect(validateProductionBackfillResumeCheckpoint(
+      validateReadOnlyD1Response(response, 'checkpoint')[0],
+      authorized,
+      approval(),
+    )).toEqual([]);
+    response[0].meta.changed_db = true;
+    expect(() => validateReadOnlyD1Response(response, 'checkpoint')).toThrow(/changed_db=false/);
   });
 
   it.each([
@@ -210,5 +359,15 @@ describe('production CRM historical backfill deployment guard', () => {
     expect(source).toContain("'--rollback-version-id'");
     expect(source).toContain('production backfill rollback failed');
     expect(source).not.toMatch(/'deploy', '--config'/);
+  });
+
+  it('uses a separately frozen resume gate and direct read-only D1 checkpoint commands', async () => {
+    const source = await readFile(new URL('../scripts/deploy-production-crm-backfill-verified.mjs', import.meta.url), 'utf8');
+    expect(source).toContain("'--resume-authorization'");
+    expect(source).toContain("'--resume-authorization-sha256'");
+    expect(source).toContain("'--command'");
+    expect(source).not.toContain("'--file'");
+    expect(source).toContain('changed_db=false');
+    expect(source).toContain('crm-p17b-resume-');
   });
 });
