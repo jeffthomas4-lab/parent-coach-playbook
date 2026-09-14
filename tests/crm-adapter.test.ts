@@ -1117,6 +1117,34 @@ describe('PCD CRM adapter producer', () => {
       .first<{ count: number }>())?.count).toBe(1);
   });
 
+  it('never reports queued backfill events as missing during ordinary reconciliation', async () => {
+    const { ops, intel } = await databases();
+    const at = '2026-09-01T12:00:00.000Z';
+    await insertOrganizationSeries(intel, { prefix: 'org-reconcile-status-', count: 2, updatedAt: at });
+    const adapterEnv = env(ops, intel, { PCD_CRM_BACKFILL_ENABLED: 'true' });
+    await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1, limit: 10 });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='receipt-delivered',
+      receiver_status=202,delivered_at=?,updated_at=? WHERE subject_id='org-reconcile-status-000'`)
+      .bind(Date.parse(at) + 2, Date.parse(at) + 2).run();
+
+    let reconciledEvents: Array<{eventId:string;sequence:number}>=[];
+    const fetcher: CrmAdapterFetcher={fetch:vi.fn(async(_input,init)=>{
+      const body=JSON.parse(String(init?.body));
+      reconciledEvents=body.events;
+      return Response.json({
+        producer:'parent-coach-desk',producerWorkspaceId:body.producerWorkspaceId,
+        declaredHighWater:body.declaredHighWater,receiverHighWater:body.declaredHighWater,
+        missing:[],duplicate:[],stale:[],unauthorized:[],mismatch:[],
+      });
+    })};
+
+    await expect(reconcilePcdCrmOutbox(adapterEnv,{fetcher,now:Date.parse(at)+3})).resolves.toMatchObject({
+      checked:true,clean:true,missing:0,
+    });
+    expect(reconciledEvents).toHaveLength(1);
+    expect(reconciledEvents[0]?.eventId).toContain('org-reconcile-status-000');
+  });
+
   it.each([
     ['by default', undefined],
     ['when an oversized limit is requested', 1_000],
@@ -2077,6 +2105,9 @@ describe('PCD CRM adapter producer', () => {
     await insertOrganization(intel, { id: 'org-reconcile-duplicate', updatedAt: at });
     const adapterEnv = env(ops, intel);
     await projectPcdCrmEvents(adapterEnv, { now: Date.parse(at) + 1 });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='delivered',receiver_receipt_id='receipt-duplicate',
+      receiver_status=202,delivered_at=?,updated_at=?`)
+      .bind(Date.parse(at) + 2, Date.parse(at) + 2).run();
     const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
       const body = JSON.parse(String(init?.body));
       const duplicate = body.events[0];
@@ -2086,7 +2117,7 @@ describe('PCD CRM adapter producer', () => {
         missing: [], duplicate: [duplicate], stale: [], unauthorized: [], mismatch: [],
       });
     }) };
-    expect(await reconcilePcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 2 })).toEqual({
+    expect(await reconcilePcdCrmOutbox(adapterEnv, { fetcher, now: Date.parse(at) + 3 })).toEqual({
       enabled: true, checked: true, clean: false, missing: 0, duplicate: 1, stale: 0, unauthorized: 0, mismatch: 0,
     });
   });

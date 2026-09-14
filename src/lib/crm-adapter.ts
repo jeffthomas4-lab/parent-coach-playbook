@@ -1825,7 +1825,7 @@ export async function reconcilePcdCrmOutbox(
   const fetcher = options.fetcher ?? env.CRM_ADAPTER;
   if (!config || !secret || !fetcher || !env.PCD_OPS_DB) return { enabled: true, ...empty };
   const rows = await env.PCD_OPS_DB.prepare(`SELECT event_id,source_sequence,event_type,payload_hash
-    FROM crm_adapter_outbox WHERE producer_workspace_id=? AND cancelled_at IS NULL
+    FROM crm_adapter_outbox WHERE producer_workspace_id=? AND cancelled_at IS NULL AND status='delivered'
     ORDER BY source_sequence DESC LIMIT 100`)
     .bind(config.producerWorkspaceId)
     .all<{ event_id: string; source_sequence: number; event_type: string; payload_hash: string }>();
