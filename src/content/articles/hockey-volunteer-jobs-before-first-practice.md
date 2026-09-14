@@ -13,7 +13,7 @@ sport: "hockey"
 age: "all-ages"
 publishedAt: 2026-09-14
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 7
   originalityGrade: 7
@@ -24,13 +24,13 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-09-10
-  status: claude-reviewed
-  reviewerNotes: "Date lane, editorial-queue.md, target 2026-09-14. Judgment call: no Date lane row fell within the standard 3-day pickup window (Hockey was the nearest at 4 days out), and CONTENT_ROADMAP.md's evergreen backlog is fully exhausted this run, every row across Foundations, Equipment maintenance, Field setup, Coach's-kid dynamics, Parent communication, Rec league vs travel ball, and Mental health is covered, drafted, or PIPELINE-blocked (PDF lead magnets, not Ed's collection format). Took the Hockey row as the closest actionable item rather than skip the day. Verified against src/content/seasonCalendars/youth-travel-hockey-winter.md (September note: practices begin, league scheduling meetings, volunteer signups for scorekeeping/penalty box/locker room monitor). Checked src/content/articles for existing hockey coverage (26 files matched 'hockey'): all cover cost, tryouts, recruiting, equipment, or levels, none cover team-parent volunteer roles, so this is additive. Role duties and credentialing requirements (USA Hockey membership free, SafeSport 90-minute course, $30 background check every two years taking about two weeks to clear) sourced from durangohockey.org's USA Hockey Volunteer Requirements page and cross-checked against the Kraken Community Iceplex, Greeley Youth Hockey, and Capital Thunder volunteer pages, which describe the same three roles and duties consistently. INFRA NOTE: the Cowork sandbox's bash/shell tool was completely down this entire run (Windows update Sept 8 mount failure per the tool's own error, confirmed on three retries), so scripts/check-content-field-lengths.mjs and scripts/check-voice-rubric.mjs could not run. Field lengths were counted by hand instead: seoTitle 55 chars, seoDescription 157 chars, dek 13 words, bluf ~300 chars, all within cap. No git commit was possible either (safe-commit.sh requires bash); this file is written to disk but NOT committed or pushed. Someone needs to run safe-commit.sh once the sandbox is fixed."
+  claudeReviewedAt: 2026-09-14
+  status: published
+  reviewerNotes: "PASS (Claude standing in for Penny, 2026-09-14): one A6 rhythm fail in the opening paragraph fixed by splitting the second sentence. Read against Sections A/B/C/E; USA Hockey SafeSport and screening requirements as described match USA Hockey policy. Ed 09-10 notes follow. Date lane, editorial-queue.md, target 2026-09-14. Judgment call: no Date lane row fell within the standard 3-day pickup window (Hockey was the nearest at 4 days out), and CONTENT_ROADMAP.md's evergreen backlog is fully exhausted this run, every row across Foundations, Equipment maintenance, Field setup, Coach's-kid dynamics, Parent communication, Rec league vs travel ball, and Mental health is covered, drafted, or PIPELINE-blocked (PDF lead magnets, not Ed's collection format). Took the Hockey row as the closest actionable item rather than skip the day. Verified against src/content/seasonCalendars/youth-travel-hockey-winter.md (September note: practices begin, league scheduling meetings, volunteer signups for scorekeeping/penalty box/locker room monitor). Checked src/content/articles for existing hockey coverage (26 files matched 'hockey'): all cover cost, tryouts, recruiting, equipment, or levels, none cover team-parent volunteer roles, so this is additive. Role duties and credentialing requirements (USA Hockey membership free, SafeSport 90-minute course, $30 background check every two years taking about two weeks to clear) sourced from durangohockey.org's USA Hockey Volunteer Requirements page and cross-checked against the Kraken Community Iceplex, Greeley Youth Hockey, and Capital Thunder volunteer pages, which describe the same three roles and duties consistently. INFRA NOTE: the Cowork sandbox's bash/shell tool was completely down this entire run (Windows update Sept 8 mount failure per the tool's own error, confirmed on three retries), so scripts/check-content-field-lengths.mjs and scripts/check-voice-rubric.mjs could not run. Field lengths were counted by hand instead: seoTitle 55 chars, seoDescription 157 chars, dek 13 words, bluf ~300 chars, all within cap. No git commit was possible either (safe-commit.sh requires bash); this file is written to disk but NOT committed or pushed. Someone needs to run safe-commit.sh once the sandbox is fixed."
   factCheckGoodThrough: 2027-09-10
 ---
 
-Practices start in September, and three jobs need a parent before the puck drops on the first scrimmage. None of them are optional, and none of them can be filled the week you show up.
+Practices start in September, and three jobs need a parent before the puck drops on the first scrimmage. None are optional. None can be filled the week you show up.
 
 League scheduling meetings land in the same September window, and that is usually where the volunteer sign-up sheet gets passed around. Skip the meeting and you find out later which slot is left, if any.
 
