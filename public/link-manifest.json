@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-09T16:28:41.621Z",
-  "count": 874,
+  "generatedAt": "2026-09-14T13:40:43.553Z",
+  "count": 888,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -316,9 +316,21 @@
       ]
     },
     {
+      "url": "https://appliedsportpsych.org/resources/resources-for-parents/eight-tips-for-communicating-with-adolescent-athletes-immediately-after-the-game-win-or-loss/",
+      "sources": [
+        "src/content/articles/post-game-talk.md"
+      ]
+    },
+    {
       "url": "https://asmi.org/",
       "sources": [
         "src/content/body/youth-pitcher-arm-care.md"
+      ]
+    },
+    {
+      "url": "https://asmi.org/position-statement-for-tommy-john-injuries-in-baseball-pitchers/",
+      "sources": [
+        "src/content/articles/youth-baseball-throwing-drills.md"
       ]
     },
     {
@@ -375,6 +387,12 @@
       "url": "https://blog.nemours.org/2026/01/young-athlete-nutrition/",
       "sources": [
         "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
+      "url": "https://blog.worldamateurgolftour.com/blog/sportsmanship-in-junior-golf-build-character-that-lasts",
+      "sources": [
+        "src/content/articles/post-game-talk.md"
       ]
     },
     {
@@ -511,6 +529,12 @@
       ]
     },
     {
+      "url": "https://clearretain.com/blogs/blog/contact-sport-mouth-guard-benefits-2026-athlete-guide",
+      "sources": [
+        "src/content/articles/concussion-protocol-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://coachingvb.com/first-volleyball-practice-plan/",
       "sources": [
         "src/content/articles/youth-volleyball-practice-plan.md"
@@ -534,6 +558,12 @@
         "src/content/body/concussion-protocol-basics.md",
         "src/content/body/suspected-concussion-right-now.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://couchanddumbells.com/collections/outdoor-play-equipment",
+      "sources": [
+        "src/content/articles/tee-ball-drills.md"
       ]
     },
     {
@@ -592,6 +622,12 @@
       "url": "https://drinksolidviibe.com/blogs/news/sparkling-drinks-vs-sports-drinks",
       "sources": [
         "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
+      "url": "https://drivelinebaseball.com/blogs/blog/optimizing-for-health-development-in-youth-baseball-part-1",
+      "sources": [
+        "src/content/articles/youth-baseball-throwing-drills.md"
       ]
     },
     {
@@ -726,6 +762,12 @@
       "url": "https://journals.lww.com/nsca-jscr/fulltext/2009/08000/youth_resistance_training__updated_position.40.aspx",
       "sources": [
         "src/content/body/recovery-basics.md"
+      ]
+    },
+    {
+      "url": "https://journals.sagepub.com/doi/10.1177/0363546510384224",
+      "sources": [
+        "src/content/articles/youth-baseball-throwing-drills.md"
       ]
     },
     {
@@ -1068,6 +1110,12 @@
       ]
     },
     {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11190379/",
+      "sources": [
+        "src/content/articles/post-game-talk.md"
+      ]
+    },
+    {
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12151056/",
       "sources": [
         "src/content/articles/growth-mindset-youth-sports.md"
@@ -1077,6 +1125,18 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2729972/",
       "sources": [
         "src/content/body/acl-prevention-warmup.md"
+      ]
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5857730/",
+      "sources": [
+        "src/content/articles/youth-baseball-throwing-drills.md"
+      ]
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6378501/",
+      "sources": [
+        "src/content/articles/concussion-protocol-youth-sports.md"
       ]
     },
     {
@@ -1252,6 +1312,7 @@
     {
       "url": "https://rnkapparel.com/blogs/rnk-news/why-youth-athletes-need-durable-gear",
       "sources": [
+        "src/content/articles/concussion-protocol-youth-sports.md",
         "src/content/articles/youth-sports-safety.md"
       ]
     },
@@ -1277,6 +1338,12 @@
         "src/pages/team-parent/[slug].astro",
         "src/pages/what-to-buy/[slug].astro",
         "src/pages/youth-sports-pendulum.astro"
+      ]
+    },
+    {
+      "url": "https://selfdeterminationtheory.org/wp-content/uploads/2023/08/2023_SchemenauerChu_LessonsfromtheField.pdf",
+      "sources": [
+        "src/content/articles/post-game-talk.md"
       ]
     },
     {
@@ -3331,6 +3398,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/heads-up/response/index.html",
+      "sources": [
+        "src/content/articles/concussion-protocol-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/headsup",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -3873,6 +3946,12 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/university/articles/backyard-tip-throwing-accuracy-drill/",
+      "sources": [
+        "src/content/articles/youth-baseball-throwing-drills.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org/university/articles/field-maintenance-tips-what-you-can-do-to-improve-the-playability-durability-of-your-little-league-field/",
       "sources": [
         "src/content/articles/raking-the-infield.md"
@@ -4305,6 +4384,12 @@
       "url": "https://www.ncaa.org/sports/volleyball-women",
       "sources": [
         "src/content/recruiting/volleyball.md"
+      ]
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448119/",
+      "sources": [
+        "src/content/articles/concussion-protocol-youth-sports.md"
       ]
     },
     {

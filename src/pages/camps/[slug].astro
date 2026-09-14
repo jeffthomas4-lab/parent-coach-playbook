@@ -87,15 +87,35 @@ if (!stateCities || stateCities.length === 0) {
       // uncategorized scrape), so it's the more reliable fallback: prefer a
       // real sport-guide match, then the camp's own state hub, then /camps/
       // only if neither resolves.
+      //
+      // 2026-09-14 fix: the state-hub branch used to redirect to
+      // `/camps/{state}/` unconditionally, trusting that the hub always
+      // renders. It doesn't — this route treats a bare state slug as a state
+      // landing page only when that state currently has at least one live
+      // camp (see the STATE_CODES dispatch above); a state whose last camp
+      // expired has no hub to land on, so the redirect dead-ended in a real
+      // 404 (confirmed live for /camps/pa/ and /camps/mn/ in the 2026-09-13
+      // GSC review — both states had emptied out since the 08-16 review,
+      // when the same check passed). Verify the destination actually has
+      // camps before sending anyone there; fall back to /camps/ if not.
       const GENERIC_CATEGORIES = new Set(['camp_sports', 'camp_general', 'other']);
       const sportGuide = any.sport && !GENERIC_CATEGORIES.has(any.sport)
         ? SPORTS.find((s) => s.slug === any!.sport)
         : undefined;
-      const dest = sportGuide
-        ? `/sports/${sportGuide.slug}/`
-        : any.state
-          ? `/camps/${any.state.toLowerCase()}/`
-          : '/camps/';
+      let dest = '/camps/';
+      if (sportGuide) {
+        dest = `/sports/${sportGuide.slug}/`;
+      } else if (any.state && env?.DB) {
+        try {
+          const { listCitiesInState } = await import('../../lib/camps-db');
+          const citiesInState = await listCitiesInState(env.DB, any.state.toUpperCase());
+          if (citiesInState && citiesInState.length > 0) {
+            dest = `/camps/${any.state.toLowerCase()}/`;
+          }
+        } catch (e) {
+          console.error('listCitiesInState redirect-target check failed', e);
+        }
+      }
       return Astro.redirect(dest, 301);
     }
     // Future-dated but not approved (pending review, or rejected for cause:

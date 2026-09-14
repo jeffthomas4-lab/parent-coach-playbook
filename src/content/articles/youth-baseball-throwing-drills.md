@@ -22,9 +22,12 @@ editorial:
   status: published
   citationCheckPassed: false
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
 ---
 
 These six drills, bullseye accuracy, the figure-8 (or "boxers"), throwing from the knees, step-back long toss, throw-on-the-run, and a quick-release relay, cover the full range of what a young arm needs: accuracy, footwork, clean release timing, and gradual arm-care conditioning. Run two or three per session, rotate them week to week, and always watch for fatigue before adding distance or intensity.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -126,7 +129,7 @@ Demonstrate the movement yourself, or have an older player show it, before corre
 
 Copy this plan straight into your practice notes. It fits into almost any time slot and needs minimal gear.
 
-- **Equipment**: 4 to 6 balls, two gloves per player, one bucket or cone target, a resistance band
+- **Equipment**: 4 to 6 balls, two [gloves](/go/baseball-glove-youth/) per player, one [bucket](/go/baseball-ball-bucket-with-lid/) or [cone](/go/agility-cones-set/) target, a [resistance band](/go/resistance-bands-set/)
 - **0 to 5 minutes**: Warm-up (band work, light tosses)
 - **5 to 12 minutes**: Bullseye accuracy drill, two rounds
 - **12 to 18 minutes**: Figure-8 or throw-on-the-run, depending on the week's focus

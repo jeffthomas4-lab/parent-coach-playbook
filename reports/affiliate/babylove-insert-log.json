@@ -712,6 +712,84 @@
       "after": null,
       "asin": null,
       "browserVerification": "Not attempted. No content was read for monetization purposes this run for the same reason as 2026-09-11: git state could not be verified and nothing produced could be committed or pushed."
+    },
+    {
+      "date": "2026-09-13",
+      "articleSlug": "run-summary",
+      "action": "blocked-sandbox-unreachable-no-work-attempted",
+      "details": "Second scheduled invocation logged today under this same date; mcp__workspace__bash still failing on this run, third consecutive attempt with the identical error: 'failed to mount ... outputs ... is under Plan9 share \"c\" which is not mounted' plus 'ensure user ... already exists unexpectedly', same Windows-update-since-2026-09-08 root cause the tool itself names, now unresolved across three scheduled runs (2026-09-11, and twice logged 2026-09-13). Read-only file access (Read/Edit/Glob/Grep) still worked: re-confirmed affiliate-governance.json babylove_auto_insert block, affiliates.json (242 top-level entries as counted this run), and AFFILIATES.md are intact and match what prior entries describe. Also re-grepped src/content for externalSource frontmatter and found 25 BabyLove-origin articles total, consistent with the standing backfill/new-article set already known from this log (includes youth-baseball-throwing-drills, which prior entries flag as the next new-article item with one sourced-but-uninserted resistance-band gap). Did not open or edit any article, affiliates.json, or the gap queue for monetization purposes this run: without git log/fetch/pull/push, npm run git:unlock, or node scripts/check-content-field-lengths.mjs, I cannot (1) confirm whether local main has moved relative to origin since the 2026-09-09 documented divergence, (2) rule out collision with the other concurrent agents (Cass, Dana, Penny, Discovery, Ed) who write to this same clone, or (3) commit or verify anything I changed, so any edit made right now would sit as an unverifiable, unshippable, uncommitted diff. Per the honest-failure rule: no content files were edited, no products were sourced, no ASIN was written. This is the third blocked run in four calendar days on a single unresolved environment fault; recommending Jeff escalate the workspace mount issue directly rather than wait on further scheduled retries, since Arnie cannot perform its core function (source, insert, commit, push) until file-system parity between the Cowork sandbox and the Windows host is restored.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not attempted. No content was read for monetization purposes this run; git state could not be verified and nothing produced could be committed or pushed."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-baseball-throwing-drills",
+      "action": "disclosure-added",
+      "details": "Worked the next-queue item flagged in the 2026-09-09 entry. mcp__workspace__bash is still unreachable this run (same 2026-09-08 Windows-update mount fault), so this pass used file tools only (Read/Edit), not git or the field-length script. Added the FTC disclosure sentence to the visible body, placed after the opening paragraph and before the first affiliate link. Set editorial.affiliateDisclosurePresent: true in frontmatter.",
+      "before": "No disclosure sentence present anywhere in the body.",
+      "after": "Added: 'This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.' as its own paragraph directly after the opening paragraph.",
+      "asin": null,
+      "browserVerification": "Not applicable, no product page."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-baseball-throwing-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "resistance-bands-set",
+      "anchorText": "resistance band",
+      "location": "'What does a 20-minute throwing session look like?' section, Equipment bullet",
+      "before": "Equipment: 4 to 6 balls, two gloves per player, one bucket or cone target, a resistance band",
+      "after": "Equipment: 4 to 6 balls, two [gloves](/go/baseball-glove-youth/) per player, one [bucket](/go/baseball-ball-bucket-with-lid/) or [cone](/go/agility-cones-set/) target, a [resistance band](/go/resistance-bands-set/)",
+      "asin": "B01AVDVHTI (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run (no browser tool reachable/used this run either -- kept scope to file-tool-only work). Reused an existing, previously-curated catalog slug per governance step 2. No new ASIN written. This resolves the resistance-band sourcing gap flagged 2026-09-09 with an existing catalog match rather than a newly sourced product, so the hard browser-verification rule for new entries does not apply. Destination not altered. The 2026-09-09 note called this 'sourced but uninserted' -- on re-reading the article, the existing resistance-bands-set slug is a confident match for the Pro Tip's generic 'a resistance band,' so no new sourcing was actually needed."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-baseball-throwing-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-glove-youth",
+      "anchorText": "gloves",
+      "location": "'What does a 20-minute throwing session look like?' section, Equipment bullet",
+      "before": "see above",
+      "after": "see above",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-baseball-throwing-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-ball-bucket-with-lid",
+      "anchorText": "bucket",
+      "location": "'What does a 20-minute throwing session look like?' section, Equipment bullet",
+      "before": "see above",
+      "after": "see above",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-baseball-throwing-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cone",
+      "location": "'What does a 20-minute throwing session look like?' section, Equipment bullet",
+      "before": "see above",
+      "after": "see above",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "run-summary",
+      "action": "partial-run-file-tools-only-no-git",
+      "details": "Continuation of the 2026-09-11/09-13 blocked streak. mcp__workspace__bash confirmed unreachable again this run (4th consecutive identical mount failure on retry). Rather than post another zero-work blocked entry, worked the one well-scoped queued item (youth-baseball-throwing-drills, 826711) using file tools only: no git log/fetch/pull, no live browser ASIN verification, no node field-length check, no commit, no push. 4 links inserted, 0 new catalog entries (the standing resistance-band gap turned out to have a confident existing-catalog match on re-read, so nothing needed sourcing), 0 competitor links found (all outbound links are Little League/PMC/ASMI/Driveline/SAGE citations, protected), disclosure added. Did NOT touch the broader backfill list (concussion-protocol-youth-sports and post-game-talk appear to be unprocessed BabyLove-origin articles not yet in this log; left untouched this run to keep scope to one verifiable change) or re-attempt best-youth-softball-gloves' two standing unmatchable gaps. IMPORTANT CAVEAT: this edit and this log entry are UNCOMMITTED on disk. Without bash there is no way to run git add/commit/push, safe-commit.sh, git:unlock, or the field-length build gate from this session. The change sits in the working tree at src/content/articles/youth-baseball-throwing-drills.md and this log file, both modified via direct file-write (not git), and needs someone with shell/git access (Jeff directly, or a future run once the sandbox mount is fixed) to review, run node scripts/check-content-field-lengths.mjs, and commit + push before this reaches production. Flagging explicitly rather than claiming a shipped change.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not attempted this run; all links inserted were existing, previously browser-verified catalog entries (see individual entries above)."
     }
   ]
 }
