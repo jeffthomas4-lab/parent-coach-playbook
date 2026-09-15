@@ -55,7 +55,10 @@ events, or contact clocks. Exact R13 and the rollback receiver are each active a
 The inspected R15 receiver version remains inactive. No R15 producer version has been uploaded.
 
 The R15-A1 live tail captured a Worker-handled HTTP invocation on exact R13 but no scheduled
-invocation across the following complete minute boundary. This is the trigger-recovery predicate.
+invocation across the following complete minute boundary. A subsequent authenticated, read-only
+Cloudflare Dashboard inspection made the cause definitive: `parent-coach-desk` exposes exactly one
+Cron trigger, described as "At 17 minutes past the hour, every 6 hours." The required `* * * * *`
+minute trigger is absent. This exact one-trigger remote state is the trigger-recovery predicate.
 
 ## Exact one-attempt execution sequence
 
