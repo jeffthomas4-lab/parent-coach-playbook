@@ -1,4 +1,4 @@
-# CRM Gate 9C-P17-B-R15 batched production import throughput
+# CRM Gate 9C-P17-B-R15-A1 drift recovery and batched production import throughput
 
 Status: **AWAITING EXACT OWNER APPROVAL**
 
@@ -11,6 +11,12 @@ source-frozen historical organization import advances in ordered groups of at mo
 one event at a time. The gate preserves the existing run, source snapshot, source policy, contact
 boundary, two-pass reconciliation contract, schedules, routes, domains, databases, queues,
 bindings, and secrets. It creates no second run and performs no migration.
+
+Authenticated revalidation after the first evidence commit found a newer generic PCD deployment
+active with both producer flags true but without the required `CRM_ADAPTER` Service Binding. The
+durable import is healthy and exactly reconciled at its last delivered sequence, but cannot advance
+while that version is active. R15-A1 therefore adds one explicit corrective promotion of exact R13
+before promoting the R15 producer. It does not authorize the drifted version as a rollback target.
 
 The production CRM is already usable as an owner-only conditional beta against organizations that
 have arrived. This gate accelerates the remaining governed import; it does not redefine partial
@@ -32,9 +38,13 @@ delivery as data-complete.
   `2affffa6afb09beb74537afc5839dbd459f4dbb0ffcc47107fb6f1211740202b`
 - enabled production manifest SHA-256:
   `3a0e5c3bb37309394c5e97076f32895b289f15462198ac0b42a87a043555ccc8`
-- active and mandatory rollback version:
+- drifted active version at authenticated R15-A1 capture:
+  `f370b4dd-7d51-40d5-b8c7-025ed278c5ee`
+- drifted active deployment at authenticated R15-A1 capture:
+  `665bf4d3-08e1-4abf-88a2-1b9bc3427110`
+- corrective and mandatory rollback R13 version:
   `43244bc7-9300-4a9d-a9a6-e2da43aba6af`
-- last recorded active deployment:
+- last exact R13 deployment evidence:
   `a2ce1e25-0c73-47c6-8542-9bc6c89e4ca4`
 
 The producer build aggregate covers the complete `dist` artifact in sorted relative-path order and
@@ -90,13 +100,21 @@ key, seven secret declarations, and all existing non-secret variables.
 - target workspace: `ws-sightsmash`
 - source: `source-pcd-activity-radar`
 
-The last authenticated checkpoint before this gate was authored had all 198,287 organizations and
-all 141 contacts scanned with terminal dispositions, 93,558 delivered organization events,
-104,729 queued organization events, zero leased or dead events, and reconciliation pass 1 not yet
-started. The receiver concurrently held 93,533 organizations and receipts; the 25-event difference
-was an in-flight bounded producer/receiver observation, not a declared final parity point. These
-counts are historical lower bounds only. The execution preflight must observe monotonic progress
-or a completed run, never regression.
+The authenticated R15-A1 checkpoint has all 198,287 organizations and all 141 contacts scanned with
+terminal dispositions, 94,887 delivered organization events, 103,400 pending organization events,
+zero retry, leased, dead, or exhausted events, and reconciliation pass 1 not yet started. The
+receiver has exactly 94,887 organizations, SightSmash workspace organizations, PCD inbox receipts,
+and organization projection clocks, all at source-sequence high-water 94,887. People, contact
+points, workspace contacts, consent events, contact projection clocks, and bad reconciliation runs
+are all zero. Every D1 readback reported `success=true`, `changes=0`, `rows_written=0`, and
+`changed_db=false`.
+
+The current drifted PCD version retains the exact databases, flags, boundary, manifest, source
+bookmarks, policy, HMAC secret name, and other secret-name set, but its `CRM_ADAPTER` binding is
+absent. Exact R13 retains the Service Binding to `field-forge-crm` production and the same frozen
+runtime values. The execution preflight must observe this exact drift state, monotonic progress from
+94,887 if another authorized version has briefly restored delivery, or a completed run; it must
+never accept regression or an unexplained binding change.
 
 ## Local verification already completed
 
@@ -144,12 +162,15 @@ copied channel, or communication row is an immediate abort and rollback conditio
    above. Permit only the five known PCD build-generated working-tree paths while hashing; stage,
    reset, clean, absorb, or deploy none of them.
 2. Use direct `d1 execute --command` aggregate SELECTs only. Each must report `success=true`,
-   `changes=0`, `rows_written=0`, and `changed_db=false`. Require the exact single active producer
-   and receiver rollback versions, both exact schedules on `parent-coach-desk`, every existing route
-   and domain, unchanged non-secret bindings and secret-name sets, both producer flags true, the
-   exact run/boundary/manifest/bookmarks/policy, no stale lease, no dead or exhausted event, no
-   rejection or halt, monotonic delivery, zero bad reconciliation finding, and the zero-contact
-   boundary. If the run has already completed, skip both deploys and perform only final readbacks.
+   `changes=0`, `rows_written=0`, and `changed_db=false`. Require exact drifted producer version
+   `f370b4dd-7d51-40d5-b8c7-025ed278c5ee` alone at 100 percent, exact receiver rollback version
+   `d969492c-5b4c-4811-895d-80706836b1d5` alone at 100 percent, exact R13 available for corrective
+   promotion, both exact schedules on `parent-coach-desk`, every existing route and domain,
+   unchanged non-secret bindings and secret-name sets, both producer flags true, the exact
+   run/boundary/manifest/bookmarks/policy, no stale lease, no dead or exhausted event, no rejection
+   or halt, receiver parity at 94,887 or higher, zero bad reconciliation finding, and the
+   zero-contact boundary. If another version is active or the run has already completed, perform no
+   mutation and stop for a new exact read-only decision.
 3. Capture fresh pre-action Time Travel bookmarks for the three exact D1 databases. They authorize
    no restoration.
 4. Upload exactly one uniquely tagged inactive `field-forge-crm` version from receiver candidate
@@ -160,23 +181,28 @@ copied channel, or communication row is an immediate abort and rollback conditio
 5. Promote that exact receiver version alone to 100 percent. Require immediate and delayed health,
    Access, owner workspace, custom-domain, Queue, scheduled-handler, cross-workspace isolation, and
    non-secret binding readbacks. Do not seed, migrate, or change a resource.
-6. Upload exactly one uniquely tagged inactive `parent-coach-desk` version from producer candidate
+6. Promote corrective R13 version `43244bc7-9300-4a9d-a9a6-e2da43aba6af` alone to 100 percent.
+   Require the `CRM_ADAPTER` Service Binding to `field-forge-crm` production, all frozen runtime
+   values, both existing schedules, every route and domain, and the unchanged secret-name set. At
+   the next complete minute boundary require delivery and exact receiver parity to advance with no
+   failure or contact row.
+7. Upload exactly one uniquely tagged inactive `parent-coach-desk` version from producer candidate
    `12d2015cca1ebf66df540eb8c62c36f18dd4c60b` and the exact enabled manifest. Inspect it before
    traffic and require the exact production bindings, `CRM_ADAPTER` Service Binding, both true
    producer flags, frozen boundary/bookmarks/policy/manifest, schedules, routes, domains, and
    unchanged secret-name set without reading values.
-7. Promote that exact producer version alone to 100 percent. Do not apply a trigger, route, domain,
+8. Promote that exact producer version alone to 100 percent. Do not apply a trigger, route, domain,
    Queue, D1, R2, KV, Access, Turnstile, provider, or secret configuration change.
-8. Observe at least three complete minute boundaries. Require ordered batches of at most 100,
+9. Observe at least three complete minute boundaries. Require ordered batches of at most 100,
    exact per-event acknowledgements, monotonic delivered and receiver organization counts, no
    missing sequence, no backward organization projection clock, no duplicate receipt, no stale
    lease, no dead/exhausted/rejected event, no reconciliation finding, and no contact row or channel.
-9. Continue aggregate-only bounded monitoring until the existing run is `completed`, pending,
+10. Continue aggregate-only bounded monitoring until the existing run is `completed`, pending,
    retry, leased, dead, and exhausted counts are zero, both reconciliation passes are complete,
    every frozen organization and contact has one terminal disposition, eligible organization events
    equal durable receiver receipts, and every missing, duplicate, stale, unauthorized, mismatch,
    contact, and cross-workspace finding is zero.
-10. Capture fresh post-action bookmarks and record exact candidates, versions, deployments,
+11. Capture fresh post-action bookmarks and record exact candidates, versions, deployments,
     bindings, routes, domains, schedules, import checkpoint, terminal accounting, parity,
     reconciliation, contact boundary, health, and rollback identities in source-controlled receipts.
     Then stop.
@@ -190,8 +216,10 @@ boundary mismatch. Abort if the active lease is stale, any dead/exhausted/reject
 accounting regresses, a reconciliation finding appears, or any contact becomes projectable.
 
 If the receiver upload, inspection, promotion, immediate readback, or health checks fail, restore
-CRM version `d969492c-5b4c-4811-895d-80706836b1d5` alone to 100 percent and stop before producer
-upload.
+CRM version `d969492c-5b4c-4811-895d-80706836b1d5` alone to 100 percent and stop before corrective
+R13 promotion. If corrective R13 promotion or its next-minute proof fails, keep or restore R13 alone
+at 100 percent when possible, restore CRM version `d969492c-5b4c-4811-895d-80706836b1d5` alone to
+100 percent, record the exact failure, and stop before R15 producer upload.
 
 After producer promotion, any failed binding, batch, acknowledgement, ordering, delivery,
 reconciliation, isolation, or contact check requires, in order:
@@ -232,7 +260,7 @@ projection.
 
 ## Approval sentence
 
-> Approve CRM Gate 9C-P17-B-R15 exactly as recorded at evidence commit `<EVIDENCE_COMMIT>`, using
+> Approve CRM Gate 9C-P17-B-R15-A1 exactly as recorded at evidence commit `<EVIDENCE_COMMIT>`, using
 > PCD candidate `12d2015cca1ebf66df540eb8c62c36f18dd4c60b`, PCD build artifact aggregate
 > `2affffa6afb09beb74537afc5839dbd459f4dbb0ffcc47107fb6f1211740202b`, PCD enabled production
 > manifest SHA-256 `3a0e5c3bb37309394c5e97076f32895b289f15462198ac0b42a87a043555ccc8`, CRM candidate
@@ -240,7 +268,8 @@ projection.
 > `f6e83ec3e18c037315b083a72d395c4f978ca267f1b9df20db7e86de6121fa32`, CRM generated
 > production configuration SHA-256
 > `2337fe5d2bfb89c5e1a994d602ae8a0d47d6fa677f930ec0dbcaddb1c9ae9ada`, mandatory rollback
-> versions `43244bc7-9300-4a9d-a9a6-e2da43aba6af` and
+> drifted active PCD version `f370b4dd-7d51-40d5-b8c7-025ed278c5ee`, corrective and mandatory
+> rollback R13 version `43244bc7-9300-4a9d-a9a6-e2da43aba6af`, CRM rollback version
 > `d969492c-5b4c-4811-895d-80706836b1d5`, and the exact run, boundary, manifest, database IDs,
-> execution sequence, monitoring to completion, rollback, abort thresholds, contact boundary, and
-> exclusions recorded there.
+> drift recovery, execution sequence, monitoring to completion, rollback, abort thresholds, contact
+> boundary, and exclusions recorded there.
