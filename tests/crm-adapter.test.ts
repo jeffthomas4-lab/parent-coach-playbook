@@ -3,6 +3,7 @@ import type { D1Database } from '@cloudflare/workers-types';
 import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 import { createDisposableIntelDatabase } from './helpers/disposable-intel-db';
 import {
+  dispatchPcdCrmBackfillBatch,
   dispatchPcdCrmOutbox,
   finalizePcdCrmBackfill,
   projectPcdCrmBackfill,
@@ -793,6 +794,260 @@ describe('PCD CRM adapter producer', () => {
         reconciliation_window_ordinal: 0,
         reconciliation_complete: 0,
       });
+  }, 10_000);
+
+  it('delivers only run-linked organization upserts in one bounded signed receiver batch', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const dispatchAt = Date.parse('2026-09-03T12:00:00.000Z');
+    intelResource.sqlite.exec(`WITH RECURSIVE sequence(value) AS (
+        SELECT 1 UNION ALL SELECT value+1 FROM sequence WHERE value<26
+      )
+      INSERT INTO organizations
+        (id,slug,name,organization_type,website_url,city,state,zip,categories,record_source,record_status,is_claimed,
+         confidence_score,created_at,updated_at,content_hash,deleted_at)
+      SELECT printf('org-bulk-%03d',value),printf('org-bulk-%03d',value),printf('Bulk Organization %03d',value),
+        'club_league',printf('https://org-bulk-%03d.example',value),'Tacoma','WA','98401','["volleyball"]',
+        'manual','active',0,90,'2026-09-01T12:00:00.000Z','2026-09-01T12:00:00.000Z',NULL,NULL
+      FROM sequence`);
+    let capturedPath = '';
+    let capturedCount = 0;
+    const fetcher: CrmAdapterFetcher = {
+      fetch: vi.fn(async (input, init) => {
+        capturedPath = String(input);
+        const body = JSON.parse(String(init?.body)) as {
+          events: Array<{ idempotencyKey: string; event: { eventId: string; sequence: number } }>;
+        };
+        capturedCount = body.events.length;
+        return Response.json({
+          accepted: true,
+          receipts: body.events.map(({ event }) => ({
+            accepted: true,
+            eventId: event.eventId,
+            receiptId: `bulk-receipt-${event.sequence}`,
+            replay: false,
+            sequence: event.sequence,
+          })),
+          replay: false,
+        }, { status: 202 });
+      }),
+    };
+    const adapterEnv = env(ops, intel, {
+      CRM_ADAPTER: fetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now: dispatchAt })).toMatchObject({
+      organizations: 26, scanCompleted: true,
+    });
+
+    const delivery = await dispatchPcdCrmBackfillBatch(adapterEnv, { now: dispatchAt + 1 });
+    expect(await ops.prepare(`SELECT status,last_error_code,receiver_status FROM crm_adapter_outbox
+      ORDER BY source_sequence LIMIT 1`).first()).toEqual({
+      status: 'delivered', last_error_code: null, receiver_status: 202,
+    });
+    expect(delivery).toEqual({
+      enabled: true, claimed: 26, delivered: 26, retried: 0, dead: 0,
+    });
+    expect(fetcher.fetch).toHaveBeenCalledTimes(1);
+    expect(capturedPath.endsWith('/events/batch')).toBe(true);
+    expect(capturedCount).toBe(26);
+    expect(await ops.prepare(`SELECT status,COUNT(*) count,MIN(send_attempt_count) min_sends,MAX(send_attempt_count) max_sends
+      FROM crm_adapter_outbox GROUP BY status`).first()).toEqual({
+      status: 'delivered', count: 26, min_sends: 1, max_sends: 1,
+    });
+  }, 10_000);
+
+  it('uses the bulk lease protocol on an ordinary scheduled run while a backfill is active', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const dispatchAt = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-overlapping-crons', updatedAt: '2026-09-01T12:00:00.000Z' });
+    let capturedPath = '';
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn(async (input, init) => {
+      capturedPath = String(input);
+      const body = JSON.parse(String(init?.body)) as {
+        events: Array<{ event: { eventId: string; sequence: number } }>;
+      };
+      return Response.json({
+        accepted: true,
+        receipts: body.events.map(({ event }) => ({
+          accepted: true, eventId: event.eventId, receiptId: `overlap-${event.sequence}`,
+          replay: false, sequence: event.sequence,
+        })),
+        replay: false,
+      }, { status: 202 });
+    }) };
+    const adapterEnv = env(ops, intel, {
+      CRM_ADAPTER: fetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now: dispatchAt })).toMatchObject({ scanCompleted: true });
+    vi.spyOn(console, 'log').mockImplementation(() => undefined);
+
+    await runPcdCrmAdapter(adapterEnv);
+
+    expect(capturedPath.endsWith('/events/batch')).toBe(true);
+    expect(await ops.prepare(`SELECT status,receiver_receipt_id FROM crm_adapter_outbox`).first())
+      .toEqual({ status: 'delivered', receiver_receipt_id: 'overlap-1' });
+  }, 10_000);
+
+  it('releases a partial batch lease without sending a later source prefix', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const dispatchAt = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-partial-claim-a', updatedAt: '2026-09-01T12:00:00.000Z' });
+    await insertOrganization(intel, { id: 'org-partial-claim-b', updatedAt: '2026-09-01T12:00:00.000Z' });
+    const originalPrepare = ops.prepare.bind(ops);
+    const partialClaimOps = new Proxy(ops, {
+      get(target, property) {
+        if (property !== 'prepare') {
+          const value = Reflect.get(target, property);
+          return typeof value === 'function' ? value.bind(target) : value;
+        }
+        return (query: string) => {
+          const prepared = originalPrepare(query);
+          if (!query.includes("SET status='leased',lease_id=?")) return prepared;
+          return new Proxy(prepared, {
+            get(statement, statementProperty) {
+              if (statementProperty !== 'bind') {
+                const value = Reflect.get(statement, statementProperty);
+                return typeof value === 'function' ? value.bind(statement) : value;
+              }
+              return (...values: unknown[]) => {
+                const bound = statement.bind(...values);
+                return new Proxy(bound, {
+                  get(boundStatement, boundProperty) {
+                    if (boundProperty !== 'all') {
+                      const value = Reflect.get(boundStatement, boundProperty);
+                      return typeof value === 'function' ? value.bind(boundStatement) : value;
+                    }
+                    return async () => {
+                      const result = await boundStatement.all();
+                      return { ...result, results: result.results.slice(1) };
+                    };
+                  },
+                });
+              };
+            },
+          });
+        };
+      },
+    }) as D1Database;
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn() };
+    const adapterEnv = env(partialClaimOps, intel, {
+      CRM_ADAPTER: fetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now: dispatchAt })).toMatchObject({ scanCompleted: true });
+
+    expect(await dispatchPcdCrmBackfillBatch(adapterEnv, { now: dispatchAt + 1 })).toEqual({
+      enabled: true, claimed: 0, delivered: 0, retried: 0, dead: 0,
+    });
+    expect(fetcher.fetch).not.toHaveBeenCalled();
+    expect((await ops.prepare(`SELECT status,lease_id FROM crm_adapter_outbox ORDER BY source_sequence`).all()).results)
+      .toEqual([{ status: 'pending', lease_id: null }, { status: 'pending', lease_id: null }]);
+  }, 10_000);
+
+  it('dead-letters the exact malformed stored event without discarding its valid prefix', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const dispatchAt = Date.parse('2026-09-03T12:00:00.000Z');
+    await insertOrganization(intel, { id: 'org-stored-valid-prefix', updatedAt: '2026-09-01T12:00:00.000Z' });
+    await insertOrganization(intel, { id: 'org-stored-malformed-later', updatedAt: '2026-09-01T12:00:00.000Z' });
+    const fetcher: CrmAdapterFetcher = { fetch: vi.fn() };
+    const adapterEnv = env(ops, intel, {
+      CRM_ADAPTER: fetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now: dispatchAt })).toMatchObject({ scanCompleted: true });
+    await ops.prepare(`UPDATE crm_adapter_outbox SET payload_json='[]'
+      WHERE source_sequence=(SELECT MAX(source_sequence) FROM crm_adapter_outbox)`).run();
+
+    expect(await dispatchPcdCrmBackfillBatch(adapterEnv, { now: dispatchAt + 1 })).toEqual({
+      enabled: true, claimed: 2, delivered: 0, retried: 0, dead: 1,
+    });
+    expect(fetcher.fetch).not.toHaveBeenCalled();
+    expect((await ops.prepare(`SELECT status,last_error_code FROM crm_adapter_outbox
+      ORDER BY source_sequence`).all()).results).toEqual([
+      { status: 'pending', last_error_code: null },
+      { status: 'dead', last_error_code: 'producer_invalid_payload' },
+    ]);
+  }, 10_000);
+
+  it('does not count a partial batch acknowledgement or batch ordinary outbox rows', async () => {
+    const { ops, intel } = await databases();
+    const cutoff = Date.parse('2026-09-02T00:00:00.000Z');
+    const dispatchAt = Date.parse('2026-09-03T12:00:00.000Z');
+    intelResource.sqlite.exec(`WITH RECURSIVE sequence(value) AS (
+        SELECT 1 UNION ALL SELECT value+1 FROM sequence WHERE value<2
+      )
+      INSERT INTO organizations
+        (id,slug,name,organization_type,website_url,city,state,zip,categories,record_source,record_status,is_claimed,
+         confidence_score,created_at,updated_at,content_hash,deleted_at)
+      SELECT printf('org-partial-%03d',value),printf('org-partial-%03d',value),printf('Partial Organization %03d',value),
+        'club_league',printf('https://org-partial-%03d.example',value),'Tacoma','WA','98401','["volleyball"]',
+        'manual','active',0,90,'2026-09-01T12:00:00.000Z','2026-09-01T12:00:00.000Z',NULL,NULL
+      FROM sequence`);
+    const partialFetcher: CrmAdapterFetcher = {
+      fetch: vi.fn(async (_input, init) => {
+        const body = JSON.parse(String(init?.body)) as {
+          events: Array<{ event: { eventId: string; sequence: number } }>;
+        };
+        const first = body.events[0]!.event;
+        return Response.json({
+          accepted: true,
+          receipts: [{
+            accepted: true, eventId: first.eventId, receiptId: 'partial-receipt', replay: false, sequence: first.sequence,
+          }],
+          replay: false,
+        }, { status: 422 });
+      }),
+    };
+    const adapterEnv = env(ops, intel, {
+      CRM_ADAPTER: partialFetcher,
+      PCD_CRM_BACKFILL_ENABLED: 'true',
+      PCD_CRM_SOURCE_NOT_BEFORE_MS: String(cutoff),
+    });
+    expect(await projectPcdCrmBackfill(adapterEnv, { now: dispatchAt })).toMatchObject({ scanCompleted: true });
+    expect(await dispatchPcdCrmBackfillBatch(adapterEnv, { now: dispatchAt + 1 })).toEqual({
+      enabled: true, claimed: 2, delivered: 0, retried: 1, dead: 0,
+    });
+    expect((await ops.prepare(`SELECT status,last_error_code,receiver_receipt_id FROM crm_adapter_outbox
+      ORDER BY source_sequence`).all()).results).toEqual([
+      { status: 'retry', last_error_code: 'receiver_422', receiver_receipt_id: null },
+      { status: 'pending', last_error_code: null, receiver_receipt_id: null },
+    ]);
+
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='pending',next_attempt_at=0`).run();
+    const attributedFailureFetcher: CrmAdapterFetcher = { fetch: vi.fn(async (_input, init) => {
+      const body = JSON.parse(String(init?.body)) as { events: Array<{ event: { eventId: string } }> };
+      return new Response(JSON.stringify({ error: 'invalid_adapter_batch' }), {
+        status: 422,
+        headers: {
+          'content-type': 'application/json',
+          'x-ff-failed-event-id': body.events[1]!.event.eventId,
+        },
+      });
+    }) };
+    expect(await dispatchPcdCrmBackfillBatch(adapterEnv, {
+      fetcher: attributedFailureFetcher,
+      now: dispatchAt + 31_001,
+    })).toEqual({ enabled: true, claimed: 2, delivered: 0, retried: 0, dead: 1 });
+    expect((await ops.prepare(`SELECT status,last_error_code FROM crm_adapter_outbox
+      ORDER BY source_sequence`).all()).results).toEqual([
+      { status: 'pending', last_error_code: 'receiver_422' },
+      { status: 'dead', last_error_code: 'receiver_422' },
+    ]);
+
+    await ops.prepare(`UPDATE crm_adapter_outbox SET status='pending',next_attempt_at=0,backfill_run_id=NULL`).run();
+    const ordinaryFetcher: CrmAdapterFetcher = { fetch: vi.fn(async () => new Response(null, { status: 500 })) };
+    expect(await dispatchPcdCrmBackfillBatch(adapterEnv, { fetcher: ordinaryFetcher, now: dispatchAt + 31_001 }))
+      .toEqual({ enabled: true, claimed: 0, delivered: 0, retried: 0, dead: 0 });
+    expect(ordinaryFetcher.fetch).not.toHaveBeenCalled();
   }, 10_000);
 
   it('restarts both reconciliation passes when a run-linked safety event arrives between them', async () => {

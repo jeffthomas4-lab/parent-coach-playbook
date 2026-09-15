@@ -5,6 +5,7 @@ import { DatabaseSync, type StatementSync } from 'node:sqlite';
 import type { D1Database } from '@cloudflare/workers-types';
 import { splitSqlStatements } from '../tests/helpers/sql-split.ts';
 import {
+  dispatchPcdCrmBackfillBatch,
   dispatchPcdCrmOutbox,
   finalizePcdCrmBackfill,
   projectPcdCrmBackfill,
@@ -188,6 +189,46 @@ function receiverFetcher(receiver: DatabaseSync): CrmAdapterFetcher {
           mismatch,
         });
       }
+      if (String(input).endsWith('/events/batch')) {
+        const batch = body.events as Array<{
+          event: { eventId: string; sequence: number; eventType: string } & Record<string, unknown>;
+        }>;
+        const receipts: Array<{ accepted: true; receiptId: string; eventId: string; sequence: number; replay: boolean }> = [];
+        let simulateResponseLoss = false;
+        receiver.exec('BEGIN IMMEDIATE');
+        try {
+          for (const { event } of batch) {
+            const eventId = String(event.eventId);
+            const sequence = Number(event.sequence);
+            const eventType = String(event.eventType);
+            const payloadHash = await sha256(stableJson(event));
+            const existing = eventRead.get(eventId) as { source_sequence: number; event_type: string; payload_hash: string } | undefined;
+            if (existing) {
+              assert.equal(Number(existing.source_sequence), sequence);
+              assert.equal(existing.event_type, eventType);
+              assert.equal(existing.payload_hash, payloadHash);
+              if (sequence === RESPONSE_LOSS_SEQUENCE) writeControl(receiver, 'replayed_after_loss', 1);
+              receipts.push({ accepted: true, receiptId: `receipt-${eventId}`, eventId, sequence, replay: true });
+              continue;
+            }
+            eventInsert.run(eventId, sequence, eventType, payloadHash);
+            receipts.push({ accepted: true, receiptId: `receipt-${eventId}`, eventId, sequence, replay: false });
+            if (sequence === RESPONSE_LOSS_SEQUENCE && readControl(receiver, 'response_loss_simulated') === 0) {
+              simulateResponseLoss = true;
+            }
+          }
+          receiver.exec('COMMIT');
+        } catch (error) {
+          receiver.exec('ROLLBACK');
+          throw error;
+        }
+        if (simulateResponseLoss) {
+          writeControl(receiver, 'response_loss_simulated', 1);
+          throw new DOMException('simulated response loss', 'AbortError');
+        }
+        const replay = receipts.every((receipt) => receipt.replay);
+        return Response.json({ accepted: true, receipts, replay }, { status: replay ? 200 : 202 });
+      }
       const eventId = String(body.eventId);
       const sequence = Number(body.sequence);
       const eventType = String(body.eventType);
@@ -232,6 +273,13 @@ const env: PcdCrmAdapterEnv = {
   PCD_CRM_TARGET_WORKSPACE_ID: 'ws-sightsmash',
   PCD_CRM_SOURCE_ID: 'source-scale-test',
   PCD_CRM_SOURCE_NOT_BEFORE_MS: String(BOUNDARY),
+  PCD_CRM_BACKFILL_MANIFEST_SHA256: 'a'.repeat(64),
+  PCD_CRM_DIRECTORY_DATABASE_ID: '11111111-1111-4111-8111-111111111111',
+  PCD_CRM_OPS_DATABASE_ID: '22222222-2222-4222-8222-222222222222',
+  PCD_CRM_TARGET_DATABASE_ID: '33333333-3333-4333-8333-333333333333',
+  PCD_CRM_DIRECTORY_BOOKMARK: '00000001-00000000-00000000-11111111111111111111111111111111',
+  PCD_CRM_OPS_BOOKMARK: '00000002-00000000-00000000-22222222222222222222222222222222',
+  PCD_CRM_SOURCE_POLICY_VERSION: 'pcd-public-professional-v1',
 };
 const fetcher = receiverFetcher(receiver);
 
@@ -264,7 +312,10 @@ try {
         deliveryNow = Number((ops.prepare(`SELECT COALESCE(MAX(updated_at),0) value FROM crm_adapter_outbox`).get() as { value: number }).value) + 31_000;
       }
       for (let tick = 0; tick < DELIVERY_TICKS_PER_STAGE; tick += 1) {
-        const result = await dispatchPcdCrmOutbox(env, { fetcher, limit: 10, now: deliveryNow });
+        const bulk = await dispatchPcdCrmBackfillBatch(env, { fetcher, now: deliveryNow });
+        const result = bulk.claimed > 0
+          ? bulk
+          : await dispatchPcdCrmOutbox(env, { fetcher, limit: 25, now: deliveryNow });
         delivered += result.delivered;
         retried += result.retried;
         deliveryNow += 31_000;

@@ -6,8 +6,13 @@ const EVENT_SCOPE = 'crm.adapters.pcd.events.v2';
 const RECONCILE_SCOPE = 'crm.adapters.pcd.reconcile.v2';
 const MAX_ATTEMPTS = 8;
 const MAX_RESPONSE_BYTES = 4096;
+const MAX_BATCH_RESPONSE_BYTES = 64 * 1024;
 const BACKFILL_SCAN_LIMIT = 50;
 const OUTBOX_DISPATCH_LIMIT = 25;
+const BACKFILL_BATCH_DISPATCH_LIMIT = 100;
+const BACKFILL_BATCH_LEASE_MS = 5 * 60_000;
+const BACKFILL_BATCH_TIMEOUT_MS = 30_000;
+const BACKFILL_BATCH_MAX_REQUEST_BYTES = 2 * 1024 * 1024;
 const BACKFILL_RECONCILIATION_WINDOWS_PER_TICK = 5;
 
 export interface CrmAdapterFetcher {
@@ -114,6 +119,7 @@ interface OutboxHeadRow extends OutboxRow {
   status: 'pending' | 'retry' | 'leased' | 'dead';
   next_attempt_at: number;
   lease_expires_at: number | null;
+  backfill_run_id?: string | null;
 }
 
 interface BackfillRunRow {
@@ -1314,7 +1320,11 @@ export async function finalizePcdCrmBackfill(
   return { enabled: true, completed: true, pending: 0, dead: 0, reconciled: true };
 }
 
-async function readBoundedJson(response: Response, signal?: AbortSignal): Promise<Record<string, unknown> | null> {
+async function readBoundedJson(
+  response: Response,
+  signal?: AbortSignal,
+  maxBytes = MAX_RESPONSE_BYTES,
+): Promise<Record<string, unknown> | null> {
   if (!response.body) return null;
   const reader = response.body.getReader();
   const chunks: Uint8Array[] = [];
@@ -1329,7 +1339,7 @@ async function readBoundedJson(response: Response, signal?: AbortSignal): Promis
       const next = await Promise.race([reader.read(), aborted]);
       if (next.done) break;
       total += next.value.byteLength;
-      if (total > MAX_RESPONSE_BYTES) {
+      if (total > maxBytes) {
         await reader.cancel();
         return null;
       }
@@ -1364,6 +1374,33 @@ function isValidDeliveryAcknowledgement(result: Record<string, unknown> | null, 
     && result.receiptId.length > 0
     && result.receiptId.length <= 180
     && typeof result.replay === 'boolean';
+}
+
+function validBatchAcknowledgements(
+  response: Response,
+  result: Record<string, unknown> | null,
+  rows: OutboxRow[],
+): Array<{ receiptId: string; replay: boolean }> | null {
+  if (!result || ![200, 202].includes(response.status)) return null;
+  const keys = Object.keys(result).sort();
+  if (keys.length !== 3
+    || keys[0] !== 'accepted'
+    || keys[1] !== 'receipts'
+    || keys[2] !== 'replay'
+    || result.accepted !== true
+    || typeof result.replay !== 'boolean'
+    || !Array.isArray(result.receipts)
+    || result.receipts.length !== rows.length) return null;
+  const acknowledgements: Array<{ receiptId: string; replay: boolean }> = [];
+  for (const [index, item] of result.receipts.entries()) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+    const receipt = item as Record<string, unknown>;
+    if (!isValidDeliveryAcknowledgement(receipt, rows[index]!)) return null;
+    acknowledgements.push({ receiptId: receipt.receiptId as string, replay: receipt.replay as boolean });
+  }
+  const allReplayed = acknowledgements.every(({ replay }) => replay);
+  if (result.replay !== allReplayed || response.status !== (allReplayed ? 200 : 202)) return null;
+  return acknowledgements;
 }
 
 function isValidReconciliationResult(
@@ -1405,6 +1442,7 @@ async function signedFetchJson(
   idempotencyKey: string,
   path: string,
   body: string,
+  options: { maxResponseBytes?: number; timeoutMs?: number } = {},
 ): Promise<{ response: Response; result: Record<string, unknown> | null }> {
   const timestampHeader = String(Date.now());
   const signature = await hmacHex(
@@ -1412,7 +1450,7 @@ async function signedFetchJson(
     `v2.${timestampHeader}.${PRODUCER}.${producerWorkspaceId}.${scope}.${idempotencyKey}.${body}`,
   );
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 5_000);
+  const timeout = setTimeout(() => controller.abort(), options.timeoutMs ?? 5_000);
   try {
     const response = await fetcher.fetch(`https://crm.internal/api/internal/adapters/${path}`, {
       method: 'POST',
@@ -1428,7 +1466,10 @@ async function signedFetchJson(
       body,
       signal: controller.signal,
     });
-    return { response, result: await readBoundedJson(response, controller.signal) };
+    return {
+      response,
+      result: await readBoundedJson(response, controller.signal, options.maxResponseBytes ?? MAX_RESPONSE_BYTES),
+    };
   } finally {
     clearTimeout(timeout);
   }
@@ -1814,6 +1855,197 @@ export async function dispatchPcdCrmOutbox(
   return { enabled: true, claimed: claimed.results.length, delivered, retried, dead };
 }
 
+export async function dispatchPcdCrmBackfillBatch(
+  env: PcdCrmAdapterEnv,
+  options: { now?: number; fetcher?: CrmAdapterFetcher } = {},
+): Promise<{ enabled: boolean; claimed: number; delivered: number; retried: number; dead: number }> {
+  const empty = { claimed: 0, delivered: 0, retried: 0, dead: 0 };
+  if (env.PCD_CRM_ADAPTER_ENABLED !== 'true' || env.PCD_CRM_BACKFILL_ENABLED !== 'true') {
+    return { enabled: false, ...empty };
+  }
+  const config = requireConfig(env);
+  const secret = env.PCD_CRM_ADAPTER_HMAC_SECRET?.trim() ?? '';
+  const fetcher = options.fetcher ?? env.CRM_ADAPTER;
+  if (!config || !secret || !env.PCD_OPS_DB) throw new Error('pcd_crm_adapter_configuration_missing');
+  const db = env.PCD_OPS_DB;
+  const now = options.now ?? Date.now();
+  await processPendingContactRetractions(db, config.producerWorkspaceId, config.targetWorkspaceId, now);
+
+  const safetyHead = await db.prepare(`SELECT status,next_attempt_at,lease_expires_at
+    FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_safety_sequence
+    WHERE producer_workspace_id=? AND cancelled_at IS NULL
+      AND event_type='contact.deleted.v1' AND status IN ('pending','retry','leased')
+    ORDER BY source_sequence LIMIT 1`).bind(config.producerWorkspaceId)
+    .first<Pick<OutboxHeadRow, 'status' | 'next_attempt_at' | 'lease_expires_at'>>();
+  if (safetyHead) {
+    const safetyDue = safetyHead.status === 'leased'
+      ? safetyHead.lease_expires_at !== null && Number(safetyHead.lease_expires_at) <= now
+      : Number(safetyHead.next_attempt_at) <= now;
+    if (safetyDue) return { enabled: true, ...empty };
+  }
+
+  const head = await db.prepare(`SELECT id,event_id,source_sequence,event_type,payload_json,payload_hash,
+      idempotency_key,attempt_count,status,next_attempt_at,lease_expires_at,backfill_run_id
+    FROM crm_adapter_outbox INDEXED BY idx_crm_adapter_outbox_claim_sequence
+    WHERE producer_workspace_id=? AND cancelled_at IS NULL AND status IN ('pending','retry','leased','dead')
+    ORDER BY source_sequence LIMIT ?`).bind(config.producerWorkspaceId, BACKFILL_BATCH_DISPATCH_LIMIT)
+    .all<OutboxHeadRow>();
+  const duePrefix: OutboxHeadRow[] = [];
+  let requestBytes = 100;
+  for (const row of head.results) {
+    if (row.status === 'dead') break;
+    const due = row.status === 'leased'
+      ? row.lease_expires_at !== null && Number(row.lease_expires_at) <= now
+      : Number(row.next_attempt_at) <= now;
+    if (!due || !row.backfill_run_id || row.event_type !== 'organization.upserted.v1') break;
+    const rowBytes = encoder.encode(row.payload_json).byteLength + encoder.encode(row.idempotency_key).byteLength + 64;
+    if (requestBytes + rowBytes > BACKFILL_BATCH_MAX_REQUEST_BYTES) break;
+    duePrefix.push(row);
+    requestBytes += rowBytes;
+  }
+  if (!duePrefix.length) return { enabled: true, ...empty };
+
+  const leaseId = `pcd-crm-batch-lease:${crypto.randomUUID()}`;
+  const claimed = await db.prepare(`UPDATE crm_adapter_outbox
+    SET status='leased',lease_id=?,lease_expires_at=?,updated_at=?
+    WHERE producer_workspace_id=? AND id IN (SELECT value FROM json_each(?)) AND backfill_run_id IS NOT NULL
+      AND event_type='organization.upserted.v1' AND attempt_count<? AND cancelled_at IS NULL
+      AND ((status IN ('pending','retry') AND next_attempt_at<=?) OR (status='leased' AND lease_expires_at<=?))
+    RETURNING id,event_id,source_sequence,event_type,payload_json,payload_hash,idempotency_key,attempt_count`)
+    .bind(
+      leaseId, now + BACKFILL_BATCH_LEASE_MS, now, config.producerWorkspaceId,
+      JSON.stringify(duePrefix.map((row) => row.id)), MAX_ATTEMPTS, now, now,
+    ).all<OutboxRow>();
+  claimed.results.sort((left, right) => Number(left.source_sequence) - Number(right.source_sequence));
+  if (!claimed.results.length) return { enabled: true, ...empty };
+  if (claimed.results.length !== duePrefix.length) {
+    await db.prepare(`UPDATE crm_adapter_outbox SET status='pending',lease_id=NULL,lease_expires_at=NULL,updated_at=?
+      WHERE lease_id=? AND cancelled_at IS NULL`).bind(now, leaseId).run();
+    return { enabled: true, ...empty };
+  }
+
+  const started = await db.prepare(`UPDATE crm_adapter_outbox
+    SET send_attempt_count=send_attempt_count+1,updated_at=?
+    WHERE id IN (SELECT value FROM json_each(?)) AND status='leased' AND lease_id=? AND cancelled_at IS NULL
+    RETURNING id`).bind(now, JSON.stringify(claimed.results.map((row) => row.id)), leaseId).all<{ id: string }>();
+  if (started.results.length !== claimed.results.length) {
+    await db.prepare(`UPDATE crm_adapter_outbox SET status='pending',lease_id=NULL,lease_expires_at=NULL,updated_at=?
+      WHERE lease_id=? AND cancelled_at IS NULL`).bind(now, leaseId).run();
+    return { enabled: true, claimed: claimed.results.length, delivered: 0, retried: 0, dead: 0 };
+  }
+
+  const batchEvents: Array<{ idempotencyKey: string; event: Record<string, unknown> }> = [];
+  let invalidPayloadIndex = -1;
+  for (const [index, row] of claimed.results.entries()) {
+    try {
+      const parsed = JSON.parse(row.payload_json) as unknown;
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('pcd_crm_outbox_payload_invalid');
+      batchEvents.push({ idempotencyKey: row.idempotency_key, event: parsed as Record<string, unknown> });
+    } catch {
+      invalidPayloadIndex = index;
+      break;
+    }
+  }
+  if (invalidPayloadIndex >= 0) {
+    const failed = claimed.results[invalidPayloadIndex]!;
+    const blocked = claimed.results.filter((_row, index) => index !== invalidPayloadIndex);
+    const updates = [db.prepare(`UPDATE crm_adapter_outbox SET status='dead',attempt_count=attempt_count+1,
+      last_error_code='producer_invalid_payload',lease_id=NULL,lease_expires_at=NULL,updated_at=?
+      WHERE id=? AND lease_id=?`).bind(now, failed.id, leaseId)];
+    if (blocked.length) updates.push(db.prepare(`UPDATE crm_adapter_outbox SET status='pending',lease_id=NULL,
+      lease_expires_at=NULL,updated_at=? WHERE id IN (SELECT value FROM json_each(?)) AND lease_id=?`)
+      .bind(now, JSON.stringify(blocked.map((row) => row.id)), leaseId));
+    await db.batch(updates);
+    return { enabled: true, claimed: claimed.results.length, delivered: 0, retried: 0, dead: 1 };
+  }
+
+  const body = JSON.stringify({
+    contractVersion: CONTRACT_VERSION,
+    producerWorkspaceId: config.producerWorkspaceId,
+    events: batchEvents,
+  });
+  let response: Response | null = null;
+  let result: Record<string, unknown> | null = null;
+  let failureCode = fetcher ? 'receiver_invalid_response' : 'receiver_unavailable';
+  try {
+    if (fetcher) {
+      const hmacKey = await importHmacKey(secret);
+      const fetched = await signedFetchJson(
+        fetcher,
+        hmacKey,
+        config.producerWorkspaceId,
+        EVENT_SCOPE,
+        `pcd-batch-${claimed.results[0]!.source_sequence}-${claimed.results.at(-1)!.source_sequence}`,
+        'events/batch',
+        body,
+        { maxResponseBytes: MAX_BATCH_RESPONSE_BYTES, timeoutMs: BACKFILL_BATCH_TIMEOUT_MS },
+      );
+      response = fetched.response;
+      result = fetched.result;
+    }
+  } catch (error) {
+    failureCode = error instanceof DOMException && error.name === 'AbortError'
+      ? 'receiver_timeout'
+      : 'receiver_unavailable';
+  }
+
+  const acknowledgements = response ? validBatchAcknowledgements(response, result, claimed.results) : null;
+  if (acknowledgements) {
+    const acknowledgementJson = JSON.stringify(claimed.results.map((row, index) => ({
+      id: row.id,
+      attemptCount: row.attempt_count + 1,
+      receiptId: acknowledgements[index]!.receiptId,
+    })));
+    const updateResult = await db.prepare(`WITH acknowledgements AS (
+        SELECT json_extract(value,'$.id') id,
+          CAST(json_extract(value,'$.attemptCount') AS INTEGER) attempt_count,
+          json_extract(value,'$.receiptId') receipt_id
+        FROM json_each(?)
+      )
+      UPDATE crm_adapter_outbox SET status='delivered',
+        attempt_count=(SELECT ack.attempt_count FROM acknowledgements ack WHERE ack.id=crm_adapter_outbox.id),
+        receiver_receipt_id=(SELECT ack.receipt_id FROM acknowledgements ack WHERE ack.id=crm_adapter_outbox.id),
+        receiver_status=?,last_error_code=NULL,delivered_at=?,lease_id=NULL,lease_expires_at=NULL,updated_at=?
+      WHERE lease_id=? AND cancelled_at IS NULL
+        AND EXISTS (SELECT 1 FROM acknowledgements ack WHERE ack.id=crm_adapter_outbox.id)
+      RETURNING id`).bind(acknowledgementJson, response!.status, now, now, leaseId).all<{ id: string }>();
+    const delivered = updateResult.results.length;
+    return { enabled: true, claimed: claimed.results.length, delivered, retried: 0, dead: 0 };
+  }
+
+  const failedEventId = response?.headers.get('x-ff-failed-event-id') ?? '';
+  const attributedFailure = claimed.results.find((row) => row.event_id === failedEventId);
+  const failedRow = attributedFailure ?? claimed.results[0]!;
+  const blocked = claimed.results.filter((row) => row.id !== failedRow.id);
+  const permanent = !!attributedFailure && !!response
+    && response.status >= 400 && response.status < 500 && ![408, 425, 429].includes(response.status);
+  const attempts = failedRow.attempt_count + 1;
+  const dead = permanent || attempts >= MAX_ATTEMPTS;
+  if (response?.status && ![200, 202].includes(response.status)) failureCode = `receiver_${response.status}`;
+  const updates: D1PreparedStatement[] = [dead
+    ? db.prepare(`UPDATE crm_adapter_outbox SET status='dead',attempt_count=?,receiver_status=?,last_error_code=?,
+        lease_id=NULL,lease_expires_at=NULL,updated_at=? WHERE id=? AND lease_id=?`)
+      .bind(attempts, response?.status || null, failureCode, now, failedRow.id, leaseId)
+    : db.prepare(`UPDATE crm_adapter_outbox SET status='retry',attempt_count=?,next_attempt_at=?,receiver_status=?,last_error_code=?,
+        lease_id=NULL,lease_expires_at=NULL,updated_at=? WHERE id=? AND lease_id=?`)
+      .bind(
+        attempts, now + Math.min(3_600_000, 30_000 * (2 ** Math.max(0, attempts - 1))),
+        response?.status || null, failureCode, now, failedRow.id, leaseId,
+      )];
+  if (blocked.length) updates.push(db.prepare(`UPDATE crm_adapter_outbox SET status='pending',lease_id=NULL,
+    lease_expires_at=NULL,updated_at=? WHERE id IN (SELECT value FROM json_each(?)) AND lease_id=?`)
+    .bind(now, JSON.stringify(blocked.map((row) => row.id)), leaseId));
+  const updateResults = await db.batch(updates);
+  const settled = Number(updateResults[0]?.meta.changes ?? 0) === 1 ? 1 : 0;
+  return {
+    enabled: true,
+    claimed: claimed.results.length,
+    delivered: 0,
+    retried: dead ? 0 : settled,
+    dead: dead ? settled : 0,
+  };
+}
+
 export async function reconcilePcdCrmOutbox(
   env: PcdCrmAdapterEnv,
   options: { now?: number; fetcher?: CrmAdapterFetcher } = {},
@@ -1890,7 +2122,12 @@ export async function runPcdCrmAdapter(
   const projection = options.backfillOnly
     ? { organizations: 0, contacts: 0, deferred: 0 }
     : await projectPcdCrmEvents(env);
-  const delivery = await dispatchPcdCrmOutbox(env);
+  const bulkDelivery = env.PCD_CRM_BACKFILL_ENABLED === 'true'
+    ? await dispatchPcdCrmBackfillBatch(env)
+    : null;
+  const delivery = bulkDelivery && bulkDelivery.claimed > 0
+    ? bulkDelivery
+    : await dispatchPcdCrmOutbox(env);
   const reconciliation = options.backfillOnly || delivery.claimed > 0
     ? { checked: false, clean: false, missing: 0, duplicate: 0, stale: 0, unauthorized: 0, mismatch: 0 }
     : await reconcilePcdCrmOutbox(env);
@@ -1901,9 +2138,9 @@ export async function runPcdCrmAdapter(
     : options.backfillOnly
       ? BACKFILL_RECONCILIATION_WINDOWS_PER_TICK
       : 1;
-  // The dedicated minute cron may advance several durable 100-event windows,
-  // but ordinary reconciliation keeps its existing single-call cost. Empty
-  // calls only transition between the two passes and are also hard-bounded.
+  // The dedicated minute cron may advance one durable 100-event window, while
+  // ordinary reconciliation keeps its existing single-call cost. Empty calls
+  // only transition between the two passes and are also hard-bounded.
   for (let attempt = 0;
     attempt < reconciliationWindowLimit + 2
       && backfillReconciliationWindowsChecked < reconciliationWindowLimit;
