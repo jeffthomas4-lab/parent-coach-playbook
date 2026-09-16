@@ -76,7 +76,11 @@ Both checked against the anti-AI writing guide before saving: no banned words, n
 
 ## Run logging
 
-Attempted `scripts/agent-run-client.mjs` with agent name `lonnie` for both start and finish. See commit for outcome.
+`PCD_AGENT_RUNS_TOKEN` is still not present in this session's environment. `node scripts/agent-run-client.mjs preflight` exited 0 with no output, which is not a pass: the script's own CLI guard did not fire in this sandbox path layout, so the check never actually ran the credential lookup. This is the fourth consecutive run (1 through 4) not reflected in the `agent_runs` table. Flagging again, now with an added wrinkle: even the preflight check itself doesn't reliably execute here, which the token-holder should know before assuming a clean preflight means the pipe is live.
+
+## Git housekeeping
+
+`safe-commit.sh` cleared one stale `.git/HEAD.lock` this run (logged to `reports/ops/stale-locks.log`, also flagged to Slack per the script's own instructions). Committed as `364daa9777b21e6032255d81ea017c255e0fbe88` on `main`. Not pushed, per standing rule.
 
 ## Next run
 
