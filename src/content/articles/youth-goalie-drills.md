@@ -22,9 +22,12 @@ editorial:
   status: published
   citationCheckPassed: false
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
 ---
 
 The best youth goalie drills cover five categories: footwork, handling, reactive diving, distribution, and cross-claims. You can run all five in a single 30 to 45 minute session. US Youth Soccer recommends rotating kids through the goalkeeper position through age 12 instead of early specialization, while still teaching keeper fundamentals starting around U9 to U10. A ready-to-run practice plan appears a few sections down, with timed blocks, so you can print it and take it straight to the field.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -95,7 +98,7 @@ The most common mistake volunteer coaches make isn't lack of effort. It's over-c
 
 ## Equipment, Safety, and a Quick Coach Checklist
 
-Gear doesn't need to be complicated. A properly sized ball for the age group, a basic pair of gloves once handling work starts (typically U9 and up), cones, pinnies for small-sided games, and securely anchored goals cover almost every session. US Youth Soccer's development guidance specifically flags goal anchoring and safe landing technique as injury-prevention priorities, not optional extras. If you're still building out your bag, the [youth soccer gear list by age](/what-to-buy/soccer/) breaks down sizing so you're not guessing.
+Gear doesn't need to be complicated. A properly sized [ball](/go/soccer-ball-size4/) for the age group, a basic pair of [gloves](/go/soccer-goalie-gloves-youth/) once handling work starts (typically U9 and up), [cones](/go/agility-cones-set/), [pinnies](/go/scrimmage-pennies/) for small-sided games, and securely anchored goals cover almost every session. US Youth Soccer's development guidance specifically flags goal anchoring and safe landing technique as injury-prevention priorities, not optional extras. If you're still building out your bag, the [youth soccer gear list by age](/what-to-buy/soccer/) breaks down sizing so you're not guessing.
 
 | Check before practice | Why it matters |
 |---|---|

@@ -271,6 +271,66 @@
       "reason": "Re-checked on the 2026-09-07 run after a 3-week gap since the last Arnie run (2026-08-16). File changed once in the interim (2026-08-20, a dead-link fix unrelated to products) but content is otherwise the same as previously assessed: gear nouns (cleats, turf shoes, shin guards, a ball) appear only in a tournament-weekend packing note with no brand or model named, and the article's whole point is minimizing and planning for cost, which is a protected spending-less context under the governance rule regardless. No confident single-product match, skip re-confirmed.",
       "loggedAt": "2026-09-07",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "695323",
+      "slug": "coach-vs-kid-pitch",
+      "title": "Coach Pitch vs Kid Pitch: Which Format Fits Your Child?",
+      "sport": "baseball",
+      "topic": "communication",
+      "reason": "Full read confirms zero nameable, buyable products. It's a rules-format comparison (coach pitch vs kid pitch), not a gear or buying guide. No brand, model, or specific product recommended anywhere. Skipped, not a confident match.",
+      "loggedAt": "2026-09-15",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "754004",
+      "slug": "youth-sports-playing-time",
+      "title": "Youth Sports Playing Time: A Fair Rotation Plan",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "Full read confirms zero nameable, buyable products. Article is about rotation policy and playing-time fairness, no gear referenced at all. Skipped, not a confident match.",
+      "loggedAt": "2026-09-15",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "757190",
+      "slug": "parent-code-of-conduct",
+      "title": "A Parent Code of Conduct Every Family Can Actually Follow",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "Full read confirms zero nameable, buyable products. Behavior-policy article (code of conduct language, state signature requirements). No gear or products discussed. Skipped, not a confident match.",
+      "loggedAt": "2026-09-15",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "774783",
+      "slug": "dealing-with-sports-parents",
+      "title": "Dealing With Sports Parents: A Coach's Playbook That Works",
+      "sport": "multi-sport",
+      "topic": "rules-of-play",
+      "reason": "Full read confirms zero nameable, buyable products discussed in Parentcoachdesk's own voice. One outbound link to a third-party equipment-guide blog (pitchtrainingbaseball.com) is a generic content reference, not a specific product page, so it does not qualify as a competitor product link to replace. Skipped, not a confident match.",
+      "loggedAt": "2026-09-15",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "835662",
+      "slug": "post-game-talk",
+      "title": "3 Step Postgame Talk: Car Ride Scripts for Youth Sports Parents",
+      "sport": "multi-sport",
+      "topic": "communication",
+      "reason": "Full read confirms zero nameable, buyable products. Pure communication-script article (what to say in the car ride home). No gear referenced anywhere. Skipped, not a confident match.",
+      "loggedAt": "2026-09-15",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "843653",
+      "slug": "concussion-protocol-youth-sports",
+      "title": "Concussion Protocol for Youth Sports: Scripts for Parents and Coaches",
+      "sport": "multi-sport",
+      "topic": "communication",
+      "reason": "Full read confirms no confident single-product match. The article names 'durable, well-maintained gear' and 'mouth guards' only inside a passage whose explicit point is that equipment is not what prevents concussions ('no equipment...eliminates concussion risk entirely...don't market them to your team as concussion prevention'). That is a safety directive, not a purchase recommendation, so per the no-links-in-safety-directives rule this stays unlinked. The two existing outbound links (rnkapparel.com, clearretain.com) are pre-existing content/blog references, not Amazon or listed-competitor storefronts, so they are out of scope for replacement. Skipped, not a confident match.",
+      "loggedAt": "2026-09-15",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }

@@ -644,8 +644,8 @@
       "slug": "basketball-ball-rubber",
       "anchorText": "ball",
       "location": "'Quick setup checklist before players arrive', opening bullet list",
-      "before": "One ball per player (correct size for age \u2014 see the equipment table below)",
-      "after": "One [ball](/go/basketball-ball-rubber/) per player (correct size for age \u2014 see the equipment table below)"
+      "before": "One ball per player (correct size for age — see the equipment table below)",
+      "after": "One [ball](/go/basketball-ball-rubber/) per player (correct size for age — see the equipment table below)"
     },
     {
       "date": "2026-09-09",
@@ -654,8 +654,8 @@
       "slug": "agility-cones-set",
       "anchorText": "cones",
       "location": "'Quick setup checklist before players arrive', opening bullet list",
-      "before": "8\u201312 cones to mark stations and boundaries",
-      "after": "8\u201312 [cones](/go/agility-cones-set/) to mark stations and boundaries"
+      "before": "8–12 cones to mark stations and boundaries",
+      "after": "8–12 [cones](/go/agility-cones-set/) to mark stations and boundaries"
     },
     {
       "date": "2026-09-09",
@@ -790,6 +790,102 @@
       "after": null,
       "asin": null,
       "browserVerification": "Not attempted this run; all links inserted were existing, previously browser-verified catalog entries (see individual entries above)."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "concussion-protocol-youth-sports",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 843653, published 2026-09-13, first read this run). Full read: a CDC HEADS UP-based concussion protocol piece (removal, six-step return-to-play, return-to-learn, state law, written team protocol, doctor questions). Two mentions of gear ('a properly fitted helmet or durable, well-maintained gear', 'mouth guards') are generic, no brand or model named, so no confident single-product catalog match exists without inventing a specific product the article never named. Two outbound links (rnkapparel.com/blogs/rnk-news/why-youth-athletes-need-durable-gear and clearretain.com/blogs/blog/contact-sport-mouth-guard-benefits-2026-athlete-guide) are blog/content pages at commerce sites, not buyable-product pages, so they do not meet this task's bar for competitor-link replacement (same standard applied to the baseball-throwing-drill/nextgencards.shop link on 2026-09-07); left untouched, flagging for Jeff same as that prior case since both are content-marketing links on a medical-safety article he may want to review independently. All other outbound links are CDC, PMC, and NCBI citations, protected. No links inserted, no disclosure needed."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "post-game-talk",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 835662, published 2026-09-11, first read this run). Full read: a car-ride-home communication scripts piece, age-banded talking points, no gear or products discussed anywhere in the body. One outbound link (blog.worldamateurgolftour.com, a sportsmanship blog post) is a content citation, not a buyable product page. All other links are AASP, PMC, and SDT research citations or internal PCD pages, protected. No links inserted, no disclosure needed."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-goalie-drills",
+      "action": "disclosure-added",
+      "details": "New BabyLoveGrowth article (articleId 854660, published 2026-09-14, first read this run). Added the FTC disclosure sentence to the visible body, placed after the opening paragraph and before the first affiliate link. Set editorial.affiliateDisclosurePresent: true in frontmatter.",
+      "before": "No disclosure sentence present anywhere in the body.",
+      "after": "Added: 'This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.' as its own paragraph directly after the opening paragraph.",
+      "asin": null,
+      "browserVerification": "Not applicable, no product page."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-goalie-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "soccer-ball-size4",
+      "anchorText": "ball",
+      "location": "'Equipment, Safety, and a Quick Coach Checklist' section, opening gear sentence",
+      "before": "A properly sized ball for the age group,",
+      "after": "A properly sized [ball](/go/soccer-ball-size4/) for the age group,",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug (same slug used in goalkeeper-drills-youth on 2026-09-09), destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-goalie-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "soccer-goalie-gloves-youth",
+      "anchorText": "gloves",
+      "location": "'Equipment, Safety, and a Quick Coach Checklist' section, opening gear sentence",
+      "before": "a basic pair of gloves once handling work starts (typically U9 and up),",
+      "after": "a basic pair of [gloves](/go/soccer-goalie-gloves-youth/) once handling work starts (typically U9 and up),",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug (same slug used in goalkeeper-drills-youth on 2026-09-09), destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-goalie-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cones",
+      "location": "'Equipment, Safety, and a Quick Coach Checklist' section, opening gear sentence",
+      "before": "cones, pinnies for small-sided games,",
+      "after": "[cones](/go/agility-cones-set/), [pinnies](/go/scrimmage-pennies/) for small-sided games,",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-goalie-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "scrimmage-pennies",
+      "anchorText": "pinnies",
+      "location": "'Equipment, Safety, and a Quick Coach Checklist' section, opening gear sentence",
+      "before": "see above",
+      "after": "see above",
+      "asin": null,
+      "browserVerification": "Not re-verified live this run, existing curated slug, destination unaltered."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "youth-goalie-drills",
+      "action": "no-link-skip",
+      "details": "'securely anchored goals' in the same gear sentence has no catalog match (no soccer-goal entry exists), and the checklist table below treats goal anchoring as a safety-check item ('Ensure goals are securely anchored or weighted') rather than a purchase recommendation, so it was left unlinked on both counts: no confident product match, and caution against turning a safety check into a purchase prompt. Logged for a future sourcing pass, not the gap queue, since the article is otherwise monetized."
+    },
+    {
+      "date": "2026-09-14",
+      "articleSlug": "run-summary",
+      "action": "partial-run-file-tools-only-no-git",
+      "details": "Continuation of the ongoing sandbox mount fault (since 2026-09-08, now a 5th consecutive blocked/degraded run: 09-11, 09-13 x2, and the earlier 09-14 entry above). mcp__workspace__bash confirmed unreachable again this run (2 identical mount-failure attempts, then stopped retrying per the tool's own guidance). Read/Edit/Glob/Grep tools worked, and this run additionally had the built-in browser pane (mcp__Claude_Browser__) available, though it was not needed since no new product sourcing was required today. Verified the record before trusting it: re-read youth-baseball-throwing-drills.md directly and confirmed the 2026-09-14 earlier-run entry's claims (disclosure present, 4 links, all resolving) match the actual file content. Grepped src/content for the BabyLoveGrowth externalSource marker and found 28 matching files against the 25 the 2026-09-13 entry counted; the 3 new ones (concussion-protocol-youth-sports, post-game-talk, youth-goalie-drills) were confirmed as this run's new-article queue and are covered in the four entries directly above. Did not touch the backfill queue (best-youth-softball-gloves' two standing gaps, youth-sports-costs, travel-soccer-costs) since the new-article queue was non-empty and per governance new articles come first; also did not attempt any new product sourcing via the browser today since every match found was an existing catalog slug. IMPORTANT CAVEAT, same as the earlier 2026-09-14 entry: all of today's edits (youth-baseball-throwing-drills from the earlier entry, plus concussion-protocol-youth-sports touched only for this log, post-game-talk touched only for this log, and youth-goalie-drills with its disclosure + 4 links) are UNCOMMITTED on disk. Without bash there is no git add/commit/push, no safe-commit.sh, no npm run git:unlock, and no node scripts/check-content-field-lengths.mjs pre-commit gate available from this session. All changes sit in the working tree and need someone with shell/git access to review, run the field-length check, and commit + push before any of it reaches production. This is now the 6th calendar day this environment fault has blocked or degraded Arnie's core commit/push function; recommend Jeff escalate directly rather than wait on further scheduled retries.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Browser pane was available this run but not used; no new product sourcing was needed since every affiliate link inserted today reused an existing, already-verified catalog slug."
+    },
+    {
+      "date": "2026-09-15",
+      "articleSlug": "run-summary",
+      "action": "verify-commit-plus-review-no-new-links",
+      "details": "First run this cycle with working bash/git access, ending the environment-fault streak logged in the 2026-09-14 entries (5 consecutive blocked/degraded runs, 09-11 through 09-14). Git needed 2 unlock cycles this run: an index.lock was present at start, less than 2 minutes old on the first check (npm run git:unlock correctly refused), cleared cleanly on the second check ~90s later. Git and grep are also running slow on this mount (git status took ~100s), noted for awareness, not a blocker. Verified the record rather than trusting the 2026-09-14 log claim about youth-goalie-drills: re-read the file directly and confirmed the disclosure sentence is present in the visible body before the first affiliate link, that editorial.affiliateDisclosurePresent is true, and that all 4 /go/ links (soccer-ball-size4, soccer-goalie-gloves-youth, agility-cones-set, scrimmage-pennies) resolve to real, pre-existing affiliates.json entries. No changes needed; committed as-is. Confirmed via git log that no new BabyLoveGrowth webhook articles landed since youth-goalie-drills (2026-09-14), so the new-article queue is empty. Moved to backfill: read all 26 BabyLoveGrowth-marked articles currently at 0 /go/ links, cross-checked the existing gap queue, and did a full read on the 6 not already logged there (coach-vs-kid-pitch, youth-sports-playing-time, parent-code-of-conduct, dealing-with-sports-parents, post-game-talk, concussion-protocol-youth-sports). None named a specific buyable product; concussion-protocol-youth-sports mentions gear only inside an explicit anti-purchase safety caveat, which stays unlinked under the safety-directive rule. All 6 logged to the gap queue so future runs don't re-walk the same dead ends daily. No new product sourcing attempted this run since no article surfaced a confident, unmatched, nameable product; browser was available but not needed.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not needed this run. No new product sourcing was required: youth-goalie-drills reused 4 already-verified catalog slugs, and no other reviewed article surfaced a confident product to source."
     }
   ]
 }
