@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-14T13:40:43.553Z",
-  "count": 888,
+  "generatedAt": "2026-09-15T15:57:38.968Z",
+  "count": 893,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -674,6 +674,12 @@
       ]
     },
     {
+      "url": "https://hobbit.football/guides/how-to-coach-youth-soccer-goalkeeper",
+      "sources": [
+        "src/content/articles/youth-goalie-drills.md"
+      ]
+    },
+    {
       "url": "https://hoopsking.com/blogs/default-blog/60-minute-youth-volleyball-practice-plan",
       "sources": [
         "src/content/articles/youth-volleyball-practice-plan.md"
@@ -890,6 +896,12 @@
       "url": "https://ncys.org/the-hidden-costs-of-youth-sports-financial-strain-and-emotional-toll/",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://news.riddell.com/info/releases/riddell-unveils-new-nd6-football-line-engineered-for-youth-football-players",
+      "sources": [
+        "src/content/news/riddell-nd6-nocsae-youth-helmet-standard-2026.md"
       ]
     },
     {
@@ -4525,6 +4537,12 @@
       ]
     },
     {
+      "url": "https://www.nmrapids.org/wp-content/uploads/2015/01/Colorado-Rapids-Youth-Goalkeeper-Curriculum-c.pdf",
+      "sources": [
+        "src/content/articles/youth-goalie-drills.md"
+      ]
+    },
+    {
       "url": "https://www.northwesternmutual.com/life-and-money/youth-sports-costs-budgeting-tips/",
       "sources": [
         "src/content/articles/team-budget-youth-sports.md"
@@ -5225,6 +5243,12 @@
       ]
     },
     {
+      "url": "https://www.usafieldhockey.com/news/2026/february/12/player-equipment-penalty-corners-focus-of-high-school-field-hockey-rules-changes",
+      "sources": [
+        "src/content/news/nfhs-field-hockey-rule-changes-2026.md"
+      ]
+    },
+    {
       "url": "https://www.usafootball.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -5745,13 +5769,20 @@
     {
       "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/Official-US-Youth-Soccer-Coaching-Manual-1.pdf",
       "sources": [
-        "src/content/articles/flag-football-drills.md"
+        "src/content/articles/flag-football-drills.md",
+        "src/content/articles/youth-goalie-drills.md"
       ]
     },
     {
       "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/US-Youth-Soccer-Code-of-Conduct-4.23.22-1.pdf",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
+      ]
+    },
+    {
+      "url": "https://www.veo.com/en-us/article/soccer-goalkeeper-training-youth",
+      "sources": [
+        "src/content/articles/youth-goalie-drills.md"
       ]
     },
     {
