@@ -31,12 +31,13 @@ Category rules:
 ### PF1. Parent Coach Desk and Coach Jeff Thomas contextual cross-links
 
 **Implemented locally:** 2026-08-03  
-**Production state:** Pending the normal reviewed deployment of each site  
+**Removed from PCD:** 2026-09-16, on Jeff's call. The PCD About page no longer links to coachjeffthomas.com; the faceless Desk byline wins over the cross-link. The reverse link (coachjeffthomas.com About to PCD About) is not changed by this commit and is Jeff's call on the coachjeffthomas.com repo.  
+**Production state:** PCD removal ships on the next push to `origin/main`  
 **Classification:** `portfolio` (useful entity and audience connection; not an independently earned referring domain)
 
 | Source | Destination | Reader purpose | Link treatment |
 |---|---|---|---|
-| `https://parentcoachdesk.com/about/` | `https://coachjeffthomas.com/about/` | Books, leadership frameworks, and collegiate coaching background | Contextual, canonical, followed |
+| ~~`https://parentcoachdesk.com/about/`~~ (removed 2026-09-16) | ~~`https://coachjeffthomas.com/about/`~~ | Books, leadership frameworks, and collegiate coaching background | Contextual, canonical, followed |
 | `https://coachjeffthomas.com/about/` | `https://parentcoachdesk.com/about/` | Practical youth-sports scripts, tools, and parent guides | Contextual, canonical, followed |
 
 Both placements are inside relevant About-page copy rather than sitewide footers. The local Coach Jeff Thomas production build contains the rendered PCD anchor, the PCD About component compiles with the Coach Jeff Thomas anchor, and both exact-anchor checks reject `nofollow` or `sponsored` qualification. After each deployment, verify HTTP 200, canonical URL, visible context, link attribute, and one-click destination. Record the two links as portfolio connections and exclude them from independent-referring-domain targets.

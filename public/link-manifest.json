@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-09-15T15:57:38.968Z",
-  "count": 893,
+  "count": 892,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -538,12 +538,6 @@
       "url": "https://coachingvb.com/first-volleyball-practice-plan/",
       "sources": [
         "src/content/articles/youth-volleyball-practice-plan.md"
-      ]
-    },
-    {
-      "url": "https://coachjeffthomas.com/about/",
-      "sources": [
-        "src/pages/about.astro"
       ]
     },
     {
