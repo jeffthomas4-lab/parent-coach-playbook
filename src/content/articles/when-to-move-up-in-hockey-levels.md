@@ -11,6 +11,7 @@ phase: "drive-there"
 hero: "/illustrations/hockey-gear-drying-garage.webp"
 heroAlt: "Youth hockey gear hangs to dry on hooks in a garage, pads and a plain helmet visible with skates on the floor in cold morning light."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -24,6 +25,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-09-15
 ---
 
 The pressure to move up in youth hockey is constant and mostly comes from outside the family. Another parent mentions their kid just made the AA team. The coach says your kid has real upside. The tryout flyer shows up in your email. None of that is a reason to move.

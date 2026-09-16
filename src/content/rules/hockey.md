@@ -24,8 +24,9 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Hockey"
   url: "https://www.usahockey.com"
-ruleBookUrl: "https://www.usahockey.com/rulebook"
+ruleBookUrl: "https://www.usahockey.com/rulesandresources"
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -39,4 +40,5 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-09-15
 ---

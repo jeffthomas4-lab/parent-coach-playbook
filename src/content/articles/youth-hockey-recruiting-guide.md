@@ -11,6 +11,7 @@ phase: "drive-there"
 hero: "/illustrations/hockey-rink-empty-early.webp"
 heroAlt: "An empty ice rink sits ready before anyone arrives, a fresh sheet of ice with overhead lights reflecting off the surface."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -24,6 +25,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2026-12-01
 ---
 
 Hockey recruiting does not work like other sports. The single biggest mistake hockey families make is applying the football or basketball mental model, where you graduate high school and go directly to college. In hockey, that path is the exception, not the rule.

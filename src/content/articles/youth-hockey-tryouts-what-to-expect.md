@@ -12,6 +12,7 @@ topic: "rules-of-play"
 hero: "/illustrations/hockey-bench-skates-laced.webp"
 heroAlt: "Skates and a stick rest against a rink bench beside a plain helmet, lit by cold blue light through the glass."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -25,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-09-15
 ---
 
 Tryout week hits differently when your kid is the one lacing up. The parking lot is full of parents who have already decided their child belongs on the top team, and the rink lobby runs at about twelve degrees and twice the normal tension. Knowing what to expect beforehand cuts through most of that.

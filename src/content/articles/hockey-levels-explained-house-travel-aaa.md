@@ -12,6 +12,7 @@ topic: "rules-of-play"
 hero: "/illustrations/hockey-gear-drying-garage.webp"
 heroAlt: "Youth hockey gear hangs to dry on hooks in a garage, pads and a plain helmet visible with skates on the floor in cold morning light."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -25,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-09-15
 ---
 
 The USA Hockey structure has enough acronyms and local variations that a parent new to the sport can spend an entire first season not actually understanding what program their kid is in or why it matters. Here is the map.

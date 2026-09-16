@@ -11,6 +11,7 @@ phase: "drive-there"
 hero: "/illustrations/hockey-bench-skates-laced.webp"
 heroAlt: "Skates and a stick rest against a rink bench beside a plain helmet, lit by cold blue light through the glass."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -24,6 +25,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-03-15
 ---
 
 Hockey is the most expensive mainstream youth sport in North America. That is not snobbery. It is rink economics. Ice time costs $150 to $300 per hour, and your kid's team needs twenty to thirty hours of it per season just for practice.

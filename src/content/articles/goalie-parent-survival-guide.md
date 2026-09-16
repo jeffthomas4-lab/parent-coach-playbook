@@ -12,6 +12,7 @@ topic: "communication"
 hero: "/illustrations/hockey-bench-skates-laced.webp"
 heroAlt: "Skates and a stick rest against a rink bench beside a plain helmet, lit by cold blue light through the glass."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -25,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-09-15
 ---
 
 Every goal against goes up on the scoreboard with your kid's name attached to the position. Every save gets celebrated for two seconds and then forgotten. You have to decide before the season starts whether you can watch that without it wrecking your Saturday.

@@ -12,6 +12,7 @@ age: all-ages
 hero: "/illustrations/hockey-rink-empty-early.webp"
 heroAlt: "An empty ice rink sits ready before anyone arrives, a fresh sheet of ice with overhead lights reflecting off the surface."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 featured: false
 editorial:
   qualityGrade: 8
@@ -25,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   reviewerNotes: ""
   status: claude-reviewed
+  factCheckGoodThrough: 2027-09-15
 ---
 
 Hockey gear is heavy, hockey locker rooms are cold, and you are putting 14 pieces of equipment on in 20 minutes. Pack the bag in the order you use it and you don't have to think in the locker room.

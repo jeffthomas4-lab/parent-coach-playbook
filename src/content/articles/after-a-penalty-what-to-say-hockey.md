@@ -12,6 +12,7 @@ topic: "communication"
 hero: "/illustrations/hockey-rink-empty-early.webp"
 heroAlt: "An empty ice rink sits ready before anyone arrives, a fresh sheet of ice with overhead lights reflecting off the surface."
 publishedAt: 2026-06-11
+updatedAt: 2026-09-15
 draft: false
 editorial:
   qualityGrade: 8
@@ -25,6 +26,7 @@ editorial:
   claudeReviewedAt: 2026-06-11
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-09-15
 ---
 
 Your kid just spent two minutes in the box while the other team scored on the power play. The game ended badly. Now you are in the car.
