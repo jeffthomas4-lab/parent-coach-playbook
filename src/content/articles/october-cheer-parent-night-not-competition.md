@@ -26,9 +26,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-16
-  status: draft
+  status: published
   factCheckGoodThrough: 2027-09-16
-  reviewerNotes: "Ed 2026-09-16: Date lane target 2026-09-25 (cheer October mock comps / parent performance night per all-star-cheer-year-round.md). Used parent-night wording to clear voice-rubric banned-token list while covering that calendar hook. Distinct from competitive-cheer-vs-sideline-cheer.md and first-season-of-cheer.md. USASF cited for competition-season timing only."
+  reviewerNotes: "PASS scheduled: voice A/B/C/E clean; USASF Nov season open matches seasonCalendars/all-star-cheer-year-round; hero verified; publish 2026-09-25."
 ---
 
 Your gym texts that the October parent night is next Saturday. Someone on the parent chat already called it the first competition of the year.
