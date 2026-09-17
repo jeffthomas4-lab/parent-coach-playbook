@@ -8,11 +8,11 @@ vi.mock('../../src/lib/editorial-records', async () => {
 import { POST } from '../../src/pages/api/admin/editorial/approvals/update';
 import * as records from '../../src/lib/editorial-records';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/editorial/approvals/update', {
     method: 'POST', body: JSON.stringify(body),
-    headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}) },
+    headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}) },
   });
 const ctx = (body: unknown, origin?: string, auth?: boolean) => makeContext({ request: request(body, origin, auth), env: { PCD_OPS_DB: {}, ADMIN_EMAILS, EDITORIAL_LIFECYCLE_ENABLED: 'true' } });
 
@@ -37,7 +37,7 @@ describe('POST /api/admin/editorial/approvals/update', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(records.classifyMonetization).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ actor: 'jeffthomas@pugetsound.edu' }));
+    expect(records.classifyMonetization).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ actor: 'admin-fixture@parentcoachdesk.com' }));
   });
 
   it('refuses to approve without an explicit flags_resolved confirmation', async () => {
@@ -47,10 +47,10 @@ describe('POST /api/admin/editorial/approvals/update', () => {
   });
 
   it('always signs the approval with the authenticated identity, never a client-supplied approver', async () => {
-    (records.recordHumanApproval as any).mockResolvedValue({ opportunity: { id: 'opportunity_1', status: 'approved' }, approval: { approved_by: 'jeffthomas@pugetsound.edu' } });
+    (records.recordHumanApproval as any).mockResolvedValue({ opportunity: { id: 'opportunity_1', status: 'approved' }, approval: { approved_by: 'admin-fixture@parentcoachdesk.com' } });
     const res = await POST(ctx({ opportunity_id: 'opportunity_1', action: 'approve', flags_resolved: true, approved_by: 'someone-else@example.com' }));
     expect(res.status).toBe(200);
-    expect(records.recordHumanApproval).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ approvedBy: 'jeffthomas@pugetsound.edu', actor: 'jeffthomas@pugetsound.edu' }));
+    expect(records.recordHumanApproval).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ approvedBy: 'admin-fixture@parentcoachdesk.com', actor: 'admin-fixture@parentcoachdesk.com' }));
   });
 
   it('surfaces a missing-evidence rejection with the specific missing gates, not a generic 500', async () => {

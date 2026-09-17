@@ -1,11 +1,11 @@
-﻿import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 
 vi.mock('../../src/lib/trust-cases', () => ({ reconcileTrustDraftDelivery: vi.fn() }));
 import { POST } from '../../src/pages/api/admin/trust/[id]/deliveries/[attemptId]/reconcile';
 import * as trustCases from '../../src/lib/trust-cases';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown = {
   outcome: 'confirmed_not_sent', evidence_reference: 'provider-event-123',
   note: 'Provider event log confirms that no message was accepted.', confirm_no_retry: true,
@@ -14,7 +14,7 @@ const request = (body: unknown = {
     method: 'POST', body: JSON.stringify(body),
     headers: {
       'content-type': 'application/json', origin,
-      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}),
+      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}),
     },
   });
 
@@ -49,7 +49,7 @@ describe('POST /api/admin/trust/:id/deliveries/:attemptId/reconcile', () => {
     expect(res.status).toBe(200);
     expect(body.retry).toBe('not performed');
     expect(trustCases.reconcileTrustDraftDelivery).toHaveBeenCalledWith(
-      expect.anything(), 'case_1', 'delivery_1', 'jeffthomas@pugetsound.edu',
+      expect.anything(), 'case_1', 'delivery_1', 'admin-fixture@parentcoachdesk.com',
       'confirmed_not_sent', 'provider-event-123',
       'Provider event log confirms that no message was accepted.',
     );

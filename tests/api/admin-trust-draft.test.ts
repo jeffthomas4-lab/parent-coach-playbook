@@ -1,17 +1,17 @@
-﻿import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 
 vi.mock('../../src/lib/trust-cases', () => ({ createTrustResponseDraft: vi.fn() }));
 import { POST } from '../../src/pages/api/admin/trust/[id]/draft';
 import * as trustCases from '../../src/lib/trust-cases';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown = { subject: 'Correction request update', body_text: 'We are reviewing the source evidence you provided.' }, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/trust/case_1/draft', {
     method: 'POST', body: JSON.stringify(body),
     headers: {
       'content-type': 'application/json', origin,
-      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}),
+      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}),
     },
   });
 
@@ -35,7 +35,7 @@ describe('POST /api/admin/trust/:id/draft', () => {
     expect(res.status).toBe(201);
     expect(body.delivery).toContain('not authorized');
     expect(trustCases.createTrustResponseDraft).toHaveBeenCalledWith(
-      expect.anything(), 'case_1', 'jeffthomas@pugetsound.edu',
+      expect.anything(), 'case_1', 'admin-fixture@parentcoachdesk.com',
       'Correction request update', 'We are reviewing the source evidence you provided.',
     );
   });

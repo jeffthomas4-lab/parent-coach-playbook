@@ -13,7 +13,7 @@ vi.mock('../../src/lib/domain-skip-list', () => ({
 import { POST } from '../../src/pages/api/admin/source-quality/reject-domain';
 import * as domainSkipList from '../../src/lib/domain-skip-list';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 
 function adminRequest(body: unknown, headers: Record<string, string> = {}) {
   return new Request('https://parentcoachdesk.com/api/admin/source-quality/reject-domain', {
@@ -21,7 +21,7 @@ function adminRequest(body: unknown, headers: Record<string, string> = {}) {
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -59,7 +59,7 @@ describe('POST /api/admin/source-quality/reject-domain', () => {
     expect(domainSkipList.bulkRejectPendingByDomain).toHaveBeenCalledWith(
       expect.anything(),
       'bad.example.com',
-      'jeffthomas@pugetsound.edu',
+      'admin-fixture@parentcoachdesk.com',
       'other',
       expect.stringContaining('bad.example.com'),
     );

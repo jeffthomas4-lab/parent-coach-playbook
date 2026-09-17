@@ -196,7 +196,7 @@ Execute strictly in this order; each step is a go/no-go checkpoint for the next.
 
 This document is not an authorization. Execution requires:
 
-- [ ] Jeff Thomas — written approval naming CR-018, the database id, the exact migration range, the reviewed commit SHA (Section header), and the exact flag change (Launch Authorization Matrix row `migration_approval`).
+- [ ] PCD Owner — written approval naming CR-018, the database id, the exact migration range, the reviewed commit SHA (Section header), and the exact flag change (Launch Authorization Matrix row `migration_approval`).
 - [ ] Codex — review of this change request against current repository/release-evidence state immediately before execution.
 
 Approved by: _____________________________  Date: _______________

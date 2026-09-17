@@ -13,7 +13,7 @@
     "production_photo_binding": false,
     "customer_foundation_enabled": false,
     "commerce_test_mode_enabled": false,
-    "application_admin_allowlist": ["eepskalla@gmail.com", "jeffthomas4@gmail.com"],
+    "application_admin_allowlist": ["eepskalla@gmail.com", "support@parentcoachdesk.com"],
     "missing_application_admin_allowlist_fails_closed": true
   },
   "operations_migration": {

@@ -16,6 +16,6 @@ Unified Champion Schools is the kind of program a parent hears about secondhand 
 
 If either page would help the families you're recruiting into the program, I'd be glad to send them over.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

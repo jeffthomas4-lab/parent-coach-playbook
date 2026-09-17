@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-08
 **Window:** last 7 days (~Jun 30–Jul 6) vs prior 7 days (~Jun 23–Jun 29)
-**Access:** Restored. jeffthomas4@gmail.com now has access to sc-domain:parentcoachdesk.com — the ownership gap flagged in the last two reviews is fixed.
+**Access:** Restored. support@parentcoachdesk.com now has access to sc-domain:parentcoachdesk.com — the ownership gap flagged in the last two reviews is fixed.
 
 ## Takeaways
 

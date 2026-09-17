@@ -17,7 +17,7 @@ Please provide written advice that identifies:
 
 Parent Coach Desk is a parent- and coach-facing editorial website with a directory of youth camps and leagues. It publishes informational content and public directory listings; it is not a medical, legal, financial, safety, accreditation, or camp-inspection service.
 
-The staging Worker has an application administrator allowlist limited to `eepskalla@gmail.com` and `jeffthomas4@gmail.com`. Public parent-facing email remains staged. Internal alerts are designed to require both a privacy-safe Slack routing signal and email to an allowlisted administrator.
+The staging Worker has an application administrator allowlist limited to `eepskalla@gmail.com` and `support@parentcoachdesk.com`. Public parent-facing email remains staged. Internal alerts are designed to require both a privacy-safe Slack routing signal and email to an allowlisted administrator.
 
 ### Features deliberately disabled or not approved for launch
 

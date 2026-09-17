@@ -39,7 +39,7 @@ Send each of these via the CJ advertiser contact/message system (Publisher accou
 >
 > Happy to answer any questions about the site or provide more detail. Thanks for your time — looking forward to working together.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ### GameChanger
@@ -52,7 +52,7 @@ Send each of these via the CJ advertiser contact/message system (Publisher accou
 >
 > Let me know if you need anything further from me to move the application along. Thanks for considering us.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ### Columbia Sportswear
@@ -65,7 +65,7 @@ Send each of these via the CJ advertiser contact/message system (Publisher accou
 >
 > Happy to share more about the site if useful. Thanks for your consideration.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ### Easton Sports
@@ -78,7 +78,7 @@ Send each of these via the CJ advertiser contact/message system (Publisher accou
 >
 > Glad to answer any questions. Thanks for taking a look.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ### Nike apparel
@@ -91,7 +91,7 @@ Send each of these via the CJ advertiser contact/message system (Publisher accou
 >
 > Happy to provide more detail if it helps. Thanks for considering the application.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ---
@@ -110,7 +110,7 @@ These are generic network-level "please approve my publisher account" follow-ups
 >
 > Please let me know if anything further is needed from my end to complete the review. Thanks for your time.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ### Awin
@@ -123,7 +123,7 @@ These are generic network-level "please approve my publisher account" follow-ups
 >
 > Happy to provide any additional information needed to move the account forward. Thanks for considering the application.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ### FlexOffers
@@ -136,7 +136,7 @@ These are generic network-level "please approve my publisher account" follow-ups
 >
 > One specific note: once approved, I'd like to apply to Shutterfly's program for a season-essentials photo-book placement, and separately to TeamSnap. Let me know if there's anything else needed to complete the review. Thanks for your time.
 >
-> Jeff Thomas
+> PCD Owner
 > parentcoachdesk.com
 
 ---

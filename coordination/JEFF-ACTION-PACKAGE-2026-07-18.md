@@ -25,7 +25,7 @@ None of these require pasting a secret value into chat or any repo file. Every c
 
 ### Group B — evidence-producing approvals (each a distinct session)
 
-- [ ] **Do the authenticated Access probe yourself** — sign in via Cloudflare Access as an allowed identity (`eepskalla@gmail.com` / `jeffthomas4@gmail.com`), GET/HEAD every route in `protected-route-contract.json`, repeat as a denied identity, then say "Access probe ready." This is the one gate no agent can substitute (requires your login). Cookies/tokens are never retained.
+- [ ] **Do the authenticated Access probe yourself** — sign in via Cloudflare Access as an allowed identity (`eepskalla@gmail.com` / `support@parentcoachdesk.com`), GET/HEAD every route in `protected-route-contract.json`, repeat as a denied identity, then say "Access probe ready." This is the one gate no agent can substitute (requires your login). Cookies/tokens are never retained.
 - [ ] **Create a fresh staging-only Slack Incoming Webhook** for `#pcd-alerts`; store as the `SLACK_WEBHOOK_URL` staging secret via `wrangler secret put` (run directly, not via chat), then say "staging Slack ready." Current webhook doesn't reach `#pcd-alerts`.
 - [ ] **Pick the offsite backup provider + approve retention** — recommended: separate AWS recovery account, S3 Versioning + Object Lock (Compliance), 90 daily + 12 monthly. Create account/bucket/IAM role. Local export/restore is proven; no independent offsite copy exists yet.
 - [ ] **Approve a controlled Kit newsletter test** with a dedicated non-customer address; later acknowledge the redacted receipt. No provider secret or PII enters chat/Git.

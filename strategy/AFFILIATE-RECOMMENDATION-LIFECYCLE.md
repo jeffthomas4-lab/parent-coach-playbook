@@ -2,7 +2,7 @@
 
 **Status:** canonical local design and implementation contract  
 **Version:** 1.0  
-**Owner:** Jeff Thomas  
+**Owner:** PCD Owner  
 **Operating principle:** trust is the product; revenue is an outcome
 
 ## 1. Outcome

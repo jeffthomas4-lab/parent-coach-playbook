@@ -1,17 +1,17 @@
-﻿import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 
 vi.mock('../../src/lib/trust-cases', () => ({ updateTrustCaseStatus: vi.fn() }));
 import { POST } from '../../src/pages/api/admin/trust/[id]/update';
 import * as trustCases from '../../src/lib/trust-cases';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown = { status: 'in_review', notes: 'Reviewing sources.' }, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/trust/case_1/update', {
     method: 'POST', body: JSON.stringify(body),
     headers: {
       'content-type': 'application/json', origin,
-      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}),
+      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}),
     },
   });
 
@@ -38,7 +38,7 @@ describe('POST /api/admin/trust/:id/update', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(trustCases.updateTrustCaseStatus).toHaveBeenCalledWith(expect.anything(), 'case_1', 'in_review', 'jeffthomas@pugetsound.edu', 'Reviewing sources.', null);
+    expect(trustCases.updateTrustCaseStatus).toHaveBeenCalledWith(expect.anything(), 'case_1', 'in_review', 'admin-fixture@parentcoachdesk.com', 'Reviewing sources.', null);
   });
 
   it('requires a resolution code and meaningful notes for terminal states', async () => {
@@ -48,7 +48,7 @@ describe('POST /api/admin/trust/:id/update', () => {
 
     const valid = await POST(makeContext({ request: request({ status: 'resolved', notes: 'Corrected the source-backed dates.', resolution_code: 'corrected' }), params: { id: 'case_1' }, env: { PCD_OPS_DB: {}, ADMIN_EMAILS } }));
     expect(valid.status).toBe(200);
-    expect(trustCases.updateTrustCaseStatus).toHaveBeenCalledWith(expect.anything(), 'case_1', 'resolved', 'jeffthomas@pugetsound.edu', 'Corrected the source-backed dates.', 'corrected');
+    expect(trustCases.updateTrustCaseStatus).toHaveBeenCalledWith(expect.anything(), 'case_1', 'resolved', 'admin-fixture@parentcoachdesk.com', 'Corrected the source-backed dates.', 'corrected');
   });
 
   it('rejects invalid status transitions', async () => {

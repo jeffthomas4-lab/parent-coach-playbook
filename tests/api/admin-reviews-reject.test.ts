@@ -19,7 +19,7 @@ vi.mock('../../src/lib/admin-receipts', () => ({
 import { POST } from '../../src/pages/api/admin/reviews/[id]/reject';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const mockReview = { id: 'review_1', status: 'rejected' };
 
 function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) {
@@ -28,7 +28,7 @@ function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) 
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -59,7 +59,7 @@ describe('POST /api/admin/reviews/:id/reject', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(campsDb.rejectReview).toHaveBeenCalledWith(expect.anything(), 'review_1', 'jeffthomas@pugetsound.edu', 'off-topic');
+    expect(campsDb.rejectReview).toHaveBeenCalledWith(expect.anything(), 'review_1', 'admin-fixture@parentcoachdesk.com', 'off-topic');
   });
 
   it('failure path: a review id that does not exist returns 404', async () => {

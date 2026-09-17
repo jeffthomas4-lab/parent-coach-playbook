@@ -21,7 +21,7 @@ vi.mock('../../src/lib/admin-receipts', () => ({
 import { POST } from '../../src/pages/api/admin/camps/[id]/verify';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const mockCamp = { id: 'camp_1', verified: 1, status: 'approved', source_domain: 'example.com', registration_url: 'https://example.com/camp' };
 
 function adminRequest(body: unknown = { verified: true }, headers: Record<string, string> = {}) {
@@ -30,7 +30,7 @@ function adminRequest(body: unknown = { verified: true }, headers: Record<string
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -88,7 +88,7 @@ describe('POST /api/admin/camps/:id/verify', () => {
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
         origin: 'https://parentcoachdesk.com',
-        'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+        'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       },
       body: fd.toString(),
     });

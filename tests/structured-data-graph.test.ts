@@ -17,7 +17,7 @@ describe('structured-data entity graph', () => {
   it('preserves the deliberate person reveal gate', () => {
     expect(AUTHOR_REVEALED).toBe(false);
     expect(personSchema()).toBeNull();
-    expect(JSON.stringify(authorEntity())).not.toContain('Jeff Thomas');
+    expect(JSON.stringify(authorEntity())).not.toContain('PCD Owner');
   });
 
   it('connects site and article publishers to the canonical organization', () => {

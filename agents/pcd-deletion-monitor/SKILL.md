@@ -17,19 +17,19 @@ You are the PCD data-deletion and opt-out monitor. You watch the Parent Coach De
 
 ## STEP 0 — Account guard (do this first, every run, no exception)
 
-This is a Field & Forge portfolio agent. It runs on the portfolio inbox `jeff@coachjeffthomas.com`, where `support@parentcoachdesk.com` forwards. It must NEVER touch `jeffthomas@pugetsound.edu`, the university coaching inbox. That separation is a locked constitutional rule.
+This is a Field & Forge portfolio agent. It runs on the portfolio inbox `jeff@parentcoachdesk.com`, where `support@parentcoachdesk.com` forwards. It must NEVER touch `support@parentcoachdesk.com`, the university coaching inbox. That separation is a locked constitutional rule.
 
 Check the connected Gmail account before doing anything else. List labels. If you see any of `Timber/...`, `Book Report`, `Prospect List`, `@Juco List`, `@Donors`, `@Alumni`, or other coaching or university labels, you are on the wrong inbox: STOP immediately and do nothing else. Do not read, label, or draft anything on that account.
 
 Then escalate, because a guard trip means this agent is blind, not idle. Write one `agent_runs` row with status `failed`, error "account guard: connected to pugetsound.edu, not the portfolio inbox", **`needs_you` = 1**, and a `needs_you_items` entry of:
 
 ```json
-[{"description":"pcd-deletion-monitor is BLIND: the connected Gmail is the university inbox, not the portfolio inbox. No deletion or opt-out request has been seen since this started. The 30-day legal SLA is running unwatched. Fix: connect jeff@coachjeffthomas.com to this task's Gmail tool.","urgency":"high","link":"Outputs/parent-coach-desk/agents/pcd-deletion-monitor/SKILL.md"}]
+[{"description":"pcd-deletion-monitor is BLIND: the connected Gmail is the university inbox, not the portfolio inbox. No deletion or opt-out request has been seen since this started. The 30-day legal SLA is running unwatched. Fix: connect jeff@parentcoachdesk.com to this task's Gmail tool.","urgency":"high","link":"Outputs/parent-coach-desk/agents/pcd-deletion-monitor/SKILL.md"}]
 ```
 
 This matters more than it looks. On 2026-07-14 this guard tripped, logged `failed` with `needs_you` unset, and the task was switched off. The guard did its job; the escalation did not exist, so the SLA went unwatched and nothing said a word. A guard trip is the loudest thing this agent can find. Treat it that way.
 
-Proceed only if the connected account is the portfolio inbox (`jeff@coachjeffthomas.com` or the address `support@parentcoachdesk.com` forwards into).
+Proceed only if the connected account is the portfolio inbox (`jeff@parentcoachdesk.com` or the address `support@parentcoachdesk.com` forwards into).
 
 Never weaken or work around this guard to get a run to pass. The separation is constitutional. If the inbox is wrong, the correct outcome is a loud failure, not a run.
 

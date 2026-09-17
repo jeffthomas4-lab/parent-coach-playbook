@@ -1,6 +1,6 @@
 # Website Resolution Hit-Rate Test
 
-**Owner: Jeff Thomas. Written: June 15, 2026.**
+**Owner: PCD Owner. Written: June 15, 2026.**
 **Purpose: decide whether the 195,342 IRS org stubs can be enriched into a real database before spending on full-file enrichment.**
 
 This is the gate. Run it on 2,000 orgs before paying to resolve all 195k. One number comes out: the percent of stubs that resolve to a confidently-correct website. That number decides the whole national-coverage story.

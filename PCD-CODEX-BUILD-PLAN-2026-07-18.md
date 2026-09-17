@@ -33,7 +33,7 @@ All of this was checked live this session, against Cloudflare and the running si
 - `PHOTOS` R2 -> `activityradar-photos`
 - `SESSION` KV -> `1e0eb975e7784b799ecedc05ab754096`
 - five rate limiters (public submission, trust, community, demand, owner)
-- `vars`: `SITE_URL`, `ADMIN_EMAILS` (`eepskalla@gmail.com,jeffthomas4@gmail.com`), `ACCESS_TEAM_DOMAIN` (`fieldforge.cloudflareaccess.com`), `ACCESS_AUD`, and seven feature flags all defaulting false. Access config is baked as vars, not secrets.
+- `vars`: `SITE_URL`, `ADMIN_EMAILS` (`eepskalla@gmail.com,support@parentcoachdesk.com`), `ACCESS_TEAM_DOMAIN` (`fieldforge.cloudflareaccess.com`), `ACCESS_AUD`, and seven feature flags all defaulting false. Access config is baked as vars, not secrets.
 
 **Secrets on the live Worker** (`wrangler secret list --config wrangler.production.jsonc`, 2026-07-18): `BULK_IMPORT_TOKEN`, `CRON_KEY`, `GITHUB_TOKEN`, and `AGENT_RUNS_TOKEN` (set this session).
 
@@ -80,7 +80,7 @@ Jeff's stated success test for the secret-injection fix has two halves.
 | A | `POST /api/agent-runs` with bearer returns 200 | **Pass**, proven live 2026-07-18 |
 | B | `parentcoachdesk.com/admin` loads and authenticates as a fully working dashboard | **Pending** (Phase 0, item below) |
 
-Half B depends on the Cloudflare Access app being attached to the live domain's `/admin` and `/api/admin` routes with a policy allowing one of the `ADMIN_EMAILS` identities (`eepskalla@gmail.com` or `jeffthomas4@gmail.com`, not `jeffthomas@pugetsound.edu`). The ACCESS vars are already baked into the production config, and the admin-auth code path was migrated, so the likely remaining work is the dashboard-side Access attachment plus a real login, verified against `wrangler tail` showing no `[admin-auth]` LEGACY or not-set warning.
+Half B depends on the Cloudflare Access app being attached to the live domain's `/admin` and `/api/admin` routes with a policy allowing one of the `ADMIN_EMAILS` identities (`eepskalla@gmail.com` or `support@parentcoachdesk.com`, not `support@parentcoachdesk.com`). The ACCESS vars are already baked into the production config, and the admin-auth code path was migrated, so the likely remaining work is the dashboard-side Access attachment plus a real login, verified against `wrangler tail` showing no `[admin-auth]` LEGACY or not-set warning.
 
 ---
 

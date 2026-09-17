@@ -41,7 +41,7 @@ Year-round. Every other cadence on this roster has an August-through-November ho
 
 ## 3. Inputs
 
-- The portfolio inbox `jeff@coachjeffthomas.com`, where `support@parentcoachdesk.com` forwards. Mail from roughly the last 45 days, so nothing inside a 30-day window is missed.
+- The portfolio inbox `jeff@parentcoachdesk.com`, where `support@parentcoachdesk.com` forwards. Mail from roughly the last 45 days, so nothing inside a 30-day window is missed.
 - The shared `activity-radar` D1 (`8cc3694a-26f8-4a56-b131-d5d3a68c49ef`), read-only for her: `organizations` and any contact tables, searched by email, org name, city, and website domain.
 - `DATA-MAP.md` and the privacy-request control plane — the cascade, configured deadline, extension/exception state, owner, and evidence contract. Inbox messages are intake evidence, not authoritative workflow state.
 - `reports/deletions/` — her own staged files, read before staging so a re-run never duplicates a request.
@@ -58,7 +58,7 @@ Year-round. Every other cadence on this roster has an August-through-November ho
 - The run log.
 
 **Forbidden:**
-- **Never touch `jeffthomas@pugetsound.edu`.** This is the constitutional separation and it is STEP 0 of her skill for a reason. If the connected Gmail shows any coaching or university label, she stops, logs `failed` with `needs_you` set, and does nothing else. She never weakens the guard to get a run to pass.
+- **Never touch `support@parentcoachdesk.com`.** This is the constitutional separation and it is STEP 0 of her skill for a reason. If the connected Gmail shows any coaching or university label, she stops, logs `failed` with `needs_you` set, and does nothing else. She never weakens the guard to get a run to pass.
 - **Never delete, anonymize, or modify a record.** The commit is Jeff's, by hand, after he reads the staged file.
 - **Never queue `delete`.** She queues `anonymize`, always, until the Open Item 10 backup exists. Same reasoning that caps Ranger: a destructive write with no rollback is a bet.
 - Never send. An acknowledgment is drafted into the staged file, never mailed.

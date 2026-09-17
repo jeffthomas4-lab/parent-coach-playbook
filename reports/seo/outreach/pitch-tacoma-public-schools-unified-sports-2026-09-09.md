@@ -17,6 +17,6 @@ I run Parent Coach Desk, a site written for parents trying to figure out youth s
 
 Unified Sports is exactly the kind of program a parent hears about secondhand and then has to go find out what it means for their kid. I put together a plain-language explainer, plus a guide to what a first season of Unified actually looks like from a parent's seat. If either would help the families you're recruiting into the program each season, I'd be glad to send them over.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

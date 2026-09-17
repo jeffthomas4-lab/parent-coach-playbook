@@ -2,7 +2,7 @@
 
 **Review type:** weekly | monthly | quarterly
 **Period ending:** YYYY-MM-DD
-**Owner:** Jeff Thomas
+**Owner:** PCD Owner
 **Evidence cutoff:** YYYY-MM-DD HH:MM TZ
 **Company OS version:** 1.0
 

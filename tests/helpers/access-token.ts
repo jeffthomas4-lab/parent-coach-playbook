@@ -90,7 +90,7 @@ export async function makeAccessToken(opts: TokenOptions = {}): Promise<string> 
     sub: 'test-subject',
   };
   if (opts.notBeforeSec !== undefined) payload.nbf = nowSec + opts.notBeforeSec;
-  if (!opts.omitEmail) payload.email = opts.email ?? 'jeffthomas@pugetsound.edu';
+  if (!opts.omitEmail) payload.email = opts.email ?? 'admin-fixture@parentcoachdesk.com';
 
   const signingInput = `${b64url(JSON.stringify(header))}.${b64url(JSON.stringify(payload))}`;
   if (opts.algNone) return `${signingInput}.`;

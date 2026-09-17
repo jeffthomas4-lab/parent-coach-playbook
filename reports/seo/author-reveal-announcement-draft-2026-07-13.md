@@ -26,7 +26,7 @@ Body draft:
 
 For six months, every piece on this site ran under one byline: the Parent Coach Desk. No name, no photo, no bio. That was the bet. The advice had to work on its own, before anyone knew who was behind it.
 
-It's Jeff Thomas. Head football coach at the University of Puget Sound. Two decades on both sides of youth sports: the parent in the stands, and the coach who has to make the roster call anyway.
+It's PCD Owner. Head football coach at the University of Puget Sound. Two decades on both sides of youth sports: the parent in the stands, and the coach who has to make the roster call anyway.
 
 I served as interim athletic director through January 2025, so some of what's on this site comes from budget meetings and enrollment math, not just a sideline. That part doesn't usually make it into parenting advice.
 
@@ -36,13 +36,13 @@ If you want the long version, it's on the About page now.
 
 ## Homepage / social short version
 
-Jeff Thomas, head football coach at the University of Puget Sound, writes Parent Coach Desk. Six months anonymous, out loud now.
+Parent Coach Desk Editorial, writes Parent Coach Desk. Six months anonymous, out loud now.
 
 ## /about/ rewrite: "Who writes this" section
 
 Replaces the current section (lines 46-56 of `src/pages/about.astro`, which reads "the Desk is two parents who write and edit everything here." Rewrite only if the fork above lands on single-author):
 
-Every piece on this site is written and edited by Jeff Thomas, head football coach at the University of Puget Sound. Two decades inside the youth-to-college athletics pipeline, most of it on both sides of the fence: the parent in the stands and the coach making the roster decision.
+Every piece on this site is written and Edited by Parent Coach Desk Editorial, head football coach at the University of Puget Sound. Two decades inside the youth-to-college athletics pipeline, most of it on both sides of the fence: the parent in the stands and the coach making the roster decision.
 
 The anonymous byline wasn't a stunt. It was a bet that the advice should stand on its own before it stood on a name. A parent doesn't need to know who wrote "what to say in the first 90 seconds" to use it Saturday afternoon.
 

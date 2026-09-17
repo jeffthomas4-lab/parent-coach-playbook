@@ -61,7 +61,7 @@ describe('verifyAccessJwt', () => {
         aud: [AUD],
         iss: `https://${TEAM_DOMAIN}`,
         exp: Math.floor(Date.now() / 1000) + 3600,
-        email: 'jeffthomas@pugetsound.edu',
+        email: 'admin-fixture@parentcoachdesk.com',
       }),
     )
       .toString('base64')

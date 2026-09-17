@@ -30,7 +30,7 @@ editorial:
     - flag: "SENS"
       reason: "The sensitive angle is exclusion between two eleven-year-old teammates on a team the author coaches. The other kid is a composite, neither child is named, the team is not identifiable, and the piece prescribes enforcing an existing team standard rather than punishing a child. No depiction of harm and no advice directed at a minor. Jeff cleared it for publication 2026-08-29."
       date: "2026-08-29"
-      admin: "jeff@coachjeffthomas.com"
+      admin: "editor@parentcoachdesk.com"
 ---
 
 My son ran to the huddle at the start of a 7-on-7 rep and the kid next to him took two steps sideways to make room for someone else. Same thing happened on the sled line the next week.

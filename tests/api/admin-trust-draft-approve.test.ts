@@ -1,17 +1,17 @@
-﻿import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 
 vi.mock('../../src/lib/trust-cases', () => ({ approveTrustResponseDraft: vi.fn() }));
 import { POST } from '../../src/pages/api/admin/trust/[id]/drafts/[draftId]/approve';
 import * as trustCases from '../../src/lib/trust-cases';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown = { note: 'Reviewed against the current case evidence.', confirm_payload: true }, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/trust/case_1/drafts/draft_1/approve', {
     method: 'POST', body: JSON.stringify(body),
     headers: {
       'content-type': 'application/json', origin,
-      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}),
+      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}),
     },
   });
 
@@ -38,7 +38,7 @@ describe('POST /api/admin/trust/:id/drafts/:draftId/approve', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.delivery).toContain('not authorized');
-    expect(trustCases.approveTrustResponseDraft).toHaveBeenCalledWith(expect.anything(), 'case_1', 'draft_1', 'jeffthomas@pugetsound.edu', 'Reviewed against the current case evidence.');
+    expect(trustCases.approveTrustResponseDraft).toHaveBeenCalledWith(expect.anything(), 'case_1', 'draft_1', 'admin-fixture@parentcoachdesk.com', 'Reviewed against the current case evidence.');
   });
 
   it('fails closed on expiry, tampering, stale state, or concurrency', async () => {

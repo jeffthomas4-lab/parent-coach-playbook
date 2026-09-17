@@ -1,6 +1,6 @@
 # ActivityRadar: Architecture & Build Plan
 
-**Owner: Jeff Thomas. Started: June 14, 2026.**
+**Owner: PCD Owner. Started: June 14, 2026.**
 **Status: foundation built. Schema, migration, read layer, and scaffold done. No public search UI yet.**
 
 This is the source of truth for how ActivityRadar gets built. It pins the database model, the relationship to parentcoachdesk.com, and the build phases before any code gets written.

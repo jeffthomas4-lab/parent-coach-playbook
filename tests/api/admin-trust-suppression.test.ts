@@ -1,11 +1,11 @@
-﻿import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 
 vi.mock('../../src/lib/trust-cases', () => ({ proposeContentSuppression: vi.fn() }));
 import { POST } from '../../src/pages/api/admin/trust/[id]/suppression';
 import * as trustCases from '../../src/lib/trust-cases';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown, origin = 'https://parentcoachdesk.com', auth = true) => new Request(
   'https://parentcoachdesk.com/api/admin/trust/case_1/suppression',
   { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': ADMIN_EMAILS } : {}) } },

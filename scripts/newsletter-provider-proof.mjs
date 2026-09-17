@@ -28,7 +28,7 @@ export function validateNewsletterProviderProof(value) {
     for (const field of ['consent_notice_observed', 'confirmation_verified', 'welcome_delivery_verified', 'unsubscribe_verified', 'suppression_verified', 'failure_handling_verified', 'redirect_verified']) {
       if (value[field] !== true) errors.push(`${field} must be true when verified`);
     }
-    if (value.approved_by !== 'Jeff Thomas') errors.push('verified proof requires Jeff Thomas approval');
+    if (value.approved_by !== 'PCD Owner') errors.push('verified proof requires PCD Owner approval');
   }
   return { valid: errors.length === 0, verified: verified && errors.length === 0, errors };
 }

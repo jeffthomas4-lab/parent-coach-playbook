@@ -4,7 +4,7 @@ Run could not complete STEP 0 successfully and could not log the mandated `agent
 
 ## 1. Account guard tripped (STEP 0)
 
-Connected Gmail account for this task session is **not** the portfolio inbox. `list_labels` returned `Timber/Founder`, `Timber/Coach`, `Timber/Family`, `Timber/VIP`, `Timber/Auto-Archived`, `Timber/Pending-Archive`, `Timber/Football`, `Timber/Recruiting`, `Timber/Admin`, `Timber/Personal`, `Timber/Red-Wall`, `Book Report`, `Prospect List`, `Prospect List/@Juco List`, `@Alumni`, `@Donors` — all university/coaching labels. This is `jeffthomas@pugetsound.edu`, not `jeff@coachjeffthomas.com`.
+Connected Gmail account for this task session is **not** the portfolio inbox. `list_labels` returned `Timber/Founder`, `Timber/Coach`, `Timber/Family`, `Timber/VIP`, `Timber/Auto-Archived`, `Timber/Pending-Archive`, `Timber/Football`, `Timber/Recruiting`, `Timber/Admin`, `Timber/Personal`, `Timber/Red-Wall`, `Book Report`, `Prospect List`, `Prospect List/@Juco List`, `@Alumni`, `@Donors` — all university/coaching labels. This is `support@parentcoachdesk.com`, not `jeff@parentcoachdesk.com`.
 
 Per SOP: stopped immediately. Did not read, label, or draft anything on this account. Did not search for deletion requests (STEP 2 never ran). No PCD support mail was touched.
 
@@ -27,7 +27,7 @@ No inbox search for deletion/opt-out requests. No D1 read against `activity-rada
 
 ## Recommended next steps, in order
 
-1. Fix the Gmail connection for this scheduled task so it points at `jeff@coachjeffthomas.com` (or wherever `support@parentcoachdesk.com` actually forwards), not the university inbox.
+1. Fix the Gmail connection for this scheduled task so it points at `jeff@parentcoachdesk.com` (or wherever `support@parentcoachdesk.com` actually forwards), not the university inbox.
 2. Confirm the Cloudflare D1 MCP is actually wired into this task's tool set — right now it isn't, which means even a correctly-connected run tonight couldn't log its result.
 3. Once both are fixed, pull `agent_runs` for `pcd-deletion-monitor` (once you can) and check how many days this SLA has actually been unwatched — don't assume it's just today.
 4. Sync the `agents/pcd-deletion-monitor/SKILL.md` version number/date with whatever's actually deployed, and fix the `Documents\Claude\Scheduled\...` pointer to the current `Scheduled\` path.

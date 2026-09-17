@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-15T15:57:38.968Z",
-  "count": 892,
+  "generatedAt": "2026-09-17T00:01:24.587Z",
+  "count": 890,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -890,12 +890,6 @@
       "url": "https://ncys.org/the-hidden-costs-of-youth-sports-financial-strain-and-emotional-toll/",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
-      ]
-    },
-    {
-      "url": "https://news.riddell.com/info/releases/riddell-unveils-new-nd6-football-line-engineered-for-youth-football-players",
-      "sources": [
-        "src/content/news/riddell-nd6-nocsae-youth-helmet-standard-2026.md"
       ]
     },
     {
@@ -5237,12 +5231,6 @@
       ]
     },
     {
-      "url": "https://www.usafieldhockey.com/news/2026/february/12/player-equipment-penalty-corners-focus-of-high-school-field-hockey-rules-changes",
-      "sources": [
-        "src/content/news/nfhs-field-hockey-rule-changes-2026.md"
-      ]
-    },
-    {
       "url": "https://www.usafootball.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -5319,7 +5307,7 @@
       ]
     },
     {
-      "url": "https://www.usahockey.com/rulebook",
+      "url": "https://www.usahockey.com/rulesandresources",
       "sources": [
         "src/content/rules/hockey.md"
       ]

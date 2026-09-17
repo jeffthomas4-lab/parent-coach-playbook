@@ -17,7 +17,7 @@ import { POST } from '../../src/pages/api/admin/suggestions/[id]/promote';
 import * as campsDb from '../../src/lib/camps-db';
 import * as promotion from '../../src/lib/suggestion-promotion';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const mockSuggestion = { id: 'sugg_1', org_name: 'Tacoma Youth Soccer', status: 'pending' };
 
 function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) {
@@ -26,7 +26,7 @@ function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) 
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),

@@ -3,7 +3,7 @@
 **Date:** 2026-07-31
 **Status:** design only. Nothing in this file is built. No code was written, no migration applied, no schedule created.
 **Mode:** Audit and Recommendation. Stays there until Jeff changes it in writing.
-**Governs:** the SEO layer for parentcoachdesk.com, designed to port to coachjeffthomas.com, reidhaller.com, calebarlow.com, and readandreactfootball.com afterward.
+**Governs:** the SEO layer for parentcoachdesk.com, designed to port to parentcoachdesk.com, reidhaller.com, calebarlow.com, and readandreactfootball.com afterward.
 **Reads first:** `PCD-OPERATING-MANUAL.md` (SOP S1, section 3.4), `ORGANIC-SEARCH-AUDIT.md`, `automation/APPROVAL-MATRIX.md`, `automation/agents/nora/SPEC.md`, `PCD-AI-OS/02-intelligence-architecture.md`, `About Me/Website-Build-Standard.md` Pillar 10.
 
 ---

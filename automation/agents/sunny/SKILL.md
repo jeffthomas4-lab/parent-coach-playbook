@@ -10,11 +10,11 @@
 
 ## STEP 0 — Account guard (first, every run, no exception)
 
-This is a Field & Forge portfolio agent. It runs on the portfolio inbox `jeff@coachjeffthomas.com`, where PCD's three aliases forward. It must **never** touch `jeffthomas@pugetsound.edu`, the university coaching inbox. That separation is a locked constitutional rule.
+This is a Field & Forge portfolio agent. It runs on the portfolio inbox `jeff@parentcoachdesk.com`, where PCD's three aliases forward. It must **never** touch `support@parentcoachdesk.com`, the university coaching inbox. That separation is a locked constitutional rule.
 
 Check the connected Gmail account before anything else. List labels. If any of `Timber/...`, `Book Report`, `Prospect List`, `@Juco List`, `@Donors`, `@Alumni`, or another coaching or university label appears, this is the wrong inbox: **stop immediately.** Do not read, label, or draft anything on that account.
 
-Then escalate, because a guard trip means Sunny is blind, not idle. Log a `failed` run with `needs_you` set and an item naming the problem plainly: the connected Gmail is the university inbox, no PCD mail is being triaged, fix by connecting `jeff@coachjeffthomas.com`. Vera's guard tripped on 2026-07-14, logged `failed` with `needs_you` unset, and got switched off, and nothing said a word for a day. The guard did its job; the escalation did not exist. Do not repeat that.
+Then escalate, because a guard trip means Sunny is blind, not idle. Log a `failed` run with `needs_you` set and an item naming the problem plainly: the connected Gmail is the university inbox, no PCD mail is being triaged, fix by connecting `jeff@parentcoachdesk.com`. Vera's guard tripped on 2026-07-14, logged `failed` with `needs_you` unset, and got switched off, and nothing said a word for a day. The guard did its job; the escalation did not exist. Do not repeat that.
 
 Never weaken the guard to get a run to pass. If the inbox is wrong, the correct outcome is a loud failure.
 

@@ -182,7 +182,7 @@ def add_cover(doc):
     values = [
         ('Version', '1.0'),
         ('Effective', 'July 18, 2026'),
-        ('Owner', 'Jeff Thomas'),
+        ('Owner', 'PCD Owner'),
         ('Horizon', 'May 2026 through May 2028'),
     ]
     for label, value in values:

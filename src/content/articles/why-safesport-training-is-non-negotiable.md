@@ -34,7 +34,7 @@ editorial:
     - flag: "SENS"
       reason: "Child abuse prevention is the subject, but the piece is compliance guidance for coaches with no depiction of abuse and no advice to a victim. Jeff cleared it for publication 2026-08-07."
       date: "2026-08-07"
-      admin: "jeff@coachjeffthomas.com"
+      admin: "editor@parentcoachdesk.com"
 ---
 
 Coaches skip the certifications that feel optional. SafeSport doesn't fall in that bucket, even though it gets treated that way half the time.

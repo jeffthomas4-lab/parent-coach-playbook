@@ -16,6 +16,6 @@ A lot of families end up at Pierce County's rec leagues after pricing out travel
 
 If any of that is useful to link from your sports or Special Olympics Pierce County pages, I am glad to send over the specific ones that fit.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

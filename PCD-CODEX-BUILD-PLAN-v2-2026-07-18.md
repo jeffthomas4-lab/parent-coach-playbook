@@ -32,7 +32,7 @@ Unchanged from v1 except the corrections Codex supplied. Held to designed / buil
 
 **Host.** Production is Worker `parent-coach-desk` (`1da317290bea4069b83f6df9c13b3c7a`), serving `parentcoachdesk.com`, 200 off that Worker. Cutover done. Pages project and `parent-coach-playbook` Worker are rollback only.
 
-**Bindings on the live Worker.** `DB` (activity-radar), `FORGE_DB` (forge-command, bound 2026-07-18 00:35 UTC), `PCD_OPS_DB`, `PHOTOS` R2, `SESSION` KV, five rate limiters, and vars including `ADMIN_EMAILS` (`eepskalla@gmail.com,jeffthomas4@gmail.com`), `ACCESS_TEAM_DOMAIN` (`fieldforge.cloudflareaccess.com`), `ACCESS_AUD`. Access config is baked as vars.
+**Bindings on the live Worker.** `DB` (activity-radar), `FORGE_DB` (forge-command, bound 2026-07-18 00:35 UTC), `PCD_OPS_DB`, `PHOTOS` R2, `SESSION` KV, five rate limiters, and vars including `ADMIN_EMAILS` (`eepskalla@gmail.com,support@parentcoachdesk.com`), `ACCESS_TEAM_DOMAIN` (`fieldforge.cloudflareaccess.com`), `ACCESS_AUD`. Access config is baked as vars.
 
 **Secrets on the live Worker.** `AGENT_RUNS_TOKEN` (set this session), `BULK_IMPORT_TOKEN`, `CRON_KEY`, `GITHUB_TOKEN`.
 
@@ -77,7 +77,7 @@ Unchanged from v1 except the corrections Codex supplied. Held to designed / buil
 | B | `/admin` loads and authenticates a fully working dashboard | **Pending**, criteria corrected below |
 
 Half B corrected acceptance (Access is already attached):
-- Successful login by an allowlisted identity (`eepskalla@gmail.com` or `jeffthomas4@gmail.com`).
+- Successful login by an allowlisted identity (`eepskalla@gmail.com` or `support@parentcoachdesk.com`).
 - Dashboard renders.
 - A safe authenticated `/api/admin` read succeeds.
 - A non-allowlisted identity is denied.

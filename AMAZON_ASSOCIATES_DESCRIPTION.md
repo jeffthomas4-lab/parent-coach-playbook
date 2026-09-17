@@ -16,7 +16,7 @@ We will promote youth sports equipment and parenting-adjacent products. Primary 
 
 ## If they ask for more detail (a longer expanded version)
 
-The Parent-Coach Playbook is an editorial publication serving parents who are deeply involved in their children's youth sports and other activities. The site contains weekly short-form posts (200 to 500 words) and occasional longer essays (800+ words) under a single Editorial byline. Editorial direction comes from Jeff Thomas, a college football head coach at the University of Puget Sound, who writes the longer cornerstone pieces and edits everything else.
+The Parent-Coach Playbook is an editorial publication serving parents who are deeply involved in their children's youth sports and other activities. The site contains weekly short-form posts (200 to 500 words) and occasional longer essays (800+ words) under a single Editorial byline. Editorial direction comes from PCD Owner, a college football head coach at the University of Puget Sound, who writes the longer cornerstone pieces and edits everything else.
 
 Content is organized around a three-part framework called The Three Drives: pre-game preparation (the drive to practice or games), in-game coaching execution, and the post-game conversation (the drive home). Content is tagged by sport and by age band, so a parent can filter to articles relevant to their 9-year-old soccer player or their 14-year-old volleyball player.
 

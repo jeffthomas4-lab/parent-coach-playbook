@@ -1,6 +1,6 @@
 # ActivityRadar: Full Org List, Acquisition Workflow, and Go-To Strategy
 
-**Owner: Jeff Thomas. Written: June 15, 2026.**
+**Owner: PCD Owner. Written: June 15, 2026.**
 **Companion to `00-ARCHITECTURE.md`. Read that first for the schema and the one-database-two-front-doors model.**
 
 This answers four things you asked. Will the Google-search deal give us every org URL. What the full acquisition-to-camp workflow looks like. Who we are up against and how we win. What the money looks like long term.

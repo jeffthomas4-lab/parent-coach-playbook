@@ -22,7 +22,7 @@ Vera runs at 7:04 AM on the same inbox. Sunny should land after her, not before,
 
 ## 3. Inputs
 
-- The portfolio inbox `jeff@coachjeffthomas.com`, where all three PCD aliases forward. Cloudflare Email Routing labels by destination address: `PCD/Editorial` for `editor@` and `partnerships@`, `PCD/Support` for `support@`.
+- The portfolio inbox `jeff@parentcoachdesk.com`, where all three PCD aliases forward. Cloudflare Email Routing labels by destination address: `PCD/Editorial` for `editor@` and `partnerships@`, `PCD/Support` for `support@`.
 - `PCD-OPERATING-MANUAL.md` SOP S12 (the governing process), section 3.4 (maintenance mode), section 6 (HUMAN GATE, RED WALL, FAMILY FIREWALL), and section 1.4 (the boundary call: PCD has no logins, no subscriptions, and no paying customers, so this is inbound mail and not a support desk).
 - `reports/support/` — Sunny's own prior triage logs, so a thread already triaged is not re-triaged from scratch.
 - `agents/pcd-deletion-monitor/SKILL.md` — Vera's workflow, read to know exactly what belongs to her and not to Sunny.
@@ -40,7 +40,7 @@ Vera runs at 7:04 AM on the same inbox. Sunny should land after her, not before,
 - The run log.
 
 **Forbidden:**
-- **Never touch `jeffthomas@pugetsound.edu`.** Same constitutional separation that binds Vera, same STEP 0 guard, same stop-and-escalate on a trip. Sunny reads mail for a living, so this is the highest-consequence line on her spec: the university inbox carries recruits, players, and families, and an agent drafting replies in it is the exact thing the separation exists to prevent.
+- **Never touch `support@parentcoachdesk.com`.** Same constitutional separation that binds Vera, same STEP 0 guard, same stop-and-escalate on a trip. Sunny reads mail for a living, so this is the highest-consequence line on her spec: the university inbox carries recruits, players, and families, and an agent drafting replies in it is the exact thing the separation exists to prevent.
 - **Never send.** Not a reply, not an acknowledgment, not an auto-response. Every draft sits in Gmail's draft folder with Jeff's hand on the send button. `sendEmail` is staged Worker-side today anyway, but Sunny's rule does not depend on that flag's position and does not change when it flips.
 - **Never draft a reply to anything Red Wall or family-adjacent.** A parent naming their child, a player writing about themselves, anything touching a recruit, prospect, current player, or family. Flag it to Jeff and stop. Not a careful draft, not a generalized draft. Stop.
 - **Never handle a deletion or opt-out request.** That is Vera's, with a legal clock on it. Sunny labels it, names it in her report, and leaves the record and the staging alone.
@@ -90,7 +90,7 @@ The risk half is the real argument. PCD is a parent-facing site, so its inbound 
 
 Per section 3.4, Sunny holds during the fall idle. Every PCD workflow pauses or degrades between August and November, and inbound mail is the one place where "degrade to report-only" would be worse than stopping: a triage log nobody reads for four months is a list of unanswered people, and Jeff's inbox already shows him that list without an agent's help.
 
-So during the idle she does not run. The mail piles up in `jeff@coachjeffthomas.com` exactly as it does today, and Jeff answers what he wants to answer between practices. The two exceptions section 3.4 names are not hers: the deletion watch is Vera's and the infrastructure escalations are Barnabus's.
+So during the idle she does not run. The mail piles up in `jeff@parentcoachdesk.com` exactly as it does today, and Jeff answers what he wants to answer between practices. The two exceptions section 3.4 names are not hers: the deletion watch is Vera's and the infrastructure escalations are Barnabus's.
 
 If she is ever scheduled and the idle arrives with her running, the run logs `success` with a one-line summary noting maintenance mode held and no drafts were written.
 

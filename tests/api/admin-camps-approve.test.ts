@@ -35,7 +35,7 @@ const mockPendingCamp = { id: 'camp_1', status: 'pending', awaiting_review: 0, s
 import { POST } from '../../src/pages/api/admin/camps/[id]/approve';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 
 function adminRequest(body: unknown = {}) {
   return new Request('https://parentcoachdesk.com/api/admin/camps/camp_1/approve', {
@@ -43,7 +43,7 @@ function adminRequest(body: unknown = {}) {
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
     },
     body: JSON.stringify(body),
   });
@@ -90,7 +90,7 @@ describe('POST /api/admin/camps/:id/approve', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(campsDb.approveCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'jeffthomas@pugetsound.edu', null);
+    expect(campsDb.approveCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'admin-fixture@parentcoachdesk.com', null);
   });
 
   it('failure path: approving an id that does not exist returns 404', async () => {
@@ -117,7 +117,7 @@ describe('POST /api/admin/camps/:id/approve', () => {
       headers: {
         'content-type': 'application/json',
         origin: 'https://evil.example.com',
-        'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+        'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       },
       body: '{}',
     });

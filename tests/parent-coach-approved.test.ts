@@ -16,7 +16,7 @@ const qualified: ApprovedProduct = {
   wrong_for: 'Wide hands.',
   skip_category_when: 'A loaner fits.',
   paid_placement: false,
-  approved_by: 'Jeff Thomas',
+  approved_by: 'PCD Owner',
   approved_at: '2026-07-18',
 };
 

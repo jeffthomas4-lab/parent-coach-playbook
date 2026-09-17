@@ -8,7 +8,7 @@ Work in `Outputs/parent-coach-desk` (parentcoachdesk.com, Astro 5 + Cloudflare P
 
 ## State of play (verified July 5, 2026)
 
-- GSC access works. jeffthomas owner profile sees all three properties: parentcoachdesk.com, coachjeffthomas.com, parentcoachplaybook.com.
+- GSC access works. jeffthomas owner profile sees all three properties: parentcoachdesk.com, parentcoachdesk.com, parentcoachplaybook.com.
 - parentcoachdesk.com sitemap index: submitted June 11, status Success. Not the problem.
 - `sitemap-camps.xml` serves an empty urlset (110 bytes). GSC shows "1 error", 0 discovered URLs.
 - Root cause: the shared `activity-radar` D1 (id `8cc3694a-26f8-4a56-b131-d5d3a68c49ef`) has **0 approved camps**. 2,105 pending (1,245 with `session_end_date >= today`), 44 rejected. The live `/camps/` index lists nothing.

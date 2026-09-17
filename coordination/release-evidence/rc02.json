@@ -58,7 +58,7 @@
     },
     "access_policy": {
       "state": "pass",
-      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Cloudflare Access configuration is independent of the application commit. A fresh authenticated dashboard read-only export proves the Parent Coach Desk Production Admin application covers parentcoachdesk.com/admin* and /api/admin* with one bounded allow policy. The policy admits exactly eepskalla@gmail.com and jeffthomas4@gmail.com; it does not allow everyone. The Worker runtime remains an independently tracked deployment-drift and post-deploy concern.",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Cloudflare Access configuration is independent of the application commit. A fresh authenticated dashboard read-only export proves the Parent Coach Desk Production Admin application covers parentcoachdesk.com/admin* and /api/admin* with one bounded allow policy. The policy admits exactly eepskalla@gmail.com and support@parentcoachdesk.com; it does not allow everyone. The Worker runtime remains an independently tracked deployment-drift and post-deploy concern.",
       "evidence": [
         "coordination/release-evidence/access-policy-export-pending.json (exported 2026-07-17)",
         "coordination/release-evidence/anonymous-access-2026-07-16.json",
@@ -95,7 +95,7 @@
         "coordination/release-evidence/staging-isolation-and-journey-2026-07-17.json",
         "carried forward on 2026-08-06T15:26:38.459Z from pcd-local-rc01"
       ],
-      "approved_by": "Jeff Thomas"
+      "approved_by": "PCD Owner"
     },
     "rollback_target": {
       "state": "pass",
@@ -175,7 +175,7 @@
     },
     "notification_receipt": {
       "state": "pending",
-      "summary": "[STILL OPEN, carried from pcd-local-rc01] Resend confirms the original staging-only internal administrator alert was delivered, but a fresh read-only inspection of the approved #pcd-alerts channel found no matching drill alert. A current secret-name-only inventory confirms the isolated staging Worker has both Resend and Slack secret names, but cannot prove delivery or receipt. An accepted replacement staging submission is therefore not treated as channel delivery. Reconcile or rotate the configured Slack webhook, then perform one approved synthetic drill and record both provider/channel receipt and Jeff Thomas acknowledgement before the operator path is considered end to end.",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] Resend confirms the original staging-only internal administrator alert was delivered, but a fresh read-only inspection of the approved #pcd-alerts channel found no matching drill alert. A current secret-name-only inventory confirms the isolated staging Worker has both Resend and Slack secret names, but cannot prove delivery or receipt. An accepted replacement staging submission is therefore not treated as channel delivery. Reconcile or rotate the configured Slack webhook, then perform one approved synthetic drill and record both provider/channel receipt and PCD Owner acknowledgement before the operator path is considered end to end.",
       "evidence": [
         "coordination/release-evidence/resend-domain-dns-2026-07-17.json",
         "coordination/release-evidence/notification-receipt-pending.json",

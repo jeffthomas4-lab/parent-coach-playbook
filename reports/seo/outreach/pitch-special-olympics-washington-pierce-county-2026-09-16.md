@@ -17,6 +17,6 @@ I run Parent Coach Desk, a site for parents figuring out youth sports for the fi
 
 If either would help the parents you're talking to about joining this fall, I'd be glad to send them over. Happy to point people your way too if it's useful.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

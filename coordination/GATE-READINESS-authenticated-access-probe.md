@@ -8,7 +8,7 @@
 
 ## What already exists
 
-- **Policy side — done.** `coordination/release-evidence/access-policy-export-pending.json` is `state: "exported"` and passes `validateAccessPolicyEvidence`. It records the Cloudflare Access application (`Parent Coach Desk Production Admin`, domain `parentcoachdesk.com`, paths `/admin*` and `/api/admin*`) with one bounded allow policy covering exactly `jeffthomas4@gmail.com` and `eepskalla@gmail.com`. Nothing to do here.
+- **Policy side — done.** `coordination/release-evidence/access-policy-export-pending.json` is `state: "exported"` and passes `validateAccessPolicyEvidence`. It records the Cloudflare Access application (`Parent Coach Desk Production Admin`, domain `parentcoachdesk.com`, paths `/admin*` and `/api/admin*`) with one bounded allow policy covering exactly `support@parentcoachdesk.com` and `eepskalla@gmail.com`. Nothing to do here.
 - **Route contract — done.** `automation/protected-route-contract.json` is the only route-count authority for `/admin*` and `/api/admin*`; every entry is classified `access-only`, `app-auth`, or `mutation`. `scripts/access-evidence.mjs` reads that file at import time and derives `PROTECTED_ROUTE_COUNT` from its current length. Never copy a remembered count into a probe packet.
 - **Anonymous baseline — done for the contract snapshot recorded in each receipt.** `scripts/probe-anonymous-admin.mjs` already ran against production and staging (`coordination/release-evidence/anonymous-access-2026-07-16.json`, `staging-anonymous-access-2026-07-17.json`). Every route in those dated receipts returned `protected: true` and redirected to `fieldforge.cloudflareaccess.com` before origin. If the current contract length differs from a receipt's `route_count`, the receipt is stale and must be refreshed before it supports the current gate. Anonymous evidence does **not** prove the authenticated-denied or authenticated-allowed cases.
 - **Probe evidence — pending.** `coordination/release-evidence/authenticated-access-probes-pending.json` is the template that the live results replace in place (same filename, same path — the file is overwritten with real data, `state` moves from `pending` to `complete`).
@@ -19,7 +19,7 @@ Two live browser sessions against `https://parentcoachdesk.com`, one per identit
 
 ### Step 1 — Allowed identity pass
 
-1. Jeff signs into Cloudflare Access in the in-app browser using `eepskalla@gmail.com` or `jeffthomas4@gmail.com` (either allowlisted identity).
+1. Jeff signs into Cloudflare Access in the in-app browser using `eepskalla@gmail.com` or `support@parentcoachdesk.com` (either allowlisted identity).
 2. For every current route in `automation/protected-route-contract.json`, load the corresponding URL with a plain GET. Use `scripts/probe-anonymous-admin.mjs`'s `routeSourceToPath()` logic so the authenticated path list matches the contract exactly.
 3. Record per route: `path`, `edge_authorized: true`, `mutation_invoked: false`, plus enough of the observed status/redirect chain to justify the classification (status class, whether the app-auth check inside the route itself also passed for `app-auth`/`mutation` routes, not just the edge).
 4. Confirm none of the loads triggered a mutation — no button clicks, no `Idempotency-Key` requests, no POST/PUT/PATCH/DELETE.

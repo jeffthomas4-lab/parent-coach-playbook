@@ -1,6 +1,6 @@
 # National youth sports registry: staged plan
 
-**Date:** 2026-07-23. **Owner:** Jeff Thomas.
+**Date:** 2026-07-23. **Owner:** PCD Owner.
 **Scope:** every recreation league, club league, and club in the country, captured into one registry. PCD is the public front door (camps today, clubs and leagues next). SightSmash gets a private sales view behind it. This closes PCD operating manual open item 8 (the lead-gen sub-plan that was never written as a staged plan) and extends it past camps.
 **Input reviewed:** the ChatGPT "National Youth Sports Organization Capture System" plan, pasted 2026-07-23.
 

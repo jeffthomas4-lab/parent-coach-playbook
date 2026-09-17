@@ -186,7 +186,7 @@ function missesToCsv(misses) {
 async function fetchUrl(url) {
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'parent-coach-desk-harvester/1.0 (jeffthomas@pugetsound.edu)',
+      'User-Agent': 'parent-coach-desk-harvester/1.0 (support@parentcoachdesk.com)',
       Accept: 'text/html,application/xhtml+xml,application/xml,*/*;q=0.8',
     },
     redirect: 'follow',

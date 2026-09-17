@@ -16,6 +16,6 @@ I built a parent-facing version of the same ground: what heat cramps actually lo
 
 If it is useful as a linked resource for the families your protocols are written to protect, I would be glad to share the pages directly.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

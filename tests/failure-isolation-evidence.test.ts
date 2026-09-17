@@ -17,7 +17,7 @@ describe('failure isolation and notification receipt contracts', () => {
     const claimed = { ...pending, state: 'received', sent_at: '2026-07-16T13:46:00Z', received_at: '2026-07-16T13:47:00Z' };
     expect(validateNotificationReceipt(claimed).errors).toEqual(expect.arrayContaining([
       'recipient_role is required when received', 'provider_event_id is required when received',
-      'acknowledgement_reference is required when received', 'received drill requires Jeff Thomas approval',
+      'acknowledgement_reference is required when received', 'received drill requires PCD Owner approval',
     ]));
   });
 });

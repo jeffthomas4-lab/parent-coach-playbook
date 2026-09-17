@@ -45,7 +45,7 @@ describe('trust case durable support records', () => {
     fake.queueFirst({ id: 'case_1', requester_email: 'parent@example.com', status: 'open' });
     fake.queueFirst({ revision: 2 });
     const draft = await createTrustResponseDraft(
-      fake.db, 'case_1', 'jeffthomas@pugetsound.edu',
+      fake.db, 'case_1', 'admin-fixture@parentcoachdesk.com',
       'Correction request update', 'We are reviewing the source evidence you provided.',
     );
     expect(draft).toMatchObject({ case_id: 'case_1', revision: 3, status: 'draft' });

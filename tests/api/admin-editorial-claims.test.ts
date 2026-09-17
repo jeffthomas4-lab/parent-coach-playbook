@@ -6,11 +6,11 @@ import { POST as createClaim } from '../../src/pages/api/admin/editorial/claims/
 import { POST as validateClaimRoute } from '../../src/pages/api/admin/editorial/claims/[id]/validate';
 import * as records from '../../src/lib/editorial-records';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (url: string, body: unknown, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request(url, {
     method: 'POST', body: JSON.stringify(body),
-    headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}) },
+    headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}) },
   });
 
 describe('POST /api/admin/editorial/claims/create', () => {
@@ -34,7 +34,7 @@ describe('POST /api/admin/editorial/claims/create', () => {
     const body = await readJson(res);
     expect(res.status).toBe(201);
     expect(body.ok).toBe(true);
-    expect(records.addClaim).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ actor: 'jeffthomas@pugetsound.edu' }));
+    expect(records.addClaim).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ actor: 'admin-fixture@parentcoachdesk.com' }));
   });
 });
 
@@ -58,6 +58,6 @@ describe('POST /api/admin/editorial/claims/:id/validate', () => {
     (records.validateClaim as any).mockResolvedValue({ id: 'claim_1', validated: 1 });
     const res = await validateClaimRoute(makeContext({ request: request(url, { source_ids: ['source_1', 'source_2'] }), params: { id: 'claim_1' }, env: { PCD_OPS_DB: {}, ADMIN_EMAILS, EDITORIAL_LIFECYCLE_ENABLED: 'true' } }));
     expect(res.status).toBe(200);
-    expect(records.validateClaim).toHaveBeenCalledWith(expect.anything(), { claimId: 'claim_1', sourceIds: ['source_1', 'source_2'], actor: 'jeffthomas@pugetsound.edu' });
+    expect(records.validateClaim).toHaveBeenCalledWith(expect.anything(), { claimId: 'claim_1', sourceIds: ['source_1', 'source_2'], actor: 'admin-fixture@parentcoachdesk.com' });
   });
 });

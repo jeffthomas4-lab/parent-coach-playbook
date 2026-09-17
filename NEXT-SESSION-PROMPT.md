@@ -6,7 +6,7 @@ Copy and paste this entire block to start the next conversation.
 
 ## Paste this at the start of the next session:
 
-You are working on parentcoachdesk.com, an Astro static site (hybrid output, Cloudflare Pages adapter) for parents in youth sports, dance, theater, and performing arts. Jeff Thomas owns it. He is head football coach at University of Puget Sound (D3, Tacoma, WA).
+You are working on parentcoachdesk.com, an Astro static site (hybrid output, Cloudflare Pages adapter) for parents in youth sports, dance, theater, and performing arts. PCD Owner owns it. He is head football coach at University of Puget Sound (D3, Tacoma, WA).
 
 Before doing any work, read ABOUT ME/ files: About Me.txt, Anti AI Writing.txt, Deployments.md, My Company.txt. They govern voice, banned words, deploy commands, and priorities.
 

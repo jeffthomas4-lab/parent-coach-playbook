@@ -4,7 +4,7 @@
 
 STEP 0 account guard ran as required, every time, no exception. It tripped.
 
-The connected Gmail account for this task is `jeffthomas@pugetsound.edu` — the university coaching inbox — not the portfolio inbox (`jeff@coachjeffthomas.com` / `support@parentcoachdesk.com` forwarding). Confirmed by `list_labels`: the account carries `Timber/*`, `Book Report`, `Prospect List`, `Prospect List/@Juco List`, `@Donors`, `@Alumni` — all university/coaching labels. No portfolio or PCD labels present.
+The connected Gmail account for this task is `support@parentcoachdesk.com` — the university coaching inbox — not the portfolio inbox (`jeff@parentcoachdesk.com` / `support@parentcoachdesk.com` forwarding). Confirmed by `list_labels`: the account carries `Timber/*`, `Book Report`, `Prospect List`, `Prospect List/@Juco List`, `@Donors`, `@Alumni` — all university/coaching labels. No portfolio or PCD labels present.
 
 Per SKILL.md STEP 0, the run stopped immediately. STEP 2 (inbox search for deletion requests) was never run. STEP 3–5 never ran. No email was read, labeled, or drafted on the university account.
 
@@ -24,7 +24,7 @@ This is exactly the failure mode the SKILL.md calls out from 2026-07-14: the gua
 
 ## What needs to happen
 
-1. Reconnect this task's Gmail tool to the portfolio inbox (`jeff@coachjeffthomas.com`), not `jeffthomas@pugetsound.edu`.
+1. Reconnect this task's Gmail tool to the portfolio inbox (`jeff@parentcoachdesk.com`), not `support@parentcoachdesk.com`.
 2. Reconnect or verify the Cloudflare D1 MCP connector for this task so `d1_database_query` is actually available — right now this agent cannot write to `forge-command` or read from `activity-radar` at all, which also means STEP 3 (record lookup) would fail even if STEP 0 passed.
 3. Once D1 access is restored, pull `agent_runs` for `pcd-deletion-monitor` to determine the actual last successful run date and quantify the SLA blind spot before treating this as resolved.
 4. Do not auto-pause this task. Per SKILL.md, the CANARY auto-pause deliberately does not apply here.

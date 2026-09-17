@@ -78,7 +78,7 @@
 
 **Her triage order is the design.** Four questions per message, and the first two can stop the run for that message before any text exists. Red Wall first: a parent naming their child, a player writing about themselves, anything touching a recruit, prospect, player, or family gets labeled, flagged, and **no draft at all**. Not a careful draft, not a generalized one. Deletion requests second: those are Vera's, with a legal clock, so Sunny labels and names the handoff and never stages or replies. If Vera has not picked one up by the next run, that is a `needs_you` item, because a request sitting between two agents is a request nobody has.
 
-**Registered `paused`, no schedule, on purpose.** She reads mail on Jeff's behalf, and the account guard has to be confirmed against the live connected inbox first. Vera's guard tripped on the wrong inbox two days ago; an agent that *drafts replies* on `jeffthomas@pugetsound.edu` would be a Red Wall exposure, not an inconvenience. Her skill carries the same STEP 0 guard and the same stop-and-escalate-loudly rule.
+**Registered `paused`, no schedule, on purpose.** She reads mail on Jeff's behalf, and the account guard has to be confirmed against the live connected inbox first. Vera's guard tripped on the wrong inbox two days ago; an agent that *drafts replies* on `support@parentcoachdesk.com` would be a Red Wall exposure, not an inconvenience. Her skill carries the same STEP 0 guard and the same stop-and-escalate-loudly rule.
 
 **Maintenance mode.** She holds August through November. Inbound mail is the one place where degrading to report-only is worse than stopping: a triage log nobody reads for four months is a list of unanswered people, and Jeff's inbox already shows him that list.
 
@@ -159,7 +159,7 @@ The gate did not move. Every agent still drafts, stages, monitors, or reports. P
 
 ### Needs Jeff — decisions
 
-4. **Sunny's enable.** Confirm the connected Gmail is `jeff@coachjeffthomas.com` and not the university inbox, then say the word and she gets a daily schedule after Vera's 7:04. Registered paused until you do. This is a Red Wall question, not a convenience one.
+4. **Sunny's enable.** Confirm the connected Gmail is `jeff@parentcoachdesk.com` and not the university inbox, then say the word and she gets a daily schedule after Vera's 7:04. Registered paused until you do. This is a Red Wall question, not a convenience one.
 
 5. **The staging channel.** `SLACK-STAGING.md`'s open item is still open. Vera posts to `#command` (`C0BGMPKT3GT`). Do the other six agents' drafts land there alongside Barnabus, or in a PCD channel of their own? Nobody posts blind until you answer.
 

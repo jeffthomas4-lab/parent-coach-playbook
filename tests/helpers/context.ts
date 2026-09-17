@@ -19,7 +19,7 @@ import { makeAccessToken, getPublicJwk, TEAM_DOMAIN, AUD } from './access-token'
 const TEST_ACCESS_EMAILS = [
   'eepskalla@gmail.com',
   'jeffthomas4@gmail.com',
-  'jeffthomas@pugetsound.edu',
+  'admin-fixture@parentcoachdesk.com',
   'stranger@example.com',
   'nobody@example.com',
 ] as const;

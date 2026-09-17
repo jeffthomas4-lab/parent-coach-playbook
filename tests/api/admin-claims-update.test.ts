@@ -11,7 +11,7 @@ vi.mock('../../src/lib/camps-db', () => ({
 import { POST } from '../../src/pages/api/admin/claims/[id]/update';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const mockClaim = { id: 'claim_1', camp_id: 'camp_1', claimant_email: 'owner@example.com', status: 'pending' };
 
 function adminRequest(body: unknown = { status: 'verified' }, headers: Record<string, string> = {}) {
@@ -20,7 +20,7 @@ function adminRequest(body: unknown = { status: 'verified' }, headers: Record<st
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -52,7 +52,7 @@ describe('POST /api/admin/claims/:id/update', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(campsDb.updateClaimStatus).toHaveBeenCalledWith(expect.anything(), 'claim_1', 'verified', 'jeffthomas@pugetsound.edu', null);
+    expect(campsDb.updateClaimStatus).toHaveBeenCalledWith(expect.anything(), 'claim_1', 'verified', 'admin-fixture@parentcoachdesk.com', null);
   });
 
   it('security: cannot convert a claim into paid ownership without a payment and entitlement ledger', async () => {

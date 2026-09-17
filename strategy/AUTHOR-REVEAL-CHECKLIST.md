@@ -4,7 +4,7 @@ Prep only. Nothing here is live. `AUTHOR_REVEALED` in `src/data/site.ts` is stil
 
 ## What already exists in the code
 
-`src/data/site.ts` already has a reveal switch, built for exactly this. Comment on it, verbatim: *"Set AUTHOR_REVEALED = true on the November face-reveal date and every Article / HowTo / About schema starts emitting Person instead of Organization. No other code changes needed."* The `AUTHOR` object is already fully populated: name Jeff Thomas, job title Head Coach Football, works for University of Puget Sound, a one-paragraph description, and a `sameAs` array (currently empty) for external profile links.
+`src/data/site.ts` already has a reveal switch, built for exactly this. Comment on it, verbatim: *"Set AUTHOR_REVEALED = true on the November face-reveal date and every Article / HowTo / About schema starts emitting Person instead of Organization. No other code changes needed."* The `AUTHOR` object is already fully populated: a personal author name, job title Head Coach Football, works for University of Puget Sound, a one-paragraph description, and a `sameAs` array (currently empty) for external profile links.
 
 So a November reveal date and a single-person identity (you) were already decided by whoever built this. This checklist assumes that decision stands. If it doesn't, the whole plan below changes, see the open question at the end.
 
@@ -26,7 +26,7 @@ Flipping `AUTHOR_REVEALED` to `true` changes exactly two things, both invisible 
 2. **Confirm the November date** is still the target, and pick the exact day (a specific game week, a book launch, an anniversary of the site, whatever anchors it).
 3. **Flip `AUTHOR_REVEALED = true`** in `src/data/site.ts` on that date. One line, per the code comment.
 4. **Rewrite the "Who writes this" section of `/about/`** (currently lines 46-56 of `src/pages/about.astro`) to name you, using the bio copy below or your own edit of it.
-5. **Update `SITE.byline` and `EDITORIAL.byline`** from `'the Parent Coach Desk'` to whatever the post-reveal byline should read (options: your name directly, "Jeff Thomas for Parent Coach Desk," or keep the brand byline on articles and only reveal on `/about/`, your call on how gradual this is).
+5. **Update `SITE.byline` and `EDITORIAL.byline`** from `'the Parent Coach Desk'` to whatever the post-reveal byline should read (options: your name directly, "PCD Owner for Parent Coach Desk," or keep the brand byline on articles and only reveal on `/about/`, your call on how gradual this is).
 6. **Update the homepage hero line** in `index.astro` that reads "Written by the {EDITORIAL.byline}."
 7. **Populate `AUTHOR.sameAs`** with real, live links (LinkedIn, the UPS athletics staff page, any podcast appearance) so the Person schema has verifiable external proof, not just a bare name. Empty array today.
 8. **Decide what happens to the two-parents framing** in any other page that might reference the anonymous-editorial-team angle (check `/disclosure/` and any FAQ-style page for the same language before calling it done).
@@ -36,17 +36,17 @@ Flipping `AUTHOR_REVEALED` to `true` changes exactly two things, both invisible 
 ## Bio copy (single-author version, edit if the fork above lands on two people)
 
 **Short (one line, for article bylines or a press pitch subject line):**
-Jeff Thomas, head football coach at the University of Puget Sound, writes Parent Coach Desk.
+Parent Coach Desk Editorial, writes Parent Coach Desk.
 
 **Medium (for the About page "Who writes this" section, or a podcast guest blurb):**
 
-Every piece on this site is written and edited by Jeff Thomas, head football coach at the University of Puget Sound. Two decades inside the youth-to-college athletics pipeline, most of it on both sides of the fence: the parent in the stands and the coach making the roster decision.
+Every piece on this site is written and Edited by Parent Coach Desk Editorial, head football coach at the University of Puget Sound. Two decades inside the youth-to-college athletics pipeline, most of it on both sides of the fence: the parent in the stands and the coach making the roster decision.
 
 The anonymous byline wasn't a stunt. It was a bet that the advice should stand on its own before it stood on a name. A parent doesn't need to know who wrote "what to say in the first 90 seconds" to use it Saturday afternoon. Now that the site has enough of a track record to make the name useful instead of distracting, it's time to put it on the door.
 
 **Long (for a press pitch or a podcast pre-interview brief):**
 
-Jeff Thomas is the head football coach at the University of Puget Sound, a Division III program in Tacoma, Washington. He served as interim athletic director through January 2025, which means the youth-sports advice on this site isn't just from the sideline, it's informed by the budget meetings, the enrollment math, and the institutional side of athletics most parent-facing writers never see.
+Parent Coach Desk is written by an anonymous editorial desk.
 
 He started Parent Coach Desk anonymously, under the byline "the Parent Coach Desk," because the goal was advice that worked on its own merit, not advice that traded on a title. The site now covers more than 700 reads across 26 sports and activities: what to say after a bad game, what to buy and what to skip, the honest math on recruiting odds, and the operational scaffolding of running a season. All of it grounded in what actually happens in a locker room and a car ride home, not what sounds good in a parenting book.
 

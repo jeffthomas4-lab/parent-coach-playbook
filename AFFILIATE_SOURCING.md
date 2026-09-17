@@ -55,5 +55,5 @@ Could you enable deep linking for publishers in CJ? We want to land parents dire
 
 Happy to share the live placements. Thanks,
 
-Jeff Thomas
+PCD Owner
 parentcoachdesk.com

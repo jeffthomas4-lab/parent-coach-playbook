@@ -126,7 +126,7 @@ Every SOP names its approval gate. The HUMAN GATE rule holds across all of them:
 
 ### S4. Data-deletion request handling
 
-**Trigger:** any deletion request landing at `support@parentcoachdesk.com` (changed 2026-07-13 from the retired `parentcoachplaybook@gmail.com` brand address as part of the July dead-brand purge; forwards to `jeff@coachjeffthomas.com` per S12).
+**Trigger:** any deletion request landing at `support@parentcoachdesk.com` (changed 2026-07-13 from the retired `parentcoachplaybook@gmail.com` brand address as part of the July dead-brand purge; forwards to `jeff@parentcoachdesk.com` per S12).
 **Steps:** Acknowledge, locate the record in the `activity-radar` D1, delete or anonymize, confirm to the requester, log the action. The DATA-MAP.md SLA is 30 days and does not pause for football season.
 **Approval gate:** Jeff approves the deletion. This is the one standing watch that runs year-round.
 **Backing task:** none yet, and that is the risk. Nothing currently monitors that inbox for a request. Building this monitor is the one PCD automation that maintenance mode does not idle (section 3.4), and it is scheduled to be built in July 2026 before the idle (Jeff's call, 2026-07-13). It is a monitor-and-draft: it watches the inbox, locates the record, and stages the deletion for Jeff. The deletion itself stays behind the HUMAN GATE, so this does not require the manual-3x clearance that an autonomous action would.
@@ -185,7 +185,7 @@ Every SOP names its approval gate. The HUMAN GATE rule holds across all of them:
 
 **Trigger:** email arriving at `editor@`, `partnerships@`, or `support@parentcoachdesk.com`.
 **Steps:** Cloudflare Email Routing labels by destination address. Editorial owns `editor@` and `partnerships@`; Support owns `support@`. Draft a reply, flag anything that needs Jeff, hold anything Red Wall or family-adjacent.
-**Approval gate:** Draft only. A human sends every reply. Today all three aliases forward to `jeff@coachjeffthomas.com` and Jeff reads each one directly, because both owning agents sit paused.
+**Approval gate:** Draft only. A human sends every reply. Today all three aliases forward to `jeff@parentcoachdesk.com` and Jeff reads each one directly, because both owning agents sit paused.
 **Backing task:** none yet. This is the work Support/Ops picks up in September.
 
 ---

@@ -33,7 +33,7 @@ editorial:
     - flag: "SENS"
       reason: "Head injury is health and safety guidance, but the piece points to the existing legal standard (immediate removal, written medical clearance) and tells the coach not to judge severity himself, which is the conservative call rather than a substitute for medical advice. Jeff cleared it for publication 2026-08-07."
       date: "2026-08-07"
-      admin: "jeff@coachjeffthomas.com"
+      admin: "editor@parentcoachdesk.com"
 ---
 
 Zackery Lystedt was thirteen years old when he took a hit to the head in a middle school football game in Washington in 2006. He went to the sideline, came out for a few plays, told his coach he felt fine, and went back in. He collapsed at the end of the game.

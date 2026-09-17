@@ -9,7 +9,7 @@
     "current_version_id": "ca65a346-9624-4cfc-b570-05a4c0d8e8c8",
     "generated_configuration": "dist/server/wrangler.json",
     "bindings_verified": ["SESSION", "DB", "PCD_OPS_DB", "PHOTOS", "ASSETS"],
-    "application_admin_allowlist": ["eepskalla@gmail.com", "jeffthomas4@gmail.com"]
+    "application_admin_allowlist": ["eepskalla@gmail.com", "support@parentcoachdesk.com"]
   },
   "read_only_acceptance": {
     "home": 200,

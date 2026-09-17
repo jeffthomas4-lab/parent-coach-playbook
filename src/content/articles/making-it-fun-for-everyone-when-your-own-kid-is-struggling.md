@@ -30,7 +30,7 @@ editorial:
     - flag: "SENS"
       reason: "The sensitive angle is a coach's own kid struggling in front of the team he coaches. The son is not named, the team is not identifiable, and the piece is written against the author's own conduct rather than the child's performance: the correctable behavior in it belongs to the coach. No depiction of harm to a minor and no advice directed at a child. Jeff cleared it for publication 2026-08-29."
       date: "2026-08-29"
-      admin: "jeff@coachjeffthomas.com"
+      admin: "editor@parentcoachdesk.com"
 ---
 
 My son missed the same block three times in one inside-run period this spring. Same gap, same defender, same result. Thirteen other kids stood on the line waiting for the whistle to move on.

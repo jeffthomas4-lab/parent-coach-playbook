@@ -5,7 +5,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 import { POST } from '../../src/pages/api/admin/editorial/publish';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const ENV = { ADMIN_EMAILS, GITHUB_TOKEN: 'gh_fake' };
 
 const DRAFT_MD = `---

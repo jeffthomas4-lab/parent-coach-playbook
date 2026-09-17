@@ -104,7 +104,7 @@ Camp hero photos live in the `activityradar-photos` R2 bucket (bound as `PHOTOS`
 ## What's NOT covered
 
 - Cloudflare account itself: if you lose access to the account, everything Cloudflare-hosted (Pages, D1, R2) goes with it. Document your billing email and 2FA recovery codes somewhere safe (1Password, Bitwarden, or even a paper printout in a fireproof box).
-- The Coach Jeff Thomas site: doesn't use D1 or R2, so layer 1 (GitHub) covers it fully.
+- The Coach PCD Owner site: doesn't use D1 or R2, so layer 1 (GitHub) covers it fully.
 - Notion content: separate system, separate backup. Notion has built-in version history but no offline export by default. Periodically export your Notion workspace to ZIP via Notion → Settings → Workspace → Export.
 - **D1 snapshots are local-only as of 2026-07-13** (see Layer 2 above) — the PS1 script's dumps still never leave this machine. D1's own Time Travel (30-day point-in-time restore, no export needed) covers the "bad write" case without depending on this machine at all. **The true offsite copy is now built** (see Layer 2b, added 2026-07-22): `worker-backup/` exports weekly straight to R2, independent of this machine, verified by row count. It has not yet completed its first 2-3 verified runs as of this writing — check `backup-log.json` in the `pcd-db-backups` R2 bucket for the current count before relying on it as proven.
 

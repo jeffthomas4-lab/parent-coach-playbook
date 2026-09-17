@@ -47,7 +47,7 @@ All three must correspond to the **same** `idempotency_key`/drill run from Step 
 
 1. **Resend provider delivery.** Check the Resend dashboard for a delivered event tied to this drill's timestamp/recipient. This is the same check that already passed once (`notification-receipt-staging-2026-07-17.json` shows `resend: delivered`) — confirm it holds for the fresh drill too.
 2. **Visible `#pcd-alerts` channel receipt.** Read-only check of the channel (same method as `notification-channel-receipt-check-2026-07-17.json`) — this time it must show the actual drill alert post, not just a join event. This is the fact that was missing before and is the reason for Step 1.
-3. **Jeff Thomas acknowledgement.** A human confirmation that he saw the post, tied to the same drill ID — `notification-receipt.mjs` hard-requires `approved_by === 'Jeff Thomas'` when `state: 'received'`, no other value passes.
+3. **PCD Owner acknowledgement.** A human confirmation that he saw the post, tied to the same drill ID — `notification-receipt.mjs` hard-requires `approved_by === 'PCD Owner'` when `state: 'received'`, no other value passes.
 
 ## What each script emits and what gets checked
 
@@ -56,7 +56,7 @@ All three must correspond to the **same** `idempotency_key`/drill run from Step 
   ```
   node -e "import('./scripts/notification-receipt.mjs').then(({validateNotificationReceipt}) => console.log(JSON.stringify(validateNotificationReceipt(JSON.parse(require('fs').readFileSync('coordination/release-evidence/notification-receipt-pending.json','utf8'))))))"
   ```
-- `validateNotificationReceipt` requires, when `state: 'received'`: `sent_at`, `received_at`, `recipient_role`, `provider_event_id`, `acknowledgement_reference` all present; `received_at` not before `sent_at`; `approved_by === 'Jeff Thomas'`. It always requires `contains_requester_content === false` and `contains_secret_material === false` regardless of state — the synthetic drill's payload already satisfies both (no real requester data, no secrets).
+- `validateNotificationReceipt` requires, when `state: 'received'`: `sent_at`, `received_at`, `recipient_role`, `provider_event_id`, `acknowledgement_reference` all present; `received_at` not before `sent_at`; `approved_by === 'PCD Owner'`. It always requires `contains_requester_content === false` and `contains_secret_material === false` regardless of state — the synthetic drill's payload already satisfies both (no real requester data, no secrets).
 
 ## How results replace the template
 
@@ -68,7 +68,7 @@ Overwrite `coordination/release-evidence/notification-receipt-pending.json` in p
 - `recipient_role`: the role that received it (e.g. `"first approved staging administrator"`, matching the phrasing already used in `notification-receipt-staging-2026-07-17.json`)
 - `provider_event_id`: the Resend event ID
 - `acknowledgement_reference`: something that ties to Jeff's actual acknowledgement (message link, timestamp, etc. — not a claim, a reference)
-- `approved_by`: `"Jeff Thomas"` exactly
+- `approved_by`: `"PCD Owner"` exactly
 - Leave `channel_class`, `event_class`, `created_at`, `contains_requester_content: false`, `contains_secret_material: false` as-is; update `external_changes` to note the staging submission and email/Slack sends that occurred
 
 ## Absolute rule

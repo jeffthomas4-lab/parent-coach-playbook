@@ -1,7 +1,7 @@
 # GSC Review: parentcoachdesk.com — July 13, 2026
 
 ## Access
-Confirmed today: jeffthomas4@gmail.com still has zero properties in Search Console ("No matching property") — the fix from the 6/29 review (add it as a Full user) hasn't been done. But GSC access itself isn't actually blocked: parentcoachplaybook@gmail.com has full owner access to sc-domain:parentcoachdesk.com and was used to pull everything below. Either keep using that account for these reviews, or sign in as parentcoachplaybook@gmail.com → Settings → Users and permissions → add jeffthomas4@gmail.com with Full access so Jeff's own login works too.
+Confirmed today: support@parentcoachdesk.com still has zero properties in Search Console ("No matching property") — the fix from the 6/29 review (add it as a Full user) hasn't been done. But GSC access itself isn't actually blocked: parentcoachplaybook@gmail.com has full owner access to sc-domain:parentcoachdesk.com and was used to pull everything below. Either keep using that account for these reviews, or sign in as parentcoachplaybook@gmail.com → Settings → Users and permissions → add support@parentcoachdesk.com with Full access so Jeff's own login works too.
 
 ## The numbers
 Last 7 days: 0 clicks, 2 impressions, 0% CTR, average position 9.0.

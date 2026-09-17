@@ -148,14 +148,14 @@ describe('editorial opportunity lifecycle schema (disposable D1)', () => {
     const approvalReady = await markRelationshipMappingComplete(db, { opportunityId: opportunity.id, actor: 'staff:editor-1' });
     expect(approvalReady.status).toBe('approval_ready');
 
-    await expect(recordHumanApproval(db, { opportunityId: opportunity.id, approvedBy: 'jeffthomas@pugetsound.edu', flagsResolved: true, actor: 'jeffthomas@pugetsound.edu' }))
+    await expect(recordHumanApproval(db, { opportunityId: opportunity.id, approvedBy: 'admin-fixture@parentcoachdesk.com', flagsResolved: true, actor: 'admin-fixture@parentcoachdesk.com' }))
       .rejects.toThrow('monetization/disclosure classification is required before approval');
 
     await classifyMonetization(db, { opportunityId: opportunity.id, monetizationClassification: 'none', disclosureRequired: false, actor: 'staff:editor-1' });
 
-    const approved = await recordHumanApproval(db, { opportunityId: opportunity.id, approvedBy: 'jeffthomas@pugetsound.edu', flagsResolved: true, actor: 'jeffthomas@pugetsound.edu' });
+    const approved = await recordHumanApproval(db, { opportunityId: opportunity.id, approvedBy: 'admin-fixture@parentcoachdesk.com', flagsResolved: true, actor: 'admin-fixture@parentcoachdesk.com' });
     expect(approved.opportunity.status).toBe('approved');
-    expect(approved.approval.approved_by).toBe('jeffthomas@pugetsound.edu');
+    expect(approved.approval.approved_by).toBe('admin-fixture@parentcoachdesk.com');
   }, 20_000);
 
   it('throws a typed EvidenceGateError naming exactly what is missing, and never lets an unapproved item auto-publish', async () => {
@@ -177,7 +177,7 @@ describe('editorial opportunity lifecycle schema (disposable D1)', () => {
     // Deliberately stop here: no seo review, no relationship mapping, no monetization
     // classification, no human approval. The opportunity must not be publishable.
     expect((await getOpportunity(db, opportunity.id))?.status).toBe('editorial_review');
-    await expect(recordHumanApproval(db, { opportunityId: opportunity.id, approvedBy: 'jeffthomas@pugetsound.edu', flagsResolved: true, actor: 'jeffthomas@pugetsound.edu' }))
+    await expect(recordHumanApproval(db, { opportunityId: opportunity.id, approvedBy: 'admin-fixture@parentcoachdesk.com', flagsResolved: true, actor: 'admin-fixture@parentcoachdesk.com' }))
       .rejects.toThrow('opportunity is not ready for human approval');
   });
 
@@ -199,11 +199,11 @@ describe('editorial opportunity lifecycle schema (disposable D1)', () => {
     expect((await getOpportunity(db, opportunity.id))?.status).toBe('monitoring');
     expect(retireProposal.decision).toBeNull();
 
-    await expect(decideMaintenanceProposal(db, { proposalId: retireProposal.id, decision: 'accepted', decidedBy: 'jeffthomas@pugetsound.edu', actor: 'jeffthomas@pugetsound.edu' }))
+    await expect(decideMaintenanceProposal(db, { proposalId: retireProposal.id, decision: 'accepted', decidedBy: 'admin-fixture@parentcoachdesk.com', actor: 'admin-fixture@parentcoachdesk.com' }))
       .resolves.toEqual(expect.objectContaining({ decision: 'accepted' }));
     expect((await getOpportunity(db, opportunity.id))?.status).toBe('retired');
 
-    await expect(decideMaintenanceProposal(db, { proposalId: retireProposal.id, decision: 'rejected', decidedBy: 'jeffthomas@pugetsound.edu', actor: 'jeffthomas@pugetsound.edu' }))
+    await expect(decideMaintenanceProposal(db, { proposalId: retireProposal.id, decision: 'rejected', decidedBy: 'admin-fixture@parentcoachdesk.com', actor: 'admin-fixture@parentcoachdesk.com' }))
       .rejects.toThrow('maintenance proposal already decided');
   });
 

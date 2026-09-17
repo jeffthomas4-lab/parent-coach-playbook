@@ -103,7 +103,7 @@ Infra draws this distinction and it is precise. Verified against `agent_registry
 
 So it is re-enabled, it is running, it is escalating, and **it is blind.** It has read zero messages. The 30-day SLA has been unwatched since at least 2026-07-14 and is unwatched right now.
 
-**P0.1 is not closed.** It is converted from a silent failure into a loud one, which is a real improvement and is the correct state for a compliance agent that cannot see its inbox, but the SLA is still unwatched. The only thing that closes it is connecting `jeff@coachjeffthomas.com` to the task. Infra's H1 is the whole item and its framing is honest.
+**P0.1 is not closed.** It is converted from a silent failure into a loud one, which is a real improvement and is the correct state for a compliance agent that cannot see its inbox, but the SLA is still unwatched. The only thing that closes it is connecting `jeff@parentcoachdesk.com` to the task. Infra's H1 is the whole item and its framing is honest.
 
 One divergence worth noting: Infra reports the 07-14 row "left `needs_you` at its default of 0" and calls that the defect under the defect. Both rows now read `needs_you = 1`. Either Infra backfilled the old row without saying so, or the original claim was imprecise. Immaterial to the finding, and the current state is correct.
 
@@ -379,7 +379,7 @@ Two workarounds hold. Write the file through bash (`cat fresh > target`) to refr
 
 1. **296 camp pages are returning HTTP 500 right now.** Fixed in source, not deployed. This is the one thing in this session that a parent could hit today.
 2. ~~**Do not wire Vera to `/api/agent-runs` before adding a CANARY exemption.**~~ **Done. The exemption is in `applyCanary()` and covers both `pcd-deletion-monitor` and `vera`.** The two failures 23h59m apart can no longer pause her; they alert and set `needs_you` instead. Wiring her to the endpoint is now safe, and the rename is still deferred on purpose.
-3. **P0.1 is not closed.** The deletion monitor is re-enabled, running, and blind. It has read zero messages. Connecting `jeff@coachjeffthomas.com` is the only thing that closes it.
+3. **P0.1 is not closed.** The deletion monitor is re-enabled, running, and blind. It has read zero messages. Connecting `jeff@parentcoachdesk.com` is the only thing that closes it.
 4. **The Worker lane's "zero tsc errors" is wrong: there are 22.** Six of them (`tests/api/agent-runs.test.ts`) are fixed, and the `access-jwt.ts` one was fixed by its own lane. Run `npm run check` and `npx vitest run` on Windows before trusting Pillar 9 — neither the full suite nor `astro check` can be trusted from the sandbox while the mount is truncating in-flight files.
 5. **`wrangler.jsonc` is staging.** Putting `FORGE_DB`, `ACCESS_TEAM_DOMAIN`, or `ACCESS_AUD` there configures nothing in production.
 6. **`/what-to-buy/` fixed itself.** Do not spend a session on the `cacheDir` lead. The daily deploy hook almost certainly rebuilt it.

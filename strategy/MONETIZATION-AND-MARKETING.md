@@ -9,7 +9,7 @@
 
 ## The voice problem is already solved
 
-You built this as a faceless brand. Field & Forge Press is the imprint. PCP Editors is the default byline. Jeff Thomas only appears on cornerstone pieces. Nothing about marketing this brand requires you to post about parenting on your coaching channels or speak about youth sports under your name.
+You built this as a faceless brand. Field & Forge Press is the imprint. PCP Editors is the default byline. No personal byline appears on the site. Nothing about marketing this brand requires you to post about parenting on your coaching channels or speak about youth sports under your name.
 
 So the real question isn't "how do I market without diluting my voice." It's "how do I market a brand that isn't me, on time I'm not spending on football or the books." That's a different problem and it has cleaner answers.
 
@@ -56,7 +56,7 @@ Bigger payoff: affiliate partnerships outside gear. Camp finder platforms, lesso
 
 ### 3. Sponsored newsletter slots (start charging at 5,000 subscribers)
 
-Once the Kit list is over 5K, you can sell a sponsor slot for $300-500 per send. Newsletters in the parenting / kids-activities space charge that range routinely. Don't sell from a Jeff Thomas voice. Sell from "Parent Coach Playbook reaches X engaged parents weekly." Sponsor doesn't need to know who runs it.
+Once the Kit list is over 5K, you can sell a sponsor slot for $300-500 per send. Newsletters in the parenting / kids-activities space charge that range routinely. Don't sell from a PCD Owner voice. Sell from "Parent Coach Playbook reaches X engaged parents weekly." Sponsor doesn't need to know who runs it.
 
 Below 5K, this is not a real channel. Above 10K, it's $1,000-2,000/mo on autopilot.
 
@@ -75,7 +75,7 @@ Sport-specific local clubs, baseball academies, and travel programs pay $50-200 
 
 ## Marketing stack, ranked
 
-Filter: low time investment, no exposure of you as Jeff Thomas the coach, channels that survive AI killing search.
+Filter: low time investment, no exposure of you as a named coach, channels that survive AI killing search.
 
 ### 1. Reddit and Facebook groups (free, requires consistency not creativity)
 
@@ -99,7 +99,7 @@ Worth one focused afternoon to identify candidates and send the pitches.
 
 ### 4. Guest essays in parenting publications (low frequency, high authority)
 
-Outside, Romper, Today's Parent, The Athletic, plus regional parenting magazines. Pitch 4-6 pieces a year under "PCP Editors" or under a contributor pseudonym, not under Jeff Thomas. Each placement drives a small spike to the lead magnet and gives the brand permanent third-party authority. The key is the byline doesn't have to be you.
+Outside, Romper, Today's Parent, The Athletic, plus regional parenting magazines. Pitch 4-6 pieces a year under "PCP Editors" or under a contributor pseudonym, not under a personal name. Each placement drives a small spike to the lead magnet and gives the brand permanent third-party authority. The key is the byline doesn't have to be you.
 
 ### 5. One paid ad test (paid, finite spend, real data)
 
@@ -137,4 +137,4 @@ A few things I won't fill in for you:
 
 1. **What's "monetization works" mean to you.** $500/mo by year-end? $2K/mo? Or is this a "build the system now, harvest in 2027" play where revenue in 2026 isn't really the point? The answer changes whether to spend $500 testing ads in July or wait.
 2. **Are you willing to hire a VA at $200-400/month** to run the Reddit/Facebook/Pinterest cadence? Without that, the marketing plan compresses to whatever you can do in monthly Cowork sessions, which is real but slower.
-3. **Do you want this site to ever carry your name publicly,** or stay faceless permanently? Permanently faceless is fine and probably right. But if there's any future where you put the Jeff Thomas byline on the cornerstone pieces and own the brand publicly, the marketing options expand. Worth deciding now, not later.
+3. **Do you want this site to ever carry your name publicly,** or stay faceless permanently? Permanently faceless is fine and probably right. But if there's any future where you put a personal byline on the cornerstone pieces and own the brand publicly, the marketing options expand. Worth deciding now, not later.

@@ -5,7 +5,7 @@
 
 ## 1. Release state change
 rc01.json gate tally moved from **11 pass / 8 pending** to **11 pass / 1 not_applicable / 7 pending**.
-- `r2_recovery` → **not_applicable** (owner-accepted exception, disposition A). `approved_by: "Jeff Thomas"`, evidence `coordination/release-evidence/r2-recovery-owner-disposition-2026-07-17.json`. `check:release-evidence` passes (7 unpassed).
+- `r2_recovery` → **not_applicable** (owner-accepted exception, disposition A). `approved_by: "PCD Owner"`, evidence `coordination/release-evidence/r2-recovery-owner-disposition-2026-07-17.json`. `check:release-evidence` passes (7 unpassed).
 Still pending: authenticated_access_probes, database_backup, customer_journeys, notification_receipt, failure_isolation, open_risk_decision, migration_approval.
 
 ## 2. Worktree repair (was P0)
@@ -21,7 +21,7 @@ The working tree had 56 modified files; 48 were truncated corruption (invalid JS
 | Gate | State | Prepared this session | Remaining action (owner) |
 |---|---|---|---|
 | r2_recovery | not_applicable | Owner disposition recorded; rc01 updated | none (void if prod media added later) |
-| authenticated_access_probes | pending | Runner verified ready (access-evidence.mjs); runbook | Jeff signs into Cloudflare Access (allowed: eepskalla@/jeffthomas4@gmail.com; denied: any other), run GET/HEAD-only 37-route probe → record evidence. See `GATE-READINESS-authenticated-access-probe.md` |
+| authenticated_access_probes | pending | Runner verified ready (access-evidence.mjs); runbook | Jeff signs into Cloudflare Access (allowed: eepskalla@/support@parentcoachdesk.com; denied: any other), run GET/HEAD-only 37-route probe → record evidence. See `GATE-READINESS-authenticated-access-probe.md` |
 | database_backup | pending | Provider-neutral tooling `scripts/offsite-backup-upload.mjs` + `offsite-backup-retrieve-verify.mjs` (dry-run default, node --check clean), `scripts/OFFSITE-RECOVERY-RUNBOOK.md`, `_TEMPLATE-offsite-backup-proving.json` | Jeff picks provider (deferred), creates separate immutable account + least-priv keys, `npm i @aws-sdk/client-s3`, run upload→retrieve→restore on 3 separate days |
 | customer_journeys | pending | Automated a11y scan attempted; blocked by cloud-sandbox browser egress (ERR_CONNECTION_RESET) | Named human reviewer runs manual screen-reader/touch/200%-zoom/safe-area/keyboard/constrained-network/error-retry pass (`automation/mobile-web-contract.json`); optionally run axe locally via `npm run preview` |
 | notification_receipt | pending | Drill scripts verified ready; runbook | Jeff creates fresh staging Slack webhook → staging secret SLACK_WEBHOOK_URL → `npm run drill:staging-notification` → capture Resend + #pcd-alerts receipt + ack. See `GATE-READINESS-notification-receipt.md` |

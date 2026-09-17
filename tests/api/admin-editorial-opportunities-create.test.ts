@@ -5,13 +5,13 @@ vi.mock('../../src/lib/editorial-records', () => ({ createOpportunity: vi.fn() }
 import { POST } from '../../src/pages/api/admin/editorial/opportunities/create';
 import * as records from '../../src/lib/editorial-records';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/editorial/opportunities/create', {
     method: 'POST', body: JSON.stringify(body),
     headers: {
       'content-type': 'application/json', origin,
-      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}),
+      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}),
     },
   });
 
@@ -61,6 +61,6 @@ describe('POST /api/admin/editorial/opportunities/create', () => {
     expect(body.ok).toBe(true);
     const call = (records.createOpportunity as any).mock.calls[0][1];
     expect(call.signalSummary).not.toContain('example.com');
-    expect(call.actor).toBe('jeffthomas@pugetsound.edu');
+    expect(call.actor).toBe('admin-fixture@parentcoachdesk.com');
   });
 });

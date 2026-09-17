@@ -23,7 +23,7 @@ is no longer the current state and should not be read as one.
 | Worker name | `parent-coach-desk` |
 | Config file | `wrangler.production.jsonc` |
 | Live domain | `parentcoachdesk.com` |
-| Owner | Jeff Thomas |
+| Owner | PCD Owner |
 | Deploy path | GitHub Actions (`.github/workflows/deploy-workers.yml`) on merge to `main`, gated by the protected `production` GitHub Environment. No local deploy command — see `DEPLOYMENT-RUNBOOK.md`. |
 | D1 (`DB`) | `activity-radar`, id `8cc3694a-26f8-4a56-b131-d5d3a68c49ef`. Shared on purpose with two other production Workers (`activityradar-enrichment`, `worker-link-checker`) and the weekly `pcd-backup-worker` — all production, all intentional. **Live-verified 2026-07-30** via the Cloudflare D1 API: this id exists and is distinct from every non-production id below. |
 | D1 (`FORGE_DB`) | `forge-command`, id `747cf988-a557-48bd-9d03-bea09e184f94`. |
@@ -42,7 +42,7 @@ is no longer the current state and should not be read as one.
 | Worker name | `parent-coach-desk-staging` |
 | Config file | `wrangler.jsonc` (header marks it staging-only, "do not attach a custom domain") |
 | Live domain | `parent-coach-desk-staging.eepskalla.workers.dev` (no custom domain) |
-| Owner | Jeff Thomas |
+| Owner | PCD Owner |
 | Deploy path | `npx wrangler deploy --config wrangler.jsonc` (manual, from this repo). Automated pre-deploy check: `npm run check:staging-manifest` (`scripts/check-staging-deployment-manifest.mjs`), which fails closed if the built manifest names any production resource. |
 | D1 (`DB`) | `parent-coach-desk-directory-staging`, id `6aa26d4d-d545-4eb7-bf50-34d45f2182ad`. **Isolated** — a synthetic-fixture-only database, never a copy of production. **Live-verified 2026-07-30**: id is distinct from `activity-radar`. |
 | D1 (`PCD_OPS_DB`) | `parent-coach-desk-ops-staging`, id `7f0da00d-bc98-464f-8702-ce0fb381dd5e`. Distinct from the production ops database. |
@@ -83,6 +83,6 @@ checking this manifest first.
 
 ## Owner and review cadence
 
-Owner: Jeff Thomas. Review this file whenever a wrangler config's bindings
+Owner: PCD Owner. Review this file whenever a wrangler config's bindings
 change, or at minimum alongside every `/web:protect` or `/web:stack` pass.
 Last full read-back verification: 2026-07-30.

@@ -28,12 +28,12 @@ const SEND_ENV = {
   EMAIL_ADMIN_MODE: 'send',
   RESEND_API_KEY: 'rs_fake_key',
   EMAIL_FROM: 'Parent Coach Desk <hello@parentcoachdesk.com>',
-  ADMIN_EMAILS: 'jeffthomas@pugetsound.edu',
+  ADMIN_EMAILS: 'admin-fixture@parentcoachdesk.com',
   SLACK_WEBHOOK_URL: 'https://hooks.slack.com/x',
 };
 
 const STAGE_ENV = {
-  ADMIN_EMAILS: 'jeffthomas@pugetsound.edu',
+  ADMIN_EMAILS: 'admin-fixture@parentcoachdesk.com',
   SLACK_WEBHOOK_URL: 'https://hooks.slack.com/x',
   RESEND_API_KEY: 'rs_fake_key',
   EMAIL_FROM: 'Parent Coach Desk <hello@parentcoachdesk.com>',
@@ -92,7 +92,7 @@ describe('the gate', () => {
 
     const admin = await sendEmail(env, {
       ...message,
-      to: 'jeffthomas@pugetsound.edu',
+      to: 'admin-fixture@parentcoachdesk.com',
       emailClass: 'internal',
     });
     expect(admin.outcome).toBe('sent');
@@ -251,7 +251,7 @@ describe('sendAdminAlert', () => {
     expect(slackPost).not.toContain('New submission');
     expect(slackPost).not.toContain('One camp.');
     expect(fetchMock.mock.calls[1][0]).toBe('https://api.resend.com/emails');
-    expect(jsonBodyOf(fetchMock, 1).to).toEqual(['jeffthomas@pugetsound.edu']);
+    expect(jsonBodyOf(fetchMock, 1).to).toEqual(['admin-fixture@parentcoachdesk.com']);
   });
 
   it('fails closed without sending email when the required Slack signal is unavailable', async () => {

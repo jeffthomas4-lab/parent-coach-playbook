@@ -275,7 +275,7 @@ def build_story():
         [Paragraph('THE PARENT COACH DESK', ParagraphStyle('im1',
             fontName='Mono-Medium', fontSize=8, textColor=INK))],
         [Paragraph('A small site for parents who coach, drive, snack-pack, and supervise the group chat. ' +
-                   'Edited by Jeff Thomas. Single Editorial byline across the site. ' +
+                   'Edited by Parent Coach Desk Editorial. Single Editorial byline across the site. ' +
                    '© 2026. All rights reserved.',
             ParagraphStyle('im2', fontName='Inter', fontSize=8, leading=12,
                 textColor=INK_SOFT))],

@@ -30,7 +30,7 @@ editorial:
     - flag: "SENS"
       reason: "Jeff approved 2026-09-13. Sensitive-topic hold was for grief framing over a friendship ending; no death, no health content, ends on a concrete next action."
       date: "2026-09-13"
-      admin: "eepskalla@gmail.com"
+      admin: "editor@parentcoachdesk.com"
   reviewerNotes: "PUBLISHED (Jeff approval relayed via Claude, 2026-09-13): cut the duplicated Quietly fragment and the doubled soft line, tightened the close. Rubric script clean. HOLD, not a voice failure: flagSensitiveTopic is true (grief/loss framing over a friendship's end) per VOICE-RUBRIC hard-holds, routing to Jeff rather than auto-publish regardless of quality. Mechanical checks passed: dek 12 words, seoTitle 49 chars, seoDescription 131 chars, no em dashes, required schema fields present (title, phase, publishedAt). Prior reviewerNotes (cross-check against the-assistant-coach-relationship.md, no duplication) preserved in substance above. Voice/structure sections not scored per hold rule; Jeff's call on whether grief content about a coaching-friendship ending is fit to publish as-is."
 ---
 

@@ -27,7 +27,7 @@ status  failed
 error   account guard: connected to pugetsound.edu, not the portfolio inbox
 ```
 
-The agent's STEP 0 account guard did its job perfectly. The connected Gmail is the university coaching inbox, not the portfolio inbox `jeff@coachjeffthomas.com` that `support@parentcoachdesk.com` forwards into. The agent refused to read a single message and stopped, which is exactly right and is a locked constitutional rule.
+The agent's STEP 0 account guard did its job perfectly. The connected Gmail is the university coaching inbox, not the portfolio inbox `jeff@parentcoachdesk.com` that `support@parentcoachdesk.com` forwards into. The agent refused to read a single message and stopped, which is exactly right and is a locked constitutional rule.
 
 The CANARY rule also could not have fired. It needs two failures in 24 hours; there was one. The task was switched off by hand.
 
@@ -217,7 +217,7 @@ The bash sandbox mounts a snapshot taken at session start and does not see edits
 ## HANDOFF: what only Jeff can do
 
 **H1. Connect the portfolio inbox to `pcd-deletion-monitor`. This is the only thing that closes P0.1.**
-The task is re-enabled and will fail loudly every morning at 07:04 until this is done. It needs the Gmail connection for `jeff@coachjeffthomas.com` (where `support@parentcoachdesk.com` forwards), not `jeffthomas@pugetsound.edu`. Do not work around the account guard; it is correct. Until this lands the 30-day SLA is unwatched, and it has been since at least 2026-07-14.
+The task is re-enabled and will fail loudly every morning at 07:04 until this is done. It needs the Gmail connection for `jeff@parentcoachdesk.com` (where `support@parentcoachdesk.com` forwards), not `support@parentcoachdesk.com`. Do not work around the account guard; it is correct. Until this lands the 30-day SLA is unwatched, and it has been since at least 2026-07-14.
 
 **H2. Check what secrets the cron worker actually has.** I cannot read Worker secrets.
 

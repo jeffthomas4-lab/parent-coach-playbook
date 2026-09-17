@@ -9,7 +9,7 @@
   "recipient_role": "first approved staging administrator",
   "provider_event_id": "f4688951-e9cc-42b4-9087-ca31c3818f35",
   "acknowledgement_reference": null,
-  "approved_by": "Jeff Thomas",
+  "approved_by": "PCD Owner",
   "contains_requester_content": false,
   "contains_secret_material": false,
   "external_changes": [
@@ -25,5 +25,5 @@
     "status": "accepted by configured webhook (inferred from fail-closed email path)",
     "configured_channel_receipt": "not observed in #pcd-alerts"
   },
-  "remaining_requirement": "Jeff Thomas must acknowledge receipt and the Slack webhook destination must be reconciled before this receipt can become received evidence."
+  "remaining_requirement": "PCD Owner must acknowledge receipt and the Slack webhook destination must be reconciled before this receipt can become received evidence."
 }

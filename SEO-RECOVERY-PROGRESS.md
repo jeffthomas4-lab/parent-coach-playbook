@@ -153,7 +153,7 @@ Mapped all 27 sports/activities with a guide page against their pathway page (26
 
 Delivered `strategy/AUTHOR-REVEAL-CHECKLIST.md`. `AUTHOR_REVEALED` in `src/data/site.ts` left at `false`, untouched.
 
-**Real find: the code already half-built this.** `src/data/site.ts` already has an `AUTHOR_REVEALED` switch with a comment describing a planned "November face-reveal date," a fully populated `AUTHOR` object naming Jeff Thomas, and two functions (`authorEntity()`, `personSchema()`) that already gate Article/HowTo/About JSON-LD on that switch. This wasn't something to invent, it was something to find, verify, and build the checklist around.
+**Real find: the code already half-built this.** `src/data/site.ts` already has an `AUTHOR_REVEALED` switch with a comment describing a planned "November face-reveal date," a fully populated `AUTHOR` object naming a personal author, and two functions (`authorEntity()`, `personSchema()`) that already gate Article/HowTo/About JSON-LD on that switch. This wasn't something to invent, it was something to find, verify, and build the checklist around.
 
 **Real gap flagged.** The switch only changes structured data (invisible to readers). The visible reveal requires separate, manual edits the switch does not perform: `SITE.byline`/`EDITORIAL.byline` (hardcoded `'the Parent Coach Desk'`, rendered on every card/feed), the `/about/` page's hand-written "Who writes this" section (currently states "we do not put individual names on bylines" and "the Desk is two parents"), and a homepage hero line. Checklist gives exact file/line targets for all of them.
 

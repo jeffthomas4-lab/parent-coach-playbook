@@ -12,7 +12,7 @@ export function validateNotificationReceipt(value) {
       if (typeof value[field] !== 'string' || !value[field].trim()) errors.push(`${field} is required when received`);
     }
     if (Date.parse(value.received_at) < Date.parse(value.sent_at)) errors.push('received_at cannot precede sent_at');
-    if (value.approved_by !== 'Jeff Thomas') errors.push('received drill requires Jeff Thomas approval');
+    if (value.approved_by !== 'PCD Owner') errors.push('received drill requires PCD Owner approval');
   }
   if (value.contains_requester_content !== false) errors.push('receipt must not contain requester content');
   if (value.contains_secret_material !== false) errors.push('receipt must not contain secret material');

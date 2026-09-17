@@ -57,7 +57,7 @@ describe('POST /api/admin/editorial/approve', () => {
   it('auth: rejects the retired test identity when production allowlist values are used', async () => {
     const ctx = makeContext({
       request: adminRequest(undefined, {
-        'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+        'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       }),
       params: {},
       env: { ADMIN_EMAILS, GITHUB_TOKEN },

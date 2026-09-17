@@ -53,12 +53,12 @@ describe('isDomainSkipListed', () => {
 describe('addDomainToSkipList', () => {
   it('issues an upsert with the domain, reason, and admin email bound', async () => {
     const { database, preparedSql, boundArgs, run } = fakeDb({});
-    await addDomainToSkipList(database, 'bad.example.com', 'Aggregator source', 'jeffthomas@pugetsound.edu');
+    await addDomainToSkipList(database, 'bad.example.com', 'Aggregator source', 'admin-fixture@parentcoachdesk.com');
     expect(preparedSql[0]).toContain('INSERT INTO domain_skip_list');
     expect(preparedSql[0]).toContain('ON CONFLICT(domain)');
     expect(boundArgs[0][0]).toBe('bad.example.com');
     expect(boundArgs[0][1]).toBe('Aggregator source');
-    expect(boundArgs[0][2]).toBe('jeffthomas@pugetsound.edu');
+    expect(boundArgs[0][2]).toBe('admin-fixture@parentcoachdesk.com');
     expect(run).toHaveBeenCalledOnce();
   });
 });
@@ -78,7 +78,7 @@ describe('bulkRejectPendingByDomain', () => {
     const count = await bulkRejectPendingByDomain(
       database,
       'bad.example.com',
-      'jeffthomas@pugetsound.edu',
+      'admin-fixture@parentcoachdesk.com',
       'other',
       'source-quality bulk reject',
     );
@@ -87,7 +87,7 @@ describe('bulkRejectPendingByDomain', () => {
     expect(preparedSql[0]).toContain("pcd_status = 'rejected'");
     expect(preparedSql[0]).toContain('WHERE source_domain = ? AND pcd_status = \'pending\'');
     expect(boundArgs[0]).toEqual([
-      'jeffthomas@pugetsound.edu',
+      'admin-fixture@parentcoachdesk.com',
       expect.any(String),
       'source-quality bulk reject',
       'other',

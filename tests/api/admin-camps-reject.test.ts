@@ -30,7 +30,7 @@ vi.mock('../../src/lib/admin-receipts', () => ({
 import { POST } from '../../src/pages/api/admin/camps/[id]/reject';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const mockCamp = { id: 'camp_1', status: 'rejected', source_domain: 'example.com' };
 
 function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) {
@@ -39,7 +39,7 @@ function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) 
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -76,7 +76,7 @@ describe('POST /api/admin/camps/:id/reject', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'jeffthomas@pugetsound.edu', 'dead link', 'dead-url');
+    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'admin-fixture@parentcoachdesk.com', 'dead link', 'dead-url');
     expect(campsDb.upsertDomainQuality).toHaveBeenCalledTimes(1);
     expect(campsDb.upsertDomainQuality).toHaveBeenCalledWith(expect.anything(), 'example.com', 'rejected');
   });
@@ -89,7 +89,7 @@ describe('POST /api/admin/camps/:id/reject', () => {
     });
     const res = await POST(ctx);
     expect(res.status).toBe(200);
-    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'jeffthomas@pugetsound.edu', null, null);
+    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'admin-fixture@parentcoachdesk.com', null, null);
   });
 
   it('sequential replay: rejecting an already-rejected camp does not double-count domain quality', async () => {
@@ -104,7 +104,7 @@ describe('POST /api/admin/camps/:id/reject', () => {
     });
     const res = await POST(ctx);
     expect(res.status).toBe(200);
-    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'jeffthomas@pugetsound.edu', 'dead link', 'dead-url');
+    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'admin-fixture@parentcoachdesk.com', 'dead link', 'dead-url');
     expect(campsDb.upsertDomainQuality).not.toHaveBeenCalled();
   });
 

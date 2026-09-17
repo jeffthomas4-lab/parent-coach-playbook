@@ -21,7 +21,7 @@ Usage (PowerShell):
 Optional flags:
     --no-geocode        Skip Nominatim. Latitude/longitude written as NULL.
     --status pending    Override status (default: approved)
-    --submitter EMAIL   Override submitter email (default: jeffthomas@pugetsound.edu)
+    --submitter EMAIL   Override submitter email (default: support@parentcoachdesk.com)
     --out PATH          Override output SQL path
     --skipped PATH      Path to write a CSV of rows that failed validation
     --anchor TEXT       Anchor area for this batch (e.g., 'Tacoma, WA (25mi)').
@@ -44,7 +44,7 @@ import uuid
 from pathlib import Path
 from typing import Any
 
-DEFAULT_SUBMITTER = "jeffthomas@pugetsound.edu"
+DEFAULT_SUBMITTER = "support@parentcoachdesk.com"
 DEFAULT_REVIEWER = "jeff (bulk import)"
 NOMINATIM_USER_AGENT = (
     "parentcoachplaybook.com camps directory (parentcoachplaybook@gmail.com)"

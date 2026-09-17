@@ -43,7 +43,7 @@ imports/
 Every row becomes one `INSERT INTO camps` with:
 
 - `status='approved'` and `verified=1` (you ran it, you trust it)
-- `submitted_by_email='jeffthomas@pugetsound.edu'`
+- `submitted_by_email='support@parentcoachdesk.com'`
 - `reviewed_by='jeff (bulk import)'`, `reviewed_at` = now
 - A fresh UUID for `id`, a unique slug derived from the camp name
 - `latitude` / `longitude` from Nominatim if the address resolves, NULL otherwise

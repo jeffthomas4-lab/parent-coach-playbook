@@ -351,7 +351,7 @@ First 90 days of Pinterest produce ~zero traffic. Day 90+ is when the compoundin
 Once Jeff's name and face go on the site, four channels open up that were locked:
 
 1. **Podcast tour.** 1-2 per month for six months. Tudor Collegiate Strategies, NCSA-adjacent shows, sport-specific recruiting podcasts, parent-audience podcasts, parenting podcasts. Pitch: D-III head coach with two decades in the youth-to-college pipeline, telling parents what actually matters.
-2. **HS coach distribution.** "I'm Jeff Thomas, head coach at Puget Sound, I wrote this guide for your parents, feel free to forward." 100 HS coaches forwarding to their parent lists is more valuable than 100K of cold search traffic.
+2. **HS coach distribution.** "I'm PCD Owner, head coach at Puget Sound, I wrote this guide for your parents, feel free to forward." 100 HS coaches forwarding to their parent lists is more valuable than 100K of cold search traffic.
 3. **Earned media.** One Athletic / NYT Parenting / Today profile in the first six months post-reveal. Local press first (Tacoma News Tribune, Seattle Times) is easier and still moves SEO.
 4. **LinkedIn presence.** Jeff personal account. Not a content treadmill, just findable and quotable when journalists or HS coaches search.
 

@@ -122,7 +122,7 @@ Cornerstone-as-recruiting was the single biggest drift risk and you killed it. T
 
 The drift you should watch for next:
 
-**The forward-product trap.** When the books, podcast, courses, video roadmap goes live, the site can subtly tilt from "trusted resource" to "marketing asset for Jeff Thomas's products." The early signals are sales-ier copy on the about page, more references to "the upcoming book" inside articles, lead-magnet CTAs starting to feel pushy. Set a rule: any article with three or more product references gets cut to one. The newsletter is the place for product news. The reads aren't.
+**The forward-product trap.** When the books, podcast, courses, video roadmap goes live, the site can subtly tilt from "trusted resource" to "marketing asset for Parent Coach Desk products." The early signals are sales-ier copy on the about page, more references to "the upcoming book" inside articles, lead-magnet CTAs starting to feel pushy. Set a rule: any article with three or more product references gets cut to one. The newsletter is the place for product news. The reads aren't.
 
 **The expert-creep trap.** Your byline says "Parent Coach Playbook Editorial" with leadership from a D3 head coach. As traffic grows, there's pressure to over-authorize the content with credentials, citations, and "as a head coach with 20 years of experience" framing. Your voice is parent-to-parent right now. That's the moat. Resist the consultant register.
 

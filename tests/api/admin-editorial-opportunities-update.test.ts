@@ -8,13 +8,13 @@ vi.mock('../../src/lib/editorial-records', () => ({
 import { POST } from '../../src/pages/api/admin/editorial/opportunities/[id]/update';
 import * as records from '../../src/lib/editorial-records';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/editorial/opportunities/opportunity_1/update', {
     method: 'POST', body: JSON.stringify(body),
     headers: {
       'content-type': 'application/json', origin,
-      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}),
+      ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}),
     },
   });
 const ctx = (body: unknown, origin?: string, auth?: boolean) =>
@@ -46,7 +46,7 @@ describe('POST /api/admin/editorial/opportunities/:id/update', () => {
 
     const ok = await POST(ctx({ action: 'score', score: 75 }));
     expect(ok.status).toBe(200);
-    expect(records.scoreOpportunity).toHaveBeenCalledWith(expect.anything(), { id: 'opportunity_1', score: 75, actor: 'jeffthomas@pugetsound.edu' });
+    expect(records.scoreOpportunity).toHaveBeenCalledWith(expect.anything(), { id: 'opportunity_1', score: 75, actor: 'admin-fixture@parentcoachdesk.com' });
   });
 
   it('translates a lib-thrown "not found" error to 404 and other errors to 409', async () => {

@@ -13,7 +13,7 @@ import {
 } from '../../src/lib/publish';
 
 const ENV = { GITHUB_TOKEN: 'gh_fake' };
-const OPTS = { today: '2026-07-15', approvedBy: 'jeffthomas@pugetsound.edu' };
+const OPTS = { today: '2026-07-15', approvedBy: 'admin-fixture@parentcoachdesk.com' };
 
 const DRAFT_MD = `---
 title: A Test Post
@@ -104,7 +104,7 @@ describe('publishDraft', () => {
     const result = await publishDraft(ENV, {
       collection: 'articles',
       slug: 'a-test-post',
-      approvedBy: 'jeffthomas@pugetsound.edu',
+      approvedBy: 'admin-fixture@parentcoachdesk.com',
     });
     expect(result).toMatchObject({ ok: true, path: 'src/content/articles/a-test-post.md', deploy: 'queued' });
     expect(fetchMock).toHaveBeenCalledTimes(2);

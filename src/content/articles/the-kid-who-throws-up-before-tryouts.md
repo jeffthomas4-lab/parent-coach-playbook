@@ -29,7 +29,7 @@ editorial:
     - flag: "SENS"
       reason: "Jeff approved 2026-09-13. Sensitive-topic hold was for a child health symptom; piece sends parents to a pediatrician for any pattern and makes no diagnosis."
       date: "2026-09-13"
-      admin: "eepskalla@gmail.com"
+      admin: "editor@parentcoachdesk.com"
   reviewerNotes: "PUBLISHED (Jeff approval relayed via Claude, 2026-09-13): two weak It-starters rewritten, five-minutes overclaim about the doctor visit removed. Rubric script clean. HOLD, not a voice failure: flagSensitiveTopic is true (child physical/mental health symptom) per VOICE-RUBRIC hard-holds, routing to Jeff rather than auto-publish regardless of quality, same pattern as the-friend-you-coached-with-who-isnt-coming-back.md. Mechanical checks run manually: no em dashes, no banned words/patterns, paragraphs 3 sentences or fewer, no weak-starter repeats, dek 12 words. Vagus nerve / gut-brain-axis claim is basic, uncontested physiology, not a number or date requiring citation, so citationCheckPassed true. New topic, no overlap with pre-game-anxiety-normal.md (recurring in-season game-day nerves) or the-performance-anxiety-conversation-at-12.md (in-game freeze/yips); this piece is the single acute pre-tryout vomiting episode and the sick-versus-anxious gut check, which nothing else on the site covers (checked src/content/articles for throw up, vomit, nausea, nauseous, sick to stomach). Sourced from CONTENT_ROADMAP.md, Mental health and identity strand, PIPELINE row. No hero: OPENAI_API_KEY unavailable in this run's environment. pcd-hero-image-backfill is disabled since 2026-07-31, so this stays imageless until someone re-enables it or generates one directly."
 ---
 

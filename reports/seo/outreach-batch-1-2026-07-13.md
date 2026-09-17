@@ -16,7 +16,7 @@ This is the fix from the Organic Search Audit's Days 0-30 table, session 5: "Sta
 
 Subject: A D3 head coach who wrote anonymously for six months, now revealing
 
-Kirsten, I've been writing Parent Coach Desk anonymously since [SITE LAUNCH], a site for youth sports parents built by a Division III head football coach. On [REVEAL DATE] I'm putting my name on it: Jeff Thomas, head coach at the University of Puget Sound, former interim AD.
+Kirsten, I've been writing Parent Coach Desk anonymously since [SITE LAUNCH], a site for youth sports parents built by a Division III head football coach. On [REVEAL DATE] I'm putting my name on it: Parent Coach Desk Editorial, former interim AD.
 
 The angle for your audience: I wrote six months of advice before anyone knew who was behind it, and I think that's a real story about whether advice needs a credential attached to work. Happy to talk mindset, roster decisions, or the parent-versus-coach split I live on both sides of.
 
@@ -34,7 +34,7 @@ I'm revealing the byline on [REVEAL DATE] after six months anonymous. Would this
 
 Subject: Six months anonymous, then a reveal
 
-You three lean into candid, story-driven episodes, so here's one: I wrote a youth-sports parenting site anonymously for six months under "the Parent Coach Desk," then put my name on it on [REVEAL DATE]. I'm Jeff Thomas, D3 head football coach, former interim AD.
+You three lean into candid, story-driven episodes, so here's one: I wrote a youth-sports parenting site anonymously for six months under "the Parent Coach Desk," then put my name on it on [REVEAL DATE]. I'm with Parent Coach Desk Editorial.
 
 The reveal itself is the story as much as the site is. Worth a conversation if it fits the show.
 
@@ -70,7 +70,7 @@ If an outside-the-sport perspective on youth hockey parenting is useful for your
 
 Subject: Introduction, not a pitch
 
-John, I'm not pitching coverage, I'm introducing myself. I run Parent Coach Desk, a youth-sports parenting site, and I'm revealing my name behind it on [REVEAL DATE]: Jeff Thomas, head football coach at the University of Puget Sound. Your work is the closest thing to what I'm trying to build, and I'd rather start with a real introduction than a cold pitch.
+John, I'm not pitching coverage, I'm introducing myself. I run Parent Coach Desk, a youth-sports parenting site, and I'm revealing my name behind it on [REVEAL DATE]: Parent Coach Desk Editorial. Your work is the closest thing to what I'm trying to build, and I'd rather start with a real introduction than a cold pitch.
 
 If there's ever a fit for a mutual-audience conversation, I'm interested.
 
@@ -94,7 +94,7 @@ I think the reveal itself, why an anonymous byline made sense and why it stopped
 
 Subject: Concussion and safety content, from the coaching side
 
-Rob, "Brain Waves" is the reason I'm reaching out specifically. Parent Coach Desk carries concussion and sideline-safety content written from a coach's chair, not a clinician's, and I think there's a real angle in how those two perspectives differ. I'm Jeff Thomas, head football coach at the University of Puget Sound, revealing the byline behind the site on [REVEAL DATE].
+Rob, "Brain Waves" is the reason I'm reaching out specifically. Parent Coach Desk carries concussion and sideline-safety content written from a coach's chair, not a clinician's, and I think there's a real angle in how those two perspectives differ. I'm writing from Parent Coach Desk Editorial, revealing the byline behind the site on [REVEAL DATE].
 
 Worth a conversation if a coach's-eye view on youth concussion protocol fits your work.
 
@@ -102,7 +102,7 @@ Worth a conversation if a coach's-eye view on youth concussion protocol fits you
 
 Subject: Girls' and women's youth sports coverage
 
-Missy, Parent Coach Desk covers ballet, dance, cheer, and girls' lacrosse the same depth as football and baseball, which is unusual for a site that started with a football coach behind it. I'm revealing my name on [REVEAL DATE]: Jeff Thomas, head coach at the University of Puget Sound.
+Missy, Parent Coach Desk covers ballet, dance, cheer, and girls' lacrosse the same depth as football and baseball, which is unusual for a site that started with a football coach behind it. I'm revealing my name on [REVEAL DATE]: Parent Coach Desk Editorial.
 
 Open to a conversation if the girls'/women's youth sports angle is a fit for your coverage.
 
@@ -140,7 +140,7 @@ Open to a conversation if regional interest in a local coach's national project 
 
 Subject: Dad, D3 head coach, six months anonymous
 
-I write Parent Coach Desk from the dad-and-coach angle your format leans into. Practical, sports-adjacent, no fluff. Revealing my name on [REVEAL DATE]: Jeff Thomas, head football coach at the University of Puget Sound.
+I write Parent Coach Desk from the dad-and-coach angle your format leans into. Practical, sports-adjacent, no fluff. Revealing my name on [REVEAL DATE]: Parent Coach Desk Editorial.
 
 Worth a look if the format still fits what you're running.
 
@@ -150,7 +150,7 @@ Worth a look if the format still fits what you're running.
 
 Subject: A youth-sports site, six months anonymous, now with a name
 
-[Editor name], Parent Coach Desk covers 26 sports and activities for parents in the middle of the season, not just the sports pages. I'm revealing the name behind it on [REVEAL DATE]: Jeff Thomas, head football coach at the University of Puget Sound, former interim AD.
+[Editor name], Parent Coach Desk covers 26 sports and activities for parents in the middle of the season, not just the sports pages. I'm revealing the name behind it on [REVEAL DATE]: Parent Coach Desk Editorial.
 
 Open to a conversation if the youth-activities angle fits your beat.
 

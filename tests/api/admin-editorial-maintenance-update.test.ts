@@ -5,11 +5,11 @@ vi.mock('../../src/lib/editorial-records', () => ({ proposeMaintenance: vi.fn(),
 import { POST } from '../../src/pages/api/admin/editorial/maintenance/update';
 import * as records from '../../src/lib/editorial-records';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const request = (body: unknown, origin = 'https://parentcoachdesk.com', auth = true) =>
   new Request('https://parentcoachdesk.com/api/admin/editorial/maintenance/update', {
     method: 'POST', body: JSON.stringify(body),
-    headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' } : {}) },
+    headers: { 'content-type': 'application/json', origin, ...(auth ? { 'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com' } : {}) },
   });
 const ctx = (body: unknown, origin?: string, auth?: boolean) => makeContext({ request: request(body, origin, auth), env: { PCD_OPS_DB: {}, ADMIN_EMAILS, EDITORIAL_LIFECYCLE_ENABLED: 'true' } });
 
@@ -35,7 +35,7 @@ describe('POST /api/admin/editorial/maintenance/update', () => {
     const body = await readJson(res);
     expect(res.status).toBe(201);
     expect(body.ok).toBe(true);
-    expect(records.proposeMaintenance).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ actor: 'jeffthomas@pugetsound.edu' }));
+    expect(records.proposeMaintenance).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ actor: 'admin-fixture@parentcoachdesk.com' }));
   });
 
   it('requires a valid decision value and always records the authenticated admin as the decider', async () => {
@@ -46,6 +46,6 @@ describe('POST /api/admin/editorial/maintenance/update', () => {
     (records.decideMaintenanceProposal as any).mockResolvedValue({ id: 'maintenance_1', decision: 'accepted' });
     const res = await POST(ctx({ action: 'decide', proposal_id: 'maintenance_1', decision: 'accepted', decided_by: 'someone-else@example.com' }));
     expect(res.status).toBe(200);
-    expect(records.decideMaintenanceProposal).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ decidedBy: 'jeffthomas@pugetsound.edu', actor: 'jeffthomas@pugetsound.edu' }));
+    expect(records.decideMaintenanceProposal).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ decidedBy: 'admin-fixture@parentcoachdesk.com', actor: 'admin-fixture@parentcoachdesk.com' }));
   });
 });

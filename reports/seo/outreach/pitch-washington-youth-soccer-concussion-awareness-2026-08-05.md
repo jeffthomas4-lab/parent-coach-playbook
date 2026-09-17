@@ -16,6 +16,6 @@ I built the parent-side version of the same ground: a soccer rules-at-a-glance p
 
 If a linked resource in that plain-language register is useful for the families your page already reaches, I would be glad to send the pages over.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

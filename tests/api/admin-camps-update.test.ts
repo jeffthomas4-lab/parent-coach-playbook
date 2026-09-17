@@ -22,7 +22,7 @@ vi.mock('../../src/lib/admin-receipts', () => ({
 import { POST } from '../../src/pages/api/admin/camps/[id]/update';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const existingCamp = {
   id: 'camp_1',
   name: 'Old Camp Name',
@@ -43,7 +43,7 @@ function adminRequest(body: unknown = {}, headers: Record<string, string> = {}) 
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -91,7 +91,7 @@ describe('POST /api/admin/camps/:id/update', () => {
         contact_email: 'coach@example.com',
         description: 'Updated description that is long enough to pass.',
       }),
-      'jeffthomas@pugetsound.edu',
+      'admin-fixture@parentcoachdesk.com',
     );
     // No address component was sent, so this partial save should not trigger a re-geocode.
     expect(campsDb.geocodeCached).not.toHaveBeenCalled();
@@ -111,7 +111,7 @@ describe('POST /api/admin/camps/:id/update', () => {
       expect.anything(),
       'camp_1',
       expect.objectContaining({ description: 'Updated description that is long enough to pass.' }),
-      'jeffthomas@pugetsound.edu',
+      'admin-fixture@parentcoachdesk.com',
     );
   });
 
@@ -125,7 +125,7 @@ describe('POST /api/admin/camps/:id/update', () => {
       expect.anything(),
       'camp_1',
       expect.objectContaining({ name: 'New Camp Name', slug: 'new-camp-name' }),
-      'jeffthomas@pugetsound.edu',
+      'admin-fixture@parentcoachdesk.com',
     );
   });
 

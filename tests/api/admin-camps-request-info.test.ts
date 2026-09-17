@@ -15,7 +15,7 @@ vi.mock('../../src/lib/camps-db', () => ({
 import { POST } from '../../src/pages/api/admin/camps/[id]/request-info';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN = 'jeffthomas@pugetsound.edu';
+const ADMIN = 'admin-fixture@parentcoachdesk.com';
 const URL = 'https://parentcoachdesk.com/api/admin/camps/camp_1/request-info';
 
 function adminReq(body: unknown, headers: Record<string, string> = {}) {

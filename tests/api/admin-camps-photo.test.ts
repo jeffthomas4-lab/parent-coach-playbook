@@ -20,7 +20,7 @@ vi.mock('../../src/lib/admin-receipts', () => ({
 import { POST } from '../../src/pages/api/admin/camps/[id]/photo';
 import * as campsDb from '../../src/lib/camps-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 const mockCamp = { id: 'camp_1', slug: 'test-camp', name: 'Test Camp' };
 const JPEG_BYTES = new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46]);
 
@@ -31,7 +31,7 @@ function fileRequest(opts: { withAuth?: boolean; origin?: string; file?: File | 
     fd.set('file', file ?? new File([JPEG_BYTES], 'hero.jpg', { type: 'image/jpeg' }));
   }
   const headers: Record<string, string> = { origin };
-  if (withAuth) headers['Cf-Access-Authenticated-User-Email'] = 'jeffthomas@pugetsound.edu';
+  if (withAuth) headers['Cf-Access-Authenticated-User-Email'] = 'admin-fixture@parentcoachdesk.com';
   return new Request('https://parentcoachdesk.com/api/admin/camps/camp_1/photo', {
     method: 'POST',
     headers,

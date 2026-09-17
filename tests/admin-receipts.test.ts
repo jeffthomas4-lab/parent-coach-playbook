@@ -132,7 +132,7 @@ describe('recordAdminReceipt + verifyReceiptChain (real SQLite via the D1 adapte
     const { raw, d1 } = freshDb();
     const result = await recordAdminReceipt(d1, {
       environment: 'https://parentcoachdesk.com',
-      actorEmail: 'jeffthomas@pugetsound.edu',
+      actorEmail: 'admin-fixture@parentcoachdesk.com',
       action: 'camp.approve',
       resourceType: 'camp',
       resourceId: 'camp_42',
@@ -146,7 +146,7 @@ describe('recordAdminReceipt + verifyReceiptChain (real SQLite via the D1 adapte
     if (result.id === undefined) throw new Error('expected receipt id');
     const row = raw.prepare('SELECT * FROM admin_action_receipts WHERE id = ?').get(result.id) as Record<string, unknown>;
     const serialized = JSON.stringify(row);
-    expect(serialized).not.toContain('jeffthomas@pugetsound.edu');
+    expect(serialized).not.toContain('admin-fixture@parentcoachdesk.com');
     expect(row.actor_email_digest).toMatch(/^[0-9a-f]{64}$/);
     expect(row.actor_email_domain).toBe('pugetsound.edu');
     expect(row.prev_hash).toBe(GENESIS_HASH);

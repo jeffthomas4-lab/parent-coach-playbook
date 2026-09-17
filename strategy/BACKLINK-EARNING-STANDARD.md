@@ -2,7 +2,7 @@
 
 **Status:** Draft for Jeff approval
 **Applies to:** Parent Coach Desk first; reusable for other Field & Forge public websites after product-specific adaptation
-**Owner:** Jeff Thomas
+**Owner:** PCD Owner
 **Operating principle:** Earn links because the destination helps the linking site's audience. Link count and third-party domain-rating scores are secondary evidence, never the objective.
 
 ## 1. Outcome

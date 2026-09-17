@@ -2,7 +2,7 @@
   "schema_version": 1,
   "gate": "r2_recovery",
   "disposition": "not_applicable",
-  "decided_by": "Jeff Thomas (owner)",
+  "decided_by": "PCD Owner",
   "decided_at": "2026-07-17",
   "decision_channel": "Cowork production-readiness session; owner selected disposition A (accept empty-scope not-applicable)",
   "scope": "Production PHOTOS binding bucket 'activityradar-photos' verified empty at 0 objects / 0 bytes per production-r2-inventory-preflight-2026-07-17.json. There is no production R2 payload to export, sample, or retrieve today.",

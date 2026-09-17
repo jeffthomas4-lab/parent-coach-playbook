@@ -17,6 +17,6 @@ I run Parent Coach Desk, a site for parents trying to make sense of youth sports
 
 If that's useful next to your Financial Assistance page, or worth a link for families weighing a rec season against something pricier, I'd be glad to send it over.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

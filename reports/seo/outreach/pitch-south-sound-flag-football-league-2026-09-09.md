@@ -15,6 +15,6 @@ I coach football at the University of Puget Sound and run Parent Coach Desk, a s
 
 I wrote a plain-language rules guide and a first-season walkthrough aimed at exactly that parent: what to expect at the first practice, what the flags mean, what parents usually get wrong watching from the sideline. If either would help the families signing up for South Sound this season, I'd be glad to send them over.
 
-Jeff Thomas
+PCD Owner
 Head Football Coach, University of Puget Sound
 parentcoachdesk.com

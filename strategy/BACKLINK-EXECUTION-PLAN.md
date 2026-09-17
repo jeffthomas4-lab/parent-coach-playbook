@@ -28,19 +28,19 @@ Category rules:
 
 ## 1A. Implemented portfolio foundation
 
-### PF1. Parent Coach Desk and Coach Jeff Thomas contextual cross-links
+### PF1. Parent Coach Desk and Coach PCD Owner contextual cross-links
 
 **Implemented locally:** 2026-08-03  
-**Removed from PCD:** 2026-09-16, on Jeff's call. The PCD About page no longer links to coachjeffthomas.com; the faceless Desk byline wins over the cross-link. The reverse link (coachjeffthomas.com About to PCD About) is not changed by this commit and is Jeff's call on the coachjeffthomas.com repo.  
-**Production state:** PCD removal ships on the next push to `origin/main`  
+**Removed from PCD:** 2026-09-16, on Jeff's call. The PCD About page no longer links to parentcoachdesk.com; the faceless Desk byline wins over the cross-link. The reverse link was removed from the parentcoachdesk.com About page the same day. Six flag-resolution `admin` values that held Jeff's personal addresses now read `editor@parentcoachdesk.com`. Both directions are retired; do not re-propose this pair.  
+**Production state:** PCD removal ships on the next push to `origin/main`; parentcoachdesk.com removal ships on its next `wrangler deploy`  
 **Classification:** `portfolio` (useful entity and audience connection; not an independently earned referring domain)
 
 | Source | Destination | Reader purpose | Link treatment |
 |---|---|---|---|
-| ~~`https://parentcoachdesk.com/about/`~~ (removed 2026-09-16) | ~~`https://coachjeffthomas.com/about/`~~ | Books, leadership frameworks, and collegiate coaching background | Contextual, canonical, followed |
-| `https://coachjeffthomas.com/about/` | `https://parentcoachdesk.com/about/` | Practical youth-sports scripts, tools, and parent guides | Contextual, canonical, followed |
+| ~~`https://parentcoachdesk.com/about/`~~ (removed 2026-09-16) | ~~`https://parentcoachdesk.com | Books, leadership frameworks, and collegiate coaching background | Contextual, canonical, followed |
+| ~~`https://parentcoachdesk.com (removed 2026-09-16) | ~~`https://parentcoachdesk.com/about/`~~ | Practical youth-sports scripts, tools, and parent guides | Contextual, canonical, followed |
 
-Both placements are inside relevant About-page copy rather than sitewide footers. The local Coach Jeff Thomas production build contains the rendered PCD anchor, the PCD About component compiles with the Coach Jeff Thomas anchor, and both exact-anchor checks reject `nofollow` or `sponsored` qualification. After each deployment, verify HTTP 200, canonical URL, visible context, link attribute, and one-click destination. Record the two links as portfolio connections and exclude them from independent-referring-domain targets.
+Both placements are inside relevant About-page copy rather than sitewide footers. The local Coach PCD Owner production build contains the rendered PCD anchor, the PCD About component compiles with the Coach PCD Owner anchor, and both exact-anchor checks reject `nofollow` or `sponsored` qualification. After each deployment, verify HTTP 200, canonical URL, visible context, link attribute, and one-click destination. Record the two links as portfolio connections and exclude them from independent-referring-domain targets.
 
 ## 2. Automatic
 

@@ -78,7 +78,7 @@ that retained historical material is current authority.
 ---
 title: "What you say in the *first 90 seconds* shapes the next week"
 dek: "Optional subhead, one or two sentences."
-author: "PCP Editors"          # or "Jeff Thomas" for cornerstone pieces
+author: "PCP Editors"          # brand byline only; no personal names
 issue: 4                        # optional issue number
 phase: "drive-home"             # drive-there | game | drive-home
 sport: "baseball"               # see src/data/site.ts SPORTS

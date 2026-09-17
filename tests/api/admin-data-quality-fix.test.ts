@@ -22,7 +22,7 @@ vi.mock('../../src/lib/data-quality-db', () => ({
 import { POST } from '../../src/pages/api/admin/data-quality/fix';
 import * as dq from '../../src/lib/data-quality-db';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'admin-fixture@parentcoachdesk.com';
 
 const mockProgram = {
   id: 'prog_1',
@@ -49,7 +49,7 @@ function adminRequest(body: unknown, headers: Record<string, string> = {}) {
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'admin-fixture@parentcoachdesk.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -95,7 +95,7 @@ describe('POST /api/admin/data-quality/fix', () => {
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
-    expect(dq.setAge).toHaveBeenCalledWith(expect.anything(), 'prog_1', 5, 10, 'jeffthomas@pugetsound.edu');
+    expect(dq.setAge).toHaveBeenCalledWith(expect.anything(), 'prog_1', 5, 10, 'admin-fixture@parentcoachdesk.com');
   });
 
   it('failure path: an unknown action is rejected', async () => {

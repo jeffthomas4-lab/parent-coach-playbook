@@ -91,7 +91,7 @@ These are the highest-quality links you can earn. They mostly link to specific t
 > 
 > Hi [name],
 > 
-> I'm Jeff Thomas, head football coach at the University of Puget Sound (D3). I built a tool I thought your community might find useful: a cost calculator that helps parents estimate the real annual cost of [sport] at every tier, with national-median defaults that parents can edit. Live at https://parentcoachplaybook.com/cost-calculator/.
+> I'm writing from Parent Coach Desk Editorial. I built a tool I thought your community might find useful: a cost calculator that helps parents estimate the real annual cost of [sport] at every tier, with national-median defaults that parents can edit. Live at https://parentcoachplaybook.com/cost-calculator/.
 > 
 > The calculator is free, no signup, no affiliate strings. I built it because most cost articles in youth sports give a single dollar figure that doesn't match what families actually pay. Mine surfaces what each line item costs across rec, club, travel.
 > 
@@ -123,7 +123,7 @@ Pitch one essay to each. The placement is a byline on their site that links back
 > 
 > Hi [editor name],
 > 
-> I'm Jeff Thomas, head football coach at the University of Puget Sound and the lead voice at Parent Coach Playbook (parentcoachplaybook.com). I'd like to pitch a 1,200-word essay for your parenting section.
+> I'm writing from Parent Coach Desk Editorial at Parent Coach Playbook (parentcoachplaybook.com). I'd like to pitch a 1,200-word essay for your parenting section.
 > 
 > Working title: [headline]
 > Hook: [one sentence]
@@ -154,7 +154,7 @@ The story is "Division III head coach builds parent resource he wished existed."
 > 
 > Hi [editor name],
 > 
-> I'm Jeff Thomas, head football coach at the University of Puget Sound. Over the last year I've built a website for youth-sports parents called Parent Coach Playbook (parentcoachplaybook.com). It's grown to 875+ live pages and is the kind of resource I wish I'd had when my own kids started playing.
+> I'm writing from Parent Coach Desk Editorial. Over the last year I've built a website for youth-sports parents called Parent Coach Playbook (parentcoachplaybook.com). It's grown to 875+ live pages and is the kind of resource I wish I'd had when my own kids started playing.
 > 
 > The story has a few angles worth considering:
 > - D3 coach using off-season time to build a public resource

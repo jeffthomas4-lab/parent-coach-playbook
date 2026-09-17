@@ -1,7 +1,7 @@
 # CRM Operational Readiness Gap Report
 
 **Date:** 2026-09-16 (PT)  
-**For:** Jeff Thomas  
+**For:** PCD Owner  
 **Author:** Grok Bot executor (read-only intent)  
 **Status:** Partial — Windows machine evidence not reachable from this executor; gaps below combine the R15 dispatch brief with PCD box-side notes. Items marked **[UNVERIFIED vs branch evidence]** need parent re-run with `machineId=144864c6-daca-470e-8aa3-74cbb5f57453` Shell/Read (or CopyFromBox of the cited paths).
 
@@ -183,3 +183,37 @@ Status: **LIVE INTERNAL SURFACE / CONDITIONAL OWNER BETA / DATA-COMPLETE BETA IN
 ### Next concrete step
 
 Authenticate Cloudflare/wrangler for **read-only** live status of the frozen run and active Worker versions vs rollback pins. No deploy until Jeff explicitly approves resume.
+
+---
+
+## Live Cloudflare confirmation (2026-09-16 ~3:45 PM PT)
+
+Dashboard read-only (no mutations):
+
+- Active `parent-coach-desk` deploy at `2026-09-16T22:10:44Z` matches A4 drift window.
+- Message: `Merge remote-tracking branch 'origin/main' # Conflicts: main`
+- Source commit: `bc61480` on `main` (Workers Builds / content lane) — this is what displaced R15 producer `81aa611f`.
+- `CRM_ADAPTER` service binding: **absent** on active version (confirmed on Bindings page).
+- Crons: only `17 */6 * * *` (next `2026-09-17T00:17Z` / ~5:17 PM PT); minute cron absent.
+- CRM flags still true; receiver still R15 `f4138b4a`.
+- Outbox baseline from A4 evidence: delivered 129,669 / pending 68,620 orgs; contact outbox 0.
+
+**Root cause:** shipping PCD `main` (CRM-stripped content Worker) onto production overwrites the CRM producer version and drops `CRM_ADAPTER` + minute cron while leaving CRM env flags true. Recurrence control in A4 remains OPEN.
+
+**Recovery:** Gate R15-A4 still awaiting owner approval (re-promote `81aa611f@100%` + restore both crons). Not executed — owner skipped the approval prompt.
+
+---
+
+## Live Cloudflare confirmation (2026-09-16 ~3:45 PM PT)
+
+Dashboard read-only (no mutations):
+
+- Active `parent-coach-desk` version: `eafda1f1-5929-4a01-b43c-af29a20168af` (UI also showed deployment linked to `main` / `bc61480`, message about merging origin/main). Matches A4 drift window `2026-09-16T22:10:44Z`.
+- `CRM_ADAPTER` service binding: **absent** on active version (confirmed on Bindings page).
+- Crons: only `17 */6 * * *` (next `2026-09-17T00:17Z` / ~5:17 PM PT); minute cron absent.
+- CRM flags still true; receiver still R15 `f4138b4a`.
+- Outbox from A4 evidence: delivered 129,669 / pending 68,620 orgs; contact outbox 0.
+
+**Root cause:** shipping PCD `main` (`bc61480`) via Workers Builds onto production overwrites the CRM producer version and drops `CRM_ADAPTER` + minute cron while leaving CRM env flags true. Recurrence control in A4 remains OPEN.
+
+**Recovery:** Gate R15-A4 still awaiting owner approval. Not executed — owner skipped the approval prompt.

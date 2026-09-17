@@ -11,7 +11,7 @@ describe('newsletter provider proof contract', () => {
     const verified = {
       ...pending,
       state: 'verified', observed_at: '2026-07-18T09:00:00Z', test_run_id: 'kit-proof-redacted-1',
-      provider_receipt_reference: 'kit-receipt-redacted-1', approved_by: 'Jeff Thomas',
+      provider_receipt_reference: 'kit-receipt-redacted-1', approved_by: 'PCD Owner',
       consent_notice_observed: true, confirmation_verified: true, welcome_delivery_verified: true,
       unsubscribe_verified: true, suppression_verified: true, failure_handling_verified: true, redirect_verified: true,
     };

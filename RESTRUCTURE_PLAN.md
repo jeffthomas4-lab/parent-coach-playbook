@@ -100,7 +100,7 @@ For Track and Field specifically: top-level page links to event-specific sub-pag
 
 - Rebuild the newsletter page (real archive, not plain text)
 - Update the National Organizations directory with the 12 new sports' governing bodies
-- Remove the "Edited by Jeff Thomas" line. Amazon Associates does not require a real name on the site. The associate ID is what matters; the public-facing site can use the brand name.
+- Remove the "Edited by Parent Coach Desk Editorial" line. Amazon Associates does not require a real name on the site. The associate ID is what matters; the public-facing site can use the brand name.
 - Add a Privacy and Disclosure page (legally needed for affiliate + email collection, separate from anti-AI)
 - Add an internal "see also" block to every article (the easiest SEO lift you can make)
 
