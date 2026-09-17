@@ -52,20 +52,18 @@ export const EDITORIAL = {
 // Organization. No other code changes needed — every schema goes through
 // authorEntity() / personSchema() below.
 //
-// Until then we ship Organization-as-author so Jeff's identity stays out of
-// public-facing JSON-LD. The AUTHOR object stays populated so the switch is
-// truly one-line on the day.
+// Public JSON-LD stays Organization-as-author. AUTHOR is brand-only; do not put a personal name here.
 // ---------------------------------------------------------------------------
 
 export const AUTHOR_REVEALED = false;
 
 export const AUTHOR = {
-  name: 'Jeff Thomas',
-  jobTitle: 'Head Coach, Football',
-  worksFor: 'University of Puget Sound',
-  worksForUrl: 'https://athletics.pugetsound.edu',
+  name: 'Parent Coach Desk Editorial',
+  jobTitle: 'Editorial',
+  worksFor: 'Field & Forge Ventures',
+  worksForUrl: 'https://parentcoachdesk.com',
   description:
-    'Head coach with two decades inside the youth-to-college athletics pipeline. Writes Parent Coach Desk for the parents on the other side of the field.',
+    'Editorial desk for parents in youth sports, dance, theater, and performing arts.',
   url: 'https://parentcoachdesk.com/about/',
   // External profiles that confirm identity. Add LinkedIn, school staff page,
   // podcast appearances here as they go live (post-reveal).

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "owner": "Jeff Thomas",
+  "owner": "PCD Editorial",
   "trust_rule": "recommendation_before_link",
   "default_account_state": "unverified",
   "merchants": [
@@ -96,7 +96,7 @@
   "babylove_auto_insert": {
     "enabled": true,
     "added": "2026-08-04",
-    "added_by": "Jeff Thomas, via Claude/Cowork session",
+    "added_by": "PCD Editorial",
     "description": "Explicit exception to publication_gates.automatic_recommendation_publication_allowed=false. The daily babylove-affiliate-insert pass (run under the Arnie persona) may monetize BabyLoveGrowth articles WITHOUT a Jeff review step. Widened 2026-08-08 on Jeff's instruction: Arnie may now source NEW Amazon products, add them to affiliates.json, replace non-Amazon retailer product links, and lightly rewrite surrounding copy so a link reads naturally. The constraints below still bind. Anything outside this scope reverts to the normal human_editorial_approval_required gate.",
     "scope": "amazon_product_links_including_newly_sourced",
     "constraints": {
@@ -116,6 +116,6 @@
     },
     "still_requires_jeff": "Production deploy. GitHub Actions and the protected `production` environment were removed 2026-08-05, so Arnie commits and pushes to main and the nightly pcd-auto-deploy task (Dana) ships it. Arnie itself never runs wrangler and never deploys.",
     "revised": "2026-08-08",
-    "revised_by": "Jeff Thomas, via Claude/Cowork session"
+    "revised_by": "PCD Editorial"
   }
 }
