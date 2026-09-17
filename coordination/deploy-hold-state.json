@@ -1,6 +1,7 @@
-﻿{
-    "consecutiveHeldNights":  5,
-    "lastReason":  "Held 2026-09-16 night (Dana). Branch main, 0 ahead / 0 behind origin/main. Dirty-tree hold: M coordination/release-evidence/asset-proof-prod.json, M public/link-manifest.json, untracked public/og/october-cheer-parent-night-not-competition.jpg, public/og/pregame-talk-youth-sports.jpg, public/og/what-a-head-race-actually-is.jpg. No content-only push attempted. Live build-info already matched origin/main 8c37bf4723b1720f6a25f94ec697ede36c5d5c26 so pcd-deploy-code.ps1 was not required. Homepage smoke HTTP 200. Updated refs/pcd-deployed to 8c37bf47 and pushed the marker. Deployable leftovers remain local-only.",
+{
+    "consecutiveHeldNights":  0,
+    "lastReason":  "Cleared 2026-09-16 night (Jeff): committed deploy leftovers (link-manifest, asset-proof, 3 OG jpgs) after Dana dirty-tree night 5.",
     "lastBranch":  "main",
-    "firstHeldDate":  "2026-09-07"
+    "firstHeldDate":  null,
+    "clearedAt":  "2026-09-16T23:17:00-07:00"
 }

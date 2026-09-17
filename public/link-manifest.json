@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-17T00:01:24.587Z",
-  "count": 890,
+  "generatedAt": "2026-09-17T05:27:50.658Z",
+  "count": 895,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -396,6 +396,12 @@
       ]
     },
     {
+      "url": "https://blogs.usafootball.com/blog/4849/3-things-to-tell-your-child-before-the-game",
+      "sources": [
+        "src/content/articles/pregame-talk-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://bnq.qc.ca/en/certification/protection-and-safety/neck-protectors-c2.html",
       "sources": [
         "src/content/body/hockey-equipment-safety.md"
@@ -610,6 +616,18 @@
       "url": "https://doi.org/10.1080/10413200.2019.1570392",
       "sources": [
         "src/content/articles/growth-mindset-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.1111/j.0021-9029.2006.00049.x",
+      "sources": [
+        "src/content/articles/pregame-talk-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.1515/afepuc-2016-0011",
+      "sources": [
+        "src/content/articles/pregame-talk-youth-sports.md"
       ]
     },
     {
@@ -1307,6 +1325,12 @@
       "url": "https://REPLACE-WITH-DESTINATION-URL",
       "sources": [
         "src/pages/admin/affiliates.astro"
+      ]
+    },
+    {
+      "url": "https://repository.essex.ac.uk/33279/1/CLutz_PhD_Viva_Corrections_Final.pdf",
+      "sources": [
+        "src/content/articles/pregame-talk-youth-sports.md"
       ]
     },
     {
@@ -3711,6 +3735,12 @@
       "sources": [
         "src/content/body/anaphylaxis-and-epipen-on-field.md",
         "src/content/body/restaurant-food-allergies-travel.md"
+      ]
+    },
+    {
+      "url": "https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1615784/full",
+      "sources": [
+        "src/content/articles/pregame-talk-youth-sports.md"
       ]
     },
     {
