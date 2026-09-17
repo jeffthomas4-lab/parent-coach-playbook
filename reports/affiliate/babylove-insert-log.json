@@ -886,6 +886,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "Not needed this run. No new product sourcing was required: youth-goalie-drills reused 4 already-verified catalog slugs, and no other reviewed article surfaced a confident product to source."
+    },
+    {
+      "date": "2026-09-16",
+      "articleSlug": "pregame-talk-youth-sports",
+      "action": "restore-then-no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 854715, published commit 4344871 on 2026-09-15) was missing from HEAD after merge bc61480 (2026-09-16) and 404 on parentcoachdesk.com/blog/pregame-talk-youth-sports. Restored file byte-for-byte from 4344871. Full read: communication/scripts piece, zero nameable buyable products. Outbound links are research/governing-body citations (USA Football blog, Essex thesis), protected under reference_links_protected. No affiliate links, no disclosure needed.",
+      "before": "File absent from working tree / origin/main HEAD; live URL 404",
+      "after": "File restored from 4344871; zero /go/ links; gap-queued",
+      "asin": null,
+      "browserVerification": "Not applicable, no product to source."
+    },
+    {
+      "date": "2026-09-16",
+      "articleSlug": "run-summary",
+      "action": "restore-one-blg-zero-insertions",
+      "details": "Daily babylove pass (Grok Bot routine). Jeff's Windows machine offline; ran from box clone using affiliate-governance babylove_auto_insert. Only action: restore pregame-talk-youth-sports (854715) dropped in merge bc61480. Zero products. No other new BLG publishes since 4344871. Net: 1 file restored, 0 insertions, 0 replacements, 0 new catalog entries. Never run wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not needed; no product sourcing this run."
     }
   ]
 }

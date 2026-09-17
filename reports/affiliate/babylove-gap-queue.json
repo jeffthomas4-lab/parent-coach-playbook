@@ -331,6 +331,16 @@
       "reason": "Full read confirms no confident single-product match. The article names 'durable, well-maintained gear' and 'mouth guards' only inside a passage whose explicit point is that equipment is not what prevents concussions ('no equipment...eliminates concussion risk entirely...don't market them to your team as concussion prevention'). That is a safety directive, not a purchase recommendation, so per the no-links-in-safety-directives rule this stays unlinked. The two existing outbound links (rnkapparel.com, clearretain.com) are pre-existing content/blog references, not Amazon or listed-competitor storefronts, so they are out of scope for replacement. Skipped, not a confident match.",
       "loggedAt": "2026-09-15",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "854715",
+      "slug": "pregame-talk-youth-sports",
+      "title": "15 to 45 Second Pregame Talk for Youth Sports with Age Ready Scripts",
+      "sport": "multi-sport",
+      "topic": "rec-vs-travel",
+      "reason": "Article was published 2026-09-15 (commit 4344871) then dropped from main in merge bc61480; restored this run from that commit so the BLG webhook piece is not lost (live URL was 404). Full read confirms zero nameable, buyable products: scripts-and-delivery article only. Outbound links are USA Football blog and University of Essex thesis citations, protected. No affiliate links inserted.",
+      "loggedAt": "2026-09-16",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }
