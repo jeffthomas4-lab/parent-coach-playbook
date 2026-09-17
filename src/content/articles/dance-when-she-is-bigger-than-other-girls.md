@@ -12,18 +12,19 @@ hero: "/illustrations/dance-studio-barre-morning.webp"
 heroAlt: "Two dancers' feet and ankles rest at the barre in a sunlit studio, shot low along a worn wood floor with bodies cropped above the knee."
 publishedAt: "2026-05-12"
 featured: false
+draft: true
 editorial:
   qualityGrade: 8
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
-  flagSensitiveTopic: false
+  flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  status: ready-for-jeff
+  reviewerNotes: "UNPUBLISHED 2026-09-16 (Jeff risk review): held for controversy/medical-boundary or coach-viewpoint mismatch. See reports/editorial/CONTENT-RISK-AUDIT-2026-09-16.md."
 ---
 
 She got in the car after Thursday class. She was quiet for half a mile. Then she asked, casually, why she is bigger than the other girls in her class. Not bitter. Not crying. Just a question, like she was asking about the weather, and she kept looking out the window. That casual is the most dangerous version of the question. Here's how to handle the moment without making it worse.

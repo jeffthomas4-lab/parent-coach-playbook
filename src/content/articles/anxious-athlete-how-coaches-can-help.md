@@ -12,19 +12,19 @@ topic: communication
 hero: "/illustrations/team-snack-table-setup.webp"
 heroAlt: "A folding table at a field's edge holds orange slices, paper cups, and a water jug in morning light, an adult forearm setting something down."
 publishedAt: 2026-06-11
-draft: false
+draft: true
 editorial:
   qualityGrade: 8
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
-  flagSensitiveTopic: false
+  flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  status: ready-for-jeff
+  reviewerNotes: "UNPUBLISHED 2026-09-16 (Jeff risk review): held for controversy/medical-boundary or coach-viewpoint mismatch. See reports/editorial/CONTENT-RISK-AUDIT-2026-09-16.md."
 ---
 
 Anxiety in young athletes is more common than most coaches realize, and it doesn't always announce itself the way you'd expect.
