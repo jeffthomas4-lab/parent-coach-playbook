@@ -3,6 +3,8 @@ title: "Fall ball for softball: what's actually different from spring rec"
 seoTitle: "Softball Fall Ball: What's Different From Spring Rec"
 seoDescription: "How softball fall ball differs from spring rec: registration timing, pitching rules, free substitution, and whether it's worth signing up for."
 dek: "What changes when your rec softball kid signs up for fall ball"
+hero: "/illustrations/softball-gear-dugout-autumn.webp"
+heroAlt: "A softball glove, bat, and gear bag resting on a dugout bench with fallen autumn leaves nearby."
 bluf: "Softball fall ball is optional, runs six to eight weeks starting in September, and costs less than spring since there's no tournament or banquet fee. Pitching limits are counted in innings, not pitches, and fall is the lowest-pressure window all year to let a kid try the circle for the first time."
 topic: season-ops
 format: note

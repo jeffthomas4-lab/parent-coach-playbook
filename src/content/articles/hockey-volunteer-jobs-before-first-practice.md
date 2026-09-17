@@ -3,6 +3,8 @@ title: "The volunteer jobs a hockey team parent gets asked to fill before the fi
 seoTitle: "The Volunteer Jobs Every Youth Hockey Team Parent Needs"
 seoDescription: "Scorekeeper, penalty box attendant, and locker room monitor: what each hockey volunteer role actually requires before September practices and the first game."
 dek: "Three volunteer jobs need filling before puck drop, and the paperwork takes weeks."
+hero: "/illustrations/rink-bench-clipboard-before-practice.webp"
+heroAlt: "An empty hockey rink bench with a clipboard, a set of keys, and unopened gear bags before practice."
 bluf: "Every USA Hockey team needs a scorekeeper, penalty box attendant, and locker room monitor for games and practices. Each role requires free USA Hockey registration, a 90-minute SafeSport course, and a background check that costs $30 and takes about two weeks to clear. Start now, not at the first game."
 topic: "season-ops"
 format: "note"

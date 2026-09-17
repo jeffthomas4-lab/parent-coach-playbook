@@ -3,6 +3,8 @@ title: "Is fall ball worth it? What actually changes from spring rec baseball"
 seoTitle: "Is Fall Ball Worth It? What Changes From Spring"
 seoDescription: "Little League fall ball explained: when it starts, what free substitution means, and whether it's worth it for a rec baseball family."
 dek: "What changes when your rec baseball kid signs up for fall ball"
+hero: "/illustrations/empty-baseball-diamond-autumn.webp"
+heroAlt: "An empty baseball infield in autumn light with brown leaves along the foul line."
 bluf: "Fall ball is optional, roughly six to eight weeks, cheaper than spring, and skips the postseason. Pitch count limits still apply. A kid who wants more baseball and has room in the September calendar gets real value from it."
 topic: season-ops
 format: note

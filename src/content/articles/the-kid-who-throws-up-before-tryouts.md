@@ -3,6 +3,8 @@ title: "Your kid throws up before tryouts. Here's what that means, and what it d
 seoTitle: "Why Kids Throw Up Before Tryouts"
 seoDescription: "Vomiting before a tryout is usually the nervous system doing its job, not illness. How to tell the difference and what to do that morning."
 dek: "A stomach that turns on tryout morning is nerves working as designed."
+hero: "/illustrations/water-bottle-outside-gym-doors.webp"
+heroAlt: "A water bottle and sports bag resting on concrete steps outside closed double doors in early morning light."
 bluf: "Vomiting before a tryout is usually acute stress, not illness. Check for fever, diarrhea, or body aches first. If those are absent and your kid feels normal once moving, treat tryout morning like any other tryout morning. A pattern across every evaluation, not just this one, is worth a call to the pediatrician."
 topic: "the-hard-stuff"
 format: "note"
