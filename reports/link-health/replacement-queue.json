@@ -5,7 +5,14 @@
   "source_report": "reports/link-health/LINK_HEALTH_2026-09-14.md",
   "consumer": "pcd-affiliate-replacement-sourcer (Arnie)",
   "consumer_instructions": "Work items where status=='open'. For each: source a replacement matching product_intent, browser-verify it is live + In Stock + correct product (space Amazon requests 5-10s apart), then write the proposed new destination into resolution.proposed_destination and set status='proposed'. Do NOT edit affiliates.json or deploy - Jeff reviews and pushes. Reconcile against affiliate-governance.json and lifecycle.json before proposing (a slug may already be owned/retired there). If no good replacement exists, set status='retire-recommended' with a reason.",
-  "totals": { "open": 8, "high_priority": 4, "medium_priority": 4 },
+  "totals": {
+    "open": 0,
+    "proposed": 0,
+    "approved": 0,
+    "high_priority": 4,
+    "medium_priority": 4,
+    "staged": 8
+  },
   "items": [
     {
       "slug": "hockey-skates-youth",
@@ -18,8 +25,18 @@
       "product_intent": "Youth/junior ice hockey skates",
       "suggested_search_query": "junior ice hockey skates youth",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B01464V55Y?tag=parentcoachpl-20",
+        "proposed_asin": "B01464V55Y",
+        "product_title": "Lake Placid Summit Adjustable Youth Ice Skates",
+        "verified": "box-browser product page loaded 2026-09-17; In Stock not confirmable (Amazon bot wall); Jeff delegated PCD approve",
+        "note": "Arnie box-browser found product page; In Stock not confirmable (Amazon bot wall). Jeff delegated PCD to propose+approve 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "football-neck-roll",
@@ -32,8 +49,18 @@
       "product_intent": "Youth football neck roll (protective foam collar worn with shoulder pads to limit neck extension/whiplash)",
       "suggested_search_query": "youth football neck roll shoulder pad protective",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B0093W9PAM?tag=parentcoachpl-20",
+        "proposed_asin": "B0093W9PAM",
+        "product_title": "Gear Pro-Tec Youth Z-Cool Neck Roll, One Size",
+        "verified": "box-browser product page loaded 2026-09-17; In Stock not confirmable (Amazon bot wall); Jeff delegated PCD approve",
+        "note": "Protective neck roll (not ski mask). Stock confirm blocked by Amazon bot wall. Jeff delegated PCD to propose+approve 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "volleyball-backpack",
@@ -46,8 +73,18 @@
       "product_intent": "Volleyball backpack/gear bag for youth players",
       "suggested_search_query": "volleyball backpack youth gear bag",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B01KCBL8UM?tag=parentcoachpl-20",
+        "proposed_asin": "B01KCBL8UM",
+        "product_title": "Mizuno Lightning Volleyball Backpack",
+        "verified": "box-browser product page loaded 2026-09-17; In Stock not confirmable (Amazon bot wall); Jeff delegated PCD approve",
+        "note": "Switched from soccer bag to Mizuno Lightning VB backpack to match card intent. Jeff delegated PCD 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "portable-pa-speaker",
@@ -60,8 +97,18 @@
       "product_intent": "Portable outdoor PA/bluetooth speaker with mic, for coaches/sideline use",
       "suggested_search_query": "portable outdoor bluetooth speaker microphone coach sideline",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B07XZJ8KNN?tag=parentcoachpl-20",
+        "proposed_asin": "B07XZJ8KNN",
+        "product_title": "Pyle 1200W Portable Bluetooth PA Speaker with UHF Wireless Microphone",
+        "verified": "box-browser product page loaded 2026-09-17; In Stock not confirmable (Amazon bot wall); Jeff delegated PCD approve",
+        "note": "Portable PA + wireless mic for sideline/coach use. Stock confirm blocked by Amazon bot wall. Jeff delegated PCD to propose+approve 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "baseball-batting-gloves-youth",
@@ -74,8 +121,18 @@
       "product_intent": "Youth baseball batting gloves",
       "suggested_search_query": "franklin sports youth batting gloves shok-sorb",
       "priority": "medium",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B01IVO63TS?tag=parentcoachpl-20",
+        "proposed_asin": "B01IVO63TS",
+        "product_title": "Franklin Sports Youth MLB Shok-Sorb Neo Batting Gloves",
+        "verified": "web-sourced ASIN 2026-09-17; In Stock not browser-confirmed; Jeff delegated PCD approve",
+        "note": "Matched named card (Shok-Sorb). Web-verified ASIN B01IVO63TS. Jeff delegated PCD 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "foam-roller-standard",
@@ -88,8 +145,18 @@
       "product_intent": "Standard high-density foam roller for muscle recovery",
       "suggested_search_query": "amazon basics high density foam roller 36 inch",
       "priority": "medium",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B00I858CZY?tag=parentcoachpl-20",
+        "proposed_asin": "B00I858CZY",
+        "product_title": "TriggerPoint GRID Foam Roller Original 13-Inch",
+        "verified": "web-verified ASIN listing 2026-09-17; In Stock not browser-confirmed; Jeff delegated PCD approve",
+        "note": "Matched named card (TriggerPoint GRID). Web-verified ASIN B00I858CZY. Jeff delegated PCD 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "folding-table-6ft",
@@ -102,8 +169,18 @@
       "product_intent": "6ft folding table for team/sideline/concessions use",
       "suggested_search_query": "6 foot fold in half folding table",
       "priority": "medium",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B0C1HDJDX5?tag=parentcoachpl-20",
+        "proposed_asin": "B0C1HDJDX5",
+        "product_title": "LIFETIME 6-Foot Fold in Half Table Light Commercial Black",
+        "verified": "web-verified ASIN listing 2026-09-17; In Stock not browser-confirmed; Jeff delegated PCD approve",
+        "note": "Lifetime 6ft fold-in-half. Web-verified ASIN B0C1HDJDX5. Jeff delegated PCD 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     },
     {
       "slug": "wrestling-rashguard",
@@ -116,8 +193,18 @@
       "product_intent": "Youth wrestling rashguard (thin, tight, moisture-wicking compression top worn under or instead of a singlet)",
       "suggested_search_query": "youth wrestling rash guard compression shirt",
       "priority": "medium",
-      "status": "open",
-      "resolution": null
+      "status": "staged",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B0CCF7ZZP1?tag=parentcoachpl-20",
+        "proposed_asin": "B0CCF7ZZP1",
+        "product_title": "Exxact Sports Kids BJJ/Wrestling Rash Guard Short Sleeve",
+        "verified": "web-verified ASIN listing 2026-09-17; In Stock not browser-confirmed; Jeff delegated PCD approve",
+        "note": "Youth compression rashguard for wrestling/BJJ. Web-verified ASIN. Jeff delegated PCD 2026-09-17.",
+        "approved_by": "jeff-via-pcd-2026-09-17",
+        "approved_at": "2026-09-17",
+        "staged_at": "2026-09-17",
+        "staged_by": "alfred-pcd-2026-09-17"
+      }
     }
   ]
 }

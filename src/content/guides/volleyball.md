@@ -19,7 +19,7 @@ The catch is that the shoes matter a lot. Volleyball has a specific shoe categor
 
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
-## Ages 5–7 (Mini-volley / Starter)
+## Ages 5â€“7 (Mini-volley / Starter)
 
 This age plays with a softer ball on a lower net. Most leagues are recreational and provide whatever balls and equipment the kids need.
 
@@ -37,11 +37,11 @@ How to choose: snug at the knee, not cutting circulation.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 5–10</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 5â€“10</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Youth T10 Plus knee pads</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Real foam over the kneecap in youth sizing. Stays put, doesn't pinch. Works from the first season through middle school.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The same pad works at every age. Buy these in year one and they'll still be the right answer in year four.</p>
-    <a href="/go/volleyball-knee-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-knee-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -56,16 +56,16 @@ Size-4 volleyballs are softer and lighter than the adult size. Good for backyard
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 5–12</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 5â€“12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Molten V5MU12 Light Youth Volleyball</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Official size, lighter weight, built for players 12 and under. Softer on forearms than an adult ball. The standard for youth rec programs.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A lighter ball means kids learn to pass without flinching. That matters more than brand at this age.</p>
-    <a href="/go/volleyball-ball-youth-light/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-ball-youth-light/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-## Ages 8–10
+## Ages 8â€“10
 
 The ball moves to the official size in many leagues. The technique starts to matter. Real practice begins.
 
@@ -77,11 +77,11 @@ How to choose: have your kid do a quick lateral cut in the shoes (push off the r
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–14</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 8â€“14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Upcourt volleyball shoes</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The entry volleyball shoe from the brand half the sport wears. Gum-rubber court grip, non-marking sole, runs to small women's sizes that fit middle schoolers.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The right first volleyball shoe. Run the lateral-cut test in the kitchen before the tags come off. Save the top-shelf models for a kid who has made a club roster.</p>
-    <a href="/go/volleyball-shoes-upcourt/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-shoes-upcourt/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -94,11 +94,11 @@ How to choose: the pad should cover the kneecap and the area just below it. Snug
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–14</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 8â€“14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Youth T10 Plus knee pads</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth-sized version of the knee pad the older players wear. Real foam over the kneecap, stays put through a full practice.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A kid who trusts the knee pads learns to go to the floor. That's a skill, and it starts with pads that don't slide.</p>
-    <a href="/go/volleyball-knee-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-knee-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -109,11 +109,11 @@ By age 10, most leagues use the size-5 (adult) volleyball. Same brands as size-4
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–12</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 8â€“12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Tachikara Volley-Lite training volleyball</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Official size, 25 percent lighter than a regulation ball. The standard training ball for youth programs, and it doesn't sting small forearms.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Kids who don't fear the ball learn to pass. The lighter ball buys a season of confident reps before the real one takes over.</p>
-    <a href="/go/volleyball-volley-lite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-volley-lite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -124,16 +124,16 @@ Many girls' programs use spandex (booty shorts) as the standard short. Boys' pro
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–14</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 8â€“14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour HeatGear Shorty (big kid sizes)</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The standard practice spandex in youth sizes. Wicks sweat, holds shape through a season of washes.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Confirm the team's required color before buying. Black is the safe bet; buy two pairs once you know.</p>
-    <a href="/go/volleyball-spandex-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-spandex-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-## Ages 11–12 (Middle school and travel)
+## Ages 11â€“12 (Middle school and travel)
 
 Club volleyball begins for many serious players. Costs go up. Gear quality goes up.
 
@@ -143,11 +143,11 @@ Hitters and middle blockers want more cushion in the toe (for jumping). Setters 
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Gel-Rocket volleyball shoes</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The upgrade from the Upcourt. More cushioning under the forefoot, same gum-rubber court grip. Available in women's sizes that fit most middle schoolers.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If your kid is practicing three days a week, the extra cushion is worth paying for. The Upcourt is fine; the Gel-Rocket is better for the volume of reps club players put in.</p>
-    <a href="/go/volleyball-shoes-gel-rocket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-shoes-gel-rocket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -158,11 +158,11 @@ Mizuno LR6, Asics Gel Rocket, Nike Streak. Volleyball-specific knee pads with be
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno LR6 volleyball knee pads</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The standard knee pad for club and high school players. Thicker foam, better fit around the knee, stays in place through a full two-hour practice.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The upgrade from the T10 Plus. Once a player is practicing four or five days a week, the better foam matters. This is what most club rosters wear.</p>
-    <a href="/go/volleyball-knee-pads-lr6/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-knee-pads-lr6/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -175,11 +175,11 @@ How to choose: should fit snugly inside the shoe without forcing a bigger shoe s
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Active Ankle T2 ankle brace</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Hinged stirrup brace that blocks the rollover without slowing the player down. Sold as a single; buy two for a pair.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Volleyball leads youth sports in ankle sprains, most of them landings at the net. One brace per ankle against six weeks in a boot is easy math.</p>
-    <a href="/go/volleyball-ankle-brace/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-ankle-brace/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -190,16 +190,16 @@ Mikasa MVA200 (FIVB official) or Molten 5000 are the two pro-grade balls. Worth 
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Molten FLISTATEC volleyball</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The pro-grade ball many high school and club programs play with. Grippy panel surface, true flight.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Worth it once your kid is setting and serving daily at home. Practicing with the game ball removes one variable on match day.</p>
-    <a href="/go/volleyball-flistatec/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-flistatec/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-## Ages 13–14 (Middle school and serious club)
+## Ages 13â€“14 (Middle school and serious club)
 
 Most club volleyball programs require specific team gear. Most middle-school programs provide jerseys and require players to provide everything else.
 
@@ -209,11 +209,11 @@ Serious players replace shoes every 6 to 12 months. The grip rubber wears down a
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Gel-Rocket volleyball shoes</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The court shoe most serious players rotate through. Gum-rubber outsole grips gym floors, forefoot cushion handles the landing volume of a full season.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two pairs at the start of the club season. Rotate them. One pair's grip will give out before the other and you'll know it's time.</p>
-    <a href="/go/volleyball-shoes-gel-rocket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-shoes-gel-rocket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -228,11 +228,11 @@ McDavid, Active Ankle, Aircast are the brands most players use.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Active Ankle T2 ankle brace</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Hinged stirrup brace that blocks the rollover without slowing the player down. Sold as a single; buy two for a pair.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: By 13–14, preventative bracing is the standard on serious club rosters. One ankle sprain in a tournament weekend is more expensive than two braces.</p>
-    <a href="/go/volleyball-ankle-brace/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: By 13â€“14, preventative bracing is the standard on serious club rosters. One ankle sprain in a tournament weekend is more expensive than two braces.</p>
+    <a href="/go/volleyball-ankle-brace/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
@@ -243,11 +243,11 @@ A specific bag that fits two pairs of shoes, knee pads, ankle braces, water bott
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 13+</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Organizer 26 volleyball backpack</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Separate shoe compartment, dedicated knee pad and brace storage, water bottle pocket, enough room for two pairs of shoes. Built for the club travel load.</p>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon Â· Volleyball Â· Ages 13+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Lightning volleyball backpack</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Large main compartment, knee pad clips, ventilated shoe pouch, and a mesh volleyball bag. Built for the club travel load.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A bag designed for volleyball gear means nothing gets crushed and the shoes stay away from everything else. Worth it once your kid has a full club kit to carry.</p>
-    <a href="/go/volleyball-backpack/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <a href="/go/volleyball-backpack/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon â†—</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
