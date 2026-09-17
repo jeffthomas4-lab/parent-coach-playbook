@@ -9,8 +9,8 @@ bluf: "For families with a kid in both school basketball and AAU, October is the
 format: "note"
 phase: "drive-there"
 sport: "basketball"
-age: "11-14"
-topic: "scheduling"
+age: "11-12"
+topic: "tryouts"
 publishedAt: 2026-09-17
 draft: false
 editorial:
