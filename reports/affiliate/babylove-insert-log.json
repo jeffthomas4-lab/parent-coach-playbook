@@ -906,6 +906,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "Not needed; no product sourcing this run."
+    },
+    {
+      "date": "2026-09-17",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Daily babylove pass. No new BabyLoveGrowth publish commits since 4344871e (pregame-talk-youth-sports, 2026-09-15); new-article queue confirmed empty via git log --grep='Publish BabyLoveGrowth' and a same-day commit scan. Backfill check ran against all 29 known BabyLove-origin slugs (27 carrying an externalSource marker plus usa-vs-usssa-bats and youth-sports-costs, identified only by their original Publish-BLG commits since editorial normalization stripped their externalSource block). Built a current /go/ link count and disclosure-presence table directly from the live files (not from old log claims) to find the oldest, least-monetized candidate. Every 0-link article (14 of 29) already has a same-week or same-run gap-queue entry confirming zero nameable, buyable products; spot-read youth-sports-costs in full to re-verify (gear nouns still appear only inside a used/secondhand-gear tip and a generic no-brand Pro Tip, both no-link contexts). Read youth-baseball-throwing-drills and flag-football-drills in full (the two lowest-linked articles with real products, 4 links each, tied oldest among the un-maxed group): every distinct gear item named in each (glove, bucket, cones, resistance band; cones, football, cleats, flag belt) already carries its /go/ link, so both are at their real product ceiling, not an arbitrary stop. Ran a repo-wide text scan for the named competitor retailers (Gopher Sport, BSN Sports, All Volleyball, ChalkTalk, DICK'S, Academy, Target, Walmart) across all 29 slugs: hits in best-kids-shin-guards, best-youth-softball-gloves, and volleyball-equipment are plain-text brand mentions or citation links to buying-advice articles, not hyperlinks to a buyable storefront product, so nothing qualifies for replacement under the buyable-product rule. volleyball-equipment's reviewer notes already document a prior, reasoned decision to leave the BSN Sports/Gopher Sport/All Volleyball comparison-table mentions as text since those rows compare suppliers with no Amazon equivalent; re-confirmed that reasoning still holds. affiliates.json still parses (248 keys) and no existing slug destinations were touched. Net this run: 0 insertions, 0 replacements, 0 new catalog entries, 0 files changed. Repo confirmed clean (git status empty) and in sync with origin/main (0 ahead, 0 behind) before and after. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not needed; no product sourcing attempted this run because no unmonetized substantive product was found."
     }
   ]
 }
