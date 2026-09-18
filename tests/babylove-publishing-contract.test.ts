@@ -118,4 +118,29 @@ describe('BabyLoveGrowth publishing contract', () => {
     // the repo is on the Windows-mounted volume the Cowork agents run against.
     // The default 5s timeout failed there, not because anything was wrong.
   }, 30_000);
+
+  it('does not name Jeff as a public byline or sign-off in shipped content bodies', () => {
+    const contentRoot = resolve(root, 'src/content');
+    const offenders: string[] = [];
+    const personal = /(?:^|\n)\s*(?:>\s*)?(?:\*|_)*\s*[—–-]\s*Jeff(?:\s+Thomas)?\b|\bJeff Thomas\b|\bWritten by Jeff\b|\bFrom Jeff\b|\bHow Jeff\b|\bA Note From Jeff\b/i;
+
+    function walk(dir: string): void {
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        const full = resolve(dir, entry.name);
+        if (entry.isDirectory()) {
+          walk(full);
+          continue;
+        }
+        if (!entry.name.endsWith('.md')) continue;
+        const source = readFileSync(full, 'utf8');
+        const body = source.startsWith('---')
+          ? source.split(/^---\s*$/m).slice(2).join('---')
+          : source;
+        if (personal.test(body)) offenders.push(full.slice(contentRoot.length + 1));
+      }
+    }
+
+    walk(contentRoot);
+    expect(offenders).toEqual([]);
+  }, 30_000);
 });

@@ -235,8 +235,6 @@ Pickup and drop-off logistics at the facility itself deserve a plan too. Agree w
 
 Preseason, I'd rather have the awkward EAP conversation with a coach than the awkward conversation with a child in pain. First week, I check gear fit myself instead of assuming it still fits from last year. Monthly, I ask my own kid one honest question: does this still feel fun? Safety and joy aren't opposites. The families who keep both usually asked more questions early, not fewer.
 
-> *— Jeff*
-
 ## Where These Guidelines Come From
 
 The recommendations here draw directly from CDC HEADS UP for concussion signs and sport-specific risk data, AAOS/OrthoInfo's guide to young athlete safety for prevention and RICE/PRICE basics, Safe Kids for coach-training gaps and practical parent scripts, and [peer-reviewed injury surveillance data](https://pmc.ncbi.nlm.nih.gov/articles/PMC11113040/) covering high school athletes for injury-pattern context. Each is worth bookmarking directly for updates beyond what's covered here.

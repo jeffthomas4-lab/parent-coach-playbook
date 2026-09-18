@@ -53,7 +53,7 @@ Short, age-matched drills paired with a timed 30-minute plan build handling, foo
 - [A Copy-Ready 30-Minute Goalkeeper Practice Plan](#a-copy-ready-30-minute-goalkeeper-practice-plan)
 - [Age-Appropriate Progression for Youth Goalkeepers](#age-appropriate-progression-for-youth-goalkeepers)
 - [Safety and Injury Prevention for Young Keepers](#safety-and-injury-prevention-for-young-keepers)
-- [A Note From Jeff on Coaching Your Own Kid in Goal](#a-note-from-jeff-on-coaching-your-own-kid-in-goal)
+- [A Note on Coaching Your Own Kid in Goal](#a-note-on-coaching-your-own-kid-in-goal)
 - [Run a Better Practice With Parent Coach Desk](#run-a-better-practice-with-parent-coach-desk)
 - [Sources](#sources)
 
@@ -137,11 +137,9 @@ Diving and repetitive throwing put real strain on shoulders and hips if the mech
 - Keep dive blocks short (six to eight minutes) with real rest between reps.
 - End every session on a save or catch that goes well.
 
-## A Note From Jeff on Coaching Your Own Kid in Goal
+## A Note on Coaching Your Own Kid in Goal
 
 Here's the scenario that trips up most parent-coaches: your child is in goal, another parent's kid takes a shot off them, and suddenly you're managing two sets of feelings at once. Set the expectation early, with your own kid and with the team: mistakes in goal are part of learning the position, not a reason for anyone to sigh on the sideline. Our [mental skills guide](/mental-skills/) has more on keeping confidence intact after a rough rep.
-
-> *— Jeff*
 
 ## Run a Better Practice With Parent Coach Desk
 

@@ -135,8 +135,6 @@ The [CDC's parent engagement guidance](https://www.cdc.gov/healthy-youth-parent-
 
 An autonomy-support approach isn't soft; it is a method that can hold up under pressure when coaching young athletes. A twelve-year-old who gets to choose between working on her serve or her block before practice starts owns that fifteen minutes in a way she never would if you'd assigned it. Try one script from this article tonight. Watch her face, not just her play, before you decide whether it worked.
 
-> *— Jeff*
-
 ## How Parent Coach Desk Helps
 
 This resource offers practical scripts, age-aware guides, and checklists built for the exact moments parent-coaches actually face. 

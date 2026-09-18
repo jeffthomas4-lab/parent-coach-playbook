@@ -185,8 +185,6 @@ The 24-hour rule works because it separates the emotion from the decision, not b
 
 I've seen one general pattern hold up again and again in youth sports: the seasons that survive a rough patch are the ones where a coach had already written something down, whether that was a code of conduct, a playing-time policy, or just a clear line about who calls the league office when things go sideways. Escalation procedures don't prevent conflict. They give conflict somewhere to go besides your inbox at 11 p.m.
 
-> *— Jeff*
-
 ## Get the Templates Instead of Writing Them at 11 p.m.
 
 Parentcoachdesk exists so you're not drafting a code of conduct or a de-escalation script from a blank page the night before your first practice. Every asset mentioned above, the meeting script, the postgame ritual guide, the escalation template, is already written, tested against real season dynamics, and ready to adapt to your sport and age group in minutes instead of hours.
