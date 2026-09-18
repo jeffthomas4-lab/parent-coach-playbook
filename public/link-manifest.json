@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-09-17T06:18:49.618Z",
-  "count": 895,
+  "generatedAt": "2026-09-18T01:57:50.683Z",
+  "count": 898,
   "links": [
+    {
+      "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
+      "sources": [
+        "src/content/news/usssa-grade-exception-limit-2026.md"
+      ]
+    },
     {
       "url": "http://www.w3.org/2000/svg",
       "sources": [
@@ -262,7 +268,6 @@
     {
       "url": "https://amzn.to/4ugLk14",
       "sources": [
-        "src/data/affiliates.json (slug: baseball-batting-gloves-youth)",
         "src/data/affiliates.json (slug: batting-gloves-pair)"
       ]
     },
@@ -664,6 +669,12 @@
       "url": "https://envelopebudget.com/blog/how-to-budget-for-kids-sports-fees-envelope-method/",
       "sources": [
         "src/content/articles/team-budget-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://fhsaa.com/news/2025/11/21/about-us-fhsaa-sports-medicine-advisory-committee-update-regarding-ecg-screening-recommendations-under-the-second-chance-act.aspx",
+      "sources": [
+        "src/content/news/florida-second-chance-act-ecg-screening-2026.md"
       ]
     },
     {
@@ -2203,6 +2214,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B0093W9PAM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-neck-roll)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B009NCWNQ0?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: lip-balm-spf)"
@@ -2227,12 +2244,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B00DOZTM3O?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: folding-table-6ft)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B00EC6DE7Y?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: saline-rinse)"
@@ -2252,6 +2263,12 @@
         "src/data/affiliates.json (slug: mouthguard-boil-bite)",
         "src/data/affiliates.json (slug: multi-sport-mouthguard-youth)",
         "src/data/affiliates.json (slug: rugby-mouthguard)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00I858CZY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: foam-roller-standard)"
       ]
     },
     {
@@ -2303,12 +2320,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B00XM2MRGI?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: foam-roller-standard)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B011PM4IRC?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: swim-goggles-youth)"
@@ -2318,6 +2329,12 @@
       "url": "https://www.amazon.com/dp/B012SAJYEM?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: bug-bite-stick)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01464V55Y?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-skates-youth)"
       ]
     },
     {
@@ -2342,6 +2359,18 @@
       "url": "https://www.amazon.com/dp/B01IT9NLHW?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: electrolyte-powder)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01IVO63TS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-batting-gloves-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01KCBL8UM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-backpack)"
       ]
     },
     {
@@ -2424,12 +2453,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B07C2GYJ1V?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: portable-pa-speaker)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B07DDFQHVP?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: cash-box-lockable)"
@@ -2496,6 +2519,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B07XZJ8KNN?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: portable-pa-speaker)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B07YD4FCNM?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: soft-cooler-25qt)"
@@ -2505,12 +2534,6 @@
       "url": "https://www.amazon.com/dp/B07YNSRY9Y?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: lacrosse-goggles-youth)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B081Z2L6SW?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: wrestling-rashguard)"
       ]
     },
     {
@@ -2742,15 +2765,15 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0C2GTB7PB?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B0C1HDJDX5?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: soccer-shin-guards-youth)"
+        "src/data/affiliates.json (slug: folding-table-6ft)"
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0C62ZYRF3?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B0C2GTB7PB?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: football-neck-roll)"
+        "src/data/affiliates.json (slug: soccer-shin-guards-youth)"
       ]
     },
     {
@@ -2760,9 +2783,9 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0CB6P2S1G?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B0CCF7ZZP1?tag=parentcoachpl-20",
       "sources": [
-        "src/data/affiliates.json (slug: hockey-skates-youth)"
+        "src/data/affiliates.json (slug: wrestling-rashguard)"
       ]
     },
     {
@@ -2979,12 +3002,6 @@
       "url": "https://www.amazon.com/dp/B0FP5R9BDZ?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: action-camera)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B0FR5BXLQ7?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: volleyball-backpack)"
       ]
     },
     {
