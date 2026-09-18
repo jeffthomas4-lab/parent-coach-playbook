@@ -29,7 +29,7 @@ Skip the 8-foot version unless you specifically need the length. The 6-foot is e
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boosters gear · All programs</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Cosco 6-foot folding table</h3>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Lifetime 6-foot fold-in-half table</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Steel legs, wipe-clean surface, 350 lb capacity. Folds flat for storage. Fits in a car trunk. Sets up in thirty seconds by one person.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If the booster club doesn't own this yet, buy it. It runs everything from the signup table at the first practice to the banquet at the end of the year.</p>
     <a href="/go/folding-table-6ft/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>

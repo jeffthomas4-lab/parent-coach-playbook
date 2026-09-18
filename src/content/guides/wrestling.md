@@ -29,7 +29,7 @@ Practice clothes that stay put when someone grabs them. Loose shorts create prob
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Wrestling · Ages 5–14</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour youth compression rash guard</h3>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Exxact Sports youth wrestling rash guard</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Long-sleeve compression top that stays tucked, doesn't ride up, and gives the mat nothing to grab. Moisture-wicking for high-intensity practice.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two. Wrestling practice is three to five times a week and compression shirts don't stay fresh after one session.</p>
     <a href="/go/wrestling-rashguard/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
