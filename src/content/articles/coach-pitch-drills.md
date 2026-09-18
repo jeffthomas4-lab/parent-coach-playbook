@@ -192,8 +192,6 @@ Perfect mechanics can wait. What can't wait is whether a kid wants to come back 
 
 Run the 45 minute plan as written for the first few weeks. Once it feels automatic, start swapping in the progression for that stage of the season and adjust based on what your team actually needs, not what the calendar says they should know by now.
 
-> *— Jeff*
-
 ## Plan Your Whole Season With Parent Coach Desk
 
 Parentcoachdesk is the practical alternative to piecing together a season from scattered drill videos: one place with age specific practice structures, gear guidance, and the parent-coach scripts that keep a volunteer season running smoothly.

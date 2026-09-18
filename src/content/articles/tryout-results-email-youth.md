@@ -141,8 +141,6 @@ Retention isn't decided at the championship banquet, as explored in [The Real Ro
 
 The programs that keep their rosters full year after year aren't the ones with the best win record. They're the ones whose families never felt handled. Write the email you'd want to receive about your own kid, then send it on time.
 
-> *— Jeff*
-
 ## Get the Templates and Checklist Before Your Next Tryout Night
 
 Building these scripts from scratch every season costs you an evening you don't have, especially with a volunteer staff juggling day jobs and their own kids' practices. Parent Coach Desk gives you the finished versions instead of a blank page: a downloadable pack of email and phone scripts for every tryout outcome, plus the six-item send checklist, ready to copy into your team's shared doc the same week tryouts start.

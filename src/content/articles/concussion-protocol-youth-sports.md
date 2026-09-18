@@ -254,8 +254,6 @@ Careful protocol isn't what ends a kid's playing career. A second concussion sus
 
 Talk to your kids directly about symptoms before an injury ever happens. Tell them it's not weak to say something hurts or feels foggy, and that hiding it doesn't make them tougher, it makes the next hit more dangerous. Leagues with consistent, written policies make this easier on everyone, because nobody's guessing what happens next.
 
-> *— Jeff*
-
 ## Give Your Season a Real Safety Foundation Before It Starts
 
 This resource exists to help close the gap between recognizing the need for a concussion plan and having one written down before the season starts. Where a lot of team parents are stuck patching together advice from a group chat, our guides give you the specific scripts and checklists for the moments the protocol above doesn't cover on its own, like how you actually talk to your kid on the drive home after a hard hit, or what to say when another parent pushes back on sitting their kid out.

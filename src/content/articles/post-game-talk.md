@@ -146,8 +146,6 @@ The postgame talk isn't really about the game. It's a small, repeated test of wh
 
 What surprises most parents is how little they actually need to say. A hug, one honest question, and the discipline to stay quiet afterward does more for a young athlete's confidence than a well-organized breakdown of what went wrong. These scripts echo the same age-aware framework you'll find across Parentcoachdesk's car ride home guide and the broader scripts hub, built for exactly these in-the-moment decisions.
 
-> *— Jeff*
-
 ## Get More Scripts for the Moments That Matter
 
 Knowing the right words in the car is one thing. Having them ready before you need them is another, and that's where Parentcoachdesk saves you from scrambling for language while your kid is staring out the window. Instead of guessing what to say on the fly, you get age-specific scripts written for exactly this situation, plus the frameworks behind them.

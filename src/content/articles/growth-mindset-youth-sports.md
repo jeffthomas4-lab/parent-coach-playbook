@@ -231,7 +231,7 @@ Track attendance, willingness to attempt new skills, and a simple weekly self-ra
 | 3 to 4 | Peer feedback and reflection cards |
 | 5 to 6 | Consistency check and review |
 
-### How Jeff Applies These Scripts as a Parent-Coach
+### How a Parent-Coach Applies These Scripts
 
 One practice, one cue: "Good data, what did you notice?" One game, one question after: "What's something you got better at?" Small, repeatable moves matter more than a perfect speech.
 

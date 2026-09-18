@@ -114,8 +114,6 @@ A short parent-coach script for feedback: "Nice set step, that gave you time. Ne
 
 Keep your feedback short, specific, and kind, especially with your own kid in goal, understanding the important parent roles in the recruiting process in athlete development. Lean on a simple starter framework rather than improvising, and let rotation and fun win over polish before age 12. The goal isn't producing a specialist. It's a kid who still wants to play next season.
 
-> *— Jeff*
-
 ## Where to Find More Parent Coach Desk Help for Practice Day
 
 Running a full session solo, especially with your own child watching for your reaction, is a lot to hold at once. Parentcoachdesk built its resources around exactly that pressure point: short, usable guides instead of a coaching clinic's worth of theory.

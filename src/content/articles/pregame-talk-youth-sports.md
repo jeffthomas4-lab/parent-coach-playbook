@@ -135,8 +135,6 @@ Hand this off to a captain when the team responds better to a peer than an adult
 
 We built this guidance around one idea: the relationship comes first, the score comes second. Age-aware, honest communication beats a rehearsed speech every time.  Explore our [confidence-building guide](/team-parent/how-to-build-confidence-in-young-athletes/) for more on what steadies young athletes long term.
 
-> *— Jeff*
-
 ## Grab the Printable Pregame Scripts and Age Guides
 
 Parent Coach Desk gives you the exact words, not just the theory. That's the real difference from generic sports-parenting advice you'll find elsewhere: every script here is built to match a specific age and a specific nervous system, not a generic "just relax" line.

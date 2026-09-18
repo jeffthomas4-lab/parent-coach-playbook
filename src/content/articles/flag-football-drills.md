@@ -156,8 +156,6 @@ The second mistake is treating flag pull technique like an afterthought. It's th
 
 If you take one thing from this toolkit, let it be the order: footwork before catching, catching before flag technique, flag technique before decision-making. Rushing that sequence is why so many nine-year-olds look lost in week one and still look lost in week six. Slow down the first two weeks and the rest of the season gets easier, not harder.
 
-> *— Jeff*
-
 Building a practice plan is easier when you're not starting from a blank page every week. [Parent Coach Desk's start-here guide](/start-here/) collects age-pathway resources, season calendars, and the printable practice pack referenced above, so you can walk into week one with a plan instead of a guess.
 
 ## Sources

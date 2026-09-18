@@ -254,8 +254,6 @@ What the research on practice structure actually supports is simpler than most c
 
 If you're a first-time volunteer coach staring down your first practice, prioritize this: get more tees than you think you need, assign helpers before kids arrive, and pick one cue per skill and stick with it. Everything else, the finer points of swing mechanics or fielding form, can wait. A kid who's still excited to show up in week 8 will improve. A kid who quit in week 3 out of boredom never gets the chance.
 
-> *— Jeff*
-
 ## Where to Go After Your First Tee Ball Practice
 
 Once you've run a session or two and found your rhythm, the next step is having a plan you don't have to rebuild from scratch every week. Parent Coach Desk's first practice plan for 5 to 7-year-olds gives you that exact structure, minute by minute, so you're not improvising transitions on the fly during your third Saturday in a row.

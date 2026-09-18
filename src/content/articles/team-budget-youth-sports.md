@@ -173,8 +173,6 @@ Whatever rule your team lands on, write it down in the same shared document wher
 
 Budgets exist so the sport can stay fun, not the other way around. The moment money stress starts shaping whether your kid gets to play, the plan has failed its actual purpose, which is protecting the experience, not just the bank account. Setting a clear number early and sticking to it lets you say yes to the season without dread. If you haven't run your own numbers yet, Parentcoachdesk's [Youth Sports Cost Calculator](/) and its guide on [whether youth sports are worth the cost](/drive-there/are-youth-sports-worth-it/) are good next stops.
 
-> *— Jeff*
-
 ## Where to Find Templates, Scripts, and the Cost Calculator
 
 Parentcoachdesk is the practical shortcut for the exact math and scripts covered above: instead of building your budget from scratch, you can run your numbers through the Youth Sports Cost Calculator and get a season estimate in minutes, not an afternoon.

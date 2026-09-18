@@ -150,8 +150,6 @@ Every parent-coach wants to see progress by Saturday. It rarely works that way. 
 
 The mantra I'd hand any new parent-coach: slow is the drill, fast is the game. Practice reps should feel almost boring in their precision. If a kid can hit a bullseye target from 20 feet with a relaxed arm, the arm strength and velocity tend to show up on their own timeline, not yours. For more on setting realistic expectations at different ages, Parentcoachdesk's guide to [coaching 7 to 9 year-olds](/team-parent/coaching-7-9-year-olds-golden-age-youth-sports/) and the [baseball throwing drill hub](/game/baseball-throwing-drill/) both walk through what "on track" actually looks like at each stage.
 
-> *— Jeff*
-
 ## Where to find more age-specific coaching help
 
 This resource gives you the next step without the guesswork of piecing together advice from five different club websites. If you're coaching the 7 to 9 crowd, the Coaching 7 to 9 Year Olds: The Golden Age of Youth Sports guide breaks down what realistic skill growth looks like at that age, including how throwing fits into the bigger picture of a fun, low-pressure season.
