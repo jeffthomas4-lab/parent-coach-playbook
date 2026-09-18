@@ -1,4 +1,4 @@
-{
+﻿{
   "baseball-glove-youth": {
     "destination": "https://amzn.to/4eSZeBW",
     "retailer": "Amazon",
@@ -1238,5 +1238,20 @@
     "destination": "https://www.amazon.com/dp/B00NG1ECBS?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-baseball-l-screen"
+  },
+  "g-form-v2-shin-guards-youth": {
+    "destination": "https://www.amazon.com/dp/B0FL4ZJM31?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-shin-guards-gform-v2"
+  },
+  "vizari-malaga-shin-guards-youth": {
+    "destination": "https://www.amazon.com/dp/B07HSPK2SF?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-shin-guards-vizari"
+  },
+  "adidas-youth-sock-shin-guards": {
+    "destination": "https://www.amazon.com/dp/B01GK9HG60?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-shin-guards-adidas-sock"
   }
 }

@@ -1,346 +1,366 @@
 {
-  "schemaVersion": 1,
-  "description": "Babylove articles the daily affiliate-insert pass (Arnie) looked at and did NOT link, because no existing src/data/affiliates.json slug was a confident single-product match. Logged here so the pass doesn't re-consider the same article every day, and so Jeff or the weekly Arnie sourcing run can decide whether a new affiliates.json entry is worth adding. Adding to this file never touches affiliates.json or article content.",
-  "entries": [
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Gear nouns (bat, cleats, gloves) appear only inside a used/secondhand-equipment tip ('Borrow or buy used equipment... A $400 bat used twice is still a $400 bat'). Inserting a new-product affiliate link into advice to buy used would contradict the article's own point. No single specific product is being recommended anywhere else in the piece. Skipped, not a confident match.",
-      "loggedAt": "2026-08-04",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Gear nouns (cleats, turf shoes, shin guards, ball) appear only in passing checklist/packing-list mentions ('Equipment replacement (cleats, shin guards, ball)' in the annual cost checklist, and a tournament-weekend packing list). No specific product is discussed substantively anywhere in the piece, which is a budgeting and cost-planning guide, not a gear guide. No confident match, skipped.",
-      "loggedAt": "2026-08-06",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-08-09 backfill pass. No change since the 2026-08-06 entry: still no substantive single-product recommendation, gear nouns still only appear in checklist item 10 and the tournament packing note. Confirms prior skip rather than re-linking.",
-      "loggedAt": "2026-08-09",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-09 backfill pass. This file no longer carries an externalSource marker (Codex normalized/source-reviewed it 2026-08-02), but it is the same BabyLove-origin article referenced in the 2026-08-04 gap entry above and stays in the BabyLove backlog. Gear nouns still appear only inside a used/secondhand-equipment tip ('Borrow or buy used equipment... A $400 bat used twice is still a $400 bat', a no-link context per the used/secondhand rule) and a generic 'cleats, bats, and gloves' mention in an end-of-season-sale Pro Tip with no brand or model named. No confident single-product match, skipped.",
-      "loggedAt": "2026-08-09",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "677111",
-      "slug": "best-youth-softball-gloves",
-      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
-      "sport": "softball",
-      "topic": "game-day",
-      "reason": "Partial-article gap, not skipped entirely (article carries 2 links as of 2026-08-09: softball-glove-11in and baseball-glove-breakin-kit). Two other product mentions checked and left unlinked. (1) 'Best budget pick (rec play, 8U-10U): Entry-level synthetic glove from Wilson or Rawlings, $40-80 range' names two brands with no single model; searched Amazon for a Wilson youth synthetic softball glove in that price/age band and found only adult slowpitch (A360, $43.73) or a competitive 11.75-12.5in fastpitch model (A500 Siren, $67.40) that doesn't match the 10U-age sizing the text implies, so no confident single-product match. (2) 'Best for travel/competitive 12U+: Louisville Slugger LXT series' could not be sourced: Louisville Slugger's LXT line is a fastpitch bat, not a glove (confirmed via Amazon search, top result 'Louisville Slugger 2025 LXT' bat, $353.83); no Louisville Slugger glove called LXT exists to link, and the article's own product name appears to be in error. Not linking a bat under a sentence about gloves, and not guessing a substitute glove the article didn't name.",
-      "loggedAt": "2026-08-09",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "677111",
-      "slug": "best-youth-softball-gloves",
-      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
-      "sport": "softball",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-10 run with a fresh live Amazon browser search on both remaining gaps; no change. (1) Searched 'Wilson youth softball glove synthetic' and 'Wilson youth fastpitch softball glove 10 inch'. Every Wilson fastpitch softball model in the $40-80 band runs 11\"-12\" (A440, A500, A550 Siren), which is the article's own 12U+ size band, not the 10\"-10.5\" band its sizing table assigns to 8U-10U. Linking an 11\"-12\" glove under an 8U-10U budget-pick sentence would misstate the fit the article itself promises, so still no confident single-product match. (2) Re-searched 'Louisville Slugger LXT softball glove'; Amazon returns only 'Louisville Slugger 2025 LXT' and '2024 LXT Fastpitch Bats' ($189-354, bats) plus a separate 'Louisville Slugger Omaha Baseball Gloves' line the article never named. LXT remains a bat-only line at Louisville Slugger; the article's glove claim is still unsupported by any real product. Confirms prior skip, nothing new committed.",
-      "loggedAt": "2026-08-10",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-10 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
-      "loggedAt": "2026-08-10",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-08-10 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
-      "loggedAt": "2026-08-10",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "677111",
-      "slug": "best-youth-softball-gloves",
-      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
-      "sport": "softball",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-11 run. File has no commits since 2026-08-10; content unchanged. Not re-run as a fresh live Amazon search since nothing textual changed -- prior 2026-08-10 live verification stands (Wilson $40-80 fastpitch models all run 11-12in vs. the article's 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists to link). Confirms prior skip.",
-      "loggedAt": "2026-08-11",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-11 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
-      "loggedAt": "2026-08-11",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-08-11 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
-      "loggedAt": "2026-08-11",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "677111",
-      "slug": "best-youth-softball-gloves",
-      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
-      "sport": "softball",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-12 run. File has no commits since 2026-08-09; content unchanged. Structural re-check only, no fresh live Amazon search (last live-verified 2026-08-10: Wilson $40-80 fastpitch models all run 11-12in vs. the article's 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists). Confirms prior skip.",
-      "loggedAt": "2026-08-12",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-12 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
-      "loggedAt": "2026-08-12",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-08-12 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
-      "loggedAt": "2026-08-12",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "703566",
-      "slug": "parent-coach-ethics",
-      "title": "Parent Coach Ethics: Sideline Pledge and Scripts",
-      "sport": "multi-sport",
-      "topic": "communication",
-      "reason": "New BabyLoveGrowth article, published 2026-08-12. Full read confirms zero nameable, buyable products anywhere in the piece; it's a code-of-conduct/pledge article. All outbound links are governing-body sources or internal PCD pages, protected. Not a gap in the gear-guide sense, logged here only for completeness so the article isn't re-read as 'new' on the next run.",
-      "loggedAt": "2026-08-12",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "677111",
-      "slug": "best-youth-softball-gloves",
-      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
-      "sport": "softball",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-13 run. File has no commits since 2026-08-09; content unchanged. Structural re-check only, no fresh live Amazon search (last live-verified 2026-08-10: Wilson $40-80 fastpitch models all run 11-12in vs. the article's 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists). Confirms prior skip.",
-      "loggedAt": "2026-08-13",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-13 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
-      "loggedAt": "2026-08-13",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-08-13 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
-      "loggedAt": "2026-08-13",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "724708",
-      "slug": "youth-volleyball-drills",
-      "title": "youth-volleyball-drills (title unread)",
-      "sport": "volleyball",
-      "topic": "unknown",
-      "reason": "Not a content gap. New BabyLoveGrowth article published 2026-08-16 (commit 9c91654d on origin/main) could not be pulled into this working clone this run due to persistent git lock contention from other concurrently-running agents (Cass, Dana, Penny, Discovery, Ed all committing to the same clone in the same window). Five npm run git:unlock + retry cycles over ~20 minutes all failed with 'Another git process seems to be running', recreated within seconds each time. Never forced or hand-removed a lock per the standing norm. Article body was never read, so this is not a monetization judgment, just a queue marker: first item for the next run once the clone is reachable.",
-      "loggedAt": "2026-08-16",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "677111",
-      "slug": "best-youth-softball-gloves",
-      "title": "Best Youth Softball Gloves: Sized Right for 8-12U",
-      "sport": "softball",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-16 run. File has no commits since 2026-08-09; content unchanged. Structural re-check only, no fresh live Amazon search (last live-verified 2026-08-10: Wilson $40-80 fastpitch models all run 11-12in vs. the article's 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists). Confirms prior skip.",
-      "loggedAt": "2026-08-16",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "674264",
-      "slug": "youth-sports-costs",
-      "title": "Youth Sports Costs for Parents: How to Plan and Save",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Re-checked on the 2026-08-16 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
-      "loggedAt": "2026-08-16",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-08-16 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
-      "loggedAt": "2026-08-16",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "744753",
-      "slug": "baseball-throwing-drill",
-      "title": "Baseball Throwing Drills for Youth Coaches and Parents",
-      "sport": "baseball",
-      "topic": "communication",
-      "reason": "New BabyLoveGrowth article, published 2026-08-21, never previously touched by Arnie (3-week run gap, last Arnie run was 2026-08-16). Full read confirms zero nameable, buyable products: every drill uses generic equipment (bucket, cone, wall, hula hoop) with no brand or model named anywhere in the body. Not a monetization gap in the gear-guide sense. Flagged separately for Jeff: the 'Recommended' section links to https://nextgencards.shop/blogs/collectors-guide/best-starter-baseball-card-series-for-kids-in-2026, an external retailer's own blog post (not a specific buyable product page), inserted by the BabyLoveGrowth webhook. It doesn't meet the 'buyable product' bar for competitor-link replacement under this task's scope, so left untouched, but it's an outbound content link to a commerce site Jeff may want to review independently.",
-      "loggedAt": "2026-09-07",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "736489",
-      "slug": "growth-mindset-youth-sports",
-      "title": "Growth Mindset in Youth Sports: Scripts Parents Can Use This Week",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "New BabyLoveGrowth article, published 2026-08-19, never previously touched by Arnie. Full read confirms zero nameable, buyable products; it's a scripts-and-language article (notebook, notes app, index cards mentioned only as generic tools, no brand or model named). All outbound links are research citations (AASP, PMC, Quest journal) or internal PCD pages, protected. Not a gap in the gear-guide sense, logged for completeness.",
-      "loggedAt": "2026-09-07",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "782681",
-      "slug": "team-budget-youth-sports",
-      "title": "Copyable Team Budget for Youth Sports: Table, Scripts & Calculator",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "New BabyLoveGrowth article, published 2026-08-30, never previously touched by Arnie. Full read confirms zero nameable, buyable products; this is a budgeting and money-conversation article. Even where gear is mentioned in passing ('gear guides for lower-cost equivalents'), the framing is explicitly about spending less, which is a protected no-link context under the governance rule regardless of catalog matches. All outbound links are financial-education citations (US Bank, Bank of America, New York Life, Northwestern Mutual, Providence Journal) or internal PCD pages, protected. Logged for completeness.",
-      "loggedAt": "2026-09-07",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "787226",
-      "slug": "tryout-results-email-youth",
-      "title": "Youth Tryout Results Emails: Templates + 6 Item Checklist",
-      "sport": "multi-sport",
-      "topic": "tryouts",
-      "reason": "New BabyLoveGrowth article, published 2026-08-31, never previously touched by Arnie. Full read confirms zero nameable, buyable products; it's a communication-templates article (email and phone scripts). All outbound links are third-party guidance sources (Centro, TeamGenius, Signature Locker, a training-testimonials blog) cited as reference/sourcing, not buyable product pages, so none qualify for competitor-link replacement. Logged for completeness.",
-      "loggedAt": "2026-09-07",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "679124",
-      "slug": "travel-soccer-costs",
-      "title": "Travel Soccer Costs: A Parent's Complete Budget Guide",
-      "sport": "soccer",
-      "topic": "rec-vs-travel",
-      "reason": "Re-checked on the 2026-09-07 run after a 3-week gap since the last Arnie run (2026-08-16). File changed once in the interim (2026-08-20, a dead-link fix unrelated to products) but content is otherwise the same as previously assessed: gear nouns (cleats, turf shoes, shin guards, a ball) appear only in a tournament-weekend packing note with no brand or model named, and the article's whole point is minimizing and planning for cost, which is a protected spending-less context under the governance rule regardless. No confident single-product match, skip re-confirmed.",
-      "loggedAt": "2026-09-07",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "695323",
-      "slug": "coach-vs-kid-pitch",
-      "title": "Coach Pitch vs Kid Pitch: Which Format Fits Your Child?",
-      "sport": "baseball",
-      "topic": "communication",
-      "reason": "Full read confirms zero nameable, buyable products. It's a rules-format comparison (coach pitch vs kid pitch), not a gear or buying guide. No brand, model, or specific product recommended anywhere. Skipped, not a confident match.",
-      "loggedAt": "2026-09-15",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "754004",
-      "slug": "youth-sports-playing-time",
-      "title": "Youth Sports Playing Time: A Fair Rotation Plan",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Full read confirms zero nameable, buyable products. Article is about rotation policy and playing-time fairness, no gear referenced at all. Skipped, not a confident match.",
-      "loggedAt": "2026-09-15",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "757190",
-      "slug": "parent-code-of-conduct",
-      "title": "A Parent Code of Conduct Every Family Can Actually Follow",
-      "sport": "multi-sport",
-      "topic": "game-day",
-      "reason": "Full read confirms zero nameable, buyable products. Behavior-policy article (code of conduct language, state signature requirements). No gear or products discussed. Skipped, not a confident match.",
-      "loggedAt": "2026-09-15",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "774783",
-      "slug": "dealing-with-sports-parents",
-      "title": "Dealing With Sports Parents: A Coach's Playbook That Works",
-      "sport": "multi-sport",
-      "topic": "rules-of-play",
-      "reason": "Full read confirms zero nameable, buyable products discussed in Parentcoachdesk's own voice. One outbound link to a third-party equipment-guide blog (pitchtrainingbaseball.com) is a generic content reference, not a specific product page, so it does not qualify as a competitor product link to replace. Skipped, not a confident match.",
-      "loggedAt": "2026-09-15",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "835662",
-      "slug": "post-game-talk",
-      "title": "3 Step Postgame Talk: Car Ride Scripts for Youth Sports Parents",
-      "sport": "multi-sport",
-      "topic": "communication",
-      "reason": "Full read confirms zero nameable, buyable products. Pure communication-script article (what to say in the car ride home). No gear referenced anywhere. Skipped, not a confident match.",
-      "loggedAt": "2026-09-15",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "843653",
-      "slug": "concussion-protocol-youth-sports",
-      "title": "Concussion Protocol for Youth Sports: Scripts for Parents and Coaches",
-      "sport": "multi-sport",
-      "topic": "communication",
-      "reason": "Full read confirms no confident single-product match. The article names 'durable, well-maintained gear' and 'mouth guards' only inside a passage whose explicit point is that equipment is not what prevents concussions ('no equipment...eliminates concussion risk entirely...don't market them to your team as concussion prevention'). That is a safety directive, not a purchase recommendation, so per the no-links-in-safety-directives rule this stays unlinked. The two existing outbound links (rnkapparel.com, clearretain.com) are pre-existing content/blog references, not Amazon or listed-competitor storefronts, so they are out of scope for replacement. Skipped, not a confident match.",
-      "loggedAt": "2026-09-15",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    },
-    {
-      "articleId": "854715",
-      "slug": "pregame-talk-youth-sports",
-      "title": "15 to 45 Second Pregame Talk for Youth Sports with Age Ready Scripts",
-      "sport": "multi-sport",
-      "topic": "rec-vs-travel",
-      "reason": "Article was published 2026-09-15 (commit 4344871) then dropped from main in merge bc61480; restored this run from that commit so the BLG webhook piece is not lost (live URL was 404). Full read confirms zero nameable, buyable products: scripts-and-delivery article only. Outbound links are USA Football blog and University of Essex thesis citations, protected. No affiliate links inserted.",
-      "loggedAt": "2026-09-16",
-      "loggedBy": "Arnie (babylove affiliate pass)"
-    }
-  ]
+    "schemaVersion":  1,
+    "description":  "Babylove articles the daily affiliate-insert pass (Arnie) looked at and did NOT link, because no existing src/data/affiliates.json slug was a confident single-product match. Logged here so the pass doesn\u0027t re-consider the same article every day, and so Jeff or the weekly Arnie sourcing run can decide whether a new affiliates.json entry is worth adding. Adding to this file never touches affiliates.json or article content.",
+    "entries":  [
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Gear nouns (bat, cleats, gloves) appear only inside a used/secondhand-equipment tip (\u0027Borrow or buy used equipment... A $400 bat used twice is still a $400 bat\u0027). Inserting a new-product affiliate link into advice to buy used would contradict the article\u0027s own point. No single specific product is being recommended anywhere else in the piece. Skipped, not a confident match.",
+                        "loggedAt":  "2026-08-04",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Gear nouns (cleats, turf shoes, shin guards, ball) appear only in passing checklist/packing-list mentions (\u0027Equipment replacement (cleats, shin guards, ball)\u0027 in the annual cost checklist, and a tournament-weekend packing list). No specific product is discussed substantively anywhere in the piece, which is a budgeting and cost-planning guide, not a gear guide. No confident match, skipped.",
+                        "loggedAt":  "2026-08-06",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-08-09 backfill pass. No change since the 2026-08-06 entry: still no substantive single-product recommendation, gear nouns still only appear in checklist item 10 and the tournament packing note. Confirms prior skip rather than re-linking.",
+                        "loggedAt":  "2026-08-09",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-09 backfill pass. This file no longer carries an externalSource marker (Codex normalized/source-reviewed it 2026-08-02), but it is the same BabyLove-origin article referenced in the 2026-08-04 gap entry above and stays in the BabyLove backlog. Gear nouns still appear only inside a used/secondhand-equipment tip (\u0027Borrow or buy used equipment... A $400 bat used twice is still a $400 bat\u0027, a no-link context per the used/secondhand rule) and a generic \u0027cleats, bats, and gloves\u0027 mention in an end-of-season-sale Pro Tip with no brand or model named. No confident single-product match, skipped.",
+                        "loggedAt":  "2026-08-09",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "677111",
+                        "slug":  "best-youth-softball-gloves",
+                        "title":  "Best Youth Softball Gloves: Sized Right for 8-12U",
+                        "sport":  "softball",
+                        "topic":  "game-day",
+                        "reason":  "Partial-article gap, not skipped entirely (article carries 2 links as of 2026-08-09: softball-glove-11in and baseball-glove-breakin-kit). Two other product mentions checked and left unlinked. (1) \u0027Best budget pick (rec play, 8U-10U): Entry-level synthetic glove from Wilson or Rawlings, $40-80 range\u0027 names two brands with no single model; searched Amazon for a Wilson youth synthetic softball glove in that price/age band and found only adult slowpitch (A360, $43.73) or a competitive 11.75-12.5in fastpitch model (A500 Siren, $67.40) that doesn\u0027t match the 10U-age sizing the text implies, so no confident single-product match. (2) \u0027Best for travel/competitive 12U+: Louisville Slugger LXT series\u0027 could not be sourced: Louisville Slugger\u0027s LXT line is a fastpitch bat, not a glove (confirmed via Amazon search, top result \u0027Louisville Slugger 2025 LXT\u0027 bat, $353.83); no Louisville Slugger glove called LXT exists to link, and the article\u0027s own product name appears to be in error. Not linking a bat under a sentence about gloves, and not guessing a substitute glove the article didn\u0027t name.",
+                        "loggedAt":  "2026-08-09",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "677111",
+                        "slug":  "best-youth-softball-gloves",
+                        "title":  "Best Youth Softball Gloves: Sized Right for 8-12U",
+                        "sport":  "softball",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-10 run with a fresh live Amazon browser search on both remaining gaps; no change. (1) Searched \u0027Wilson youth softball glove synthetic\u0027 and \u0027Wilson youth fastpitch softball glove 10 inch\u0027. Every Wilson fastpitch softball model in the $40-80 band runs 11\"-12\" (A440, A500, A550 Siren), which is the article\u0027s own 12U+ size band, not the 10\"-10.5\" band its sizing table assigns to 8U-10U. Linking an 11\"-12\" glove under an 8U-10U budget-pick sentence would misstate the fit the article itself promises, so still no confident single-product match. (2) Re-searched \u0027Louisville Slugger LXT softball glove\u0027; Amazon returns only \u0027Louisville Slugger 2025 LXT\u0027 and \u00272024 LXT Fastpitch Bats\u0027 ($189-354, bats) plus a separate \u0027Louisville Slugger Omaha Baseball Gloves\u0027 line the article never named. LXT remains a bat-only line at Louisville Slugger; the article\u0027s glove claim is still unsupported by any real product. Confirms prior skip, nothing new committed.",
+                        "loggedAt":  "2026-08-10",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-10 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
+                        "loggedAt":  "2026-08-10",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-08-10 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
+                        "loggedAt":  "2026-08-10",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "677111",
+                        "slug":  "best-youth-softball-gloves",
+                        "title":  "Best Youth Softball Gloves: Sized Right for 8-12U",
+                        "sport":  "softball",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-11 run. File has no commits since 2026-08-10; content unchanged. Not re-run as a fresh live Amazon search since nothing textual changed -- prior 2026-08-10 live verification stands (Wilson $40-80 fastpitch models all run 11-12in vs. the article\u0027s 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists to link). Confirms prior skip.",
+                        "loggedAt":  "2026-08-11",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-11 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
+                        "loggedAt":  "2026-08-11",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-08-11 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
+                        "loggedAt":  "2026-08-11",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "677111",
+                        "slug":  "best-youth-softball-gloves",
+                        "title":  "Best Youth Softball Gloves: Sized Right for 8-12U",
+                        "sport":  "softball",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-12 run. File has no commits since 2026-08-09; content unchanged. Structural re-check only, no fresh live Amazon search (last live-verified 2026-08-10: Wilson $40-80 fastpitch models all run 11-12in vs. the article\u0027s 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists). Confirms prior skip.",
+                        "loggedAt":  "2026-08-12",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-12 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
+                        "loggedAt":  "2026-08-12",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-08-12 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
+                        "loggedAt":  "2026-08-12",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "703566",
+                        "slug":  "parent-coach-ethics",
+                        "title":  "Parent Coach Ethics: Sideline Pledge and Scripts",
+                        "sport":  "multi-sport",
+                        "topic":  "communication",
+                        "reason":  "New BabyLoveGrowth article, published 2026-08-12. Full read confirms zero nameable, buyable products anywhere in the piece; it\u0027s a code-of-conduct/pledge article. All outbound links are governing-body sources or internal PCD pages, protected. Not a gap in the gear-guide sense, logged here only for completeness so the article isn\u0027t re-read as \u0027new\u0027 on the next run.",
+                        "loggedAt":  "2026-08-12",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "677111",
+                        "slug":  "best-youth-softball-gloves",
+                        "title":  "Best Youth Softball Gloves: Sized Right for 8-12U",
+                        "sport":  "softball",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-13 run. File has no commits since 2026-08-09; content unchanged. Structural re-check only, no fresh live Amazon search (last live-verified 2026-08-10: Wilson $40-80 fastpitch models all run 11-12in vs. the article\u0027s 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists). Confirms prior skip.",
+                        "loggedAt":  "2026-08-13",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-13 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
+                        "loggedAt":  "2026-08-13",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-08-13 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
+                        "loggedAt":  "2026-08-13",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "724708",
+                        "slug":  "youth-volleyball-drills",
+                        "title":  "youth-volleyball-drills (title unread)",
+                        "sport":  "volleyball",
+                        "topic":  "unknown",
+                        "reason":  "Not a content gap. New BabyLoveGrowth article published 2026-08-16 (commit 9c91654d on origin/main) could not be pulled into this working clone this run due to persistent git lock contention from other concurrently-running agents (Cass, Dana, Penny, Discovery, Ed all committing to the same clone in the same window). Five npm run git:unlock + retry cycles over ~20 minutes all failed with \u0027Another git process seems to be running\u0027, recreated within seconds each time. Never forced or hand-removed a lock per the standing norm. Article body was never read, so this is not a monetization judgment, just a queue marker: first item for the next run once the clone is reachable.",
+                        "loggedAt":  "2026-08-16",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "677111",
+                        "slug":  "best-youth-softball-gloves",
+                        "title":  "Best Youth Softball Gloves: Sized Right for 8-12U",
+                        "sport":  "softball",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-16 run. File has no commits since 2026-08-09; content unchanged. Structural re-check only, no fresh live Amazon search (last live-verified 2026-08-10: Wilson $40-80 fastpitch models all run 11-12in vs. the article\u0027s 8U-10U/10-10.5in band; Louisville Slugger LXT is a bat-only line, no LXT glove exists). Confirms prior skip.",
+                        "loggedAt":  "2026-08-16",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674264",
+                        "slug":  "youth-sports-costs",
+                        "title":  "Youth Sports Costs for Parents: How to Plan and Save",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Re-checked on the 2026-08-16 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only inside the used/secondhand-equipment tip and a generic end-of-season Pro Tip with no brand or model named. No confident single-product match, skipped.",
+                        "loggedAt":  "2026-08-16",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-08-16 run. File has no commits since the 2026-08-09 re-check; content unchanged. Gear nouns still appear only in the annual cost checklist and tournament packing list, no substantive single-product recommendation anywhere in the piece. No confident match, skipped.",
+                        "loggedAt":  "2026-08-16",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "744753",
+                        "slug":  "baseball-throwing-drill",
+                        "title":  "Baseball Throwing Drills for Youth Coaches and Parents",
+                        "sport":  "baseball",
+                        "topic":  "communication",
+                        "reason":  "New BabyLoveGrowth article, published 2026-08-21, never previously touched by Arnie (3-week run gap, last Arnie run was 2026-08-16). Full read confirms zero nameable, buyable products: every drill uses generic equipment (bucket, cone, wall, hula hoop) with no brand or model named anywhere in the body. Not a monetization gap in the gear-guide sense. Flagged separately for Jeff: the \u0027Recommended\u0027 section links to https://nextgencards.shop/blogs/collectors-guide/best-starter-baseball-card-series-for-kids-in-2026, an external retailer\u0027s own blog post (not a specific buyable product page), inserted by the BabyLoveGrowth webhook. It doesn\u0027t meet the \u0027buyable product\u0027 bar for competitor-link replacement under this task\u0027s scope, so left untouched, but it\u0027s an outbound content link to a commerce site Jeff may want to review independently.",
+                        "loggedAt":  "2026-09-07",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "736489",
+                        "slug":  "growth-mindset-youth-sports",
+                        "title":  "Growth Mindset in Youth Sports: Scripts Parents Can Use This Week",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "New BabyLoveGrowth article, published 2026-08-19, never previously touched by Arnie. Full read confirms zero nameable, buyable products; it\u0027s a scripts-and-language article (notebook, notes app, index cards mentioned only as generic tools, no brand or model named). All outbound links are research citations (AASP, PMC, Quest journal) or internal PCD pages, protected. Not a gap in the gear-guide sense, logged for completeness.",
+                        "loggedAt":  "2026-09-07",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "782681",
+                        "slug":  "team-budget-youth-sports",
+                        "title":  "Copyable Team Budget for Youth Sports: Table, Scripts \u0026 Calculator",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "New BabyLoveGrowth article, published 2026-08-30, never previously touched by Arnie. Full read confirms zero nameable, buyable products; this is a budgeting and money-conversation article. Even where gear is mentioned in passing (\u0027gear guides for lower-cost equivalents\u0027), the framing is explicitly about spending less, which is a protected no-link context under the governance rule regardless of catalog matches. All outbound links are financial-education citations (US Bank, Bank of America, New York Life, Northwestern Mutual, Providence Journal) or internal PCD pages, protected. Logged for completeness.",
+                        "loggedAt":  "2026-09-07",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "787226",
+                        "slug":  "tryout-results-email-youth",
+                        "title":  "Youth Tryout Results Emails: Templates + 6 Item Checklist",
+                        "sport":  "multi-sport",
+                        "topic":  "tryouts",
+                        "reason":  "New BabyLoveGrowth article, published 2026-08-31, never previously touched by Arnie. Full read confirms zero nameable, buyable products; it\u0027s a communication-templates article (email and phone scripts). All outbound links are third-party guidance sources (Centro, TeamGenius, Signature Locker, a training-testimonials blog) cited as reference/sourcing, not buyable product pages, so none qualify for competitor-link replacement. Logged for completeness.",
+                        "loggedAt":  "2026-09-07",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "679124",
+                        "slug":  "travel-soccer-costs",
+                        "title":  "Travel Soccer Costs: A Parent\u0027s Complete Budget Guide",
+                        "sport":  "soccer",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Re-checked on the 2026-09-07 run after a 3-week gap since the last Arnie run (2026-08-16). File changed once in the interim (2026-08-20, a dead-link fix unrelated to products) but content is otherwise the same as previously assessed: gear nouns (cleats, turf shoes, shin guards, a ball) appear only in a tournament-weekend packing note with no brand or model named, and the article\u0027s whole point is minimizing and planning for cost, which is a protected spending-less context under the governance rule regardless. No confident single-product match, skip re-confirmed.",
+                        "loggedAt":  "2026-09-07",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "695323",
+                        "slug":  "coach-vs-kid-pitch",
+                        "title":  "Coach Pitch vs Kid Pitch: Which Format Fits Your Child?",
+                        "sport":  "baseball",
+                        "topic":  "communication",
+                        "reason":  "Full read confirms zero nameable, buyable products. It\u0027s a rules-format comparison (coach pitch vs kid pitch), not a gear or buying guide. No brand, model, or specific product recommended anywhere. Skipped, not a confident match.",
+                        "loggedAt":  "2026-09-15",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "754004",
+                        "slug":  "youth-sports-playing-time",
+                        "title":  "Youth Sports Playing Time: A Fair Rotation Plan",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Full read confirms zero nameable, buyable products. Article is about rotation policy and playing-time fairness, no gear referenced at all. Skipped, not a confident match.",
+                        "loggedAt":  "2026-09-15",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "757190",
+                        "slug":  "parent-code-of-conduct",
+                        "title":  "A Parent Code of Conduct Every Family Can Actually Follow",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Full read confirms zero nameable, buyable products. Behavior-policy article (code of conduct language, state signature requirements). No gear or products discussed. Skipped, not a confident match.",
+                        "loggedAt":  "2026-09-15",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "774783",
+                        "slug":  "dealing-with-sports-parents",
+                        "title":  "Dealing With Sports Parents: A Coach\u0027s Playbook That Works",
+                        "sport":  "multi-sport",
+                        "topic":  "rules-of-play",
+                        "reason":  "Full read confirms zero nameable, buyable products discussed in Parentcoachdesk\u0027s own voice. One outbound link to a third-party equipment-guide blog (pitchtrainingbaseball.com) is a generic content reference, not a specific product page, so it does not qualify as a competitor product link to replace. Skipped, not a confident match.",
+                        "loggedAt":  "2026-09-15",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "835662",
+                        "slug":  "post-game-talk",
+                        "title":  "3 Step Postgame Talk: Car Ride Scripts for Youth Sports Parents",
+                        "sport":  "multi-sport",
+                        "topic":  "communication",
+                        "reason":  "Full read confirms zero nameable, buyable products. Pure communication-script article (what to say in the car ride home). No gear referenced anywhere. Skipped, not a confident match.",
+                        "loggedAt":  "2026-09-15",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "843653",
+                        "slug":  "concussion-protocol-youth-sports",
+                        "title":  "Concussion Protocol for Youth Sports: Scripts for Parents and Coaches",
+                        "sport":  "multi-sport",
+                        "topic":  "communication",
+                        "reason":  "Full read confirms no confident single-product match. The article names \u0027durable, well-maintained gear\u0027 and \u0027mouth guards\u0027 only inside a passage whose explicit point is that equipment is not what prevents concussions (\u0027no equipment...eliminates concussion risk entirely...don\u0027t market them to your team as concussion prevention\u0027). That is a safety directive, not a purchase recommendation, so per the no-links-in-safety-directives rule this stays unlinked. The two existing outbound links (rnkapparel.com, clearretain.com) are pre-existing content/blog references, not Amazon or listed-competitor storefronts, so they are out of scope for replacement. Skipped, not a confident match.",
+                        "loggedAt":  "2026-09-15",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "854715",
+                        "slug":  "pregame-talk-youth-sports",
+                        "title":  "15 to 45 Second Pregame Talk for Youth Sports with Age Ready Scripts",
+                        "sport":  "multi-sport",
+                        "topic":  "rec-vs-travel",
+                        "reason":  "Article was published 2026-09-15 (commit 4344871) then dropped from main in merge bc61480; restored this run from that commit so the BLG webhook piece is not lost (live URL was 404). Full read confirms zero nameable, buyable products: scripts-and-delivery article only. Outbound links are USA Football blog and University of Essex thesis citations, protected. No affiliate links inserted.",
+                        "loggedAt":  "2026-09-16",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "864147",
+                        "slug":  "motivating-kids-in-sports",
+                        "title":  "3 Postgame Scripts to Motivate Kids in Sports for Parent Coaches",
+                        "sport":  "multi-sport",
+                        "topic":  "communication",
+                        "reason":  "New BabyLoveGrowth article (articleId 864147, publish commit cf7a8916). Full read confirms zero nameable buyable products: communication/scripts and motivation piece only. Outbound links are research/governing-body citations (Frontiers, PMC, SHAPE America PDF, CDC) plus internal PCD pages; protected under reference_links_protected. No competitor product storefront links. No affiliate links inserted.",
+                        "loggedAt":  "2026-09-17",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    },
+                    {
+                        "articleId":  "674402",
+                        "slug":  "best-kids-shin-guards",
+                        "title":  "Best Kids Shin Guards: Fit, Comfort, and Stays Put",
+                        "sport":  "multi-sport",
+                        "topic":  "game-day",
+                        "reason":  "Partial gap after 2026-09-17 monetization pass. (1) Nike Youth Charge Shin Guard: Amazon candidates B019YDL566, B07SR4QDG6, B07LBHN68P, B072MGYLVP all loaded in Chrome this run with matching titles but buy-box outOfStock / no Add to Cart; left Nike.com competitor product links in place. (2) Hackk Soccer Youth Shin Guards: no Amazon listing found (brand site only; web search and product checks); left hackksoccer.com competitor links. (3) Northdeer / Airsfish / Toddler Shin Pads Set / G-Form Pro-S Youth / Nike Mercurial and other table rows: no new ASIN sourced this run (8-link cap and focus on named shortlist picks). Revisit when Nike Charge restocks or Hackk lands on Amazon.",
+                        "loggedAt":  "2026-09-17",
+                        "loggedBy":  "Arnie (babylove affiliate pass)"
+                    }
+                ]
 }

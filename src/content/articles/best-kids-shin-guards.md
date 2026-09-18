@@ -22,22 +22,22 @@ editorial:
   status: published
   citationCheckPassed: false
   affiliateDisclosurePresent: true
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 2 existing-catalog link(s), soccer-shin-guards-youth on the slip-in shields category description, soccer-shin-guards-ankle-youth on the ankle guards with stirrups category description, plus the required FTC affiliate disclosure sentence in the body. No new affiliates.json entries created; slug(s) pre-existed and were already approved for the site."
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 2 existing-catalog link(s). Arnie (babylove affiliate pass, 2026-09-17): added 3 new Amazon catalog entries (g-form-v2-shin-guards-youth, vizari-malaga-shin-guards-youth, adidas-youth-sock-shin-guards), replaced G-Form competitor product links with affiliate redirects, linked Vizari and adidas sock picks, left Nike Charge and Hackk competitor links (Amazon OOS / no Amazon listing), moved FTC disclosure to top with AFFILIATES.md exact sentence."
 ---
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
-The **[G-Form V2 Soccer Shin Guard (Youth)](https://g-form.com/products/v2-soccer-shin-guard-youth)** is the best overall pick for most kids, balancing certified impact protection with a slim, comfortable fit that children actually keep on. For parents who need a quick shortlist right now:
+The **[G-Form V2 Soccer Shin Guard (Youth)](/go/g-form-v2-shin-guards-youth/)** is the best overall pick for most kids, balancing certified impact protection with a slim, comfortable fit that children actually keep on. For parents who need a quick shortlist right now:
 
 - **Best overall:** G-Form V2 Soccer Shin Guard (Youth) — SmartFlex technology stays flexible during play, hardens on impact, machine-washable sleeve
 - **Best hard-shell protection:** [Nike Youth Charge Shin Guard](https://www.nike.com/t/charge-kids-soccer-shin-guards-HhL7nH) — durable plastic shell, foam backing, NOCSAE-approved on select models
-- **Best budget:** Vizari youth shin guards or Northdeer Soccer shin guards — both under $15, solid for recreational play
-- **Best ankle support:** adidas Kids' Performance Youth Sock Shin Guards or the Toddler Shin Pads Set with Sleeves and Long Soccer Socks — integrated ankle padding and stirrups keep guards in place for younger players
+- **Best budget:** [Vizari youth shin guards](/go/vizari-malaga-shin-guards-youth/) or Northdeer Soccer shin guards — both under $15, solid for recreational play
+- **Best ankle support:** [adidas Kids' Performance Youth Sock Shin Guards](/go/adidas-youth-sock-shin-guards/) or the Toddler Shin Pads Set with Sleeves and Long Soccer Socks — integrated ankle padding and stirrups keep guards in place for younger players
 - **Best for growing kids:** [Hackk Soccer Youth Shin Guards](https://www.hackksoccer.com/products/hackk-soccer-shin-guards) — contoured EVA foam backing at a price that makes seasonal replacement painless
 
 Under FIFA Law 4, shin guards must be covered by socks and provide reasonable protection. Lower-leg injuries in youth soccer can sideline a child for anywhere from two days to four weeks, so the right guard matters. The size rule that cuts through all the confusion: measure from the top of the ankle bone to about 2 inches below the knee, then match that length to the brand's size chart.
 
 **Pro Tip:** *Let your child pick the color or style. A kid who chose their own gear is far more likely to put it on without a fight before every game.*
 
-*This post contains affiliate links. If you buy through them, Parent Coach Desk earns a small commission at no extra cost to you.*
 
 ***
 
@@ -60,11 +60,11 @@ Retailer roundups consistently name a short list of guards across three price ba
 
 | Product | Best for | Protection technology | Fit & sizing | Ankle support | Comfort | Price |
 |---|---|---|---|---|---|---|
-| [G-Form V2 Soccer Shin Guard (Youth)](https://g-form.com/products/v2-soccer-shin-guard-youth) | Midfielders, speedy players wanting mobility | SmartFlex impact-absorbing (hardens on impact) | Integrated compression sleeve; youth S–XL | No | Breathable, moisture-wicking, low bulk | $$ |
+| [G-Form V2 Soccer Shin Guard (Youth)](/go/g-form-v2-shin-guards-youth/) | Midfielders, speedy players wanting mobility | SmartFlex impact-absorbing (hardens on impact) | Integrated compression sleeve; youth S–XL | No | Breathable, moisture-wicking, low bulk | $$ |
 | [Nike Youth Charge Shin Guard](https://www.nike.com/t/charge-kids-soccer-shin-guards-HhL7nH) | Defenders, physical players | Hard plastic shell + foam back | Strap closure; standard youth sizing | No | Foam-backed, lightweight shell | $$ |
 | [Hackk Soccer Youth Shin Guards](https://www.hackksoccer.com/products/hackk-soccer-shin-guards) | Parents prioritizing stay-put comfort | Hard shell + EVA foam backing | Contoured shape; youth-specific | No | EVA foam, ergonomic contour | $ |
 | Northdeer Soccer shin guards | Families buying multiple pairs | Basic hard shell | Standard slip-in; youth/adult combo | No | Basic padding | $ |
-| Vizari youth shin guards | Budget shoppers, recreational play | Basic hard shell | Slip-in or sleeve bundle | No | Light padding | $ |
+| [Vizari youth shin guards](/go/vizari-malaga-shin-guards-youth/) | Budget shoppers, recreational play | Basic hard shell | Slip-in or sleeve bundle | No | Light padding | $ |
 | Airsfish Shin Guards | Multi-child families, casual play | Basic slip-in shell | Sleeve combo; youth sizes | No | Minimal padding | $ |
 | adidas Kids' Performance Youth Sock Shin Guards | Parents wanting brand sizing + ankle cover | Hard shell + sock integration | Sock-integrated; youth sizes | Yes (integrated) | Foam ankle padding | $$ |
 | adidas Youth Tiro / adidas Youth X Shin Guards | Familiar brand, retailer availability | Hard shell + EVA backing | Slip-in or strap; youth sizes | Some models | EVA backing | $$ |
