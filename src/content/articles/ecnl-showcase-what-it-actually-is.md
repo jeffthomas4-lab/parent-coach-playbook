@@ -11,6 +11,8 @@ seasonPhase: "mid"
 sport: "soccer"
 age: "15-plus"
 publishedAt: 2026-09-28
+hero: "/illustrations/two-coaches-sideline-clipboards.webp"
+heroAlt: "Two coaches standing on a soccer sideline at dusk, looking down at clipboards, players blurred in the distance."
 featured: false
 draft: true
 editorial:

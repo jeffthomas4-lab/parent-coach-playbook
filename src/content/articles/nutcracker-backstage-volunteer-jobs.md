@@ -12,6 +12,8 @@ seasonPhase: "mid"
 sport: "ballet"
 age: "all-ages"
 publishedAt: 2026-10-01
+hero: "/illustrations/theater-costume-rack-backstage.webp"
+heroAlt: "A costume rack hanging in a dim backstage hallway with work lights and empty garment bags."
 featured: false
 draft: true
 editorial:
