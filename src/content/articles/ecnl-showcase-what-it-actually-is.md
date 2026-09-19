@@ -24,9 +24,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-18
-  status: draft
+  status: published
   factCheckGoodThrough: 2027-09-18
-  reviewerNotes: "Date lane, target 2026-09-28. Verified ECNL 2026-27 fall events against theecnl.com schedule pages and June 3 2026 ECNL event-schedule announcement: ECNL San Diego and ECNL North Carolina Fall both Oct 10-12 2026; ECNL lists 13 recruitable national events for the season. Differentiated from multi-sport recruiting-etiquette article and soccer-recruiting timeline article. No hero this run."
+  reviewerNotes: "PASS scheduled (publishedAt 2026-09-28): A/B/C/E pass. Verified ECNL San Diego and North Carolina Fall Oct 10-12 2026 and 13 recruitable national events via theecnl.com 2026-27 schedule and June 3 2026 announcement. Dek 14 words. Leave draft:true until date."
 ---
 
 Someone on the parent chat calls the October weekend "the tryout," and someone else swears college coaches will walk over after the first whistle. Neither claim is how an ECNL fall event works. Wrong.

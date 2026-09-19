@@ -18,7 +18,7 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-18
-  status: draft
+  status: ready-for-jeff
   factCheckGoodThrough: 2027-04-01
-  reviewerNotes: "Event lane / Rules Watch PIPELINE (CONTENT_ROADMAP.md, USA Wrestling/NFHS body-fat row). Verified against nfhs.org April 16 2026 press release: female minimum body fat raised from 12% to 19% for 2026-27; weight-control rules 1-5-1 and 1-5-2; backed by NFHS SMAC and NWCA input. Cross-checked themat.com USA Wrestling reprint of the same release. flagSensitiveTopic true (weight/body composition for minors). Differentiated from weigh-in-morning-what-wrestling-parents-need-to-know.md (logistics, not this rule). Penny: consider ready-for-jeff routing given SENS flag. News collection has no hero field."
+  reviewerNotes: "HOLD ready-for-jeff: flagSensitiveTopic true (weight/body-composition rule for minors). Facts check out against nfhs.org 2026-27 wrestling release (12% to 19%, rules 1-5-1/1-5-2). Do not publish without Jeff clearance. publishedAt 2026-10-10 remains future."
 ---

@@ -25,10 +25,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-09-16
-  status: published
+  claudeReviewedAt: 2026-09-18
+  status: needs-revision
   factCheckGoodThrough: 2027-09-16
-  reviewerNotes: "PASS scheduled: voice A/B/C/E clean; USASF Nov season open matches seasonCalendars/all-star-cheer-year-round; hero verified; publish 2026-09-25."
+  reviewerNotes: "FAIL A6 sentence rhythm: three consecutive sentences within five words of each other: \"Skip scoring the marketing.\" (4) / \"Know rehearsal from season.\" (4) / \"How competition day will feel different.\" (6). Break the run before republish. Prior scheduled PASS vacated 2026-09-18."
 ---
 
 Your gym texts that the October parent night is next Saturday. Someone on the parent chat already called it the first competition of the year.

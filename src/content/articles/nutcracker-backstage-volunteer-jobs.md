@@ -25,9 +25,9 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-18
-  status: draft
+  status: published
   factCheckGoodThrough: 2027-09-18
-  reviewerNotes: "Date lane, target 2026-10-01. Anchored to studio-ballet-nutcracker-year calendar October volunteer note. Differentiated from dancer-side Nutcracker season article. Parallel genre to marching-band volunteer jobs piece. No hero this run."
+  reviewerNotes: "PASS scheduled (publishedAt 2026-10-01): A/B/C/E pass. Anchored to studio-ballet-nutcracker-year October volunteer timing; general studio logistics, no stale rule claims. Dek 13 words. Leave draft:true until date."
 ---
 
 The cast list went up in September, October weekend rehearsals are already on the calendar, and then the studio parent email lands with a volunteer signup link and four tabs of empty slots. Backstage parents run the show. Artistic staff cannot cover every dressing room alone.
