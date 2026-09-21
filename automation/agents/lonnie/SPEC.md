@@ -6,7 +6,7 @@
 **Built from:** `automation/SKILL-TEMPLATE.md` (the nine fields), `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those.
 **Live scheduled task:** `pcd-link-earning`, Wednesday 7:15 AM.
 
-**Status per the roster rule.** `automation/agents/ROSTER-RECONCILIATION.md` (Jeff, 2026-07-29) settled that the scheduled task is the source of truth and the SPEC is a design record. This file is that design record. If this file and `C:\Users\jeffthomas\the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` disagree, the task is what actually ran. Changing how Lonnie works means editing both.
+**Status per the roster rule.** `automation/agents/ROSTER-RECONCILIATION.md` (Jeff, 2026-07-29) settled that the scheduled task is the source of truth and the SPEC is a design record. This file is that design record. If this file and `C:\Users\jeffthomas\this git-tracked SKILL.md (Grok Bot is the scheduler)` disagree, the task is what actually ran. Changing how Lonnie works means editing both.
 
 ---
 

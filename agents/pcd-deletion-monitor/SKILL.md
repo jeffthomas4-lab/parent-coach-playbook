@@ -9,7 +9,7 @@ action_class: Stage
 risk: R2
 ---
 
-This is the git-tracked source for the `pcd-deletion-monitor` scheduled task, per PCD Operating Manual section 4.3. The scheduled-task copy under `the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` is a deployment of this file. Edit here first, commit, then redeploy.
+This is the git-tracked source for the `pcd-deletion-monitor` scheduled task, per PCD Operating Manual section 4.3. Grok Bot PCD routine `pcd-deletion-monitor-vera` is the scheduler; this git-tracked SKILL.md is the procedure. Edit here first, commit, and the next Vera run picks it up.
 
 This is an automated run of a scheduled task. The user is not present. Execute autonomously without asking questions, make reasonable choices, and note them. Only take a write action (send, post, create, update, delete) if this file explicitly asks for it. When in doubt, the correct output is a report of what you found. End your response with `<run-summary>one or two sentences on what you found and whether anything changed since the last run</run-summary>`.
 

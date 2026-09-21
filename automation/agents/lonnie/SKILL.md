@@ -2,7 +2,7 @@
 
 **Agent:** Lonnie (link earning and authority, PCD)
 **Governs:** the authority half of S1, run to `SPEC.md` in this folder.
-**Live task:** `pcd-link-earning`, Wednesday 7:15 AM. The task's own `SKILL.md` under `the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` is what actually executes. This file is the version-controlled copy required by `automation/SKILL-TEMPLATE.md`. **Editing one means editing the other.** If they drift, the task is what ran.
+**Live task:** `pcd-link-earning`, Wednesday 7:15 AM. The task's own `SKILL.md` in this repo is what actually executes. This file is the version-controlled copy required by `automation/SKILL-TEMPLATE.md`. **Editing one means editing the other.** If they drift, the task is what ran.
 
 ---
 

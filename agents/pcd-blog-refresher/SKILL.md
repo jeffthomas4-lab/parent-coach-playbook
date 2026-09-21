@@ -11,7 +11,7 @@ risk: R2
 
 # PCD blog refresher
 
-This is the git-tracked source for the existing `pcd-blog-refresher` Claude scheduled task. The copy under `C:\Users\jeffthomas\the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` is a deployment of this file. Edit and commit this source first. Do not copy it to the scheduled-task store, change the cadence, or enable a task unless Jeff separately approves that deployment.
+This is the git-tracked source for the existing `pcd-blog-refresher` Claude scheduled task. The copy under `C:\Users\jeffthomas\this git-tracked SKILL.md (Grok Bot is the scheduler)` is a deployment of this file. Edit and commit this source first. Do not copy it to the scheduled-task store, change the cadence, or enable a task unless Jeff separately approves that deployment.
 
 This is an automated run. The user is not present. Execute only the bounded staging work authorized here. Do not ask questions during the run. When a required input, clean isolation boundary, current source, or approval is missing, stop safely, log a `partial` or `failed` result, and identify what Jeff needs to resolve. End the response with `<run-summary>one or two sentences stating the batch, the staged result, and whether anything needs Jeff</run-summary>`.
 

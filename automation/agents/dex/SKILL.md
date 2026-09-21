@@ -2,7 +2,7 @@
 
 **Agent:** Dex (directory index policy, PCD)
 **Governs:** the SEO half of S8, run to `SPEC.md` in this folder.
-**Live task:** `pcd-directory-index-policy`, day 4 of each month, 7:45 AM. The task's own `SKILL.md` under `the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` is what actually executes. This file is the version-controlled copy required by `automation/SKILL-TEMPLATE.md`. **Editing one means editing the other.** If they drift, the task is what ran.
+**Live task:** `pcd-directory-index-policy`, day 4 of each month, 7:45 AM. The task's own `SKILL.md` in this repo is what actually executes. This file is the version-controlled copy required by `automation/SKILL-TEMPLATE.md`. **Editing one means editing the other.** If they drift, the task is what ran.
 
 ---
 
