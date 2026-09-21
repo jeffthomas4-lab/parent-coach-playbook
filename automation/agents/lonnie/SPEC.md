@@ -1,4 +1,4 @@
-# Lonnie — link earning and authority (PCD)
+﻿# Lonnie â€” link earning and authority (PCD)
 
 **Built:** 2026-07-31.
 **Workstream:** S1 (SEO and distribution), under Nora. Lonnie owns the authority half of S1; Nora keeps the measurement and indexing half.
@@ -6,7 +6,7 @@
 **Built from:** `automation/SKILL-TEMPLATE.md` (the nine fields), `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those.
 **Live scheduled task:** `pcd-link-earning`, Wednesday 7:15 AM.
 
-**Status per the roster rule.** `automation/agents/ROSTER-RECONCILIATION.md` (Jeff, 2026-07-29) settled that the scheduled task is the source of truth and the SPEC is a design record. This file is that design record. If this file and `C:\Users\jeffthomas\Documents\Claude\Scheduled\pcd-link-earning\SKILL.md` disagree, the task is what actually ran. Changing how Lonnie works means editing both.
+**Status per the roster rule.** `automation/agents/ROSTER-RECONCILIATION.md` (Jeff, 2026-07-29) settled that the scheduled task is the source of truth and the SPEC is a design record. This file is that design record. If this file and `C:\Users\jeffthomas\the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` disagree, the task is what actually ran. Changing how Lonnie works means editing both.
 
 ---
 
@@ -22,11 +22,11 @@ Weekly, Wednesday 7:15 AM (`pcd-link-earning`). Manual runs any time Jeff wants 
 
 ## 3. Inputs
 
-- `reports/seo/outreach/targets.json` — Lonnie's own state file and the pipeline of record.
-- `reports/seo/outreach-batch-1-2026-07-13.md` — the 15 original targets, migrated into the state file on first run.
-- `ORGANIC-SEARCH-AUDIT.md` — root causes 1 and 2, which set the strategy.
-- `SEO-OS-ARCHITECTURE.md` — the system Lonnie is part of.
-- `About Me/Anti AI Writing.txt` — read before writing one word of pitch copy.
+- `reports/seo/outreach/targets.json` â€” Lonnie's own state file and the pipeline of record.
+- `reports/seo/outreach-batch-1-2026-07-13.md` â€” the 15 original targets, migrated into the state file on first run.
+- `ORGANIC-SEARCH-AUDIT.md` â€” root causes 1 and 2, which set the strategy.
+- `SEO-OS-ARCHITECTURE.md` â€” the system Lonnie is part of.
+- `About Me/Anti AI Writing.txt` â€” read before writing one word of pitch copy.
 - Live GSC Links report for `sc-domain:parentcoachdesk.com`.
 - The prior run's report in `reports/seo/outreach/`.
 

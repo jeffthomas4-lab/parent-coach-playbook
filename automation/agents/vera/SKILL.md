@@ -1,4 +1,4 @@
-# Vera's skill: pointer and reconciliation record
+﻿# Vera's skill: pointer and reconciliation record
 
 **Agent:** Vera (Compliance, PCD)
 **This is not the skill file.** The file that runs is `agents/pcd-deletion-monitor/SKILL.md` (v1.2, last edited 2026-07-15), deployed to the scheduled task `pcd-deletion-monitor`, daily 7:04 AM, enabled, last run 2026-07-15 07:05.
@@ -16,7 +16,7 @@ So the convention bends and the file stays where it runs. `SPEC.md` in this fold
 | Thing | Location |
 |---|---|
 | The skill that runs | `agents/pcd-deletion-monitor/SKILL.md` |
-| The deployed copy | `Documents\Claude\Scheduled\pcd-deletion-monitor\SKILL.md` |
+| The deployed copy | `the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` |
 | Her spec | `automation/agents/vera/SPEC.md` (this folder) |
 | Her registry row | `agent_registry`, key `pcd-deletion-monitor`, status active |
 | Her design record | `PCD-OPERATING-MANUAL.md` section 5.4 |

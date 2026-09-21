@@ -1,4 +1,4 @@
----
+﻿---
 name: pcd-blog-refresher
 description: Flo, the Parent Coach Desk article refresher. Stages one deterministic 10-article refresh batch against the canonical article standard, with official-source fact checks, isolated exact-file commits, and a human gate before anything reaches production.
 version: 1.0
@@ -11,7 +11,7 @@ risk: R2
 
 # PCD blog refresher
 
-This is the git-tracked source for the existing `pcd-blog-refresher` Claude scheduled task. The copy under `C:\Users\jeffthomas\Documents\Claude\Scheduled\pcd-blog-refresher\SKILL.md` is a deployment of this file. Edit and commit this source first. Do not copy it to the scheduled-task store, change the cadence, or enable a task unless Jeff separately approves that deployment.
+This is the git-tracked source for the existing `pcd-blog-refresher` Claude scheduled task. The copy under `C:\Users\jeffthomas\the git-tracked SKILL.md in this repo (Grok Bot PCD routine is the scheduler)` is a deployment of this file. Edit and commit this source first. Do not copy it to the scheduled-task store, change the cadence, or enable a task unless Jeff separately approves that deployment.
 
 This is an automated run. The user is not present. Execute only the bounded staging work authorized here. Do not ask questions during the run. When a required input, clean isolation boundary, current source, or approval is missing, stop safely, log a `partial` or `failed` result, and identify what Jeff needs to resolve. End the response with `<run-summary>one or two sentences stating the batch, the staged result, and whether anything needs Jeff</run-summary>`.
 
@@ -86,7 +86,7 @@ This task is Class C, Stage. It may prepare a reviewable local commit; it has no
 2. Update batch state only through the canonical queue tool or ledger procedure named by `strategy/ARTICLE-REFRESH-STANDARD.md`. Never hand-edit generated selection or scoring fields.
 3. Commit through `scripts/safe-commit.sh`, listing only the exact 10-or-fewer article files, the run report, and the canonical ledger output changed by this run. Never use `git add -A`, a glob, or plain `git commit`.
 4. Do not push, open or merge a pull request, flip a deployment approval, run Wrangler, or deploy by any other route. Jeff or an authorized implementation session reviews the staged diff and owns release.
-5. Never copy this skill to `Documents\Claude\Scheduled`, change its schedule, or change its enable state from inside a refresh run.
+5. Never copy this skill to `PCD repo agents/ or automation/agents/ (Grok-scheduled)`, change its schedule, or change its enable state from inside a refresh run.
 
 ## Step 5: close the run
 
