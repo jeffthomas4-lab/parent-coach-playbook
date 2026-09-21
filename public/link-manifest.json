@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-18T09:08:01.551Z",
-  "count": 659,
+  "generatedAt": "2026-09-19T15:36:37.438Z",
+  "count": 660,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
@@ -655,6 +655,12 @@
       "url": "https://nextgencards.shop/blogs/collectors-guide/best-starter-baseball-card-series-for-kids-in-2026",
       "sources": [
         "src/content/articles/baseball-throwing-drill.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/adjustment-in-minimum-body-fat-percentage-for-females-highlights-high-school-wrestling-rules-changes",
+      "sources": [
+        "src/content/news/nfhs-wrestling-female-body-fat-minimum-2026-27.md"
       ]
     },
     {
