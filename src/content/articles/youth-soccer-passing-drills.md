@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-09-20): inserted 8 existing-catalog /go/ links (soccer-ball-size4, agility-cones-set, scrimmage-pennies, phone-tripod); FTC disclosure added."
 ---
 
 Run pass and move, triangle passing, passing gates, two touch squares, one touch rondo, and a wall pass progression, in that order of priority, and you cover almost every passing problem a young team has. The coaching priority above all else: pass quality and receiver preparation, meaning the body angle and first touch a player sets up *before* the ball arrives. Everything below breaks these drills into setup, cues, age adjustments, and a full practice plan you can run this week.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -107,7 +110,7 @@ Here's a session you can run tomorrow without extra planning, built around one m
 | Small-sided game | 10 to 15 | Safe pass count, support angles |
 | Cool-down | 2 to 3 | Calm finish, one positive note |
 
-Before you start, scan this: balls pumped, cones set for the grid size your age group needs, water nearby, and a rough mental note of who struggled with first touch last week.
+Before you start, scan this: [balls](/go/soccer-ball-size4/) pumped, [cones](/go/agility-cones-set/) set for the grid size your age group needs, water nearby, and a rough mental note of who struggled with first touch last week.
 
 ## Why Isn't the Passing Improving? Common Fixes
 
@@ -127,7 +130,7 @@ Before every practice, walk the field for two minutes with no ball, no clipboard
 
 There are resources specially designed for the moment you're standing on a field with a bag of cones wondering what you actually need. Compared to piecing together gear advice from a dozen scattered forum threads, Parentcoachdesk gives parent volunteer coaches one clear place to check before the season starts.
 
-If you're unsure what belongs in your coaching bag beyond cones and a whistle, the [what to buy](/what-to-buy/) guide breaks down parent-coach gear, video and tracking tools, and at-home training equipment without pushing you toward things you don't need. If you're filming practice to check first touch and body angle the way the practitioner tip above suggests, the [video and tracking gear guide](/what-to-buy/video-tracking-gear/) walks through simple tripod and camera options that won't overcomplicate your Saturday mornings. And if you're brand new to the parent-coach role entirely, the [first-year sports parent guide](/drive-there/first-year-sports-parent-guide/) covers what to expect before the whistle even blows. Start with the what-to-buy page, see what's actually worth adding to your bag, and go from there.
+Gear does not need to be complicated. Age-appropriate [soccer balls](/go/soccer-ball-size4/), a set of [training cones](/go/agility-cones-set/), and [scrimmage pennies](/go/scrimmage-pennies/) for the 4v4 block cover almost every session in this plan. If you're filming practice to check first touch and body angle the way the practitioner tip above suggests, a simple [phone tripod](/go/phone-tripod/) is enough. For sizing across age groups and the rest of the coaching bag, the [what to buy](/what-to-buy/) guide and the [video and tracking gear guide](/what-to-buy/video-tracking-gear/) keep the list short. And if you're brand new to the parent-coach role entirely, the [first-year sports parent guide](/drive-there/first-year-sports-parent-guide/) covers what to expect before the whistle even blows.
 
 ## Sources
 
@@ -156,7 +159,7 @@ Run a short 4v4 small-sided game and count safe passes for about five minutes. I
 
 ### Do I need fancy equipment to run good passing drills?
 
-No. Cones, a few balls, and clear verbal cues cover almost every drill in this guide. If you want to add simple video review to check first touch and body angle, Parentcoachdesk's video and tracking gear guide lists straightforward options that won't overcomplicate practice.
+No. [Cones](/go/agility-cones-set/), a few [balls](/go/soccer-ball-size4/), and clear verbal cues cover almost every drill in this guide. If you want to add simple video review to check first touch and body angle, Parentcoachdesk's video and tracking gear guide lists straightforward options that won't overcomplicate practice.
 
 ## Recommended
 
