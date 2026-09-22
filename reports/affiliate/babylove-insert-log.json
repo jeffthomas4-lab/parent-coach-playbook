@@ -1094,6 +1094,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "Chrome headless on DESKTOP verified B0CLNGGXBC, B007ZQWLZE, B0000BY937, B07837W5NX in stock; B001C3O8O8 OOS skipped."
+    },
+    {
+      "date": "2026-09-21",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Daily babylove affiliate insert on DESKTOP (041b6bba…; FH213C offline; governance from src/data/affiliate-governance.json babylove_auto_insert). No new Publish BabyLoveGrowth commit since 80897efc (2026-09-20: youth-soccer-passing-drills monetized 8 /go/, confidence-for-youth-athletes gap-queued). origin/main in sync (0 ahead/0 behind). Corpus: 32 BabyLove-origin articles with externalSource marker; all 16 zero-/go/ slugs already present in babylove-gap-queue.json. Competitor buyable-product survivors unchanged: best-kids-shin-guards Nike Youth Charge (nike.com/t/…) and Hackk (hackksoccer.com/products/…) — same Amazon-OOS / no-Amazon gaps logged 2026-09-17. Protected reference URLs (Academy expert-advice, All Volleyball blogs, ChalkTalk guide) left untouched. confidence-for-youth-athletes still carries truncated body + corrupted '*- Jeff*' fragment at line 70 (editorial, out of affiliate scope). Net: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites. Unrelated dirty tree (CONTENT_ROADMAP.md, link-health, seo, news drafts, support/) left untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No new ASIN sourced. Did not re-open Amazon for Nike Charge / Hackk; article text and catalog unchanged since 2026-09-17 live Chrome verification. Prior standing gaps hold."
     }
   ]
 }
