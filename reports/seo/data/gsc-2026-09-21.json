@@ -1,0 +1,58 @@
+{
+    "performance":  {
+                        "position":  {
+                                         "p7":  11,
+                                         "l7":  1.5
+                                     },
+                        "ctr":  {
+                                    "p7":  0,
+                                    "l7":  0.5
+                                },
+                        "clicks":  {
+                                       "p7":  0,
+                                       "l7":  1
+                                   },
+                        "impressions":  {
+                                            "p7":  1,
+                                            "l7":  2
+                                        }
+                    },
+    "needs_you":  true,
+    "live_sitemap_camps_urls":  118,
+    "window":  {
+                   "prior7":  "2026-09-06/2026-09-12",
+                   "last7":  "2026-09-13/2026-09-19"
+               },
+    "sitemaps_gsc":  [
+                         {
+                             "status":  "Success",
+                             "url":  "sitemap.xml",
+                             "discovered":  2095,
+                             "lastRead":  "2026-09-16"
+                         },
+                         {
+                             "status":  "Success",
+                             "url":  "sitemap-camps.xml",
+                             "discovered":  37,
+                             "lastRead":  "2026-08-28"
+                         }
+                     ],
+    "needs_you_items":  [
+                            "GSC dashboard: re-read/validate sitemap-camps.xml (stale since Aug 28 at 37 discovered; live file has 118)"
+                        ],
+    "date":  "2026-09-21",
+    "indexing":  {
+                     "indexed":  57,
+                     "notIndexed":  "3.03K",
+                     "reasons":  {
+                                     "404":  121,
+                                     "discoveredNotIndexed":  1308,
+                                     "redirect":  8,
+                                     "duplicateCanonical":  15,
+                                     "canonical":  36,
+                                     "soft404":  1,
+                                     "crawledNotIndexed":  1511,
+                                     "robots":  31
+                                 }
+                 }
+}
