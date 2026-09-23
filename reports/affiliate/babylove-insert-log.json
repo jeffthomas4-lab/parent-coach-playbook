@@ -1104,6 +1104,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "No new ASIN sourced. Did not re-open Amazon for Nike Charge / Hackk; article text and catalog unchanged since 2026-09-17 live Chrome verification. Prior standing gaps hold."
+    },
+    {
+      "date": "2026-09-22",
+      "articleSlug": "youth-sports-budget",
+      "action": "no-links-zero-products",
+      "details": "New BabyLoveGrowth article (articleId 881111, publish commit 2f01cd2f). Full read: season-budget/cost-planning guide for volleyball/multi-sport parents (Aspen Institute averages, three-scenario worksheet, cut-cost tips, payment timeline). Zero nameable buyable products. Gear nouns (knee pads, shoes, bag) appear only as generic equipment-replacement line items and inside an explicit buy-used tip — no-link context under no_links_in_used_or_secondhand_context. No brand or model named for \"buy new shoes\". Outbound links are Aspen PDF, Providence Journal, Youth Sports Business Report, Heart of America Volleyball guide, and internal PCD pages; protected. No competitor product storefront URLs. Gap-queued. No disclosure needed.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable, no product to source."
+    },
+    {
+      "date": "2026-09-22",
+      "articleSlug": "run-summary",
+      "action": "gap-queued-new-article",
+      "details": "Daily babylove affiliate insert on DESKTOP (041b6bba…; FH213C offline; governance from src/data/affiliate-governance.json babylove_auto_insert). New since 2026-09-21 verification (5f18026f): Publish BabyLoveGrowth 881111 youth-sports-budget (2f01cd2f). Full read → zero products → gap-queued, 0 /go/. Prior queue already handled: confidence-for-youth-athletes gap-queued 2026-09-20; youth-soccer-passing-drills monetized 8 /go/. origin/main in sync at gate. Net: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites, 1 gap-queue entry. Unrelated dirty tree (coordination/release-evidence/asset-proof-prod.json, public/link-manifest.json, reports/support/TRIAGE_2026-09-22.md) left untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No new ASIN sourced. No product sourcing attempted; article names no buyable product."
     }
   ]
 }

@@ -371,6 +371,16 @@
       "reason": "New BabyLoveGrowth article (articleId 873746, publish commit ea06cd76). Full read confirms zero nameable buyable products: communication/scripts and confidence psychology piece only. Outbound links are DOI/research citations (5Cs framework, climate research, self-efficacy study) plus Aspen Institute PDF and internal PCD pages; protected under reference_links_protected. No competitor product storefront links. NOTE for Jeff/Ed: body appears truncated after the research section (TOC lists age/environment sections that are missing) and contains a corrupted fragment ending in 'Jeff' on the self-efficacy paragraph — out of Arnie affiliate scope.",
       "loggedAt": "2026-09-20",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "881111",
+      "slug": "youth-sports-budget",
+      "title": "U.S. Volleyball Parents: Build a Season Budget in 20 Minutes",
+      "sport": "volleyball",
+      "topic": "communication",
+      "reason": "New BabyLoveGrowth article (articleId 881111, publish commit 2f01cd2f). Full read confirms zero nameable buyable products. Piece is a season-budget/cost-planning guide (Aspen averages, three-scenario worksheet, cut-cost tips). Gear nouns (knee pads, shoes, bag) appear only as generic equipment-replacement line items and inside an explicit buy-used tip (bags, practice shirts, kneepads), which is a no-link context under no_links_in_used_or_secondhand_context and the spending-less rule. Buy-new-for-shoes names no brand or model. Outbound links are Aspen Institute PDF, Providence Journal reporting, Youth Sports Business Report, Heart of America Volleyball club guide, and internal PCD pages — all protected under reference_links_protected. No competitor product storefront URLs. No affiliate links inserted.",
+      "loggedAt": "2026-09-22",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }
