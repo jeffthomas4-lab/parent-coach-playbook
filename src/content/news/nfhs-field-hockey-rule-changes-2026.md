@@ -1,6 +1,6 @@
 ---
 headline: "Three NFHS field hockey changes parents will notice this season"
-summary: "For the 2026 high school field hockey season, NFHS banned non-functional attachments on mouth and tooth protectors, tightened when a team can sub before a penalty corner, and moved the early-circle penalty onto the inserter instead of the offending attacker. No new gear to buy if your mouthguard is already plain. Do check with the coach that the team's protectors have no decorative add-ons before the next game."
+summary: "For the 2026 high school field hockey season, NFHS banned non-functional mouthguard attachments, tightened goalkeeper subs before a penalty corner, and moved the early-circle penalty onto the inserter. No new gear if the mouthguard is already plain. Check with the coach that protectors have no decorative add-ons before the next game."
 category: "rule-change"
 sport: "field-hockey"
 sourceUrl: "https://nfhs.org/stories/player-equipment-penalty-corners-focus-of-high-school-field-hockey-rules-changes"
