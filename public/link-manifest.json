@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-19T15:36:37.438Z",
-  "count": 660,
+  "generatedAt": "2026-09-23T04:53:36.143Z",
+  "count": 675,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
@@ -360,6 +360,12 @@
       ]
     },
     {
+      "url": "https://doi.org/10.1080/21520704.2018.1496213",
+      "sources": [
+        "src/content/articles/confidence-for-youth-athletes.md"
+      ]
+    },
+    {
       "url": "https://doi.org/10.1111/j.0021-9029.2006.00049.x",
       "sources": [
         "src/content/articles/pregame-talk-youth-sports.md"
@@ -369,6 +375,18 @@
       "url": "https://doi.org/10.1515/afepuc-2016-0011",
       "sources": [
         "src/content/articles/pregame-talk-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.22235/cp.v19i1.3933",
+      "sources": [
+        "src/content/articles/confidence-for-youth-athletes.md"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.48161/qcsj.v4n2a57",
+      "sources": [
+        "src/content/articles/confidence-for-youth-athletes.md"
       ]
     },
     {
@@ -424,6 +442,12 @@
       "sources": [
         "src/content/body/hockey-equipment-safety.md",
         "src/content/body/youth-hockey-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://hoavb.org/new-to-club-volleyball/",
+      "sources": [
+        "src/content/articles/youth-sports-budget.md"
       ]
     },
     {
@@ -658,12 +682,6 @@
       ]
     },
     {
-      "url": "https://nfhs.org/stories/adjustment-in-minimum-body-fat-percentage-for-females-highlights-high-school-wrestling-rules-changes",
-      "sources": [
-        "src/content/news/nfhs-wrestling-female-body-fat-minimum-2026-27.md"
-      ]
-    },
-    {
       "url": "https://nfhs.org/stories/coaches-should-address-playing-time-issues-ahead-of-season",
       "sources": [
         "src/content/articles/youth-sports-playing-time.md"
@@ -679,6 +697,12 @@
       "url": "https://nfhs.org/stories/new-process-for-distributing-cards-among-13-changes-in-high-school-soccer-rules",
       "sources": [
         "src/content/news/nfhs-soccer-rule-changes-2026-27.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/player-equipment-penalty-corners-focus-of-high-school-field-hockey-rules-changes",
+      "sources": [
+        "src/content/news/nfhs-field-hockey-rule-changes-2026.md"
       ]
     },
     {
@@ -854,6 +878,12 @@
       "url": "https://parents.snapchat.com/",
       "sources": [
         "src/content/body/snapchat-snap-map-risks.md"
+      ]
+    },
+    {
+      "url": "https://pitch-planner.app/library/how-to-coach-youth-soccer/",
+      "sources": [
+        "src/content/articles/youth-soccer-passing-drills.md"
       ]
     },
     {
@@ -1181,6 +1211,12 @@
       "url": "https://tiemposoccer.com/is-my-kid-ready-for-travel-soccer/",
       "sources": [
         "src/content/articles/travel-soccer-costs.md"
+      ]
+    },
+    {
+      "url": "https://tineo.ai/blog/sports-team-travel-planner",
+      "sources": [
+        "src/content/articles/youth-sports-budget.md"
       ]
     },
     {
@@ -1849,6 +1885,12 @@
       ]
     },
     {
+      "url": "https://www.arlingtonsoccerclub.org/how-to-coach-passing/",
+      "sources": [
+        "src/content/articles/youth-soccer-passing-drills.md"
+      ]
+    },
+    {
       "url": "https://www.aspeninstitute.org/wp-content/uploads/2018/09/Aspen-Institute-Project-Play-Report.pdf",
       "sources": [
         "src/content/articles/youth-sports-playing-time.md"
@@ -1857,7 +1899,14 @@
     {
       "url": "https://www.aspeninstitute.org/wp-content/uploads/2025/06/National-Youth-Sports-Parent-Survey-FINAL.pdf",
       "sources": [
+        "src/content/articles/youth-sports-budget.md",
         "src/content/articles/youth-sports-costs.md"
+      ]
+    },
+    {
+      "url": "https://www.aspeninstitute.org/wp-content/uploads/2026/04/Final-Report-v3-04.10.26.pdf",
+      "sources": [
+        "src/content/articles/confidence-for-youth-athletes.md"
       ]
     },
     {
@@ -2056,6 +2105,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/mold-health/about/clean-up.html",
+      "sources": [
+        "src/content/articles/disinfecting-equipment-end-of-season.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/mosquitoes/",
       "sources": [
         "src/content/body/mosquito-borne-illness.md"
@@ -2065,6 +2120,12 @@
       "url": "https://www.cdc.gov/mrsa/",
       "sources": [
         "src/content/body/wrestling-headgear-skin-infections.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/mrsa/prevention/coaches-athletic-directors.html",
+      "sources": [
+        "src/content/articles/disinfecting-equipment-end-of-season.md"
       ]
     },
     {
@@ -2250,6 +2311,12 @@
       "url": "https://www.epa.gov/insect-repellents/using-insect-repellents-safely-and-effectively",
       "sources": [
         "src/content/articles/summer-camp-packing-list.md"
+      ]
+    },
+    {
+      "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home",
+      "sources": [
+        "src/content/articles/disinfecting-equipment-end-of-season.md"
       ]
     },
     {
@@ -3322,6 +3389,12 @@
       ]
     },
     {
+      "url": "https://www.prnewswire.com/news-releases/riddell-unveils-new-nd6-football-line-engineered-for-youth-football-players-302730026.html",
+      "sources": [
+        "src/content/news/riddell-nd6-nocsae-youth-helmet-standard-2026.md"
+      ]
+    },
+    {
       "url": "https://www.projectadam.com/",
       "sources": [
         "src/content/body/aed-location-field-readiness.md",
@@ -3331,7 +3404,8 @@
     {
       "url": "https://www.providencejournal.com/story/sports/youth/2026/08/12/are-youth-sports-becoming-unaffordable-heres-what-we-found/91188359007/",
       "sources": [
-        "src/content/articles/team-budget-youth-sports.md"
+        "src/content/articles/team-budget-youth-sports.md",
+        "src/content/articles/youth-sports-budget.md"
       ]
     },
     {
@@ -4291,6 +4365,12 @@
       ]
     },
     {
+      "url": "https://www.ussoccer.com/soccer-forward/resource-hub/beginner-volunteer-coach-survival-guides",
+      "sources": [
+        "src/content/articles/youth-soccer-passing-drills.md"
+      ]
+    },
+    {
       "url": "https://www.ussoccer.com/soccer-forward/resource-hub/the-concussion-initiative-and-reducing-heading",
       "sources": [
         "src/content/body/youth-soccer-safety-briefing.md"
@@ -4379,6 +4459,12 @@
       "url": "https://www.veo.com/en-us/article/soccer-goalkeeper-training-youth",
       "sources": [
         "src/content/articles/youth-goalie-drills.md"
+      ]
+    },
+    {
+      "url": "https://www.veo.com/en-us/article/soccer-passing-drills-youth",
+      "sources": [
+        "src/content/articles/youth-soccer-passing-drills.md"
       ]
     },
     {
@@ -4481,6 +4567,12 @@
       "url": "https://youthsports.rutgers.edu/articles/model-athletic-code-of-conduct/",
       "sources": [
         "src/content/articles/parent-code-of-conduct.md"
+      ]
+    },
+    {
+      "url": "https://youthsportsbusinessreport.com/the-state-of-youth-sports-in-america-insights-from-the-2024-national-parenting-survey/",
+      "sources": [
+        "src/content/articles/youth-sports-budget.md"
       ]
     }
   ]
