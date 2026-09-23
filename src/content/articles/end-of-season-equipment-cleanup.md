@@ -1,9 +1,9 @@
 ---
 title: The end-of-season equipment cleanup
-dek: An hour now saves $200 in fall replacement gear. The five-step audit before everything
-  gets stuffed in a closet for four months.
-seoDescription: Most families pile the gear bag in the garage after the last game
-  and don't open it again until two weeks before the next season.
+dek: An hour now beats October scramble. Five steps before the bag disappears into a closet.
+seoTitle: "End-of-Season Gear Cleanup Checklist"
+seoDescription: "Spend one hour after the last game: wash skin-contact gear, air the bag, size cleats, inspect pads, and write the next-season buy list."
+bluf: "After the last game, take one hour: wash what touches skin, empty and dry the bag, try on cleats, inspect protective gear, and tape a next-season needs list to the bag before summer sales."
 topic: equipment
 format: note
 phase: drive-home
@@ -12,7 +12,9 @@ age: all-ages
 hero: "/illustrations/muddy-cleats-on-mat.webp"
 heroAlt: "A pair of mud-caked youth cleats sits on a doormat just inside a door, dried grass scattered around them in evening light."
 publishedAt: 2026-05-13
+updatedAt: 2026-09-22
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -21,24 +23,39 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  claudeReviewedAt: 2026-09-22
+  status: published
+  reviewerNotes: "Refresh 2026-09-22: bluf/seoTitle; five-step audit kept; linked disinfecting and season-essentials; softened dollar claim."
+  factCheckGoodThrough: 2027-09-22
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-24
-  status: claude-reviewed
-  reviewerNotes: Logistics with real money attached. Reads cleanly.
 ---
 
-Most families pile the gear bag in the garage after the last game and don't open it again until two weeks before the next season. By then half of it has gone moldy, the cleats won't fit, and the helmet pads have collapsed.
+Most families pile the gear bag in the garage after the last game. They do not open it again until two weeks before the next season.
 
-Take an hour now. Five steps.
+By then something smells, the cleats are tight, and a strap has failed. Take an hour now.
 
-**Wash everything that touches skin.** Jerseys, sliders, sock liners, mouthguards. Air-dry, don't tumble. Mouthguards in a vinegar-water bath for ten minutes, rinsed, dried, returned to a vented case.
+This is the audit. Pair it with the [disinfecting pass](/drive-there/disinfecting-equipment-end-of-season/) if the bag still smells like May.
 
-**Air out the bag itself.** Empty it completely. Spray the inside with a disinfectant and leave it open in the sun for an afternoon. The smell that comes out of a closed bag in October started in May.
+## Wash, empty, and size
 
-**Inventory and try on cleats and shoes.** Anything snug now will be unwearable in fall. Pass it down or donate. Anything still good gets a stick of newspaper inside to absorb moisture and goes in the bag.
+Wash jerseys, sliders, sock liners, and mouthguards first. Air-dry fabric. Do not tumble heat that can cook foam and glue.
 
-**Inspect protective gear.** Helmets, pads, shin guards, masks. Check for cracks, foam compression, broken straps. Anything questionable is replaced now, not in the parking lot before week one.
+For mouthguards, use the care steps on the product label. Then dry them and return them to a vented case.
 
-**Make a "next season needs" list.** What you noticed all year that the kid outgrew or wore through. Tape it to the bag. When summer sales hit, you have a list and a budget. The [season essentials guide](/what-to-buy/season-essentials/) is a reasonable starting point for what usually needs replacing.
+Empty every pocket of the bag. Wipe the lining. Leave the bag open in dry air for an afternoon.
 
-The total time investment is about an hour. The cost of skipping it is a week of October scrambling and one or two duplicated purchases.
+Have the kid try cleats and shoes on now. Anything snug this month will be worse after a growth spurt.
+
+Pass down or donate what is done. Anything still good gets newspaper or a shoe tree for moisture and goes in dry storage. Detail care lives in the [cleat-care guide](/team-parent/cleat-care-that-triples-the-lifespan/).
+
+## Inspect and list
+
+Check helmets, pads, shin guards, and masks for cracks, collapsed foam, and broken straps. Questionable gear is replaced on a calm calendar, not in a parking lot before week one.
+
+Follow manufacturer inspection and retirement guidance when it exists.
+
+Note what wore through or was outgrown. Tape the list to the bag. When summer sales hit, you already know the budget conversation.
+
+The [season essentials guide](/what-to-buy/season-essentials/) is a reasonable starting point for common replacements.
+
+One hour now usually costs less than a rushed October week of duplicate buys and emergency shipping. The exact dollar amount depends on what failed. The calendar control is the point.

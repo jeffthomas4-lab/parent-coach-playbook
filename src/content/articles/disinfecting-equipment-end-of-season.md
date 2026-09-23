@@ -1,7 +1,9 @@
 ---
 title: "Disinfecting equipment end of season"
-dek: "The stuff nobody does that prevents mold, mildew, and sickness. What actually needs cleaning."
-seoDescription: "Equipment has been sitting in bags, in lockers, in the back of cars."
+dek: "Clean, dry, then store. Mold loves a closed bag."
+seoTitle: "End-of-Season Equipment Disinfecting"
+seoDescription: "Clean and fully dry helmets, pads, gloves, cleats, and the bag before off-season storage. Follow manufacturer care labels and keep moisture out."
+bluf: "Before you stash the gear bag, wash what touches skin, wipe hard surfaces, follow manufacturer care labels, and dry everything completely. Store in a cool, dry spot with airflow. Damp gear in a closed bag is how mold and odor start."
 topic: "equipment"
 format: "note"
 phase: "drive-there"
@@ -10,7 +12,9 @@ age: "all-ages"
 hero: "/illustrations/gear-shop-aisle.webp"
 heroAlt: "A sporting goods store aisle stretches into the distance with racks of unbranded gear and one adult figure soft-focused far down the row."
 publishedAt: 2026-04-29
+updatedAt: 2026-09-22
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -19,168 +23,53 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  claudeReviewedAt: 2026-09-22
+  status: published
+  reviewerNotes: "Refresh 2026-09-22: clean-dry-store note with CDC/EPA moisture cites; removed illness overclaim; linked cleanup page."
+  factCheckGoodThrough: 2027-09-22
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
 ---
 
-Season is over.
+Season is over. The bag has been sitting in the trunk, the locker, or the garage.
 
-Equipment has been sitting in bags, in lockers, in the back of cars.
+Before you put it away for months, clean it and dry it. That is the whole job.
 
-It's wet sometimes. It's musty. It probably smells weird.
+This page is the cleaning pass. The [end-of-season equipment cleanup](/drive-home/end-of-season-equipment-cleanup/) is the inventory audit that goes with it.
 
-Before you put it away for the off-season, you should clean it.
+## What to clean
 
-This is not complicated. It's just neglected.
+Wash or wipe anything that regularly touches skin or stays damp: helmets and pads, gloves, shin guards, cleats, mouthguards, practice wear, and the bag itself.
 
-**What actually needs cleaning**
+Socks and base layers either go through the laundry or get replaced. Follow the manufacturer care label on helmets and protective gear first.
 
-Helmets: yes.
+CDC athletic-facility guidance says shared equipment that contacts bare skin should be cleaned per manufacturer instructions and allowed to dry before the next use.
 
-Gloves: yes.
+## Clean, then dry completely
 
-Shin guards: yes.
+For hard plastics and shell surfaces, warm soapy water and a cloth or soft brush are enough for routine dirt and sweat. Rinse residue, then air-dry until no damp spots remain.
 
-Cleats: yes.
+For leather gloves and cleats, knock off dirt, wipe with a barely damp cloth, and air-dry away from a heater. Conditioner is optional after the leather is dry.
 
-Bats (if they're sweaty): yes.
+For fabric bags, empty every pocket, wipe the lining, and machine-wash only if the label allows. Leave the bag open until the lining is dry.
 
-Bag itself: yes.
+EPA mold guidance is blunt: moisture control is the control. Dry wet items promptly. Do not seal damp gear in a closed bag or bin.
 
-Socks and undergarments: throw these away or wash them.
+## Storage without inviting mold
 
-**The helmet cleaning**
+Store clean, dry gear in a cool, dry place with airflow. A closet shelf beats a hot garage or a damp basement corner.
 
-Warm soapy water.
+Leave the bag unzipped or loosely packed so air can move. If something already smells musty, wash or wipe it again and dry it fully before storage.
 
-Scrub the outside and inside with a cloth or brush.
+Porous foam or fabric that stays moldy after cleaning is often past saving. Replace it rather than hoping October air will fix it.
 
-Rinse thoroughly.
+You do not need bleach baths for every item. Never mix bleach with ammonia or other cleaners.
 
-Let dry completely before storing.
+A labeled disinfectant can help on hard, nonporous surfaces after cleaning when the product instructions allow it. More chemistry does not replace drying.
 
-This prevents mold and smell.
+Twenty to thirty minutes for one kid's kit is enough when you do it once at the end of the season. The [cleat-care guide](/team-parent/cleat-care-that-triples-the-lifespan/) covers footwear detail if that is the weak link in your bag.
 
-**The glove cleaning**
+### Sources reviewed
 
-Remove any excess dirt by tapping them together.
-
-Wipe down with a damp cloth.
-
-For leather gloves, you can use leather conditioner if you want.
-
-Let them air dry.
-
-**The shin guard cleaning**
-
-Wash with warm soapy water.
-
-Scrub thoroughly. They get sweaty and gross.
-
-Rinse and let air dry.
-
-Hang them so air can flow through.
-
-**The cleats**
-
-Remove excess dirt.
-
-Wipe with a damp cloth.
-
-For leather cleats, apply leather conditioner if desired.
-
-Let dry completely.
-
-Don't store them in a bag while wet or damp. They'll mold.
-
-**The bag itself**
-
-Wipe down the inside with a damp cloth.
-
-If it's machine washable, wash it (cold water, gentle cycle).
-
-Let it air dry completely.
-
-Spray the inside with a light disinfectant if you want (optional).
-
-**The mold and mildew thing**
-
-These grow in damp, dark, enclosed spaces.
-
-Gym bags are perfect for them.
-
-To prevent:
-
-Clean equipment.
-
-Dry completely.
-
-Store in a dry place.
-
-Leave the bag open or partially open while in storage if possible.
-
-**The smell thing**
-
-Musty smell usually means mold or mildew starting.
-
-Cleaning and drying prevent this.
-
-If something already smells, wash it again and make sure it dries completely.
-
-**The time estimate**
-
-Full equipment set: 20-30 minutes
-
-Multiple kids' equipment: 45 minutes to an hour
-
-**What you don't need**
-
-Fancy disinfectants. Bleach. Special cleaners.
-
-Warm soapy water works fine.
-
-A basic disinfectant spray (like Lysol) is fine if you want it.
-
-**The storage part**
-
-Once everything is clean and dry:
-
-Store in a cool, dry place.
-
-Not a hot garage. Not a damp basement.
-
-A closet or storage room is ideal.
-
-Leave equipment slightly loose so air can circulate. Don't pack it tight in a bag.
-
-**The off-season check**
-
-Before next season, check your equipment:
-
-Does it smell? If yes, clean again.
-
-Does it look moldy or discolored? If yes, it might be beyond saving.
-
-Are the straps still good? Is the padding intact? Check for wear and tear.
-
-**The thing nobody mentions**
-
-Disinfecting team equipment at the end of the season prevents everyone from getting sick at the start of next season.
-
-Shared helmets, shared bags, shared gloves. These spread germs.
-
-Clean disinfecting prevents this.
-
-**The final thing**
-
-20-30 minutes of cleaning at the end of the season.
-
-Dry storage.
-
-No mold. No smell. No mildew.
-
-Equipment lasts longer. Your kid stays healthier.
-
-Worth the time.
+- CDC, [Athletic Facilities: MRSA Prevention and Control](https://www.cdc.gov/mrsa/prevention/coaches-athletic-directors.html), accessed September 2026.
+- CDC, [Mold Clean Up Guidelines](https://www.cdc.gov/mold-health/about/clean-up.html), February 2024.
+- EPA, [A Brief Guide to Mold, Moisture and Your Home](https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home), accessed September 2026.
