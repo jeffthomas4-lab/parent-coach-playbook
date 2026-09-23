@@ -1,7 +1,9 @@
 ---
 title: "When your kid doesn't want to go to camp"
-dek: "Sunday night. The camp starts in twelve hours. The meltdown is real. Three things to figure out before you decide."
-seoDescription: "Sunday night. 8:45pm. The camp you signed up for in February starts at 9am tomorrow. You've packed. You've washed the cleats. The bag is by the door."
+dek: "Sunday night meltdown. Twelve hours to start time. Sort anxiety from a real stop."
+seoTitle: "Kid Doesn't Want to Go to Camp"
+seoDescription: "When your child melts down the night before camp, sort anxiety from a specific problem from true overload before you decide."
+bluf: "Sunday night before camp, ask what they are worried about. Push through ordinary anxiety, solve a specific named problem, and be willing to eat the fee when the kid is genuinely depleted."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-home"
@@ -10,7 +12,9 @@ age: "8-10"
 hero: "/illustrations/duffel-unpacked-laundry.webp"
 heroAlt: "A camp duffel sits dumped open on a laundry room floor, clothes spilling out with a damp towel on top in afternoon light."
 publishedAt: 2026-04-21
+updatedAt: 2026-09-22
 featured: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -19,80 +23,69 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  claudeReviewedAt: 2026-09-22
+  status: published
+  reviewerNotes: "Refresh 2026-09-22: bluf/seoTitle; removed unsupported percent claim; four H2s; linked camp vetting neighbors."
+  factCheckGoodThrough: 2027-09-22
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
 ---
 
-Sunday night. 8:45pm. The camp you signed up for in February starts at 9am tomorrow. You've packed. You've washed the cleats. The bag is by the door.
+Sunday night. 8:45 p.m. The camp you signed up for in February starts at 9 a.m. tomorrow. The bag is packed.
 
-Your kid is sitting on the kitchen floor saying she doesn't want to go.
+Your kid is on the kitchen floor saying they do not want to go. You have twelve hours and a nonrefundable fee on the line.
 
-You have twelve hours and a $400 nonrefundable check on the line. Here is how to figure out what's actually happening.
+Figure out which problem you are solving before you decide.
 
-## The three questions
+## Name which of the three it is
 
-There are three reasons a kid balks at camp on Sunday night. The right answer depends on which one is in play.
+Ordinary anxiety about the unknown that usually settles after a day or two on site.
 
-One. They are anxious about the unknown and they will be fine by Tuesday afternoon.
+A specific problem: a friend who is not going, a peer they fear, a coach conflict, or a bad prior day at the same camp.
 
-Two. There is a specific problem. A friend who isn't going, a kid they don't like who is, a coach they're scared of, a memory of a bad day they had at this camp before.
+True overload: the kid is depleted and telling you they need a break. Ask specifically what they are worried about.
 
-Three. The kid is genuinely overcommitted and is telling you the truth that they need a week off.
+If they say they do not know, stay with one follow-up about what they were thinking when this started. Persistent uncertainty often points to anxiety.
 
-Which one it is, you find out by asking specifically.
+If they name a concrete person, place, or memory, treat it as a real logistics problem. If they say they are tired and the summer already holds multiple camp weeks, take overload seriously.
 
-## The conversation
+## Match the response to the cause
 
-Sit on the floor with her. Don't sit at the table. The table is for adults talking to kids about behavior. The floor is for figuring out what's wrong.
+For ordinary anxiety, you usually still go. Anxiety predicts doom. The corrective is doing the thing with support.
 
-*Tell me what you're worried about.*
+Say you know they are nervous, you are going anyway, and you will check in midweek. If midweek is still a mess, revisit.
 
-If she says *I don't know,* that's anxiety. Press a little. *What were you thinking about that made you start feeling like this?* If she still doesn't know, it's anxiety.
+For a specific problem, solve the named thing. Call the director about a peer conflict.
 
-If she says something specific, listen carefully. *Lily isn't going.* *That mean kid from last year is going.* *I don't like the coach.* These are real reasons. They deserve a real response.
+Confirm which friends are actually attending. Ask how coach groupings work.
 
-If she says *I'm just tired,* and her face is the face of a kid who has been to four camps already this summer, that's the third reason. Listen.
+Most concrete fears shrink when they have a plan. If safety is the issue, use [how to vet a camp for safety](/drive-there/how-to-vet-a-camp-for-safety/) rather than pep talk.
 
-## What to do for each
+For overload, stay home. Eat the fee. A depleted kid who is believed learns that hard weeks can be named without a fight.
 
-**For anxiety.** You go. Not because anxiety is wrong, but because anxiety lies, and the cure is the experience of doing the thing and being okay. Tell her, *I know you're nervous. We're going to go anyway. By Wednesday you'll be fine. If you're not fine by Wednesday, we'll talk about it.* This is the right answer 60% of the time.
+The dollar amount varies by camp. The trust math does not.
 
-**For a specific problem.** You problem-solve. Lily isn't going, but two other kids she likes are. The mean kid from last year, you can call the camp director Monday morning. The coach she's scared of, ask about. Most specific problems have specific solutions, and naming them out loud usually makes them shrink.
+## Signals and the next morning
 
-**For overcommitment.** You stay home. Eat the camp fee. Your kid is telling you she's depleted. Honoring that buys you a kid who trusts you to listen the next time camp comes up. The check is $400. The trust is worth more.
+Do not assume you already know which of the three it is and push through on payment alone. That can work for pure jitters and still be the wrong call for overload.
 
-## The mistake to avoid
+Watch for stacked signals: two or more camp weeks already done, extra sleep, weekend irritability, lost interest in usual activities, more screen time as avoidance. If several stack, lean toward rest.
 
-The mistake is assuming you know which of the three it is and pushing through. *You're going. We paid. Get in the car.*
+Whatever you decide Sunday night, keep Monday morning calm. Do not relitigate breakfast.
 
-That works in the moment. The kid goes. The week is mostly fine. But if the answer was actually number three, you spent your daughter's trust to save four hundred dollars. That's a bad trade.
+If you are going, talk about something else. If you are staying, plan a quiet day, not a replacement theme park.
 
-## How to know if it's number three
+The hardest part of parenting an eight-year-old in summer is that the calendar moves faster than the kid does. Most of these moments are about whether the kid believes you will listen the next time something hard comes up.
 
-She's been to two or more weeks of camp already this summer. She's sleeping more than usual. She's irritable on weekends. She's stopped asking to do her normal weekend activities. She's been the one initiating extra screen time.
+That is why the Sunday-night sort matters more than one perfect camp week. Get the category right, and the next booking conversation starts cleaner.
 
-If three of those are true, she's depleted. Stay home this week.
 
-## The next morning
 
-Whatever I decide Sunday night, the next morning I stay calm. I don't drag the conversation back up at breakfast. I don't say *you said you'd go.* I don't say *we already talked about this.*
+A quiet Monday is not a reward for meltdown theater. It is rest with a boundary: no second camp shopping spree, no guilt lecture, and no surprise double-book for next week until you have both slept on it.
 
-I just move through the morning. If we're going, I talk about something else. If we're staying home, I plan an actual quiet Monday. Not a fun Monday. A quiet one. She needs the rest.
+## After the week
 
-## The week after
+If they went, debrief once: what was hard, what was good. If they stayed, ask whether the rest helped and how they feel about the next booked week.
 
-If we went, I debrief Friday afternoon. *What was hard? What was good?* The next time she balks, I'll have data.
+Use that data next time instead of a fresh power struggle. For future bookings, compare options with [how to evaluate a summer camp](/drive-there/how-to-evaluate-a-summer-camp/) and the [first overnight packing](/drive-there/first-overnight-camp-packing-list/) checklist.
 
-If we stayed home, I debrief at the end of the week. *Did you need this week off? How are you feeling about the camp we're signed up for in three weeks?* She tells me. Kids are usually accurate about themselves when they aren't being pressured.
-
-The hardest part of parenting an eight-year-old in summer is the calendar moves faster than the kid does. Most of these moments aren't about whether one camp goes well. They're about whether the kid believes I'll listen the next time something hard comes up.
-
-The check was $400. The relationship is the rest of childhood.
-
----
-
-Need to find a different camp this summer? <a href="/camps/">Browse our directory</a>. Filter by age, sport, and state.
-
-Run a camp? <a href="/camps/submit/">Add your listing</a>. Camps with strong first-day support keep kids coming back.
+Browse the [camps directory](/camps/) if you need a different fit, or [submit a listing](/camps/submit/) if you run a program with strong first-day support.

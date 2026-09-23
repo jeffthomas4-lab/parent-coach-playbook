@@ -12,7 +12,7 @@ age: "8-10"
 hero: "/illustrations/rearview-hands-wheel.webp"
 heroAlt: "An adult's hands rest on a steering wheel at dusk, the rearview mirror showing only the top of a child's head as the road blurs ahead."
 publishedAt: 2026-04-08
-updatedAt: 2026-08-02
+updatedAt: 2026-09-22
 featured: true
 editorial:
   qualityGrade: 9
@@ -23,10 +23,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-08-02
+  claudeReviewedAt: 2026-09-22
   status: published
-  reviewerNotes: "Rebuilt as a safeguarding report and escalation guide. Removed promises about coach response, investigation, confidentiality, two-week resolution, parent contact, leaving the team, and future social outcomes."
-  factCheckGoodThrough: 2027-08-02
+  reviewerNotes: "Refresh 2026-09-22: re-verified StopBullying.gov definition and Get Help Now routes; SafeSport Code link retained as jurisdiction-limited. Prior note: Rebuilt as a safeguarding report and escalation guide. Removed promises about coach response, investigation, confidentiality, two-week resolution, parent contact, leaving the team, and future social outcomes."
+  factCheckGoodThrough: 2027-09-22
 ---
 
 **Last reviewed:** August 2026 | **Reviewed by:** Parent Coach Playbook Editorial
@@ -37,7 +37,9 @@ Do not promise secrecy. Say, "I will only tell the people who need to help, and 
 
 ## Separate the label from the immediate need
 
-Ask the child to describe one or two moments in their own words. Record the date, location, people present, what was said or done, and whether it has happened before. Avoid repeated questioning or asking the child to prove another child's motive.
+Ask the child to describe one or two moments in their own words. Record the date, location, people present, what was said or done, and whether it has happened before.
+
+Avoid repeated questioning. Do not ask the child to prove another child's motive.
 
 StopBullying.gov defines [bullying](https://www.stopbullying.gov/bullying/what-is-bullying) as unwanted aggressive behavior involving a real or perceived power imbalance that is repeated or could be repeated. Its current guidance distinguishes that pattern from a disagreement between peers with no power imbalance, while noting that other aggressive behavior can still require adult attention.
 
@@ -49,11 +51,13 @@ If this sounds like a teammate dispute rather than targeting, the coach-facing g
 
 Find the program's current code of conduct, reporting policy, and safeguarding contact. The coach may be the first contact, but should not be assumed to be the only or final contact.
 
-Use a short written report:
+Use a short written report that covers date, drill or location, what was said or done, whether it repeated, and what you need next.
 
-"My child reported that on Tuesday during the passing drill, two teammates called her ___ and blocked her from joining the group. She reports similar conduct on Thursday. She is worried about returning Saturday. Please confirm who owns this report, what immediate safety plan applies, and how I should send any additional information."
+Ask who owns the report, what immediate safety plan applies, and how you should send more information.
 
-Use the child's exact words only when needed. Do not send the report to the team chat, question other children yourself, or contact the other family before the program explains its process.
+Use the child's exact words only when needed. Do not send the report to the team chat.
+
+Do not question other children yourself. Do not contact the other family before the program explains its process.
 
 Ask for receipt and the next contact point. Do not demand private discipline details about another child or a guaranteed investigation timeline.
 
