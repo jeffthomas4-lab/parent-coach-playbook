@@ -1124,6 +1124,116 @@
       "after": null,
       "asin": null,
       "browserVerification": "No new ASIN sourced. No product sourcing attempted; article names no buyable product."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "baseball-throwing-drill",
+      "action": "disclosure-added",
+      "details": "BabyLoveGrowth article 744753 was gap-queued 2026-09-07 as zero-brand generics. Revisited this run after sister article youth-baseball-throwing-drills was monetized with the same equipment categories. Added FTC disclosure sentence to visible body after opening paragraph; set editorial.affiliateDisclosurePresent: true.",
+      "before": "No disclosure sentence present anywhere in the body.",
+      "after": "Added: 'This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.' as its own paragraph directly after the opening paragraph.",
+      "asin": null,
+      "browserVerification": "Not applicable, no product page."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "baseball-throwing-drill",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-ball-bucket-with-lid",
+      "anchorText": "bucket",
+      "location": "Accuracy target throws bullet + drill body (2 placements)",
+      "before": "a bucket, cone, or partner's glove / Set a bucket, cone, or taped square",
+      "after": "[bucket](/go/baseball-ball-bucket-with-lid/) in both the summary bullet and the Accuracy target throws drill paragraph",
+      "asin": "B0000BZF04 (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Reused existing curated catalog slug previously Chrome-verified when sourced for tee-ball-drills (2026-09-09). Destination unaltered."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "baseball-throwing-drill",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cone",
+      "location": "Accuracy target throws bullet + drill body (2 placements)",
+      "before": "bucket, cone, or...",
+      "after": "[cone](/go/agility-cones-set/) in both placements",
+      "asin": "B0CLNGGXBC (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Existing curated slug; destination unaltered. Chrome-verified in stock on DESKTOP 2026-09-20 for youth-soccer-passing-drills."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "baseball-throwing-drill",
+      "action": "insert-existing-catalog-link",
+      "slug": "baseball-glove-youth",
+      "anchorText": "partner's glove",
+      "location": "Accuracy target throws summary bullet",
+      "before": "or partner's glove as the target.",
+      "after": "or [partner's glove](/go/baseball-glove-youth/) as the target.",
+      "asin": "pre-existing catalog entry (amzn.to short link), reused, not re-sourced",
+      "browserVerification": "Not re-verified live this run. Existing curated slug used in youth-baseball-throwing-drills; destination unaltered."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "baseball-throwing-drill",
+      "action": "insert-existing-catalog-link",
+      "slug": "phone-tripod",
+      "anchorText": "phone tripod",
+      "location": "Pro Tip on filming throws",
+      "before": "Film two or three throws per player each week on a phone.",
+      "after": "Film two or three throws per player each week on a phone (a [phone tripod](/go/phone-tripod/) keeps the angle steady).",
+      "asin": "B07837W5NX (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Existing curated slug; Chrome-verified in stock on DESKTOP 2026-09-20. Light rewrite limited to adding parenthetical naming the product."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "baseball-throwing-drill",
+      "action": "insert-existing-catalog-link",
+      "slug": "resistance-bands-set",
+      "anchorText": "Band",
+      "location": "Warm-Up and Arm-Care Checklist",
+      "before": "Band or bodyweight shoulder activation: external rotation and scapular squeezes",
+      "after": "[Band](/go/resistance-bands-set/) or bodyweight shoulder activation: external rotation and scapular squeezes",
+      "asin": "B01AVDVHTI (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Existing curated slug used in youth-baseball-throwing-drills; destination unaltered."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "growth-mindset-youth-sports",
+      "action": "no-links-zero-products",
+      "details": "Already gap-queued 2026-09-07 (articleId 736489). Re-confirmed this run: scripts/language piece; notebook/notes app/sticky note only as generic tools; outbound links are research citations (AASP, PMC, DOI) or internal PCD. Still zero buyable products. Insert-log entry added for completeness (was gap-queue-only).",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable, no product to source."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "team-budget-youth-sports",
+      "action": "no-links-zero-products",
+      "details": "Already gap-queued 2026-09-07 (articleId 782681). Re-confirmed: budgeting/money piece; gear only as cost line items and lower-cost/used framing (no_links_in_used_or_secondhand_context). Financial-education citations protected. Still zero buyable products. Insert-log entry added for completeness.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable, no product to source."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "tryout-results-email-youth",
+      "action": "no-links-zero-products",
+      "details": "Already gap-queued 2026-09-07 (articleId 787226). Re-confirmed: tryout-results email/call templates; zero buyable products; Centro/TeamGenius/Signature Locker citations are reference, not storefront product pages. Insert-log entry added for completeness.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable, no product to source."
+    },
+    {
+      "date": "2026-09-23",
+      "articleSlug": "run-summary",
+      "action": "monetize-backfill-plus-gap-confirm",
+      "details": "Daily babylove affiliate insert on DESKTOP (041b6bba…). No new Publish BabyLoveGrowth commit since 2f01cd2f youth-sports-budget (already gap-queued 2026-09-22). Backfill: baseball-throwing-drill (744753) monetized with 7 /go/ placements across 5 existing catalog slugs (baseball-ball-bucket-with-lid, agility-cones-set, baseball-glove-youth, phone-tripod, resistance-bands-set); 0 new catalog entries; nextgencards.shop collectors-guide blog link left protected (not a buyable product page). Confirmed 3 prior gap-queue-only soft pieces in insert-log (growth-mindset-youth-sports, team-budget-youth-sports, tryout-results-email-youth). 0 competitor replacements. Unrelated dirty/ahead Lonnie commit left as-is (not part of this commit). Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No new ASIN sourced. All 5 /go/ slugs reused from existing affiliates.json; no destination edits."
     }
   ]
 }

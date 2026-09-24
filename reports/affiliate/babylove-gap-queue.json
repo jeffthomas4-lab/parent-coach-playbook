@@ -381,6 +381,16 @@
       "reason": "New BabyLoveGrowth article (articleId 881111, publish commit 2f01cd2f). Full read confirms zero nameable buyable products. Piece is a season-budget/cost-planning guide (Aspen averages, three-scenario worksheet, cut-cost tips). Gear nouns (knee pads, shoes, bag) appear only as generic equipment-replacement line items and inside an explicit buy-used tip (bags, practice shirts, kneepads), which is a no-link context under no_links_in_used_or_secondhand_context and the spending-less rule. Buy-new-for-shoes names no brand or model. Outbound links are Aspen Institute PDF, Providence Journal reporting, Youth Sports Business Report, Heart of America Volleyball club guide, and internal PCD pages — all protected under reference_links_protected. No competitor product storefront URLs. No affiliate links inserted.",
       "loggedAt": "2026-09-22",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "744753",
+      "slug": "baseball-throwing-drill",
+      "title": "Baseball Throwing Drills for Youth Coaches and Parents",
+      "sport": "baseball",
+      "topic": "communication",
+      "reason": "RESOLVED 2026-09-23: prior 2026-09-07 zero-brand gap superseded. Article monetized with 7 existing-catalog /go/ placements (bucket, cone, glove, phone tripod, resistance band). Standing residual: hula hoop / rebounder / wall targets have no confident catalog match and were left unlinked. nextgencards.shop blog citation remains unprotected-as-product (reference blog, not buyable SKU) per 2026-09-07 Jeff flag.",
+      "loggedAt": "2026-09-23",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }

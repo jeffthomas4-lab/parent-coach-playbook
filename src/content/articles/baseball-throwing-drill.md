@@ -22,9 +22,12 @@ editorial:
   status: published
   citationCheckPassed: false
   reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
 ---
 
 The best **baseball throwing drill** picks depend on what you're fixing: use a quick game of catch to warm up, accuracy target throws to sharpen precision, the one-knee drill to isolate arm slot, crow-hop long toss to build distance safely, and knee or split-step throws to groove trunk rotation. Each one targets a different piece of the puzzle, so rotating through several in one practice covers more ground than repeating one drill for 20 minutes.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 Before any of that, know the safety baseline. [USA Baseball and MLB's Pitch Smart program](https://www.usabaseball.com/news/mlb-usa-baseball-announce-updates-to-pitch-smart-program-251090688) sets age-specific pitch counts and rest days, and the [American Sports Medicine Institute (ASMI)](https://www.ortho.wustl.edu/mm/files/Patient%20Education/YACInjuryPreventionFlyer-2.pdf) recommends several months of no competitive pitching every year for young arms. Parentcoachdesk built this guide as a practical companion for parents running practice, not a substitute for a certified coach.
 
@@ -66,7 +69,7 @@ Every drill below fits into a single practice window. Pick three or four based o
 
 - **Quick catch:** raises heart rate and grooves basic rhythm before anything harder.
 - **One-knee throws:** isolates the arm and shoulder to fix arm slot problems.
-- **Accuracy target throws:** builds precision using a bucket, cone, or partner's glove as the target.
+- **Accuracy target throws:** builds precision using a [bucket](/go/baseball-ball-bucket-with-lid/), [cone](/go/agility-cones-set/), or [partner's glove](/go/baseball-glove-youth/) as the target.
 - **Crow-hop long toss:** teaches footwork and gradually extends throwing distance.
 - **Split-step throws:** connects the lower body to the throw, useful for infielders.
 - **Wall bounce-back drill:** solo option for kids without a throwing partner.
@@ -77,7 +80,7 @@ Every drill below fits into a single practice window. Pick three or four based o
 
 **One-knee throws.** The thrower kneels on their throwing-side knee, front leg bent, and throws to a partner 15 to 20 feet away for 10 reps. This removes leg drive so the arm and shoulder do the work correctly. Cues: "lead with your elbow" and "finish with your throwing hand near your opposite knee." This drill directly targets arm-slot problems described later in this guide.
 
-**Accuracy target throws.** Set a bucket, cone, or taped square on a fence 20 to 30 feet away. Kids get 10 throws each, tracking how many hit the target. Cues: "pick a small spot, not the whole target" and "follow through toward where you're aiming." Track progress by recording hits out of 10 each week; a jump from 4/10 to 7/10 over a month is a real, measurable win.
+**Accuracy target throws.** Set a [bucket](/go/baseball-ball-bucket-with-lid/), [cone](/go/agility-cones-set/), or taped square on a fence 20 to 30 feet away. Kids get 10 throws each, tracking how many hit the target. Cues: "pick a small spot, not the whole target" and "follow through toward where you're aiming." Track progress by recording hits out of 10 each week; a jump from 4/10 to 7/10 over a month is a real, measurable win.
 
 **Crow-hop long toss.** Following the [ASMI Interval Throwing Program](https://asmi.org/wp-content/uploads/Interval_Throwing_Program_for_Baseball_Pitchers-2019.pdf), start at 45 feet and add 15 to 30 feet every few sessions, capping distance based on age and arm health. The crow-hop (a small skip-step before the throw) transfers energy from legs to arm. Cues: "gather your feet before the hop" and "throw on a line, not a rainbow." Regression: shorten distance and remove the hop for beginners.
 
@@ -89,13 +92,13 @@ Every drill below fits into a single practice window. Pick three or four based o
 
 **Bullseye game.** Turn accuracy practice into a contest with painted rings or a hula hoop target, awarding points for the center ring. This keeps younger players engaged far longer than plain repetition.
 
-**Pro Tip:** *Film two or three throws per player each week on a phone. Comparing footage side by side shows mechanical changes long before scoreboard results do, and it gives quiet players a way to see their own progress.*
+**Pro Tip:** *Film two or three throws per player each week on a phone (a [phone tripod](/go/phone-tripod/) keeps the angle steady). Comparing footage side by side shows mechanical changes long before scoreboard results do, and it gives quiet players a way to see their own progress.*
 
 ## Warm-Up and Arm-Care Checklist for Practice
 
 A five-minute dynamic warm-up before any throwing prevents most of the soreness that shows up the next morning. Run through arm circles, leg swings, torso twists, and light jogging, then move into a few band or bodyweight shoulder activation moves drawn from the [Youth Throwers Ten program](https://ijspt.scholasticahq.com/article/29923-the-youth-throwers-ten-exercise-program-a-variation-of-an-exercise-series-for-enhanced-dynamic-shoulder-control-in-the-youth-overhead-throwing-atlet).
 - Dynamic warm-up: leg swings, arm circles, torso rotations (3 to 5 minutes)
-- Band or bodyweight shoulder activation: external rotation and scapular squeezes
+- [Band](/go/resistance-bands-set/) or bodyweight shoulder activation: external rotation and scapular squeezes
 - Start throws at half distance and half effort before building up
 - Track weekly pitch counts and rest days using [Pitch Smart's](https://www.usabaseball.com/news/mlb-usa-baseball-announce-updates-to-pitch-smart-program-251090688) age charts
 - Schedule 3 to 4 months of no competitive pitching every year, per [ASMI guidance](https://www.ortho.wustl.edu/mm/files/Patient%20Education/YACInjuryPreventionFlyer-2.pdf)
