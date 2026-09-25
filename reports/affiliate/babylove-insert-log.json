@@ -1292,6 +1292,110 @@
       "after": null,
       "asin": "B07HVCX4YC (1 new)",
       "browserVerification": "Chrome headless live product-page verification for Nike Charge; Hackk Amazon search returned no brand listing."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-disclosure",
+      "details": "Added AFFILIATES.md FTC disclosure sentence to visible body before first affiliate link.",
+      "before": null,
+      "after": "*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*",
+      "asin": null,
+      "browserVerification": "Not applicable; disclosure only."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "hoops or cones",
+      "location": "Best drills shortlist: Target serving",
+      "before": "**Target serving with hoops or cones** (ages 8-12):",
+      "after": "**Target serving with [hoops or cones](/go/agility-cones-set/)** (ages 8-12):",
+      "asin": "B0CLNGGXBC (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Existing curated slug; destination unaltered. Used previously in baseball-throwing-drill / flag-football-drills."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "volleyball-volley-lite",
+      "anchorText": "Volley LITE",
+      "location": "Serving distance progression step 3",
+      "before": "starting with a Volley LITE or beach ball;",
+      "after": "starting with a [Volley LITE](/go/volleyball-volley-lite/) or beach ball;",
+      "asin": "B000PGHAZW (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Not re-verified live this run. Existing curated slug used across volleyball gear articles; destination unaltered."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "cones",
+      "location": "Drill 3 Target serving",
+      "before": "Lay hoops or cones in the service court,",
+      "after": "Lay hoops or [cones](/go/agility-cones-set/) in the service court,",
+      "asin": "B0CLNGGXBC (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Existing curated slug; destination unaltered."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "resistance-bands-set",
+      "anchorText": "band work",
+      "location": "Drill 6 Shoulder external rotation",
+      "before": "light band work or towel-only holds",
+      "after": "light [band work](/go/resistance-bands-set/) or towel-only holds",
+      "asin": "B01AVDVHTI (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Existing curated slug; destination unaltered. Chrome-verified historically for other Arnie runs."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "resistance-bands-set",
+      "anchorText": "band work",
+      "location": "Overuse prevention warm-up bullet",
+      "before": "light arm circles and band work before serving reps begin.",
+      "after": "light arm circles and [band work](/go/resistance-bands-set/) before serving reps begin.",
+      "asin": "B01AVDVHTI (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Existing curated slug; destination unaltered. Not placed on the stop-for-pain safety directive."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "volleyball-volley-lite",
+      "anchorText": "Volley LITE balls",
+      "location": "Where to Find the Gear section",
+      "before": "practice-ready basics like Volley LITE balls, cones, and hoops",
+      "after": "practice-ready basics like [Volley LITE balls](/go/volleyball-volley-lite/), [cones](/go/agility-cones-set/), and hoops",
+      "asin": "B000PGHAZW / B0CLNGGXBC (pre-existing catalog)",
+      "browserVerification": "Existing curated slugs; destinations unaltered. Hoops left unlinked (no confident single-product catalog match)."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-volleyball-serving-drills",
+      "action": "insert-existing-catalog-link",
+      "slug": "phone-tripod",
+      "anchorText": "phone mounts",
+      "location": "Where to Find the Gear section (video tracking)",
+      "before": "breaks down phone mounts and simple recording setups",
+      "after": "breaks down [phone mounts](/go/phone-tripod/) and simple recording setups",
+      "asin": "B07837W5NX (pre-existing catalog entry, reused, not re-sourced)",
+      "browserVerification": "Existing curated slug; destination unaltered."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "run-summary",
+      "action": "monetize-new-blg-plus-shin-guards-gap",
+      "details": "Manual rerun 2026-09-25 PT. During push rebase, new Publish BabyLoveGrowth e12d98e7 (890337 youth-volleyball-serving-drills) landed; processed same run. Monetized serving-drills with 8 existing-catalog /go/ (0 new ASINs). Earlier in run: best-kids-shin-guards Nike Charge gap closed with new ASIN B07HVCX4YC (1 competitor shortlist replaced; article at 8/8). Soft pieces / confidence editorial blocker noted. Untracked TRIAGE_2026-09-24.md left alone. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": "B07HVCX4YC (shin-guards only; serving-drills used existing catalog)",
+      "browserVerification": "Nike Charge Chrome-verified earlier this run. Serving-drills used existing catalog only; no new ASIN."
     }
   ]
 }

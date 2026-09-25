@@ -21,10 +21,13 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  affiliateDisclosurePresent: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-09-25 manual rerun): monetized with 8 existing-catalog /go/ placements (agility-cones-set x3, volleyball-volley-lite x2, resistance-bands-set x2, phone-tripod x1); FTC disclosure added; 0 new catalog entries; 0 competitor replacements (no competitor product storefronts). Sources (USAV PDF, AAP, NFHS) protected."
 ---
 
 Start every new server about 10 feet from the net, not on the end line, and drill the toss before you ever add a swing. The three drills that earn their spot in every practice are toss-and-drop, target serving, and serve-and-chase. Younger kids stay underhand until their coordination catches up; overhand comes later, once contact and footwork are reliable.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -58,7 +61,7 @@ You do not need all of these in one practice. Pick two or three based on your gr
 
 - **Wall serving** (ages 6-9): packs in dozens of reps without needing a partner or net; builds contact and toss memory fast.
 - **Toss-only drill** (ages 6-14): isolates the single biggest failure point in youth serving; nobody swings until the toss lands the same spot ten times in a row.
-- **Target serving with hoops or cones** (ages 8-12): teaches placement, not just power; turns a mechanical skill into a game.
+- **Target serving with [hoops or cones](/go/agility-cones-set/)** (ages 8-12): teaches placement, not just power; turns a mechanical skill into a game.
 - **Serve-and-chase** (ages 9-13): keeps players moving, builds conditioning, and mimics the real transition from serve to defense.
 - **Partner target challenge** (ages 10-14): adds light competitive pressure, which is exactly what game-day serving requires.
 - **Timed team target game** (ages 10-14): compresses reps into a countdown, which forces focus and rewards consistency over showing off.
@@ -71,7 +74,7 @@ Progression should follow the player's success rate, not the calendar or the sco
 
 1. **Start where the player can already succeed.** A useful rule of thumb is to begin at the distance the child can throw a ball comfortably and confidently, not the regulation service line.
 2. **Set a clear success threshold before moving back.** Something like 8 of 10 legal serves over the net is a fair bar. Meet it, then take one step back.
-3. **Introduce the regular ball and overhand motion gradually.** Younger or newer players often do better starting with a Volley LITE or beach ball; USA Volleyball's coaching resources suggest layering in torque and sideways serving patterns before asking for a full overhand swing.
+3. **Introduce the regular ball and overhand motion gradually.** Younger or newer players often do better starting with a [Volley LITE](/go/volleyball-volley-lite/) or beach ball; USA Volleyball's coaching resources suggest layering in torque and sideways serving patterns before asking for a full overhand swing.
 4. **Add difficulty through targets, not just distance.** Smaller zones, bonus points for corners, or a scoring system built around placement will challenge advanced servers without forcing them into a distance they can't yet control.
 
 ## What Should Coaches Check in Every Serving Motion?
@@ -93,13 +96,13 @@ Common faults and their one-line fixes: toss drifting behind the shoulder ("plac
 
 2. **Toss-and-drop.** No swing at all. Players toss and let the ball drop, checking that it lands in front of the hitting shoulder every time. Success target: 10 consistent tosses in a row before advancing. This single drill fixes more serves than any other adjustment, since a reliable toss removes the most common cause of net serves.
 
-3. **Target serving.** Lay hoops or cones in the service court, scored by zone (corners worth more than the middle). Start close, add distance only after players clear a set score threshold.
+3. **Target serving.** Lay hoops or [cones](/go/agility-cones-set/) in the service court, scored by zone (corners worth more than the middle). Start close, add distance only after players clear a set score threshold.
 
 4. **Serve-and-chase.** Each player serves, then jogs to retrieve their own ball and rotates to the back of the line. It keeps lines short and adds a light conditioning element without turning practice into a drill sergeant's workout.
 
 5. **Partner target challenge.** Pair players and have them call zones for each other before the serve. First to hit five called zones wins. This builds pressure reps in a format that still feels like a game.
 
-6. **Shoulder external rotation and release timing.** For older players developing overhand power, light band work or towel-only holds train the cocking phase safely before adding resistance. Keep sets short and stop at the first sign of shoulder discomfort.
+6. **Shoulder external rotation and release timing.** For older players developing overhand power, light [band work](/go/resistance-bands-set/) or towel-only holds train the cocking phase safely before adding resistance. Keep sets short and stop at the first sign of shoulder discomfort.
 
 Across these six drills, the constant that matters most is the toss. Coaches who prioritize toss-only practice early in the season often help players develop cleaner serving technique faster than those who rush into full swings too soon.
 
@@ -117,7 +120,7 @@ A written [practice plan template](/blog/youth-volleyball-practice-plan/) makes 
 
 Serving is a repetitive overhead motion, and young shoulders are still developing. The [American Academy of Pediatrics](https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Preventing-Overuse-Injuries.aspx) recommends varying activities, increasing training load gradually, and building in regular rest days to limit overuse risk.
 
-- Warm up shoulders with light arm circles and band work before serving reps begin.
+- Warm up shoulders with light arm circles and [band work](/go/resistance-bands-set/) before serving reps begin.
 - Avoid sudden jumps in weekly serving volume; add reps gradually across a season, not all at once.
 - Stop immediately and involve a parent or medical professional if a player reports sharp or persistent shoulder pain.
 - The [NFHS](https://nfhs.org/stories/the-double-edged-sword-a-guide-to-early-sport-specialization) also recommends delaying early specialization and encouraging multi-sport participation to reduce overuse injury risk in young athletes.
@@ -138,7 +141,7 @@ The other place conventional coaching falls short is pacing shoulder work. Youth
 
 None of these drills require expensive equipment, but having the right basics on hand saves you from improvising with a soccer ball at practice number three. This resource helps parent-coaches figure out what belongs in the equipment bag versus what can wait, without the guesswork of scrolling through generic sporting-goods listings.
 
-The [what to buy hub](/what-to-buy/) covers practice-ready basics like Volley LITE balls, cones, and hoops for target drills, plus [at-home training gear](/what-to-buy/training-gear/) for players who want extra reps between practices. If you're also tracking technique on video to review toss consistency, the [video and tracking gear guide](/what-to-buy/video-tracking-gear/) breaks down phone mounts and simple recording setups that make it easy to spot the toss issues covered above. None of this is required to run a good practice. It's just the difference between guessing what to buy and knowing before you shop.
+The [what to buy hub](/what-to-buy/) covers practice-ready basics like [Volley LITE balls](/go/volleyball-volley-lite/), [cones](/go/agility-cones-set/), and hoops for target drills, plus [at-home training gear](/what-to-buy/training-gear/) for players who want extra reps between practices. If you're also tracking technique on video to review toss consistency, the [video and tracking gear guide](/what-to-buy/video-tracking-gear/) breaks down [phone mounts](/go/phone-tripod/) and simple recording setups that make it easy to spot the toss issues covered above. None of this is required to run a good practice. It's just the difference between guessing what to buy and knowing before you shop.
 
 ## Sources
 
