@@ -1253,5 +1253,10 @@
     "destination": "https://www.amazon.com/dp/B01GK9HG60?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-soccer-shin-guards-adidas-sock"
+  },
+  "nike-youth-charge-shin-guards": {
+    "destination": "https://www.amazon.com/dp/B07HVCX4YC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-shin-guards-nike-charge-youth"
   }
 }

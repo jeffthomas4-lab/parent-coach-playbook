@@ -391,6 +391,26 @@
       "reason": "RESOLVED 2026-09-23: prior 2026-09-07 zero-brand gap superseded. Article monetized with 7 existing-catalog /go/ placements (bucket, cone, glove, phone tripod, resistance band). Standing residual: hula hoop / rebounder / wall targets have no confident catalog match and were left unlinked. nextgencards.shop blog citation remains unprotected-as-product (reference blog, not buyable SKU) per 2026-09-07 Jeff flag.",
       "loggedAt": "2026-09-23",
       "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "674402",
+      "slug": "best-kids-shin-guards",
+      "title": "Best Kids Shin Guards: Fit, Comfort, and Stays Put",
+      "sport": "multi-sport",
+      "topic": "game-day",
+      "reason": "Partial residual after 2026-09-25 monetization. Nike Youth Charge shortlist now /go/nike-youth-charge-shin-guards/ (ASIN B07HVCX4YC Chrome-verified in stock). Left unlinked due to max_links_per_article=8: (1) table-row Nike Youth Charge still nike.com, (2) Sources Nike Charge manufacturer link still nike.com. Hackk Soccer Youth Shin Guards: Amazon search this run still returns no Hackk brand listing (generics/sponsored only); left hackksoccer.com competitor links. Northdeer / Airsfish / Toddler Shin Pads Set / G-Form Pro-S / Nike Mercurial table rows still unlinked (cap). Revisit Hackk if it lands on Amazon; table/Sources Nike can convert only if a /go/ slot frees up.",
+      "loggedAt": "2026-09-25",
+      "loggedBy": "Arnie (babylove affiliate pass)"
+    },
+    {
+      "articleId": "873746",
+      "slug": "confidence-for-youth-athletes",
+      "title": "Parent Coaches: One Postgame Script to Build Youth Athlete Confidence",
+      "sport": "multi-sport",
+      "topic": "communication",
+      "reason": "EDITORIAL BLOCKER (re-confirmed 2026-09-25 manual rerun). Body still truncated mid-sentence with Jeff fragment. Do not monetize until Ed/Jeff rewrite. Zero buyable products regardless.",
+      "loggedAt": "2026-09-25",
+      "loggedBy": "Arnie (babylove affiliate pass)"
     }
   ]
 }

@@ -22,14 +22,14 @@ editorial:
   status: published
   citationCheckPassed: false
   affiliateDisclosurePresent: true
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 2 existing-catalog link(s). Arnie (babylove affiliate pass, 2026-09-17): added 3 new Amazon catalog entries (g-form-v2-shin-guards-youth, vizari-malaga-shin-guards-youth, adidas-youth-sock-shin-guards), replaced G-Form competitor product links with affiliate redirects, linked Vizari and adidas sock picks, left Nike Charge and Hackk competitor links (Amazon OOS / no Amazon listing), moved FTC disclosure to top with AFFILIATES.md exact sentence."
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Arnie (babylove affiliate pass, 2026-08-06): inserted 2 existing-catalog link(s). Arnie (babylove affiliate pass, 2026-09-17): added 3 new Amazon catalog entries (g-form-v2-shin-guards-youth, vizari-malaga-shin-guards-youth, adidas-youth-sock-shin-guards), replaced G-Form competitor product links with affiliate redirects, linked Vizari and adidas sock picks, left Nike Charge and Hackk competitor links (Amazon OOS / no Amazon listing), moved FTC disclosure to top with AFFILIATES.md exact sentence. Arnie (babylove affiliate pass, 2026-09-25 manual rerun): Chrome-verified Nike Youth Charge ASIN B07HVCX4YC in stock (Only 1 left); added nike-youth-charge-shin-guards catalog entry; replaced shortlist nike.com product link with /go/ (article now at 8/8 cap). Table row + Sources nike.com and all Hackk links left (cap / no Amazon listing)."
 ---
 *This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 The **[G-Form V2 Soccer Shin Guard (Youth)](/go/g-form-v2-shin-guards-youth/)** is the best overall pick for most kids, balancing certified impact protection with a slim, comfortable fit that children actually keep on. For parents who need a quick shortlist right now:
 
 - **Best overall:** G-Form V2 Soccer Shin Guard (Youth) — SmartFlex technology stays flexible during play, hardens on impact, machine-washable sleeve
-- **Best hard-shell protection:** [Nike Youth Charge Shin Guard](https://www.nike.com/t/charge-kids-soccer-shin-guards-HhL7nH) — durable plastic shell, foam backing, NOCSAE-approved on select models
+- **Best hard-shell protection:** [Nike Youth Charge Shin Guard](/go/nike-youth-charge-shin-guards/) — durable plastic shell, foam backing, NOCSAE-approved on select models
 - **Best budget:** [Vizari youth shin guards](/go/vizari-malaga-shin-guards-youth/) or Northdeer Soccer shin guards — both under $15, solid for recreational play
 - **Best ankle support:** [adidas Kids' Performance Youth Sock Shin Guards](/go/adidas-youth-sock-shin-guards/) or the Toddler Shin Pads Set with Sleeves and Long Soccer Socks — integrated ankle padding and stirrups keep guards in place for younger players
 - **Best for growing kids:** [Hackk Soccer Youth Shin Guards](https://www.hackksoccer.com/products/hackk-soccer-shin-guards) — contoured EVA foam backing at a price that makes seasonal replacement painless

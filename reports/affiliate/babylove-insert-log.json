@@ -1234,6 +1234,64 @@
       "after": null,
       "asin": null,
       "browserVerification": "No new ASIN sourced. All 5 /go/ slugs reused from existing affiliates.json; no destination edits."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "best-kids-shin-guards",
+      "action": "add-new-catalog-entry",
+      "slug": "nike-youth-charge-shin-guards",
+      "anchorText": null,
+      "location": "src/data/affiliates.json",
+      "before": null,
+      "after": {
+        "destination": "https://www.amazon.com/dp/B07HVCX4YC?tag=parentcoachpl-20",
+        "retailer": "Amazon",
+        "campaign": "gear-soccer-shin-guards-nike-charge-youth"
+      },
+      "asin": "B07HVCX4YC",
+      "browserVerification": "Chrome headless on DESKTOP this run. Opened https://www.amazon.com/dp/B07HVCX4YC. productTitle: Nike Youth Charge Shin Guards (Black/White) (YS). Availability: Only 1 left in stock - order soon. Add to Cart present. Matches article shortlist product Nike Youth Charge Shin Guard. Prior ASINs B019YDL566 / B07SR4QDG6 re-checked and still Currently unavailable."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "best-kids-shin-guards",
+      "action": "replace-competitor-with-new-catalog-link",
+      "slug": "nike-youth-charge-shin-guards",
+      "anchorText": "Nike Youth Charge Shin Guard",
+      "location": "Quick shortlist bullet: Best hard-shell protection",
+      "before": "[Nike Youth Charge Shin Guard](https://www.nike.com/t/charge-kids-soccer-shin-guards-HhL7nH)",
+      "after": "[Nike Youth Charge Shin Guard](/go/nike-youth-charge-shin-guards/)",
+      "asin": "B07HVCX4YC",
+      "browserVerification": "Same Chrome verification as catalog add. Only shortlist bullet replaced; table row and Sources nike.com left because article was already at 7/8 and max_links_per_article=8."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "confidence-for-youth-athletes",
+      "action": "editorial-blocker-no-monetize",
+      "details": "Standing gap (articleId 873746). Re-confirmed on manual rerun: truncated mid-sentence Jeff fragment remains; do not monetize until editorial rewrite. Zero buyable products anyway (scripts/psychology piece).",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "youth-sports-budget",
+      "action": "no-links-zero-products",
+      "details": "Already gap-queued 2026-09-22 (881111). Manual rerun after prior-night loud-skip: re-confirmed season-budget piece; gear only as generic/used tips; protected citations. Still 0 products.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable."
+    },
+    {
+      "date": "2026-09-25",
+      "articleSlug": "run-summary",
+      "action": "monetize-partial-gap-plus-verify",
+      "details": "Manual rerun 2026-09-25 PT (Jeff request after 2026-09-24 loud-skip; DESKTOP was offline then). DESKTOP online. No new Publish BabyLoveGrowth since 2f01cd2f youth-sports-budget. Monetized residual best-kids-shin-guards Nike Charge gap: 1 new catalog entry (B07HVCX4YC), 1 competitor nike.com shortlist link replaced, article now 8/8. Hackk still no Amazon listing. Soft/zero-product queue skipped (budget/scripts). confidence-for-youth-athletes editorial blocker re-noted. Left untracked reports/support/TRIAGE_2026-09-24.md alone. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": "B07HVCX4YC (1 new)",
+      "browserVerification": "Chrome headless live product-page verification for Nike Charge; Hackk Amazon search returned no brand listing."
     }
   ]
 }
