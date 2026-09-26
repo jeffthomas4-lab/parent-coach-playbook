@@ -1,6 +1,6 @@
 {
-  "consecutiveHeldNights": 1,
-  "firstHeldDate": "2026-09-25",
-  "lastReason": "Held 2026-09-25 night (Dana). On arrival: hold cleared (consecutiveHeldNights 0); main == origin/main at 66a50c81; only dirty item was untracked reports/support/TRIAGE_2026-09-24.md (inert Sunny triage — committed this run). Live build-info.json commit e12d98e7 (workers-builds, builtAt 2026-09-25T02:31:29Z). Ahead of live by 4: f7ff4ee9 Arnie Nike Charge shin-guards catalog entry; e315d39d Arnie monetize youth-volleyball-serving-drills; ef920476 Sasha social drafts; 66a50c81 Ed football playoff-bracket draft (draft:true, target 2026-10-18). ci-deploy-guard --explain --since e12d98e7 BLOCKED: 1 of 10 files unapproved code — src/data/affiliates.json (new nike-youth-charge-shin-guards ASIN from f7ff4ee9) with no Deploy-Code trailer. CONTENT-ONLY gate fail — did not run pcd-deploy-code.ps1, did not write approval trailer. Synced local refs/tags/pcd-deployed marker to live e12d98e7 for bookkeeping. Jeff clear path: review affiliates.json catalog add, then empty commit with Deploy-Code: approved + push, or laptop pcd-deploy-code.ps1 after review.",
+  "consecutiveHeldNights": 0,
+  "firstHeldDate": null,
+  "lastReason": "Cleared 2026-09-26 (Jeff via Grok). Reviewed nike-youth-charge-shin-guards (ASIN B07HVCX4YC) destination https://www.amazon.com/dp/B07HVCX4YC?tag=parentcoachpl-20 retailer Amazon; no other slug destination edits. Empty commit 987ed12a Deploy-Code: approved for f7ff4ee9 Nike Charge affiliates catalog add. Live tip still e12d98e7 until next workers-builds deploy.",
   "lastBranch": "main"
 }
