@@ -1,18 +1,22 @@
-/* Self-hosted fonts (must precede @tailwind directives) */
-@import "@fontsource/fraunces/400.css";
-@import "@fontsource/fraunces/500.css";
-@import "@fontsource/fraunces/600.css";
-@import "@fontsource/fraunces/700.css";
-@import "@fontsource/fraunces/400-italic.css";
-@import "@fontsource/fraunces/500-italic.css";
-@import "@fontsource/fraunces/600-italic.css";
+/* Self-hosted fonts (must precede @tailwind directives).
+   Latin-only subsets: the site is English (lang=en). Full @fontsource
+   Fraunces CSS also pulled vietnamese + latin-ext files that mobile never
+   needed. Italics kept at 400/500/600 (heavy editorial use); no 700-italic. */
+@import "@fontsource/fraunces/latin-400.css";
+@import "@fontsource/fraunces/latin-500.css";
+@import "@fontsource/fraunces/latin-600.css";
+@import "@fontsource/fraunces/latin-700.css";
+@import "@fontsource/fraunces/latin-400-italic.css";
+@import "@fontsource/fraunces/latin-500-italic.css";
+@import "@fontsource/fraunces/latin-600-italic.css";
 
 /* Body sans: Inter, resolved from the system stack (not an installed
    dependency — no self-hosted @fontsource/inter import). Replaces Mulish,
    which read too warm/editorial for the navy/silver-green palette. */
 
-@import "@fontsource/jetbrains-mono/400.css";
-@import "@fontsource/jetbrains-mono/500.css";
+/* Mono: system stack only. JetBrains Mono was two weight files for a
+   handful of admin/consent labels and gear-pick prices — not worth the
+   transfer on marketing pages. */
 
 /* ---------- Metric-adjusted fallback fonts (CLS fix) ----------
    Before the real font loads, the browser uses these synthetic fallbacks.
@@ -670,7 +674,7 @@ body {
   margin: 0;
 }
 .gear-pick .price {
-  font-family: "JetBrains Mono", Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   color: var(--muted);

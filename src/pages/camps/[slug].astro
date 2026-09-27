@@ -827,37 +827,54 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
   </script>
 
   <script>
-    import L from 'leaflet';
-    import 'leaflet/dist/leaflet.css';
+    // Leaflet is dynamically imported when #camp-map nears the viewport so
+    // camp detail pages that never scroll to the map skip the map stack.
     const mapEl = document.getElementById('camp-map') as HTMLElement | null;
     if (mapEl) {
       const lat = parseFloat(mapEl.getAttribute('data-lat') ?? '');
       const lon = parseFloat(mapEl.getAttribute('data-lon') ?? '');
       const name = mapEl.getAttribute('data-name') || 'Camp';
       if (isFinite(lat) && isFinite(lon)) {
-        const map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: true })
-          .setView([lat, lon], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 18,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
-        }).addTo(map);
-        // Self-contained inline-SVG pin — same fix as camps/index.astro.
-        // Leaflet's default PNG marker icon doesn't resolve to a real URL
-        // inside this bundled script (it 404s as literal /camps/[object
-        // Object]); a divIcon needs no image asset, so it can't break that way.
-        const w = 26;
-        const h = 38;
-        const pinIcon = L.divIcon({
-          className: 'camp-pin',
-          html: `<svg width="${w}" height="${h}" viewBox="0 0 26 38" xmlns="http://www.w3.org/2000/svg" style="display:block; filter: drop-shadow(0 1px 2px rgba(4,30,66,0.45));">
-            <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="var(--accent)"/>
-            <circle cx="13" cy="13" r="5" fill="var(--surface)"/>
-          </svg>`,
-          iconSize: [w, h],
-          iconAnchor: [w / 2, h],
-          popupAnchor: [0, -h + 4],
-        });
-        L.marker([lat, lon], { icon: pinIcon }).addTo(map).bindPopup(name);
+        async function bootMap() {
+          const leafletMod = await import('leaflet');
+          await import('leaflet/dist/leaflet.css');
+          const L = (leafletMod as { default?: typeof import('leaflet')['default'] }).default!;
+          const map = L.map(mapEl!, { scrollWheelZoom: false, attributionControl: true })
+            .setView([lat, lon], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+          }).addTo(map);
+          // Self-contained inline-SVG pin — same fix as camps/index.astro.
+          // Leaflet's default PNG marker icon doesn't resolve to a real URL
+          // inside this bundled script (it 404s as literal /camps/[object
+          // Object]); a divIcon needs no image asset, so it can't break that way.
+          const w = 26;
+          const h = 38;
+          const pinIcon = L.divIcon({
+            className: 'camp-pin',
+            html: `<svg width="${w}" height="${h}" viewBox="0 0 26 38" xmlns="http://www.w3.org/2000/svg" style="display:block; filter: drop-shadow(0 1px 2px rgba(4,30,66,0.45));">
+              <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="var(--accent)"/>
+              <circle cx="13" cy="13" r="5" fill="var(--surface)"/>
+            </svg>`,
+            iconSize: [w, h],
+            iconAnchor: [w / 2, h],
+            popupAnchor: [0, -h + 4],
+          });
+          L.marker([lat, lon], { icon: pinIcon }).addTo(map).bindPopup(name);
+        }
+        const start = () => { void bootMap(); };
+        if (typeof IntersectionObserver === 'undefined') {
+          start();
+        } else {
+          const io = new IntersectionObserver((entries) => {
+            if (entries.some((e) => e.isIntersecting)) {
+              io.disconnect();
+              start();
+            }
+          }, { rootMargin: '200px 0px' });
+          io.observe(mapEl);
+        }
       }
     }
   </script>

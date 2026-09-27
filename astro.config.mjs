@@ -30,9 +30,10 @@ function rehypeAffiliateRel() {
   return (tree) => walk(tree);
 }
 
-// Sentry (client SDK + optional build-time source map upload). The browser SDK
-// reads its DSN from PUBLIC_SENTRY_DSN in sentry.client.config.ts and stays
-// disabled when that is unset. Source maps upload only when a build-time
+// Sentry (optional build-time source map upload + deferred browser SDK).
+// Browser init lives in src/lib/sentry-browser.ts and boots after idle from
+// BaseLayout; client injection is disabled below so marketing pages do not
+// pay the SDK on the critical path. Source maps upload only when a build-time
 // SENTRY_AUTH_TOKEN (plus org/project) is present, so credential-less builds
 // (local, CI) still pass — the upload step is skipped, not failed. The server
 // side is wrapped separately with @sentry/cloudflare in src/worker.ts.
@@ -42,6 +43,20 @@ const sentryIntegration = sentry({
   authToken: process.env.SENTRY_AUTH_TOKEN,
   // Disable the Sentry build plugin's own telemetry ping to Sentry.
   telemetry: false,
+  // Do not inject the browser SDK into every page's critical JS (~50 KiB
+  // gzip). BaseLayout deferred-boots src/lib/sentry-browser.ts after idle.
+  // Keep server:true so source-map upload still runs when auth is present;
+  // requestHandler stays false because src/worker.ts wraps with
+  // @sentry/cloudflare only when SENTRY_DSN is bound.
+  enabled: { client: false, server: true },
+  autoInstrumentation: { requestHandler: false },
+  // Tree-shake unused Replay/debug paths even if a future import pulls them.
+  bundleSizeOptimizations: {
+    excludeDebugStatements: true,
+    excludeReplayIframe: true,
+    excludeReplayShadowDom: true,
+    excludeReplayWorker: true,
+  },
 });
 
 // https://astro.build/config
@@ -69,7 +84,7 @@ export default defineConfig({
     imageService: { build: 'compile', runtime: 'passthrough' },
   }),
   // authkit stays compile-time gated on PCD_OWNER_AUTH_PROOF_ENABLED; the Sentry
-  // client integration is always present (it self-disables without a DSN). The
+  // integration stays present for build/source-map plumbing (client inject off). The
   // `integrations: ownerAuthProofEnabled` ternary shape is asserted verbatim by
   // tests/workos-authkit-proof-contract.test.ts, so keep that literal intact.
   integrations: ownerAuthProofEnabled

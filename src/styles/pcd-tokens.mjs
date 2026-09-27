@@ -64,7 +64,7 @@ export const pcdTokens = {
   fonts: {
     display: '"Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif',
     body: 'Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-    mono: '"JetBrains Mono", Menlo, monospace',
+    mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   },
   layout: {
     // No single base radius: PCD uses pill buttons (999px) for chips only

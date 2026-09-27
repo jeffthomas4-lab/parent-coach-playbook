@@ -240,7 +240,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
             class="mb-8 border border-bone rounded-card overflow-hidden flex items-center justify-center"
             style="height: 400px; width: 100%; background: var(--stripe);"
             aria-label="Map showing all camps in the directory"
-          ><p class="font-body text-ink-soft text-sm px-4 text-center">Map loads once the full camp directory finishes loading.</p></div>
+          ><p class="font-body text-ink-soft text-sm px-4 text-center">Map loads when you scroll near it, after the camp directory is ready.</p></div>
 
           {/* Data-load status. Visible AND announced (Pillar 6: "state is
                announced, not just drawn") — this text is both the on-screen
@@ -459,13 +459,17 @@ const itemListSchema = featuredCamps.length > 0 ? {
 
 
   <script>
-    import L from 'leaflet';
-    import 'leaflet/dist/leaflet.css';
-    import 'leaflet.markercluster';
-    import 'leaflet.markercluster/dist/MarkerCluster.css';
-    import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+    // Leaflet + markercluster are dynamically imported when #camps-map
+    // nears the viewport (see scheduleMapWhenVisible). Keeping them out of
+    // the critical camps-index chunk saves a large map stack for readers
+    // who never scroll to the map.
     import { buildCampDemandPayload } from '../../lib/camp-demand';
     import { renderCardHtml, escHtml, type CardCamp, type SportOption } from '../../lib/camp-card';
+    import type { Map as LeafletMap } from 'leaflet';
+
+    // Leaflet module handle — set once ensureLeaflet() resolves.
+    type LeafletNS = typeof import('leaflet')['default'];
+    let L: LeafletNS | null = null;
 
     // Self-contained inline-SVG pin. The prior fix imported Leaflet's default
     // marker PNGs and pointed L.Icon.Default at them, but pins still didn't
@@ -475,6 +479,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
     // divIcon sidesteps the problem entirely: it's inline HTML/SVG, so
     // there's no image asset to resolve, hash, or 404 on.
     function campPinIcon() {
+      if (!L) throw new Error('Leaflet not loaded');
       const w = 26;
       const h = 38;
       return L.divIcon({
@@ -632,8 +637,10 @@ const itemListSchema = featuredCamps.length > 0 ? {
         openOnly: false,
       };
 
-      let map: L.Map | null = null;
-      let clusterGroup: L.MarkerClusterGroup | null = null;
+      let map: LeafletMap | null = null;
+      // Cluster group typed structurally — markercluster augments Leaflet at runtime.
+      let clusterGroup: { clearLayers: () => void; addLayer: (layer: unknown) => void } | null = null;
+      let mapInitStarted = false;
       let visibleCamps: LiteCamp[] = [];
       let demandTimer: ReturnType<typeof setTimeout> | undefined;
 
@@ -653,10 +660,26 @@ const itemListSchema = featuredCamps.length > 0 ? {
         }, 600);
       }
 
-      // Initialize map
-      function initMap() {
+      async function ensureLeaflet() {
+        if (L) return L;
+        const leafletMod = await import('leaflet');
+        await import('leaflet/dist/leaflet.css');
+        // markercluster mutates the leaflet default export as a side effect.
+        await import('leaflet.markercluster');
+        await import('leaflet.markercluster/dist/MarkerCluster.css');
+        await import('leaflet.markercluster/dist/MarkerCluster.Default.css');
+        // Vite/ESM interop: prefer default, fall back to namespace.
+        L = (leafletMod as { default?: LeafletNS }).default ?? (leafletMod as unknown as LeafletNS);
+        return L;
+      }
+
+      // Initialize map once Leaflet is loaded. Safe to call repeatedly;
+      // subsequent calls no-op after the first successful init.
+      async function initMap() {
         const mapEl = document.getElementById('camps-map');
-        if (!mapEl || typeof L === 'undefined') return setTimeout(initMap, 100);
+        if (!mapEl || map) return;
+
+        const leaflet = await ensureLeaflet();
 
         // Leaflet does not clear a container's existing children on init —
         // it only errors if the container already holds a Leaflet map. The
@@ -670,10 +693,10 @@ const itemListSchema = featuredCamps.length > 0 ? {
         // Default to a continental US frame so first paint shows the whole footprint,
         // not the math-centroid of all camps (which lands in Nebraska when most camps
         // are on the coasts).
-        map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: true })
+        map = leaflet.map(mapEl, { scrollWheelZoom: false, attributionControl: true })
           .setView([39.5, -98.5], 4);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 18,
           attribution: '&copy; OpenStreetMap',
         }).addTo(map);
@@ -682,17 +705,17 @@ const itemListSchema = featuredCamps.length > 0 ? {
         // bubbles; zooming in (or clicking a bubble) splits them down to
         // individual pins. Default cluster icons are pure CSS (no external
         // images), themed to the site's rust palette below.
-        clusterGroup = L.markerClusterGroup({
+        clusterGroup = leaflet.markerClusterGroup({
           maxClusterRadius: 60,
           spiderfyOnMaxZoom: true,
           showCoverageOnHover: false,
           iconCreateFunction(cluster) {
             const count = cluster.getChildCount();
             const size = count < 10 ? 'small' : count < 100 ? 'medium' : 'large';
-            return L.divIcon({
+            return leaflet.divIcon({
               html: `<div><span aria-label="${count} programs in this map area">${count}</span></div>`,
               className: `marker-cluster marker-cluster-${size}`,
-              iconSize: L.point(40, 40),
+              iconSize: leaflet.point(40, 40),
             });
           },
         });
@@ -701,16 +724,42 @@ const itemListSchema = featuredCamps.length > 0 ? {
         // Then fit to actual camp bounds. fitBounds beats centroid+zoom because it
         // frames every pin regardless of how skewed the distribution is.
         if (campsWithGeo.length > 0) {
-          const bounds = L.latLngBounds(campsWithGeo.map(c => [c.latitude, c.longitude] as [number, number]));
+          const bounds = leaflet.latLngBounds(campsWithGeo.map(c => [c.latitude, c.longitude] as [number, number]));
           map.fitBounds(bounds, { padding: [40, 40], maxZoom: 10 });
         }
+
+        // Filters may have already computed visibleCamps before the map
+        // library arrived; paint markers now.
+        renderMap();
+      }
+
+      // Defer Leaflet download until the map is near the viewport (or
+      // immediately if IntersectionObserver is unavailable).
+      function scheduleMapWhenVisible() {
+        if (mapInitStarted) return;
+        const mapEl = document.getElementById('camps-map');
+        if (!mapEl) return;
+        mapInitStarted = true;
+        const start = () => { void initMap(); };
+        if (typeof IntersectionObserver === 'undefined') {
+          start();
+          return;
+        }
+        const io = new IntersectionObserver((entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            io.disconnect();
+            start();
+          }
+        }, { rootMargin: '200px 0px' });
+        io.observe(mapEl);
       }
 
       // Render map markers
       function renderMap() {
-        if (!map || !clusterGroup) return;
+        if (!map || !clusterGroup || !L) return;
         const activeMap = map;
         const activeClusterGroup = clusterGroup;
+        const leaflet = L;
 
         // Clear old markers — clearLayers empties the whole cluster group in
         // one call instead of removing pins one at a time.
@@ -735,7 +784,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
         visibleCamps.forEach(c => {
           if (typeof c.latitude === 'number' && typeof c.longitude === 'number') {
             const [latJ, lonJ] = jitterFor(c.latitude, c.longitude);
-            const marker = L.marker([latJ, lonJ], { icon: campPinIcon() });
+            const marker = leaflet.marker([latJ, lonJ], { icon: campPinIcon() });
             // Escaped exactly like renderCardHtml — camp name/city/state come
             // from public submissions and moderator review does not guarantee
             // a raw script/HTML string in one of those fields gets caught, so
@@ -758,7 +807,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
         // active, the user's center matters more than every pin, so leave the
         // existing zoom alone. Otherwise frame the visible set.
         if (pinnedCoords.length > 0 && state.zipLat == null) {
-          const bounds = L.latLngBounds(pinnedCoords);
+          const bounds = leaflet.latLngBounds(pinnedCoords);
           activeMap.fitBounds(bounds, { padding: [40, 40], maxZoom: 12 });
         }
       }
@@ -1209,8 +1258,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
           camps = data.camps;
           sportsList = data.sports ?? [];
           populateFilters();
-          initMap();
           applyFilters(); // also renders the grids, the results count, and the map markers
+          scheduleMapWhenVisible(); // Leaflet loads only when map nears viewport
           setControlsReady();
         } catch {
           setControlsErrorState();
