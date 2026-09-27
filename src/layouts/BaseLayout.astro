@@ -226,5 +226,21 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
       window.addEventListener('hashchange', focusSkipTarget);
       focusSkipTarget();
     </script>
+    <!-- Sentry: deferred after idle so marketing pages do not pay ~50 KiB
+         gzip of SDK on the critical path. Error reporting still arms once
+         this boots. Replay stays off (see src/lib/sentry-browser.ts). -->
+    <script>
+      function bootSentry() {
+        import('../lib/sentry-browser').then((m) => m.initBrowserSentry()).catch(() => {});
+      }
+      const w = window as Window & {
+        requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      };
+      if (typeof w.requestIdleCallback === 'function') {
+        w.requestIdleCallback(bootSentry, { timeout: 4000 });
+      } else {
+        setTimeout(bootSentry, 2500);
+      }
+    </script>
   </body>
 </html>
