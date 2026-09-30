@@ -14,7 +14,7 @@ publishedAt: 2026-09-28
 hero: "/illustrations/two-coaches-sideline-clipboards.webp"
 heroAlt: "Two coaches standing on a soccer sideline at dusk, looking down at clipboards, players blurred in the distance."
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -28,7 +28,7 @@ editorial:
   claudeReviewedAt: 2026-09-18
   status: published
   factCheckGoodThrough: 2027-09-18
-  reviewerNotes: "PASS scheduled (publishedAt 2026-09-28): A/B/C/E pass. Verified ECNL San Diego and North Carolina Fall Oct 10-12 2026 and 13 recruitable national events via theecnl.com 2026-27 schedule and June 3 2026 announcement. Dek 14 words. Leave draft:true until date."
+  reviewerNotes: "PASS scheduled (publishedAt 2026-09-28): A/B/C/E pass. Verified ECNL San Diego and North Carolina Fall Oct 10-12 2026 and 13 recruitable national events via theecnl.com 2026-27 schedule and June 3 2026 announcement. Dek 14 words. Penny published 2026-09-29 PT (scheduled date passed)."
 ---
 
 Someone on the parent chat calls the October weekend "the tryout," and someone else swears college coaches will walk over after the first whistle. Neither claim is how an ECNL fall event works. Wrong.
