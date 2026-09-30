@@ -1396,6 +1396,180 @@
       "after": null,
       "asin": "B07HVCX4YC (shin-guards only; serving-drills used existing catalog)",
       "browserVerification": "Nike Charge Chrome-verified earlier this run. Serving-drills used existing catalog only; no new ASIN."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "reward-systems-youth-sports",
+      "action": "add-new-catalog-entry",
+      "slug": "poster-board-white-22x28",
+      "anchorText": null,
+      "location": "src/data/affiliates.json",
+      "before": null,
+      "after": {
+        "destination": "https://www.amazon.com/dp/B000F8XIP6?tag=parentcoachpl-20",
+        "retailer": "Amazon",
+        "campaign": "gear-poster-board-white-22x28"
+      },
+      "asin": "B000F8XIP6",
+      "browserVerification": "Chrome headless on DESKTOP this run. Opened https://www.amazon.com/dp/B000F8XIP6. productTitle: Pacon Super Value Poster Board, Uncoated, 22\" x 28\", White, 50 Sheets. Availability: In Stock. Add to Cart present. Discovered via Amazon search for poster board white 22x28."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-disclosure",
+      "details": "Added AFFILIATES.md FTC disclosure sentence to visible body before first affiliate link.",
+      "before": null,
+      "after": "*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*",
+      "asin": null,
+      "browserVerification": "Not applicable; disclosure only."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "agility-cones-set",
+      "anchorText": "Cones or floor markers",
+      "location": "What to bring bullet list",
+      "before": "- Cones or floor markers for station boundaries.",
+      "after": "- [Cones or floor markers](/go/agility-cones-set/) for station boundaries.",
+      "asin": "B0CLNGGXBC (pre-existing; Chrome-verified this run)",
+      "browserVerification": "B0CLNGGXBC (pre-existing; Chrome-verified this run)"
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "hockey-puck",
+      "anchorText": "bucket of pucks",
+      "location": "What to bring bullet list",
+      "before": "- A bucket of pucks per station, not one shared pile.",
+      "after": "- A [bucket of pucks](/go/hockey-puck/) per station, not one shared pile.",
+      "asin": "existing catalog slug hockey-puck (destination unaltered)",
+      "browserVerification": "existing catalog slug hockey-puck (destination unaltered)"
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "hockey-stick-youth",
+      "anchorText": "extra sticks + spare helmet",
+      "location": "What to bring bullet list",
+      "before": "- Two or three extra sticks and a spare helmet.",
+      "after": "- Two or three [extra sticks](/go/hockey-stick-youth/) and a [spare helmet](/go/hockey-helmet-youth/).",
+      "asin": "stick amzn.to->Franklin Kids Stick live; helmet B09KWMQ9TH In Stock (Chrome this run)",
+      "browserVerification": "stick amzn.to->Franklin Kids Stick live; helmet B09KWMQ9TH In Stock (Chrome this run)"
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "Water bottles + first-aid kit",
+      "location": "What to bring bullet list",
+      "before": "- Water bottles and a first-aid kit within reach of the bench.",
+      "after": "- [Water bottles](/go/multi-sport-water-bottle/) and a [first-aid kit](/go/first-aid-fanny-pack/) within reach of the bench.",
+      "asin": "B08TQQ9RTS + B08BJY3KV8 In Stock (Chrome this run)",
+      "browserVerification": "B08TQQ9RTS + B08BJY3KV8 In Stock (Chrome this run)"
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "coach-clipboard-dry-erase",
+      "anchorText": "coach clipboard",
+      "location": "Pro Tip station assignments",
+      "before": "*Write your station assignments on a small laminated card clipped to the boards. It saves you from re-explaining the rotation every week.*",
+      "after": "*Write your station assignments on a [coach clipboard](/go/coach-clipboard-dry-erase/) or laminated card clipped to the boards. It saves you from re-explaining the rotation every week.*",
+      "asin": "B071YKBLVQ (Chrome this run)",
+      "browserVerification": "B071YKBLVQ (Chrome this run)"
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "hockey-practice-plan-youth",
+      "action": "insert-existing-catalog-link",
+      "slug": "phone-tripod",
+      "anchorText": "phone tripod",
+      "location": "Planning tools video tracking bullet",
+      "before": "- [Video and tracking tools](/what-to-buy/video-tracking-gear/) if you want to record sessions and show kids their own progress.",
+      "after": "- [Video and tracking tools](/what-to-buy/video-tracking-gear/) if you want to record sessions with a [phone tripod](/go/phone-tripod/) and show kids their own progress.",
+      "asin": "B07837W5NX In Stock (Chrome this run)",
+      "browserVerification": "B07837W5NX In Stock (Chrome this run)"
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "favoritism-coaching-your-child",
+      "action": "gap-queue-zero-products",
+      "details": "BLG 896877 (published 2026-09-27). Scripts/policy/SafeSport piece. Outbound links are SafeSport PDF and USA Volleyball resource (reference_links_protected). Mentions documenting a log and PCD gear/video hubs as internal links only; no named buyable storefront products. Zero /go/ inserted.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable, no product to source."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "reward-systems-youth-sports",
+      "action": "insert-disclosure",
+      "details": "Added AFFILIATES.md FTC disclosure sentence to visible body before first affiliate link.",
+      "before": null,
+      "after": "*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*",
+      "asin": null,
+      "browserVerification": "Not applicable; disclosure only."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "reward-systems-youth-sports",
+      "action": "insert-new-catalog-link",
+      "slug": "poster-board-white-22x28",
+      "anchorText": "poster board",
+      "location": "What reward systems work: token/point systems paragraph",
+      "before": "A single poster board with stickers for \"hustle plays,\" \"encouraged a teammate,\" or \"tried a new skill\" works better than a complicated app nobody updates.",
+      "after": "A single [poster board](/go/poster-board-white-22x28/) with stickers for \"hustle plays,\" \"encouraged a teammate,\" or \"tried a new skill\" works better than a complicated app nobody updates.",
+      "asin": "B000F8XIP6",
+      "browserVerification": "Chrome headless live product-page verification for B000F8XIP6 (Pacon Super Value Poster Board In Stock). Stickers left unlinked: search returned seasonal/Halloween listings that did not match generic reward stickers."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "reward-systems-youth-sports",
+      "action": "insert-new-catalog-link",
+      "slug": "poster-board-white-22x28",
+      "anchorText": "poster board",
+      "location": "Six-week trial materials list",
+      "before": "- A poster board or printable chart for tracking.",
+      "after": "- A [poster board](/go/poster-board-white-22x28/) or printable chart for tracking.",
+      "asin": "B000F8XIP6",
+      "browserVerification": "Chrome headless live product-page verification for B000F8XIP6 (Pacon Super Value Poster Board In Stock). Stickers left unlinked: search returned seasonal/Halloween listings that did not match generic reward stickers."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "reward-systems-youth-sports",
+      "action": "insert-existing-catalog-link",
+      "slug": "coach-clipboard-dry-erase",
+      "anchorText": "clipboard",
+      "location": "How Resources support: parent-coach gear guide sentence",
+      "before": "if you need a clipboard, token board, or bench materials to run your system.",
+      "after": "if you need a [clipboard](/go/coach-clipboard-dry-erase/), token board, or bench materials to run your system.",
+      "asin": "B071YKBLVQ (pre-existing; Chrome-verified this run)",
+      "browserVerification": "Existing curated slug; Chrome-verified this run; destination unaltered."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "confidence-for-youth-athletes",
+      "action": "editorial-blocker-no-monetize",
+      "details": "Standing gap (articleId 873746). Re-confirmed: do not monetize until editorial rewrite. Zero buyable products (scripts/psychology).",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable."
+    },
+    {
+      "date": "2026-09-30",
+      "articleSlug": "run-summary",
+      "action": "monetize-new-blg-plus-gap",
+      "details": "Manual rerun 2026-09-30 PT after prior-night DESKTOP loud-skip; DESKTOP online (041b6bba). New BLG since last Arnie pass: favoritism-coaching-your-child (896877), hockey-practice-plan-youth (900866), reward-systems-youth-sports (909236). Monetized hockey with 8 existing-catalog /go/ (0 new ASINs; helmet only in gear list, not safety section). Monetized reward-systems with 3 /go/ (1 new catalog poster-board B000F8XIP6; clipboard reused). Gap-queued favoritism (0 products). confidence editorial blocker re-noted. Prior volleyball/shin-guards/soccer-passing already at 8/8. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": "B000F8XIP6 (1 new; hockey used existing catalog)",
+      "browserVerification": "Chrome headless on DESKTOP for cones, helmet, water, first-aid, tripod, clipboard, stick (Franklin live), poster board. Stickers not added (no clean non-seasonal match)."
     }
   ]
 }

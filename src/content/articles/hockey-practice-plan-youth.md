@@ -26,6 +26,8 @@ editorial:
 
 Younger skaters, roughly 6U and 8U, do best with short, station-based practices that keep the whole group moving. Older skaters, 10U and 12U, need more small-area games and a higher ratio of practice to games to keep building hockey sense. Grab a [USA Hockey Mobile Coach](https://portal.usahockey.com/cx/hockey-development-coordinator/coaching-development/basic_structure_for_8u.pdf) template, adjust the station count for your roster, and run it this week.
 
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+
 ***
 
 > **TL;DR:**
@@ -68,10 +70,10 @@ Across every age, plan to repeat the same station rotation twice in one session 
 
 What to bring so nobody is scrambling on the bench:
 
-- Cones or floor markers for station boundaries.
-- A bucket of pucks per station, not one shared pile.
-- Two or three extra sticks and a spare helmet.
-- Water bottles and a first-aid kit within reach of the bench.
+- [Cones or floor markers](/go/agility-cones-set/) for station boundaries.
+- A [bucket of pucks](/go/hockey-puck/) per station, not one shared pile.
+- Two or three [extra sticks](/go/hockey-stick-youth/) and a [spare helmet](/go/hockey-helmet-youth/).
+- [Water bottles](/go/multi-sport-water-bottle/) and a [first-aid kit](/go/first-aid-fanny-pack/) within reach of the bench.
 
 ## How to run station-based practices for younger skaters
 
@@ -84,7 +86,7 @@ Station practices only work when the rotation is tight. Here is the flow that ke
 5. Get down to eye level between reps and praise kids by name. It lands better than shouting instructions across the ice.
 6. Do a quick safety scan during each transition: loose laces, helmets on straight, no one sitting on the ice during a drill.
 
-**Pro Tip:** *Write your station assignments on a small laminated card clipped to the boards. It saves you from re-explaining the rotation every week.*
+**Pro Tip:** *Write your station assignments on a [coach clipboard](/go/coach-clipboard-dry-erase/) or laminated card clipped to the boards. It saves you from re-explaining the rotation every week.*
 
 ## Building hockey sense with small-area games at 10U and 12U
 
@@ -114,7 +116,7 @@ Pair it with a couple of practical guides:
 
 - Our [first practice plan for 5 to 7 year olds](/game/first-practice-plan/) if you are running your very first session.
 - A [hockey gear list by age](/what-to-buy/hockey/) so nobody shows up missing a piece of equipment.
-- [Video and tracking tools](/what-to-buy/video-tracking-gear/) if you want to record sessions and show kids their own progress.
+- [Video and tracking tools](/what-to-buy/video-tracking-gear/) if you want to record sessions with a [phone tripod](/go/phone-tripod/) and show kids their own progress.
 
 Track a few simple metrics over the season: how often you practice versus play, how many reps each drill gives per kid, and how much goalie-specific work you are actually fitting in.
 

@@ -26,6 +26,8 @@ editorial:
 
 The best reward systems in youth sports favor earned, effort-linked recognition over outcome-only prizes, paired with simple, consistent rituals that support a kid's sense of autonomy, competence, and connection to teammates. Parent Coach Desk builds its scripts and tools around this framework. Below you will find practical examples, a six-week decision checklist, and age-specific guidance you can start using tonight.
 
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+
 ***
 
 > **TL;DR:**
@@ -55,7 +57,7 @@ The best reward systems in youth sports favor earned, effort-linked recognition 
 
 You do not need a trophy case to build a good reward system. You need a plan that is simple enough to run every week and honest enough that kids trust it.
 
-Start with token or point systems, but keep the admin light. A single poster board with stickers for "hustle plays," "encouraged a teammate," or "tried a new skill" works better than a complicated app nobody updates. One column, one rule, one adult in charge of it.
+Start with token or point systems, but keep the admin light. A single [poster board](/go/poster-board-white-22x28/) with stickers for "hustle plays," "encouraged a teammate," or "tried a new skill" works better than a complicated app nobody updates. One column, one rule, one adult in charge of it.
 
 Ritual rewards carry more weight than most parents expect. A consistent postgame routine, a favorite snack, a specific playlist for the ride home, a two-minute family debrief, tells a kid the relationship does not depend on the scoreboard. [USA Volleyball's guidance on supporting athletes after a tough game](https://usavolleyball.org/resource/how-to-help-your-athlete-after-a-bad-game/) recommends tying small treats to effort rather than results, which keeps the ritual meaningful even after a loss.
 
@@ -120,7 +122,7 @@ Start with five decisions: what behavior you are rewarding, which reward type fi
 
 Materials are minimal:
 
-- A poster board or printable chart for tracking.
+- A [poster board](/go/poster-board-white-22x28/) or printable chart for tracking.
 - Sticky notes or slips for "unsung hero" recognition.
 - A shared calendar reminder for the weekly check-in.
 
@@ -136,7 +138,7 @@ A few pages worth bookmarking:
 
 - The [postgame script guide](/drive-home/confidence-for-youth-athletes/) for earned-praise language you can use tonight.
 - The [postgame ritual breakdown](/team-parent/postgame-ritual-what-works/) for building a consistent routine.
-- The [parent-coach gear guide](/what-to-buy/parent-coach-gear/) if you need a clipboard, token board, or bench materials to run your system.
+- The [parent-coach gear guide](/what-to-buy/parent-coach-gear/) if you need a [clipboard](/go/coach-clipboard-dry-erase/), token board, or bench materials to run your system.
 
 For more behavior-reinforcement ideas you can adapt into a team reward system, [Building Blocks Resolutions](https://buildingblockresolutions.com/positive-behavior-support-strategies-8-real-examples) breaks down practical positive behavior support strategies worth borrowing.
 
