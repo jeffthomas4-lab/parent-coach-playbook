@@ -1,8 +1,9 @@
 ---
 title: The 15+ club tryout is a different beast
 dek: Higher stakes. Older kids. More money. The differences from rec or travel tryouts.
-seoDescription: Your kid is fifteen. He's tried out for rec teams, travel teams, school
-  teams. He's now trying out for a 15+ elite club. Everything is different.
+seoTitle: "15+ Club Tryouts: What Changes for Parents"
+seoDescription: "At 15+, club tryouts want position-specific skill, heavy schedules, and fees that often run thousands a year. Verify college claims and get full costs in writing."
+bluf: "A 15+ elite club tryout is not a younger travel redo. Coaches want position-specific skill, kids who are already conditioned, and families who understand multi-day schedules plus fees that often land in the thousands. Get the full cost and verify the club's recent college placements before you celebrate an offer."
 topic: tryouts
 format: note
 phase: drive-there
@@ -11,7 +12,9 @@ age: 15-plus
 hero: "/illustrations/parents-waiting-outside-gym.webp"
 heroAlt: "Adults stand and sit in a hallway outside closed gym doors, seen at distance down the corridor under fluorescent light."
 publishedAt: 2026-02-06
+updatedAt: 2026-09-29
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -20,86 +23,44 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-07
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; cost ranges framed as common not universal; linked cost and 4% neighbors; no recruiting guarantees."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: false
 ---
 
-Your kid is fifteen. He's tried out for rec teams, travel teams, school teams. He's now trying out for a 15+ elite club. Everything is different.
+Your kid is fifteen and walking into a 15+ elite club tryout. Rec, travel, and school tryouts do not prepare you for how different this feels.
 
-**The level**
+The talent floor is higher. The money talk gets louder. The schedule can swallow a week.
 
-Every kid at this tryout has done this before. They are mostly the survivors of years of cuts. The talent floor is high.
+## What changes on the field
 
-Your kid will not be the obvious standout he was at younger ages. He'll be one of many capable players. Coaches are looking for specific things, not just ability.
+Most kids here survived years of cuts. Your kid will not be the obvious standout from age twelve.
 
-**What coaches actually want**
+Coaches want position-specific skill, not a generic "good athlete" label. Specialists from thirteen and fourteen have an edge over generalists.
 
-Position-specific skill. Coaches at this level need a center back, a left back, a holding mid. Not "good athletes." Specifics.
+Some clubs add a short interview. Honest answers beat parent-fed scripts.
 
-If your kid is a generalist, he's at a disadvantage. The kids who specialized at thirteen and fourteen are deeper at their positions.
+Show up conditioned. Play for the group in scrimmage. Do not chat up coaches during evaluation.
 
-**The interview**
+## Cost, schedule, and college claims
 
-Some 15+ tryouts include an interview. Why this club. Why this position. What you're hoping to develop. What your goals are.
+Annual club fees in the $3,000 to $8,000 range show up often before tournaments, travel, and gear. Ask for the full number in writing.
 
-Your kid should prepare honest answers. Not parent-fed answers. Real ones.
+Cross-check with [what youth sports cost](/drive-there/what-youth-sports-cost/) and the [cost calculator](/cost-calculator/). Expect 4 to 6 days a week plus weekend events.
 
-**The cost**
+That load can outpace high school sports alone. College marketing needs proof, so ask where last year's grads went.
 
-15+ club costs are higher than travel ball at twelve. Annual fees of $3,000 to $8,000 are common. Plus tournaments. Plus travel. Plus gear.
+Keep [the 4% rule](/drive-home/the-4-percent-rule/) nearby for base rates.
 
-Most parents are surprised. Get the full cost number before your kid makes the team.
+## Before you accept an offer
 
-**The commitment**
+Talk at home first about schedule, cost, and whether they want the commitment. Declining with grace is allowed.
 
-15+ club is usually 4 to 6 days a week. School plus club, plus tournaments most weekends. The schedule is bigger than high school sports.
+Some clubs call that kid back next year. On the drive home, skip the play-by-play.
 
-Some kids thrive in this. Some kids burn out. Know which kid yours is.
+Music is enough. One line covers it: *I'm proud of you for putting yourself out there.*
 
-**The college connection**
-
-Most 15+ clubs market college recruiting connections. Some are real. Some are marketing.
-
-The clubs that produce college players consistently have a track record you can verify. The clubs that promise college visibility but have produced few committed kids in the last three years are running a different program than they say.
-
-Look at where last year's graduating class went. That's the data.
-
-**The tryout-day mistakes**
-
-Talking too much to coaches. Coaches are evaluating, not chatting.
-
-Trying too hard to stand out individually. The team scrimmage is where coaches see decisions. Showboaters get marked down.
-
-Not being in shape. Coaches at this level expect kids to be conditioned. Showing up out of shape is a no.
-
-**The conversation with your kid**
-
-Not at the field. Before tryouts. Honest.
-
-*This is a big step. The schedule is going to be hard. The cost is real. If you make it, you commit. If you don't, we have other options. Are you ready to commit if the offer comes?*
-
-Most fifteen-year-olds need to think about it. Let them think. The offer can be declined.
-
-**The harder version**
-
-A 15+ club offer arrives. The schedule is impossible with school. The cost is more than your family can absorb without sacrifice.
-
-The right move is sometimes to say no. *We're flattered. The fit isn't right for our family this year.*
-
-Most clubs respect this. The kid who declines an offer with grace is sometimes the kid the club calls back the next year.
-
-**The drive home from tryouts**
-
-Don't review the tryout. Don't tell him what you saw. Don't ask him how he thinks he did.
-
-Music. Drive. *I'm proud of you for putting yourself out there.* Said once.
-
-The waiting period is the same as it was at twelve. He just knows what's at stake more clearly now.
-
-**The shorter version**
-
-15+ tryouts are higher stakes, higher specificity, higher cost. They are also one of many possible paths. Your kid plays his sport, or another sport, or no sport at all. All are real lives.
-
-The tryout is one event. The kid is the kid.
+The tryout is one event. The kid is still the kid, with or without the offer.

@@ -1,8 +1,9 @@
 ---
 title: 'Pre-tryout dinner. What works, what doesn''t'
 dek: The food the night before. The food the morning of. Don't overthink it.
-seoDescription: Tryouts in the morning. The night before, parents over-engineer dinner.
-  They need carbs. They need protein. Should we do pasta. Should we skip the dairy.
+seoTitle: "Pre-Tryout Dinner and Morning Meal That Work"
+seoDescription: "Night-before tryout dinner should be familiar food eaten early, with water through the evening. Morning: a normal breakfast two hours out, a light snack, skip the sugar experiment."
+bluf: "Serve their normal favorite dinner early, keep water going, and protect bedtime. Morning of, eat a familiar breakfast about two hours before, pack a light snack, and skip new foods, energy drinks, and the motivational donut run."
 topic: tryouts
 format: note
 phase: drive-there
@@ -11,7 +12,9 @@ age: all-ages
 hero: "/illustrations/pinnies-on-fence.webp"
 heroAlt: "Plain colored practice pinnies drape over a chain-link fence in a row, an empty field stretching behind them in morning light."
 publishedAt: 2026-02-10
+updatedAt: 2026-09-29
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -20,96 +23,48 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-13
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; softened unverifiable performance claims; linked night-before tryouts; not medical advice."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: false
 ---
 
-Tryouts in the morning. The night before, parents over-engineer dinner. *They need carbs. They need protein. Should we do pasta. Should we skip the dairy.*
+Tryouts in the morning. The night before, parents over-engineer dinner.
 
-Don't overthink it.
+Don't. This is family logistics, not a medical protocol.
 
-**The night-before dinner**
+## Night before
 
-Their normal favorite meal. Something their body knows. Something they like.
+Serve their normal favorite meal. Spaghetti, pizza, nuggets, or rice and beans all work.
 
-Spaghetti, pizza, chicken nuggets, rice and beans. Whatever your family eats most often.
+Familiar food beats a new "performance" plate. Eat early when you can, roughly 5:30 to 6:30, done by 7.
 
-The body wants familiar fuel. New food the night before a high-pressure event is a bad bet.
+Late dinners are how you get a midnight stomachache. Keep water going through the evening.
 
-**Eat early enough**
+Protect normal bedtime. Pair the rest with [night-before tryouts](/drive-there/night-before-tryouts/).
 
-Dinner is 5:30 to 6:30. Done by 7. The body needs three hours to digest before bed.
+## Morning of
 
-Eating at 8:30 the night before tryouts is how you get a kid up at midnight with a stomachache.
+Eat a familiar breakfast about two hours before when the schedule allows. Bagel with peanut butter, eggs and toast, or oatmeal with banana all work.
 
-**Hydrate**
+Keep the plate modest, not a feast. Skip the donut run and the energy drink.
 
-Water through the evening. Not Gatorade. Not soda. Water.
+Save the treat for after. A light snack 30 minutes out, like a banana or granola bar, is enough.
 
-Dehydration the morning of tryouts is one of the most common reasons kids underperform. Fix it the night before.
+Bring a water bottle. Pack a small car snack for the drive home when they crash hungry.
 
-**Skip the experiment**
+## What they do not need
 
-Don't try a new pre-game routine. Don't add the energy drink. Don't introduce a new pasta dish.
+Protein shakes and pre-workouts are not a youth-tryout requirement. Brand of bar does not matter.
 
-The kid's body knows what to do with regular food. Don't add variables.
+The meal is also ritual. Cook, sit, and eat together with phones down.
 
-**Bedtime**
+Talk about anything except the tryout. A calm morning beats a perfect macro split.
 
-Their normal bedtime. Not earlier. Not later. The earlier bedtime produces a kid lying awake. The later bedtime produces a tired kid in the morning.
+Normal food on a normal schedule is the whole formula. The tryout is the new part. The plate stays the same.
 
-**The morning meal**
+Keep the routine boring on purpose. Boring is calm, and calm travels well to the field.
 
-Two hours before tryouts. Real food.
-
-A bagel with peanut butter. Eggs and toast. Oatmeal with banana. Their normal breakfast plus some carbs.
-
-Don't make him eat huge. Eight ounces of food is plenty.
-
-**Skip the donuts**
-
-The morning donut is a parent thing. *We'll get donuts as a treat.* Sugar at 8am produces a crash at 9:30am. The tryout is at 9am.
-
-If you must do something special, do it after.
-
-**The 30-minutes-before snack**
-
-Light. Banana. Granola bar. Small.
-
-Something with carbs. A little bit. Top up the tank without filling it.
-
-**Water in the morning**
-
-Eight to twelve ounces by the time they step on the field. Coaches see kids who are dehydrated. They look slow.
-
-**What they don't need**
-
-A protein shake. Not at this age. Not before this kind of event.
-
-A pre-workout. Definitely not. They're eight to twelve.
-
-A specific brand of bar. Whatever brand they like. The brand doesn't matter.
-
-**The mental fuel**
-
-The pre-tryout breakfast also serves as ritual. The kid sees you cook the eggs, sit at the table, eat with them. The morning has shape.
-
-The morning that has shape produces a calmer kid. The morning that is rushed and frantic produces a stressed kid.
-
-Eat together. Don't be on your phone. Talk about something other than tryouts.
-
-**The car snack**
-
-Small ziplock bag with a granola bar and a handful of trail mix. For after the tryout, on the drive home.
-
-The kid will be hungrier than usual after a high-effort event. The car snack prevents the hangry post-tryout meltdown.
-
-**The shorter version**
-
-Their normal food, eaten on time, in their normal portions. Water through the night. Real breakfast. Small pre-game snack.
-
-That's the entire formula. It looks like every other family dinner. It is.
-
-The tryout is what's different. The food is what stays the same.
+If something has to be special, make it the after-tryout snack, not the 8am sugar bomb.

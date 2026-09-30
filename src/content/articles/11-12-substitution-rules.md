@@ -1,8 +1,9 @@
 ---
 title: The 11-12 Substitution Rules Every Parent Should Know
 dek: How playing time actually works at this age.
-seoDescription: At eleven to twelve, different leagues have different rules about
-  substitutions. I didn't know what the rule was for years.
+seoTitle: "11-12 Substitution Rules Parents Should Know"
+seoDescription: "At 11-12, leagues either mandate equal rotations or let coaches sub freely. Ask the rule once, wait four weeks, then ask what your kid needs to play more."
+bluf: "Ask what substitution rule your league uses before you argue about minutes. Equal-rotation leagues share field time across rotations. Open-sub leagues leave starters and bench roles to the coach. Ask once after four weeks what your kid needs to earn more time."
 topic: rules-of-play
 format: note
 phase: game
@@ -11,7 +12,9 @@ age: 11-12
 hero: "/illustrations/officials-hands-flag.webp"
 heroAlt: "An official's hands rest at the belt holding a plain yellow cloth, cropped at the chest with a blurred green field behind."
 publishedAt: 2026-02-04
+updatedAt: 2026-09-29
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -20,36 +23,48 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-02
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; bluf/seoTitle; linked playing-time neighbors; no invented league statutes."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: false
 ---
 
-At eleven to twelve, different leagues have different rules about substitutions. I didn't know what the rule was for years. I just got mad when my kid didn't play.
+At eleven to twelve, different leagues have different substitution rules. I did not know the rule for years.
 
-**The rotation rule**
-Some leagues mandate that every kid plays equal time. Not equal playing time in the game. Equal time on the field. If you play six kids a side and there are three rotations, everyone plays two rotations.
+I just got mad when my kid did not play.
 
-This means your kid plays, gets pulled, sits, plays again. It's not the same as being a starter. It's equal time.
+## Know which rule you are under
 
-**The starters rule**
-Some leagues have no substitution rules. The coach picks a starting lineup and can sub at will. If your kid is not a starter, they might play four minutes. They might play thirty. It depends on the game.
+Some leagues mandate equal rotations. Everyone shares field time across the game, not equal glory minutes.
 
-**What to ask the coach**
-"What's the substitution rule for this league?" Most coaches will tell you. Some won't. If they won't, email the league. The rule exists. You're allowed to know it.
+Your kid plays, sits, plays again. That is not the same as starting.
 
-**The playing-time conversation**
-Don't have it after week one. Have it after four weeks. By then you know if the coach is building something or just playing favorites.
+Other leagues leave subs to the coach. Starters and bench minutes can swing hard by game.
 
-The right question: "What does she need to work on to play more?" Not: "Why isn't she playing?" The first gets you information. The second gets you defensive answers.
+Four minutes or thirty can both be "within the rules." Ask the coach what substitution rule the league uses.
 
-**What not to do**
-Don't email the coach after every game about playing time. Skip the halftime conversation. Don't tell your kid the coach is unfair. Those approaches make things harder.
+If they will not say, email the league. You are allowed to know it.
 
-**The bigger picture**
-At this age, kids are learning about competition. Some kids are ready. Some aren't. Some coaches are developing players. Some are just trying to win games.
+## When and how to ask about minutes
 
-The rule is the rule. The coach's decision is within that rule. Your job is to understand the rule and let the coach do their job.
+Do not open the [playing-time conversation](/drive-home/how-to-talk-to-the-coach-about-playing-time/) after week one. Wait four weeks.
 
-Ask once. Accept the answer. Watch your kid improve or don't. Then decide whether this team is the right fit.
+Ask what she needs to work on to play more. Do not ask why she is not playing.
+
+The first question gets information. The second gets defense.
+
+Skip the post-game email every week. Skip the halftime hallway talk.
+
+Do not tell your kid the coach is unfair. That story hardens fast and helps nobody.
+
+## Then decide if the team fits
+
+If your kid barely leaves the bench in an open-sub league, read [always on the bench](/drive-home/when-your-kid-is-always-on-the-bench/) for the longer view.
+
+The rule is the rule. The coach's choices sit inside it.
+
+Ask once. Accept the answer. Watch whether your kid is developing this season.
+
+Then decide if this team is the right fit for your family.

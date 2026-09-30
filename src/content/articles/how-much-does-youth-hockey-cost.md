@@ -2,8 +2,8 @@
 title: How Much Does Youth Hockey Cost?
 dek: The most expensive mainstream youth sport, starting with the first pair of skates. Here's the whole number.
 seoTitle: "How Much Does Youth Hockey Cost? The Real 2026 Numbers"
-seoDescription: "Youth hockey costs in 2026: $1,200 first rec seasons, $10,000 core travel years, $13,600 all-in. Where the money goes and where to save."
-bluf: "A first rec hockey season runs about $1,200 because equipment alone is $600. Travel hockey runs $10,000 core, with club fees of $4,000 to $7,000, and $13,600 once lessons and road food are counted. Hockey is the most expensive mainstream youth sport at every tier."
+seoDescription: "Youth hockey costs in 2026: about $1,200 for a first rec season, $10,000 core travel, $13,600 all-in. Where the money goes and where families save."
+bluf: "A first rec hockey season runs about $1,200 because equipment alone averages $600. Travel hockey runs about $10,000 core, with club fees often $4,000 to $7,000, and about $13,600 once lessons and road food are counted. Run your own number before a tryout."
 topic: rec-vs-travel
 format: note
 phase: drive-there
@@ -12,7 +12,9 @@ age: all-ages
 hero: "/illustrations/hockey-rink-empty-early.webp"
 heroAlt: "An empty ice rink sits ready before anyone arrives, a fresh sheet of ice with overhead lights reflecting off the surface."
 publishedAt: 2026-06-10
+updatedAt: 2026-09-29
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -21,26 +23,49 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; calculator defaults retained; USA Hockey membership vs local dues clarified; affiliate last; neighbor what-youth-sports-cost."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: true
 ---
 
-Every hockey parent has had the conversation in the pro shop: you came in for skates and left having spent a car payment. Hockey is the most expensive mainstream youth sport at every tier, and pretending otherwise just delays the math.
+Every hockey parent has had the pro-shop moment. You came in for skates and left having spent a car payment.
 
-These numbers are our [cost calculator](/cost-calculator/) defaults, anchored to USA Hockey cost guidance and published Tier I/II club fees. Every line is editable there.
+Hockey sits at the top of mainstream youth-sport cost in our [cost calculator](/cost-calculator/). These numbers are calculator defaults, anchored to USA Hockey cost guidance and published Tier I/II club fee ranges.
 
-**Rec: about $1,200 a year.** Registration runs $200 to $450 across USA Hockey affiliated leagues. The difference from every other rec sport is the gear: $600 a year averaged across the replacement cycle, because skates, pads, helmet, and sticks all exist and all get outgrown. The [hockey gear guide](/what-to-buy/hockey/) covers what to buy used and what to buy new; the short version is that used works for almost everything except the helmet.
+Every line is editable there.
 
-**Travel: $10,000 core, $13,600 all-in.** The line items: club fee $4,500, and Tier I/II programs publish fees from $4,000 to $7,000, so check yours. Tournament entries $1,200. Hotels $1,800, and hockey travel is real travel, often across state lines for a Saturday. Travel gas $800. Equipment $1,400 a year at this level because skates get replaced annually and sticks break. Team apparel $400. That's $10,100 before private skills coaching ($1,800), camps ($600), or road food ($700).
+## Rec and travel numbers
 
-The equipment line deserves its own honesty. Skates are the one item where fit genuinely affects safety and development, and growing feet need them yearly. Sticks at travel level break, and composite sticks aren't cheap. Budget the cycle, not the purchase. Goalie families: multiply the equipment line by three and accept our sympathy.
+Rec runs about **$1,200** a year. Local dues often land $200 to $450 on top of USA Hockey membership, which itself is usually tens of dollars by birth year.
 
-Where hockey families actually save: the used market is the best in youth sports because every rink has a swap and every kid outgrows gear before wearing it out. Buy the helmet new, [check used gear properly](/drive-there/used-gear-rules/), and let someone else pay the depreciation on everything else. And ice time is the hidden cost driver behind every club fee, which means the club 25 minutes closer with one fewer practice is often the same development for thousands less.
+Equipment averages about $600 across the replacement cycle. Skates, pads, helmet, and sticks all get outgrown.
 
-Run [your own number](/cost-calculator/) before committing to a tryout, because in hockey the tryout is a financial event. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/), and if this year's number doesn't work, [read this first](/drive-home/when-you-cant-afford-travel/).
+Travel runs about **$10,000** core and **$13,600** all-in in our model. Club fee defaults to $4,500, with Tier I/II programs often publishing $4,000 to $7,000.
 
+Add tournaments, hotels, gas, and apparel. Then add lessons, camps, and road food if those are part of your year.
+
+House and lower travel associations can land well under those Tier I/II numbers. Treat the model as a planning floor for competitive travel, not a promise your rink matches it.
+
+## Equipment and the used market
+
+Skates are the item where fit affects safety and development. Growing feet need them yearly.
+
+Sticks at travel level break. Budget the cycle, not one purchase.
+
+Goalie families: multiply equipment by three. Buy the helmet new.
+
+[Check used gear properly](/drive-there/used-gear-rules/) for almost everything else. Ice time drives club fees, so the closer club with one fewer practice can be similar development for less money.
+
+The [hockey gear guide](/what-to-buy/hockey/) covers used vs new by piece.
+
+## Run your number before tryouts
+
+In hockey, the tryout is a financial event. Run [your own number](/cost-calculator/) first.
+
+The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/). If this year's number does not work, [read this first](/drive-home/when-you-cant-afford-travel/).
 
 ---
 
