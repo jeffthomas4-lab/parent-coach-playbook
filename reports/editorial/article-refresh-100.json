@@ -41,8 +41,8 @@
   "summary": {
     "eligible_articles": 808,
     "selected_articles": 100,
-    "refreshed": 50,
-    "pending": 50
+    "refreshed": 60,
+    "pending": 40
   },
   "batches": [
     {
@@ -1587,7 +1587,7 @@
     },
     {
       "batch": 6,
-      "status": "pending",
+      "status": "refreshed",
       "items": [
         {
           "rank": 51,
@@ -1615,8 +1615,8 @@
             "has_seo_title": true,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 52,
@@ -1645,8 +1645,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 53,
@@ -1675,8 +1675,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 54,
@@ -1706,8 +1706,8 @@
             "has_seo_title": false,
             "has_seo_description": false
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 55,
@@ -1736,8 +1736,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 56,
@@ -1766,8 +1766,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 57,
@@ -1796,8 +1796,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 58,
@@ -1826,8 +1826,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 59,
@@ -1855,8 +1855,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         },
         {
           "rank": 60,
@@ -1885,8 +1885,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-09-29"
         }
       ]
     },
@@ -2836,7 +2836,7 @@
           "rank": 92,
           "source": "src/content/articles/college-id-camp-pitch.md",
           "route": "/drive-home/college-id-camp-pitch/",
-          "title": "The college *ID camp* pitch at 13\u201314",
+          "title": "The college *ID camp* pitch at 13–14",
           "sport": "multi-sport",
           "topic": "summer-camps",
           "score": 45,

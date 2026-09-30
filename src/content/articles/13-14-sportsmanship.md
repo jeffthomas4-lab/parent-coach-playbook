@@ -1,8 +1,9 @@
 ---
 title: The 13-14 Sportsmanship Rules
 dek: What actually gets kids in trouble.
-seoDescription: At thirteen and fourteen, sportsmanship rules get enforced harder.
-  Coaches are watching. Refs are watching. And there are actual penalties.
+seoTitle: "13-14 Sportsmanship Rules That Get Kids Carded"
+seoDescription: "At 13-14, arguing officials, taunting, and throwing gear draw cards and technicals. Teach the respect line at home, and do not defend a justified penalty."
+bluf: "At thirteen and fourteen, officials enforce sportsmanship harder. Arguing calls, taunting, throwing gear, and mocking opponents draw cards or technical fouls. Competitive fire is fine. Disrespect is not. Do not defend a justified penalty on the ride home."
 topic: rules-of-play
 format: note
 phase: game
@@ -11,7 +12,9 @@ age: 13-14
 hero: "/illustrations/field-lines-low-angle.webp"
 heroAlt: "Painted boundary lines mark grass at a very low angle in strong side light, the turf's texture visible with nobody in frame."
 publishedAt: 2026-02-13
+updatedAt: 2026-09-29
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -20,43 +23,48 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-18
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; multi-sport framing for cards/technicals; no invented statutes; neighbor playing-time-fairness."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: false
 ---
 
-At thirteen and fourteen, sportsmanship rules get enforced harder. Coaches are watching. Refs are watching. And there are actual penalties.
+At thirteen and fourteen, sportsmanship rules get enforced harder. Coaches watch. Officials watch.
 
-**What will get a yellow card**
-Arguing with a ref. Complaining about a call loudly enough for the ref to hear. Throwing equipment. Celebrating at someone else's expense. Taunting. Those are all technical fouls or cards depending on your sport.
+Penalties are real at this age. The ride home gets worse when parents defend a justified card.
 
-One yellow card means a warning. Two yellow cards mean you're out for the rest of the game. Two games worth of yellow cards means suspension.
+## What draws a card or technical
 
-**What won't**
-Normal competitive talk. "Come on, we got this." Trash talking that's not mocking. Getting upset and walking away instead of staying mad. Being intense but not mean.
+Arguing an official draws trouble. So does loud complaining, throwing gear, celebrating at someone else's expense, or taunting.
 
-**The difference your kid needs to understand**
-There's a line between competitive fire and unsportsmanlike conduct. The line is: does what you're doing respect the other team?
+Those behaviors become yellow cards, technical fouls, unsportsmanlike flags, or ejections depending on the sport. Exact thresholds live in your league rulebook.
 
-If you're celebrating a goal with your teammates: respect.
+Read that book once. Do not invent accumulation math from memory.
 
-If you're mocking the goalie: no respect.
+Normal competitive talk is usually fine. Intensity without mocking is fine.
 
-**What parents see as unfair**
-Your kid argues a call. Yellow card. They think it's unjust. It's not. The rule is clear. Don't argue with officials. If the call was wrong, that's the cost of playing.
+Walking away mad is better than staying to argue. Officials notice both.
 
-**How to talk about it**
-"You got carded for arguing. The ref's call is the ref's call. Next time, let it go." That's the conversation. Not: "That was a bad call." You're not the ref. Move on.
+## The respect line
 
-**The sportsmanship problem that matters**
-If your kid is getting carded for taunting or mocking, that's a bigger issue. That's poor character. That needs a conversation at home about respect.
+Celebrate with teammates. Do not mock the goalie.
 
-If they're getting carded for intensity or emotion, they're learning where the line is. That's normal.
+That is the whole line. Kids who cross it learn the hard way.
 
-**The perspective**
-At fourteen, they're learning that there are rules beyond the rules. How to compete hard while staying in bounds. How to want to win without being a jerk about it.
+If your kid gets punished for arguing a call, keep the ride-home script short. "The official's call is the call. Next time, let it go."
 
-Those lessons matter more than the game.
+Do not litigate the call for them. Sideline patterns that bleed onto the field pair with [playing-time fairness](/drive-home/playing-time-fairness/).
 
-Watch the card. If it's justified, don't defend it. That's how they learn.
+## Character vs intensity
+
+Taunting and mocking are character problems. Handle those at home, not with a defense of the kid to the ref.
+
+Cards for raw emotion are often kids learning the edge. That is normal at fourteen.
+
+Watch the card. If it is justified, do not defend it.
+
+That is how they learn to compete hard without being a jerk about the result or the whistle.
+
+Those lessons travel farther than any single game result.

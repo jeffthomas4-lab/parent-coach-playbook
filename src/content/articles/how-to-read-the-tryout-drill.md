@@ -1,8 +1,9 @@
 ---
 title: How to read the tryout drill
 dek: A parent's eye view. What coaches are actually watching for.
-seoDescription: You're at the field watching tryouts. Forty kids. Three coaches. Drills
-  you don't fully understand. You're trying to figure out where your kid stands.
+seoTitle: "How to Read the Tryout Drill From the Bleachers"
+seoDescription: "What coaches watch in warm-ups, skill stations, small-sided games, and the bench. Effort and coachability beat one pretty drill. Watch quietly and wait for the list."
+bluf: "You cannot grade the tryout in real time from the bleachers. Coaches weigh effort, first-touch quality, decisions in small-sided play, body language after mistakes, and how kids act on the bench. Watch quietly. Drive home. Wait for the list."
 topic: tryouts
 format: note
 phase: drive-there
@@ -11,7 +12,9 @@ age: all-ages
 hero: "/illustrations/pinnies-on-fence.webp"
 heroAlt: "Plain colored practice pinnies drape over a chain-link fence in a row, an empty field stretching behind them in morning light."
 publishedAt: 2026-02-12
+updatedAt: 2026-09-29
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -20,86 +23,48 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-16
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; removed empowerment close; linked bubble and night-before neighbors."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: false
 ---
 
-You're at the field watching tryouts. Forty kids. Three coaches. Drills you don't fully understand. You're trying to figure out where your kid stands.
+You're at the field watching tryouts. Forty kids. Three coaches.
 
-What coaches actually watch for, by drill type.
+Drills you don't fully understand. You're trying to figure out where your kid stands.
 
-**Warm-up jog**
+Treat this as a parent's field guide, not a published rubric.
 
-Coaches watch effort and pace. The kids running fast are showing nerves. The kids running easy are showing confidence. Coaches prefer the easy runners. They look like kids who have done this before.
+## What coaches usually watch
 
-**Skill drills**
+Warm-ups show effort and pace. Easy runners often look experienced. Panic sprinters often look nervous.
 
-Coaches watch hands, feet, and reactions. Crisp passes. Clean catches. First touches that don't bobble.
+Skill stations reward clean first touches and crisp passes. The kid who adjusts on the second rep reads as coachable.
 
-The kid who repeats the drill twice and adjusts something the second time is showing coachability. Coaches love coachability.
+Speed work favors first-step quickness over top-end speed. Small-sided games and scrimmage reveal decisions, communication, and composure after mistakes.
 
-**Speed drills**
+The bench and water break count too. Attention and teammate support are tiebreakers for some staffs.
 
-Coaches watch acceleration over the first five steps. Top-end speed matters less than first-step quickness. The kid who explodes off the line gets noticed.
+## What is not on the rubric
 
-**Small-sided games**
+Volume of yelling does not help. Body size at 8 to 12 does not decide the roster.
 
-This is where coaches actually decide. They watch decisions, communication, and effort.
+Whether you cheer from the bleachers is not a positive signal. Sometimes it is a negative one.
 
-The kid who calls for the ball gets noticed. The kid who plays defense after losing the ball gets noticed. The kid who passes when they should pass gets noticed.
+Parents grade one pretty drill. Coaches grade all kids across all stations.
 
-The kid who tries to do everything alone is making the wrong impression.
+Your kid can look great to you and average to a coach who just watched the station next door. Arrival time and how they talk to teammates are part of the evaluation.
 
-**Live scrimmage**
+A quiet *thanks coach* at the end is a small mark that silence does not earn.
 
-Coaches watch how the kid plays under pressure. Composure. Decision speed. Attitude when they make a mistake.
+## Your job from the bleachers
 
-The kid who shrugs off a mistake and keeps playing is showing what coaches need. The kid who pouts after a turnover is showing the opposite.
+Watch quietly. Do not coach from the fence.
 
-**The bench moment**
+Drive home. Wait for the list.
 
-Coaches watch the kids on the sideline as much as the kids on the field. Are they paying attention? Cheering for the next group? Asking the assistant coach questions?
+If the wait turns into tea-leaf season, read [on the bubble](/drive-there/how-to-tell-if-your-kid-is-on-the-bubble/). Night-before logistics live in [the night before tryouts](/drive-there/night-before-tryouts/).
 
-The bench is part of the tryout. Some coaches use it as a tiebreaker.
-
-**The water break**
-
-The kid who takes a knee and grabs water is fine. The kid who lies on the ground and complains is showing something.
-
-Don't tell your kid this. They figure it out by being there.
-
-**What's not on the rubric**
-
-How loud the kid is. Coaches don't reward yelling.
-
-How big or small the kid is. At 8 to 12, body type is a poor predictor of skill at 16. Coaches know this.
-
-Whether the parent is in the bleachers cheering. Coaches do not factor this in. Sometimes they factor it negatively.
-
-**What is on the rubric**
-
-Effort. Skill. Decisions. Coachability. Body language. Effort again.
-
-Most coaches will tell you that effort is the single biggest variable they evaluate. It's the only one fully under the kid's control.
-
-**The thing parents miss**
-
-The whole tryout is the evaluation, not just the on-field drills. Arrival time. How the kid talks to teammates. Whether they help pick up cones at the end.
-
-The kid who says *thanks coach* at the end gets a small mental tick that the kid who walks off silently doesn't.
-
-**The eye-test mistake**
-
-Parents watch their kid's specific drill and assess based on that. Coaches watch all kids across all drills and grade in relative comparison.
-
-Your kid's drill might have looked great to you and average to coaches who watched the kid two stations down do the same thing better.
-
-This is fine. The coaches see more than you do. Trust the process.
-
-**The shorter version**
-
-You can't really read the tryout in real time. Trust the kid. Trust the coach. Watch quietly. Drive home. Wait for the list.
-
-That's the parent's job at tryouts. Witness, not analyst.
+Your job is witness, not analyst.

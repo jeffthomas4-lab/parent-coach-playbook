@@ -1,20 +1,20 @@
 ---
 title: After the cut. The 24-hour rule
 dek: Don't make any decisions in the first 24 hours. The rule that prevents most regrets.
-bluf: Don't make any decisions in the first 24 hours after a cut. Don't email the
-  coach. Don't switch leagues. Don't promise private lessons. The kid isn't ready,
-  you aren't ready, and any decision made tonight is one you'll undo in a week. Sit.
-  Wait. Talk in the morning.
+seoTitle: "After the Cut: The 24-Hour Rule for Parents"
+seoDescription: "After a tryout cut, wait 24 hours before emails, league switches, or promises. Eat, sleep, hug, then talk. Decisions made that night rarely hold."
+bluf: "Don't make any decisions in the first 24 hours after a cut. Don't email the coach. Don't switch leagues. Don't promise private lessons. The kid isn't ready, you aren't ready, and any decision made tonight is one you'll undo in a week. Sit. Wait. Talk in the morning."
 topic: tryouts
 format: note
 phase: drive-home
 sport: multi-sport
 age: all-ages
 publishedAt: 2026-02-05
+updatedAt: 2026-09-29
 featured: false
+draft: false
 hero: /illustrations/the-post-cut-porch.webp
-heroAlt: A teenager sitting on a porch step at dusk, head down, baseball glove on
-  the boards beside them. A parent visible just inside the front door, not approaching.
+heroAlt: A teenager sitting on a porch step at dusk, head down, baseball glove on the boards beside them. A parent visible just inside the front door, not approaching.
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,86 +23,48 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-04
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-09-29
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-09-29: three H2s; removed unsupported 50% regret claim; linked cuts-list neighbor; affiliate last."
+  factCheckGoodThrough: 2027-09-29
+  affiliateDisclosurePresent: true
 ---
 
-The cuts list went up. Your kid wasn't on it. The next 24 hours, you will be tempted to do several things. Don't.
+The cuts list went up. Your kid wasn't on it.
 
-**The 24-hour rule**
+For the next 24 hours you will want to fix it. Don't.
 
-Don't make any decisions about the sport, the team, the program, or your kid's future in the first 24 hours after the cut.
+## 24 hours of nothing
 
-This includes pulling your kid from the sport. Switching programs. Calling the coach. Posting anything. Texting other parents.
+No decisions about the sport, the team, the program, or your kid's future. No program switches and no coach calls.
 
-24 hours of nothing.
+Skip posts and parent-group texts. Eat dinner, walk, sleep, and hug.
 
-**Why this works**
+Cry if they cry. That is the allowed list.
 
-Your nervous system is firing. Your kid's nervous system is firing. Decisions made in this window have a 50% chance of being regretted.
+For the longer first-day script when the list just posted, read [when the cuts list goes up](/drive-home/when-the-cuts-list-goes-up/).
 
-The decisions that should be made will still be made. They just need clearer heads.
+## What to postpone
 
-**What's allowed in the 24 hours**
+Do not ask the coach why tonight. Wait two weeks if you want feedback.
 
-Eating dinner. Watching a movie. Sleeping. Going for a walk. Hugging your kid. Crying with your kid if they cry.
+Do not draft the unfairness story for friends. The angry version hardens before you have a clear head.
 
-That's it.
+Do not shop the next tryout while they are still feeling this loss. Do not buy a consolation gift.
 
-**What's not allowed**
+Compensation makes the loss louder. The pause keeps every door open.
 
-Calling the coach to ask why. The coach has nothing helpful to say in the next 24 hours. Wait two weeks if you want feedback.
+## Talk after sleep, decide over weeks
 
-Posting on social media. Anything you post will be regretted. Don't.
+At about 24 hours, ask once: *Yesterday was hard. How are you feeling today?*
 
-Texting friends about how unfair it was. The story you tell now will harden. By the time you have a clear-headed view, the social network already knows the angry version.
+Listen. That answer is clearer than the one at 4 hours.
 
-Telling your kid which other team they could try out for. Don't move them to the next thing while they're still feeling the loss of this thing.
+At 48 hours you can float options like other teams, a season off, or another sport. Let the answer be theirs.
 
-Buying them anything. Don't try to compensate. The compensation makes the loss bigger.
+Real next-step decisions usually take one to two weeks. The 24-hour pause is what keeps those choices clean.
 
-**Why 24 hours and not 48**
+Carol Dweck's [*Mindset*](/go/book-mindset/) is worth reading before the next tryout season. The cut feels like a talent verdict. It isn't.
 
-24 is enough time for the worst impulses to fade. Long enough that the kid has slept. Short enough that the family doesn't drift into avoidance.
-
-By 5pm the next day, the worst is past. You can have a real conversation.
-
-**At the 24-hour mark**
-
-Sit down with your kid. *Yesterday was hard. How are you feeling about everything today?*
-
-Listen. The answer at 24 hours is more accurate than the answer at 4 hours.
-
-Most kids by 24 hours have moved into a clearer version of disappointment. They can articulate something. They can engage with what's next.
-
-**At the 48-hour mark**
-
-You can start exploring options. *Want me to look at other teams? Want to take a season? Want to try a different sport?*
-
-These questions land better at 48 hours than at 4. The kid has had time. The answer is theirs, not yours.
-
-**The decision-making window**
-
-Real decisions about what's next are usually made over 1 to 2 weeks. Not 1 to 2 days.
-
-Slow down the calendar. Most options stay open for the time you need.
-
-**The kid who comes back to the original sport**
-
-Some kids, after a cut, want to try again next year. The 24-hour rule preserves that option. The kid who watched their parent rage-quit the sport for them does not have that option.
-
-**The kid who moves on**
-
-Some kids, after a cut, are done with the sport. The 24-hour rule preserves that too. The kid who was forced to keep playing right after a cut develops a darker relationship with the sport.
-
-The 24 hours of nothing is the move that keeps every door open.
-
-**The shorter version**
-
-Don't text the coach. Don't text other parents. Don't make decisions. Eat dinner. Sleep. Wake up. Then talk.
-
-Most regrets in youth sports are made in the 24 hours after a hard moment. The rule prevents most of them.
-
-Carol Dweck's [*Mindset*](/go/book-mindset/) is worth reading before the next tryout season. The cut feels like a verdict on talent. It isn't. How your kid processes it, and how you frame it, matters more than the result.
+*As an Amazon Associate we earn from qualifying purchases.*
