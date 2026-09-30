@@ -467,6 +467,18 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
             <p class="font-display text-ink mt-0.5 font-medium">{camp.price_text}</p>
           </div>
         )}
+        {camp.registration_deadline && (
+          <div class="card p-3">
+            <p class="font-display italic text-rust text-xs font-medium">Registration deadline</p>
+            <p class="font-display text-ink mt-0.5 font-medium">{camp.registration_deadline}</p>
+          </div>
+        )}
+        {camp.schedule_text && (
+          <div class="card p-3">
+            <p class="font-display italic text-rust text-xs font-medium">Hours / schedule</p>
+            <p class="font-display text-ink mt-0.5 font-medium">{camp.schedule_text}</p>
+          </div>
+        )}
       </div>
 
 {claimsEnabled && camp.is_claimed === 1 && registrationHref && camp.spots_status !== 'full' && (

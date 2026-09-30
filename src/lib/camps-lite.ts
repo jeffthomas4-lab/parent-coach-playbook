@@ -44,6 +44,8 @@ export interface CampsLiteRecord {
   hero_photo_key: string | null;
   price_text: string | null;
   date_added: string | null;
+  registration_deadline: string | null;
+  schedule_text: string | null;
 }
 
 // Matches the description truncation the inline island always applied —
@@ -75,5 +77,7 @@ export function toCampsLite(camps: Camp[]): CampsLiteRecord[] {
     hero_photo_key: c.hero_photo_key,
     price_text: c.price_text,
     date_added: c.date_added,
+    registration_deadline: c.registration_deadline,
+    schedule_text: c.schedule_text,
   }));
 }
