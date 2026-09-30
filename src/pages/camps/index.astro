@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import Illo from '../../components/Illo.astro';
-import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps-db';
-import { CAMP_SPORTS } from '../../data/site';
+import { listApprovedCamps, listFeaturedCamps, slugifyCity, type Camp } from '../../lib/camps-db';
+import { CAMP_SPORTS, AGE_BANDS } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../lib/jsonld';
 import { isRecentlyAdded, daysSinceAdded } from '../../lib/camp-freshness';
@@ -92,6 +92,24 @@ const nationalHasMore = nationalVisible.length > nationalWindow.length;
 // the rendered-card count once windowing is in play.
 const totalVisibleDefault = pnwVisible.length + nationalVisible.length;
 
+// Top city hubs for the shortened hero — parents should land on city pages.
+const cityCounts = new Map();
+for (const c of camps) {
+  const key = `${c.state}|${c.city}`;
+  cityCounts.set(key, (cityCounts.get(key) || 0) + 1);
+}
+const topCityHubs = [...cityCounts.entries()]
+  .map(([key, count]) => {
+    const [state, city] = key.split('|');
+    return { state, city, count, href: `/camps/${state.toLowerCase()}/${slugifyCity(city)}/` };
+  })
+  .sort((a, b) => b.count - a.count)
+  .slice(0, 6);
+const escHub = (v: string) => v.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const topCityHubsHtml = topCityHubs
+  .map((h) => `<a href="${escHub(h.href)}" class="text-rust hover:underline">${escHub(h.city)}, ${escHub(h.state)}</a>`)
+  .join(' <span aria-hidden="true">·</span> ');
+
 const featuredCardsHtml = featuredCamps.map((c) => renderFeaturedCardHtml(c, CAMP_SPORTS)).join('');
 const recentlyAddedHtml = recentlyAddedCamps.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
 const pnwHtml = pnwWindow.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
@@ -142,72 +160,32 @@ const itemListSchema = featuredCamps.length > 0 ? {
   <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
   {itemListSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />}
   <section class="section-band">
-    <div class="container-px py-12 md:py-16">
-      <p class="t-eyebrow mb-3">Camps & Leagues</p>
-      <h1 class="t-h1-hero font-display text-ink leading-[1.0] font-medium">
-        A directory of <em class="text-rust">camps and leagues</em> your kid can actually sign up for.
+    <div class="container-px py-8 md:py-10">
+      <p class="t-eyebrow mb-2">Camps & Leagues</p>
+      <h1 class="t-h1 font-display text-ink leading-tight font-medium">
+        Find a camp your kid can actually do
       </h1>
-      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Youth camps and league signups, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live. Full programs and leagues are hidden by default. Flip the toggles to see them.
+      <p class="font-display text-ink-soft text-lg md:text-xl mt-3 max-w-2xl leading-snug">
+        PNW-verified first · National listings growing. <a href="/camps/verification/" class="text-rust hover:underline">What Verified means</a>.
       </p>
-      <p class="font-body text-ink-soft text-sm mt-4 max-w-2xl leading-relaxed">
+      <p class="font-body text-ink-soft text-sm mt-2 max-w-2xl leading-relaxed">
         A “Verified” badge means our team compared the listed program details with its cited source. It does not mean PCD inspected the program or endorses its safety, quality, staff, insurance, or suitability for your child.
       </p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="/camps/submit/" class="btn">Submit a program</a>
-        <a href="#all-camps" class="btn btn-ghost">Browse the directory</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Honest scope disclosure -->
-  <section class="section-band section-band-sunken">
-    <div class="container-px py-8">
-      <div class="grid md:grid-cols-12 gap-6 items-start">
-        <div class="md:col-span-3">
-          <p class="t-eyebrow">Where we are starting</p>
-        </div>
-        <div class="md:col-span-9 article-body">
-          <p>We're starting in the Pacific Northwest where we can verify camps and leagues personally. National listings welcome but light coverage outside PNW for now. If you run a camp or league anywhere in the country and want it in the directory, <a href="/camps/submit/" class="text-rust hover:underline">submit it here</a>. We'll review and publish it. Just know of an organization but not the specifics? <a href="/camps/suggest/" class="text-rust hover:underline">Suggest it</a> and we'll look into it.</p>
-          <p style="font-size: 0.875rem; color: var(--ink-soft);">Some programs don't have coordinates yet and won't appear on the map, but you'll find them in the directory below.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {featuredCamps.length > 0 && (
-    <section class="section-band">
-      <div class="container-px py-8">
-        <p class="t-eyebrow mb-2">Featured</p>
-        <h2 class="t-h2 font-display text-ink leading-tight font-medium mb-5">Featured camps</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" set:html={featuredCardsHtml} />
-      </div>
-    </section>
-  )}
-
-  {recentlyAddedCamps.length > 0 && (
-    <section class="section-band">
-      <div class="container-px py-8">
-        <p class="t-eyebrow mb-2">Recently added</p>
-        <h2 class="t-h2 font-display text-ink leading-tight font-medium mb-5">New in the directory</h2>
-        <div id="recently-added-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" set:html={recentlyAddedHtml} />
-      </div>
-    </section>
-  )}
-
-  <section id="all-camps">
-    <div class="container-px py-12">
-      {dbAvailable && camps.length > 0 && (
-        <p class="font-body text-muted text-sm mb-6">
-          <span id="camps-results-count" aria-live="polite">{totalVisibleDefault} camp{totalVisibleDefault === 1 ? '' : 's'} listed</span> · {recentlyAddedCount} added in the last {RECENTLY_ADDED_WINDOW_DAYS} days
+      {topCityHubs.length > 0 && (
+        <p class="font-body text-ink-soft text-sm mt-4 max-w-3xl">
+          Browse top cities: <span set:html={topCityHubsHtml} />
         </p>
       )}
-      {/* Announces "Show more" loads to screen reader users — drawing new
-          cards into the DOM is silent otherwise, so someone using a screen
-          reader gets no signal that anything happened. Kept separate from
-          #camps-results-count, which reports the filtered total, not what
-          "Show more" just added. Visually hidden (Tailwind's sr-only). */}
-      <div id="camps-load-announcer" aria-live="polite" class="sr-only"></div>
+      <p class="font-body text-muted text-sm mt-3">
+        <a href="/camps/submit/" class="text-rust hover:underline">I run a program → Submit</a>
+        {' · '}
+        <a href="/camps/suggest/" class="text-rust hover:underline">Suggest a program</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="all-camps" class="section-band section-band-sunken">
+    <div class="container-px py-8">
       {!dbAvailable ? (
         <div class="card p-6 max-w-xl">
           <p class="font-body text-ink-soft">Directory is warming up. Try again in a moment.</p>
@@ -230,196 +208,180 @@ const itemListSchema = featuredCamps.length > 0 ? {
         </div>
       ) : (
         <>
-          {/* Map. Static fallback text doubles as the no-JS state and the
-               JS-enabled-but-data-not-yet-arrived state — Leaflet replaces
-               this container's contents outright once initMap() runs, which
-               only happens after the background camps-lite fetch below
-               resolves. */}
-          <div
-            id="camps-map"
-            class="mb-8 border border-bone rounded-card overflow-hidden flex items-center justify-center"
-            style="height: 400px; width: 100%; background: var(--stripe);"
-            aria-label="Map showing all camps in the directory"
-          ><p class="font-body text-ink-soft text-sm px-4 text-center">Map loads when you scroll near it, after the camp directory is ready.</p></div>
-
-          {/* Data-load status. Visible AND announced (Pillar 6: "state is
-               announced, not just drawn") — this text is both the on-screen
-               banner and the aria-live region a screen reader hears, since
-               its own content changes are what's being announced. Starts
-               visible in the pending state to match the client script's
-               first call (setControlsPending()) so there's no flash of the
-               wrong state; JS hides it once the background fetch succeeds,
-               or leaves it up with a retry button if the fetch fails. A
-               reader with JavaScript off never sees this — nothing here
-               depends on the fetch this element is reporting on, so it's
-               harmless as static markup but the "loading" text would be
-               permanently wrong for a no-JS reader if left visible, hence
-               <noscript> hides it below. */}
           <div
             id="camps-data-status"
             class="card p-4 mb-6 flex flex-wrap items-center gap-3 text-sm"
             aria-live="polite"
           >
-            <span id="camps-data-status-text">Loading the full camp directory to power search, filters, and the map…</span>
+            <span id="camps-data-status-text">Loading the full camp directory to power search and filters…</span>
             <button type="button" id="camps-data-retry" class="btn btn-ghost" style="min-height: 44px;" hidden>Try again</button>
           </div>
           <noscript><style>#camps-data-status{display:none}</style></noscript>
 
-          {/* Filter Bar */}
-          <div id="camp-filters" class="card mb-8 p-6">
-            <div class="flex flex-wrap items-end gap-4 mb-6">
-              {/* Search by name */}
-              <div>
-                <label for="filter-search" class="font-display italic text-rust text-xs block mb-2 font-medium">Search</label>
-                <input
-                  type="search"
-                  id="filter-search"
-                  placeholder="Camp name, org, or keyword"
-                  class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-64"
-                  style="min-height: 44px;"
-                />
-              </div>
-
-              {/* Sport Dropdown */}
-              <div>
-                <label for="filter-sport" class="font-display italic text-rust text-xs block mb-2 font-medium">Sport</label>
-                <select id="filter-sport" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn" style="min-height: 44px;">
-                  <option value="">All sports</option>
-                </select>
-              </div>
-
-              {/* Age Range */}
-              <div>
-                <label for="filter-age-min" class="font-display italic text-rust text-xs block mb-2 font-medium">Age range</label>
-                <div class="flex gap-2">
-                  <input
-                    type="number"
-                    id="filter-age-min"
-                    aria-label="Minimum age"
-                    placeholder="Min"
-                    min="3"
-                    max="22"
-                    class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-16"
-                    style="min-height: 44px;"
-                  />
-                  <span class="text-ink-soft px-1">to</span>
-                  <input
-                    type="number"
-                    id="filter-age-max"
-                    aria-label="Maximum age"
-                    placeholder="Max"
-                    min="3"
-                    max="22"
-                    class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-16"
-                    style="min-height: 44px;"
-                  />
-                </div>
-              </div>
-
-              {/* Date Range */}
-              <div>
-                <p class="font-display italic text-rust text-xs mb-2 font-medium">Date range</p>
-                <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-2 items-center max-w-full">
-                  <input
-                    type="date"
-                    id="filter-date-start"
-                    aria-label="Earliest start date"
-                    class="min-h-11 font-display px-2 sm:px-3 py-2 border border-input bg-paper-warm rounded-btn w-full min-w-0"
-                    style="min-height: 44px;"
-                  />
-                  <span class="text-ink-soft px-1">to</span>
-                  <input
-                    type="date"
-                    id="filter-date-end"
-                    aria-label="Latest end date"
-                    class="min-h-11 font-display px-2 sm:px-3 py-2 border border-input bg-paper-warm rounded-btn w-full min-w-0"
-                    style="min-height: 44px;"
-                  />
-                </div>
-              </div>
-
-              {/* Day/Overnight */}
-              <div>
-                <p class="font-display italic text-rust text-xs mb-2 font-medium">Format</p>
-                <div class="flex gap-2">
-                  <button type="button" data-filter-dayovernght="all" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" data-active="true" style="min-height: 44px; background: var(--rust); color: white; border-color: var(--rust);">All</button>
-                  <button type="button" data-filter-dayovernght="day" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Day</button>
-                  <button type="button" data-filter-dayovernght="overnight" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Overnight</button>
-                </div>
-              </div>
-
-              {/* Include hidden-by-default rows */}
-              <div>
-                <p class="font-display italic text-rust text-xs mb-2 font-medium">Include</p>
-                <div class="flex gap-2">
-                  <button type="button" id="filter-show-leagues" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Leagues</button>
-                  <button type="button" id="filter-show-full" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Full programs</button>
-                </div>
-              </div>
-
-              <div>
-                <p class="font-display italic text-rust text-xs mb-2 font-medium">Trust & availability</p>
-                <div class="flex gap-2">
-                  <button type="button" id="filter-verified-only" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Verified only</button>
-                  <button type="button" id="filter-open-only" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Open only</button>
-                </div>
-              </div>
-
-              {/* State Dropdown */}
-              <div>
-                <label for="filter-state" class="font-display italic text-rust text-xs block mb-2 font-medium">State</label>
-                <select id="filter-state" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn" style="min-height: 44px;">
-                  <option value="">All states</option>
-                </select>
-              </div>
-
-              {/* Zip + Radius */}
-              <form id="filter-zip-form" class="grid grid-cols-2 sm:flex gap-2 items-end w-full max-w-full">
-                <div class="min-w-0">
-                  <label for="filter-zip" class="font-display italic text-rust text-xs block mb-2 font-medium">Zip code</label>
+          {/* Find strip — primary parent path */}
+          <div id="camp-filters" class="card mb-6 p-5 md:p-6">
+            <form id="find-camp-form" class="space-y-4">
+              <div class="flex flex-wrap items-end gap-3">
+                <div class="flex-1 min-w-[12rem]">
+                  <label for="filter-zip" class="font-display italic text-rust text-xs block mb-2 font-medium">Where</label>
                   <input
                     type="text"
                     id="filter-zip"
-                    placeholder="e.g. 98101"
-                    maxlength="10"
-                    class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-full sm:w-32 min-w-0 max-w-full"
+                    name="where"
+                    placeholder="ZIP or city (e.g. 98406)"
+                    maxlength="40"
+                    autocomplete="postal-code"
+                    class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-full min-w-0"
                     style="min-height: 44px;"
                   />
                 </div>
                 <div class="min-w-0">
                   <label for="filter-radius" class="font-display italic text-rust text-xs block mb-2 font-medium">Radius</label>
-                  <select id="filter-radius" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-full min-w-0 max-w-full" style="min-height: 44px;">
+                  <select id="filter-radius" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-full min-w-0" style="min-height: 44px;">
                     <option value="10">10 miles</option>
-                    <option value="25">25 miles</option>
+                    <option value="25" selected>25 miles</option>
                     <option value="50">50 miles</option>
                     <option value="100">100 miles</option>
                     <option value="all">Any distance</option>
                   </select>
                 </div>
-                <button type="submit" class="btn col-span-2 sm:w-auto">Search</button>
-              </form>
-            </div>
+                <button type="submit" id="find-camp-submit" class="btn" style="min-height: 44px;">Search camps</button>
+              </div>
 
-            {/* Clear Filters */}
-            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2 inline-flex items-center" style="min-height: 44px;">Clear all filters</button>
+              <div>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium" id="age-chips-label">Kid’s age</p>
+                <div class="flex flex-wrap gap-2" role="group" aria-labelledby="age-chips-label">
+                  <button type="button" data-age-chip="" class="tag-pill tag-pill-active age-chip" style="min-height: 44px;" data-active="true">Any</button>
+                  {AGE_BANDS.map((b) => (
+                    <button type="button" data-age-chip={b.slug} class="tag-pill tag-pill-outline age-chip" style="min-height: 44px;">{b.label}</button>
+                  ))}
+                </div>
+                {/* Advanced min/max kept for accessibility contract + power users; visually in More filters too */}
+                <div class="sr-only">
+                  <label for="filter-age-min">Minimum age</label>
+                  <input type="number" id="filter-age-min" aria-label="Minimum age" min="3" max="22" />
+                  <label for="filter-age-max">Maximum age</label>
+                  <input type="number" id="filter-age-max" aria-label="Maximum age" min="3" max="22" />
+                </div>
+              </div>
+
+              <div>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium" id="when-chips-label">When <span class="font-body text-muted not-italic">(soft — many listings use placeholder dates)</span></p>
+                <div class="flex flex-wrap gap-2" role="group" aria-labelledby="when-chips-label">
+                  <button type="button" data-when-chip="" class="tag-pill tag-pill-active when-chip" style="min-height: 44px;" data-active="true">Any</button>
+                  <button type="button" data-when-chip="this-month" class="tag-pill tag-pill-outline when-chip" style="min-height: 44px;">This month</button>
+                  <button type="button" data-when-chip="next-month" class="tag-pill tag-pill-outline when-chip" style="min-height: 44px;">Next month</button>
+                  <button type="button" data-when-chip="summer" class="tag-pill tag-pill-outline when-chip" style="min-height: 44px;">Summer</button>
+                  <button type="button" data-when-chip="breaks" class="tag-pill tag-pill-outline when-chip" style="min-height: 44px;">Breaks</button>
+                </div>
+                <input type="hidden" id="filter-date-start" value="" />
+                <input type="hidden" id="filter-date-end" value="" />
+              </div>
+
+              <div class="flex flex-wrap items-end gap-3">
+                <div>
+                  <label for="filter-sport" class="font-display italic text-rust text-xs block mb-2 font-medium">Activity <span class="font-body text-muted not-italic">(optional)</span></label>
+                  <select id="filter-sport" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn" style="min-height: 44px;">
+                    <option value="">All activities</option>
+                  </select>
+                </div>
+                <button type="button" id="toggle-more-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2" style="min-height: 44px;" aria-expanded="false" aria-controls="more-filters">More filters</button>
+                <button type="button" id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2" style="min-height: 44px;">Clear all</button>
+              </div>
+            </form>
+
+            <div id="more-filters" class="mt-5 pt-5 border-t border-bone space-y-4" hidden>
+              <div class="flex flex-wrap items-end gap-4">
+                <div>
+                  <label for="filter-search" class="font-display italic text-rust text-xs block mb-2 font-medium">Camp name or org</label>
+                  <input
+                    type="search"
+                    id="filter-search"
+                    placeholder="Name, city, or keyword"
+                    class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn w-64 max-w-full"
+                    style="min-height: 44px;"
+                  />
+                </div>
+                <div>
+                  <label for="filter-state" class="font-display italic text-rust text-xs block mb-2 font-medium">State</label>
+                  <select id="filter-state" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn" style="min-height: 44px;">
+                    <option value="">All states</option>
+                  </select>
+                </div>
+                <div>
+                  <p class="font-display italic text-rust text-xs mb-2 font-medium">Format</p>
+                  <div class="flex gap-2">
+                    <button type="button" data-filter-dayovernght="all" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" data-active="true" style="min-height: 44px; background: var(--rust); color: white; border-color: var(--rust);">All</button>
+                    <button type="button" data-filter-dayovernght="day" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Day</button>
+                    <button type="button" data-filter-dayovernght="overnight" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Overnight</button>
+                  </div>
+                </div>
+                <div>
+                  <p class="font-display italic text-rust text-xs mb-2 font-medium">Include</p>
+                  <div class="flex flex-wrap gap-2">
+                    <button type="button" id="filter-show-leagues" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Leagues</button>
+                    <button type="button" id="filter-show-full" class="min-h-11 inline-flex items-center justify-center filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Include sold-out</button>
+                  </div>
+                </div>
+              </div>
+              <p class="font-body text-muted text-xs">Leagues and sold-out programs are hidden by default. Date pickers stay available for power users once date quality improves.</p>
+              <div class="flex flex-wrap gap-3 items-end">
+                <div>
+                  <label for="filter-date-start-adv" class="font-display italic text-rust text-xs block mb-2 font-medium">Earliest start</label>
+                  <input type="date" id="filter-date-start-adv" aria-label="Earliest start date" class="min-h-11 font-display px-2 py-2 border border-input bg-paper-warm rounded-btn" style="min-height: 44px;" />
+                </div>
+                <div>
+                  <label for="filter-date-end-adv" class="font-display italic text-rust text-xs block mb-2 font-medium">Latest end</label>
+                  <input type="date" id="filter-date-end-adv" aria-label="Latest end date" class="min-h-11 font-display px-2 py-2 border border-input bg-paper-warm rounded-btn" style="min-height: 44px;" />
+                </div>
+              </div>
+              {/* Verified-only and Open-only hidden until data supports them (0 verified / all open today). */}
+            </div>
           </div>
 
-          {/* No JS on this page means no filtering, search, map, or "Show
-               more" — all of that runs client-side (see the script below).
-               Without JS the reader gets the first CARD_WINDOW matching
-               cards per region, server-rendered, plus the Featured and
-               Recently Added rails in full. The .js-show-more rule below
-               hides the "Show more" buttons in that case instead of shipping
-               a button that does nothing when clicked. */}
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <p class="font-body text-muted text-sm">
+              <span id="camps-results-count" aria-live="polite">{totalVisibleDefault} camp{totalVisibleDefault === 1 ? '' : 's'} listed</span>
+              <span id="camps-results-meta" class="text-ink-soft"></span>
+              <span class="text-ink-soft"> · {recentlyAddedCount} added in the last {RECENTLY_ADDED_WINDOW_DAYS} days</span>
+            </p>
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="inline-flex border border-bone rounded-btn overflow-hidden" role="group" aria-label="Results view">
+                <button type="button" id="view-list" class="min-h-11 px-3 font-display text-sm" data-active="true" style="min-height: 44px; background: var(--rust); color: white;">List</button>
+                <button type="button" id="view-map" class="min-h-11 px-3 font-display text-sm bg-paper-warm" style="min-height: 44px;">Map</button>
+              </div>
+              <label for="filter-sort" class="sr-only">Sort</label>
+              <select id="filter-sort" class="min-h-11 font-display px-3 py-2 border border-input bg-paper-warm rounded-btn text-sm" style="min-height: 44px;">
+                <option value="newest">Newest</option>
+                <option value="closest">Closest (needs ZIP)</option>
+                <option value="starting">Starting soon</option>
+              </select>
+            </div>
+          </div>
+          <div id="camps-load-announcer" aria-live="polite" class="sr-only"></div>
+
+          <div
+            id="camps-map"
+            class="mb-8 border border-bone rounded-card overflow-hidden flex items-center justify-center"
+            style="height: 400px; width: 100%; background: var(--stripe);"
+            aria-label="Map showing camps in the directory"
+            hidden
+          ><p class="font-body text-ink-soft text-sm px-4 text-center">Map loads when you choose Map view, after the camp directory is ready.</p></div>
+
+          <div id="camps-empty-state" class="card p-6 mb-6 max-w-2xl" hidden>
+            <h2 class="t-h3 font-display text-ink font-medium mb-2">No camps match</h2>
+            <p id="camps-empty-copy" class="font-body text-ink-soft mb-4"></p>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" id="empty-widen" class="btn btn-ghost" style="min-height: 44px;">Widen to 50 mi</button>
+              <button type="button" id="empty-clear-when" class="btn btn-ghost" style="min-height: 44px;">Clear when</button>
+              <a id="empty-browse-state" href="/camps/" class="btn btn-ghost" style="min-height: 44px; display: none;">Browse state</a>
+              <a href="/camps/suggest/" class="btn btn-ghost" style="min-height: 44px;">Suggest a program</a>
+            </div>
+            <p class="font-body text-muted text-xs mt-4">We’re densest in the Pacific Northwest right now; national listings are lighter.</p>
+          </div>
+
           <noscript><style>.js-show-more{display:none}</style></noscript>
 
-          {/* Camps Grid — cards are pre-rendered as an HTML string by
-               src/lib/camp-card.ts (much faster than per-element JSX over
-               hundreds of rows) and injected via set:html. Only the first
-               CARD_WINDOW matching cards per region render server-side; the
-               client script renders the rest of the same campsLite data on
-               "Show more" or when a filter changes, using the identical
-               renderer so a card never looks different card to card. */}
           <div id="camps-directory">
             {pnw.length > 0 && (
               <div class="mb-12">
@@ -447,6 +409,24 @@ const itemListSchema = featuredCamps.length > 0 ? {
               </div>
             )}
           </div>
+
+          {(featuredCamps.length > 0 || recentlyAddedCamps.length > 0) && (
+            <details class="mt-12 card p-5">
+              <summary class="font-display text-ink font-medium cursor-pointer" style="min-height: 44px;">Featured & recently added</summary>
+              {featuredCamps.length > 0 && (
+                <div class="mt-6">
+                  <p class="t-eyebrow mb-2">Featured</p>
+                  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" set:html={featuredCardsHtml} />
+                </div>
+              )}
+              {recentlyAddedCamps.length > 0 && (
+                <div class="mt-8">
+                  <p class="t-eyebrow mb-2">Recently added</p>
+                  <div id="recently-added-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" set:html={recentlyAddedHtml} />
+                </div>
+              )}
+            </details>
+          )}
         </>
       )}
     </div>
@@ -464,7 +444,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
     // the critical camps-index chunk saves a large map stack for readers
     // who never scroll to the map.
     import { buildCampDemandPayload } from '../../lib/camp-demand';
-    import { renderCardHtml, escHtml, type CardCamp, type SportOption } from '../../lib/camp-card';
+    import { renderCardHtml, escHtml, type SportOption } from '../../lib/camp-card';
     import type { Map as LeafletMap } from 'leaflet';
 
     // Leaflet module handle — set once ensureLeaflet() resolves.
@@ -518,6 +498,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
         hero_photo_key: string | null;
         price_text: string | null;
         date_added: string | null;
+        registration_deadline: string | null;
+        schedule_text: string | null;
       }
       // LiteCamp above must keep satisfying CardCamp (imported from
       // camp-card.ts) structurally — it's what gets handed to
@@ -607,10 +589,13 @@ const itemListSchema = featuredCamps.length > 0 ? {
         sport: string;
         ageMin: number | null;
         ageMax: number | null;
+        ageChip: string;
         dateStart: string;  // ISO YYYY-MM-DD; empty means no lower bound
         dateEnd: string;    // ISO YYYY-MM-DD; empty means no upper bound
+        whenChip: string;
         dayOvernight: string;
         state: string;
+        zipText: string;
         zipLat: number | null;
         zipLon: number | null;
         zipRadius: number;
@@ -618,23 +603,64 @@ const itemListSchema = featuredCamps.length > 0 ? {
         showFull: boolean;
         verifiedOnly: boolean;
         openOnly: boolean;
+        sort: 'newest' | 'closest' | 'starting';
+        view: 'list' | 'map';
+      }
+      const AGE_CHIP_RANGES: Record<string, [number, number]> = {
+        '5-7': [5, 7], '8-10': [8, 10], '11-12': [11, 12], '13-14': [13, 14], '15-plus': [15, 22],
+      };
+      function ymd(d: Date): string {
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      }
+      function whenPresetRange(chip: string): { start: string; end: string } | null {
+        if (!chip) return null;
+        const now = new Date();
+        const y = now.getFullYear();
+        if (chip === 'this-month') {
+          const start = new Date(y, now.getMonth(), 1);
+          const end = new Date(y, now.getMonth() + 1, 0);
+          return { start: ymd(start), end: ymd(end) };
+        }
+        if (chip === 'next-month') {
+          const start = new Date(y, now.getMonth() + 1, 1);
+          const end = new Date(y, now.getMonth() + 2, 0);
+          return { start: ymd(start), end: ymd(end) };
+        }
+        if (chip === 'summer') {
+          return { start: `${y}-06-01`, end: `${y}-08-31` };
+        }
+        if (chip === 'breaks') {
+          // Soft: winter break + spring break window preference (Dec–Jan or Mar–Apr)
+          // Implemented as OR via soft prefer — for filter we use Dec 15 – Apr 15 spanning school breaks.
+          const startY = now.getMonth() >= 8 ? y : y - 1;
+          return { start: `${startY}-12-15`, end: `${startY + 1}-04-15` };
+        }
+        return null;
       }
       let state: FilterState = {
         search: '',
         sport: '',
         ageMin: null,
         ageMax: null,
+        ageChip: '',
         dateStart: '',
         dateEnd: '',
+        whenChip: '',
         dayOvernight: 'all',
         state: '',
+        zipText: '',
         zipLat: null,
         zipLon: null,
-        zipRadius: 10,
+        zipRadius: 25,
         showLeagues: false,
         showFull: false,
         verifiedOnly: false,
         openOnly: false,
+        sort: 'newest',
+        view: 'list',
       };
 
       let map: LeafletMap | null = null;
@@ -864,6 +890,13 @@ const itemListSchema = featuredCamps.length > 0 ? {
           return true;
         });
 
+        // Soft "when" preference: listings with dates in the window rank
+        // higher when a when chip is set, but year-long placeholders still
+        // match (date honesty) — hard filter already applied above when
+        // dateStart/dateEnd set. Soft prefer is handled in sortVisible().
+
+        sortVisible();
+
         // Featured and Recently Added stay fully rendered (small, bounded
         // rails) and just get toggled with display:none like before. PNW
         // and National are the windowed grids — renderGrids() below rebuilds
@@ -886,7 +919,173 @@ const itemListSchema = featuredCamps.length > 0 ? {
         nationalShown = activeCardWindow();
         renderGrids();
         updateResultsCount();
+        updateEmptyState();
         renderMap();
+        syncUrlFromState();
+        applyViewMode();
+      }
+
+      function campDistance(c: LiteCamp): number {
+        if (state.zipLat == null || state.zipLon == null) return Number.POSITIVE_INFINITY;
+        if (typeof c.latitude !== 'number' || typeof c.longitude !== 'number') return Number.POSITIVE_INFINITY;
+        return haversineMiles(state.zipLat, state.zipLon, c.latitude, c.longitude);
+      }
+
+      function overlapsWhen(c: LiteCamp): boolean {
+        const range = whenPresetRange(state.whenChip);
+        if (!range || !c.start_date || !c.end_date) return false;
+        // Soft overlap; year-long placeholders often overlap everything — still ok as prefer signal.
+        return c.start_date <= range.end && c.end_date >= range.start;
+      }
+
+      function sortVisible() {
+        const today = ymd(new Date());
+        visibleCamps = [...visibleCamps].sort((a, b) => {
+          if (state.whenChip) {
+            const ao = overlapsWhen(a) ? 0 : 1;
+            const bo = overlapsWhen(b) ? 0 : 1;
+            if (ao !== bo) return ao - bo;
+          }
+          if (state.sort === 'closest' && state.zipLat != null) {
+            return campDistance(a) - campDistance(b);
+          }
+          if (state.sort === 'starting') {
+            // Prefer real upcoming starts; missing/placeholder-far dates sort last.
+            const as = a.start_date || '9999-12-31';
+            const bs = b.start_date || '9999-12-31';
+            const aPast = as < today ? 1 : 0;
+            const bPast = bs < today ? 1 : 0;
+            if (aPast !== bPast) return aPast - bPast;
+            return as.localeCompare(bs);
+          }
+          // newest (default when no ZIP / honest fallback)
+          return (b.date_added || '').localeCompare(a.date_added || '');
+        });
+      }
+
+      function updateEmptyState() {
+        const empty = document.getElementById('camps-empty-state');
+        const copy = document.getElementById('camps-empty-copy');
+        const browse = document.getElementById('empty-browse-state') as HTMLAnchorElement | null;
+        const dir = document.getElementById('camps-directory');
+        if (!empty || !copy) return;
+        if (visibleCamps.length > 0) {
+          empty.hidden = true;
+          if (dir) dir.hidden = false;
+          return;
+        }
+        empty.hidden = false;
+        if (dir) dir.hidden = true;
+        const ageBit = state.ageChip ? `age ${state.ageChip}` : (state.ageMin != null || state.ageMax != null ? 'that age' : 'any age');
+        const whereBit = state.zipText ? `near ${state.zipText}` : (state.state ? `in ${state.state}` : 'anywhere');
+        const whenBit = state.whenChip ? state.whenChip.replace('-', ' ') : 'any dates';
+        copy.textContent = `No camps match ${ageBit} ${whereBit} for ${whenBit}.`;
+        if (browse) {
+          if (state.state) {
+            browse.href = `/camps/${state.state.toLowerCase()}/`;
+            browse.textContent = `Browse ${state.state}`;
+            browse.style.display = '';
+          } else if (state.zipLat != null && visibleCamps.length === 0) {
+            // Keep link useful even without state — point at directory root.
+            browse.href = '/camps/';
+            browse.textContent = 'Browse directory';
+            browse.style.display = '';
+          } else {
+            browse.style.display = 'none';
+          }
+        }
+      }
+
+      function applyViewMode() {
+        const mapEl = document.getElementById('camps-map');
+        const dir = document.getElementById('camps-directory');
+        const listBtn = document.getElementById('view-list');
+        const mapBtn = document.getElementById('view-map');
+        const ACTIVE = 'background: var(--rust); color: white;';
+        if (listBtn && mapBtn) {
+          if (state.view === 'map') {
+            listBtn.removeAttribute('data-active');
+            listBtn.setAttribute('style', 'min-height: 44px;');
+            mapBtn.setAttribute('data-active', 'true');
+            mapBtn.setAttribute('style', `min-height: 44px; ${ACTIVE}`);
+          } else {
+            mapBtn.removeAttribute('data-active');
+            mapBtn.setAttribute('style', 'min-height: 44px;');
+            listBtn.setAttribute('data-active', 'true');
+            listBtn.setAttribute('style', `min-height: 44px; ${ACTIVE}`);
+          }
+        }
+        if (mapEl) mapEl.hidden = state.view !== 'map';
+        // Keep directory visible under map unless empty-state hid it.
+        if (dir && visibleCamps.length > 0) dir.hidden = false;
+        if (state.view === 'map') scheduleMapWhenVisible();
+      }
+
+      function syncUrlFromState() {
+        const url = new URL(window.location.href);
+        const q = url.searchParams;
+        const setOrDel = (key: string, val: string | null | undefined) => {
+          if (val) q.set(key, val); else q.delete(key);
+        };
+        setOrDel('q', state.search || null);
+        setOrDel('sport', state.sport || null);
+        setOrDel('ages', state.ageChip || null);
+        setOrDel('when', state.whenChip || null);
+        setOrDel('format', state.dayOvernight !== 'all' ? state.dayOvernight : null);
+        setOrDel('state', state.state || null);
+        setOrDel('where', state.zipText || null);
+        setOrDel('radius', state.zipLat != null ? String(Number.isFinite(state.zipRadius) ? state.zipRadius : 'all') : null);
+        setOrDel('leagues', state.showLeagues ? '1' : null);
+        setOrDel('soldout', state.showFull ? '1' : null);
+        setOrDel('sort', state.sort !== 'newest' ? state.sort : null);
+        setOrDel('view', state.view !== 'list' ? state.view : null);
+        setOrDel('dateStart', state.dateStart && !state.whenChip ? state.dateStart : null);
+        setOrDel('dateEnd', state.dateEnd && !state.whenChip ? state.dateEnd : null);
+        const next = url.pathname + (q.toString() ? `?${q.toString()}` : '') + url.hash;
+        const cur = window.location.pathname + window.location.search + window.location.hash;
+        if (next !== cur) history.replaceState(null, '', next);
+      }
+
+      function readUrlIntoState() {
+        const q = new URL(window.location.href).searchParams;
+        state.search = q.get('q') || '';
+        state.sport = q.get('sport') || '';
+        state.ageChip = q.get('ages') || '';
+        if (state.ageChip && AGE_CHIP_RANGES[state.ageChip]) {
+          const [lo, hi] = AGE_CHIP_RANGES[state.ageChip];
+          state.ageMin = lo;
+          state.ageMax = hi;
+        }
+        state.whenChip = q.get('when') || '';
+        // whenChip is soft — advanced date pickers alone set dateStart/dateEnd
+        state.dateStart = q.get('dateStart') || '';
+        state.dateEnd = q.get('dateEnd') || '';
+        const fmt = q.get('format') || '';
+        state.dayOvernight = fmt === 'day' || fmt === 'overnight' ? fmt : 'all';
+        state.state = (q.get('state') || '').toUpperCase();
+        state.zipText = q.get('where') || '';
+        const radius = q.get('radius');
+        if (radius === 'all') state.zipRadius = Infinity;
+        else if (radius) state.zipRadius = parseInt(radius, 10) || 25;
+        state.showLeagues = q.get('leagues') === '1';
+        state.showFull = q.get('soldout') === '1';
+        const sort = q.get('sort');
+        state.sort = sort === 'closest' || sort === 'starting' ? sort : 'newest';
+        state.view = q.get('view') === 'map' ? 'map' : 'list';
+      }
+
+      async function tryDeepLinkNearestCity(lat: number, lon: number): Promise<boolean> {
+        try {
+          const res = await fetch(`/api/camps/nearest?lat=${encodeURIComponent(String(lat))}&lon=${encodeURIComponent(String(lon))}`);
+          if (!res.ok) return false;
+          const data = await res.json() as { ok?: boolean; state?: string; city_slug?: string; count?: number };
+          if (!data.ok || !data.state || !data.city_slug || !(data.count && data.count > 0)) return false;
+          const ages = state.ageChip ? `?ages=${encodeURIComponent(state.ageChip)}` : '';
+          window.location.assign(`/camps/${data.state.toLowerCase()}/${data.city_slug}/${ages}`);
+          return true;
+        } catch {
+          return false;
+        }
       }
 
       // Rebuilds the PNW and National grids from the current visibleCamps,
@@ -935,6 +1134,16 @@ const itemListSchema = featuredCamps.length > 0 ? {
       function updateResultsCount() {
         const el = document.getElementById('camps-results-count');
         if (el) el.textContent = `${visibleCamps.length} camp${visibleCamps.length === 1 ? '' : 's'} listed`;
+        const meta = document.getElementById('camps-results-meta');
+        if (meta) {
+          const bits: string[] = [];
+          if (state.zipText && state.zipLat != null) {
+            const r = Number.isFinite(state.zipRadius) ? `within ${state.zipRadius} mi` : 'any distance';
+            bits.push(` near ${state.zipText} · ${r}`);
+          }
+          if (state.ageChip) bits.push(` · age ${state.ageChip}`);
+          meta.textContent = bits.join('');
+        }
       }
 
       // Populate dropdowns
@@ -962,47 +1171,6 @@ const itemListSchema = featuredCamps.length > 0 ? {
 
       // Event listeners
       function attachListeners() {
-        // Free-text search
-        (document.getElementById('filter-search') as HTMLInputElement).addEventListener('input', (e) => {
-          state.search = (e.target as HTMLInputElement).value.trim();
-          applyFilters();
-        });
-
-        // Sport
-        (document.getElementById('filter-sport') as unknown as HTMLSelectElement).addEventListener('change', (e) => {
-          state.sport = (e.target as HTMLSelectElement).value;
-          applyFilters();
-        });
-
-        // Age min
-        (document.getElementById('filter-age-min') as HTMLInputElement).addEventListener('input', (e) => {
-          const v = (e.target as HTMLInputElement).value;
-          state.ageMin = v ? parseInt(v, 10) : null;
-          applyFilters();
-        });
-
-        // Age max
-        (document.getElementById('filter-age-max') as HTMLInputElement).addEventListener('input', (e) => {
-          const v = (e.target as HTMLInputElement).value;
-          state.ageMax = v ? parseInt(v, 10) : null;
-          applyFilters();
-        });
-
-        // Date start
-        (document.getElementById('filter-date-start') as HTMLInputElement).addEventListener('change', (e) => {
-          state.dateStart = (e.target as HTMLInputElement).value || '';
-          applyFilters();
-        });
-
-        // Date end
-        (document.getElementById('filter-date-end') as HTMLInputElement).addEventListener('change', (e) => {
-          state.dateEnd = (e.target as HTMLInputElement).value || '';
-          applyFilters();
-        });
-
-        // Visual helpers: filter toggle buttons need to *look* active when
-        // pressed. Swap an inline style so the user gets feedback without
-        // needing a CSS file change.
         const ACTIVE_STYLE = 'background: var(--rust); color: white; border-color: var(--rust);';
         function setToggleActive(btn: HTMLElement, active: boolean) {
           if (active) {
@@ -1013,11 +1181,136 @@ const itemListSchema = featuredCamps.length > 0 ? {
             btn.style.cssText = '';
           }
         }
+        function setChipActive(selector: string, attr: string, value: string) {
+          document.querySelectorAll<HTMLElement>(selector).forEach((btn) => {
+            const v = btn.getAttribute(attr) || '';
+            const on = v === value;
+            btn.classList.toggle('tag-pill-active', on);
+            btn.classList.toggle('tag-pill-outline', !on);
+            if (on) btn.setAttribute('data-active', 'true'); else btn.removeAttribute('data-active');
+          });
+        }
+        function paintControlsFromState() {
+          const search = document.getElementById('filter-search') as HTMLInputElement | null;
+          const sport = document.getElementById('filter-sport') as HTMLSelectElement | null;
+          const ageMin = document.getElementById('filter-age-min') as HTMLInputElement | null;
+          const ageMax = document.getElementById('filter-age-max') as HTMLInputElement | null;
+          const st = document.getElementById('filter-state') as HTMLSelectElement | null;
+          const zip = document.getElementById('filter-zip') as HTMLInputElement | null;
+          const radius = document.getElementById('filter-radius') as HTMLSelectElement | null;
+          const sort = document.getElementById('filter-sort') as HTMLSelectElement | null;
+          const dateStartAdv = document.getElementById('filter-date-start-adv') as HTMLInputElement | null;
+          const dateEndAdv = document.getElementById('filter-date-end-adv') as HTMLInputElement | null;
+          if (search) search.value = state.search;
+          if (sport) sport.value = state.sport;
+          if (ageMin) ageMin.value = state.ageMin != null ? String(state.ageMin) : '';
+          if (ageMax) ageMax.value = state.ageMax != null ? String(state.ageMax) : '';
+          if (st) st.value = state.state;
+          if (zip) zip.value = state.zipText;
+          if (radius) radius.value = Number.isFinite(state.zipRadius) ? String(state.zipRadius) : 'all';
+          if (sort) sort.value = state.sort;
+          if (dateStartAdv) dateStartAdv.value = state.whenChip ? '' : state.dateStart;
+          if (dateEndAdv) dateEndAdv.value = state.whenChip ? '' : state.dateEnd;
+          const hiddenStart = document.getElementById('filter-date-start') as HTMLInputElement | null;
+          const hiddenEnd = document.getElementById('filter-date-end') as HTMLInputElement | null;
+          if (hiddenStart) hiddenStart.value = state.dateStart;
+          if (hiddenEnd) hiddenEnd.value = state.dateEnd;
+          setChipActive('.age-chip', 'data-age-chip', state.ageChip);
+          setChipActive('.when-chip', 'data-when-chip', state.whenChip);
+          document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach((b) => {
+            setToggleActive(b, b.getAttribute('data-filter-dayovernght') === state.dayOvernight);
+          });
+          const leagues = document.getElementById('filter-show-leagues');
+          const full = document.getElementById('filter-show-full');
+          if (leagues) setToggleActive(leagues, state.showLeagues);
+          if (full) setToggleActive(full, state.showFull);
+          applyViewMode();
+        }
 
-        // Day/overnight — single-select group
-        document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach(btn => {
+        // Free-text search
+        document.getElementById('filter-search')?.addEventListener('input', (e) => {
+          state.search = (e.target as HTMLInputElement).value.trim();
+          applyFilters();
+        });
+
+        // Sport
+        document.getElementById('filter-sport')?.addEventListener('change', (e) => {
+          state.sport = (e.target as HTMLSelectElement).value;
+          applyFilters();
+        });
+
+        // Age chips
+        document.querySelectorAll<HTMLElement>('[data-age-chip]').forEach((btn) => {
           btn.addEventListener('click', () => {
-            document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
+            const chip = btn.getAttribute('data-age-chip') || '';
+            state.ageChip = chip;
+            if (chip && AGE_CHIP_RANGES[chip]) {
+              const [lo, hi] = AGE_CHIP_RANGES[chip];
+              state.ageMin = lo;
+              state.ageMax = hi;
+            } else {
+              state.ageMin = null;
+              state.ageMax = null;
+            }
+            setChipActive('.age-chip', 'data-age-chip', chip);
+            const ageMin = document.getElementById('filter-age-min') as HTMLInputElement | null;
+            const ageMax = document.getElementById('filter-age-max') as HTMLInputElement | null;
+            if (ageMin) ageMin.value = state.ageMin != null ? String(state.ageMin) : '';
+            if (ageMax) ageMax.value = state.ageMax != null ? String(state.ageMax) : '';
+            applyFilters();
+          });
+        });
+
+        // Advanced age min/max (sr-only + kept for contract)
+        document.getElementById('filter-age-min')?.addEventListener('input', (e) => {
+          const v = (e.target as HTMLInputElement).value;
+          state.ageMin = v ? parseInt(v, 10) : null;
+          state.ageChip = '';
+          setChipActive('.age-chip', 'data-age-chip', '');
+          applyFilters();
+        });
+        document.getElementById('filter-age-max')?.addEventListener('input', (e) => {
+          const v = (e.target as HTMLInputElement).value;
+          state.ageMax = v ? parseInt(v, 10) : null;
+          state.ageChip = '';
+          setChipActive('.age-chip', 'data-age-chip', '');
+          applyFilters();
+        });
+
+        // When chips (soft presets)
+        document.querySelectorAll<HTMLElement>('[data-when-chip]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const chip = btn.getAttribute('data-when-chip') || '';
+            state.whenChip = chip;
+            // Soft preference only — do not hard-filter on dateStart/dateEnd.
+            // Year-long placeholder sessions dominate; hard date filters feel broken.
+            setChipActive('.when-chip', 'data-when-chip', chip);
+            applyFilters();
+          });
+        });
+
+        // Advanced date pickers
+        document.getElementById('filter-date-start-adv')?.addEventListener('change', (e) => {
+          state.dateStart = (e.target as HTMLInputElement).value || '';
+          state.whenChip = '';
+          setChipActive('.when-chip', 'data-when-chip', '');
+          const hs = document.getElementById('filter-date-start') as HTMLInputElement | null;
+          if (hs) hs.value = state.dateStart;
+          applyFilters();
+        });
+        document.getElementById('filter-date-end-adv')?.addEventListener('change', (e) => {
+          state.dateEnd = (e.target as HTMLInputElement).value || '';
+          state.whenChip = '';
+          setChipActive('.when-chip', 'data-when-chip', '');
+          const he = document.getElementById('filter-date-end') as HTMLInputElement | null;
+          if (he) he.value = state.dateEnd;
+          applyFilters();
+        });
+
+        // Day/overnight
+        document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach((b) => setToggleActive(b, false));
             setToggleActive(btn, true);
             state.dayOvernight = btn.getAttribute('data-filter-dayovernght') || 'all';
             applyFilters();
@@ -1025,115 +1318,169 @@ const itemListSchema = featuredCamps.length > 0 ? {
         });
 
         // State
-        (document.getElementById('filter-state') as unknown as HTMLSelectElement).addEventListener('change', (e) => {
+        document.getElementById('filter-state')?.addEventListener('change', (e) => {
           state.state = (e.target as HTMLSelectElement).value;
           applyFilters();
         });
 
-        // Zip form. The submit button does the geocode; clearing the input
-        // releases the filter automatically; changing the radius after a
-        // successful search re-filters without requiring another click.
-        (document.getElementById('filter-zip-form') as HTMLFormElement).addEventListener('submit', async (e) => {
+        // Sort
+        document.getElementById('filter-sort')?.addEventListener('change', (e) => {
+          const v = (e.target as HTMLSelectElement).value;
+          state.sort = v === 'closest' || v === 'starting' ? v : 'newest';
+          // Honest default: do not force Starting soon without ZIP/trustworthy dates —
+          // user may still choose it explicitly.
+          applyFilters();
+        });
+
+        // List | Map
+        document.getElementById('view-list')?.addEventListener('click', () => {
+          state.view = 'list';
+          applyViewMode();
+          syncUrlFromState();
+        });
+        document.getElementById('view-map')?.addEventListener('click', () => {
+          state.view = 'map';
+          applyViewMode();
+          syncUrlFromState();
+          renderMap();
+        });
+
+        // More filters disclosure
+        document.getElementById('toggle-more-filters')?.addEventListener('click', () => {
+          const panel = document.getElementById('more-filters');
+          const btn = document.getElementById('toggle-more-filters');
+          if (!panel || !btn) return;
+          const open = panel.hasAttribute('hidden');
+          if (open) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        // Primary Find form — ZIP/city geocode + optional city deep-link
+        document.getElementById('find-camp-form')?.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const zip = (document.getElementById('filter-zip') as HTMLInputElement).value.trim();
-          if (!zip) {
+          const zipInput = document.getElementById('filter-zip') as HTMLInputElement;
+          const raw = zipInput.value.trim();
+          state.zipText = raw;
+          if (!raw) {
             state.zipLat = null;
             state.zipLon = null;
             applyFilters();
             return;
           }
 
-          const submitBtn = (e.target as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement | null;
+          const submitBtn = document.getElementById('find-camp-submit') as HTMLButtonElement | null;
           const originalLabel = submitBtn ? submitBtn.textContent : null;
-          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Searching...'; }
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Searching…'; }
 
-          const geo = await geocodeZip(zip);
+          // ZIP path preferred; city free-text falls through same Nominatim postalcode endpoint when digits.
+          const looksLikeZip = /^\d{5}(-\d{4})?$/.test(raw);
+          let geo: { lat: number; lon: number } | null = null;
+          if (looksLikeZip) {
+            geo = await geocodeZip(raw);
+          } else {
+            // City/place: structured Nominatim search, still no browser geolocation.
+            try {
+              const url = `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(raw)}&countrycodes=us&format=json&limit=1`;
+              const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+              if (r.ok) {
+                const data = (await r.json()) as Array<{ lat: string; lon: string }>;
+                if (data.length) {
+                  const lat = parseFloat(data[0].lat);
+                  const lon = parseFloat(data[0].lon);
+                  if (Number.isFinite(lat) && Number.isFinite(lon)) geo = { lat, lon };
+                }
+              }
+            } catch { /* stay on filtered directory */ }
+          }
 
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
 
           if (!geo) {
-            alert('Zip code not found. Make sure it is a 5-digit US zip and try again.');
+            alert('Location not found. Try a 5-digit US ZIP or a city name.');
             return;
           }
 
-          state.zipLat = geo.lat;
-          state.zipLon = geo.lon;
           const radiusVal = (document.getElementById('filter-radius') as unknown as HTMLSelectElement).value;
           state.zipRadius = radiusVal === 'all' ? Infinity : parseInt(radiusVal, 10);
+          state.zipLat = geo.lat;
+          state.zipLon = geo.lon;
+          if (state.sort === 'newest') {
+            // Prefer Closest when a Where is set (spec default sort #1)
+            state.sort = 'closest';
+            const sortEl = document.getElementById('filter-sort') as HTMLSelectElement | null;
+            if (sortEl) sortEl.value = 'closest';
+          }
+
+          // Deep-link to nearest city page when it has listings.
+          const deepLinked = await tryDeepLinkNearestCity(geo.lat, geo.lon);
+          if (deepLinked) return;
+
           applyFilters();
           scheduleDemandEvent();
         });
 
-        // Clearing the zip input releases the radius filter immediately.
-        (document.getElementById('filter-zip') as HTMLInputElement).addEventListener('input', (e) => {
+        document.getElementById('filter-zip')?.addEventListener('input', (e) => {
           const v = (e.target as HTMLInputElement).value;
+          state.zipText = v.trim();
           if (!v.trim() && state.zipLat !== null) {
             state.zipLat = null;
             state.zipLon = null;
+            if (state.sort === 'closest') {
+              state.sort = 'newest';
+              const sortEl = document.getElementById('filter-sort') as HTMLSelectElement | null;
+              if (sortEl) sortEl.value = 'newest';
+            }
             applyFilters();
           }
         });
 
-        // Changing the radius after a successful zip search re-filters in place.
-        (document.getElementById('filter-radius') as unknown as HTMLSelectElement).addEventListener('change', (e) => {
-          if (state.zipLat === null) return; // no active zip filter, nothing to do
+        document.getElementById('filter-radius')?.addEventListener('change', (e) => {
+          if (state.zipLat === null) return;
           const v = (e.target as HTMLSelectElement).value;
           state.zipRadius = v === 'all' ? Infinity : parseInt(v, 10);
           applyFilters();
         });
 
-        // Show leagues toggle (independent on/off)
-        (document.getElementById('filter-show-leagues') as HTMLButtonElement).addEventListener('click', (e) => {
+        document.getElementById('filter-show-leagues')?.addEventListener('click', (e) => {
           state.showLeagues = !state.showLeagues;
           setToggleActive(e.currentTarget as HTMLElement, state.showLeagues);
           applyFilters();
         });
 
-        // Show full toggle (independent on/off)
-        (document.getElementById('filter-show-full') as HTMLButtonElement).addEventListener('click', (e) => {
+        document.getElementById('filter-show-full')?.addEventListener('click', (e) => {
           state.showFull = !state.showFull;
           setToggleActive(e.currentTarget as HTMLElement, state.showFull);
           applyFilters();
         });
 
-        (document.getElementById('filter-verified-only') as HTMLButtonElement).addEventListener('click', (e) => {
-          state.verifiedOnly = !state.verifiedOnly;
-          setToggleActive(e.currentTarget as HTMLElement, state.verifiedOnly);
+        // Empty-state coaches
+        document.getElementById('empty-widen')?.addEventListener('click', () => {
+          state.zipRadius = 50;
+          const radius = document.getElementById('filter-radius') as HTMLSelectElement | null;
+          if (radius) radius.value = '50';
+          applyFilters();
+        });
+        document.getElementById('empty-clear-when')?.addEventListener('click', () => {
+          state.whenChip = '';
+          state.dateStart = '';
+          state.dateEnd = '';
+          setChipActive('.when-chip', 'data-when-chip', '');
           applyFilters();
         });
 
-        (document.getElementById('filter-open-only') as HTMLButtonElement).addEventListener('click', (e) => {
-          state.openOnly = !state.openOnly;
-          setToggleActive(e.currentTarget as HTMLElement, state.openOnly);
+        // Clear filters
+        document.getElementById('clear-filters')?.addEventListener('click', () => {
+          state = {
+            search: '', sport: '', ageMin: null, ageMax: null, ageChip: '',
+            dateStart: '', dateEnd: '', whenChip: '', dayOvernight: 'all', state: '',
+            zipText: '', zipLat: null, zipLon: null, zipRadius: 25,
+            showLeagues: false, showFull: false, verifiedOnly: false, openOnly: false,
+            sort: 'newest', view: 'list',
+          };
+          paintControlsFromState();
           applyFilters();
         });
 
-        // Clear filters — resets to default which hides leagues + full programs.
-        document.getElementById('clear-filters')!.addEventListener('click', () => {
-          state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false, verifiedOnly: false, openOnly: false };
-          (document.getElementById('filter-search') as HTMLInputElement).value = '';
-          (document.getElementById('filter-sport') as unknown as HTMLSelectElement).value = '';
-          (document.getElementById('filter-age-min') as HTMLInputElement).value = '';
-          (document.getElementById('filter-age-max') as HTMLInputElement).value = '';
-          (document.getElementById('filter-date-start') as HTMLInputElement).value = '';
-          (document.getElementById('filter-date-end') as HTMLInputElement).value = '';
-          (document.getElementById('filter-state') as unknown as HTMLSelectElement).value = '';
-          (document.getElementById('filter-zip') as HTMLInputElement).value = '';
-          (document.getElementById('filter-radius') as unknown as HTMLSelectElement).value = '10';
-          document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
-          const allBtn = document.querySelector<HTMLElement>('[data-filter-dayovernght="all"]');
-          if (allBtn) setToggleActive(allBtn, true);
-          setToggleActive(document.getElementById('filter-show-leagues') as HTMLElement, false);
-          setToggleActive(document.getElementById('filter-show-full') as HTMLElement, false);
-          setToggleActive(document.getElementById('filter-verified-only') as HTMLElement, false);
-          setToggleActive(document.getElementById('filter-open-only') as HTMLElement, false);
-          applyFilters();
-        });
-
-        // "Show more" — bumps this region's window and re-renders just the
-        // grids. Deliberately not applyFilters(): that recomputes
-        // visibleCamps and resets both windows back to CARD_WINDOW, which
-        // would undo the click that triggered it.
         document.getElementById('pnw-show-more')?.addEventListener('click', () => {
           const step = activeCardWindow();
           pnwShown += step;
@@ -1147,21 +1494,48 @@ const itemListSchema = featuredCamps.length > 0 ? {
           announceLoaded('National', step);
         });
 
-        // Delegation observes user-driven filter changes after each control's
-        // own handler updates state. Clear-all produces no event because the
-        // minimized payload builder returns null for an unfiltered directory.
-        const filterPanel = document.getElementById('camp-filters')!;
-        filterPanel.addEventListener('input', scheduleDemandEvent);
-        filterPanel.addEventListener('change', scheduleDemandEvent);
-        filterPanel.addEventListener('click', scheduleDemandEvent);
+        const filterPanel = document.getElementById('camp-filters');
+        if (filterPanel) {
+          filterPanel.addEventListener('input', scheduleDemandEvent);
+          filterPanel.addEventListener('change', scheduleDemandEvent);
+          filterPanel.addEventListener('click', scheduleDemandEvent);
+        }
 
-        // Retry after a failed background camps-lite fetch — see
-        // loadCampsLite() below. Safe to attach here even though the button
-        // starts `hidden`: it only becomes clickable once the error state
-        // shows it.
         document.getElementById('camps-data-retry')?.addEventListener('click', () => {
           void loadCampsLite();
         });
+
+        // Hydrate from shareable URL once; ZIP coords resolve after lite loads if where= present.
+        readUrlIntoState();
+        paintControlsFromState();
+      }
+
+      async function resolveWhereFromUrlIfNeeded() {
+        if (!state.zipText || state.zipLat != null) return;
+        const raw = state.zipText;
+        const looksLikeZip = /^\d{5}(-\d{4})?$/.test(raw);
+        let geo: { lat: number; lon: number } | null = null;
+        if (looksLikeZip) geo = await geocodeZip(raw);
+        else {
+          try {
+            const url = `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(raw)}&countrycodes=us&format=json&limit=1`;
+            const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+            if (r.ok) {
+              const data = (await r.json()) as Array<{ lat: string; lon: string }>;
+              if (data.length) {
+                const lat = parseFloat(data[0].lat);
+                const lon = parseFloat(data[0].lon);
+                if (Number.isFinite(lat) && Number.isFinite(lon)) geo = { lat, lon };
+              }
+            }
+          } catch { /* ignore */ }
+        }
+        if (geo) {
+          state.zipLat = geo.lat;
+          state.zipLon = geo.lon;
+          if (state.sort === 'newest') state.sort = 'closest';
+          applyFilters();
+        }
       }
 
       // ---- Background data load (2026-07-31, closes STANDARD-AUDIT.md item
@@ -1259,7 +1633,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
           sportsList = data.sports ?? [];
           populateFilters();
           applyFilters(); // also renders the grids, the results count, and the map markers
-          scheduleMapWhenVisible(); // Leaflet loads only when map nears viewport
+          void resolveWhereFromUrlIfNeeded();
+          if (state.view === 'map') scheduleMapWhenVisible();
           setControlsReady();
         } catch {
           setControlsErrorState();

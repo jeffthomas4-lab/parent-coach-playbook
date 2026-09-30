@@ -1,7 +1,7 @@
 // GET /api/camps/nearest?lat=47.5&lon=-122.4
 //
 // Resolves a lat/lng to the nearest city we actually have approved camps in.
-// Used by the client-side geolocation flow on /camps/.
+// Used by the /camps/ Find strip: geocode a ZIP/city via Nominatim, then deep-link to the nearest city page with listings. Browser geolocation stays off (Permissions-Policy geolocation=()).
 //
 // Returns: { ok: true, state: 'WA', city: 'Tacoma', city_slug: 'tacoma', count: 132 }
 // or { ok: false, error: '...' } on failure / no camps within range.

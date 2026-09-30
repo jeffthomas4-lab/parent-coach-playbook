@@ -55,6 +55,8 @@ export interface CardCamp {
   hero_photo_key: string | null;
   price_text: string | null;
   date_added: string | null;
+  registration_deadline?: string | null;
+  schedule_text?: string | null;
 }
 
 export const escHtml = (s: unknown): string =>
@@ -127,6 +129,16 @@ function priceHtml(c: CardCamp): string {
   return `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`;
 }
 
+function deadlineHtml(c: CardCamp): string {
+  if (!c.registration_deadline) return '';
+  return `<p class="font-body text-ink-soft text-xs mt-1">Register by ${escHtml(c.registration_deadline)}</p>`;
+}
+
+function scheduleHtml(c: CardCamp): string {
+  if (!c.schedule_text) return '';
+  return `<p class="font-body text-ink-soft text-xs mt-1">Hours: ${escHtml(c.schedule_text)}</p>`;
+}
+
 function addedLineHtml(c: CardCamp): string {
   const added = formatDateAdded(c.date_added);
   return added ? `<p class="font-body text-muted text-xs mt-2">Added ${escHtml(added)}</p>` : '';
@@ -136,7 +148,7 @@ function addedLineHtml(c: CardCamp): string {
 export function renderCardHtml(c: CardCamp, sportsList: SportOption[]): string {
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
-  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photoHtml(c)}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport, sportsList))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p><div class="flex items-center gap-2">${newPillHtml(c)}${verifiedHtml(c)}</div></div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="t-card-title font-display text-ink mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${priceHtml(c)}${addedLineHtml(c)}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photoHtml(c)}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport, sportsList))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p><div class="flex items-center gap-2">${newPillHtml(c)}${verifiedHtml(c)}</div></div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="t-card-title font-display text-ink mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${priceHtml(c)}${deadlineHtml(c)}${scheduleHtml(c)}${addedLineHtml(c)}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
 }
 
 /** The Featured rail's card: same body, a Featured badge instead of the New pill placement. */
@@ -144,5 +156,5 @@ export function renderFeaturedCardHtml(c: CardCamp, sportsList: SportOption[]): 
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
   const featuredBadge = `<span class="tag-pill" style="--pill-bg: var(--stripe); --pill-accent: var(--navy);">Featured</span>`;
-  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photoHtml(c)}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}${newPillHtml(c)}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport, sportsList))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verifiedHtml(c)}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="t-card-title font-display text-ink mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${priceHtml(c)}${addedLineHtml(c)}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photoHtml(c)}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}${newPillHtml(c)}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport, sportsList))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verifiedHtml(c)}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="t-card-title font-display text-ink mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${priceHtml(c)}${deadlineHtml(c)}${scheduleHtml(c)}${addedLineHtml(c)}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
 }
