@@ -7,7 +7,7 @@ bluf: "Your gym's first scored weekend rarely comes with a full schedule weeks a
 topic: "season-ops"
 format: "essay"
 phase: "drive-there"
-seasonPhase: "in-season"
+seasonPhase: "early"
 sport: "cheer"
 age: "all-ages"
 publishedAt: 2026-10-28
