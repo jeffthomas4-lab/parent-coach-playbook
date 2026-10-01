@@ -37,7 +37,23 @@ function parseYmd(value: NullableString): { y: number; m: number; d: number } | 
 // "Jul 5–Jul 12, 2026" when both endpoints parse. Degrades to a single date
 // when only one is present, and to a stable placeholder when neither is.
 // Mirrors the year-from-end formatting the page used before hardening.
+function isPlaceholderSpan(start: NullableString, end: NullableString): boolean {
+  if (typeof start !== 'string' || typeof end !== 'string') return false;
+  const st = start.trim();
+  const en = end.trim();
+  if (st.slice(5) === '09-16' && en.slice(5) === '08-31') return true;
+  const s = parseYmd(st);
+  const e = parseYmd(en);
+  if (!s || !e) return false;
+  const t0 = Date.UTC(s.y, s.m - 1, s.d);
+  const t1 = Date.UTC(e.y, e.m - 1, e.d);
+  const days = Math.round((t1 - t0) / 86_400_000);
+  return days >= 300;
+}
+
 export function formatCampDateRange(start: NullableString, end: NullableString): string {
+  // Year-long evergreen placeholders: do not show the fake Sep–Aug range.
+  if (isPlaceholderSpan(start, end)) return 'Dates TBA';
   const s = parseYmd(start);
   const e = parseYmd(end);
   if (s && e) return `${MONTHS[s.m - 1]} ${s.d}–${MONTHS[e.m - 1]} ${e.d}, ${e.y}`;
