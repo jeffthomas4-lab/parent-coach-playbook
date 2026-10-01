@@ -13,6 +13,8 @@ age: "15-plus"
 publishedAt: 2026-10-18
 featured: false
 draft: true
+hero: "/illustrations/football-goalpost-empty-field.webp"
+heroAlt: "A goalpost stands at the end of an empty youth football field, photographed at low angle in morning fog with hash marks fading away."
 editorial:
   qualityGrade: 8
   originalityGrade: 8

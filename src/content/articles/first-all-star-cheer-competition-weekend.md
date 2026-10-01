@@ -13,6 +13,8 @@ age: "all-ages"
 publishedAt: 2026-10-28
 featured: false
 draft: true
+hero: "/illustrations/cheer-mat-empty-gym.webp"
+heroAlt: "A blue practice mat rolls out across an empty gym floor, a water bottle at the edge under high window light."
 editorial:
   qualityGrade: 8
   originalityGrade: 8
