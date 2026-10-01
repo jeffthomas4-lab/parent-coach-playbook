@@ -663,8 +663,60 @@ export async function getCampsByIds(db: D1Database, ids: string[]): Promise<Map<
   return out;
 }
 
+// Calendar date in America/Los_Angeles (YYYY-MM-DD). PCD parents and
+// evergreen placeholder windows are Pacific-oriented; UTC midnight would
+// flip the date early evening PT and mis-hide mid-season leagues.
 export function todayDateISO(): string {
-  return new Date().toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+}
+
+/** Span (inclusive calendar days between start and end) at or above this
+ *  is treated as an evergreen / placeholder listing window. */
+export const PLACEHOLDER_DATE_SPAN_DAYS = 300;
+
+/** True when the listing uses a year-long (or Sep 16 → Aug 31) placeholder span. */
+export function isPlaceholderDateSpan(
+  start: string | null | undefined,
+  end: string | null | undefined,
+): boolean {
+  if (typeof start !== 'string' || typeof end !== 'string') return false;
+  const s = start.trim();
+  const e = end.trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || !/^\d{4}-\d{2}-\d{2}$/.test(e)) return false;
+  if (s.slice(5) === '09-16' && e.slice(5) === '08-31') return true;
+  const t0 = Date.parse(`${s}T12:00:00Z`);
+  const t1 = Date.parse(`${e}T12:00:00Z`);
+  if (!Number.isFinite(t0) || !Number.isFinite(t1)) return false;
+  const days = Math.round((t1 - t0) / 86_400_000);
+  return days >= PLACEHOLDER_DATE_SPAN_DAYS;
+}
+
+/**
+ * Public directory visibility SQL (programs aliased as `p`):
+ * - keep rows whose session has not ended (end_date >= today)
+ * - hide placeholder-span programs once start_date has passed
+ * Honest short windows (e.g. mid-season leagues) stay visible until end_date.
+ * Bind today twice via publicApprovedDateBinds().
+ */
+export const PUBLIC_APPROVED_DATE_SQL = `p.session_end_date >= ?
+         AND NOT (
+           p.session_start_date < ?
+           AND (
+             (julianday(p.session_end_date) - julianday(p.session_start_date)) >= ${PLACEHOLDER_DATE_SPAN_DAYS}
+             OR (
+               strftime('%m-%d', p.session_start_date) = '09-16'
+               AND strftime('%m-%d', p.session_end_date) = '08-31'
+             )
+           )
+         )`;
+
+export function publicApprovedDateBinds(today: string = todayDateISO()): [string, string] {
+  return [today, today];
 }
 
 export async function getCampBySlug(db: D1Database, slug: string): Promise<Camp | null> {
@@ -698,11 +750,11 @@ export async function listFeaturedCamps(db: D1Database): Promise<Camp[]> {
       `${CAMP_SELECT}
        WHERE p.pcd_status = 'approved'
          AND p.featured = 1
-         AND p.session_end_date >= ?
+         AND ${PUBLIC_APPROVED_DATE_SQL}
          AND (p.featured_until IS NULL OR p.featured_until >= ?)
        ORDER BY p.featured_order ASC NULLS LAST, p.session_start_date ASC`,
     )
-    .bind(today, today)
+    .bind(...publicApprovedDateBinds(today), today)
     .all<Camp>();
   return result.results ?? [];
 }
@@ -728,11 +780,11 @@ export async function listApprovedCamps(db: D1Database, limit: number = APPROVED
   const result = await db
     .prepare(
       `${CAMP_SELECT}
-       WHERE p.pcd_status = 'approved' AND p.session_end_date >= ?
+       WHERE p.pcd_status = 'approved' AND ${PUBLIC_APPROVED_DATE_SQL}
        ORDER BY p.session_start_date ASC
        LIMIT ?`,
     )
-    .bind(todayDateISO(), limit)
+    .bind(...publicApprovedDateBinds(), limit)
     .all<Camp>();
   const rows = result.results ?? [];
   if (rows.length >= limit) {
@@ -807,9 +859,9 @@ export async function listAllCampSlugsApproved(db: D1Database): Promise<{ slug: 
   const result = await db
     .prepare(
       `SELECT p.slug, COALESCE(p.updated_at, p.created_at) AS lastmod FROM programs p
-       WHERE p.pcd_status = 'approved' AND p.session_end_date >= ?`,
+       WHERE p.pcd_status = 'approved' AND ${PUBLIC_APPROVED_DATE_SQL}`,
     )
-    .bind(todayDateISO())
+    .bind(...publicApprovedDateBinds())
     .all<{ slug: string; lastmod: string }>();
   return result.results ?? [];
 }
@@ -838,10 +890,10 @@ export async function listCampsByState(db: D1Database, state: string): Promise<C
   const result = await db
     .prepare(
       `${CAMP_SELECT}
-       WHERE p.pcd_status = 'approved' AND o.state = ? AND p.session_end_date >= ?
+       WHERE p.pcd_status = 'approved' AND o.state = ? AND ${PUBLIC_APPROVED_DATE_SQL}
        ORDER BY p.session_start_date ASC`,
     )
-    .bind(state.toUpperCase(), todayDateISO())
+    .bind(state.toUpperCase(), ...publicApprovedDateBinds())
     .all<Camp>();
   return result.results ?? [];
 }
@@ -864,10 +916,10 @@ export async function listCampsByCitySport(
        WHERE p.pcd_status = 'approved'
          AND o.state = ?
          AND p.activity_category = ?
-         AND p.session_end_date >= ?
+         AND ${PUBLIC_APPROVED_DATE_SQL}
        ORDER BY p.session_start_date ASC`,
     )
-    .bind(state.toUpperCase(), sport, todayDateISO())
+    .bind(state.toUpperCase(), sport, ...publicApprovedDateBinds())
     .all<Camp>();
   const rows = result.results ?? [];
   const want = citySlug.toLowerCase();
@@ -879,10 +931,10 @@ export async function listStatesWithCounts(db: D1Database): Promise<{ state: str
     .prepare(
       `SELECT o.state, COUNT(*) AS count
        FROM programs p JOIN organizations o ON p.organization_id = o.id
-       WHERE p.pcd_status = 'approved' AND p.session_end_date >= ?
+       WHERE p.pcd_status = 'approved' AND ${PUBLIC_APPROVED_DATE_SQL}
        GROUP BY o.state ORDER BY count DESC`,
     )
-    .bind(todayDateISO())
+    .bind(...publicApprovedDateBinds())
     .all<{ state: string; count: number }>();
   return result.results ?? [];
 }
@@ -895,10 +947,10 @@ export async function listCitiesInState(
     .prepare(
       `SELECT o.city, COUNT(*) AS count
        FROM programs p JOIN organizations o ON p.organization_id = o.id
-       WHERE p.pcd_status = 'approved' AND o.state = ? AND p.session_end_date >= ?
+       WHERE p.pcd_status = 'approved' AND o.state = ? AND ${PUBLIC_APPROVED_DATE_SQL}
        GROUP BY o.city ORDER BY count DESC`,
     )
-    .bind(state.toUpperCase(), todayDateISO())
+    .bind(state.toUpperCase(), ...publicApprovedDateBinds())
     .all<{ city: string; count: number }>();
   return result.results ?? [];
 }
@@ -1390,18 +1442,19 @@ export async function listOtherCampsAtAddress(
   excludeId?: string,
 ): Promise<Camp[]> {
   const today = todayDateISO();
+  const [endOk, startOk] = publicApprovedDateBinds(today);
   const result = await db
     .prepare(
       `${CAMP_SELECT}
        WHERE p.pcd_status = 'approved'
-         AND p.session_end_date >= ?
+         AND ${PUBLIC_APPROVED_DATE_SQL}
          AND LOWER(TRIM(o.address)) = LOWER(TRIM(?))
          AND LOWER(TRIM(o.city))    = LOWER(TRIM(?))
          AND TRIM(o.zip)            = TRIM(?)
          ${excludeId ? 'AND p.id != ?' : ''}
        ORDER BY p.session_start_date ASC`,
     )
-    .bind(...(excludeId ? [today, address, city, zip, excludeId] : [today, address, city, zip]))
+    .bind(...(excludeId ? [endOk, startOk, address, city, zip, excludeId] : [endOk, startOk, address, city, zip]))
     .all<Camp>();
   return result.results ?? [];
 }

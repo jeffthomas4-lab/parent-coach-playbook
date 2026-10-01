@@ -78,7 +78,21 @@ function fmtDatePart(s: string | null | undefined): { m: number; d: number; y: n
   return { m, d, y };
 }
 
+function isPlaceholderSpan(start: string | null | undefined, end: string | null | undefined): boolean {
+  if (!start || !end) return false;
+  if (start.slice(5) === '09-16' && end.slice(5) === '08-31') return true;
+  const a = fmtDatePart(start);
+  const b = fmtDatePart(end);
+  if (!a || !b) return false;
+  const t0 = Date.UTC(a.y, a.m - 1, a.d);
+  const t1 = Date.UTC(b.y, b.m - 1, b.d);
+  const days = Math.round((t1 - t0) / 86_400_000);
+  return days >= 300;
+}
+
 export function fmtDateRange(start: string | null | undefined, end: string | null | undefined): string {
+  // Year-long evergreen placeholders: do not show the fake Sep–Aug range.
+  if (isPlaceholderSpan(start, end)) return 'Dates TBA';
   const a = fmtDatePart(start);
   const b = fmtDatePart(end);
   if (a && b) {
