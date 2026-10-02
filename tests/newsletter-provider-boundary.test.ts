@@ -9,7 +9,7 @@ describe('newsletter provider boundary', () => {
       readFile(new URL('../src/pages/newsletter.astro', import.meta.url), 'utf8'),
       readFile(new URL('../src/pages/disclosure.astro', import.meta.url), 'utf8'),
     ]);
-    expect(kit).toContain('https://parent-coach-playbook.kit.com/4b28f916b5');
+    expect(kit).toContain('https://parentcoachdesk.kit.com/4b28f916b5');
     expect(component).toContain('KIT_HOSTED_URL');
     expect(newsletter).toContain('KIT_HOSTED_URL');
     expect(component).toContain('confirmation, redirect,\n// suppression, delivery, and failure behavior remain launch-gated');

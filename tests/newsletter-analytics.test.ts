@@ -4,7 +4,7 @@ import { newsletterCtaFromHref, newsletterSignupIntentEvent } from '../src/lib/n
 
 describe('privacy-minimized newsletter signup intent', () => {
   it('accepts only the exact governed Kit destination and allowlisted CTA locations', () => {
-    const url = 'https://parent-coach-playbook.kit.com/4b28f916b5';
+    const url = 'https://parentcoachdesk.kit.com/4b28f916b5';
     expect(newsletterCtaFromHref(url, 'home_hero')).toBe('home_hero');
     expect(newsletterCtaFromHref(`${url}?email=reader@example.com`, 'home_hero')).toBeNull();
     expect(newsletterCtaFromHref('https://attacker.example/4b28f916b5', 'home_hero')).toBeNull();
@@ -23,12 +23,12 @@ describe('privacy-minimized newsletter signup intent', () => {
 
   it('keeps the shared Kit hosted URL and labels tracked Astro CTAs', async () => {
     const kit = await readFile('src/lib/kit.ts', 'utf8');
-    expect(kit).toContain('https://parent-coach-playbook.kit.com/4b28f916b5');
+    expect(kit).toContain('https://parentcoachdesk.kit.com/4b28f916b5');
 
     const files = ['src/components/NewsletterSignup.astro', 'src/pages/index.astro', 'src/pages/newsletter.astro'];
     for (const file of files) {
       const source = await readFile(file, 'utf8');
-      const literalDestinations = source.match(/parent-coach-playbook\.kit\.com\/4b28f916b5/g) ?? [];
+      const literalDestinations = source.match(/parentcoachdesk\.kit\.com\/4b28f916b5/g) ?? [];
       const labeledConstantHrefs = [
         ...source.matchAll(/href=\{KIT_HOSTED_URL\}[^>]*data-newsletter-cta=/g),
         ...source.matchAll(/data-newsletter-cta=[^>]*href=\{KIT_HOSTED_URL\}/g),
