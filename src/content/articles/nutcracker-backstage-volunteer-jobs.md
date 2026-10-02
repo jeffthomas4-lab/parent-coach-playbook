@@ -15,7 +15,7 @@ publishedAt: 2026-10-01
 hero: "/illustrations/theater-costume-rack-backstage.webp"
 heroAlt: "A costume rack hanging in a dim backstage hallway with work lights and empty garment bags."
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -29,7 +29,7 @@ editorial:
   claudeReviewedAt: 2026-09-18
   status: published
   factCheckGoodThrough: 2027-09-18
-  reviewerNotes: "PASS scheduled (publishedAt 2026-10-01): A/B/C/E pass. Anchored to studio-ballet-nutcracker-year October volunteer timing; general studio logistics, no stale rule claims. Dek 13 words. Leave draft:true until date."
+  reviewerNotes: "PUBLISHED 2026-10-02 Penny: draft:false. Prior scheduled PASS held; A/B/C/E clean."
 ---
 
 The cast list went up in September, October weekend rehearsals are already on the calendar, and then the studio parent email lands with a volunteer signup link and four tabs of empty slots. Backstage parents run the show. Artistic staff cannot cover every dressing room alone.
