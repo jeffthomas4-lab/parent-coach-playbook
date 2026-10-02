@@ -205,6 +205,7 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
       description: SITE.description,
       logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
       publishingPrinciples: SITE.url + '/disclosure/',
+      sameAs: ['https://www.instagram.com/parentcoachdesk/'],
     })}></script>
 
     <slot name="head" />
