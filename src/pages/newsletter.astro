@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { renderTitle } from '../lib/title';
 import Illo from '../components/Illo.astro';
+import { KIT_HOSTED_URL } from '../lib/kit';
 
 // Newsletter archive. Will list actual Friday Letter issues once they ship.
 // Until then, the archive is empty and the page leads with the signup CTA.
@@ -52,7 +53,7 @@ const fmt = (d: Date) =>
             Friday morning, free, no list-share.
           </h3>
           <a
-            href="https://parent-coach-playbook.kit.com/4b28f916b5"
+            href={KIT_HOSTED_URL}
             data-newsletter-cta="newsletter_primary"
             class="btn mt-5 w-full inline-block text-center"
           >
@@ -81,7 +82,7 @@ const fmt = (d: Date) =>
             We haven't sent an issue yet. Subscribe and you'll be there for the first one. Past issues will live here once we have them.
           </p>
           <a
-            href="https://parent-coach-playbook.kit.com/4b28f916b5"
+            href={KIT_HOSTED_URL}
             data-newsletter-cta="newsletter_secondary"
             class="btn mt-6 inline-block"
           >

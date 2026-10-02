@@ -1,11 +1,12 @@
-const KIT_SIGNUP = 'https://parent-coach-playbook.kit.com/4b28f916b5';
+import { KIT_HOSTED_URL } from './kit';
+
 const CTA_LOCATIONS = new Set(['home_hero', 'site_banner', 'newsletter_primary', 'newsletter_secondary']);
 
 export function newsletterCtaFromHref(href: string, cta: string | undefined): string | null {
   if (!cta || !CTA_LOCATIONS.has(cta)) return null;
   try {
     const target = new URL(href, 'https://parentcoachdesk.com');
-    return target.href === KIT_SIGNUP ? cta : null;
+    return target.href === KIT_HOSTED_URL ? cta : null;
   } catch {
     return null;
   }

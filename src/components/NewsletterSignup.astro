@@ -10,6 +10,7 @@
 // To swap the destination form, change KIT_HOSTED_URL.
 
 import Illo from './Illo.astro';
+import { KIT_HOSTED_URL } from '../lib/kit';
 
 interface Props {
   variant?: 'inline' | 'card' | 'compact';
@@ -29,7 +30,6 @@ const {
   buttonLabel = 'Get the Friday Letter',
 } = Astro.props;
 
-const KIT_HOSTED_URL = 'https://parent-coach-playbook.kit.com/4b28f916b5';
 const isCard = variant === 'card';
 const isCompact = variant === 'compact';
 ---

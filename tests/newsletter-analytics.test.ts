@@ -21,13 +21,24 @@ describe('privacy-minimized newsletter signup intent', () => {
     expect(newsletterSignupIntentEvent('unknown')).toBeNull();
   });
 
-  it('labels every direct hosted signup link in shipped Astro sources', async () => {
+  it('keeps the shared Kit hosted URL and labels tracked Astro CTAs', async () => {
+    const kit = await readFile('src/lib/kit.ts', 'utf8');
+    expect(kit).toContain('https://parent-coach-playbook.kit.com/4b28f916b5');
+
     const files = ['src/components/NewsletterSignup.astro', 'src/pages/index.astro', 'src/pages/newsletter.astro'];
     for (const file of files) {
       const source = await readFile(file, 'utf8');
-      const destinations = source.match(/parent-coach-playbook\.kit\.com\/4b28f916b5/g) ?? [];
+      const literalDestinations = source.match(/parent-coach-playbook\.kit\.com\/4b28f916b5/g) ?? [];
+      const labeledConstantHrefs = [
+        ...source.matchAll(/href=\{KIT_HOSTED_URL\}[^>]*data-newsletter-cta=/g),
+        ...source.matchAll(/data-newsletter-cta=[^>]*href=\{KIT_HOSTED_URL\}/g),
+      ];
       const labels = source.match(/data-newsletter-cta=/g) ?? [];
-      expect(labels).toHaveLength(destinations.length);
+      // Literals (if any) and labeled KIT_HOSTED_URL hrefs must stay in sync with CTA labels.
+      expect(labels).toHaveLength(literalDestinations.length + labeledConstantHrefs.length);
+      if (source.includes('KIT_HOSTED_URL')) {
+        expect(source).toMatch(/from ['"].*\/kit['"]/);
+      }
     }
   });
 });
