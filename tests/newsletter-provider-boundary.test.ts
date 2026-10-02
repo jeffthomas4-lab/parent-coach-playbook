@@ -3,12 +3,15 @@ import { describe, expect, it } from 'vitest';
 
 describe('newsletter provider boundary', () => {
   it('uses the hosted provider form while leaving delivery proof explicitly launch-gated', async () => {
-    const [component, newsletter, disclosure] = await Promise.all([
+    const [kit, component, newsletter, disclosure] = await Promise.all([
+      readFile(new URL('../src/lib/kit.ts', import.meta.url), 'utf8'),
       readFile(new URL('../src/components/NewsletterSignup.astro', import.meta.url), 'utf8'),
       readFile(new URL('../src/pages/newsletter.astro', import.meta.url), 'utf8'),
       readFile(new URL('../src/pages/disclosure.astro', import.meta.url), 'utf8'),
     ]);
-    expect(component).toContain('https://parent-coach-playbook.kit.com/4b28f916b5');
+    expect(kit).toContain('https://parentcoachdesk.kit.com/4b28f916b5');
+    expect(component).toContain('KIT_HOSTED_URL');
+    expect(newsletter).toContain('KIT_HOSTED_URL');
     expect(component).toContain('confirmation, redirect,\n// suppression, delivery, and failure behavior remain launch-gated');
     expect(newsletter).toContain('Kit’s hosted page, which shows an unsubscribe option');
     expect(disclosure).toContain('controlled proof of consent, confirmation, suppression, failure handling, and provider configuration');

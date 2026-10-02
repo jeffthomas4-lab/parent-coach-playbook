@@ -12,7 +12,7 @@ export function validateNewsletterProviderProof(value) {
   if (!['pending', 'verified'].includes(value.state)) errors.push('state must be pending or verified');
   try {
     const form = new URL(value.form_url);
-    if (form.protocol !== 'https:' || form.hostname !== 'parent-coach-playbook.kit.com') errors.push('form_url must be the approved HTTPS Kit host');
+    if (form.protocol !== 'https:' || form.hostname !== 'parentcoachdesk.kit.com') errors.push('form_url must be the approved HTTPS Kit host');
   } catch {
     errors.push('form_url must be a valid URL');
   }

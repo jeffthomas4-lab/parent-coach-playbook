@@ -33,7 +33,7 @@ export interface EmailEnv extends SlackEnv {
   /** "stage" (default) or "send". Governs mail to the ADMIN_EMAILS allowlist. */
   EMAIL_ADMIN_MODE?: string;
   RESEND_API_KEY?: string;
-  /** Envelope from, e.g. "Parent Coach Desk <hello@parentcoachdesk.com>". */
+  /** Envelope from, e.g. "Parent Coach Desk <support@parentcoachdesk.com>". */
   EMAIL_FROM?: string;
   /** Reply-to for parent-facing mail. Optional. */
   EMAIL_REPLY_TO?: string;

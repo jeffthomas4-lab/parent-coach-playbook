@@ -27,7 +27,7 @@ const SEND_ENV = {
   EMAIL_MODE: 'send',
   EMAIL_ADMIN_MODE: 'send',
   RESEND_API_KEY: 'rs_fake_key',
-  EMAIL_FROM: 'Parent Coach Desk <hello@parentcoachdesk.com>',
+  EMAIL_FROM: 'Parent Coach Desk <support@parentcoachdesk.com>',
   ADMIN_EMAILS: 'admin-fixture@parentcoachdesk.com',
   SLACK_WEBHOOK_URL: 'https://hooks.slack.com/x',
 };
@@ -36,7 +36,7 @@ const STAGE_ENV = {
   ADMIN_EMAILS: 'admin-fixture@parentcoachdesk.com',
   SLACK_WEBHOOK_URL: 'https://hooks.slack.com/x',
   RESEND_API_KEY: 'rs_fake_key',
-  EMAIL_FROM: 'Parent Coach Desk <hello@parentcoachdesk.com>',
+  EMAIL_FROM: 'Parent Coach Desk <support@parentcoachdesk.com>',
 };
 
 const message = {

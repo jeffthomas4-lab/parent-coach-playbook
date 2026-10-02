@@ -38,7 +38,7 @@ $resend = Read-Host "`nPaste RESEND_API_KEY to take email live now (or leave bla
 if ($resend) {
   $adminEmail = Read-Host "Admin email for alerts (e.g. eepskalla@gmail.com)"
   $resend | npx wrangler pages secret put RESEND_API_KEY --project-name $Project
-  "Parent Coach Desk <hello@parentcoachdesk.com>" | npx wrangler pages secret put EMAIL_FROM --project-name $Project
+  "Parent Coach Desk <support@parentcoachdesk.com>" | npx wrangler pages secret put EMAIL_FROM --project-name $Project
   $adminEmail | npx wrangler pages secret put ADMIN_EMAILS --project-name $Project
   "send" | npx wrangler pages secret put EMAIL_ADMIN_MODE --project-name $Project
   Write-Host "Resend admin-alert path live." -ForegroundColor Green
