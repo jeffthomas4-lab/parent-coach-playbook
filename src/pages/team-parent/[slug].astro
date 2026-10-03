@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import Illo from '../../components/Illo.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
 import { serializeJsonLd } from '../../lib/jsonld';
@@ -77,6 +78,7 @@ let isShort = true;
 let titleHtml = '';
 let articleSchema: any = null;
 let breadcrumbSchema: any = null;
+let heroIllustrationBase: string | null = null;
 
 if (props.kind === 'article') {
   article = props.article;
@@ -87,6 +89,7 @@ if (props.kind === 'article') {
   ageLabel = AGE_BANDS.find((a) => a.slug === article!.data.age)?.label;
   isShort = article.data.format === 'note';
   titleHtml = renderTitle(article.data.title);
+  heroIllustrationBase = article.data.hero?.match(/^\/illustrations\/(.+)\.webp$/)?.[1] ?? null;
 
   // One live-article fetch (same-phase, self excluded), then build the 3-card
   // list with graceful sport-aware fallback: same-sport team-parent pieces
@@ -125,6 +128,7 @@ if (props.kind === 'article') {
     },
     datePublished: article.data.publishedAt.toISOString(),
     mainEntityOfPage: `${SITE.url}/team-parent/${article.id}/`,
+    ...(article.data.hero ? { image: new URL(article.data.hero, SITE.url).toString() } : {}),
   };
 
   breadcrumbSchema = {
@@ -244,6 +248,31 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
           </div>
         </div>
       </header>
+
+      {article.data.hero && (
+        <div class="max-w-prose mx-auto mt-8 md:mt-10 rounded-card overflow-hidden">
+          {heroIllustrationBase ? (
+            <Illo
+              base={heroIllustrationBase}
+              alt={article.data.heroAlt ?? article.data.title}
+              class="w-full object-cover max-h-[220px] md:max-h-[480px]"
+              sizes="(min-width: 768px) 700px, 480px"
+              eager={true}
+            />
+          ) : (
+            <img
+              src={article.data.hero}
+              alt={article.data.heroAlt ?? article.data.title}
+              class="w-full object-cover max-h-[220px] md:max-h-[480px]"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          )}
+        </div>
+      )}
 
       <div class={`article-body mx-auto ${isShort ? 'mt-8' : 'mt-12'}`}>
         <ArticleContent />
