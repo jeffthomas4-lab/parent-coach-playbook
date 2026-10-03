@@ -1570,6 +1570,84 @@
       "after": null,
       "asin": "B000F8XIP6 (1 new; hockey used existing catalog)",
       "browserVerification": "Chrome headless on DESKTOP for cones, helmet, water, first-aid, tripod, clipboard, stick (Franklin live), poster board. Stickers not added (no clean non-seasonal match)."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "halftime-snacks-youth-soccer",
+      "action": "insert-disclosure",
+      "details": "Added AFFILIATES.md FTC disclosure sentence to visible body before first affiliate link.",
+      "before": null,
+      "after": "*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*",
+      "asin": null,
+      "browserVerification": "Not applicable; disclosure only."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "halftime-snacks-youth-soccer",
+      "action": "insert-existing-catalog-link",
+      "slug": "soft-cooler-25qt",
+      "anchorText": "cooler bag",
+      "location": "Quick Halftime Packing Checklist paragraph",
+      "before": "Keep a cooler bag ready with water bottles, pre-cut chilled fruit, an easy carb, a small protein, napkins or wipes, an ice pack, and a note card listing any team allergies.",
+      "after": "Keep a [cooler bag](/go/soft-cooler-25qt/) ready with [water bottles](/go/multi-sport-water-bottle/), pre-cut chilled fruit, an easy carb, a small protein, napkins or wipes, an ice pack, and a note card listing any team allergies.",
+      "asin": "B07YD4FCNM (pre-existing)",
+      "browserVerification": "Live product page verified this run: Lifewit Insulated Cooler Bag (B07YD4FCNM) In Stock; title matches soft cooler bag for snack packing."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "halftime-snacks-youth-soccer",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "water bottles",
+      "location": "Quick Halftime Packing Checklist paragraph",
+      "before": "Keep a cooler bag ready with water bottles, pre-cut chilled fruit, an easy carb, a small protein, napkins or wipes, an ice pack, and a note card listing any team allergies.",
+      "after": "Keep a [cooler bag](/go/soft-cooler-25qt/) ready with [water bottles](/go/multi-sport-water-bottle/), pre-cut chilled fruit, an easy carb, a small protein, napkins or wipes, an ice pack, and a note card listing any team allergies.",
+      "asin": "B08TQQ9RTS (pre-existing)",
+      "browserVerification": "Live product page verified this run: Under Armour 32oz Playmaker Squeeze Water Bottle (B08TQQ9RTS) In Stock."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "halftime-snacks-youth-soccer",
+      "action": "insert-existing-catalog-link",
+      "slug": "soft-cooler-25qt",
+      "anchorText": "cooler",
+      "location": "Food Safety section perishables paragraph",
+      "before": "Pack it in a cooler with ice until the moment it's eaten.",
+      "after": "Pack it in a [cooler](/go/soft-cooler-25qt/) with ice until the moment it's eaten.",
+      "asin": "B07YD4FCNM (pre-existing)",
+      "browserVerification": "Same B07YD4FCNM verification as packing paragraph; destination unaltered."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "halftime-snacks-youth-soccer",
+      "action": "insert-existing-catalog-link",
+      "slug": "multi-sport-water-bottle",
+      "anchorText": "water bottles",
+      "location": "Five-minute prep routine bullet list",
+      "before": "- Fill water bottles and add ice the night before.",
+      "after": "- Fill [water bottles](/go/multi-sport-water-bottle/) and add ice the night before.",
+      "asin": "B08TQQ9RTS (pre-existing)",
+      "browserVerification": "Same B08TQQ9RTS verification; destination unaltered."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "halftime-snacks-youth-soccer",
+      "action": "skip-catalog-no-clean-match",
+      "details": "ice pack left unlinked: existing slug ice-pack-arctic-flex-gel search destination returns injury/therapy wraps, not cooler food ice packs. hard-cooler-55qt (B08TYGMCJ8) live page 404 this run — not used; destination left unaltered for Linda/Arnie weekly retire flow. Grocery snack nouns left unlinked — no new ASINs invented.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "ice-pack search page live but misfit; B08TYGMCJ8 404."
+    },
+    {
+      "date": "2026-10-02",
+      "articleSlug": "run-summary",
+      "action": "monetize-new-blg",
+      "details": "Scheduled 2026-10-02 evening PT run on DESKTOP (041b6bba). New BLG since 2026-09-30 Arnie pass: only halftime-snacks-youth-soccer (917282, imported 2026-10-02). Monetized with 4 /go/ using 2 existing catalog slugs (soft-cooler-25qt, multi-sport-water-bottle); 0 new catalog entries; 0 competitor replacements; 0 gap-queue. travel-soccer-costs still gap-queued historically, unchanged. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": "none new (reused B07YD4FCNM, B08TQQ9RTS)",
+      "browserVerification": "WebFetch live Amazon product pages for B07YD4FCNM and B08TQQ9RTS In Stock; B08TYGMCJ8 404 skipped."
     }
   ]
 }

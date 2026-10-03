@@ -26,6 +26,8 @@ editorial:
 
 The best halftime snack is a quick carb, like fruit or a simple grain, paired with water. Add a small protein only when a child has back-to-back games or a long practice day. Sports drinks come into play for extended or very hot sessions, not a routine 50-minute match. Below you'll find exact snack ideas, portion sizes by age, safety notes, and a checklist you can use tonight.
 
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+
 ***
 
 > **TL;DR:**
@@ -99,7 +101,7 @@ The clearest decision rule comes from [US Youth Soccer](https://www.usyouthsocce
 
 A few foods cause more trouble than they're worth on the sideline. Whole grapes, hard candies, and whole nuts are common choking hazards for younger children, and the [CDC](https://www.cdc.gov/food-safety/foods/children-under-5.html) specifically calls out these as items to modify or skip for kids under five. Slicing grapes lengthwise, skipping hard candy altogether, and choosing softer textures solves most of the risk without giving up the snack.
 
-Perishables need their own rule. Cut melon left out for more than an hour in warm weather (or more than two hours in milder conditions) should be tossed rather than handed to a hungry kid, per the same CDC guidance. Pack it in a cooler with ice until the moment it's eaten.
+Perishables need their own rule. Cut melon left out for more than an hour in warm weather (or more than two hours in milder conditions) should be tossed rather than handed to a hungry kid, per the same CDC guidance. Pack it in a [cooler](/go/soft-cooler-25qt/) with ice until the moment it's eaten.
 
 - Slice grapes lengthwise instead of serving them whole.
 - Skip hard candies and whole nuts for players under five.
@@ -109,9 +111,9 @@ Perishables need their own rule. Cut melon left out for more than an hour in war
 
 ## 5. Quick Halftime Packing Checklist and Five-Minute Prep Routine
 
-A good routine beats a good memory. Keep a cooler bag ready with water bottles, pre-cut chilled fruit, an easy carb, a small protein, napkins or wipes, an ice pack, and a note card listing any team allergies.
+A good routine beats a good memory. Keep a [cooler bag](/go/soft-cooler-25qt/) ready with [water bottles](/go/multi-sport-water-bottle/), pre-cut chilled fruit, an easy carb, a small protein, napkins or wipes, an ice pack, and a note card listing any team allergies.
 
-- Fill water bottles and add ice the night before.
+- Fill [water bottles](/go/multi-sport-water-bottle/) and add ice the night before.
 - Slice fruit and store it in a sealed container in the fridge.
 - Grab one shelf-stable backup snack in case the cooler runs short.
 - Toss in wipes and a small trash bag for cleanup.
