@@ -14,7 +14,7 @@ hero: "/illustrations/cheer-parent-night-empty-floor-chairs.webp"
 heroAlt: "Folding chairs along a blue cheer spring floor in a gym, backpack and water bottles on the nearest seat, warm window light."
 publishedAt: 2026-09-25
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
