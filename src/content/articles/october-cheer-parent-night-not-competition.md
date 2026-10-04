@@ -25,10 +25,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-09-18
-  status: needs-revision
+  claudeReviewedAt: 2026-10-03
+  status: claude-reviewed
   factCheckGoodThrough: 2027-09-16
-  reviewerNotes: "FAIL A6 sentence rhythm: three consecutive sentences within five words of each other: \"Skip scoring the marketing.\" (4) / \"Know rehearsal from season.\" (4) / \"How competition day will feel different.\" (6). Break the run before republish. Prior scheduled PASS vacated 2026-09-18."
+  reviewerNotes: "Revised 2026-10-03 for A6: broke the four-word / four-word run before the competition-day section. Re-run check-voice-rubric.mjs before publish. Hero already present."
 ---
 
 Your gym texts that the October parent night is next Saturday. Someone on the parent chat already called it the first competition of the year.
@@ -49,7 +49,9 @@ Do not invent a season ranking from one family night. Placements, deductions, an
 
 Kids freeze. A safer first floor before the real check-in line is the whole point of the night for them. The gym also uses the evening as a marketing and confidence tool, and that is fine.
 
-Skip scoring the marketing. Know rehearsal from season.
+Skip scoring the marketing.
+
+Treat October as rehearsal for the season, not a verdict on it.
 
 **How competition day will feel different.** At a real event you buy spectator tickets, drop your athlete with coaches for a closed warm-up, then watch a roughly two-and-a-half-minute routine once. Some weekends the team goes twice before awards, and the wait between runs is longer than the routine itself.
 
