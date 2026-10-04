@@ -13,6 +13,10 @@ description: >-
 **Deploy:** `C:\Users\jefft\pcd\pcd-deploy-code.ps1`
 **Slack:** `C0BJC3WTNKC` (`#pcd-agent-notications`)
 
+## Voice gate (before any flip)
+
+Before setting `draft: false`, run `VOICE-RUBRIC.md` on the piece (sections A, B, C, and E). Publishable means all four pass. A fail means do not publish: leave `draft: true`, name the failing item, and report it. Do not copy a shorter banned-word or pattern list into this skill. The rubric is the check.
+
 ## Live gate (non-negotiable)
 
 When this run flips any content from `draft: true` → `draft: false`:
@@ -37,13 +41,15 @@ If Lane A is empty (nothing due), do **not** invent publishes and do **not** req
 **Lane A — PUBLISH (today or earlier `publishedAt`, America/Los_Angeles):**
 
 - `draft: true`, ready (`claude-reviewed` / `jeff-approved` or equivalent clean status)
-- Not `needs-revision`, not `ready-for-jeff`, not SENS / Red Wall
+- Passes `VOICE-RUBRIC.md` sections A, B, C, and E
+- Not `needs-revision`, not `ready-for-jeff`, not SENS / Red Wall, not a voice-rubric fail
 - Set `draft: false`, commit, push, **deploy, verify live**
 
 **Lane B — HOLD (leave `draft: true`):**
 
 - `needs-revision` (e.g. october-cheer A6)
 - `ready-for-jeff` news / Jeff-gated items
+- Voice-rubric fail: name the failing `VOICE-RUBRIC.md` item and do not publish
 - List clearly in Slack
 
 **Scheduled future (`publishedAt` after today):** leave `draft: true`; note PASS in Slack. Do not publish early.

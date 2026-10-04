@@ -25,7 +25,7 @@
    - **Lead.** Written in the site's voice, tied to the seasonal moment, roughly 150-300 words, ending with a short bridge into the content links below.
    - **Content links.** The week's new content (or, if nothing shipped, the most relevant recent piece), each with a one- or two-sentence description and the live URL.
    - **Archive resurface.** The one older piece picked in step 4, with a short reason it matters right now and its live URL.
-   - **Sign-off.** "Glad you're here. See you next Friday." (or the established sign-off pattern), followed by "— PCP Editorial / Parent Coach Playbook."
+   - **Sign-off.** "Glad you're here. See you next Friday." (or the established sign-off pattern), followed by "PCP Editorial / Parent Coach Playbook." No em dash in the attribution. The voice rubric bans them.
    - **Notes for Jeff.** A short section stating: the seasonal hook used, the archive pick and why, any content considered and skipped and why, whether the draft is clean on the Amazon-link scan (step 6), and the lead's word count.
 6. **Save the draft** to `reports/friday-letters/FRIDAY_LETTER_YYYY-MM-DD.md`, dated for the coming Friday's send.
 
@@ -41,10 +41,10 @@ Per S10's steps verbatim and the Amazon Associates Operating Agreement (grounded
 
 ## The anti-AI self-check (shared standard, same as Ed's)
 
-Run this before the draft is saved as done, on every sentence Frida wrote herself (the lead, the content-link blurbs, the archive-resurface framing, the sign-off, not the source articles being linked to):
+If `About Me/Anti AI Writing.txt` exists, it remains source law. Either way, before the draft is saved as done, every sentence Frida wrote (the lead, the content-link blurbs, the archive-resurface framing, the sign-off, not the source articles being linked to) must pass `VOICE-RUBRIC.md` sections A, B, C, and E. A fail means rewrite and name the failing item. The numbered checks below do not replace the rubric.
 
 1. Read the draft once. Ask: does this sound like the Parent Coach Playbook Editorial voice, or like a polished stranger?
-2. Check for banned words and hedging (`About Me/Anti AI Writing.txt`): delve, leverage, robust, seamless, pivotal, somewhat, perhaps, arguably, and the rest of the list.
+2. Run `VOICE-RUBRIC.md` Section B on that copy (banned words and hedging). If `About Me/Anti AI Writing.txt` exists, check it too. A partial word list is not a pass.
 3. Check for reframe patterns, fake-wisdom triplets, empowerment closes, or summary closes.
 4. Check for three consecutive sentences within five words of each other. Rewrite one if found.
 5. Check for throat-clearing openings or weak sentence starters ("This is," "It's," "There are").

@@ -8,7 +8,7 @@
 
 ## Before every run
 
-1. Read `About Me/Anti AI Writing.txt`. Every word of pitch copy gets checked against it before the run is called done: banned words, banned patterns, 3-sentence paragraph maximum, no em dashes ever, at least one voice marker.
+1. Outreach pitches are public-facing copy Jeff may send. If `About Me/Anti AI Writing.txt` exists, it remains source law. Either way, every word of pitch copy must pass `VOICE-RUBRIC.md` sections A, B, and C before the run is called done (structure, banned words, banned patterns). Name any failing item and rewrite it. Do not treat a shorter list as a pass. Internal ledger notes and the weekly report are not public copy. Keep the pitch voice already in this skill: peer to peer, the way Jeff sounds, not an aggressive close.
 2. Read `reports/seo/outreach/targets.json`, the state file. If it does not exist, create it this run by migrating the 15 targets out of `reports/seo/outreach-batch-1-2026-07-13.md`.
 3. Read the prior week's report in `reports/seo/outreach/` so the run reports real deltas.
 

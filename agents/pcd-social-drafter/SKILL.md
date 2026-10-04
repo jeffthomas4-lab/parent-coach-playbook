@@ -2,7 +2,7 @@
 name: pcd-social-drafter
 description: Sasha stages Parent Coach Desk Instagram-first social drafts for Jeff to paste by hand. Draft and stage only — no accounts, APIs, or auto-posting (scheduler later).
 version: 1.2
-last_edited: 2026-10-02
+last_edited: 2026-10-04
 owner_workstream: Marketing / distribution
 action_class: Stage
 risk: R1
@@ -16,14 +16,14 @@ Grok Bot PCD routine `pcd-social-drafter-sasha` is the scheduler (weekdays 6:45 
 
 - **Draft and stage only.** Jeff posts. No account creation, no API keys, no auto-posting, no scheduling on Jeff's behalf until he switches on a social scheduler.
 - Follow PCD Windows machine gate (DESKTOP-primary).
-- Brand voice: Parent Coach Playbook Editorial / Parent Coach Desk. No public Jeff Thomas naming.
-- No em dashes. No AI-tell words (delve, leverage, robust, seamless, pivotal, etc.).
+- Brand voice: Parent Coach Playbook Editorial / Parent Coach Desk. Upbeat and professional. No public Jeff Thomas naming.
+- Captions and other public social copy (Instagram caption, Facebook, X, Pinterest title and description, alt text) must pass `VOICE-RUBRIC.md` sections A, B, and C before the batch is done: structure, banned words, and banned patterns. That includes no em dashes and no asterisks or bold in a title-like line. Do not treat a shorter word list as the check. Name the failing item and rewrite it, or do not call the batch done.
 - Amazon affiliate URLs and `/go/` Amazon redirects do not go in draft copy. Prefer canonical parentcoachdesk.com article URLs (UTM ok).
 - **Every Instagram post MUST include a real photo.** No caption-only Instagram drafts. Fail the run if any Instagram post lacks a staged media file that exists on disk.
 
 Governing docs: `reports/social/SOCIAL-STAGE-PATTERN.md`, prior batches in `reports/social/SOCIAL_DRAFTS_*.md`, `EDITORIAL_VOICE.md` when present, `KIT_AND_SOCIAL_GATE_2026-10-02.md` (Reference).
 
-Jeff gate 2026-10-02: Kit = Jeff paste Fridays (Frida drafts). Instagram = Sasha drafts + Jeff posts by hand; daily photo required with each draft. Pinterest starts next week, same stage-then-paste. Scheduler automation is later. Do not change Kit from this skill.
+Jeff gate 2026-10-02: Kit = Jeff paste Fridays (Frida drafts). Instagram = Sasha drafts + Jeff posts by hand; photo and caption saved together; upbeat and professional; no public Jeff Thomas naming; daily photo required with each draft. Pinterest starts next week, same stage-then-paste. Scheduler automation is later. Do not change Kit from this skill.
 
 ## Before every run
 

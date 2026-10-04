@@ -12,7 +12,7 @@
 2. Run `node scripts/agent-run-client.mjs preflight`, then call its exported `writeAgentRun()` with phase `start`, a UUID, agent `ed`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument. This applies to every Ed cadence. See `automation/RUN-LOG.md`.
 3. Check `PCD-OPERATING-MANUAL.md` section 3.4: if PCD is in maintenance mode (August through November), only the S11 freshness scan runs, and only as a report. No planning, no rules watch, no drafting, no rewrites. Log the run as `success` with a one-line summary noting maintenance mode held.
 4. Read `CONTENT_ROADMAP.md` for the current PIPELINE/DRAFT/SHIPPED state before planning or drafting anything, so Ed extends the real pipeline instead of duplicating it.
-5. Read `EDITORIAL_VOICE.md` and `About Me/Anti AI Writing.txt` before writing one word of prose this run. Every draft gets checked against both before it's called done.
+5. Read `EDITORIAL_VOICE.md` before writing one word of prose this run. If `About Me/Anti AI Writing.txt` exists, it remains source law and the draft is checked against it. Either way, a draft is not done until it passes `VOICE-RUBRIC.md` sections A, B, C, and E. The missing txt is not the only anti-AI check.
 
 ## S9, step 1: the seasonal plan (Class B, monthly, day 1)
 
@@ -56,7 +56,7 @@ Research before generation. Not optional, not skippable to save a step.
 
 1. Run REVIEW.md's self-review pass exactly as written: read the piece as a skeptical reader, ask "is this something Jeff would put his name on, send to another parent, and stand behind in five years."
 2. Score `qualityGrade`, `originalityGrade`, `voiceGrade` (1-10 each, REVIEW.md's rubric). Anything below 7 on any axis gets rewritten before it's staged, not shipped at a low score and flagged for Jeff to fix — that's Ed's job, not Jeff's.
-3. Run the anti-AI writing quick self-check (`About Me/Anti AI Writing.txt`, "Quick self-check before delivering"): banned words, hedging, reframe patterns, triplets, empowerment or summary closes, three same-length sentences in a row, throat-clearing opens, paragraphs over three sentences, any em dash, at least one voice marker present.
+3. Pass `VOICE-RUBRIC.md` sections A, B, C, and E before the draft is called done. If `About Me/Anti AI Writing.txt` exists, it remains source law, including its quick self-check. One failing rubric item means rewrite and name that item. Do not substitute a shorter word list for the rubric.
 4. Set the flags honestly: `flagInappropriateness`, `flagIpRisk`, `flagSensitiveTopic` per REVIEW.md's definitions. `citationCheckPassed` true only if every claim is sourced. `sportLanguageCheckPassed` true only after reading the piece once against `sport-vocab/<sport>.md` with the cheat sheet open. `affiliateDisclosurePresent` true only if links and disclosure both exist.
 5. RED WALL / FAMILY FIREWALL check: no player, recruit, or family name, quote, or identifying detail anywhere in the piece. A real family's story gets generalized to a pattern or cut.
 6. Set `claudeReviewedAt: <today>`, `status: claude-reviewed`, and a one-line `reviewerNotes` telling Jeff anything he should know before reading (a close call on a flag, a source that was thin, a claim Ed is less than fully confident in).

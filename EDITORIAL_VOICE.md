@@ -42,8 +42,7 @@ Reader's mental model of who we are: a small group of parents who have done yout
 
 - Lead with the point.
 - Subheads are short and load-bearing. The reader scanning subheads should see the structure of the argument.
-- Use the title-italics convention: wrap the conceptual hinge of the headline in `*asterisks*` so it renders italic.
-- One italic phrase per H1.
+- No `*asterisks*` or `**bold**` in `title`, `seoTitle`, `dek`, or `bluf`. `VOICE-RUBRIC.md` Section C item 8 (2026-08-29) bans that markup. Write the emphasis into the words. Italics inside body prose stay correct for a book or film title, a term being defined, or a stressed word in dialogue.
 
 ---
 
