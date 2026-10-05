@@ -177,7 +177,7 @@ For the sports question specifically, see [the pendulum conversation](/youth-spo
 
 ## College and Scholarship Realities
 
-NCAA wrestling offers 9.9 scholarships per Division I program, split across rosters of 30 to 40 wrestlers. Full scholarships exist but are typically reserved for top national-level recruits. Most wrestling scholarships are partial.
+The old D1 wrestling model was a 9.9-scholarship equivalency cap through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 30-player roster limit and scholarships fundable up to that full roster. Full scholarships exist but usually go to returning state champions or national-level placers. Most recruited freshmen are still on partial scholarships for now, though the ceiling has moved up.
 
 D2 offers 9 scholarships. D3 offers none. NAIA offers scholarships. Prep school programs develop wrestlers for D1 programs.
 

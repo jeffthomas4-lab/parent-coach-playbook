@@ -45,7 +45,7 @@ A junior who sends a recruiting video, transcript, and thoughtful email to coach
 
 Big-name events with broad marketing don't always deliver the right coaches for a given player's realistic market.
 
-**Scholarship math.** Division I baseball is an equivalency sport with 11.7 scholarships per program split among 27 players. Full rides are rare. Most players piece together athletic money, academic aid, and institutional grants.
+**Scholarship math.** The old D1 baseball math was 11.7 scholarships split among about 27 roster spots through 2024-25. As of July 2025, the House settlement replaced that model for schools that opt in: a 34-player roster limit, with scholarships allowed up to that full roster if a school funds it. Full rides are still rare. Most players piece together athletic money, academic aid, and institutional grants. Ask whether a program is on the new roster-limit model or the old 11.7-scholarship model.
 
 Division III offers no athletic scholarships. The total financial aid package at a D3 school can match or exceed a partial athletic scholarship at a mid-level D2, especially with merit aid factored in.
 

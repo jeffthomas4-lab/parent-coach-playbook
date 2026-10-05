@@ -157,7 +157,7 @@ Sunk costs are not a reason to continue. The money and time already spent are go
 
 Lacrosse has a genuine and growing college opportunity landscape. D1 programs are adding scholarships and new programs as the sport continues to grow nationally. D2, D3, and NAIA programs provide competitive lacrosse across a wide range of academic institutions.
 
-**Scholarship limits by level.** D1 men's programs carry 12.6 scholarships split across 30 to 45 players. D1 women's programs carry 12 scholarships split similarly. Full rides are rare; most recruited players receive partial athletic aid combined with other merit and need-based awards. D3 programs offer no athletic scholarships but frequently have strong financial aid packages.
+**Scholarship limits by level.** The old D1 men's model was 12.6 scholarships through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 49-player roster limit and scholarships fundable up to that full roster. D1 women's programs moved from a 12-scholarship cap to a 40-player roster limit on the same terms. Full rides are rare; most recruited players still receive partial athletic aid combined with other merit and need-based awards. D3 programs offer no athletic scholarships but strong financial aid packages show up at many schools.
 
 **What recruits look like.** For boys lacrosse, college coaches evaluate athleticism (speed and size are visible immediately), technical stick skill, game intelligence, and stats from competitive game environments. For girls lacrosse, coaches evaluate similar attributes with particular attention to field awareness and possession decision-making. Both benefit from clean, competitive film from summer events.
 

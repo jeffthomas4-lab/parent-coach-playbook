@@ -186,7 +186,7 @@ The [youth sports pendulum](/youth-sports-pendulum/) framework is worth working 
 
 ## College Recruiting: Realistic Odds and What Actually Matters
 
-About 7 percent of high school baseball players go on to play college baseball at any level. NCAA D1 rosters carry 11.7 scholarships divided among 35 or more players, which means very few D1 players are on full scholarships. A partial D1 scholarship combined with academic aid is a real and common outcome for recruited baseball players.
+About 7 percent of high school baseball players go on to play college baseball at any level. The old D1 math (11.7 scholarships split across the roster) ran through 2024-25. As of July 2025, the House settlement replaced that model for schools that opt in: no sport-specific scholarship cap, a 34-player roster limit, and scholarships allowed up to that full roster if a school funds it. Most programs phase the extra money in gradually, so partial rides (25 to 50 percent) are still the norm for most freshmen. Ask whether a program is on the new roster-limit model or the old 11.7-scholarship model. A partial D1 scholarship combined with academic aid is still a real and common outcome.
 
 The physical tools that matter to college coaches are measurable: fastball velocity (85 mph is a D1 floor for right-handed pitchers at most programs), exit velocity off the bat (90+ mph is meaningful at the D1 level), 60-yard dash time (under 6.7 seconds for outfielders and middle infielders at the D1 level). Those benchmarks are for serious D1 prospects. D2, D3, and NAIA programs use lower thresholds.
 

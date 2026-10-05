@@ -146,7 +146,7 @@ Do not give technique feedback. The margin between a good correction and a harmf
 
 ## College and Scholarship Realities
 
-NCAA gymnastics offers 12 scholarships per Division I program. The sport has strong scholarship opportunities relative to roster size. D1 gymnastics programs carry 16 to 24 athletes, and the top teams offer significant money.
+The old D1 women's gymnastics model was a 12-scholarship headcount cap through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 20-athlete roster limit and scholarships fundable up to that full roster. Men's gymnastics moved from 6.3 scholarships to the same 20-athlete roster limit. Top teams still put real money on the table. Ask whether a program opted in.
 
 But the reality for most competitive gymnasts is that the college track has narrowed. D1 gymnastics programs recruit at the national level. They want Level 10 and elite gymnasts. A Level 8 gymnast who had a solid regional career is realistically a D2, D3, or NAIA recruit, or she moves into cheer or other college athletics.
 

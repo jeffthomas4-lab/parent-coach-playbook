@@ -158,7 +158,7 @@ A break from hockey does not mean a break from skating or from sports. A player 
 
 ## College Recruiting: Realistic Odds and What Actually Matters
 
-D1 men's college hockey carries 18 scholarships per team. D1 women's hockey carries 18. There are 60 D1 men's programs and 41 D1 women's programs. The math produces a small number of available spots against a large number of players who want them.
+The old D1 hockey model was an 18-scholarship equivalency cap for men and women through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools: rosters are capped at 26 players, and a school can fund scholarships for up to all 26. There are about 60 D1 men's programs and 41 D1 women's programs. The math still produces a small number of available spots against a large number of players who want them.
 
 The pathway to D1 men's hockey almost always runs through junior hockey (USHL, NAHL, BCHL, or other Tier I and II leagues). Very few players go directly from high school to D1 college hockey. Junior hockey is typically played at 17 to 21 and serves as the recruiting showcase. D1 coaches recruit from junior leagues, not primarily from high school or even AAA youth programs, though AAA is often the stepping stone to juniors.
 

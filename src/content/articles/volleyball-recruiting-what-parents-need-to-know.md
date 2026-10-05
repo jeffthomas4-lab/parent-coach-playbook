@@ -47,7 +47,7 @@ A camp that lists 50 coaches in the marketing material but has three junior vars
 
 There are real spots for that player at every level below D1.
 
-**Scholarship math.** Division I women's volleyball is a head-count sport with 12 scholarships per program. That pool is not small, but neither is the number of families competing for it. Division II is equivalency-based, meaning scholarships are split.
+**Scholarship math.** The old D1 women's volleyball model was a 12-scholarship headcount cap through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with an 18-player roster limit and scholarships fundable up to that full roster. That pool grew, but so did the number of families competing for it. Division II remains equivalency-based outside the settlement model.
 
 Division III offers no athletic aid. Academic scholarships at D3 schools often make the financial package comparable to partial athletic aid elsewhere. Run the full cost-of-attendance number before deciding a school without athletic money isn't worth considering.
 

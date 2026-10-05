@@ -147,7 +147,7 @@ See [the pendulum conversation](/youth-sports-pendulum/) for how to start this w
 
 ## College and Scholarship Realities
 
-NCAA softball offers 12 scholarships per Division I program, split across a roster of 20 to 25 players. Full rides exist, particularly for dominant pitchers. But full rides are uncommon. Partial scholarships at the 25 to 75 percent level are the norm for recruited players.
+The old D1 softball math was a 12-scholarship equivalency cap through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 25-player roster limit and scholarships fundable up to that full roster. Full rides exist, particularly for dominant pitchers. But full rides are still uncommon in practice. Partial scholarships at the 25 to 75 percent level remain the norm for many recruited players. Ask whether a program opted in.
 
 Position matters for recruiting. Pitchers and catchers get the most attention. Corner infielders and outfielders with serious hit tools get looked at. Middle infielders need both glove and bat to stand out.
 

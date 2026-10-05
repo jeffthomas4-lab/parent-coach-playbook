@@ -50,4 +50,4 @@ A few things worth knowing.
 
 **Mercy/run rule.** No formal run rule in soccer. Some youth leagues use a rule that if one team is up by 5+ goals, they must remove a player or stop scoring strategies. League-by-league.
 
-**The goalkeeper.** Can use hands inside their own penalty area only. Cannot pick up a ball deliberately kicked back by their own teammate (the back-pass rule). Has 6 seconds to release the ball after picking it up.
+**The goalkeeper.** Can use hands inside their own penalty area only. Cannot pick up a ball deliberately kicked back by their own teammate (the back-pass rule). Has 8 seconds to release the ball after picking it up under IFAB Laws of the Game for 2025-26 (was 6). A hold past eight draws a corner kick. NFHS high school adopts the same 8-second window for 2026-27.

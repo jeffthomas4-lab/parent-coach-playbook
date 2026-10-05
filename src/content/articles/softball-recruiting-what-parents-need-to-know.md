@@ -45,7 +45,7 @@ A player who sends a recruiting video, a clean email, and academic information t
 
 Before paying, verify which specific coaches are scheduled to attend and whether those programs match your kid's realistic level.
 
-**Scholarship math.** Division I softball is a head-count sport with 12 scholarships per program. That is fewer scholarships than roster spots, and many players at D1 programs are on partial athletic aid combined with academic money. Division II is equivalency-based.
+**Scholarship math.** The old D1 softball model was a 12-scholarship equivalency cap through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 25-player roster limit and scholarships fundable up to that full roster. Many players at D1 programs still combine athletic and academic aid. Division II remains equivalency-based outside the settlement model.
 
 Division III offers no athletic scholarships. Academic merit aid at D3 often makes total packages competitive with partial D2 athletic aid. Run full cost-of-attendance numbers before eliminating any division from the list.
 

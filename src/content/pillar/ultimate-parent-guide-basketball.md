@@ -153,7 +153,7 @@ Read [the youth sports pendulum](/youth-sports-pendulum/) before having the quit
 
 ## College Recruiting: Realistic Odds and What Actually Matters
 
-About 3 percent of high school basketball players go on to play college basketball at any level. NCAA D1 basketball programs carry 13 scholarships per team with rosters of 13 to 17 players. D1 basketball scholarships are full rides, which makes them valuable, and also means there are very few of them.
+About 3 percent of high school basketball players go on to play college basketball at any level. D1 basketball was already headcount (full rides only). As of July 2025, the House settlement moved opted-in schools to a 15-player roster limit for men and women, with scholarships fundable up to that full roster (up from the old 13 men's / 15 women's caps). It still works out to roughly 4 to 5 scholarships offered per recruiting class nationwide. D1 rides stay full, which keeps them scarce.
 
 The physical tools that matter to college coaches are specific. For guards: quickness (court speed in transition, lateral quickness on defense), scoring ability in traffic, and three-point shooting percentage. For bigs: rebounding rate, shot-blocking, and ability to defend in space. The benchmarks vary by program tier, but a D1 guard who cannot score consistently against elite competition is not a D1 guard regardless of AAU tournament results.
 

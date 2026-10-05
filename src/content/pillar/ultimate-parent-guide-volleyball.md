@@ -150,7 +150,7 @@ The conversation is worth having clearly and without drama. Does she want to tak
 
 ## College and Scholarship Realities
 
-Volleyball has more college programs than most sports and more scholarship money than most non-revenue sports. Division I programs offer up to 12 scholarships split among rosters of 15 to 18 players. Full rides for volleyball exist but they're not common. Partial scholarships are more typical.
+Volleyball has more college programs than most sports and more scholarship money than most non-revenue sports. The old D1 women's model was a 12-scholarship headcount cap through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with an 18-player roster limit and scholarships fundable up to that full roster. Top programs still concentrate money on 4 to 6 signees per class. Full rides exist, but they are not the default outcome.
 
 Division II, Division III, NAIA, and JUCO all offer volleyball. The realistic path for most strong club players ends in D2, D3, or NAIA, which are fine outcomes if playing college volleyball is the goal.
 

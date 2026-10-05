@@ -192,7 +192,7 @@ Read [the youth sports pendulum](/youth-sports-pendulum/) before having that con
 
 ## College Recruiting: Realistic Odds and What Actually Matters
 
-About 7 percent of high school football players go on to play college football at any level. FBS D1 programs carry 85 scholarships. FCS programs carry 63 equivalencies (which can be split). D2 programs carry 36 equivalencies. D3 programs have no athletic scholarships.
+About 7 percent of high school football players go on to play college football at any level. The 85-scholarship FBS figure was the rule through 2024-25. As of July 2025, the House settlement replaced it for schools that opt in: FBS and FCS rosters are capped at 105 players, and opted-in schools can fund scholarships for any or all of that roster. Most programs phase that in gradually, so ask a specific program how many of its 105 spots are currently funded. FCS used to carry 63 equivalencies. D2 still carries 36 equivalencies outside the settlement model. D3 programs have no athletic scholarships.
 
 The physical tools that matter to college coaches are measured and documented. For skill positions: 40-yard dash time (under 4.6 for wide receivers and defensive backs at FBS level), vertical jump, bench press reps, and game film showing production against comparable competition. For linemen: height, weight, hand size, and film showing technique and ability to move laterally. Quarterbacks are evaluated differently: arm strength is measurable (mph), but decision-making, accuracy under pressure, and film showing wins in competitive games matter more than any combine number.
 

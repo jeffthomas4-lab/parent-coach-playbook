@@ -75,7 +75,7 @@ Composite sticks are lighter and feel better. Wood sticks are durable and cheap.
 
 **The extras you'll be asked to buy.**
 
-Neck guard: Some leagues require it. Check your league. Some parents skip it; some consider it essential. You decide based on your kid's risk tolerance and your league's rules.
+Neck guard: Required for youth. USA Hockey has required a BNQ-certified (or equivalent) neck laceration protector for every player and on-ice official under 18 since August 1, 2024, in practices and games. Check your association's BNQ list, but do not treat this as optional.
 
 Mouth guard: Check your league rules. Some require it. Some don't. If required, buy it. If not, ask your coach if they recommend it.
 
@@ -87,7 +87,7 @@ Skates
 Protective gear
 Bag
 Stick
-Neck guard (if required)
+Neck guard (required under USA Hockey for under-18)
 Mouth guard (if required)
 Base layers
 

@@ -164,7 +164,7 @@ Taking a season off from club swimming does not mean leaving the sport permanent
 
 ## College Recruiting: Realistic Odds and What Actually Matters
 
-College swimming is one of the more accessible sports for college athletic opportunities. D1 programs carry 9.9 scholarships for women and 9.9 for men, distributed across large rosters of 25 to 40 swimmers. D2 carries fewer. D3 carries none but the competition is real.
+College swimming is one of the more accessible sports for college athletic opportunities. The old D1 model was 9.9 scholarships for men and 14 for women through 2024-25. As of July 2025, the House settlement replaced both for opted-in schools with a 30-athlete roster limit per gender (swimming and diving combined), scholarships fundable up to that full roster. Most recruited swimmers are still on partials in practice. D2 carries fewer. D3 carries none but the competition is real.
 
 The key metric in swimming recruiting is time. College coaches recruit to specific time standards for specific events. A coach who needs a 200 backstroke swimmer knows exactly what time that swimmer needs to contribute at their level. The recruiting process in swimming is about finding athletes whose times fit the program's competitive needs.
 
