@@ -1648,6 +1648,36 @@
       "after": null,
       "asin": "none new (reused B07YD4FCNM, B08TQQ9RTS)",
       "browserVerification": "WebFetch live Amazon product pages for B07YD4FCNM and B08TQQ9RTS In Stock; B08TYGMCJ8 404 skipped."
+    },
+    {
+      "date": "2026-10-06",
+      "articleSlug": "playing-time-policy-youth",
+      "action": "no-links-zero-products",
+      "details": "Catch-up pass after skipped 2026-10-05 10:05 PM PT babylove_auto_insert. New BLG article 929182 published 2026-10-04/05 (commit b101c5c7). Full body read: policy templates, communication scripts, NFHS/MAAPP citations, Athlo team-messaging mention as workflow tool (not a buyable Amazon product SKU in catalog scope), internal PCD links only. No brand/model gear to monetize. Competitor storefront product links: none. Correctly zero affiliate links. Disclosure N/A.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable; no product to source."
+    },
+    {
+      "date": "2026-10-06",
+      "articleSlug": "team-selection-youth-sports",
+      "action": "no-links-zero-products",
+      "details": "Catch-up pass. New BLG article 925158 published 2026-10-03/04 (commit 075bd6ca). Tryout process, scorecards, email templates, NFHS/CDC/USAV citations and internal PCD links. Mentions clipboards/stopwatches/scorecard boards only as a pointer to /what-to-buy/ hub — no named buyable product. Competitor storefront product links: none. Correctly zero affiliate links. Disclosure N/A.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable; no product to source."
+    },
+    {
+      "date": "2026-10-06",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Catch-up 2026-10-06 ~10:30 AM PT on DESKTOP (041b6bba) after overnight skip. New BLG since 2026-10-02 Arnie pass: playing-time-policy-youth + team-selection-youth-sports (both zero-product). No other Publish BabyLoveGrowth commits since. Net: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites. No ASIN fabricated. affiliates.json untouched.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No live Amazon sourcing this run (zero-product articles only)."
     }
   ]
 }
