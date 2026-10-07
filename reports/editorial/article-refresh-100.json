@@ -41,8 +41,8 @@
   "summary": {
     "eligible_articles": 808,
     "selected_articles": 100,
-    "refreshed": 68,
-    "pending": 32
+    "refreshed": 70,
+    "pending": 30
   },
   "batches": [
     {
@@ -1892,7 +1892,7 @@
     },
     {
       "batch": 7,
-      "status": "in_progress",
+      "status": "complete",
       "items": [
         {
           "rank": 61,
@@ -2011,8 +2011,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-10-06"
         },
         {
           "rank": 65,
@@ -2189,8 +2189,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-10-06"
         }
       ]
     },
