@@ -1,9 +1,8 @@
 ---
 title: The kid who refuses to go to tryouts
-dek: She loved this sport last week. This morning she will not get out of bed. The
-  fork in the road.
-seoDescription: Tryouts at 9am. It's 7:50am. Your nine-year-old is in bed with the
-  covers pulled over her head saying she doesn't want to go.
+dek: She loved this sport last week. This morning she won't get out of bed.
+seoDescription: "Tryouts start at 9am and your kid won't get out of bed. Ask one question to sort nerves from a real problem, then decide whether to go or stay home."
+bluf: "When your kid refuses to go to tryouts, ask for one specific reason. A vague answer points to nerves, so go anyway with calm, kind pressure. A concrete problem gets a concrete fix. If she says she is done with the sport, stay home and talk."
 topic: tryouts
 format: note
 phase: drive-there
@@ -12,7 +11,9 @@ age: 8-10
 hero: "/illustrations/parents-waiting-outside-gym.webp"
 heroAlt: "Adults stand and sit in a hallway outside closed gym doors, seen at distance down the corridor under fluorescent light."
 publishedAt: 2026-02-11
+updatedAt: 2026-10-06
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -21,78 +22,48 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-15
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-06
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-10-06: three H2s; removed unsupported most-common-cause claim and named example coach; added pediatrician referral for dread beyond sports; linked throws-up and 8-10 night-before neighbors."
+  factCheckGoodThrough: 2027-10-06
+  affiliateDisclosurePresent: false
 ---
 
-Tryouts at 9am. It's 7:50am. Your nine-year-old is in bed with the covers pulled over her head saying she doesn't want to go.
+Tryouts start at 9am. It's 7:50am, and your nine-year-old is in bed with the covers over her head, saying she doesn't want to go.
 
-Three things could be happening. The response depends on which.
+You have about ten minutes to figure out what's going on. Skip the lecture and ask one thing: *Tell me one specific reason you don't want to go.*
 
-**Possibility 1. Anxiety.**
+A vague answer points to nerves. A concrete answer, like the coach from last spring who yelled at her, points to a specific problem.
 
-She is scared. This is the most common cause. The fear of cutting, the fear of doing badly, the fear of the unknown.
+And *I don't think I want to play anymore* is a third answer entirely. That one gets a different morning.
 
-The right response. Calm pressure to go. *I hear you. I get it. We're going anyway. Let's get the cleats on.* Said firmly, kindly. Don't argue.
+## Nerves or a specific problem: go
 
-Anxiety lies. The cure is the experience of doing the thing and being okay. By 11am she'll be glad you made her go.
+Nerves look like real upset with nothing concrete behind it. She's scared of the cut, of looking bad, of a gym full of kids she doesn't know.
 
-**Possibility 2. A specific problem.**
+Calm, kind pressure works here: *I hear you, and we're going anyway, so let's go find your cleats.* Say it once and don't argue.
 
-A kid she doesn't like is at the tryout. A coach she had a bad experience with is running it. Something specific.
+Plenty of nervous kids settle down once the warm-up starts. Doing the scary thing and coming out fine teaches her more than any pep talk you can give at 7:55am.
 
-If she names the thing, you address the thing. *That kid will be there but you don't have to interact with him. You can stay in your group.* Or *that coach is just one of three. You can show your stuff to the others.*
+A specific problem gets a specific fix. If a kid she clashes with will be there, she can stick with her own drill group. If one coach worries her, plan what she'll do at that station.
 
-Sometimes the specific problem is real enough that you skip the tryout. Most of the time, it's an anxiety in costume, and the cure is going.
+Some problems are serious enough to skip the tryout entirely. When that's the case, believe her, stay home, and call the club later in the week to sort it out.
 
-**Possibility 3. She doesn't want to play this sport.**
+If her stomach is part of the protest, [your kid throws up before tryouts](/drive-there/the-kid-who-throws-up-before-tryouts/) covers how to tell nerves from illness.
 
-She has been hiding it for weeks. The tryout is the moment it surfaces.
+## Done with the sport: stay home
 
-If this is the cause, you don't go. You sit on the floor next to her bed. *We don't have to go. Tell me what's going on.*
+Sometimes the refusal has been building for weeks. She's gone quiet at practice and stopped asking to play in the yard, and the tryout is just where it finally shows.
 
-Then you have a real conversation about whether this sport is right for her. That conversation is bigger than the tryout. The tryout was the trigger.
+If that's the answer, you don't go. Sit on the floor by the bed and say, *We don't have to go. Tell me what's going on.*
 
-**How to tell which one it is**
+The tryout fee is already spent either way. A calm talk about whether this sport still fits her is worth more than a tryout she attends angry.
 
-Anxiety: she is upset but can't articulate why. Fear of going. No specific complaint.
+## After the morning
 
-Specific problem: she names something concrete. *Coach Mike will be there. He yelled at me last year.*
+If you went, keep the car quiet. Music low, no replay of the fight, and no *see, this is why we leave on time.*
 
-Done with the sport: she has been quiet about it for weeks. The morning's refusal is consistent with a months-long shift.
+At pickup, skip *aren't you glad we made you go.* Ask *how was it* and let her talk.
 
-**The morning of**
-
-You probably don't have time for a long conversation. You have to make a call.
-
-Ask one question. *Tell me one specific reason you don't want to go.*
-
-Her answer routes the response. Vague answer is anxiety. Concrete answer is specific problem. *I don't think I want to play this anymore* is the third category.
-
-**If you skip**
-
-If the answer is the third one, skip the tryout. The tryout fee or registration is a sunk cost. Forcing her to go does not change that she is done with the sport.
-
-A skipped tryout that produces a real conversation about her relationship with the sport is more valuable than a tryout she went to angry.
-
-**If you go**
-
-In the car, calm. Don't relitigate the morning. Don't say *see, this is why we needed to leave on time.*
-
-Music low. Drive. *I'm proud of you for coming.* Said once.
-
-**The pickup**
-
-Don't ask whether the morning fight was worth it. Don't say *aren't you glad we made you go.*
-
-Just *how was it.* Listen.
-
-**The longer arc**
-
-The kid who refuses to go to a tryout is communicating something. The skill is figuring out what they're communicating without crushing them.
-
-Most of the time, the right move is calm pressure to go. Some of the time, the right move is to skip and have the harder conversation. Knowing the difference is the parent skill.
-
-You'll get it right most weeks. The week you don't, you adjust the next week.
+Next time, the [night before tryouts at 8 to 10](/drive-there/the-night-before-tryouts-at-8-to-10/) is where the calm starts. If the same dread follows her into school mornings and sleepovers, bring it up with her pediatrician, because that's bigger than one tryout.

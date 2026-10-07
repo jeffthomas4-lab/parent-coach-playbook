@@ -1,18 +1,20 @@
 ---
 title: The post-tryouts wait
-dek: What to say (and not say) in the 48 hours between tryouts and the call. The inside
-  of your kid's head while they wait.
-seoDescription: The hardest part of tryouts is rarely the tryout. It's the hours and
-  days after, when nothing is happening and the kid is in their head about it.
+dek: What's in your kid's head between tryouts and the call, and what helps.
+seoTitle: "The Wait After Tryouts: What Helps"
+seoDescription: "Between tryouts and the call, your kid replays every miss and reads your face for clues. Keep the schedule normal, skip the recap, and plan both reactions."
+bluf: "During the wait after tryouts, keep the schedule normal, skip the recap, and offer an easy distraction. Your kid is replaying mistakes and reading your mood for clues. Plan your reaction to both outcomes now so the first minute after the news goes well."
 topic: tryouts
 format: note
 phase: drive-home
 sport: multi-sport
 age: 11-12
 hero: "/illustrations/roster-sheet-on-door.webp"
-heroAlt: "A single sheet of paper tapes to a gym door, hallway light angled across it and the text too soft to read."
+heroAlt: "A single sheet of paper taped to a gym door, hallway light angled across it and the text too soft to read."
 publishedAt: 2026-05-13
+updatedAt: 2026-10-06
 featured: false
+draft: false
 editorial:
   qualityGrade: 9
   originalityGrade: 9
@@ -21,31 +23,44 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-10
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-06
   status: claude-reviewed
-  reviewerNotes: Captures the specific dread of the post-tryouts gap. Genuinely useful
-    for parents.
+  reviewerNotes: "Refresh 2026-10-06: three H2s; removed unsupported brain-science line and most-kids claim; kept kid's-head focus distinct from the bubble article; linked bubble, 90-second, and 24-hour neighbors."
+  factCheckGoodThrough: 2027-10-06
+  affiliateDisclosurePresent: false
 ---
 
-The hardest part of tryouts is rarely the tryout. It's the hours and days after, when nothing is happening and the kid is in their head about it.
+Tryouts ended Saturday afternoon. The list posts Monday, and your 11- or 12-year-old has two full days with nothing to do but think about it.
 
-A few things to know about that gap.
+For plenty of kids, that gap is harder than the tryout itself. Here's what's going on in their head, and what helps.
 
-**They are replaying every miss.** Not the makes. The miss they did in the third drill, the time they dropped the ball, the moment the coach turned away. Even high-confidence kids do this. It's the brain's way of preparing for bad news.
+## What's going on in their head
 
-**They will pretend they don't care.** Some kids talk about tryouts constantly during the wait. Most don't. The not-talking is usually not indifference. It is protection.
+They're replaying the misses. Not the good reps, but the dropped ball in the third drill and the moment a coach turned away.
 
-**They will read your body language for clues.** If you're anxious about the result, they will assume you've heard something. If you're relaxed, they will be a little calmer.
+Confident kids do it too, even after a tryout that went well.
 
-What to do in the wait.
+They might act like they don't care. A quiet kid during the wait isn't indifferent, and the silence is protection more than anything else.
 
-Keep the schedule normal. Don't add extra training "in case." That signals doubt.
+They're reading you. If you look anxious, they'll assume you've heard something, and if you look relaxed, they settle a little.
 
-Don't recap the tryout. The post-mortem is over. Re-litigating "well, you should have run harder on the third drill" does nothing now.
+## What helps during the wait
 
-Make a small distraction available. A movie, a meal out, an unrelated activity. Not as a bribe. As a way to fill the hours that would otherwise be replay loops.
+Keep the schedule normal. Extra training "just in case" tells them you're worried.
 
-Have your reaction ready for either outcome. The "we made it" reaction is easy. The "we didn't" reaction needs a few hours of advance thought so you don't fumble the first 90 seconds. (See the [first 90 seconds rule](/drive-home/the-90-second-rule/) for that.)
+Skip the recap. *You should have run harder in that third drill* changes nothing now and keeps the replay going.
 
-The wait ends. The call comes. The relationship after the call is what your kid will actually remember.
+Offer an easy distraction, like a movie, a meal out, or a bike ride. Not a bribe. Just something to fill hours that would otherwise turn into another lap around the same mistakes.
+
+Don't chase news. Texting other parents to see who heard what pulls the whole team's nerves into your kitchen.
+
+If you're tempted to read coach signals, [how to tell if your kid is on the bubble](/drive-there/how-to-tell-if-your-kid-is-on-the-bubble/) sorts the few that matter from the many that don't.
+
+## Have both reactions ready
+
+The good-news reaction is easy. The other one deserves some thought now, so you aren't inventing the first sentence when the email lands.
+
+Use [the first 90 seconds](/drive-home/the-90-second-rule/) to reconnect before anything else. If the name isn't on the list, the [24-hour rule](/drive-home/after-the-cut-the-24-hour-rule/) keeps everyone from making big decisions that night.
+
+When the news comes, be in the same room for it.
