@@ -1678,6 +1678,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "No live Amazon sourcing this run (zero-product articles only)."
+    },
+    {
+      "date": "2026-10-06",
+      "articleSlug": "losing-streak-youth-team",
+      "action": "no-links-zero-products",
+      "details": "New BLG article 937679 published 2026-10-06 ~8:01 PM PT (commit 47abd3b4). Full body read (263 lines, complete through FAQ/Sources/Recommended, not truncated): car-ride scripts, recovery timeline, practice plan, wellbeing red flags, USA Volleyball and AAP HealthyChildren citations, internal PCD links. Whiteboard/clipboard mentioned generically in drill tips only. No named buyable product; no competitor storefront links. Correctly zero affiliate links. Disclosure N/A.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable; no product to source."
+    },
+    {
+      "date": "2026-10-06",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Scheduled 2026-10-06 10:05 PM PT run on DESKTOP (041b6bba). New BLG since 2026-10-06 10:30 AM Arnie pass: only losing-streak-youth-team (zero-product, gap-queued). Net: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites. No ASIN fabricated. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No live Amazon sourcing this run (zero-product article only)."
     }
   ]
 }
