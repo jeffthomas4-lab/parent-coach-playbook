@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T14:28:48.892Z",
-  "count": 942,
+  "generatedAt": "2026-10-07T04:00:46.453Z",
+  "count": 970,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
@@ -51,6 +51,12 @@
       "url": "https://aasm.org/",
       "sources": [
         "src/content/body/jet-lag-management-competition.md"
+      ]
+    },
+    {
+      "url": "https://aasm.org/advocacy/position-statements/teen-sleep-duration-health-advisory/",
+      "sources": [
+        "src/content/articles/the-recovery-talk-at-13-14.md"
       ]
     },
     {
@@ -351,6 +357,12 @@
       ]
     },
     {
+      "url": "https://athloapp.com/youth-sports",
+      "sources": [
+        "src/content/articles/playing-time-policy-youth.md"
+      ]
+    },
+    {
       "url": "https://autismsociety.org",
       "sources": [
         "src/content/adaptive/finding-the-right-sport-for-a-neurodivergent-kid.md",
@@ -389,6 +401,12 @@
       ]
     },
     {
+      "url": "https://blog.adultingwithfood.com/blog/healthy-alternatives-to-junk-food-that-actually-satisfy",
+      "sources": [
+        "src/content/articles/halftime-snacks-youth-soccer.md"
+      ]
+    },
+    {
       "url": "https://blog.depthchartiq.ai/athletic-career-longevity-factors-parents-control-most",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
@@ -398,6 +416,12 @@
       "url": "https://blog.nemours.org/2026/01/young-athlete-nutrition/",
       "sources": [
         "src/content/articles/post-game-snacks-kids.md"
+      ]
+    },
+    {
+      "url": "https://blog.rostersports.com/blog/communication-plan-sports-team",
+      "sources": [
+        "src/content/articles/team-selection-youth-sports.md"
       ]
     },
     {
@@ -651,6 +675,12 @@
       "url": "https://doi.org/10.1515/afepuc-2016-0011",
       "sources": [
         "src/content/articles/pregame-talk-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.1542/peds.2023-065129",
+      "sources": [
+        "src/content/articles/tell-the-club-which-nights-school-owns.md"
       ]
     },
     {
@@ -966,6 +996,7 @@
     {
       "url": "https://nfhs.org/stories/coaches-should-address-playing-time-issues-ahead-of-season",
       "sources": [
+        "src/content/articles/playing-time-policy-youth.md",
         "src/content/articles/youth-sports-playing-time.md"
       ]
     },
@@ -985,6 +1016,12 @@
       "url": "https://nfhs.org/stories/player-equipment-penalty-corners-focus-of-high-school-field-hockey-rules-changes",
       "sources": [
         "src/content/news/nfhs-field-hockey-rule-changes-2026.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/playing-time-should-be-addressed-before-start-of-season",
+      "sources": [
+        "src/content/articles/team-selection-youth-sports.md"
       ]
     },
     {
@@ -1040,6 +1077,12 @@
       ]
     },
     {
+      "url": "https://nocsae.org/about-recertification-questions-answers/",
+      "sources": [
+        "src/content/articles/11-12-helmet-upgrade.md"
+      ]
+    },
+    {
       "url": "https://nocsae.org/general-recertification-requirements-and-recommendations/",
       "sources": [
         "src/content/articles/used-gear-rules.md",
@@ -1057,6 +1100,12 @@
       "url": "https://nocsae.org/nocsae-issues-clarification-about-football-helmet-certification-to-nocsae-standards/",
       "sources": [
         "src/content/articles/youth-football-equipment-guide.md"
+      ]
+    },
+    {
+      "url": "https://nocsae.org/recertification/",
+      "sources": [
+        "src/content/articles/11-12-helmet-upgrade.md"
       ]
     },
     {
@@ -1160,12 +1209,6 @@
       "url": "https://owllba.ca/Public/Documents/owll_t-ball_guidelines_2026.pdf",
       "sources": [
         "src/content/articles/tee-ball-drills.md"
-      ]
-    },
-    {
-      "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
-      "sources": [
-        "src/pages/newsletter.astro"
       ]
     },
     {
@@ -1314,6 +1357,12 @@
       ]
     },
     {
+      "url": "https://publications.aap.org/aapnews/news/27833/Professionalization-of-youth-sports-can-lead-to",
+      "sources": [
+        "src/content/articles/what-age-should-kids-start-sports.md"
+      ]
+    },
+    {
       "url": "https://publications.aap.org/pediatrics",
       "sources": [
         "src/pages/about/sources.astro"
@@ -1374,6 +1423,12 @@
       ]
     },
     {
+      "url": "https://publications.aap.org/pediatrics/article/138/3/e20162148/52612/",
+      "sources": [
+        "src/content/articles/what-age-should-kids-start-sports.md"
+      ]
+    },
+    {
       "url": "https://publications.aap.org/pediatrics/article/143/5/e20190850/76819/Prevention-of-Drowning",
       "sources": [
         "src/content/body/drowning-rescue-and-monitoring.md"
@@ -1400,6 +1455,7 @@
     {
       "url": "https://publications.aap.org/pediatrics/article/153/2/e2023065129/196435/Overuse-Injuries-Overtraining-and-Burnout-in-Young",
       "sources": [
+        "src/content/articles/tell-the-club-which-nights-school-owns.md",
         "src/content/articles/the-case-for-one-sport-per-season.md",
         "src/content/articles/why-kids-quit-sports.md"
       ]
@@ -1414,6 +1470,12 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/18681352/",
       "sources": [
         "src/content/articles/baseball-throwing-drill.md"
+      ]
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35112082/",
+      "sources": [
+        "src/content/articles/team-selection-youth-sports.md"
       ]
     },
     {
@@ -1677,6 +1739,7 @@
     {
       "url": "https://usavolleyball.org/resource/how-to-help-your-athlete-after-a-bad-game/",
       "sources": [
+        "src/content/articles/losing-streak-youth-team.md",
         "src/content/articles/reward-systems-youth-sports.md"
       ]
     },
@@ -1687,9 +1750,16 @@
       ]
     },
     {
+      "url": "https://usavolleyball.org/resource/tryouts-and-our-deepest-fear/",
+      "sources": [
+        "src/content/articles/team-selection-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://usavolleyball.org/resource/you-are-paying-for-practice-not-playing/",
       "sources": [
-        "src/content/articles/favoritism-coaching-your-child.md"
+        "src/content/articles/favoritism-coaching-your-child.md",
+        "src/content/articles/playing-time-policy-youth.md"
       ]
     },
     {
@@ -1783,6 +1853,12 @@
         "src/content/body/youth-martial-arts-safety-briefing.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://uscenterforsafesport.org/report-a-concern/",
+      "sources": [
+        "src/content/articles/travel-politics.md"
       ]
     },
     {
@@ -3595,6 +3671,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/food-safety/foods/children-under-5.html",
+      "sources": [
+        "src/content/articles/halftime-snacks-youth-soccer.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/heads-up/",
       "sources": [
         "src/content/body/concussion-protocol-basics.md",
@@ -3679,6 +3761,12 @@
       "url": "https://www.cdc.gov/mrsa/prevention/coaches-athletic-directors.html",
       "sources": [
         "src/content/articles/disinfecting-equipment-end-of-season.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/nchs/data/databriefs/db441.pdf",
+      "sources": [
+        "src/content/articles/team-selection-youth-sports.md"
       ]
     },
     {
@@ -4011,6 +4099,12 @@
       ]
     },
     {
+      "url": "https://www.ghsa.net/sites/default/files/documents/wrestling/2026-27_GHSA_Weight_Management_Handbook.pdf",
+      "sources": [
+        "src/content/articles/wrestling-season-opens-certification-calendar.md"
+      ]
+    },
+    {
       "url": "https://www.globaldro.com/",
       "sources": [
         "src/content/body/banned-substances-hs-college.md"
@@ -4049,7 +4143,14 @@
     {
       "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Preventing-Overuse-Injuries.aspx",
       "sources": [
+        "src/content/articles/playing-time-policy-youth.md",
         "src/content/articles/youth-volleyball-serving-drills.md"
+      ]
+    },
+    {
+      "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Too-Much-Too-Soon-Overtraining.aspx",
+      "sources": [
+        "src/content/articles/losing-streak-youth-team.md"
       ]
     },
     {
@@ -4057,6 +4158,13 @@
       "sources": [
         "src/content/body/hydration-baseline.md",
         "src/content/body/pre-game-nutrition.md"
+      ]
+    },
+    {
+      "url": "https://www.healthychildren.org/English/healthy-living/sports/Pages/Is-Your-Child-Ready-for-Sports.aspx",
+      "sources": [
+        "src/content/articles/team-selection-youth-sports.md",
+        "src/content/articles/what-age-should-kids-start-sports.md"
       ]
     },
     {
@@ -4075,6 +4183,12 @@
       "url": "https://www.helmet.beam.vt.edu",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.iahsaa.org/wp-content/uploads/2026/09/IHSAA-Summary-of-Wrestling-Weight-Management-Program-2026-27.pdf",
+      "sources": [
+        "src/content/articles/wrestling-season-opens-certification-calendar.md"
       ]
     },
     {
@@ -4352,6 +4466,12 @@
       "url": "https://www.naera.net/",
       "sources": [
         "src/content/body/helmet-recertification.md"
+      ]
+    },
+    {
+      "url": "https://www.naera.net/10-years-or-older-helmets",
+      "sources": [
+        "src/content/articles/11-12-helmet-upgrade.md"
       ]
     },
     {
@@ -5192,6 +5312,12 @@
       ]
     },
     {
+      "url": "https://www.stanfordchildrens.org/content-public/pdf/sports-hydration-tips-stanford-childrens.pdf",
+      "sources": [
+        "src/content/articles/halftime-snacks-youth-soccer.md"
+      ]
+    },
+    {
       "url": "https://www.stma.org/",
       "sources": [
         "src/content/body/wet-field-decisions.md"
@@ -5396,6 +5522,12 @@
       "url": "https://www.uiltexas.org/policy/2026-27-policy-info/rule-changes",
       "sources": [
         "src/content/news/uil-texas-foreign-exchange-varsity-ban-2026.md"
+      ]
+    },
+    {
+      "url": "https://www.uiltexas.org/wrestling/weight-management-assessor-certification",
+      "sources": [
+        "src/content/articles/wrestling-season-opens-certification-calendar.md"
       ]
     },
     {
@@ -5739,6 +5871,12 @@
       ]
     },
     {
+      "url": "https://www.usaswimming.org/docs/default-source/about/rules-and-policies/legislation/2026-house-of-delegates-legislative-actions.pdf",
+      "sources": [
+        "src/content/news/usa-swimming-open-water-wetsuit-rule-2026.md"
+      ]
+    },
+    {
       "url": "https://www.usaswimming.org/docs/default-source/governance/governance-lsc-resources/rules_policies/105-open-water.pdf",
       "sources": [
         "src/content/news/usa-swimming-open-water-safety-2026.md"
@@ -6057,6 +6195,12 @@
       ]
     },
     {
+      "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/Parenting-Education-Healthy-Fuel-for-Healthy-Athletes.pdf",
+      "sources": [
+        "src/content/articles/halftime-snacks-youth-soccer.md"
+      ]
+    },
+    {
       "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/US-Youth-Soccer-Code-of-Conduct-4.23.22-1.pdf",
       "sources": [
         "src/content/articles/parent-coach-ethics.md"
@@ -6124,6 +6268,36 @@
       "url": "https://www.weather.gov/safety/tornado",
       "sources": [
         "src/content/body/tornado-severe-weather-protocol.md"
+      ]
+    },
+    {
+      "url": "https://www.wgi.org/27cgevents/",
+      "sources": [
+        "src/content/articles/winter-guard-indoor-drumline-after-marching-season.md"
+      ]
+    },
+    {
+      "url": "https://www.wgi.org/27percevents/",
+      "sources": [
+        "src/content/articles/winter-guard-indoor-drumline-after-marching-season.md"
+      ]
+    },
+    {
+      "url": "https://www.wgi.org/about/",
+      "sources": [
+        "src/content/articles/winter-guard-indoor-drumline-after-marching-season.md"
+      ]
+    },
+    {
+      "url": "https://www.wgi.org/about/future-dates/",
+      "sources": [
+        "src/content/articles/winter-guard-indoor-drumline-after-marching-season.md"
+      ]
+    },
+    {
+      "url": "https://www.wgi.org/travel/",
+      "sources": [
+        "src/content/articles/winter-guard-indoor-drumline-after-marching-season.md"
       ]
     },
     {
