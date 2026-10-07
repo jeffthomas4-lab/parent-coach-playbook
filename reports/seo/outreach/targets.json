@@ -292,11 +292,11 @@
     "geo": "PNW",
     "why_them": "ASNW serves parents of kids with physical and visual disabilities actively researching sport options for their child, a strong match for PCD's adaptive-sports parent guides.",
     "asset": "adapted-sports-programs, autism-and-team-sports, sensory-friendly-sports-environments",
-    "status": "researched",
-    "pitch_ref": null,
+    "status": "drafted",
+    "pitch_ref": "pitch-adaptive-sports-nw-2026-10-07.md",
     "link_url": null,
     "first_seen": "2026-08-03",
-    "last_touched": "2026-08-03",
+    "last_touched": "2026-10-07",
     "notes": "New target identified this run, verified live (serves Oregon and SW Washington). Not yet pitched. Honorable mention not added as a full target: Tacoma Public Schools' own Unified Sports page (tacomaschools.org/departments/athletics-and-activities/unified-sports), a WA school-athletics-department fit for the same unified-sports assets, worth adding next run."
   },
   {
@@ -502,11 +502,11 @@
     "geo": "PNW",
     "why_them": "Seattle citywide rec leagues (basketball, volleyball, track and field) with published 2026 season windows and costs, plus an explicit financial-aid note. Families land here before travel ball; PCD cost and first-season guides fill the parent-side gap the page does not cover.",
     "asset": "what-youth-sports-cost (drive-there); first-season-of-youth-basketball; first-season-of-youth-volleyball",
-    "status": "researched",
-    "pitch_ref": null,
+    "status": "drafted",
+    "pitch_ref": "pitch-seattle-parks-recreation-youth-sports-2026-10-07.md",
     "link_url": null,
     "first_seen": "2026-09-23",
-    "last_touched": "2026-09-23",
+    "last_touched": "2026-10-07",
     "notes": "New target verified live 2026-09-23 via direct fetch: Spring 2026 Track and Field $95 (4/18-5/23, ages 5-17), Fall Volleyball $95 (ages 10-13), Winter Basketball $150 (Jan-Mar 2026, ages 8-17). Named contact email PKS_CYA@seattle.gov and coach phone (206) 684-7091 published on page. Not yet pitched."
   },
   {
@@ -521,8 +521,8 @@
     "pitch_ref": null,
     "link_url": null,
     "first_seen": "2026-09-23",
-    "last_touched": "2026-09-23",
-    "notes": "New target verified live 2026-09-23 via direct fetch: homepage describes the coalition, activity index, and 63% participation target. Cross-referenced from Pierce County Parks T-ball/Coach Pitch page (Active Youth Coalition as funding partner for free leagues). No named individual contact found on homepage. Not yet pitched."
+    "last_touched": "2026-10-07",
+    "notes": "New target verified live 2026-09-23 via direct fetch: homepage describes the coalition, activity index, and 63% participation target. Cross-referenced from Pierce County Parks T-ball/Coach Pitch page (Active Youth Coalition as funding partner for free leagues). No named individual contact found on homepage. Not yet pitched. | 2026-10-07: activeyouthcoalition.org DNS failed this run; leave researched, re-check next week."
   },
   {
     "id": "washington-youth-soccer-topsoccer",
@@ -613,5 +613,80 @@
     "first_seen": "2026-09-30",
     "last_touched": "2026-09-30",
     "notes": "New target verified live 2026-09-30 via direct fetch: Fall 2026 independent player fee  with scholarship available; team registration closed Sept 21; named contacts Tyler Dean (Tyler.Dean@portlandoregon.gov) and Jennifer Rounseville. Not yet pitched."
+  },
+  {
+    "id": "oregon-youth-soccer-usys",
+    "name": "USYS Oregon (Oregon Youth Soccer)",
+    "url": "https://www.oregonyouthsoccer.org/",
+    "type": "governing_body",
+    "geo": "PNW",
+    "why_them": "State USYS association for Oregon club and ODP families. Site is league and cup heavy with little parent-facing first-season or cost explanation for families entering sanctioned clubs.",
+    "asset": "first-season-of-youth-soccer; what-youth-sports-cost",
+    "status": "researched",
+    "pitch_ref": null,
+    "link_url": null,
+    "first_seen": "2026-10-07",
+    "last_touched": "2026-10-07",
+    "notes": "Verified live 2026-10-07: National 1 competitive windows, Developmental leagues, Find A Club, ODP tryouts listed. Oregon expansion beyond WA backlog."
+  },
+  {
+    "id": "pacific-fc-youth-soccer",
+    "name": "Pacific FC",
+    "url": "https://pacificfc.org/",
+    "type": "club",
+    "geo": "PNW",
+    "why_them": "PNW club posting 2026-2027 tryouts for U9-U19 plus camps and clinics. Families landing on tryout pages need a calm first-season and cost explainer the site does not carry.",
+    "asset": "first-season-of-youth-soccer; what-youth-sports-cost; ecnl-showcase-what-it-actually-is",
+    "status": "researched",
+    "pitch_ref": null,
+    "link_url": null,
+    "first_seen": "2026-10-07",
+    "last_touched": "2026-10-07",
+    "notes": "Verified live 2026-10-07: tryout signup CTA, teams/camps/resources nav, competitive state/regional framing."
+  },
+  {
+    "id": "thprd-activities-sports",
+    "name": "Tualatin Hills Park and Recreation District, Activities and Sports",
+    "url": "https://www.thprd.org/activities/sports",
+    "type": "facility",
+    "geo": "PNW",
+    "why_them": "Large Beaverton-area parks district sports hub. Rec families price THPRD seasons against club ball; PCD cost and first-season guides fill the parent-side gap.",
+    "asset": "what-youth-sports-cost; first-season-of-youth-soccer; first-season-of-youth-basketball",
+    "status": "researched",
+    "pitch_ref": null,
+    "link_url": null,
+    "first_seen": "2026-10-07",
+    "last_touched": "2026-10-07",
+    "notes": "Verified live 2026-10-07: activities/sports hub on thprd.org, advisory committee recruitment dated Sept 7 through Oct 19 2026 confirms current site."
+  },
+  {
+    "id": "washington-premier-fc",
+    "name": "Washington Premier Football Club (WPFC)",
+    "url": "https://www.washingtonpremierfc.com/",
+    "type": "club",
+    "geo": "PNW",
+    "why_them": "WA club with ECNL boys/girls programs and college planning pages. Parent audience overlaps PCD ECNL and first-season soccer explainers.",
+    "asset": "ecnl-showcase-what-it-actually-is; first-season-of-youth-soccer",
+    "status": "researched",
+    "pitch_ref": null,
+    "link_url": null,
+    "first_seen": "2026-10-07",
+    "last_touched": "2026-10-07",
+    "notes": "Verified live 2026-10-07: ECNL boys/girls, college program webinars, Friday Night Stars listed."
+  },
+  {
+    "id": "seattle-united-soccer",
+    "name": "Seattle United",
+    "url": "https://www.seattleunited.com/",
+    "type": "club",
+    "geo": "PNW",
+    "why_them": "Major Seattle club with tryouts, ECNL/ECNL RL, and parent-facing program pages. Strong local fit for first-season and showcase explainers.",
+    "asset": "first-season-of-youth-soccer; ecnl-showcase-what-it-actually-is; what-youth-sports-cost",
+    "status": "researched",
+    "pitch_ref": null,
+    "link_url": null,
+    "first_seen": "2026-10-07",
+    "last_touched": "2026-10-07",
+    "notes": "Verified live 2026-10-07: tryouts, ECNL/ECNL RL, camps, college ID camp listed on homepage nav."
   }
 ]
