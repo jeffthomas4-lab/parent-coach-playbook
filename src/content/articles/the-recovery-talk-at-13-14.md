@@ -1,7 +1,9 @@
 ---
 title: "The recovery talk at 13-14"
-dek: "They're sore. They're tight. They think stretching is for old people. What actually matters."
-seoDescription: "Your 13-year-old is complaining about sore muscles."
+dek: "They're sore. Stretching still sounds optional. Sleep is the real lever."
+seoTitle: "The Recovery Talk for 13- and 14-Year-Old Athletes"
+seoDescription: "Your 13-year-old is sore after travel ball. Skip the lecture. Cover AASM sleep of 8 to 10 hours for ages 13 to 18, plus a short stretch habit."
+bluf: "Keep the recovery talk concrete. The American Academy of Sleep Medicine says teenagers 13 to 18 should sleep 8 to 10 hours per 24 hours regularly. Pair that with a short post-practice stretch habit and let them connect soreness to what they skip."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"
@@ -10,7 +12,9 @@ age: "13-14"
 hero: "/illustrations/porch-teen-headphones.webp"
 heroAlt: "A teenager sits on front porch steps in mid-afternoon light wearing headphones, head down, a backpack dropped beside them."
 publishedAt: 2026-04-22
+updatedAt: 2026-10-06
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -19,152 +23,60 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-06
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Safety rewrite 2026-10-06: conversation-focused refresh; AASM teen sleep 8 to 10 hours for ages 13 to 18; removed em dashes and the banned warm-up adjective; cut unsupported treatment claims; affiliateDisclosurePresent true for /go/foam-roller-medium/."
+  factCheckGoodThrough: 2027-10-06
+  affiliateDisclosurePresent: true
 ---
 
-Your 13-year-old is complaining about sore muscles.
+Your 13-year-old is complaining about sore muscles after travel ball. Two or three practices a week, plus games, and they still think stretching is for old people.
 
-They're doing travel ball. Or competitive club. Two or three practices a week plus games.
+The talk that lands is short. Name what training does, name what sleep repairs, and stop before it turns into a lecture.
 
-And they think the soreness just goes away on its own.
+## The line that opens the door
 
-You mention stretching. They laugh. They're 13. They don't need to stretch.
+Not: "You need to stretch because it is good for you."
 
-But actually, they do.
+Try: "Your body is training hard. That creates tightness and soreness. Stretching is for hard training, not old age."
 
-**What's actually happening**
+Keep it to one ask after practice: ten minutes of gentle stretching.
 
-At 13-14, their body is getting stronger. Fast.
+Cover hamstrings, quads, hip flexors, calves, shoulders, and back. Hold each stretch briefly, then move on.
 
-That comes with tightness and soreness.
+## Sleep is the recovery tool they underrate
 
-Stretching, foam rolling, and sleep are what manage that.
+Muscles repair during sleep. That is the part most 13-year-olds skip when homework and group chats run late.
 
-Skip them and soreness becomes injury.
+The [American Academy of Sleep Medicine](https://aasm.org/advocacy/position-statements/teen-sleep-duration-health-advisory/) recommends that teenagers 13 to 18 sleep 8 to 10 hours per 24 hours on a regular basis. The CDC cites the same range.
 
-**The conversation that lands**
+If the schedule has late practices and early school, protect bedtime the way you protect pickup. That is the recovery conversation worth repeating.
 
-Not: "You need to stretch. It's good for you."
+## Options without a treatment plan
 
-Say: "Your body is training hard. That creates tightness and soreness. Stretching isn't because you're old. It's because you're training hard. Professional athletes stretch. That's how they stay healthy and keep improving."
+If you have a [foam roller](/go/foam-roller-medium/), some kids will use it because it feels better than another lecture. The [recovery gear guide](/what-to-buy/recovery-gear/) covers what else is worth having at this age, and what is still overkill.
 
-**What actually works**
+A warm-up before practice belongs to the coach. Stretching after practice is the piece kids skip. Ice or heat is a coach or athletic trainer call, not a car-ride prescription.
 
-10 minutes of stretching after practice or games.
+Present options. Do not turn the ride home into a treatment plan.
 
-Not intense stretching. Just gentle. Hold each stretch for 15-20 seconds.
+Tell them: "Recovery is how you stay available for the next practice. Training alone is not the whole job."
 
-Hamstrings. Quads. Hip flexors. Calves. Shoulders. Back.
+A 13-year-old who wants playing time hears that. A speech about becoming their best self does not.
 
-That's it. 10 minutes. Done.
+Give them the choice once: do the short stretch and protect sleep, or stay sore and watch how the next week feels. Then stop talking.
 
-**The foam rolling thing**
+If soreness never eases after rest days and sleep, ask the coach whether the workload includes recovery days. Good programs build those in. Bad ones just stack sessions.
 
-If you have a [foam roller](/go/foam-roller-medium/), some kids will actually use it — the [recovery gear guide](/what-to-buy/recovery-gear/) covers what else is worth having on hand at this age, and what's still overkill.
+*Updated October 6, 2026: corrected the sleep range to the AASM recommendation of 8 to 10 hours for ages 13 to 18, removed the banned warm-up adjective, and narrowed the piece to the conversation instead of treatment claims.*
 
-It feels good. It works.
+---
 
-Roll out sore muscles for 2-3 minutes.
+**Gear mentioned in this article** (affiliate)
 
-This is recovery, not punishment.
+[Medium foam roller](/go/foam-roller-medium/), a solid pick for post-practice muscle work.
 
-**The ice bath thing**
+[Full recovery gear guide](/what-to-buy/recovery-gear/), all picks by age and level.
 
-Some travel programs have ice baths after games.
-
-They actually help with recovery.
-
-But they're uncomfortable. So you present it as optional: "An ice bath helps your muscles recover faster. Some athletes do it. You don't have to."
-
-Some will. Some won't.
-
-**The sleep part**
-
-This is the biggest recovery tool and we've covered it, but it's worth repeating.
-
-Sleep is when muscles repair and get stronger.
-
-A 13-year-old training hard needs 8-9 hours of sleep.
-
-**The nutrition part**
-
-Real food within an hour of practice. Especially protein.
-
-This helps muscles rebuild.
-
-Your kid doesn't need to be obsessive about it. Just consistent.
-
-**Why they actually care**
-
-Tell them: "Recovery is how you get better. Not just training. Recovery. Professional athletes spend as much time on recovery as on training. That's how they stay healthy and strong."
-
-A 13-year-old who's serious about their sport will listen to that.
-
-**The thing they're probably not doing**
-
-Dynamic warm-up before practice. (Coach handles this)
-
-Stretching after practice. (Kid skips this)
-
-Ice or heating as needed. (Kid doesn't know to do this)
-
-Foam rolling. (Kid thinks it's boring)
-
-**The permission you give**
-
-"I'm not going to make you do all this. But if you're training hard and you're sore, this is what you need to do to recover. Otherwise, you'll stay sore and you won't perform as well. Your choice."
-
-Then let them experience the soreness and make the connection.
-
-**The thing that actually works**
-
-After a few weeks of skipping recovery, they're stiff and sore.
-
-They do some stretching and foam rolling.
-
-They feel better.
-
-They start doing it regularly.
-
-They notice they perform better.
-
-Now they care.
-
-**The massage thing**
-
-Some travel programs offer massage or athletic training staff.
-
-If available, your kid should use it.
-
-Not because it's fancy. Because it helps recovery.
-
-**The thing you model**
-
-If your kid sees you stretching after exercise, they're more likely to do it.
-
-You don't have to say anything. Just do it.
-
-**The overtraining piece**
-
-If your kid is sore all the time and it's not getting better with stretching and sleep, they're probably overtraining.
-
-That's a conversation with the coach: "They're sore even with recovery. Is that normal for the program?"
-
-Good programs build in recovery days. Bad programs just pile on training.
-
-**The final thing**
-
-Recovery is not wasted time. It's where the gains happen.
-
-Tell your 13-year-old that.
-
-Show them that.
-
-And if they're serious about their sport, they'll start doing it.
-
-Because they want to be better.
-
-And recovery is how you actually get better.
+*As an Amazon Associate we earn from qualifying purchases.*

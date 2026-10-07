@@ -1,8 +1,9 @@
 ---
-title: The 11-12 Helmet Upgrade Decision
-dek: When to replace what he has.
-seoDescription: At eleven to twelve, your kid is going to outgrow their helmet. The
-  question is whether you upgrade or buy new. It matters.
+title: "The 11-12 Helmet Upgrade Decision"
+dek: "When the helmet still fits, and when it needs a licensed recert path."
+seoTitle: "Youth Football Helmet Upgrade at 11-12"
+seoDescription: "At 11-12, check fit first. NOCSAE certification needs a licensed reconditioner. NAERA will not recertify football helmets 10 years or older."
+bluf: "At 11 to 12, check fit first. To keep NOCSAE certification, a football helmet must be reconditioned and recertified by a NOCSAE-licensed reconditioner per the manufacturer. NAERA members will not recertify helmets 10 years or older from the initial season-of-use date."
 topic: equipment
 format: note
 phase: drive-there
@@ -11,7 +12,9 @@ age: 11-12
 hero: "/illustrations/football-helmets-on-grass.webp"
 heroAlt: "Three plain unbranded youth football helmets sit in a row on grass at a practice field's edge, chinstraps loose in evening light."
 publishedAt: 2026-02-02
+updatedAt: 2026-10-06
 featured: false
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -20,45 +23,58 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-07-21
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-06
   status: claude-reviewed
-  reviewerNotes: ""
-  factCheckGoodThrough: 2027-07-21
+  reviewerNotes: "Safety rewrite 2026-10-06: replaced two-year replace rule and sporting-goods refurbished claim with NOCSAE licensed reconditioning/recertification and NAERA 10-year policy; dropped unsourced prices and brand absolutism; kept practical fit guidance; affiliateDisclosurePresent true for /go/ links."
+  factCheckGoodThrough: 2027-10-06
+  affiliateDisclosurePresent: true
 ---
 
-At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters.
+At eleven to twelve, your kid is going to outgrow their football helmet. The question is whether the shell still fits, and whether the certification path still holds.
 
-**The size rule**
-A helmet should fit snug on the sides and back. Two fingers of space on the front. If it slides when you push it side to side, it's too big. If you can't get two fingers in front, it's too small.
+## Fit first
 
-At this age, kids grow at different rates. Some need a new helmet every season. Some make it two years.
+A helmet should sit snug on the sides and back. You want about two fingers of space at the forehead.
 
-**New versus used**
-If the helmet is two years old or older: buy new. Helmet foam deteriorates. It loses padding. You can't see it, but it's happening.
+If it slides when you push it side to side, it is too big. If you cannot get two fingers in front, it is too small.
 
-If it's under two years and still fits: a refurbished helmet from a sporting goods store is fine. They clean the old padding, check the shell for damage, and put new foam in. Seventy-five dollars instead of one-fifty.
+At this age kids grow at different rates. Some need a new size every season. Some make it two years on the same shell.
 
-**The brand question**
-Schutt and Riddell are the standards. Don't go cheaper. A helmet is the one piece of equipment you don't go budget on. The fit matters more than anything else. Cheap helmets don't fit right on multiple head shapes. The [football gear guide](/what-to-buy/football/) has the current models worth the money by age.
+## Certification and the 10-year line
 
-**What you're paying**
-New helmet: one fifty to two hundred. Refurbished: seventy-five to one hundred. Don't buy at the mall. Don't buy at a big-box store. Go to a sporting goods specialty shop. They fit it right. They'll adjust it when he shows up in August if it shifts.
+[NOCSAE](https://nocsae.org/recertification/) does not recondition helmets itself. Its standards say the original certification holds only when reconditioning and recertification follow the manufacturer instructions and are done by a NOCSAE-licensed reconditioner.
 
-**The rule**
-If they wore it last season and it still fits, check with the coach. Some programs swap them. Some you own. Ask before you buy.
+That means inspection, cleaning, repair, testing, and a dated recert label, not a store counter swapping foam and calling it "refurbished."
 
-**The window**
-May or June. Before July camp. Not in August when everyone's buying at once. You'll pay more and selection dies.
+Ask who the licensed reconditioner is and when the last recert label was applied, whether the program owns the helmets or you do.
 
-Order early if you need it. Get it fitted. One less variable when season starts.
+[NAERA](https://www.naera.net/10-years-or-older-helmets), the reconditioners' association, states that its members will not recondition or recertify football helmets 10 years of age or older, measured from the manufacturer's date of initial season of use.
+
+That 10-year cutoff is NAERA policy. It is not a NOCSAE rule that bans wearing an older helmet. For program use, parents still need a licensed recert path, and once a helmet hits that age, NAERA members will not provide one.
+
+NOCSAE's own [recertification FAQ](https://nocsae.org/about-recertification-questions-answers/) notes the same point: the "useful life" rule is set by NAERA, and age is only one reason a helmet may fail recert.
+
+## When to buy new
+
+If the helmet no longer fits, buy new and get it fitted. If it is past the age a licensed reconditioner will touch, buy new.
+
+If it still fits and still has a current recert label from a licensed shop, keep using it until the next scheduled recondition interval the manufacturer requires.
+
+Skip inventing a price floor. The [football gear guide](/what-to-buy/football/) compares current youth options by age.
+
+Ask the coach before you buy. Some programs issue helmets. Some expect you to own yours.
+
+May or June beats August. Order early, get the fit checked, and skip the last-minute rush.
+
+*Updated October 6, 2026: corrected live guidance that said replace at two years and that a sporting-goods store would "refurbish" with new foam. Certification now tracks NOCSAE licensed reconditioning/recertification and NAERA's 10-year policy.*
 
 ---
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth rubber football →](/go/football-rubber-youth/), a solid pick for youth football players.
+[Youth rubber football](/go/football-rubber-youth/), a solid pick for youth football players.
 
-[Full Football gear guide →](/what-to-buy/football/), all picks by age and level.
+[Full Football gear guide](/what-to-buy/football/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*
