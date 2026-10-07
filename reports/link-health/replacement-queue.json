@@ -3,8 +3,8 @@
   "generated_by": "pcd-link-health-monitor",
   "generated_at": "2026-09-14",
   "source_report": "reports/link-health/LINK_HEALTH_2026-09-14.md",
-  "consumer": "pcd-affiliate-replacement-sourcer (Arnie)",
-  "consumer_instructions": "Work items where status=='open'. For each: source a replacement matching product_intent, browser-verify it is live + In Stock + correct product (space Amazon requests 5-10s apart), then write the proposed new destination into resolution.proposed_destination and set status='proposed'. Do NOT edit affiliates.json or deploy - Jeff reviews and pushes. Reconcile against affiliate-governance.json and lifecycle.json before proposing (a slug may already be owned/retired there). If no good replacement exists, set status='retire-recommended' with a reason.",
+  "consumer": "pcd-affiliate-replacement-sourcer (Arnie) -> pcd-affiliate-replacement-reviewer (Rita) -> pcd-affiliate-link-stager (Alfred)",
+  "consumer_instructions": "Pipeline: Linda fills open items; Arnie works status=='open' (browser-verify, write resolution.*, set status='proposed'); Rita works status=='proposed' (auto-approve safe items -> status='approved' with approved_by/approved_at, or escalate absolute edge cases: leave proposed, set escalated_to_jeff + escalate_reason, upsert reports/edge-cases/pending.json for Rex); Alfred works status=='approved' only (stage affiliates.json + PR, set staged). Do NOT edit affiliates.json or deploy from Arnie/Rita. Jeff only handles Rita escalations via Rex daily desk.",
   "totals": {
     "open": 0,
     "proposed": 0,

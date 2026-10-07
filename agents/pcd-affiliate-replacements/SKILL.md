@@ -1,7 +1,7 @@
-﻿---
+---
 name: pcd-affiliate-replacements
 description: Arnie sources browser-verified replacement products for Linda's open affiliate queue items, writes proposals into replacement-queue.json, and never edits affiliates.json or deploys.
-version: 1.0
+version: 1.1
 last_edited: 2026-10-07
 owner_workstream: Affiliate ops
 action_class: Propose
@@ -16,9 +16,13 @@ Grok Bot PCD routine `pcd-affiliate-replacements-arnie` is the scheduler (Tuesda
 
 ## Pipeline (do not collapse stages)
 
-Linda (link health fills open void items) → **Arnie proposes** → **Jeff approve** → Alfred stages PR → merge/deploy separately (Jeff or Dana after explicit go).
+Linda (link health fills open void items) -> **Arnie proposes** -> **Rita auto-approves or escalates** -> Alfred stages PR -> merge/deploy separately (Jeff or Dana after explicit go).
+
+Jeff is **not** on the happy path. Absolute edge cases escalate via Rita into `reports/edge-cases/pending.json` and surface on **Rex** (`agents/pcd-edge-case-desk/SKILL.md`).
 
 Hal owns S5 weekly link health and S6 monthly reconcile (`automation/agents/hal/SKILL.md`). Do **not** re-run Linda/Hal checks or invent open items. Arnie only consumes `reports/link-health/replacement-queue.json`.
+
+Rita (`agents/pcd-affiliate-replacement-reviewer/SKILL.md`) owns approve-or-escalate on `proposed` items — Arnie does not approve.
 
 ## Hard rules
 
@@ -26,9 +30,9 @@ Hal owns S5 weekly link health and S6 monthly reconcile (`automation/agents/hal/
 - Work items with `status == "open"` (and any item Jeff explicitly handed for re-propose). Ignore already `proposed` / `approved` / `staged` unless re-propose was requested.
 - **Browser-verify every proposal.** Live + In Stock + correct product for `product_intent`. Space Amazon / amzn.to requests 5–10s apart (prefer ~30s). Never invent ASINs. If the browser is unavailable, leave the item `open` and note needs manual browser recheck — do not propose from a raw fetch alone.
 - Keep Amazon `tag=parentcoachpl-20` on every proposed destination.
-- Reconcile against `src/data/affiliate-governance.json` and `reports/affiliate/lifecycle.json` **before** sourcing. Retired / owned / handled slugs → `retire-recommended`, do not source.
-- **Do NOT** edit `src/data/affiliates.json`. **Do NOT** open Alfred's staging PR. **Do NOT** deploy or merge.
-- BabyLove auto-insert is a **separate** daily lane (`affiliate-governance.json` → `babylove_auto_insert`). Do not conflate with this Tuesday replacement-queue job unless the routine explicitly says otherwise.
+- Reconcile against `src/data/affiliate-governance.json` and `reports/affiliate/lifecycle.json` **before** sourcing. Retired / owned / handled slugs -> `retire-recommended`, do not source.
+- **Do NOT** edit `src/data/affiliates.json`. **Do NOT** open Alfred's staging PR. **Do NOT** deploy or merge. **Do NOT** set `approved` (that is Rita or Jeff-after-Rex).
+- BabyLove auto-insert is a **separate** daily lane (`affiliate-governance.json` -> `babylove_auto_insert`). Do not conflate with this Tuesday replacement-queue job unless the routine explicitly says otherwise.
 - Slack: `C0BJC3WTNKC` (`#pcd-agent-notications`).
 
 ## Before every run
@@ -58,9 +62,9 @@ For each queue item with `status == "open"`:
 
 Then:
 
-7. Optionally write a short run note under `reports/link-health/` or `reports/affiliate/` if the batch is non-trivial (slug table + caveats). Not required when open→proposed is empty.
+7. Optionally write a short run note under `reports/link-health/` or `reports/affiliate/` if the batch is non-trivial (slug table + caveats). Not required when open->proposed is empty.
 8. Commit queue JSON (+ any Arnie report) when the tree allows. Message shape: `Arnie: propose N affiliate replacements (YYYY-MM-DD)` (or retire-recommended counts in the body). Push `main` when clean enough; never force-push; leave unrelated dirty files alone.
-9. **Slack:** digest when proposals (or retire-recommended) are ready; quiet one-liner when `open == 0` / empty run (`Arnie: empty run — 0 open items YYYY-MM-DD`).
+9. **Slack:** digest when proposals (or retire-recommended) are ready for Rita; quiet one-liner when `open == 0` / empty run (`Arnie: empty run — 0 open items YYYY-MM-DD`).
 
 ## Empty run
 
@@ -69,4 +73,4 @@ If zero `open` items: Slack one-line empty-run; no inventing work; commit not re
 ## Success
 
 - Open items moved to `proposed` or `retire-recommended`, totals updated, queue committed/pushed when needed, Slack digest or empty-run line.
-- No `affiliates.json` edits, no Alfred PR, no deploy, no invented ASINs, no BabyLove insert conflation.
+- No `affiliates.json` edits, no Alfred PR, no approve, no deploy, no invented ASINs, no BabyLove insert conflation.

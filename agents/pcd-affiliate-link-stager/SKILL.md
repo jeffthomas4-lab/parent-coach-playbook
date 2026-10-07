@@ -1,7 +1,7 @@
-﻿---
+---
 name: pcd-affiliate-link-stager
-description: Alfred stages Jeff-approved affiliate replacements into affiliates.json and product cards, opens a PR, and never merges or deploys unless Jeff said go this turn.
-version: 1.0
+description: Alfred stages Rita-approved (or Jeff-after-Rex) affiliate replacements into affiliates.json and product cards, opens a PR, and never merges or deploys unless Jeff said go this turn.
+version: 1.1
 last_edited: 2026-10-07
 owner_workstream: Affiliate ops
 action_class: Stage
@@ -14,9 +14,11 @@ Grok Bot PCD routine `pcd-affiliate-link-stager-alfred` is the scheduler (weekda
 
 ## Pipeline (do not collapse stages)
 
-Linda (link health) → Arnie (propose replacements) → **Jeff approve** → **Alfred stages PR** → merge/deploy separately (Jeff or Dana after explicit go).
+Linda (link health) -> Arnie (propose) -> **Rita auto-approve / escalate** -> **Alfred stages PR** (`approved` only) -> merge/deploy separately (Jeff or Dana after explicit go).
 
-Alfred works **only** items with `status == "approved"`. Never invent ASINs. Never change unrelated slugs. Honor `src/data/affiliate-governance.json` and `reports/affiliate/lifecycle.json`.
+Jeff is not on the happy path. Rita escalations surface on **Rex** (`agents/pcd-edge-case-desk/SKILL.md`); Jeff decides those, then Alfred stages once `status == "approved"`.
+
+Alfred works **only** items with `status == "approved"` (set by Rita auto-approve, or by Jeff after a Rex escalation). Never invent ASINs. Never change unrelated slugs. Honor `src/data/affiliate-governance.json` and `reports/affiliate/lifecycle.json`. Do not process `proposed` or Rita-escalated items.
 
 ## Hard rules
 
@@ -38,10 +40,10 @@ Alfred works **only** items with `status == "approved"`. Never invent ASINs. Nev
 
 For each queue item with `status == "approved"`:
 
-1. **affiliates.json:** update that slug's destination to `resolution.proposed_destination` (keep `tag=parentcoachpl-20`). Do not rename the slug. Do not invent a new ASIN beyond what Arnie/Jeff already put in `resolution`.
+1. **affiliates.json:** update that slug's destination to `resolution.proposed_destination` (keep `tag=parentcoachpl-20`). Do not rename the slug. Do not invent a new ASIN beyond what Arnie/Rita/Jeff already put in `resolution`.
 2. **Named product cards:** if guides/articles still describe the old product by brand/name, update those cards to match the new product (see PR #80 / `DEPLOYED_2026-09-17.md` pattern: football, volleyball, boosters-gear, wrestling, etc.). Touch only cards that still describe the old product for that slug.
 3. **Queue status:** set `status` to `staged`, and set `resolution.staged_at` (America/Los_Angeles date) and `resolution.staged_by` (e.g. `alfred-pcd-YYYY-MM-DD`). Update the `totals` block.
-4. **Staging report:** write `reports/affiliate/DEPLOYED_YYYY-MM-DD.md` as a **staging** report (table of slug → new ASIN / notes, caveats, content cards updated). Do not claim live deploy unless Jeff already merged and deployed.
+4. **Staging report:** write `reports/affiliate/DEPLOYED_YYYY-MM-DD.md` as a **staging** report (table of slug -> new ASIN / notes, caveats, content cards updated). Do not claim live deploy unless Jeff already merged and deployed.
 
 Then:
 
