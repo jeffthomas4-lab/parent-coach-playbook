@@ -1,50 +1,73 @@
-﻿{
+{
   "schema_version": 1,
   "updated_at": "2026-10-08",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
       "source": "lonnie-outreach",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "title": "4 Lonnie pitches idle 63-65 days (send gate)",
       "why_human": "Drafted pitches waiting Jeff send: WIAA Health, SOWA Unified, WA Youth Soccer concussion, Pierce County Parks (Lisa Welch). Plus Adaptive Sports NW + Seattle Parks drafted 10/07.",
       "href": "reports/seo/outreach/link-earning-2026-10-07.md",
+      "opened_at": "2026-10-08",
+      "opened_by": "rex-pcd-2026-10-08",
+      "resolved_at": "2026-10-08",
+      "resolved_by": "rex-resolution-2026-10-08 (Jeff: do them all)",
+      "resolution": "All 4 targets re-verified live 2026-10-08; none dead. Rewritten with live PCD links (all 200) and verified contacts: reports/seo/outreach/pitch-{wiaa-health-wellness,special-olympics-washington-unified-champion-schools,washington-youth-soccer-concussion-awareness,pierce-county-parks-recreation}-2026-10-08.md. targets.json pitch_ref/notes updated (status stays drafted; only Jeff sets sent). Commit 64cf6b2e. Superseded by lonnie-send-ready-2026-10-08."
+    },
+    {
+      "id": "lonnie-send-ready-2026-10-08",
+      "source": "lonnie-outreach",
+      "status": "open",
+      "priority": "medium",
+      "title": "6 send-ready Lonnie pitches need Jeff's send click",
+      "why_human": "Lonnie hard rule: only Jeff sends outreach and sets status sent. Five have verified addresses (WIAA jkesterson@wiaa.com, info@sowa.org, aleighsa.welch@piercecountywa.gov, info@adaptivesportsnw.org, PKS_CYA@seattle.gov). WA Youth Soccer needs one call to (253) 476-2237 for Keli Bitow's email.",
+      "href": "reports/edge-cases/DESK_2026-10-08.md",
       "opened_at": "2026-10-08",
       "opened_by": "rex-pcd-2026-10-08"
     },
     {
       "id": "penny-ready-for-jeff-news-2026-10-08",
       "source": "penny-editorial",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "title": "2 news drafts still ready-for-jeff (Sept 21)",
       "why_human": "NFHS field hockey rule changes 2026 and Riddell ND6/NOCSAE youth helmet news remain draft:true with status ready-for-jeff. Penny will not auto-publish.",
       "href": "src/content/news/",
       "opened_at": "2026-10-08",
-      "opened_by": "rex-pcd-2026-10-08"
+      "opened_by": "rex-pcd-2026-10-08",
+      "resolved_at": "2026-10-08",
+      "resolved_by": "rex-resolution-2026-10-08 (Jeff: do them all)",
+      "resolution": "Jeff cleared ('do them all'). Penny voice gate A/B/C/E pass; sources re-verified live; Riddell 'first youth helmets' claim removed. draft:false, status published, jeffReviewedAt 2026-10-08. Commit 64cf6b2e deployed via pcd-deploy-code.ps1. Live: https://parentcoachdesk.com/news/nfhs-field-hockey-rule-changes-2026/ and https://parentcoachdesk.com/news/riddell-nd6-nocsae-youth-helmet-standard-2026/"
     },
     {
       "id": "ranger-backup-clock-2026-10-08",
       "source": "ranger-camps",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "title": "Camps D1 backup proving clock still at zero",
       "why_human": "BACKUP-PROVING-LOG.md and backups/d1 missing. Class D camp writes need three clean proving days. Jeff must run backup paste.",
       "href": "reports/camps/CAMPS_REVIEW_2026-10-08.md",
       "opened_at": "2026-10-08",
-      "opened_by": "rex-pcd-2026-10-08"
+      "opened_by": "rex-pcd-2026-10-08",
+      "resolved_at": "2026-10-08",
+      "resolved_by": "rex-resolution-2026-10-08 (Jeff: do them all)",
+      "resolution": "False 'missing': report path strings had \\b/\\n escapes. Proving gate cleared 2026-07-17 (ledger rows 07-15/16/17). Real gap was freshness: newest export 2026-09-26 (12d). Defined 7-day freshness clock (Ranger SKILL backup watch + BACKUP.md). Ran real export on DESKTOP 2026-10-08 08:13 PT: 347.9 MB, sha256 a74070028579a491dbf50eb34153314d60737dfc44e380fac23a046514a57366, ledger row 7. Clock 0 days. Commit 64cf6b2e."
     },
     {
       "id": "ranger-d1-mcp-gap-2026-10-08",
       "source": "ranger-camps",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "title": "Thursday S8 blocked without D1 query path",
       "why_human": "Camps pending-queue triage still blocked (same gap as CAMPS_REVIEW_2026-09-10). Live floor healthy; backlog unmeasured.",
       "href": "reports/camps/CAMPS_REVIEW_2026-10-08.md",
       "opened_at": "2026-10-08",
-      "opened_by": "rex-pcd-2026-10-08"
+      "opened_by": "rex-pcd-2026-10-08",
+      "resolved_at": "2026-10-08",
+      "resolved_by": "rex-resolution-2026-10-08 (Jeff: do them all)",
+      "resolution": "No MCP needed: npx wrangler d1 execute <db> --remote --json (SELECT only, eepskalla OAuth) works on DESKTOP for activity-radar and parent-coach-desk-ops-production. Documented in automation/agents/ranger/SKILL.md. Deferred S8 ran 2026-10-08: pending 0 (approved 1515 / rejected 1455), Camp STAR rejected, 23 awaiting_review carry-overs noted. Addendum in CAMPS_REVIEW_2026-10-08.md. Commit 64cf6b2e."
     }
   ]
 }
