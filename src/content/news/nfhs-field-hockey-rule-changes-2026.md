@@ -5,8 +5,8 @@ category: "rule-change"
 sport: "field-hockey"
 sourceUrl: "https://nfhs.org/stories/player-equipment-penalty-corners-focus-of-high-school-field-hockey-rules-changes"
 sourceLabel: "National Federation of State High School Associations (NFHS)"
-publishedAt: 2026-09-21
-draft: true
+publishedAt: 2026-10-08
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -18,7 +18,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-09-21
-  status: ready-for-jeff
+  status: published
+  jeffReviewedAt: 2026-10-08
   factCheckGoodThrough: 2027-06-01
-  reviewerNotes: "Recovered from RULES_2026-09-15 claim (files never landed in src/content/news/). Re-verified 2026-09-21 against nfhs.org primary story (Feb 6, 2026): Rule 1-6-1 mouth protector attachments; Rule 4-4-3 goalkeeper-only sub before penalty corner; Rule 10-3-3 inserter sent beyond center line on early circle entry. Cross-checked USA Field Hockey reprint. draft:true only."
+  reviewerNotes: "Published 2026-10-08 per Jeff clearance via Rex desk (\"do them all\"). Penny voice gate A/B/C/E re-run 2026-10-08: pass. Source re-verified live 2026-10-08 (NFHS story Feb 6, 2026; Rules 1-6-1, 4-4-3, 10-3-3)."
 ---

@@ -12,7 +12,7 @@
 
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'ranger'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
 2. Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for a start with a UUID, agent `ranger`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
-3. **Check the backup clock.** Read `scripts/BACKUP-PROVING-LOG.md` and list `backups/d1/`. Compute the gap in days between the newest export and last night's discovery write. If the gap is over 7 days or undefined, that is a `needs_you` item this run, every run, until it is not.
+3. **Check the backup clock.** Run the freshness check in "The backup watch" below (newest `backups/d1/activity-radar-*.sql` with a matching `.sha256`, age in days). Over 7 days, or no export at all, is a `needs_you` item this run, every run, until it is not.
 4. Check `PCD-OPERATING-MANUAL.md` section 3.4. **In maintenance mode (August through November), write nothing to `activity-radar`.** Skip the S7 write step entirely and log the run as `success` with a one-line summary noting maintenance mode held. S8 still runs, report-only.
 5. Read `CAMPS_QUALITY_FRAMEWORK.md` before any S8 judgment, and `CAMPS_APPROVAL_THRESHOLD.md` before any S7 accept. Read them, do not recall them.
 
@@ -39,10 +39,37 @@
 
 ## The backup watch (every run, both SOPs)
 
-1. Report the gap. Newest file in `backups/d1/`, last night's write, the number of days between them.
-2. If `scripts/BACKUP-PROVING-LOG.md` has fewer than three rows, say so and name it as the reason no backup schedule exists yet. Three rows, three separate days. Same-day runs prove the script works without proving it survives a fresh shell or an expired wrangler session.
-3. Ranger does not run the export. It needs Cloudflare credentials the sandbox does not hold, and a real attempt has already failed with `user auth missing api token non interactive`. Hand Jeff the paste from `BACKUP.md` under "Starting the clock" as a `needs_you` item and leave it there.
-4. Never propose scheduling `pcd-backup` while the log reads under three. That row stays paused with the condition in its purpose, and the condition is the point.
+**Proving gate: cleared.** `scripts/BACKUP-PROVING-LOG.md` shows clean manual runs on 2026-07-15, 2026-07-16 and 2026-07-17 (three distinct local dates, commit `c50cca0a`). Do not report the gate as "zero" or "missing" again. The open question since then is freshness, and this is the clock for it.
+
+**The freshness clock (defined 2026-10-08, Rex desk).**
+
+- **What is measured:** age in whole days between now (America/Los_Angeles) and the newest `backups/d1/activity-radar-*.sql` on DESKTOP that has a matching `.sha256` sidecar and is at least 1 MB. `.partial` files do not count.
+- **Cadence:** checked on every Ranger run, and it is the headline of the backup section in the weekly Thursday S8 report.
+- **Pass:** age is 7 days or less. One line in the report: newest file, its size, its age.
+- **Loud fail:** age over 7 days, no qualifying file, or a sidecar hash that does not match. That is a `needs_you` item in the report, a row in `reports/edge-cases/pending.json` (source `ranger-camps`), and it stays open until a fresh export lands. Never mark it resolved on a file you did not see.
+- **Refresh path (DESKTOP only):** Ranger may run `scripts/backup-activity-radar.ps1` once per run when the clock fails and the machine gate passes (DESKTOP online, `CLOUDFLARE_API_TOKEN` / `CF_API_TOKEN` cleared, wrangler OAuth as eepskalla). The export is read-only against D1, writes only to `backups/d1/`, and appends its own ledger row. It holds the database for under a minute, so never run it during an S7 write. Two failed attempts in one run is the loud fail above, with the error text. A box or sandbox session without that OAuth never runs it; it reports the gap and stops.
+- **Never:** schedule the script, restore from a snapshot, hand-edit the proving log, or commit anything under `backups/`.
+
+How to read the files without fooling yourself: list them with `Get-ChildItem -LiteralPath 'backups\d1' -Filter 'activity-radar-*.sql'` in single quotes. The 2026-10-08 catch-up report wrote `\b` and `\n` inside a double-quoted string, which turned `backups/d1` into a backspace and reported a directory holding two exports as "missing". If the listing comes back empty, re-check the path before you call it.
+
+Worker backup (`worker-backup/`, R2 `pcd-db-backups`) is a separate layer. Mention its last `backup-log.json` result when you can read it, but it does not satisfy this clock.
+
+## D1 query path for S8 (wrangler, no MCP needed)
+
+The Cloudflare D1 MCP connector that the July and early-September S8 runs used is not part of this setup any more, and S8 does not need it. On DESKTOP, after the machine gate (tokens cleared, OAuth as eepskalla, Node on PATH):
+
+```powershell
+$env:CI = 'true'
+npx wrangler d1 execute activity-radar --remote --json --command "SELECT pcd_status, COUNT(*) n FROM programs GROUP BY pcd_status"
+```
+
+- `activity-radar` (`8cc3694a-...`) holds `programs`, `organizations`, `programs_staging`. `parent-coach-desk-ops-production` (`b38d5f37-...`) holds the named-contact layer (`org_contacts`).
+- **SELECT only through this path.** No INSERT, UPDATE, DELETE, DROP, ALTER, or `--file` imports. Confirm `"changes": 0` and `"changed_db": false` in the JSON meta. Class C fixes are still written into the report as exact SQL and run by Jeff, exactly as S8 step 5 says.
+- One statement per call keeps the JSON easy to parse. Correlated subqueries over `organizations` hit D1's CPU limit; write them as joins.
+- The pending queue lives in `programs` (`pcd_status = 'pending'`), with `awaiting_review = 1` flagging approved rows a field audit wants re-checked. `programs_staging` rows are done once `promoted_program_id` is set.
+- First run on this path: 2026-10-08, see the addendum in `reports/camps/CAMPS_REVIEW_2026-10-08.md`.
+
+If wrangler on DESKTOP fails auth, that is the loud skip. Do not go looking for tokens to make it work.
 
 ## Every run, no exceptions
 

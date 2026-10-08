@@ -233,11 +233,11 @@
     "why_them": "WIAA's Health & Wellness hub is the state-mandated resource WA coaches, ADs, and parents use for concussion, sudden cardiac arrest, and heat-index protocols, including a live Heat Index Calculator; it currently links out to legal and medical resources but not a plain-language parent explainer.",
     "asset": "heat-cramps-protocol, AED-location-field-readiness, concussion content",
     "status": "drafted",
-    "pitch_ref": "reports/seo/outreach/pitch-wiaa-health-wellness-2026-08-03.md",
+    "pitch_ref": "reports/seo/outreach/pitch-wiaa-health-wellness-2026-10-08.md",
     "link_url": null,
     "first_seen": "2026-08-03",
-    "last_touched": "2026-08-03",
-    "notes": "New target identified and pitched this run. No named contact found; pitch addressed to the WIAA Health & Wellness team generically. Jeff should find the actual staff contact before sending."
+    "last_touched": "2026-10-08",
+    "notes": "Refreshed 2026-10-08 (Rex desk, idle 65d). Target re-verified live. Contact verified on wiaa.com/staff: Justin Kesterson (Medical Aspects) jkesterson@wiaa.com; backup Andy Knapp (Website). Send-ready; awaiting Jeff send."
   },
   {
     "id": "washington-youth-soccer-concussion-awareness",
@@ -248,11 +248,11 @@
     "why_them": "This page exists specifically to walk soccer parents through WA's HB 1824/SB 5083 compliance and currently only links out to legal PDFs, not a parent-friendly explainer.",
     "asset": "soccer rules-explained guide; concussion / anaphylaxis-and-epipen-on-field safety content",
     "status": "drafted",
-    "pitch_ref": "reports/seo/outreach/pitch-washington-youth-soccer-concussion-awareness-2026-08-05.md",
+    "pitch_ref": "reports/seo/outreach/pitch-washington-youth-soccer-concussion-awareness-2026-10-08.md",
     "link_url": null,
     "first_seen": "2026-08-03",
-    "last_touched": "2026-08-05",
-    "notes": "Pitched this run. A name (Dan Rubin) surfaced in search but wasn't confirmed against the org's own staff page, so the pitch is addressed generically. Jeff should confirm the right contact before sending."
+    "last_touched": "2026-10-08",
+    "notes": "Refreshed 2026-10-08 (Rex desk, idle 63d). Target re-verified live. Staff page confirms Keli Bitow (Director of Operations, compliance) and Dan Rubin (Member Services) but publishes no emails; DanR@ still unconfirmed. Jeff needs one call to (253) 476-2237 for the address, then send."
   },
   {
     "id": "special-olympics-washington-unified-champion-schools",
@@ -263,11 +263,11 @@
     "why_them": "SOWA actively recruits schools and families into Unified Champion Schools each year and runs a \"Commitment to Inclusion\" flow for parents who are new to the program.",
     "asset": "unified-sports-explained, special-olympics-guide-for-parents",
     "status": "drafted",
-    "pitch_ref": "reports/seo/outreach/pitch-special-olympics-washington-unified-champion-schools-2026-08-03.md",
+    "pitch_ref": "reports/seo/outreach/pitch-special-olympics-washington-unified-champion-schools-2026-10-08.md",
     "link_url": null,
     "first_seen": "2026-08-03",
-    "last_touched": "2026-08-03",
-    "notes": "New target identified and pitched this run. No named contact found; pitch addressed to the SOWA Unified Champion Schools team generically. Jeff should find the actual staff contact before sending."
+    "last_touched": "2026-10-08",
+    "notes": "Refreshed 2026-10-08 (Rex desk, idle 65d). Target re-verified live. Only published contact is info@sowa.org / (206) 362-4949 plus a UCS interest form. Send-ready to info@; awaiting Jeff send."
   },
   {
     "id": "usa-football-health-safety",
@@ -293,11 +293,11 @@
     "why_them": "ASNW serves parents of kids with physical and visual disabilities actively researching sport options for their child, a strong match for PCD's adaptive-sports parent guides.",
     "asset": "adapted-sports-programs, autism-and-team-sports, sensory-friendly-sports-environments",
     "status": "drafted",
-    "pitch_ref": "pitch-adaptive-sports-nw-2026-10-07.md",
+    "pitch_ref": "reports/seo/outreach/pitch-adaptive-sports-nw-2026-10-07.md",
     "link_url": null,
     "first_seen": "2026-08-03",
-    "last_touched": "2026-10-07",
-    "notes": "New target identified this run, verified live (serves Oregon and SW Washington). Not yet pitched. Honorable mention not added as a full target: Tacoma Public Schools' own Unified Sports page (tacomaschools.org/departments/athletics-and-activities/unified-sports), a WA school-athletics-department fit for the same unified-sports assets, worth adding next run."
+    "last_touched": "2026-10-08",
+    "notes": "Pitched 2026-10-07. Contact verified 2026-10-08 on adaptivesportsnw.org/contact: info@adaptivesportsnw.org, (503) 241-0850. Send-ready; awaiting Jeff send."
   },
   {
     "id": "tacoma-public-schools-unified-sports",
@@ -323,11 +323,11 @@
     "why_them": "The county's own rec sports hub (baseball, basketball, soccer, flag football leagues, plus a Special Olympics Pierce County program) is exactly where families land after pricing out travel ball; Jeff's own county.",
     "asset": "cost-comparison articles (what-youth-sports-cost, how-much-does-youth-baseball-cost, etc.), rules-at-a-glance guides, special-olympics-guide-for-parents",
     "status": "drafted",
-    "pitch_ref": "reports/seo/outreach/pitch-pierce-county-parks-recreation-2026-08-05.md",
+    "pitch_ref": "reports/seo/outreach/pitch-pierce-county-parks-recreation-2026-10-08.md",
     "link_url": null,
     "first_seen": "2026-08-05",
-    "last_touched": "2026-08-05",
-    "notes": "New target, pitched this run. Verified live via direct fetch, current 2026 program dates listed. Contact Lisa Welch, Recreation Supervisor, surfaced via the county's own staff directory page; reconfirm before sending."
+    "last_touched": "2026-10-08",
+    "notes": "Refreshed 2026-10-08 (Rex desk, idle 63d). Target re-verified live (page retitled Play). Contact re-verified on county directory DID=27: Lisa Welch, Recreation Supervisor/Athletics, aleighsa.welch@piercecountywa.gov, 253-798-4120; backup Jared Bucci. Send-ready; awaiting Jeff send."
   },
   {
     "id": "parentmap",
@@ -503,11 +503,11 @@
     "why_them": "Seattle citywide rec leagues (basketball, volleyball, track and field) with published 2026 season windows and costs, plus an explicit financial-aid note. Families land here before travel ball; PCD cost and first-season guides fill the parent-side gap the page does not cover.",
     "asset": "what-youth-sports-cost (drive-there); first-season-of-youth-basketball; first-season-of-youth-volleyball",
     "status": "drafted",
-    "pitch_ref": "pitch-seattle-parks-recreation-youth-sports-2026-10-07.md",
+    "pitch_ref": "reports/seo/outreach/pitch-seattle-parks-recreation-youth-sports-2026-10-07.md",
     "link_url": null,
     "first_seen": "2026-09-23",
-    "last_touched": "2026-10-07",
-    "notes": "New target verified live 2026-09-23 via direct fetch: Spring 2026 Track and Field $95 (4/18-5/23, ages 5-17), Fall Volleyball $95 (ages 10-13), Winter Basketball $150 (Jan-Mar 2026, ages 8-17). Named contact email PKS_CYA@seattle.gov and coach phone (206) 684-7091 published on page. Not yet pitched."
+    "last_touched": "2026-10-08",
+    "notes": "Pitched 2026-10-07. PKS_CYA@seattle.gov re-verified on the youth sports page 2026-10-08 (2027 winter basketball now $155, registration open early October). Send-ready; awaiting Jeff send."
   },
   {
     "id": "active-youth-coalition",

@@ -69,6 +69,19 @@ Then flip `agent_registry.pcd-backup.status` from `paused` to `active` in the `f
 
 A note on what this schedule does and does not buy you. Task Scheduler only fires when this machine is on, so a laptop that is closed at 2 AM silently skips the backup, and the failure looks exactly like a success from the repo's point of view. D1 Time Travel (30-day point-in-time restore, no export required, no dependency on this machine) is the stronger protection for the bad-write case and is already on by default. This script's real job is the offline dump Time Travel cannot give you, not primary protection.
 
+### Freshness clock (after the gate, defined 2026-10-08)
+
+The three-day proving gate cleared on 2026-07-17. What matters now is whether a recent export exists. The rule:
+
+- Newest `backups\d1\activity-radar-*.sql` with a matching `.sha256` sidecar must be **7 days old or less**.
+- Ranger checks it every run and reports it in the weekly Thursday S8 review (`automation/agents/ranger/SKILL.md`, "The backup watch").
+- Older than 7 days, or no qualifying file: loud fail, a `needs_you` row in `reports/edge-cases/pending.json`, open until a real export lands.
+- When it fails on DESKTOP with wrangler OAuth (eepskalla), Ranger may run `scripts\backup-activity-radar.ps1` once to refresh it. No scheduling and no restores without Jeff.
+
+Status at definition: exports on disk from 2026-09-19 and 2026-09-26 (12 days old on 2026-10-08, a fail), then a clean 347.9 MB export run on DESKTOP at 2026-10-08 08:13 PT (sha256 `a7407002...`), which puts the clock back at 0 days.
+
+Still open, Jeff's call: the Task Scheduler line above was never registered, so freshness depends on Ranger or Jeff running the script by hand. Registering it would make the 7-day clock pass on its own.
+
 ### Restoring from a snapshot
 
 Full restore steps, single-table restore, D1 Time Travel, and post-restore verification all live in `scripts\RESTORE-activity-radar.md`, next to the backup script. Read that before restoring anything; a full restore overwrites live data.
