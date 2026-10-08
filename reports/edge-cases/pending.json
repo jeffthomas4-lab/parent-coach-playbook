@@ -1,5 +1,50 @@
 ﻿{
   "schema_version": 1,
-  "updated_at": "2026-10-07",
-  "items": []
+  "updated_at": "2026-10-08",
+  "items": [
+    {
+      "id": "lonnie-stalled-pitches-2026-10-08",
+      "source": "lonnie-outreach",
+      "status": "open",
+      "priority": "high",
+      "title": "4 Lonnie pitches idle 63-65 days (send gate)",
+      "why_human": "Drafted pitches waiting Jeff send: WIAA Health, SOWA Unified, WA Youth Soccer concussion, Pierce County Parks (Lisa Welch). Plus Adaptive Sports NW + Seattle Parks drafted 10/07.",
+      "href": "reports/seo/outreach/link-earning-2026-10-07.md",
+      "opened_at": "2026-10-08",
+      "opened_by": "rex-pcd-2026-10-08"
+    },
+    {
+      "id": "penny-ready-for-jeff-news-2026-10-08",
+      "source": "penny-editorial",
+      "status": "open",
+      "priority": "medium",
+      "title": "2 news drafts still ready-for-jeff (Sept 21)",
+      "why_human": "NFHS field hockey rule changes 2026 and Riddell ND6/NOCSAE youth helmet news remain draft:true with status ready-for-jeff. Penny will not auto-publish.",
+      "href": "src/content/news/",
+      "opened_at": "2026-10-08",
+      "opened_by": "rex-pcd-2026-10-08"
+    },
+    {
+      "id": "ranger-backup-clock-2026-10-08",
+      "source": "ranger-camps",
+      "status": "open",
+      "priority": "high",
+      "title": "Camps D1 backup proving clock still at zero",
+      "why_human": "BACKUP-PROVING-LOG.md and backups/d1 missing. Class D camp writes need three clean proving days. Jeff must run backup paste.",
+      "href": "reports/camps/CAMPS_REVIEW_2026-10-08.md",
+      "opened_at": "2026-10-08",
+      "opened_by": "rex-pcd-2026-10-08"
+    },
+    {
+      "id": "ranger-d1-mcp-gap-2026-10-08",
+      "source": "ranger-camps",
+      "status": "open",
+      "priority": "medium",
+      "title": "Thursday S8 blocked without D1 query path",
+      "why_human": "Camps pending-queue triage still blocked (same gap as CAMPS_REVIEW_2026-09-10). Live floor healthy; backlog unmeasured.",
+      "href": "reports/camps/CAMPS_REVIEW_2026-10-08.md",
+      "opened_at": "2026-10-08",
+      "opened_by": "rex-pcd-2026-10-08"
+    }
+  ]
 }
