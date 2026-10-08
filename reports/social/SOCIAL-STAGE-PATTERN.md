@@ -1,3 +1,30 @@
+﻿# Social: stage pattern (current)
+
+**Updated:** 2026-10-08. Draft and stage only. Jeff posts by hand. No accounts, APIs, or auto-posting from agents.
+
+## Channels now
+
+| Channel | Cadence | Pack path (Reference) | Notes |
+|---|---|---|---|
+| **Instagram** | Daily (weekday Sasha) | `...\reports\social\instagram\YYYY-MM-DD\` | Photo + `CAPTIONS.txt` + per-post `.txt`. `utm_source=instagram` |
+| **Threads** | Daily with Instagram | `...\reports\social\threads\YYYY-MM-DD\` | **Mirror of Instagram** — same photo and caption body; `utm_source=threads` |
+| **Pinterest** | Resumes week of **2026-10-13** | `...\reports\social\pinterest\YYYY-MM-DD\` | Existing folders stay; do not delete. 1000x1500 pins when cadence resumes |
+
+Reference root:
+
+`C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\`
+
+Repo fallback (if Reference unavailable): `reports/social/{instagram,threads,pinterest,instagram-media}/YYYY-MM-DD/`.
+
+Sasha procedure: `agents/pcd-social-drafter/SKILL.md`. Jeff posts Instagram and Threads from the dated packs. Nothing auto-posts.
+
+---
+
+## Historical note (2026-07 Pinterest-first draft)
+
+The section below is the original July 2026 Pinterest-only stage pattern and sample pin batch. It remains for history and pin field shapes. **Current daily requirement is Instagram + Threads**; Pinterest staging resumes the week of 2026-10-13 per the table above.
+
+---
 # Social: the one channel and the draft-and-stage pattern
 
 **Written:** 2026-07-15, distribution lane. No accounts exist and this file creates none. Everything here is draft and stage. Jeff opens the account, Jeff posts.
@@ -100,3 +127,4 @@ Every link verified HTTP 200 on 2026-07-15. Timing: tryouts are four weeks out, 
 ## What this pattern never does
 
 No account creation, no API keys, no auto-posting, no scheduling on Jeff's behalf. Staged files are inert markdown until a human pastes them. Same HUMAN GATE as the Friday Letter, same reasoning.
+

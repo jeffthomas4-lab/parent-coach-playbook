@@ -1,6 +1,6 @@
 ﻿# Social distribution drafts - 2026-10-08
 
-Phase 0, manual-post only. Nothing in this file has been posted. Catch-up for skipped 6:45 AM PT Sasha run after DESKTOP came back online. Batch: 3 Instagram-ready drafts with staged photos (Thu discussion, Fri arts volunteer, Mon/cheer resurface). Checked against SOCIAL_DRAFTS_2026-10-07 / 10-06 / 10-02 / 09-30 - no repeated source articles. Every IG post has a staged photo on disk.
+Phase 0, manual-post only. Nothing in this file has been posted. Catch-up for skipped 6:45 AM PT Sasha run after DESKTOP came back online. Batch: 3 Instagram + Threads packs with staged photos (Thu discussion, Fri arts volunteer, Mon/cheer resurface). Checked against SOCIAL_DRAFTS_2026-10-07 / 10-06 / 10-02 / 09-30 - no repeated source articles. Every IG post has a staged photo on disk. Threads packs mirrored under Reference `threads/2026-10-08` (same photos; `utm_source=threads`).
 
 Also filled missing dated publish packs for 2026-10-06 camps tip (IG+Pin) that SOCIAL_DRAFTS_2026-10-06 referenced but folders lacked.
 
@@ -23,18 +23,23 @@ Gate: Sasha drafts + Jeff posts by hand. NO auto-posting. NO account creation.
 > Scripts: https://parentcoachdesk.com/team-parent/tell-the-club-which-nights-school-owns/?utm_source=instagram&utm_medium=social&utm_campaign=2026-10-08
 
 **Platform tags:**
-- **Instagram caption:** full copy, hashtags #youthsports #sportsparent #teamparent #schoolnight
+- **Instagram + Threads caption:** full copy (Threads pack uses utm_source=threads), hashtags #youthsports #sportsparent #teamparent #schoolnight
 - **Facebook:** full copy
 - **X:** first two paragraphs + link
 - **Pinterest:** see dated pack 2026-10-08 tell-the-club-which-nights-school-owns-1000x1500
 
 **Staged image:**
-- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram-media\2026-10-08\tell-the-club-which-nights-school-owns-1080.jpg
+
+    param($m)
+    $name = $m.Groups[2].Value
+    "- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\$name`r`n- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\$name"
+  
 - Alt text: A youth athlete handoff at the curb before evening practice.
 - Dimensions: 1080x1080
 
 Also staged publish-day pack:
 - IG: ...\instagram\2026-10-08\tell-the-club-which-nights-school-owns-1080.jpg|.txt
+- Threads: ...\threads\2026-10-08\tell-the-club-which-nights-school-owns-1080.jpg|.txt
 - Pin: ...\pinterest\2026-10-08\tell-the-club-which-nights-school-owns-1000x1500.jpg|.txt
 
 ---
@@ -54,18 +59,23 @@ Also staged publish-day pack:
 > Guide: https://parentcoachdesk.com/team-parent/nutcracker-backstage-volunteer-jobs/?utm_source=instagram&utm_medium=social&utm_campaign=2026-10-08
 
 **Platform tags:**
-- **Instagram caption:** full copy, hashtags #nutcracker #danceparent #youtharts #teamparent
+- **Instagram + Threads caption:** full copy (Threads pack uses utm_source=threads), hashtags #nutcracker #danceparent #youtharts #teamparent
 - **Facebook:** full copy
 - **X:** first two paragraphs + link
 - **Pinterest:** see dated pack 2026-10-08 nutcracker-backstage-volunteer-jobs-1000x1500
 
 **Staged image:**
-- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram-media\2026-10-08\nutcracker-backstage-volunteer-jobs-1080.jpg
+
+    param($m)
+    $name = $m.Groups[2].Value
+    "- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\$name`r`n- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\$name"
+  
 - Alt text: Quiet backstage hallway before a youth recital.
 - Dimensions: 1080x1080
 
 Also staged publish-day pack:
 - IG: ...\instagram\2026-10-08\nutcracker-backstage-volunteer-jobs-1080.jpg|.txt
+- Threads: ...\threads\2026-10-08\nutcracker-backstage-volunteer-jobs-1080.jpg|.txt
 - Pin: ...\pinterest\2026-10-08\nutcracker-backstage-volunteer-jobs-1000x1500.jpg|.txt
 
 ---
@@ -85,16 +95,23 @@ Also staged publish-day pack:
 > Guide: https://parentcoachdesk.com/drive-there/october-cheer-parent-night-not-competition/?utm_source=instagram&utm_medium=social&utm_campaign=2026-10-08
 
 **Platform tags:**
-- **Instagram caption:** full copy, hashtags #allstarcheer #cheerparent #sportsparent #youthcheer
+- **Instagram + Threads caption:** full copy (Threads pack uses utm_source=threads), hashtags #allstarcheer #cheerparent #sportsparent #youthcheer
 - **Facebook:** full copy
 - **X:** first two paragraphs + link
 - **Pinterest:** see dated pack 2026-10-08 october-cheer-parent-night-not-competition-1000x1500
 
 **Staged image:**
-- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram-media\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg
+
+    param($m)
+    $name = $m.Groups[2].Value
+    "- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\$name`r`n- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\$name"
+  
 - Alt text: Empty cheer floor with parent chairs set for a showcase night.
 - Dimensions: 1080x1080
 
 Also staged publish-day pack:
 - IG: ...\instagram\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg|.txt
+- Threads: ...\threads\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg|.txt
 - Pin: ...\pinterest\2026-10-08\october-cheer-parent-night-not-competition-1000x1500.jpg|.txt
+
+
