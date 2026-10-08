@@ -29,11 +29,8 @@ Gate: Sasha drafts + Jeff posts by hand. NO auto-posting. NO account creation.
 - **Pinterest:** see dated pack 2026-10-08 tell-the-club-which-nights-school-owns-1000x1500
 
 **Staged image:**
-
-    param($m)
-    $name = $m.Groups[2].Value
-    "- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\$name`r`n- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\$name"
-  
+- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\tell-the-club-which-nights-school-owns-1080.jpg
+- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\tell-the-club-which-nights-school-owns-1080.jpg
 - Alt text: A youth athlete handoff at the curb before evening practice.
 - Dimensions: 1080x1080
 
@@ -65,11 +62,8 @@ Also staged publish-day pack:
 - **Pinterest:** see dated pack 2026-10-08 nutcracker-backstage-volunteer-jobs-1000x1500
 
 **Staged image:**
-
-    param($m)
-    $name = $m.Groups[2].Value
-    "- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\$name`r`n- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\$name"
-  
+- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\nutcracker-backstage-volunteer-jobs-1080.jpg
+- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\nutcracker-backstage-volunteer-jobs-1080.jpg
 - Alt text: Quiet backstage hallway before a youth recital.
 - Dimensions: 1080x1080
 
@@ -101,11 +95,8 @@ Also staged publish-day pack:
 - **Pinterest:** see dated pack 2026-10-08 october-cheer-parent-night-not-competition-1000x1500
 
 **Staged image:**
-
-    param($m)
-    $name = $m.Groups[2].Value
-    "- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\$name`r`n- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\$name"
-  
+- Path: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\instagram\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg
+- Threads pack: C:\Users\jefft\OneDrive\Desktop\Reference\Parent Coach Desk\01-product\app\reports\social\threads\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg
 - Alt text: Empty cheer floor with parent chairs set for a showcase night.
 - Dimensions: 1080x1080
 
@@ -113,5 +104,3 @@ Also staged publish-day pack:
 - IG: ...\instagram\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg|.txt
 - Threads: ...\threads\2026-10-08\october-cheer-parent-night-not-competition-1080.jpg|.txt
 - Pin: ...\pinterest\2026-10-08\october-cheer-parent-night-not-competition-1000x1500.jpg|.txt
-
-
