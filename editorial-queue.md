@@ -93,6 +93,7 @@ Two things changed in the machinery this pass:
 
 | Date drafted | Title | Lane | Status |
 |--------------|-------|------|--------|
+| 2026-10-09 | The November mock meet is a dress rehearsal, not a score that counts | Date lane, target 2026-11-11 (catch-up for skipped 2026-10-08 run) | drafted, status claude-reviewed, check-voice-rubric.mjs PASS, check-content-field-lengths.mjs no build-breaking; no hero (leave for Iggy), path src/content/articles/gymnastics-november-mock-meet-score.md |
 | 2026-10-06 | Winter guard and indoor drumline start when marching band ends | Date lane, target 2026-11-17 | drafted, status claude-reviewed, check-voice-rubric.mjs PASS, check-content-field-lengths.mjs no build-breaking, astro sync clean; no hero (leave for Iggy) |
 | 2026-10-05 | The hockey Thanksgiving tournament will not move for your turkey | Date lane, target 2026-11-15 | drafted, awaiting review, articles (no hero; leave for Iggy), check-voice-rubric.mjs PASS, path src/content/articles/hockey-thanksgiving-tournament-wont-move.md |
 | 2026-10-03 | Wrestling season opens: the certification calendar before the first dual | Date lane, target 2026-11-08 | drafted, awaiting review, articles (no hero; leave for Iggy), check-voice-rubric pending then PASS, path src/content/articles/wrestling-season-opens-certification-calendar.md; also revised october-cheer A6 needs-revision -> claude-reviewed |
