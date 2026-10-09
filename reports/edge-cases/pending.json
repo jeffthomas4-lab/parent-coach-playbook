@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-08",
+  "updated_at": "2026-10-09",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -21,9 +21,9 @@
       "source": "lonnie-outreach",
       "status": "open",
       "priority": "medium",
-      "title": "6 send-ready Lonnie pitches need Jeff's send click",
-      "why_human": "Lonnie hard rule: only Jeff sends outreach and sets status sent. Five have verified addresses (WIAA jkesterson@wiaa.com, info@sowa.org, aleighsa.welch@piercecountywa.gov, info@adaptivesportsnw.org, PKS_CYA@seattle.gov). WA Youth Soccer needs one call to (253) 476-2237 for Keli Bitow's email.",
-      "href": "reports/edge-cases/DESK_2026-10-08.md",
+      "title": "6 send-ready Lonnie pitches need Jeff send click",
+      "why_human": "Lonnie hard rule: only Jeff sends outreach and sets status sent. Five have verified addresses (WIAA jkesterson@wiaa.com, info@sowa.org, aleighsa.welch@piercecountywa.gov, info@adaptivesportsnw.org, PKS_CYA@seattle.gov). WA Youth Soccer needs one call to (253) 476-2237 for Keli Bitow email. All 6 still status=drafted in targets.json.",
+      "href": "reports/seo/outreach/",
       "opened_at": "2026-10-08",
       "opened_by": "rex-pcd-2026-10-08"
     },
@@ -68,6 +68,17 @@
       "resolved_at": "2026-10-08",
       "resolved_by": "rex-resolution-2026-10-08 (Jeff: do them all)",
       "resolution": "No MCP needed: npx wrangler d1 execute <db> --remote --json (SELECT only, eepskalla OAuth) works on DESKTOP for activity-radar and parent-coach-desk-ops-production. Documented in automation/agents/ranger/SKILL.md. Deferred S8 ran 2026-10-08: pending 0 (approved 1515 / rejected 1455), Camp STAR rejected, 23 awaiting_review carry-overs noted. Addendum in CAMPS_REVIEW_2026-10-08.md. Commit 64cf6b2e."
+    },
+    {
+      "id": "editorial-confidence-jeff-fragment-2026-10-09",
+      "source": "penny-editorial",
+      "status": "open",
+      "priority": "high",
+      "title": "Live confidence article truncated mid-sentence (Jeff fragment)",
+      "why_human": "src/content/articles/confidence-for-youth-athletes.md is draft:false / published but body cuts off at \"(p  — Jeff\" mid-study citation. BabyLove gap queue flagged EDITORIAL BLOCKER 2026-09-25; still present 2026-10-09. Needs Ed/Jeff rewrite before any affiliate touch.",
+      "href": "src/content/articles/confidence-for-youth-athletes.md",
+      "opened_at": "2026-10-09",
+      "opened_by": "rex-pcd-2026-10-09"
     }
   ]
 }
