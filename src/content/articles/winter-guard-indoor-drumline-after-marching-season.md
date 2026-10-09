@@ -10,6 +10,8 @@ phase: "drive-there"
 seasonPhase: "pre-season"
 sport: "band"
 age: "15-plus"
+hero: "/illustrations/band-instrument-cases-hallway.webp"
+heroAlt: "Open instrument cases line a school hallway before rehearsal with a trumpet and clarinet resting inside, one student walking toward a lit window."
 publishedAt: 2026-11-17
 featured: false
 draft: true

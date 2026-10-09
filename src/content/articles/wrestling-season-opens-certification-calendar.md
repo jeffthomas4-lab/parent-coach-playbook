@@ -10,6 +10,8 @@ phase: "drive-there"
 seasonPhase: "early"
 sport: "wrestling"
 age: "13-14"
+hero: "/illustrations/wrestling-shoes-headgear-bench.webp"
+heroAlt: "A pair of wrestling shoes and plain headgear sit on a bench beside a towel under dim gym light."
 publishedAt: 2026-11-08
 featured: false
 draft: true
