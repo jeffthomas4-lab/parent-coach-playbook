@@ -1698,6 +1698,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "No live Amazon sourcing this run (zero-product article only)."
+    },
+    {
+      "date": "2026-10-08",
+      "articleSlug": "playing-time-complaints-youth",
+      "action": "no-links-zero-products",
+      "details": "New BLG article 945341 published ~2026-10-08 evening PT / imported 2026-10-09Z (commit 6938bac3). Full body read (274 lines, complete through FAQ/Sources/Recommended, not truncated): 72-hour observe-talk-wait-request playbook, age-aware child scripts, coach meeting templates, escalation criteria, NFHS/USA Volleyball/PubMed/Dr. Gilboa citations, internal PCD links. Mentions notes app and notebook mindset only generically. One external blog link to pitchtrainingbaseball.com about youth sports equipment for home practice is a how-to article, not a buyable product storefront SKU. Pointer to /what-to-buy/training-gear/ hub only. No named brand/model gear; no competitor product storefront links. Correctly zero affiliate links. Disclosure N/A.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable; no product to source."
+    },
+    {
+      "date": "2026-10-08",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Scheduled 2026-10-08 ~10:09 PM PT run on DESKTOP (041b6bba). New BLG since 2026-10-06 10:05 PM Arnie pass: only playing-time-complaints-youth (945341, zero-product, gap-queued). No other Publish BabyLoveGrowth commits after losing-streak-youth-team. Net: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites. No ASIN fabricated. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No live Amazon sourcing this run (zero-product article only)."
     }
   ]
 }
