@@ -72,13 +72,16 @@
     {
       "id": "editorial-confidence-jeff-fragment-2026-10-09",
       "source": "penny-editorial",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "title": "Live confidence article truncated mid-sentence (Jeff fragment)",
       "why_human": "src/content/articles/confidence-for-youth-athletes.md is draft:false / published but body cuts off at \"(p  — Jeff\" mid-study citation. BabyLove gap queue flagged EDITORIAL BLOCKER 2026-09-25; still present 2026-10-09. Needs Ed/Jeff rewrite before any affiliate touch.",
       "href": "src/content/articles/confidence-for-youth-athletes.md",
       "opened_at": "2026-10-09",
-      "opened_by": "rex-pcd-2026-10-09"
+      "opened_by": "rex-pcd-2026-10-09",
+      "resolved_at": "2026-10-09",
+      "resolved_by": "catchup-2026-10-09 (Jeff approved rewrite)",
+      "resolution": "Rewrote src/content/articles/confidence-for-youth-athletes.md end to end: same slug, topic, phase, hero, externalSource. Truncated (p < ... Jeff fragment removed; dek cut to 12 words; study figures checked against DOI abstracts; Aspen 22.9% corrected to its actual survey item. check-voice-rubric PASS. No /go/ affiliate links existed or were added. Live verify pending Dana deploy."
     }
   ]
 }
