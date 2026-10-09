@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T15:21:29.261Z",
-  "count": 970,
+  "generatedAt": "2026-10-09T15:51:30.416Z",
+  "count": 975,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
@@ -996,6 +996,7 @@
     {
       "url": "https://nfhs.org/stories/coaches-should-address-playing-time-issues-ahead-of-season",
       "sources": [
+        "src/content/articles/playing-time-complaints-youth.md",
         "src/content/articles/playing-time-policy-youth.md",
         "src/content/articles/youth-sports-playing-time.md"
       ]
@@ -1212,6 +1213,12 @@
       ]
     },
     {
+      "url": "https://parenting2pt0.org/presenters/dr-deborah-gilboa/",
+      "sources": [
+        "src/content/articles/playing-time-complaints-youth.md"
+      ]
+    },
+    {
       "url": "https://parents.snapchat.com/",
       "sources": [
         "src/content/body/snapchat-snap-map-risks.md"
@@ -1238,7 +1245,8 @@
     {
       "url": "https://pitchtrainingbaseball.com/blogs/news/why-invest-in-youth-sports-equipment-a-parents-guide",
       "sources": [
-        "src/content/articles/dealing-with-sports-parents.md"
+        "src/content/articles/dealing-with-sports-parents.md",
+        "src/content/articles/playing-time-complaints-youth.md"
       ]
     },
     {
@@ -1476,6 +1484,12 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35112082/",
       "sources": [
         "src/content/articles/team-selection-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36554464/",
+      "sources": [
+        "src/content/articles/playing-time-complaints-youth.md"
       ]
     },
     {
@@ -1722,6 +1736,18 @@
       ]
     },
     {
+      "url": "https://usagym.org/women/development/",
+      "sources": [
+        "src/content/articles/gymnastics-november-mock-meet-score.md"
+      ]
+    },
+    {
+      "url": "https://usagym.org/women/rules/",
+      "sources": [
+        "src/content/articles/gymnastics-november-mock-meet-score.md"
+      ]
+    },
+    {
       "url": "https://usavolleyball.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -1747,6 +1773,12 @@
       "url": "https://usavolleyball.org/resource/simplified-youth-rules/",
       "sources": [
         "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://usavolleyball.org/resource/the-coach-parent-dynamic/",
+      "sources": [
+        "src/content/articles/playing-time-complaints-youth.md"
       ]
     },
     {
