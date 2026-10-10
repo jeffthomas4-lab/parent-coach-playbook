@@ -1718,6 +1718,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "No live Amazon sourcing this run (zero-product article only)."
+    },
+    {
+      "date": "2026-10-09",
+      "articleSlug": "run-summary",
+      "action": "verification-pass-no-insertions",
+      "details": "Catch-up of skipped 2026-10-09 evening run, executed 2026-10-10 ~06:40 PT on DESKTOP (041b6bba). No Publish BabyLoveGrowth commits after 6938bac3 (playing-time-complaints-youth, already logged zero-product). Jeff-approved rewrites cacc7893 / 2cfb4009 kept existing slugs and links; not new BLG imports. Net: 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites. No ASIN fabricated. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "No live Amazon sourcing this run (no new articles)."
     }
   ]
 }
