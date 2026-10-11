@@ -15,6 +15,11 @@ compatibility_date = "2026-07-16"
 [triggers]
 crons = ["0 14 * * 6"]
 
+# Streaming ~350 MB of rows through JSON.stringify needs well over the 30 s
+# default CPU budget. Paid plan allows up to 300000 ms for cron invocations.
+[limits]
+cpu_ms = 300000
+
 [observability]
 enabled = true
 head_sampling_rate = 1

@@ -4,6 +4,7 @@ import {
   listTables,
   dumpTable,
   pruneOldBackups,
+  streamTableToR2,
   type Env,
 } from './index';
 
@@ -30,6 +31,9 @@ function createFakeD1(tables: Record<string, FakeRow[]>, countOverride: Record<s
           return {
             results: Object.keys(tables).map((name) => ({ sql: `CREATE TABLE ${name} (id INTEGER PRIMARY KEY)` })),
           } as unknown as { results: T[] };
+        }
+        if (/^SELECT rowid FROM "[A-Za-z_][A-Za-z0-9_]*" LIMIT 1$/.test(sql)) {
+          return { results: [] } as unknown as { results: T[] };
         }
         const rowidMatch = sql.match(/FROM "([A-Za-z_][A-Za-z0-9_]*)" WHERE rowid/);
         if (rowidMatch) {
@@ -236,5 +240,30 @@ describe('pruneOldBackups', () => {
     expect(store.has('backups/2026-06-01/schema.sql')).toBe(false);
     expect(store.has('backups/2026-07-25/schema.sql')).toBe(true);
     expect(store.has('backups/backup-log.json')).toBe(true);
+  });
+});
+
+describe('streamTableToR2 (bounded memory parts)', () => {
+  it('splits a large table into bounded JSON parts that together hold every row', async () => {
+    const rows = Array.from({ length: 12345 }, (_, i) => ({ id: i }));
+    const db = createFakeD1({ organizations: rows });
+    const { bucket, store } = createFakeR2();
+    const r = await streamTableToR2(db, bucket, 'backups/2026-10-11/', 'organizations', 5000);
+    expect(r.parts).toEqual([
+      'backups/2026-10-11/organizations.json',
+      'backups/2026-10-11/organizations.part-0002.json',
+      'backups/2026-10-11/organizations.part-0003.json',
+    ]);
+    const all = r.parts.flatMap((k) => JSON.parse(store.get(k)!));
+    expect(all).toHaveLength(12345);
+    expect(r.dumpedRows).toBe(12345);
+    expect(r.countedRows).toBe(12345);
+  });
+  it('writes an empty array for an empty table', async () => {
+    const db = createFakeD1({ empty_t: [] });
+    const { bucket, store } = createFakeR2();
+    const r = await streamTableToR2(db, bucket, 'p/', 'empty_t');
+    expect(r.parts).toEqual(['p/empty_t.json']);
+    expect(store.get('p/empty_t.json')).toBe('[]');
   });
 });
