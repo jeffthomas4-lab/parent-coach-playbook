@@ -1728,6 +1728,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "No live Amazon sourcing this run (no new articles)."
+    },
+    {
+      "date": "2026-10-11",
+      "articleSlug": "basketball-practice-plan-u12",
+      "action": "gap-queued-no-insertions",
+      "details": "BLG article 952910 (commit 9ebb5ae5, live at /team-parent/basketball-practice-plan-u12/). Body read in full. Product mentions are generic only (ball bag, basic cone and pinnie set) with no brand/model. External i-trx.com and rostersports.com links are blog posts, not buyable product SKUs; NFHS/USAB/CDC are protected reference links. Generic cone/pinnie set is a candidate for a future Amazon link, but this catch-up ran without a real browser for ASIN verification, so per the HARD RULE nothing was inserted and the slot is gap-queued. 0 insertions, 0 replacements, 0 new catalog entries, 0 rewrites. Disclosure N/A. affiliates.json untouched. Never ran wrangler for this pass.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not run: no browser available this session; gap-queued (cone/pinnie set)."
     }
   ]
 }
