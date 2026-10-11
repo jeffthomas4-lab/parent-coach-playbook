@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T16:05:09.390Z",
-  "count": 974,
+  "generatedAt": "2026-10-11T21:40:35.199Z",
+  "count": 978,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
@@ -421,6 +421,7 @@
     {
       "url": "https://blog.rostersports.com/blog/communication-plan-sports-team",
       "sources": [
+        "src/content/articles/basketball-practice-plan-u12.md",
         "src/content/articles/team-selection-youth-sports.md"
       ]
     },
@@ -793,6 +794,12 @@
       ]
     },
     {
+      "url": "https://i-trx.com/post/why-every-team-parent-needs-a-youth-sports-camera",
+      "sources": [
+        "src/content/articles/basketball-practice-plan-u12.md"
+      ]
+    },
+    {
       "url": "https://ibjjf.com/",
       "sources": [
         "src/content/guides/martial-arts.md"
@@ -999,6 +1006,12 @@
         "src/content/articles/playing-time-complaints-youth.md",
         "src/content/articles/playing-time-policy-youth.md",
         "src/content/articles/youth-sports-playing-time.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/effective-practice-planning",
+      "sources": [
+        "src/content/articles/basketball-practice-plan-u12.md"
       ]
     },
     {
@@ -1569,6 +1582,12 @@
       "url": "https://stacks.cdc.gov/view/cdc/41749/cdc_41749_DS1.pdf",
       "sources": [
         "src/content/articles/hockey-practice-plan-youth.md"
+      ]
+    },
+    {
+      "url": "https://stacks.cdc.gov/view/cdc/55287",
+      "sources": [
+        "src/content/articles/basketball-practice-plan-u12.md"
       ]
     },
     {
@@ -5586,6 +5605,12 @@
       "url": "https://www.usab.com/youth/",
       "sources": [
         "src/content/body/youth-basketball-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://www.usab.com/youthguidelines",
+      "sources": [
+        "src/content/articles/basketball-practice-plan-u12.md"
       ]
     },
     {
