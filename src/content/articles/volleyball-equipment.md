@@ -35,8 +35,8 @@ Start with the three things that actually matter: court shoes, knee pads, and a 
 - **Indoor club ball (U14 and up):** a USAV-approved match ball once the lighter ball stops challenging them
 - **Court shoes:** a [volleyball court shoe](/go/volleyball-shoes-upcourt/) with a gum rubber sole; biggest performance impact for young players
 - **Knee pads:** [low-profile youth knee pads](/go/volleyball-knee-pads-youth/), age-appropriate density; skip the bulky adult versions for kids under 10
-- **Adjustable net system:** a [portable net system](/go/volleyball-net/) for practice and backyard play
-- **Starter team kit:** bulk team orders run through a school supplier rather than a single retailer
+- **Adjustable net system:** a [portable net system](/go/volleyball-net/), or [Gopher Sport](https://gophersport.com/sports/volleyball?p=10\&srsltid=AfmBOook8qorswEmdYOzCx5Nj5hv0I6YC5ZdvF5vAcGV3x3fqeGjssn5) portable systems, for practice and backyard play
+- **Starter team kit:** [BSN SPORTS](https://www.bsnsports.com/c/equipment/sports/volleyball/) bulk orders for school and club programs
 
 ## Table of Contents
 
@@ -65,8 +65,8 @@ The table below maps the nine major brands and supplier categories across the di
 | **Tachikara** | Recreation & training | — | Standard adult and youth sizes | Durable synthetic; multi-surface | Ball only | All ages; beginner to intermediate |
 | **Molten** | Indoor competition/club | — | FIVB-style panels; USAV approved | Premium composite; distinctive panel design | Ball only | U14 through adult club |
 | **Wilson** | Recreation & school programs | — | Standard adult size | Synthetic composite; broad availability | Ball only | Beginner to recreational adult |
-| **BSN SPORTS** | Bulk team orders & school/club kits | Varies; bulk pricing | Full team kit options | Full catalog: balls, nets, apparel | Catalog ordering | All levels; school and club |
-| **Gopher Sport** | Training aids & school programs | — | Portable net systems; adjustable heights | Durable steel/aluminum frames | High; portable systems | Youth programs through adult rec |
+| **[BSN SPORTS](https://www.bsnsports.com/c/equipment/sports/volleyball/)** | Bulk team orders & school/club kits | Varies; bulk pricing | Full team kit options | Full catalog: balls, nets, apparel | Catalog ordering | All levels; school and club |
+| **[Gopher Sport](https://gophersport.com/sports/volleyball)** | Training aids & school programs | — | Portable net systems; adjustable heights | Durable steel/aluminum frames | High; portable systems | Youth programs through adult rec |
 | **All Volleyball** | Individual buyers & curated gear | Varies by product | Wide selection; buyer guides included | Mixed; curated for quality | Retail shipping | All ages |
 | **Gold Medal** | Facility net systems & gym installation | — | Competition-quality; fixed/portable | Heavy-duty steel; long-term durability | Low; facility-grade | Club through competitive |
 | **Under Armour** | Performance apparel & training wear | — | Team apparel; technical fabrics | Moisture-wicking synthetic | Apparel only | Youth through adult |

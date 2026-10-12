@@ -405,6 +405,43 @@ function ensureCompleteSentence(value: string): string {
   return /[.!?…]$/.test(clean) ? clean : `${clean}.`;
 }
 
+
+/**
+ * Clip provider text to `max` characters at a sentence boundary.
+ *
+ * WHY THIS EXISTS (2026-10-12). Dek and bluf used to be cut with
+ * `slice(max).replace(/\s+\S*$/, '')` and then given a period by
+ * ensureCompleteSentence, which turned a mid-sentence cut into a fake
+ * sentence: "...a checklist, the scripts, and a realistic." and
+ * "...to keep." shipped on five live articles. Never invent a sentence
+ * end: keep only whole sentences, and if not even the first sentence
+ * fits, return '' so the caller falls back to something that does.
+ */
+export function clipToSentences(value: string, max: number): string {
+  const clean = value.replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return ensureCompleteSentence(clean);
+  const head = clean.slice(0, max + 1);
+  const re = /[.!?…]["')\]]?(?=\s)/g;
+  let end = -1;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(head)) !== null) {
+    if (m.index + m[0].length <= max) end = m.index + m[0].length;
+  }
+  return end > 0 ? clean.slice(0, end).trim() : '';
+}
+
+/**
+ * True when `clipped` looks like a cut of `source` that was dressed up
+ * with a period: the text minus its final punctuation is a prefix of the
+ * source, and the source does not end a sentence at that point.
+ */
+export function looksTruncated(clipped: string, source: string): boolean {
+  const a = clipped.replace(/\s+/g, ' ').trim().replace(/[.!?…]+$/, '');
+  const b = source.replace(/\s+/g, ' ').trim();
+  if (!a || !b.startsWith(a) || b.length === a.length) return false;
+  return !/^[.!?…]/.test(b.slice(a.length));
+}
+
 /**
  * Clean a provider-authored summary field for display.
  *
@@ -483,7 +520,10 @@ function articleOpening(article: BabyLoveArticle): string {
 function articleBluf(article: BabyLoveArticle): string {
   const paragraph = articleOpening(article);
   const value = paragraph || seoDescription(article);
-  return ensureCompleteSentence(value.slice(0, 500).replace(/\s+\S*$/, ''));
+  const clipped = clipToSentences(value, 480);
+  if (clipped && !looksTruncated(clipped, value)) return clipped;
+  // First sentence alone was over the cap: use the description instead of a cut.
+  return seoDescription(article);
 }
 
 interface HeroChoice {
@@ -691,12 +731,12 @@ export function buildBabyLoveArticleMarkdown(article: BabyLoveArticle, payloadSh
   // The unconditional `.replace(/\s+\S*$/, '')` ate the last word of every dek
   // ever imported, whether or not it hit the 220 limit: the live basketball
   // article read "ready to run." where the source said "ready to run today."
-  const trimmed = dekSource.length > 220
-    ? dekSource.slice(0, 220).replace(/\s+\S*$/, '')
-    : dekSource;
-  const dekCandidate = ensureCompleteSentence(removeDanglingEnding(trimmed));
+  // Whole sentences only (see clipToSentences); never a cut dressed as one.
+  const dekCandidate = clipToSentences(dekSource, 200);
   // The schema floor for dek is 20 characters.
-  const dek = dekCandidate.length >= 20 ? dekCandidate : ensureCompleteSentence(description);
+  const dek = dekCandidate.length >= 20 && !looksTruncated(dekCandidate, dekSource)
+    ? dekCandidate
+    : (clipToSentences(description, 200) || ensureCompleteSentence(description));
   const publishedAt = article.createdAt.slice(0, 10);
   return `---\n` +
     `title: ${yamlQuote(article.title)}\n` +

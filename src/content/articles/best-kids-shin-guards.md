@@ -60,7 +60,7 @@ Retailer roundups consistently name a short list of guards across three price ba
 
 | Product | Best for | Protection technology | Fit & sizing | Ankle support | Comfort | Price |
 |---|---|---|---|---|---|---|
-| [G-Form V2 Soccer Shin Guard (Youth)](/go/g-form-v2-shin-guards-youth/) | Midfielders, speedy players wanting mobility | SmartFlex impact-absorbing (hardens on impact) | Integrated compression sleeve; youth S–XL | No | Breathable, moisture-wicking, low bulk | $$ |
+| [G-Form V2 Soccer Shin Guard (Youth)](https://g-form.com/products/v2-soccer-shin-guard-youth) | Midfielders, speedy players wanting mobility | SmartFlex impact-absorbing (hardens on impact) | Integrated compression sleeve; youth S–XL | No | Breathable, moisture-wicking, low bulk | $$ |
 | [Nike Youth Charge Shin Guard](https://www.nike.com/t/charge-kids-soccer-shin-guards-HhL7nH) | Defenders, physical players | Hard plastic shell + foam back | Strap closure; standard youth sizing | No | Foam-backed, lightweight shell | $$ |
 | [Hackk Soccer Youth Shin Guards](https://www.hackksoccer.com/products/hackk-soccer-shin-guards) | Parents prioritizing stay-put comfort | Hard shell + EVA foam backing | Contoured shape; youth-specific | No | EVA foam, ergonomic contour | $ |
 | Northdeer Soccer shin guards | Families buying multiple pairs | Basic hard shell | Standard slip-in; youth/adult combo | No | Basic padding | $ |

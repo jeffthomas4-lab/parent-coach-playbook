@@ -86,24 +86,30 @@
     {
       "id": "editorial-blg-truncated-deks-2026-10-12",
       "source": "penny-editorial",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "title": "5 live BabyLoveGrowth imports have truncated deks/blufs",
       "why_human": "Live public copy ends mid-thought (e.g. switching-teams bluf ends \"...and a realistic.\"). Articles: switching-teams-youth-sports, halftime-snacks-youth-soccer, hockey-practice-plan-youth, team-selection-youth-sports, reward-systems-youth-sports. Repeats the confidence/playing-time/basketball pattern, so the BLG import step likely cuts these fields. Needs Jeff OK to rewrite (like the earlier fixes) and a look at the import cut.",
       "href": "src/content/articles/",
       "opened_at": "2026-10-12",
-      "opened_by": "rex-pcd-2026-10-12"
+      "opened_by": "rex-pcd-2026-10-12",
+      "resolved_at": "2026-10-12",
+      "resolved_by": "rex-resolution-2026-10-12 (Jeff approved all)",
+      "resolution": "All 5 rewritten (dek/bluf + body), facts re-checked, check-voice-rubric PASS. Importer fixed: clipToSentences/looksTruncated in src/lib/babylove-growth.ts; new guard scripts/check-truncated-summaries.mjs runs in npm run build and fails on any new truncation. 36 older articles remain in scripts/truncated-summaries-baseline.json as a known backlog."
     },
     {
       "id": "babylove-partner-links-missing-2026-10-12",
       "source": "babylove",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "title": "Partner exchange links missing from 3 BLG articles",
       "why_human": "scripts/check-babylove-partner-links.mjs fails: playing-time-complaints-youth lost https://parenting2pt0.org/presenters/dr-deborah-gilboa/ (dropped in the Jeff-approved rewrite); best-kids-shin-guards lost https://g-form.com/products/v2-soccer-shin-guard-youth; volleyball-equipment lost 3 gophersport/bsnsports links. Exchange partners expect placement to stay live. Restore or accept removal is an owner call.",
       "href": "scripts/check-babylove-partner-links.mjs",
       "opened_at": "2026-10-12",
-      "opened_by": "rex-pcd-2026-10-12"
+      "opened_by": "rex-pcd-2026-10-12",
+      "resolved_at": "2026-10-12",
+      "resolved_by": "rex-resolution-2026-10-12 (Jeff approved all)",
+      "resolution": "Restored g-form link (best-kids-shin-guards comparison table) and gophersport x2 + bsnsports links (volleyball-equipment); all URLs returned 200 on 2026-10-12. Gilboa link on playing-time-complaints-youth intentionally not restored (Jeff), so check-babylove-partner-links.mjs still reports that one."
     },
     {
       "id": "nora-gsc-browser-2026-10-12",
@@ -111,7 +117,7 @@
       "status": "open",
       "priority": "low",
       "title": "Nora GSC report needs a signed-in browser run",
-      "why_human": "No GSC API credential or script; prior reports came from a signed-in browser. Skipped this catch-up rather than script the signed-in session. Needs Jeff to open GSC or approve a browser run (last report 2026-10-05).",
+      "why_human": "No GSC API credential or script; prior reports came from a signed-in browser. Skipped this catch-up rather than script the signed-in session. Needs Jeff to open GSC or approve a browser run (last report 2026-10-05). Jeff 2026-10-12: he will run Nora in the browser himself.",
       "href": "reports/seo/gsc-review-2026-10-12-SKIPPED.md",
       "opened_at": "2026-10-12",
       "opened_by": "rex-pcd-2026-10-12"
