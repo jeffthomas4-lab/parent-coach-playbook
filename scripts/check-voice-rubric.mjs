@@ -170,7 +170,16 @@ function checkFile(path) {
   }
 
   // B: banned words and phrases, across frontmatter strings and body.
-  const searchable = `${frontmatter}\n${body}`.toLowerCase();
+  // URLs and link targets are addresses, not prose: a source's slug can carry
+  // a banned word we cannot change without breaking the link. Strip markdown
+  // link targets, autolinks, href/src attributes, and bare URLs. Link text
+  // and all other prose still count.
+  const stripUrls = (s) => s
+    .replace(/\]\([^)\s]*(?:\s+"[^"]*")?\)/g, ']()')
+    .replace(/<https?:\/\/[^>\s]+>/gi, '')
+    .replace(/\b(?:href|src)\s*=\s*("[^"]*"|'[^']*')/gi, '')
+    .replace(/https?:\/\/[^\s)\]"'<>|]+/gi, '');
+  const searchable = stripUrls(`${frontmatter}\n${body}`).toLowerCase();
   BANNED_WORDS.forEach((word) => {
     const re = new RegExp(`\\b${word.replace(/[-]/g, '\\-')}\\b`, 'gi');
     const hits = (searchable.match(re) || []).length;
