@@ -145,7 +145,7 @@ When a talk with the coach doesn't settle a concern, a calm written process beat
 2. If it's still unresolved, follow up in writing with a short, factual summary and your remaining concern.
 3. If there's still no answer, ask for a meeting with the athletic director or league administrator, and bring records instead of frustration.
 
-Useful records include attendance logs, any stats or rubric the coach shared, past messages, and the preseason policy. Our [fair rotation plan guide](/blog/youth-sports-playing-time/) covers this path in more depth.
+Useful records include attendance logs, any stats or rubric the coach shared, past messages, and the preseason policy. Our [fair rotation plan guide](/game/youth-sports-playing-time/) covers this path in more depth.
 
 If a program keeps contradicting its own written policy after all of that, a different team or a rec league may be a better fit for your child. That's a last resort, not a first move.
 
@@ -233,6 +233,6 @@ It's a common practice of waiting at least a day after a game before raising pla
 
 ## Recommended
 
-- [Youth Sports Playing Time: A Fair Rotation Plan](/blog/youth-sports-playing-time/)
-- [3 Postgame Scripts to Motivate Kids](/blog/motivating-kids-in-sports/)
-- [Parent Coach Ethics: Sideline Pledge](/blog/parent-coach-ethics/)
+- [Youth Sports Playing Time: A Fair Rotation Plan](/game/youth-sports-playing-time/)
+- [3 Postgame Scripts to Motivate Kids](/drive-home/motivating-kids-in-sports/)
+- [Parent Coach Ethics: Sideline Pledge](/game/parent-coach-ethics/)

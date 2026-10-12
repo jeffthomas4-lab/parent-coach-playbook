@@ -45,7 +45,7 @@ StopBullying.gov defines [bullying](https://www.stopbullying.gov/bullying/what-i
 
 That distinction changes the response, not whether you care. A mutual argument may call for conflict support. Repeated exclusion, threats, humiliation, or physical targeting calls for a safeguarding and conduct response.
 
-If this sounds like a teammate dispute rather than targeting, the coach-facing guide to [player conflict](/coaches/when-players-have-conflict-with-each-other/) explains why mediation belongs only in the mutual-conflict lane.
+If this sounds like a teammate dispute rather than targeting, the coach-facing guide to [player conflict](/team-parent/when-players-have-conflict-with-each-other/) explains why mediation belongs only in the mutual-conflict lane.
 
 ## Send facts through the safeguarding route
 

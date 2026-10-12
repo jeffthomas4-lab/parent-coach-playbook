@@ -49,7 +49,7 @@ If they will not say, email the league. You are allowed to know it.
 
 ## When and how to ask about minutes
 
-Do not open the [playing-time conversation](/drive-home/how-to-talk-to-the-coach-about-playing-time/) after week one. Wait four weeks.
+Do not open the [playing-time conversation](/drive-there/how-to-talk-to-the-coach-about-playing-time/) after week one. Wait four weeks.
 
 Ask what she needs to work on to play more. Do not ask why she is not playing.
 
@@ -61,7 +61,7 @@ Do not tell your kid the coach is unfair. That story hardens fast and helps nobo
 
 ## Then decide if the team fits
 
-If your kid barely leaves the bench in an open-sub league, read [always on the bench](/drive-home/when-your-kid-is-always-on-the-bench/) for the longer view.
+If your kid barely leaves the bench in an open-sub league, read [always on the bench](/game/when-your-kid-is-always-on-the-bench/) for the longer view.
 
 The rule is the rule. The coach's choices sit inside it.
 

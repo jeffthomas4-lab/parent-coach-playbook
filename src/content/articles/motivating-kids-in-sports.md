@@ -173,6 +173,6 @@ Watch your kid's body language before and after practice. Avoidance, flat answer
 
 ## Recommended
 
-- [3 Step Postgame Talk: Car Ride Scripts](/blog/post-game-talk/)
-- [15 to 45 Second Pregame Talk for Youth Sports with Age Ready Scripts](/blog/pregame-talk-youth-sports/)
+- [3 Step Postgame Talk: Car Ride Scripts](/drive-home/post-game-talk/)
+- [15 to 45 Second Pregame Talk for Youth Sports with Age Ready Scripts](/drive-there/pregame-talk-youth-sports/)
 - [The 10-Minute Parent Meeting Script Every Coach Can Use](/team-parent/10-minute-parent-meeting-script/)

@@ -177,7 +177,7 @@ For a parent-coach, the urge to protect your own kid competes with your duty to 
 
 ## Recommended
 
-- [Parent Coach Ethics: Sideline Pledge](/blog/parent-coach-ethics/)
+- [Parent Coach Ethics: Sideline Pledge](/game/parent-coach-ethics/)
 - [The Late Pickup Problem: A Parent Coach's Guide](/team-parent/late-pickup-problem-parent-coach-guide/)
 - [Dealing With Sports Parents](/game/dealing-with-sports-parents/)
 - [How to coach your own kid fairly - the test that works](/drive-home/coaching-your-own-kid-fairly/)

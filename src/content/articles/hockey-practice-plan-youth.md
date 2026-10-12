@@ -178,6 +178,6 @@ USA Hockey's program structure sets a 70/30 practice-to-game ratio at 10U and 12
 
 ## Recommended
 
-- [Parent Toolkit: 5 Immediate Steps for Youth Sports Safety](/blog/youth-sports-safety/)
-- [Goalkeeper Drills Youth Coaches Can Run in 30 Minutes](/blog/goalkeeper-drills-youth/)
-- [Parent Coaches: Youth Goalie Drills Ready to Run in 30–45 Minutes](/blog/youth-goalie-drills/)
+- [Parent Toolkit: 5 Immediate Steps for Youth Sports Safety](/game/youth-sports-safety/)
+- [Goalkeeper Drills Youth Coaches Can Run in 30 Minutes](/game/goalkeeper-drills-youth/)
+- [Parent Coaches: Youth Goalie Drills Ready to Run in 30–45 Minutes](/team-parent/youth-goalie-drills/)

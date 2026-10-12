@@ -168,7 +168,7 @@ Yes. Your child finishes the CDC's step-by-step return and gets medical clearanc
 
 ## Recommended
 
-- [6 Youth Volleyball Serving Drills](/blog/youth-volleyball-serving-drills/)
-- [Youth Volleyball Practice Plan](/blog/youth-volleyball-practice-plan/)
-- [Youth Volleyball Drills: 15 Fun](/blog/youth-volleyball-drills/)
+- [6 Youth Volleyball Serving Drills](/game/youth-volleyball-serving-drills/)
+- [Youth Volleyball Practice Plan](/game/youth-volleyball-practice-plan/)
+- [Youth Volleyball Drills: 15 Fun](/game/youth-volleyball-drills/)
 - [Club Volleyball: What Parents Need to Know Before Signing Up](/drive-there/club-volleyball-what-parents-need-to-know/)

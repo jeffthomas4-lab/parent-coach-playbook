@@ -61,7 +61,7 @@ July is the leak. Nationals and fly-out weekends mean the longest trips and the 
 
 Regional schedules and national fly-out schedules are not the same sport financially. The difference can be thousands in one summer.
 
-Run [your club's fees](/cost-calculator/) before tryout season. Read [should my kid play travel sports](/drive-there/should-my-kid-play-travel-sports/) before a coach decides for you at all-stars.
+Run [your club's fees](/cost-calculator/) before tryout season. Read [should my kid play travel sports](/decisions/should-my-kid-play-travel-sports/) before a coach decides for you at all-stars.
 
 Cross-sport context is in [what youth sports cost](/drive-there/what-youth-sports-cost/). The split from baseball is in [when softball splits from baseball](/drive-there/when-softball-splits-from-baseball/).
 

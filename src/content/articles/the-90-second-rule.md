@@ -97,4 +97,4 @@ If they are done, let the game be done. A parent does not have to extract a less
 
 When you return to it, stay with one moment. Do not stack three corrections because you waited overnight. One useful conversation is still one conversation.
 
-Our longer [car ride home guide](/drive-home/car-ride-home-what-parents-should-say/) covers wins, losses, playing time, and the kid who says nothing. The short version fits on the dashboard: warmth first, review later, mostly less talking.
+Our longer [car ride home guide](/team-parent/car-ride-home-what-parents-should-say/) covers wins, losses, playing time, and the kid who says nothing. The short version fits on the dashboard: warmth first, review later, mostly less talking.

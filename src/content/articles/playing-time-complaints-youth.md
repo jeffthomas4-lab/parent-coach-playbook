@@ -88,7 +88,7 @@ Know which one your kid is on before you judge the minutes. Coaches also weigh f
 
 [USA Volleyball](https://usavolleyball.org/resource/the-coach-parent-dynamic/) passes along sport psychologist Frank Smoll's advice that coaches hold a pre-season or early-season parent meeting to explain their methods. Skipped one? Share our guide to [the parent meeting every coach should hold](/team-parent/parent-meeting-every-coach-should-hold/).
 
-For what fair rotation looks like at each level, see our [playing-time rotation plan](/blog/youth-sports-playing-time/).
+For what fair rotation looks like at each level, see our [playing-time rotation plan](/game/youth-sports-playing-time/).
 
 ## Why the way you handle it matters
 
@@ -98,9 +98,9 @@ So protect your child's say in the goal, pair every criticism with one doable ne
 
 ## Scripts for the rest of the season
 
-Our full guide to [handling playing time complaints without damaging relationships](/team-parent/how-to-handle-playing-time-complaints/) goes deeper, with phrasing for the quiet coach, the defensive coach, and the coach who only answers by email. For the drive home, use the [3-step postgame talk](/blog/post-game-talk/) or these [postgame scripts to motivate kids](/blog/motivating-kids-in-sports/).
+Our full guide to [handling playing time complaints without damaging relationships](/team-parent/how-to-handle-playing-time-complaints/) goes deeper, with phrasing for the quiet coach, the defensive coach, and the coach who only answers by email. For the drive home, use the [3-step postgame talk](/drive-home/post-game-talk/) or these [postgame scripts to motivate kids](/drive-home/motivating-kids-in-sports/).
 
-Tryouts bring their own version of this fight, and our [tryout results email templates](/blog/tryout-results-email-youth/) cover it. New to all of this? Start with the [first-year sports parent guide](/drive-there/first-year-sports-parent-guide/), or browse more at [Parent Coach Desk](/).
+Tryouts bring their own version of this fight, and our [tryout results email templates](/drive-there/tryout-results-email-youth/) cover it. New to all of this? Start with the [first-year sports parent guide](/drive-there/first-year-sports-parent-guide/), or browse more at [Parent Coach Desk](/).
 
 ## FAQ
 

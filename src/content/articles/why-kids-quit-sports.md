@@ -57,7 +57,7 @@ Do not promise a fix you cannot deliver. If the coach is the problem and there i
 
 Recovery is not a reward for playing well. The same AAP report advises at least one rest day each week and two to three months away from a specific sport across the year. That guidance is a planning reference, not a diagnosis for an individual child.
 
-For a coach or team leader trying to improve the environment, the separate guide on [why kids quit and how coaches can prevent it](/coaches/why-kids-quit-sports-how-coaches-prevent-it/) addresses practice design, feedback, and belonging. This page stays with the parent's decision at home.
+For a coach or team leader trying to improve the environment, the separate guide on [why kids quit and how coaches can prevent it](/team-parent/why-kids-quit-sports-how-coaches-prevent-it/) addresses practice design, feedback, and belonging. This page stays with the parent's decision at home.
 
 ## Know when stopping is the answer
 

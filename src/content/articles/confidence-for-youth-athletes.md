@@ -70,7 +70,7 @@ Before the game, keep it short: "Have fun. I love watching you play." Skip the l
 
 During the game, cheer for effort and stay quiet on everything else. Sideline coaching puts a second voice in your kid's ear, and it competes with the coach's.
 
-After the game, use the script. Ask the question, let them answer, and wait for them to bring up the bad moments themselves. Our [3-step postgame talk](/blog/post-game-talk/) has car-ride scripts for the days they want to replay every play, and [3 postgame scripts to motivate kids](/blog/motivating-kids-in-sports/) covers the days they go quiet.
+After the game, use the script. Ask the question, let them answer, and wait for them to bring up the bad moments themselves. Our [3-step postgame talk](/drive-home/post-game-talk/) has car-ride scripts for the days they want to replay every play, and [3 postgame scripts to motivate kids](/drive-home/motivating-kids-in-sports/) covers the days they go quiet.
 
 ## How the script changes by age
 
@@ -113,4 +113,4 @@ Praise specific effort, offer small choices, and answer mistakes with one correc
 
 ### Does Parent Coach Desk have scripts for this?
 
-Yes. Start with the [3-step postgame talk](/blog/post-game-talk/), which has word-for-word car-ride scripts for after a game.
+Yes. Start with the [3-step postgame talk](/drive-home/post-game-talk/), which has word-for-word car-ride scripts for after a game.

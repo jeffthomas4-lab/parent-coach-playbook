@@ -11,6 +11,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
 // since individual camp detail pages change less often than the directory.
 // Admin edits will reflect within the hour, or sooner if cache is purged.
+import { THIN_HUB_MIN } from '../../lib/seo-thresholds';
 export const prerender = false;
 Astro.response.headers.set(
   'Cache-Control',
@@ -341,6 +342,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
     title={`Summer camps in ${stateNameForSlug}`}
     description={`${stateTotalCamps} reviewed camp listings across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
     canonical={stateCanonical}
+    noindexFollow={stateTotalCamps < THIN_HUB_MIN}
   >
     {stateBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(stateBreadcrumbSchema)} />}
     <section class="section-band">

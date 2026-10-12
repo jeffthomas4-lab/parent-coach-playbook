@@ -129,7 +129,7 @@ Add a neutral player or passive defender only once the basic pattern is solid, t
 
 [U.S. Soccer's Beginner Volunteer Coach Survival Guides](https://www.ussoccer.com/soccer-forward/resource-hub/beginner-volunteer-coach-survival-guides) tell first-time coaches to prioritize fun and age-appropriate progressions over technical perfection, which is why the drills above scale by age instead of demanding one standard.
 
-For more on structuring a full season, Parent Coach Desk's [first season of youth soccer guide](/drive-there/first-season-of-youth-soccer/) and [goalkeeper drills for youth coaches](/blog/goalkeeper-drills-youth/) round out a complete practice plan.
+For more on structuring a full season, Parent Coach Desk's [first season of youth soccer guide](/drive-there/first-season-of-youth-soccer/) and [goalkeeper drills for youth coaches](/game/goalkeeper-drills-youth/) round out a complete practice plan.
 
 ## A Note From the Sideline
 
@@ -179,5 +179,5 @@ No. [Cones](/go/agility-cones-set/), a few [balls](/go/soccer-ball-size4/), and 
 ## Recommended
 
 - [Goalkeeper Drills Youth Coaches Can Run](/game/goalkeeper-drills-youth/)
-- [Parent Coaches: Youth Goalie Drills Ready to Run in 30–45 Minutes](/blog/youth-goalie-drills/)
+- [Parent Coaches: Youth Goalie Drills Ready to Run in 30–45 Minutes](/team-parent/youth-goalie-drills/)
 - [Coaching 7–9 Year Olds: The Golden Age of Youth Sports](/team-parent/coaching-7-9-year-olds-golden-age-youth-sports/)
