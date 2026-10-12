@@ -1,13 +1,6 @@
 {
   "note": "Known truncated dek/bluf backlog (2026-10-12). Rewrite, then remove the entry.",
   "files": [
-    "src/content/articles/coach-pitch-drills.md",
-    "src/content/articles/coach-vs-kid-pitch.md",
-    "src/content/articles/concussion-protocol-youth-sports.md",
-    "src/content/articles/dealing-with-sports-parents.md",
-    "src/content/articles/favoritism-coaching-your-child.md",
-    "src/content/articles/flag-football-drills.md",
-    "src/content/articles/goalkeeper-drills-youth.md",
     "src/content/articles/growth-mindset-youth-sports.md",
     "src/content/articles/losing-streak-youth-team.md",
     "src/content/articles/motivating-kids-in-sports.md",
