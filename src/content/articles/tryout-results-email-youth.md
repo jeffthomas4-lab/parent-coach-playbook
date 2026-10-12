@@ -1,9 +1,9 @@
 ---
 title: "Youth Tryout Results Emails: Templates + 6 Item Checklist"
 seoTitle: "Youth Tryout Results Emails"
-seoDescription: "Templates and short call scripts for youth tryout results emails—made, not selected, waitlist—plus a six item send checklist coaches can drop into their..."
-dek: "Templates and short call scripts for youth tryout results emails—made, not selected, waitlist—plus a six item send checklist coaches can drop."
-bluf: "Call the families whose kids didn't make it, whenever you have the staff to do it, and email everyone else with a message written for that one child, not a mail merge. Send it inside the window you promised at registration, never later. Every message, whether spoken or typed, opens with the outcome, then a specific observation, then a real next step, because that order is what keeps a hard conversation from becoming a longer."
+seoDescription: "Templates and short call scripts for youth tryout results emails (made, not selected, waitlist), plus a six-item send checklist for coaches."
+dek: "Outcome first, one real observation, then a next step."
+bluf: "Call the families whose kids didn't make it when you have the staff, and email everyone else a message written for that one child. Send it inside the window you promised at registration. Every message opens with the outcome, then a specific observation, then a real next step."
 topic: "tryouts"
 format: "essay"
 phase: "drive-there"
@@ -20,9 +20,10 @@ externalSource:
   importedAt: "2026-08-31T05:00:18.536Z"
 editorial:
   status: published
-  citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  citationCheckPassed: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Rewritten 2026-10-12 (Jeff approved backlog): fixed truncated dek/bluf; Signature Locker vendor blog no longer described as research/findings; dropped unsupported 'fewer placement complaints' claim; Centro privacy and translation guidance verified; em dashes removed (incl. seoDescription)."
 ---
+
 
 Call the families whose kids didn't make it, whenever you have the staff to do it, and email everyone else with a message written for that one child, not a mail merge. Send it inside the window you promised at registration, never later. Every message, whether spoken or typed, opens with the outcome, then a specific observation, then a real next step, because that order is what keeps a hard conversation from becoming a longer one.
 
@@ -53,7 +54,7 @@ Call the families whose kids didn't make it, whenever you have the staff to do i
 
 ## Choosing Between a Phone Call, In-Person Talk, or Tryout Results Email
 
-Not every family needs the same channel, and treating them identically is where most programs lose trust. The decision usually comes down to who is affected and how much staff bandwidth you have on results night.
+Not every family needs the same channel, and treating them all alike is where programs lose trust. It comes down to who's affected and how much staff you have on results night.
 
 - **Call first** for bubble players who were close to making the roster, for anyone whose parent has already flagged concerns during tryouts, and for opt-in situations like All-Star selections where the answer carries extra weight.
 - **Email is fine** for the majority of results, made and not made alike, as long as each message is individualized and comes from a named coach or director, not a generic "team office" address.
@@ -66,30 +67,38 @@ Phone calls take longer, but for the families closest to the cut line, that time
 
 A published results window does more work than any single well-written email. Families who know when to expect an answer stop refreshing their inbox and stop calling the front desk.
 
-1. **Publish the window at registration.** State it plainly: "You'll hear from us within 48 to 72 hours of final tryouts," or name an exact date. Centro's tryout guide recommends tabulating scores within a set period so this promise is realistic, not aspirational.
+1. **Publish the window at registration.** State it plainly: "You'll hear from us within 48 to 72 hours of final tryouts," or name an exact date. Build in enough time to tabulate scores so the promise is realistic.
 2. **Send a holding message that same evening** if decisions aren't ready. A short "we're finalizing rosters and you'll hear by Thursday" note prevents most of the anxious follow-up calls a delayed decision invites.
 3. **Set a check-in cadence for waitlisted families**, weekly or by a fixed date, and stick to it even when there's no news to report.
 4. **Document acceptance deadlines and refund or withdrawal instructions** in the same message, so families aren't hunting for a policy buried in a handbook.
 
 ## Email Templates for Every Tryout Outcome
 
-Every version follows the same skeleton: outcome first, one or two specific observations, a concrete next step, then a name and contact for questions. Leading with the decision matters more than it sounds. [TeamGenius's guidance on delivering hard tryout news](https://teamgenius.com/how-to-tell-a-player-they-didnt-make-the-lacrosse-team/) points out that families can't absorb feedback until they know where they stand, so bury the outcome and you just get a longer, more anxious reply.
+Every version follows the same skeleton: outcome first, one or two specific observations, a concrete next step, then a name and contact for questions.
+
+Leading with the decision matters more than it sounds. Families can't absorb feedback until they know where they stand, and [TeamGenius's guidance on delivering hard tryout news](https://teamgenius.com/how-to-tell-a-player-they-didnt-make-the-lacrosse-team/) is built around being direct. Bury the outcome and you get a longer, more anxious reply.
 
 **Made the team:**
 
-"Hi [Parent], [Player] has earned a spot on the [team name] roster this season. We were impressed by [specific observation, e.g., her footwork at the net and how she communicated on defense]. To confirm the spot, please submit the $[X] deposit and signed waiver by [date]. First practice is [date/time/location]. Questions go straight to me at [phone/email]."
+"Hi [Parent], [Player] has earned a spot on the [team name] roster this season. We were impressed by [specific observation, e.g., her footwork at the net and how she communicated on defense].
+
+To confirm the spot, please submit the $[X] deposit and signed waiver by [date], and first practice is [date/time/location]. Questions go straight to me at [phone/email]."
 
 **Not selected:**
 
-"Hi [Parent], [Player] was not selected for the [team name] roster this tryout cycle. This wasn't close on effort. [One specific strength observed] stood out, and [one specific area] is what separated this roster at this level. We'd love to see [Player] at [development clinic/rec team/next tryout date]. I'm glad to talk through what to work on before then."
+"Hi [Parent], [Player] was not selected for the [team name] roster this tryout cycle. Effort was never the issue: [one specific strength observed] stood out, and [one specific area] is what separated this roster at this level.
+
+We'd love to see [Player] at [development clinic/rec team/next tryout date], and I'm glad to talk through what to work on before then."
 
 **Waitlist:**
 
-"Hi [Parent], [Player] is on the waitlist for [team name], ranked based on tryout evaluations. If a roster spot opens, we'll contact you by phone within 24 hours, and you'll have until [deadline] to accept. We expect to know more by [date]. I'll update you either way even if nothing changes."
+"Hi [Parent], [Player] is on the waitlist for [team name], ranked based on tryout evaluations. If a roster spot opens, we'll call you within 24 hours, and you'll have until [deadline] to accept.
+
+We expect to know more by [date]. I'll update you either way."
 
 **Pro Tip:** *Keep these three templates in a shared doc every assistant coach can access. Swapping in the child's name and two real observations takes ninety seconds, and it beats writing each email from scratch at 10 p.m. after a long tryout night.*
 
-Notice none of these templates apologize or hedge. [Signature Locker's research on placement emails](https://signaturelocker.com/blogs/program-directors-playbook/the-3-things-families-hear-in-every-placement-email) found that pairing the decision with a forward-looking narrative specific to that child, not boilerplate reassurance, is what keeps a "no" from reading as a permanent verdict.
+Notice none of these templates apologize or hedge. [Signature Locker's piece on placement emails](https://signaturelocker.com/blogs/program-directors-playbook/the-3-things-families-hear-in-every-placement-email) argues that pairing the decision with a forward-looking narrative specific to that child, not boilerplate reassurance, is what keeps a "no" from reading as a permanent verdict.
 
 ## Handling the Phone Call or In-Person Conversation
 
@@ -113,11 +122,11 @@ The results email lands so much better when families already know the shape of t
 
 - **In your registration confirmation**, state how many teams you're forming, roster sizes, the evaluation criteria you'll use, and the exact timeline for results.
 - **Publish the refund and withdrawal policy** in the same place, with clear instructions on how to submit a request.
-- **Reference those published criteria in the results message itself.** Signature Locker's findings show programs that communicate criteria upfront and stay in touch across the season get fewer placement complaints, because nothing in the final email feels like a surprise.
+- **Reference those published criteria in the results message itself.** When criteria are public from the start, nothing in the final email feels like a surprise.
 
 ## A Coach-Ready Checklist for Sending Results
 
-Here's the sequence, borrowed from Centro's operational framework for tryout communication, that keeps a volunteer staff from missing a step on a chaotic results night.
+This sequence, adapted from Centro's framework for tryout communication, keeps a volunteer staff from missing a step on a chaotic results night.
 
 - Finalize the roster and fee structure.
 - Decide delivery mode for each family: call or email.
@@ -137,7 +146,9 @@ For age-specific wording on development conversations, Parent Coach Desk's guide
 
 ## Why Private, Prompt Messages Keep Families Coming Back
 
-Retention isn't decided at the championship banquet, as explored in [The Real Role of Testimonials in Sports Training](https://pitchtrainingbaseball.com/blogs/news/role-of-testimonials-in-sports-training), which highlights how timely, respectful communication builds lasting trust. It's decided the moment a family reads a results email that either respected them or didn't. A boilerplate "thank you for trying out" note, sent to everyone regardless of outcome, tells a parent their child was a line item. A message with one true detail about their kid tells them you were actually watching.
+Retention isn't decided at the championship banquet. It's decided the moment a family reads a results email that either respected them or didn't, a point that echoes [The Real Role of Testimonials in Sports Training](https://pitchtrainingbaseball.com/blogs/news/role-of-testimonials-in-sports-training) on trust.
+
+A boilerplate "thank you for trying out" note, sent to everyone regardless of outcome, tells a parent their child was a line item. A message with one true detail about their kid tells them you were actually watching.
 
 The programs that keep their rosters full year after year aren't the ones with the best win record. They're the ones whose families never felt handled. Write the email you'd want to receive about your own kid, then send it on time.
 
@@ -151,7 +162,7 @@ Pair the templates with the site's age-specific guides, coaching 7 to 9 year old
 
 - [How to Communicate Tryout Results to Families | Centro](https://withcentro.com/blog/communicate-tryout-results-families)
 - [How to Tell a Player They Didn't Make the Lacrosse Team | TeamGenius](https://teamgenius.com/how-to-tell-a-player-they-didnt-make-the-lacrosse-team/)
-- [The 3 Things Families Hear in Every Placement Email – Signature Locker](https://signaturelocker.com/blogs/program-directors-playbook/the-3-things-families-hear-in-every-placement-email)
+- [The 3 Things Families Hear in Every Placement Email | Signature Locker](https://signaturelocker.com/blogs/program-directors-playbook/the-3-things-families-hear-in-every-placement-email)
 
 ## Recommended
 
