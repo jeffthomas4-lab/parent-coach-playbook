@@ -2,8 +2,8 @@
 title: "15 to 45 Second Pregame Talk for Youth Sports with Age Ready Scripts"
 seoTitle: "15 to 45 Second Pregame Talk"
 seoDescription: "Age aware pregame scripts and delivery tips. Ready 15–45 second lines, fill in blank template, and research based tips to calm kids. Practical guidance…"
-dek: "Say this in the car or at the sideline: \"Play hard, play smart, have fun. One play at a time.\" Keep it short, deliver it calm and steady, and stop talking before your child stops listening. The rest of this guide gives."
-bluf: "Say this in the car or at the sideline: \"Play hard, play smart, have fun. One play at a time.\" Keep it short, deliver it calm and steady, and stop talking before your child stops listening. The rest of this guide gives you the exact words for different ages, roles, and nerve levels, plus how to say them so they."
+dek: "Keep it short, keep it calm, and stop before they stop listening."
+bluf: "Say this in the car or at the sideline: \"Play hard, play smart, have fun. One play at a time.\" Keep it short, deliver it calm and steady, and stop talking before your child stops listening. This guide gives you the exact words for different ages, roles, and nerve levels."
 topic: "rec-vs-travel"
 format: "essay"
 phase: "drive-there"
@@ -20,9 +20,10 @@ externalSource:
   importedAt: "2026-09-16T03:30:39.124Z"
 editorial:
   status: published
-  citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  citationCheckPassed: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Rewritten 2026-10-12 (Jeff approved backlog): fixed truncated dek/bluf; USA Football link reframed as a coach's advice, not research; Frontiers CPCQ-P claim corrected (delivery is a separate factor; study did not find 'calm, authentic' preference); removed dangling unlinked 'sports psychology overview' reference."
 ---
+
 
 Say this in the car or at the sideline: "Play hard, play smart, have fun. One play at a time." Keep it short, deliver it calm and steady, and stop talking before your child stops listening. The rest of this guide gives you the exact words for different ages, roles, and nerve levels, plus how to say them so they actually land.
 
@@ -33,7 +34,7 @@ Say this in the car or at the sideline: "Play hard, play smart, have fun. One pl
 > - Short, simple pregame messages focused on effort and fun outperform detailed pep talks, reducing athlete overload and pre-competition anxiety.
 > - Script content should be tailored by age, with younger children needing one focus and older athletes benefiting from involving them in decision-making.
 > - Delivery style matters equally to words, requiring calm, confident, and authentic communication that matches the child's energy level.
-> - The two-minute pregame checklist emphasizes connecting, permission, one focus, breathing, and a familiar closing to build confidence and calm nerves.
+> - The two-minute pregame checklist covers connecting, permission, one focus, breathing, and a familiar closing to build confidence and calm nerves.
 > - For team huddles or captain prompts, a clear, one-tactical and one-emotional message in under 20 seconds enhances effectiveness without overwhelming athletes.
 
 ***
@@ -53,7 +54,7 @@ Say this in the car or at the sideline: "Play hard, play smart, have fun. One pl
 
 ## What Should a Pregame Talk for Youth Sports Actually Sound Like?
 
-A pregame talk works when it's short, specific, and delivered without tension in your voice. Research on youth athletes backs this up directly: [simple three point messages](https://blogs.usafootball.com/blog/4849/3-things-to-tell-your-child-before-the-game) like "play hard, play smart, have fun" beat long, detailed pep talks because they reduce overload instead of adding to it. Below are ready scripts for parents and coaches, organized by situation.
+A pregame talk works when it's short, specific, and delivered without tension in your voice. A longtime youth coach writing for USA Football calls his [three-point message](https://blogs.usafootball.com/blog/4849/3-things-to-tell-your-child-before-the-game), "play hard, play smart, have fun," simple and powerful, and short beats long because it doesn't pile on more to think about. Below are ready scripts for parents and coaches, organized by situation.
 
 **Parent scripts:**
 
@@ -73,7 +74,7 @@ A pregame talk works when it's short, specific, and delivered without tension in
 
 ## How Do You Adjust a Pregame Talk by Age?
 
-The right words for a seven-year-old will fall flat, or worse, add pressure, for a fourteen-year-old. Age changes both the content and how much control you hand over.
+The words that work for a seven-year-old fall flat with a fourteen-year-old, or add pressure. Age changes the content.
 
 1. **Ages 7 to 9:** Keep it under 15 words and pick exactly one focus, like "have fun and try your best." Kids this age are still learning what the game even is, so skip strategy entirely. A workable script: "Go have fun. I'll be watching." For more on this stage, see [Coaching 7 to 9 Year Olds: The Golden Age of Youth Sports](/team-parent/coaching-7-9-year-olds-golden-age-youth-sports/).
 2. **Ages 10 to 12:** Stretch to one or two focuses and start asking a single question that hands them some ownership, such as "What's one thing you want to work on today?" A workable script: "Play hard, play smart, have fun. What's your focus?" See [Coaching 10 to 12 Year Olds: Preparing Kids for Competitive Sports](/team-parent/coaching-10-12-year-olds-competitive-prep/) for more detail.
@@ -83,9 +84,9 @@ Asking that one question, whatever the age bracket, matters more than the words 
 
 ## Does Delivery Matter More Than the Words You Choose?
 
-Delivery carries close to as much weight as the script itself. Research on precompetitive coach communication found that [athletes respond to calm, authentic confidence](https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1615784/full) from the person talking to them, not volume or intensity.
+Delivery carries close to as much weight as the script. A 2025 study of college athletes treated [how a pregame speech is delivered](https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1615784/full) as its own factor, separate from what the coach says, and our experience is that calm confidence lands better than volume.
 
-Match your child's energy rather than overriding it. A wound up kid usually needs you calmer than they are; a flat, sluggish kid might need a touch more energy, not a lecture.
+Match your child's energy instead of overriding it. A wound-up kid needs you calmer than they are, and a flat, sluggish kid needs a touch more energy, not a lecture.
 
 - Make eye contact and keep your hands still. Fidgeting reads as nerves, even when your words say otherwise.
 - Say less than you planned. If you rehearsed three points, cut it to one.
@@ -102,7 +103,7 @@ Print this or save it to your phone. Run through it in the car, at the two-minut
 - **Breathing cue:** One slow breath together before you finish talking.
 - **Closing reminder:** A short line they've heard before, so it feels familiar, not new.
 
-Fill-in-the-blank template: "I love watching you play. I'm proud of __________. One thing for today: __________."
+Fill-in-the-blank template: "I love watching you play, and I'm proud of __________. One thing for today: __________."
 
 | Setting | Best moment to use it | Ideal length |
 |---|---|---|
@@ -114,15 +115,15 @@ Fill-in-the-blank template: "I love watching you play. I'm proud of __________. 
 
 Coaching style shapes how nervous a young athlete feels before competing. A study on coaching climates found that a [mastery-oriented style focused on effort and learning](https://doi.org/10.1515/afepuc-2016-0011) produces lower pre-competitive anxiety than an ego-oriented style built around winning and comparison.
 
-Delivery matters as much as content, according to the validation work behind the Coach Precompetitive Communication Questionnaire, which found athletes rate [calm, authentic delivery](https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1615784/full) as central to how ready they feel.
+Delivery shows up in the research too, and it matters. The validation work behind the Coach Precompetitive Communication Questionnaire found that athletes' preferences for [speech delivery](https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1615784/full) form their own factor, apart from tactical and emotional content.
 
-- Athletes commonly report pregame speeches boost confidence and focus, based on [a University of Essex thesis on pregame speeches in basketball](https://repository.essex.ac.uk/33279/1/CLutz_PhD_Viva_Corrections_Final.pdf).
+- Athletes say pregame speeches help, per [a University of Essex thesis on pregame speeches in basketball](https://repository.essex.ac.uk/33279/1/CLutz_PhD_Viva_Corrections_Final.pdf).
 - That same research notes objective performance effects are mixed, so treat pregame talks as a tool for psychological readiness, not a guaranteed scoreboard change.
-- Content preference shifts with context: athletes often want more [tactical information against an unfamiliar opponent and more emotional content against a rival](https://doi.org/10.1111/j.0021-9029.2006.00049.x).
+- Content preference shifts with context: athletes want more [tactical information against an unfamiliar opponent and more emotional content against a rival](https://doi.org/10.1111/j.0021-9029.2006.00049.x).
 
 ## Quick Coach Huddle and Captain Prompts
 
-For coaches running a two-minute team huddle right before first whistle, a tight structure keeps everyone locked in without dragging on.
+Running a two-minute huddle before the whistle? Use a tight structure.
 
 1. **Open (5 seconds):** "Bring it in. Eyes here."
 2. **One tactical point (10 to 15 seconds):** Name a single adjustment, like "Box out on every rebound."
@@ -133,13 +134,13 @@ Hand this off to a captain when the team responds better to a peer than an adult
 
 ## What Parent Coach Desk believes About Pregame Words
 
-We built this guidance around one idea: the relationship comes first, the score comes second. Age-aware, honest communication beats a rehearsed speech every time.  Explore our [confidence-building guide](/team-parent/how-to-build-confidence-in-young-athletes/) for more on what steadies young athletes long term.
+We built this guidance around one idea: the relationship comes first, the score comes second. Honest words beat a speech. Explore our [confidence-building guide](/team-parent/how-to-build-confidence-in-young-athletes/) for more on what steadies young athletes long term.
 
 ## Grab the Printable Pregame Scripts and Age Guides
 
 Parent Coach Desk gives you the exact words, not just the theory. That's the real difference from generic sports-parenting advice you'll find elsewhere: every script here is built to match a specific age and a specific nervous system, not a generic "just relax" line.
 
-If your child is between 7 and 9, our golden age coaching guide walks through exactly how to talk to them before, during, and after games. If they're 10 to 12 and stepping into more competitive play, the 10 to 12 coaching guide covers how to adjust your language as the stakes rise. For a deeper look at the psychology behind why calm delivery works, this sports psychology overview is worth a read.
+If your child is between 7 and 9, our golden age coaching guide walks through exactly how to talk to them before, during, and after games. If they're 10 to 12 and stepping into more competitive play, the 10 to 12 coaching guide covers how to adjust your language as the stakes rise.
 
 Download the printable one-page pregame scripts sheet, browse the full [scripts library](/scripts/), and join the Parent Coach Desk newsletter for a fresh script and a short coaching checklist every month, delivered straight to your inbox.
 
@@ -166,7 +167,7 @@ There's no single "best" speech. What works is matching a short script, like a 2
 
 ### What are some inspirational messages for young athletes?
 
-Messages that emphasize effort and enjoyment over outcome tend to lower pre-game anxiety more than messages focused on winning or comparison to others.
+Messages about effort and enjoyment over outcome tend to lower pre-game anxiety more than messages focused on winning or comparison to others.
 
 ### How long should a pregame talk be?
 
