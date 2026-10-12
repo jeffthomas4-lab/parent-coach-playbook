@@ -1,9 +1,9 @@
 ---
 title: "Youth Volleyball Practice Plan: Ready-to-Run Templates"
 seoTitle: "Youth Volleyball Practice Plan"
-seoDescription: "Unlock your coaching potential with engaging youth volleyball practice plans. Explore ready-to-run templates for players aged 8-14!. Practical guidance…"
-dek: "Unlock your coaching potential with engaging youth volleyball practice plans. Explore ready-to-run templates for players aged 8-14!. Practical."
-bluf: "For beginners and younger players (ages 8–12), a 60-minute block plan is the right call. For middle and early high school groups (ages 13–14), step up to a 90-minute version. Both follow the same five-block structure recommended by USA Volleyball's lesson plans and validated by CoachingVB's first-practice framework: a dynamic warm-up with a ball, a priority skill block, a secondary skill block, a gamelike small-sided finish, and a cool-down huddle. Here is the template you can copy right."
+seoDescription: "Ready-to-run 60 and 90-minute youth volleyball practice plans for ages 8 to 14, with drills, progressions, and setup checklists."
+dek: "Ready-to-run 60 and 90-minute volleyball practices for ages 8 to 14."
+bluf: "Run a 60-minute block plan for ages 8 to 12 and a 90-minute version for ages 13 to 14. Both use five blocks: a dynamic warm-up with a ball, a priority skill, a secondary skill, a gamelike small-sided finish, and a cool-down huddle."
 topic: "communication"
 format: "essay"
 phase: "game"
@@ -20,12 +20,15 @@ externalSource:
   importedAt: "2026-08-14T06:30:13.323Z"
 editorial:
   status: published
-  citationCheckPassed: false
+  citationCheckPassed: true
   affiliateDisclosurePresent: true
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Rewritten 2026-10-12 (Jeff approved backlog): fixed truncated dek/bluf and seoDescription; five-block structure no longer attributed to USA Volleyball (its lesson plans support gamelike, random, whole training and scoring formats, which are now cited); 5-8 minute blocks re-attributed to HoopsKing citing USAV instead of JoinStriveOn; unsourced attention-span minutes and YMCA Denver framework removed; net heights replaced with JoinStriveOn 10U range and USA Volleyball division ranges plus league-check note; Art of Coaching claim matched to its page; first-person passage rewritten; rubric fixes."
 ---
 
-For beginners and younger players (ages 8–12), a 60-minute block plan is the right call. For middle and early high school groups (ages 13–14), step up to a 90-minute version. Both follow the same five-block structure recommended by [USA Volleyball's lesson plans](https://usavolleyball.org/resources-for-coaches/lesson-plans/) and validated by [CoachingVB's first-practice framework](https://coachingvb.com/first-volleyball-practice-plan/): a dynamic warm-up with a ball, a priority skill block, a secondary skill block, a gamelike small-sided finish, and a cool-down huddle. Here is the template you can copy right now:
+
+For beginners and younger players (ages 8 to 12), run a 60-minute block plan, and step up to 90 minutes for ages 13 to 14. Both use five blocks: warm-up with a ball, priority skill, secondary skill, small-sided game, and cool-down huddle.
+
+That fits the gamelike approach in [USA Volleyball's lesson plans](https://usavolleyball.org/resources-for-coaches/lesson-plans/) and the 60- or 90-minute shape of [CoachingVB's first-practice plan](https://coachingvb.com/first-volleyball-practice-plan/). Copy this template:
 
 - **0–10 min:** Dynamic warm-up with ball (jog, shuffle, toss-and-catch, or underhand pass in pairs)
 - **10–25 min:** Priority skill (serving or passing, depending on week focus)
@@ -33,9 +36,9 @@ For beginners and younger players (ages 8–12), a 60-minute block plan is the r
 - **40–55 min:** Gamelike play (2v2 or 3v3 small-sided game with whiteboard scoring)
 - **55–60 min:** Cool-down huddle (two things we did well, one thing to work on next time)
 
-Before players arrive, do three things: set out one ball per two players and check net height for the age group, write three session objectives and a scoring format on your whiteboard, and assign two player roles (ball shagger and rotation caller) so transitions run themselves.
+Before players arrive, set out one ball per two players and check net height. Write three session objectives and a scoring format on your whiteboard, and assign a ball shagger and a rotation caller so transitions run themselves.
 
-*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+*This post contains affiliate links, and we earn a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -47,7 +50,7 @@ A structured, gamelike youth volleyball practice plan with timed blocks, whitebo
 |-------|---------|
 | Choose the right length | Use a 60-minute plan for ages 8–12; step up to 90 minutes for ages 13–14. |
 | Write three objectives first | Post measurable session goals on the whiteboard before players arrive so every block has a purpose. |
-| Score every drill | Whiteboard scoring turns isolated reps into competitive grills and raises engagement across all age groups. |
+| Score every drill | Whiteboard scoring turns isolated reps into competitive games and raises engagement across all age groups. |
 | Progress in four steps | Reduce constraints, add decision-making, increase speed or pressure, then add competition to advance any drill. |
 | Parentcoachdesk templates | The 60-minute practice blueprint and printable tools give parent-coaches ready-to-run scripts they can use tonight. |
 
@@ -71,9 +74,9 @@ A structured, gamelike youth volleyball practice plan with timed blocks, whitebo
 
 The best youth volleyball practice plan is not a list of drills. It is a timed sequence that keeps every player touching a ball almost continuously, limits your talking to under 30 seconds per teaching point, and ends with a competitive game so players leave wanting to come back.
 
-[HoopsKing's tested 60-minute structure](https://hoopsking.com/blogs/default-blog/60-minute-youth-volleyball-practice-plan) breaks it into five timed blocks: 10 minutes of warm-up, 15 minutes of ball control, 15 minutes of serving and serve-receive, 15 minutes of gamelike play, and a 5-minute cool-down. That rhythm works because it matches young players' attention spans and keeps the energy from sagging in the middle of practice.
+[HoopsKing's 60-minute structure](https://hoopsking.com/blogs/default-blog/60-minute-youth-volleyball-practice-plan) breaks it into five timed blocks: 10 minutes of warm-up, 15 minutes of ball control, 15 minutes of serving and serve-receive, 15 minutes of gamelike play, and a 5-minute cool-down. That rhythm keeps energy from sagging in the middle of practice.
 
-The single biggest mistake parent-coaches make is spending too long on one drill, which can cause engagement to drop. Rotate, score it, or move on.
+HoopsKing calls running one skill in isolation for 20 minutes the most common mistake. Rotate, score it, or move on.
 
 ### Two ready-to-run scripts: 60 and 90 minutes
 
@@ -94,7 +97,7 @@ The single biggest mistake parent-coaches make is spending too long on one drill
 5. **72–82 min | Serve-receive competition.** Two passers, one server. First passer to 10 perfect passes wins. Coach tracks on the whiteboard.
 6. **82–90 min | Cool-down + feedback.** Coach shares one team win and one focus for next practice. Players stretch in a circle.
 
-**Pro Tip:** *Set a whiteboard scoreboard before players arrive. When drills have a score, players self-regulate effort and you spend less time managing behavior. USA Volleyball's coaches tools consistently point to scored, time-limited drills as the highest-retention format for youth players.*
+**Pro Tip:** *Set a whiteboard scoreboard before players arrive. When drills have a score, players manage their own effort and you spend less time managing behavior. USA Volleyball's lesson plans suggest scoring formats like "highest number in a row" or "how many in X minutes."*
 
 ### Keeping transitions tight
 
@@ -108,7 +111,7 @@ Dead time is where practices fall apart. Use these two-line scripts to move play
 
 ## How to build a 4-week preseason plan you can actually follow
 
-A four-week preseason plan gives your team a skill arc instead of a random collection of practices. Each week has one primary focus, and every session within that week reinforces it before adding something new.
+A four-week preseason plan gives your team a skill arc instead of a random collection of practices. Each week has one focus.
 
 | Week | Focus | Key Drill | Game Finish |
 |------|-------|-----------|-------------|
@@ -120,7 +123,7 @@ A four-week preseason plan gives your team a skill arc instead of a random colle
 **Week-by-week breakdown:**
 
 - **Week 1 (Preseason, contact and organization).** Every session starts with a ball in players' hands within two minutes of arrival. Focus on platform passing and court awareness. Measurable outcome: each player can sustain a 10-pass rally with a partner by Friday.
-- **Week 2 (Serve and serve-receive emphasis).** Add short-court serving in every session. Pair a server with two passers and track successful passes to target. Measurable outcome: 60% of serves land in the target zone; 50% of passes reach the setter target.
+- **Week 2 (Serve and serve-receive focus).** Add short-court serving in every session. Pair a server with two passers and track successful passes to target. Measurable outcome: 60% of serves land in the target zone; 50% of passes reach the setter target.
 - **Week 3 (Setting and attack introduction).** Introduce the setter role and a basic outside approach. Keep hitting reps short and controlled. Measurable outcome: players can complete a pass-set-hit sequence without stopping between contacts.
 - **Week 4 (Transition and competition).** Run free-ball transition drills and finish every session with a scored game. Measurable outcome: teams can run three consecutive successful transitions (pass-set-hit) in a live rally.
 
@@ -130,19 +133,25 @@ A four-week preseason plan gives your team a skill arc instead of a random colle
 - **3 practices per week:** Follow the plan as written. Use the third session of each week as a competition day (small-sided games only, no isolated drills).
 - **Tournament weeks:** Cut isolated drill work by half. Spend 70% of practice time on gamelike play and serve-receive. Save energy for match day.
 
-The [JoinStriveOn template library](https://joinstriveon.com/blog/volleyball-practice-plan) recommends 5–8 minute drill blocks for players under 12, which means your Week 1 and 2 sessions should run shorter blocks with more rotations rather than longer, deeper skill work.
+HoopsKing's guide cites USA Volleyball's lesson plans for short 5 to 8 minute drill blocks for players under 12. For younger groups, run Weeks 1 and 2 with shorter blocks and more rotations.
+
+The [JoinStriveOn template library](https://joinstriveon.com/blog/volleyball-practice-plan) adds templates by age group.
 
 ***
 
 ## How do you adjust practice plans by age and level?
 
-Age changes everything: attention span, ball type, net height, and how much technical instruction players can absorb in one session. Here is a practical breakdown for the three brackets you are most likely coaching.
+Age changes everything: attention span, ball type, net height, and how much technical instruction players can absorb in one session. Use the three brackets below.
 
 ### Ages 8–9: elementary level
 
-Players this age need a ball in their hands within the first two minutes and a new activity every five to six minutes. Use a [Volley LITE](/go/volleyball-volley-lite/) or a softer training ball to reduce fear of contact and build confidence faster. Net height at this level is typically 6 feet (check your league's specific rules, as local YMCA and recreational leagues may vary).
+Players this age need a ball in their hands within two minutes and short activity blocks. Use a [Volley LITE](/go/volleyball-volley-lite/) or a softer training ball to cut fear of contact.
 
-**Attention span:** 5–6 minutes per activity. **Recommended practice length:** 45–60 minutes. **Ball-to-player ratio:** 1 ball per 2 players minimum.
+JoinStriveOn's 10U guidance lists a lower net, about 6 feet 6 inches to 7 feet, but check your league's rules.
+
+| Activity block | Practice length | Balls |
+|---|---|---|
+| 5 to 8 minutes | 45 to 60 minutes | 1 per 2 players minimum |
 
 **One-week microplan (ages 8–9):**
 
@@ -150,15 +159,19 @@ Players this age need a ball in their hands within the first two minutes and a n
 - **Day 2:** Partner underhand pass, short triangle toss, 2v2 game with a low net or rope
 - **Day 3:** Review passing, add a target cone, finish with a team rally-count challenge
 
-For this age group, the YMCA of Greater Denver's practice framework uses circle tosses, short triangles, and 2v2 small-sided games to maximize touches and keep lines nonexistent.
+Circle tosses, short triangles, and 2v2 games keep touches high and lines short.
 
 ### Ages 10–12: middle elementary to middle school
 
-This is the bracket where gamelike drills matter most. [The Art of Coaching Volleyball recommends](https://www.theartofcoachingvolleyball.com/strategies-for-coaching-10-year-old-volleyball-players/) minimizing isolated technical repetition and maximizing movement, multiple-contact drills, and controlled chaos to keep sessions engaging and decision-making active. Paired and trio progressions work better than lines.
+This is the bracket where gamelike drills matter most. [The Art of Coaching Volleyball](https://www.theartofcoachingvolleyball.com/strategies-for-coaching-10-year-old-volleyball-players/) advises minimizing technical practice and maximizing drills for this age, and managing the chaos instead of fighting it.
 
-**Attention span:** 7–10 minutes per activity. **Recommended practice length:** 60–75 minutes. **Ball-to-player ratio:** 1 ball per 2 players.
+Pairs and trios beat lines.
 
-Net height for this age group varies by league and setting, often around 7 feet for both girls and boys in recreational play. Always verify with your specific league. Always confirm with your league coordinator before practice.
+| Activity block | Practice length | Balls |
+|---|---|---|
+| 5 to 10 minutes | 60 to 75 minutes | 1 per 2 players |
+
+Confirm net height with your league coordinator.
 
 **One-week microplan (ages 10–12):**
 
@@ -168,7 +181,7 @@ Net height for this age group varies by league and setting, often around 7 feet 
 
 ### Ages 13–14: early high school
 
-Players at this level can handle longer blocks, more complex progressions, and genuine competition. Use a regulation ball and full net height as established by your sport's governing standards. Practices typically last longer at this level, featuring multiple skill blocks.
+Players at this level can handle longer blocks, more complex progressions, and real competition. Use a regulation ball and your league's full net height, and plan for 90 minutes with several skill blocks.
 
 **One-week microplan (ages 13–14):**
 
@@ -176,15 +189,15 @@ Players at this level can handle longer blocks, more complex progressions, and g
 - **Day 2:** Attack approach and arm swing, setter decision-making, 5v5 with setter in
 - **Day 3:** Full 6v6 scrimmage with coach-inserted free balls, serve-receive competition, debrief
 
-The [Parentcoachdesk 13–14 practice plan](/game/13-14-practice/) goes deeper on respecting older players' time and how to structure sessions that feel purposeful rather than repetitive.
+The [Parentcoachdesk 13–14 practice plan](/game/13-14-practice/) covers sessions that respect older players' time.
 
-**Equipment note for all ages:** When you do not have the right net height, use a rope or a bungee cord stretched between two poles or standards. It works. Players adapt quickly, and the contact quality stays high.
+**Equipment note for all ages:** When you do not have the right net height, use a rope or a bungee cord stretched between two poles or standards. Players adapt fast.
 
 ***
 
 ## A drill bank organized by skill
 
-Good drills are specific. Each entry below includes the objective, setup, one coaching cue, a progression step, and a time recommendation. USA Volleyball's coaches tools emphasize whole-training combinations (pass-set-hit) and scored, time-limited grills over isolated repetition, and that philosophy runs through every drill here.
+Good drills are specific, so each entry lists the objective, setup, one cue, a progression, and a time. USA Volleyball's lesson plans favor random over blocked training and whole over partial training, like pass-set-hit, and that thinking runs through every drill here.
 
 ### Serving drills
 
@@ -298,15 +311,14 @@ Good drills are specific. Each entry below includes the objective, setup, one co
 
 ## How do you progress drills and measure player growth?
 
-A progression framework keeps your practices from plateauing. The four-step model below works for almost any drill in the bank above.
+A progression framework keeps practices from plateauing, and this four-step model fits almost any drill above.
 
-**Step 1: Reduce constraints.** Start with a toss instead of a serve. Use a softer ball. Shorten the court. Remove the net if needed. The goal is successful contacts, not perfect technique.
-
-**Step 2: Add decision-making.** Give players a choice: pass to target A or target B depending on where the ball goes. Add a second defender. Let the setter call the set.
-
-**Step 3: Increase speed or pressure.** Shorten the time limit. Add a server instead of a toss. Increase the scoring target. Reduce rest between reps.
-
-**Step 4: Add scoring and competition.** Turn the drill into a scored grill. Track results on the whiteboard. Let teams compete for a small reward (choice of cool-down game, for example).
+| Step | What to change | Examples |
+|---|---|---|
+| 1. Reduce constraints | Aim for successful contacts, not perfect technique | Toss instead of serve, softer ball, shorter court, no net |
+| 2. Add decision-making | Give players a choice | Pass to target A or B, add a second defender, setter calls the set |
+| 3. Increase speed or pressure | Make it harder to execute | Shorter time limit, live server, higher scoring target, less rest |
+| 4. Add scoring and competition | Turn it into a game | Whiteboard results, small reward like choosing the cool-down game |
 
 ### Concrete progressions by age
 
@@ -316,19 +328,21 @@ A progression framework keeps your practices from plateauing. The four-step mode
 
 ### Measuring progress simply
 
-You do not need a spreadsheet. Three metrics work well on a whiteboard:
+You do not need a spreadsheet. Track three on a whiteboard:
 
 - **Serves in a row:** How many consecutive serves land in the target zone? Track the team record and try to beat it each week.
 - **10-pass rally:** How long can a pair sustain a rally? Set a team goal and post the best result.
 - **Pass-to-target percentage:** Out of 10 passes, how many reach the setter's hands? Write the number after each block.
 
-When a drill is failing (players are missing more than half their reps), step back one level in the progression. If the pass-set-hit sequence is breaking down, go back to pass-and-set with a toss. Regression is not failure. It is good coaching.
+When players miss more than half their reps, step back one level. If pass-set-hit breaks down, return to pass-and-set with a toss.
+
+That's good coaching.
 
 ***
 
 ## Practice management, communication, and building a team culture
 
-The structure of your practice matters. So does the feeling inside it. Players who feel safe to fail learn faster, and that feeling comes from the routines you build in the first two weeks.
+The structure of your practice matters. So does how it feels to the kids inside it, week after week. Players who feel safe to fail learn faster, and the routines you build in the first two weeks create that feeling.
 
 **Arrival routine checklist:**
 
@@ -348,27 +362,29 @@ The structure of your practice matters. So does the feeling inside it. Players w
 
 ### Safety and injury prevention
 
-Youth volleyball carries specific risks: finger jams from poor ball-handling form, ankle rolls from landing on another player's foot, and shoulder strain from premature overhead serving. A few practical steps reduce those risks significantly.
+Youth volleyball carries specific risks: finger jams from poor ball-handling form, ankle rolls from landing on another player's foot, and shoulder strain from overhead serving too early. A few steps help.
 
-Start every practice with a dynamic warm-up, not static stretching. Jogging, shuffling, arm circles, and light ball-handling prepare the body better than holding a stretch for 30 seconds. For older players (ages 12 and up) who are beginning to jump and attack, a brief plyometric progression before hitting reps is worth the five minutes. The [plyometric exercises guide from HTK Training](https://htktrainingco.wpcomstaging.com/2026/07/31/plyometric-exercises-for-athletes) offers a practical framework for age-appropriate power development you can adapt into your warm-up.
+Start every practice with a dynamic warm-up of jogging, shuffling, arm circles, and light ball-handling instead of static stretching. For players 12 and up who are starting to jump and attack, add a brief plyometric progression before hitting reps.
 
-Keep court spacing generous. When running station drills, make sure players are not swinging or jumping into each other's space. For any exact medical guidance on youth sports injury prevention, refer to your league's governing body or a licensed athletic trainer.
+The [plyometric exercises guide from HTK Training](https://htktrainingco.wpcomstaging.com/2026/07/31/plyometric-exercises-for-athletes) has ideas.
+
+Keep court spacing generous so players aren't swinging or jumping into each other's space. For exact medical guidance on youth sports injury prevention, refer to your league's governing body or a licensed athletic trainer.
 
 ### Team-building activities (3–5 minutes, no skill work lost)
 
 - **Rally-count challenge:** Whole team in a circle, count how many consecutive contacts without a drop. Beat the record each week.
 - **Name game:** Players call a teammate's name before passing to them. Builds communication and court awareness simultaneously.
-- **Compliment circle:** End-of-practice huddle where each player names one thing a teammate did well. Takes three minutes and changes the culture of a team.
+- **Compliment circle:** End-of-practice huddle where each player names one thing a teammate did well. Takes three minutes.
 
-These activities are not filler. They teach the communication habits that make volleyball work. The [Parentcoachdesk mental skills resources](/mental-skills/) go deeper on building player confidence and emotional resilience, which is where team culture actually lives.
+These activities aren't filler; they teach the communication habits volleyball runs on. Our [mental skills resources](/mental-skills/) go deeper on confidence and resilience.
 
-**Communicating with parents:** Set expectations at the first practice. Tell parents what the session structure looks like, what you are measuring, and how they can help at home (encourage their child to practice the wall-setting drill for five minutes a day). A short parent meeting script, like the one at [Parentcoachdesk's 10-minute parent meeting guide](/team-parent/10-minute-parent-meeting-script/), takes the pressure off that first conversation.
+**Communicating with parents:** At the first practice, tell parents how sessions run, what you're measuring, and how they can help at home, like five minutes of wall setting a day. A short parent meeting script, like the one at [Parentcoachdesk's 10-minute parent meeting guide](/team-parent/10-minute-parent-meeting-script/), takes the pressure off that first conversation.
 
 ***
 
 ## Equipment and court setup checklist
 
-Getting the court ready before players arrive is one of the highest-leverage things you can do as a parent-coach. A well-set court signals that practice is organized and intentional. Players settle in faster.
+Getting the court ready before players arrive is one of the best uses of your time. A well-set court signals an organized practice, and players settle in faster.
 
 **Packing list:**
 
@@ -394,11 +410,11 @@ For a full age-appropriate gear breakdown, the [Parentcoachdesk volleyball gear 
 
 | Age group | Net height (girls) | Net height (boys) | Ball recommendation |
 |-----------|-------------------|-------------------|---------------------|
-| 8–9 | 6 ft 0 in | 6 ft 0 in | Volley LITE or soft training ball |
-| 10–12 | 7 ft 0 in | 7 ft 0 in | Volley LITE or youth ball |
-| 13–14 | 7 ft 4 1/8 in | 7 ft 11 5/8 in | Regulation ball |
+| 8–10 | About 6 ft 6 in to 7 ft | About 6 ft 6 in to 7 ft | Volley LITE or soft training ball |
+| 11–12 | 7 ft to 7 ft 4 1/8 in | 7 ft to 7 ft 4 1/8 in | Volley LITE or youth ball |
+| 13–14 | 7 ft 4 1/8 in | 7 ft 4 1/8 in to 7 ft 11 5/8 in, by age division | Regulation ball |
 
-*Always confirm net heights with your specific league or governing body before the season begins, as recreational and school-sport standards can differ from USA Volleyball's official heights.*
+*Confirm net heights with your league before the season. Recreational and school standards differ from USA Volleyball's official heights.*
 
 **Running practice with limited equipment:**
 
@@ -431,7 +447,7 @@ SCOREBOARD FORMAT: ___________
 COOL-DOWN: ___________________
 ```
 
-Print one copy per practice and keep it on your clipboard. Save a photo to your phone as a backup. If you have a volunteer parent helping, hand them the sheet and point them to their station.
+Print one copy per practice for your clipboard and save a photo to your phone. Volunteer helping? Hand them the sheet.
 
 **What to put on your whiteboard before players arrive:**
 
@@ -441,21 +457,27 @@ Print one copy per practice and keep it on your clipboard. Save a photo to your 
 
 **Adapting templates into a shared Google Sheet:**
 
-Copy the one-page template into a Google Sheet with one tab per practice. Share the sheet with any assistant coaches or team parents. Color-code blocks by skill (blue for passing, green for serving, orange for gamelike play). At the end of the season, you have a complete practice log you can reuse or share with next year's coach.
+Copy the one-page template into a Google Sheet with one tab per practice, share it with assistants, and color-code blocks by skill.
 
-The [Parentcoachdesk tools page](/tools/) is where you can find printable templates and downloadable practice blueprints to build on. The [60-minute practice blueprint](/team-parent/60-minute-practice-blueprint/) is a particularly close match for the scripts in this guide.
+By season's end you'll have a full practice log to reuse or hand to next year's coach.
+
+The [Parentcoachdesk tools page](/tools/) has printable templates and practice blueprints. The [60-minute practice blueprint](/team-parent/60-minute-practice-blueprint/) is the closest match to the scripts in this guide, so start there.
 
 ***
 
 ## Why the minute-by-minute structure protects more than just your practice
 
-Here is what I have come to believe after working through dozens of youth sports practice frameworks: the structure is not for the coach. It is for the kids.
+The structure isn't for the coach. It's for the kids.
 
-When players walk into a gym and see a whiteboard with three clear objectives and a scoreboard already drawn, something shifts. They know this practice has a purpose. They know someone thought about them before they arrived. That feeling, small as it seems, is what separates a team that shows up ready from one that drifts through drills waiting for practice to end.
+When players walk in and see a whiteboard with three clear objectives and a scoreboard already drawn, they know someone thought about them before they arrived.
 
-The minute-by-minute plan also protects the parent-coach. You are not a full-time coach. You are a parent who said yes, probably on short notice, because someone needed to step up. The structure gives you something to hold onto when a drill falls flat or a player is having a hard day. You do not have to improvise everything. You just move to the next block.
+That small feeling separates a team that shows up ready from one that drifts through drills waiting for the end.
 
-Measuring progress with simple whiteboard metrics (serves in a row, pass-to-target percentage, 10-pass rally count) gives players a concrete sense of growth. That matters more than any trophy. Kids who can see themselves getting better keep coming back.
+The plan also protects you. You're a parent who said yes on short notice because someone needed to step up.
+
+When a drill falls flat or a player is having a hard day, you don't have to improvise. You move to the next block.
+
+Simple whiteboard metrics like serves in a row and pass-to-target percentage give players a concrete sense of growth. Kids who see themselves getting better keep coming back.
 
 The printable templates at [Parentcoachdesk](/) and the [volleyball hub](/sports/volleyball/) are built for exactly this situation: a parent who wants to do right by their team and needs something they can use tonight, not after a weekend coaching clinic.
 
@@ -463,15 +485,17 @@ The printable templates at [Parentcoachdesk](/) and the [volleyball hub](/sports
 
 ## Parentcoachdesk practice templates make your next session easier
 
-Planning a youth volleyball practice from scratch takes time most parent-coaches do not have. Parentcoachdesk offers a cleaner path: ready-to-run 60- and 90-minute practice scripts, one-page session summaries you can print or pull up on your phone, station maps for large groups, and whiteboard templates you can fill in before players arrive.
+Planning a practice from scratch takes time most parent-coaches don't have. We offer ready-to-run 60- and 90-minute practice scripts, one-page session summaries you can print or pull up on your phone, station maps for large groups, and whiteboard templates you can fill in before players arrive.
 
-The 60-minute practice blueprint follows the same five-block structure outlined in this guide, with coach cues, rotation instructions, and a built-in scoreboard format. The tools page has printable versions you can download, adapt for your age group, and reuse across the season. If you are new to coaching youth sports and want a broader starting point, the [start here guide](/start-here/) walks you through the first steps without overwhelming you. Head to the tools page, download the template that matches your practice length, and fill in your three objectives tonight. That is all you need to run a better practice tomorrow.
+The 60-minute practice blueprint follows the same five-block structure, with coach cues, rotation instructions, and a built-in scoreboard. The tools page has printable versions to adapt and reuse.
+
+New to coaching? The [start here guide](/start-here/) walks you through the first steps. Then download the template that matches your practice length and write your three objectives tonight.
 
 ***
 
 ## Sources
 
-These are the resources referenced throughout this guide. Each one is worth bookmarking.
+The resources referenced in this guide:
 
 - [Lesson Plans](https://usavolleyball.org/resources-for-coaches/lesson-plans/)
 - [Your first volleyball practice: A simple plan that works - Coaching Volleyball](https://coachingvb.com/first-volleyball-practice-plan/)
