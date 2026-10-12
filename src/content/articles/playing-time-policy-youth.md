@@ -2,8 +2,8 @@
 title: "Parents: Ready to Use Playing Time Policy and Scripts for Youth Sports"
 seoTitle: "Parents: Ready to Use Playing Time"
 seoDescription: "Parent first, ready to use playing time policy templates, checklists, and coach ready scripts for youth sports. Download preseason forms and conversation..."
-dek: "For younger and developmental teams, we recommend an equitable rotation that guarantees every player meaningful minutes, while older competitive teams do better with a clearly written earned-time policy tied to specific."
-bluf: "For younger and developmental teams, we recommend an equitable rotation that guarantees every player meaningful minutes, while older competitive teams do better with a clearly written earned-time policy tied to specific criteria. Either way, the first move is the same: put the policy in writing and share it at a preseason meeting, then follow the athlete to coach to parent pathway when questions come up. NFHS guidance and our own preseason tools can help you get."
+dek: "Match the playing-time model to the team's age, then write it down."
+bluf: "For younger and developmental teams, we recommend an equitable rotation that gives every player real minutes. Older competitive teams do better with a written earned-time policy tied to specific criteria. Either way, share the policy at a preseason meeting and follow the athlete, coach, then parent pathway when questions come up."
 topic: "communication"
 format: "essay"
 phase: "game"
@@ -20,21 +20,22 @@ externalSource:
   importedAt: "2026-10-05T02:30:46.066Z"
 editorial:
   status: published
-  citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  citationCheckPassed: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Rewritten 2026-10-12 (Jeff approved backlog): fixed truncated dek/bluf; MAAPP electronic-contact rule re-attributed to SafeSport (NFHS article does not cover it); dropped 'courts generally treat' legal claim; NFHS pathway and objective-tools claims verified against the NFHS article."
 ---
 
-For younger and developmental teams, we recommend an equitable rotation that guarantees every player meaningful minutes, while older competitive teams do better with a clearly written earned-time policy tied to specific criteria. Either way, the first move is the same: put the policy in writing and share it at a preseason meeting, then follow the athlete to coach to parent pathway when questions come up. [NFHS guidance](https://nfhs.org/stories/coaches-should-address-playing-time-issues-ahead-of-season) and our own preseason tools can help you get there.
+
+Pick the model that fits the team's age and purpose, then put it in writing. For younger and developmental teams, we recommend an equitable rotation that gives every player real minutes, while older competitive teams do better with a written earned-time policy tied to specific criteria. Either way, share it at a preseason meeting and follow the athlete, coach, then parent pathway when questions come up, the order [NFHS guidance](https://nfhs.org/stories/coaches-should-address-playing-time-issues-ahead-of-season) lays out.
 
 ***
 
 > **TL;DR:**
 >
-> - Younger teams benefit from rotation or guaranteed-minute models to support skill development and prevent burnout, while older teams can shift toward earned-time policies with transparency.
-> - Clear preseason policies should define minimum expectations, attendance rules, injury exceptions, roles, and communication procedures, shared before the season begins.
-> - Players are encouraged to discuss playing time with coaches first, followed by parents after a cooling-off period, with documented conversations to maintain transparency.
-> - Playing-time decisions often blend objective data like attendance and stats with subjective judgment, making specific, actionable questions more effective than fairness complaints.
-> - Disputes are best resolved through a step-by-step process, including private discussions, written follow-ups, and escalation to league officials if necessary, supported by documented records.
+> - Younger teams do best with rotation or guaranteed minutes. Older teams can shift to earned time if the criteria are clear.
+> - A preseason policy should cover minimums, attendance, injuries, roles, and who to talk to.
+> - The athlete talks to the coach first, and the parent follows after a cooling-off day.
+> - Coaches blend stats and attendance with judgment, so specific questions work better than fairness complaints.
+> - Disputes go private conversation, written follow-up, then league officials, with records at each step.
 
 ***
 
@@ -56,35 +57,41 @@ For younger and developmental teams, we recommend an equitable rotation that gua
 
 ## 1. Common playing-time models and when each one fits
 
-Most youth programs use one of three approaches, and knowing which one your team runs changes how you prepare your child and yourself.
+Most youth programs run one of three models. Knowing which one your team uses changes how you prepare your child for the season, and how you prepare yourself for the sideline.
 
-An equal rotation model gives every player roughly the same minutes regardless of skill, which tends to fit recreational and house leagues where the point is participation and skill-building. A guaranteed minimum minutes model sets a floor, maybe every player gets a certain number of innings or quarters, while leaving the rest of the game open to coaching judgment. This splits the difference between fairness and competitiveness, and it shows up often in town travel programs for younger age groups. An earned or competitive model ties minutes to performance, attendance, and tactical fit, with little or no guaranteed floor. This is standard at the high school varsity level and in elite club or travel programs where the stated purpose is winning and advancement.
+**Equal rotation** gives every player about the same minutes regardless of skill. It fits rec leagues.
 
-Age matters more than almost anything else here. Younger players, generally through middle school, benefit from rotation or guaranteed-minutes models because skills are still forming and research on [overuse and burnout](https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Preventing-Overuse-Injuries.aspx) supports broad participation over early specialization. Older, competitive teams can reasonably shift toward earned time, as long as the criteria are transparent.
+**Guaranteed minimums** set a floor, such as a set number of innings or quarters, and leave the rest to coaching judgment. It splits the difference.
 
-Each model carries tradeoffs worth naming:
+**Earned time** ties minutes to performance, attendance, and fit, with little or no floor. That's the norm on varsity teams and in elite club programs built around winning.
 
-- Equal rotation supports retention and development but might not satisfy families targeting high-level competition.
-- Guaranteed minimums help developing players avoid excessive bench time while still allowing coaches to manage key game moments.
-- Earned time recognizes effort and skill but works best with clear, documented standards to prevent perceptions of unfairness.
+Age matters most. Younger players, roughly through middle school, gain from rotation or guaranteed minutes because skills are still forming, and pediatric guidance on [overuse and burnout](https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Preventing-Overuse-Injuries.aspx) favors broad play over early specialization. Older competitive teams can shift toward earned time as long as the criteria are out in the open.
+
+Each model has tradeoffs:
+
+- Equal rotation keeps kids playing and developing, but families chasing high-level competition may want more.
+- Guaranteed minimums keep developing players off the bench all game while coaches still manage key moments.
+- Earned time rewards effort and skill, and it needs written standards so it doesn't look like favoritism.
 
 ## 2. How to write a preseason playing-time policy: template and checklist
 
-A good policy answers three questions before the first game: what is this team here to do, what does a player need to show up and earn time, and what happens when things do not go as planned.
+A good policy answers three questions before the first game. What is this team here to do, what does a player need to show to earn time, and what happens when plans fall apart?
 
-Start with a one-paragraph statement of purpose. A recreational team might write: "This team exists to build skills, confidence, and a love of the game. All rostered players will receive meaningful playing time in every contest." A competitive team might write: "This team competes to win league and tournament games. Playing time is earned through attendance, effort in practice, and performance, and is not guaranteed equally."
+Start with a one-paragraph purpose statement. A rec team might write: "This team exists to build skills, confidence, and a love of the game, and all rostered players will receive real playing time in every contest."
 
-From there, a workable policy covers:
+A competitive team might write: "This team competes to win league and tournament games. Playing time is earned through attendance, effort in practice, and performance, and is not guaranteed equally."
 
-- Minimum expectations, whether that is a guaranteed number of innings, quarters, or sets, or language explaining that minutes vary by matchup and situation.
-- Attendance and effort rules, including how missed practices affect game-day decisions.
-- Injury and emergency exceptions, so families know what happens if a player is hurt or a late scratch changes the lineup.
-- Role definitions, clarifying starter, rotational, and situational roles so no one is guessing.
+Then cover the basics:
+
+- Minimum expectations, either a guaranteed number of innings, quarters, or sets, or a note that minutes vary by matchup.
+- Attendance and effort rules, including how missed practices affect game day.
+- Injury and emergency exceptions, so families know what happens after a late scratch.
+- Role definitions for starters, rotation players, and situational players.
 - The communication pathway, naming who to talk to and when.
 
-NFHS guidance recommends sharing this kind of policy at a preseason meeting rather than waiting for a conflict to force the conversation, and pairing it with objective tools like basic stats or practice attendance logs when explaining decisions later in the season.
+NFHS recommends sharing the team's purpose at a preseason meeting instead of waiting for a conflict. The same article suggests explaining later decisions with objective tools like game stats, time trials, or skill rubrics.
 
-A simple one-page checklist, signed or acknowledged by parents, keeps everyone on the same page:
+A one-page checklist, signed or acknowledged by parents, keeps everyone aligned:
 
 | Checklist item | What it covers |
 |---|---|
@@ -96,124 +103,128 @@ A simple one-page checklist, signed or acknowledged by parents, keeps everyone o
 
 ## 3. Communication rules and scripts for coaches, players, and parents
 
-The pathway that works best, and the one NFHS and most programs recommend, starts with the athlete. A player who wants more playing time should talk to the coach first, not the parent. This builds the player's own advocacy skills and keeps the coach-athlete relationship intact. If that conversation does not resolve things, or the player is too young to have it alone, the parent follows up, ideally after a cooling-off period.
+The pathway starts with the athlete. NFHS describes it as athlete to coach, then coach to parent, then up the chain if needed, and it suggests keeping playing-time talk off game days.
 
-The 24-hour rule is worth building into your family's habits: wait at least a day after a game before raising a playing-time concern with a coach. Emotions run hot right after a loss or a tough outing, and a day's distance almost always produces a more useful conversation.
+A player who wants more time should ask the coach first. That builds the kid's own voice and protects the coach-athlete relationship, and if it doesn't settle things or the player is too young, the parent follows up later.
 
-Electronic communication with minors carries specific rules worth knowing. MAAPP and NFHS guidance restrict one-on-one private electronic contact between coaches and minor athletes, and when a player initiates contact, coaches are expected to loop in another adult on the response. Practically, that means team messaging apps or group channels, not private texts, are the safer default for athlete-coach contact. A team communication app like [Athlo](https://athloapp.com/youth-sports) can help keep these exchanges visible and documented rather than one-on-one.
+Build a 24-hour rule into your family's habits. Wait at least a day after a game before raising playing time with a coach, because emotions run hot after a loss and a day's distance makes the talk more useful.
 
-A few short scripts help when the moment comes:
+Electronic contact with minors has its own rules. The Center for SafeSport's MAAPP policies limit private one-on-one electronic contact between adults and minor athletes, so group channels beat private texts as the default. A team app like [Athlo](https://athloapp.com/youth-sports) can keep those exchanges visible and on record.
+
+A few short scripts for when the moment comes:
 
 - Athlete to coach: "Coach, can I get your feedback on what I should work on to get more time at [position]?"
 - Parent email to coach: "Hi Coach, [Player] mentioned wanting more playing time. We would appreciate understanding what you're looking for so we can support that at home. Would a short conversation work this week?"
 - Polite follow-up: "Thanks for your time last week. Just checking in on how things are progressing with [Player]'s development goals."
 
-**Pro Tip:** *Keep a simple log of these conversations, date, who was present, and what was discussed, in case you need to reference it later.*
+**Pro Tip:** *Keep a simple log of each talk: the date, who was there, and what was said.*
 
-For more detail on framing these conversations, our guide on [how to talk to the coach about playing time](/drive-there/how-to-talk-to-the-coach-about-playing-time/) walks through full scripts for different scenarios.
+For more on framing these conversations, our guide on [how to talk to the coach about playing time](/drive-there/how-to-talk-to-the-coach-about-playing-time/) has full scripts for different situations.
 
 ## 4. How coaches really decide who plays
 
-Playing-time decisions usually blend objective and subjective factors, and understanding both helps you ask better questions.
+Playing-time decisions blend objective and subjective factors, and understanding both helps you ask better questions.
 
-Objective factors include attendance records, measurable drill results, and basic game stats. Subjective factors include tactical fit, how a player reads the game, and coach judgment about chemistry and matchups, none of which show up neatly on a stat sheet. NFHS guidance notes that coaches often plan rotations around specific moments, using lower-stakes games or decided contests to give developing players competitive reps while saving starters for closer games.
+Objective factors include attendance, drill results, and basic game stats. Subjective ones include tactical fit, how a player reads the game, and the coach's sense of matchups, none of which show up on a stat sheet.
 
-Reasonable requests from parents include:
+NFHS notes that coaches can plan around the schedule. Games against weaker opponents, or contests already decided, are the natural place to give developing players real reps while starters rest.
 
-- Asking whether the coach uses a rubric or set of criteria for playing-time decisions.
-- Requesting a summary of practice attendance if that factors into decisions.
-- Asking for general feedback on what a player should work on, rather than demanding an exact minutes count.
+Reasonable requests from parents:
 
-Framing requests around what a player can control, like attendance or specific skills, tends to land better than framing them around fairness alone. Our piece on [how youth sports teach responsibility](/team-parent/how-youth-sports-teach-responsibility/) digs further into how effort and role acceptance shape these conversations.
+- Ask whether the coach uses a rubric or set criteria.
+- Request a summary of practice attendance if it factors in.
+- Ask what your player should work on instead of demanding a minutes count.
+
+Requests about things a player controls, like attendance or a specific skill, land better than complaints about fairness. Our piece on [how youth sports teach responsibility](/team-parent/how-youth-sports-teach-responsibility/) goes further into effort and accepting a role.
 
 ## 5. Handling disputes: a step-by-step path to resolution
 
-When a conversation with a coach does not resolve a playing-time concern, a calm, documented process works better than an escalating series of emails or sideline confrontations.
+When a talk with the coach doesn't settle a concern, a calm written process beats a string of angry emails or a sideline scene.
 
-1. Wait 24 hours after the triggering event, then request a private, in-person or phone conversation with the coach.
-2. If the issue remains unresolved, follow up in writing with a brief, factual summary of the conversation and your remaining concern.
-3. If there is still no resolution, request a meeting with the athletic director or league administrator, bringing documentation rather than frustration.
+1. Wait 24 hours after the game, then ask for a private conversation in person or by phone.
+2. If it's still unresolved, follow up in writing with a short, factual summary and your remaining concern.
+3. If there's still no answer, ask for a meeting with the athletic director or league administrator, and bring records instead of frustration.
 
-Useful documentation includes attendance logs, any stats or rubric the coach has shared, copies of prior communications, and the preseason policy itself. Our [fair rotation plan guide](/blog/youth-sports-playing-time/) covers this escalation path in more depth, including how to avoid common missteps along the way.
+Useful records include attendance logs, any stats or rubric the coach shared, past messages, and the preseason policy. Our [fair rotation plan guide](/blog/youth-sports-playing-time/) covers this path in more depth.
 
-If a program's actual practices consistently contradict its stated policy, and conversations and escalation do not change that, it may be worth considering a different team or a recreational league better matched to your child's goals. That is a last resort, not a first response.
+If a program keeps contradicting its own written policy after all of that, a different team or a rec league may be a better fit for your child. That's a last resort, not a first move.
 
 ## 6. Parent Coach Desk tools you can download and adapt
 
-We built a set of practical resources specifically for these moments, because reading about a policy is different from having one in hand when you need it.
+We built these for the moment you need them, since reading about a policy differs from holding one.
 
-- A one-page playing-time checklist and acknowledgment form you can hand directly to a coach or league.
-- Ready-to-use conversation scripts for athletes, parents, and follow-up emails.
-- Sport-specific guidance through our volleyball hub and related pages, built to help you adapt a general template to your child's actual sport.
-- The Youth Sports Cost Calculator, useful context when a family is weighing whether playing time justifies program costs.
+- A one-page playing-time checklist and acknowledgment form you can hand to a coach or league.
+- Conversation scripts for athletes, parents, and follow-up emails.
+- Sport-specific guidance through our volleyball hub and related pages, so you can adapt a general template.
+- The Youth Sports Cost Calculator, useful when a family is weighing playing time against program costs.
 
-Every template is written to be adapted, not copied word for word. A soccer team's attendance policy will not read exactly like a wrestling team's, so swap in your sport's language and season structure before sharing it. Our guide on how to talk to the coach about playing time is a good starting point for pairing these tools with the right words.
+Every template is meant to be adapted. A soccer team's attendance policy won't read like a wrestling team's, so swap in your sport's language and season before you share it.
 
 ## 7. What playing-time policies mean for long-term development
 
-A clear playing-time policy does more than prevent arguments. It shapes how a young athlete experiences the sport over years, not just one season.
+A clear policy does more than prevent arguments. It shapes how a young athlete experiences the sport for years, not just one season.
 
-Players who get meaningful minutes early on tend to build broader skills and more confidence, since game experience teaches things practice alone cannot. HealthyChildren.org guidance on avoiding overuse injuries also points toward a related benefit: players who rotate across positions and games, rather than playing every available minute, get the rest their growing bodies need.
+Game minutes teach things practice can't, which is why we push for real playing time early. Pediatric guidance on overuse adds another benefit: kids who rotate positions and sit some minutes get the rest growing bodies need.
 
-On the other end, players stuck on the bench for multiple seasons with no clear path to more playing time often disengage, not because they lack ability, but because the system never explained what they needed to do differently. A written policy with transparent criteria gives those players something to work toward instead of a mystery to resent.
+Players stuck on the bench for seasons with no path forward tend to drift away. A written policy with clear criteria gives them something to work toward instead of a mystery to resent.
 
-Development is not only about game minutes either. Practice quality, coaching feedback, and a player's own effort all compound over a season, and a policy that names these factors helps families see the fuller picture instead of fixating on a single stat line. Teams that communicate this well tend to retain players longer, because kids and parents can see a path forward even in a slow season.
+Development isn't only game minutes. Practice quality, coach feedback, and a player's effort build over a season, and a policy that names them helps families see the whole picture instead of one stat line.
 
 ## 8. Building a playing-time policy that includes every player
 
-An inclusive policy is not the same as an equal-minutes policy. It means every player, regardless of skill level, body type, or background, understands exactly what is expected of them and has a genuine path to playing time that fits the team's stated purpose.
+An inclusive policy isn't the same as equal minutes. It means every player, whatever their skill or background, knows what's expected and has a real path to time that fits the team's purpose.
 
-Practical steps toward inclusion include writing the policy in plain language and sharing it with every family, not just the ones who ask. It also means applying the same criteria consistently, so a bench player and a star player are held to the same attendance and effort standards. Programs serving athletes with different needs should also note where adaptive accommodations apply; our [adaptive and neurodivergent athletes](/adaptive/) resource is a useful reference for coaches and families navigating that specifically.
+Write the policy in plain language and send it to every family, not just the ones who ask. Apply the same attendance and effort standards to the bench player and the star. Programs serving athletes with different needs should note where accommodations apply, and our [adaptive and neurodivergent athletes](/adaptive/) resource helps coaches and families working through that.
 
-Inclusive policies also account for players who join mid-season or come from different skill backgrounds, spelling out how they are evaluated rather than leaving that to assumption. And they build in a regular check-in, even informal, so a quiet player who never raises a hand still gets feedback on where they stand.
+Spell out how mid-season joiners get evaluated, too. Build in a regular check-in so the quiet player who never asks still hears where they stand.
 
 ## 9. Legal and ethical lines coaches and parents should know
 
-Most youth sports playing-time disputes are not legal matters, they are policy and communication matters. Courts and school districts generally treat playing-time decisions as within a coach's discretion, provided decisions are not based on discrimination.
+Most playing-time disputes are about policy and communication, not law. Coaches have wide discretion over lineups, as long as decisions aren't based on discrimination.
 
-The clearer ethical obligation sits with transparency. NFHS guidance on communication with minor athletes exists specifically to protect young players, restricting private one-on-one electronic contact and requiring that another adult be included when a minor initiates contact with a coach. Programs that ignore these practices expose both coaches and athletes to unnecessary risk, regardless of intent.
+The clearer duty is transparency. SafeSport's MAAPP rules on electronic contact exist to protect young players, and programs that ignore them put coaches and kids at risk no matter the intent.
 
-It is also worth remembering that [registration fees typically cover practice time, coaching, and facilities](https://usavolleyball.org/resource/you-are-paying-for-practice-not-playing/), not a guarantee of game minutes. Framing expectations around that distinction from the start avoids a common source of conflict later.
+Remember that [registration fees pay for practice time, coaching, and facilities](https://usavolleyball.org/resource/you-are-paying-for-practice-not-playing/), not a promise of game minutes. Setting that expectation early heads off a common fight.
 
-Finally, any policy should apply equally across the roster. Favoritism toward a coach's own child, a sponsor's child, or a particularly vocal parent undermines trust faster than almost anything else, and a written, consistently applied policy is the clearest protection against that perception.
+Any policy should apply across the whole roster. Favoritism toward a coach's own child, a sponsor's child, or the loudest parent erodes trust fast, and a written, consistent policy is the best protection against that perception.
 
 ## When winning takes a back seat to growing up
 
-Years of watching families navigate this have taught us one thing: the seasons parents remember fondly are rarely the ones with the most trophies. They are the ones where their child kept showing up, kept trying, and still liked the sport at the end of it.
+The seasons parents remember fondly are rarely the ones with the most trophies. They're the ones where the kid kept showing up.
 
-Before approaching a coach, take a breath and ask yourself honestly: is this about my child's growth, or about my own expectations? Give it the 24 hours. Picture the conversation going well. Then go have it, remembering that the relationship with your child matters more than any single season's stat line.
+Before you approach a coach, ask yourself honestly whether this is about your child's growth or your own expectations. Give it the 24 hours, picture the conversation going well, and then go have it. Your relationship with your child matters more than any season's stat line.
 
 ## Where to go next for policy tools, gear, and support
 
-We built our resources to meet you exactly where these conversations happen: at the kitchen table before the season starts, in the car after a tough game, in the email draft you are not sure how to word.
+Our resources meet you where these conversations happen: the kitchen table before the season, the car after a tough game, or the email draft you can't quite word.
 
-- Our one-page playing-time checklist and scripts give you the exact language for preseason meetings and follow-up conversations.
-- Our [volleyball hub](/sports/track-field/) and sport-specific guides help you adapt general policy language to your child's actual sport.
-- Our [gear guide](/what-to-buy/) covers what parent-coaches and bench parents actually need, from sideline organization to practice equipment.
+- Our one-page playing-time checklist and scripts give you the exact language for preseason meetings and follow-ups.
+- Our [volleyball hub](/sports/track-field/) and sport-specific guides help you adapt general policy language to your child's sport.
+- Our [gear guide](/what-to-buy/) covers what parent-coaches and bench parents need, from sideline organization to practice equipment.
 
-Start with the [what-to-buy hub](/what-to-buy/) if you are gearing up for the season, or dig into our guides for the specific conversation you are facing right now.
+Gearing up? Start with the [what-to-buy hub](/what-to-buy/), or dig into the guide for the conversation you're facing right now with your child's coach.
 
 ## FAQ
 
 ### Why do many kids quit youth sports?
 
-Burnout, lack of fun, and feeling that effort is not recognized are commonly cited reasons kids step away from organized sports. Policies that emphasize personal improvement over outcomes, as HealthyChildren.org recommends, tend to support longer-term enjoyment and retention.
+Burnout, lack of fun, and feeling that effort goes unnoticed are among the reasons kids step away. Guidance that favors improvement over outcomes helps.
 
-### How long does a youth football game typically last?
+### How long does a youth football game last?
 
-Game length varies widely by league, age group, and local rules, so there is no single standard duration across youth football programs. Check with your specific league or governing body for their official game-length rules.
+It depends on the league, the age group, and whatever local rules your area follows, so the honest answer varies a lot. Check with your league or governing body for official game lengths.
 
 ### What are the basic rules for younger grassroots football?
 
-Rules for younger grassroots levels vary by league and governing body, often including modified field sizes, shortened periods, and adjusted contact rules. Your local league's official rulebook is the most reliable source for these specifics.
+Rules vary by league, and younger levels commonly use smaller fields, shorter periods, and adjusted contact rules. Your local league's rulebook is the most reliable source.
 
-### How long do games typically run at younger youth levels?
+### How long do games run at younger youth levels?
 
-Game duration at younger youth levels depends on the sport and the specific league's rules, and can vary significantly between programs. Checking your league's official schedule or rulebook will give you the accurate duration for your child's division.
+Game length at younger levels depends on the sport and the league. Your league's schedule or rulebook will give you the exact length for your child's division.
 
 ### What is the 24-hour rule in youth sports?
 
-The 24-hour rule is a common best practice recommending that parents and athletes wait at least a day after a game before discussing playing-time concerns with a coach. This cooling-off period, commonly advised in coaching guidance, helps produce calmer, more productive conversations.
+It's a common practice of waiting at least a day after a game before raising playing-time concerns with a coach. The cooling-off period leads to calmer, more productive conversations.
 
 ## Sources
 

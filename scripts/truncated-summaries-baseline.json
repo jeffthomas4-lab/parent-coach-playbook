@@ -1,14 +1,6 @@
 {
   "note": "Known truncated dek/bluf backlog (2026-10-12). Rewrite, then remove the entry.",
   "files": [
-    "src/content/articles/growth-mindset-youth-sports.md",
-    "src/content/articles/losing-streak-youth-team.md",
-    "src/content/articles/motivating-kids-in-sports.md",
-    "src/content/articles/parent-coach-ethics.md",
-    "src/content/articles/parent-code-of-conduct.md",
-    "src/content/articles/playing-time-policy-youth.md",
-    "src/content/articles/post-game-snacks-kids.md",
-    "src/content/articles/post-game-talk.md",
     "src/content/articles/pregame-talk-youth-sports.md",
     "src/content/articles/team-budget-youth-sports.md",
     "src/content/articles/tee-ball-drills.md",
