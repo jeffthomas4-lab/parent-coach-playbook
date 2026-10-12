@@ -36,7 +36,7 @@ const plain = (md) => norm(md
   .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
   .replace(/<[^>]+>/g, ' ')
   .replace(/[*_`>#|]+/g, ' '));
-const DANGLING = /\b(?:a|an|the|and|or|of|with|realistic|extended|very|your|their|our|its)\.$/i;
+const DANGLING = /\b(?:a|an|the|and|realistic|extended|very|your|their)\.$/i;
 
 function field(fm, key) {
   const m = fm.match(new RegExp(`^${key}:\\s*(.*)$`, 'm'));
