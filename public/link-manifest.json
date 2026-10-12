@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T21:40:35.199Z",
-  "count": 978,
+  "generatedAt": "2026-10-12T17:00:35.165Z",
+  "count": 984,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
@@ -751,6 +751,24 @@
       ]
     },
     {
+      "url": "https://g-form.com/products/v2-soccer-shin-guard-youth",
+      "sources": [
+        "src/content/articles/best-kids-shin-guards.md"
+      ]
+    },
+    {
+      "url": "https://gophersport.com/sports/volleyball",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://gophersport.com/sports/volleyball?p=10",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
       "url": "https://hecc.org/",
       "sources": [
         "src/content/body/hockey-equipment-safety.md",
@@ -1299,6 +1317,12 @@
       ]
     },
     {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6805065/",
+      "sources": [
+        "src/content/articles/switching-teams-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://portal.usahockey.com/cx/hockey-development-coordinator/coaching-development/basic_structure_for_8u.pdf",
       "sources": [
         "src/content/articles/hockey-practice-plan-youth.md"
@@ -1828,7 +1852,8 @@
     {
       "url": "https://usavolleyball.org/scsn/scsn-junior-girls/",
       "sources": [
-        "src/content/articles/club-volleyball-pre-tryout-clinics.md"
+        "src/content/articles/club-volleyball-pre-tryout-clinics.md",
+        "src/content/articles/switching-teams-youth-sports.md"
       ]
     },
     {
@@ -3682,6 +3707,12 @@
       ]
     },
     {
+      "url": "https://www.bsnsports.com/c/equipment/sports/volleyball/",
+      "sources": [
+        "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
       "url": "https://www.cbp.gov/travel",
       "sources": [
         "src/content/body/international-tournament-passports-visas.md"
@@ -3744,6 +3775,12 @@
       "url": "https://www.cdc.gov/heads-up/data/index.html",
       "sources": [
         "src/content/articles/youth-sports-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/heads-up/guidelines/returning-to-sports.html",
+      "sources": [
+        "src/content/articles/switching-teams-youth-sports.md"
       ]
     },
     {
@@ -4195,7 +4232,8 @@
     {
       "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Too-Much-Too-Soon-Overtraining.aspx",
       "sources": [
-        "src/content/articles/losing-streak-youth-team.md"
+        "src/content/articles/losing-streak-youth-team.md",
+        "src/content/articles/switching-teams-youth-sports.md"
       ]
     },
     {
