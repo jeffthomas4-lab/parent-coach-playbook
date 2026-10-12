@@ -1738,6 +1738,16 @@
       "after": null,
       "asin": null,
       "browserVerification": "Not run: no browser available this session; gap-queued (cone/pinnie set)."
+    },
+    {
+      "date": "2026-10-12",
+      "run": "catch-up for 2026-10-11",
+      "article": "switching-teams-youth-sports",
+      "import_id": 957020,
+      "commit": "ad65d8cc",
+      "links_inserted": 0,
+      "asins_verified": [],
+      "note": "No named products in the article; nothing to insert. Dek/bluf truncated (flagged to Rex)."
     }
   ]
 }

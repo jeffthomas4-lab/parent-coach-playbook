@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09",
+  "updated_at": "2026-10-12",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -82,6 +82,39 @@
       "resolved_at": "2026-10-09",
       "resolved_by": "catchup-2026-10-09 (Jeff approved rewrite)",
       "resolution": "Rewrote src/content/articles/confidence-for-youth-athletes.md end to end: same slug, topic, phase, hero, externalSource. Truncated (p < ... Jeff fragment removed; dek cut to 12 words; study figures checked against DOI abstracts; Aspen 22.9% corrected to its actual survey item. check-voice-rubric PASS. No /go/ affiliate links existed or were added. Live verify pending Dana deploy."
+    },
+    {
+      "id": "editorial-blg-truncated-deks-2026-10-12",
+      "source": "penny-editorial",
+      "status": "open",
+      "priority": "high",
+      "title": "5 live BabyLoveGrowth imports have truncated deks/blufs",
+      "why_human": "Live public copy ends mid-thought (e.g. switching-teams bluf ends \"...and a realistic.\"). Articles: switching-teams-youth-sports, halftime-snacks-youth-soccer, hockey-practice-plan-youth, team-selection-youth-sports, reward-systems-youth-sports. Repeats the confidence/playing-time/basketball pattern, so the BLG import step likely cuts these fields. Needs Jeff OK to rewrite (like the earlier fixes) and a look at the import cut.",
+      "href": "src/content/articles/",
+      "opened_at": "2026-10-12",
+      "opened_by": "rex-pcd-2026-10-12"
+    },
+    {
+      "id": "babylove-partner-links-missing-2026-10-12",
+      "source": "babylove",
+      "status": "open",
+      "priority": "medium",
+      "title": "Partner exchange links missing from 3 BLG articles",
+      "why_human": "scripts/check-babylove-partner-links.mjs fails: playing-time-complaints-youth lost https://parenting2pt0.org/presenters/dr-deborah-gilboa/ (dropped in the Jeff-approved rewrite); best-kids-shin-guards lost https://g-form.com/products/v2-soccer-shin-guard-youth; volleyball-equipment lost 3 gophersport/bsnsports links. Exchange partners expect placement to stay live. Restore or accept removal is an owner call.",
+      "href": "scripts/check-babylove-partner-links.mjs",
+      "opened_at": "2026-10-12",
+      "opened_by": "rex-pcd-2026-10-12"
+    },
+    {
+      "id": "nora-gsc-browser-2026-10-12",
+      "source": "credentials-accounts",
+      "status": "open",
+      "priority": "low",
+      "title": "Nora GSC report needs a signed-in browser run",
+      "why_human": "No GSC API credential or script; prior reports came from a signed-in browser. Skipped this catch-up rather than script the signed-in session. Needs Jeff to open GSC or approve a browser run (last report 2026-10-05).",
+      "href": "reports/seo/gsc-review-2026-10-12-SKIPPED.md",
+      "opened_at": "2026-10-12",
+      "opened_by": "rex-pcd-2026-10-12"
     }
   ]
 }

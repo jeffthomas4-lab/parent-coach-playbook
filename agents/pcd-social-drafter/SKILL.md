@@ -1,7 +1,7 @@
 ﻿---
 name: pcd-social-drafter
-description: Sasha stages Parent Coach Desk Instagram + Threads social packs for Jeff to paste by hand (same photo and caption). Draft and stage only — no accounts, APIs, or auto-posting (scheduler later). Pinterest resume week of 2026-10-13.
-version: 1.3
+description: Sasha stages Parent Coach Desk Instagram + Threads + Pinterest social packs for Jeff to post by hand (same photo; IG/Threads share the caption, Pinterest gets pin title + description). Draft and stage only - no accounts, APIs, or auto-posting (scheduler later).
+version: 1.4
 last_edited: 2026-10-08
 owner_workstream: Marketing / distribution
 action_class: Stage
@@ -20,11 +20,11 @@ Grok Bot PCD routine `pcd-social-drafter-sasha` is the scheduler (weekdays 6:45 
 - Captions and other public social copy (Instagram caption, Threads caption, Facebook, X, Pinterest title and description, alt text) must pass `VOICE-RUBRIC.md` sections A, B, and C before the batch is done: structure, banned words, and banned patterns. That includes no em dashes and no asterisks or bold in a title-like line. Do not treat a shorter word list as the check. Name the failing item and rewrite it, or do not call the batch done.
 - Amazon affiliate URLs and `/go/` Amazon redirects do not go in draft copy. Prefer canonical parentcoachdesk.com article URLs (UTM ok).
 - **Every Instagram and Threads post MUST include a real photo.** No caption-only drafts. Fail the run if any post lacks a staged media file that exists on disk.
-- **Daily requirement (current):** Instagram + Threads. Same photo and same core caption for both; Jeff posts each by hand. Pinterest folders already on disk stay; **do not delete them.** Full Pinterest staging cadence **resumes the week of 2026-10-13** — until then, daily runs are not required to refresh Pinterest packs.
+- **Daily requirement (current, from 2026-10-12):** Instagram + Threads + Pinterest on every run. Same photo for all three; IG and Threads share the core caption; Pinterest gets a 1000x1500 pin from the same photo with its own Board / Title / Description / Link. Jeff posts each by hand. Existing folders on disk stay; **do not delete them.**
 
 Governing docs: `reports/social/SOCIAL-STAGE-PATTERN.md`, prior batches in `reports/social/SOCIAL_DRAFTS_*.md`, `EDITORIAL_VOICE.md` when present, `KIT_AND_SOCIAL_GATE_2026-10-02.md` (Reference).
 
-Jeff gate 2026-10-02 (updated 2026-10-08): Kit = Jeff paste Fridays (Frida drafts). Instagram + Threads = Sasha drafts + Jeff posts by hand; photo and caption saved together for each; upbeat and professional; no public Jeff Thomas naming; daily photo required with each draft. Pinterest resumes week of 2026-10-13, same stage-then-paste. Scheduler automation is later. Do not change Kit from this skill.
+Jeff gate 2026-10-02 (updated 2026-10-08): Kit = Jeff paste Fridays (Frida drafts). Instagram + Threads = Sasha drafts + Jeff posts by hand; photo and caption saved together for each; upbeat and professional; no public Jeff Thomas naming; daily photo required with each draft. Pinterest is part of every run from 2026-10-12 (Jeff, 2026-10-12), same stage-then-paste. Scheduler automation is later. Do not change Kit from this skill.
 
 ## Before every run
 
@@ -52,7 +52,7 @@ For each draft include:
 - **Source:** title + live URL (or evergreen note)
 - **Format:** one of the formats above
 - **Core copy:** paste-ready text in we/you editorial voice (this is the Instagram caption and the Threads caption)
-- **Platform tags:** **Instagram + Threads caption first** (same body), then short notes for Facebook / X; Pinterest description only when building Pin packs (week of 2026-10-13+)
+- **Platform tags:** **Instagram + Threads caption first** (same body), then short notes for Facebook / X; Pinterest pin title + description for every post (see Pinterest section)
 - **Staged image (REQUIRED for Instagram and Threads):** see Media block below. Do not ship a "visual need" alone.
 
 Open the file with a short header: phase-0 manual-post only; nothing posted; batch count; mix; "checked against prior batches — no repeated source articles"; note that every IG + Threads post has a staged photo.
@@ -93,13 +93,15 @@ For **every** Instagram / Threads post in the batch:
 
 Allowed sources for the file: existing `public/illustrations/*` heroes cropped to target size, a simple branded news/tip card (Parent Coach Desk only — no personal name), or a generated image already saved into the staging folder. "Visual need" or an imagegen prompt without a saved file is not enough.
 
-## Pinterest (paused until week of 2026-10-13)
+## Pinterest (every run, from 2026-10-12)
 
-Existing `pinterest/YYYY-MM-DD/` folders under Reference **stay**. Do not delete or empty them.
+Stage a pin for every post in the batch under Reference `pinterest/YYYY-MM-DD/`, next to the `instagram/` and `threads/` folders. Existing `pinterest/` folders stay; do not delete or empty them.
 
-From the week of **2026-10-13**, resume staging Pinterest packs alongside IG + Threads (1000x1500 pins, Board / Title ≤100 / Description ≤500 / Link with `?utm_source=pinterest&utm_medium=social&utm_campaign=seasonal-queue`). Starter boards: Tryout Season, What to Say to Your Kid, Team Parent Checklists.
-
-Until that week, daily Sasha success does **not** require new Pinterest folders. Optional pin notes in `SOCIAL_DRAFTS_*.md` are fine but not required.
+- Image: 1000x1500 JPG from the same hero photo as the IG/Threads post (photo on top, title band below with the pin title and parentcoachdesk.com). Same file stem as the IG image.
+- Per-pin `.txt`: Board / Title (100 chars max) / Description (500 chars max) / Link with `?utm_source=pinterest&utm_medium=social&utm_campaign=seasonal-queue` / Alt text. Plus a `CAPTIONS.txt` for the folder.
+- Starter boards: Tryout Season, What to Say to Your Kid, Team Parent Checklists. Add a board only with Jeff's OK.
+- Pin title and description are public copy: run them through `scripts/check-voice-rubric.mjs` like captions.
+- `SOCIAL_DRAFTS_*.md` lists the pin path, board, title, and link in each post's block, and the batch is not done until every pin path is verified on disk.
 
 ## Commit and Slack
 
