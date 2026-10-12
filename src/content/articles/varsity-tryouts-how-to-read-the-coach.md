@@ -63,4 +63,4 @@ If they do not make it, let the first reaction be about the disappointment. The 
 
 Later, your teenager can ask whether feedback is available and what the next opportunity is. Some programs provide individual notes and some do not, so do not promise an answer the coach has not offered.
 
-While the roster is still pending, use [the post-tryout waiting plan](/drive-there/the-post-tryouts-wait/) instead of reading every hallway interaction as news. A coach's glance is not a roster. The published roster is.
+While the roster is still pending, use [the post-tryout waiting plan](/drive-home/the-post-tryouts-wait/) instead of reading every hallway interaction as news. A coach's glance is not a roster. The published roster is.

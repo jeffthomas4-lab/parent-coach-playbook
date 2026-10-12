@@ -96,7 +96,7 @@ A block structure loosely modeled on a practical 45-minute keeper template keeps
 5. **0:35 to 0:40, small-sided game.** A 1v1 "king of the castle" where attackers try to score on a mini goal and the keeper rotates out every 90 seconds.
 6. **0:40 to 0:45, reflection.** Ask each keeper one thing they did well and one thing to work on next time. A quick verbal check beats a coach lecturing at the end.
 
-For younger teams, stretch the reflection and game blocks and shrink the technical middle. For older teams, extend the footwork-to-save and distribution blocks since decision-making under pressure matters more than raw catching at that stage. This same block logic anchors the longer, more detailed [30-minute goalkeeper drills session](/blog/goalkeeper-drills-youth/) if you want an expanded version with more reps per block.
+For younger teams, stretch the reflection and game blocks and shrink the technical middle. For older teams, extend the footwork-to-save and distribution blocks since decision-making under pressure matters more than raw catching at that stage. This same block logic anchors the longer, more detailed [30-minute goalkeeper drills session](/game/goalkeeper-drills-youth/) if you want an expanded version with more reps per block.
 
 ## What Should Keepers Train at Each Age?
 

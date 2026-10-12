@@ -242,7 +242,7 @@ When avoidance, mood changes, or fading enjoyment last more than a couple of wee
 
 ## Recommended
 
-- [3 Step Postgame Talk: Car Ride Scripts](/blog/post-game-talk/)
+- [3 Step Postgame Talk: Car Ride Scripts](/drive-home/post-game-talk/)
 - [Coaching Your Struggling Kid Without Losing the Team](/game/making-it-fun-for-everyone-when-your-own-kid-is-struggling/)
 - [How to talk to your kid's coach](/team-parent/how-to-talk-to-the-coach/)
 - [What to Do When Parents Coach from the Sideline](/team-parent/parents-coaching-from-sideline-what-to-do/)

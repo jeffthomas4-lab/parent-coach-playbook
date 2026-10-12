@@ -49,6 +49,6 @@ Write the plan in one plain sentence you can paste into both team apps. Example:
 
 **Two kids on two calendars is harder.** You cannot sit in two gyms at once. Split the driving, or pick which sibling gets a parent on which night, because pretending you can cover both full loads is how someone ends up alone in a lobby.
 
-For the year-round shape of travel basketball, use the [AAU 12U season calendar](/season-calendar/aau-basketball-12u-year-round/). The older recruiting version of this choice is [AAU versus high school in July](/blog/basketball-aau-versus-high-school-the-july-choice/).
+For the year-round shape of travel basketball, use the [AAU 12U season calendar](/season-calendar/aau-basketball-12u-year-round/). The older recruiting version of this choice is [AAU versus high school in July](/drive-there/basketball-aau-versus-high-school-the-july-choice/).
 
 October will not get quieter on its own. The only lever you own is the plan you set before it starts.

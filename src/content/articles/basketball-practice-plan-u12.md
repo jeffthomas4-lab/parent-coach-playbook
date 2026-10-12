@@ -104,7 +104,7 @@ You need very little. A ball for every kid, a bag of cones, and two colors of pi
 
 Some parent groups use a [team camera system](https://i-trx.com/post/why-every-team-parent-needs-a-youth-sports-camera) to capture scrimmage clips, and a [team communication plan](https://blog.rostersports.com/blog/communication-plan-sports-team) keeps practice times and changes in one place. Both are optional. A posted plan and a whistle matter more.
 
-For more drills to swap into this timeline, see our [youth basketball drills guide](/blog/youth-basketball-drills/). For the longer arc of a season at this age, read [coaching 10 to 12 year olds](/team-parent/coaching-10-12-year-olds-competitive-prep/).
+For more drills to swap into this timeline, see our [youth basketball drills guide](/game/youth-basketball-drills/). For the longer arc of a season at this age, read [coaching 10 to 12 year olds](/team-parent/coaching-10-12-year-olds-competitive-prep/).
 
 If you coach your own kid, coach the team. Give your child the same reps, the same corrections, and the same water break as everyone else.
 
@@ -141,4 +141,4 @@ Post the plan, give each adult one job, and pair players at every single drill s
 - [The 8-10 Practice That Doesn't Drag](/game/8-10-practice/)
 - [The 13-14 Practice Plan That Respects Their Time](/game/13-14-practice/)
 - [The 60-Minute Practice Blueprint Every Parent Coach Can Use](/team-parent/60-minute-practice-blueprint/)
-- [Youth Basketball Drills: A Parent Coach's Ready-to-Run Guide](/blog/youth-basketball-drills/)
+- [Youth Basketball Drills: A Parent Coach's Ready-to-Run Guide](/game/youth-basketball-drills/)

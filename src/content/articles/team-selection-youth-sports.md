@@ -124,7 +124,7 @@ Most selection conflict comes from silence, not disagreement. A short preseason 
 
 Send every result the same way. Email works, with a template that states the decision plainly, and this [one-page communication checklist](https://blog.rostersports.com/blog/communication-plan-sports-team) helps you build it.
 
-Our [tryout results email guide](/blog/tryout-results-email-youth/) has sample language for both outcomes. If a parent conversation goes past a fair question, bring in a league or school administrator instead of arguing on the sideline.
+Our [tryout results email guide](/drive-there/tryout-results-email-youth/) has sample language for both outcomes. If a parent conversation goes past a fair question, bring in a league or school administrator instead of arguing on the sideline.
 
 **Pro Tip:** *Set an appeal window, like 48 hours after results post. The whole process then has a clear end, instead of dragging on into the first weeks of the season.*
 
@@ -178,4 +178,4 @@ A development squad, a rotating roster, or a no-cut rec division. When a cut can
 
 - [3 Postgame Scripts to Motivate Kids](/drive-home/motivating-kids-in-sports/)
 - [Coaching 10–12 Year Olds: Preparing Kids for Competitive Sports](/team-parent/coaching-10-12-year-olds-competitive-prep/)
-- [45 Min Coach Pitch Drills](/blog/coach-pitch-drills/)
+- [45 Min Coach Pitch Drills](/game/coach-pitch-drills/)

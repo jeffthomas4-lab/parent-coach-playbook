@@ -55,7 +55,7 @@ Describe both options without selling either one. Try: "This team has these prac
 
 Listen for a reason the child can explain, such as a coach, teammates, competition, more practice, another activity, or weekends at home. Interest is information, not permission to spend beyond the family budget.
 
-If the child is talented but hesitant, the conversation in [not ready for travel at 11](/drive-there/the-11-year-old-whos-not-ready-for-travel/) separates ability from willingness. If money sets the boundary, use [the travel-budget script](/drive-home/when-you-cant-afford-travel/) without asking the child to solve the finances.
+If the child is talented but hesitant, the conversation in [not ready for travel at 11](/drive-home/the-11-year-old-whos-not-ready-for-travel/) separates ability from willingness. If money sets the boundary, use [the travel-budget script](/drive-home/when-you-cant-afford-travel/) without asking the child to solve the finances.
 
 ## Make a one-season decision
 

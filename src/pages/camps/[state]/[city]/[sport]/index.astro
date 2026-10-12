@@ -10,6 +10,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../../../../lib/jsonld';
 import { formatDateAdded } from '../../../../../lib/camp-freshness';
 
+import { THIN_HUB_MIN } from '../../../../../lib/seo-thresholds';
 export const prerender = false;
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
 
@@ -98,7 +99,7 @@ const breadcrumbSchema = {
   ],
 };
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} noindexFollow={camps.length < THIN_HUB_MIN}>
   <script slot="head" type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />
   <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
 

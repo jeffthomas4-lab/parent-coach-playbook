@@ -53,9 +53,9 @@ Audience doors often open later than singer call. Drop the singer first. Come ba
 
 Read your handbook once. Ask the director if the line is fuzzy. Missing a required night is a grade and trust problem; missing a community gig still burns the ensemble when your kid holds a featured part.
 
-**Do not rebuild the wardrobe here.** Black dress, tux rental, and under-robe clothes already live in [the fall concert dress code](/drive-there/choir-fall-concert-dress-code/). Confirm only whether December uses the same kit or adds a holiday accent named in a later note.
+**Do not rebuild the wardrobe here.** Black dress, tux rental, and under-robe clothes already live in [the fall concert dress code](/team-parent/choir-fall-concert-dress-code/). Confirm only whether December uses the same kit or adds a holiday accent named in a later note.
 
-**Language panic is a different piece.** If the folder fills with Latin or German for the winter program, use [when the choir brings home a foreign-language piece](/drive-there/choir-singing-in-foreign-languages/). This article owns the calendar stack, not the diction drill.
+**Language panic is a different piece.** If the folder fills with Latin or German for the winter program, use [when the choir brings home a foreign-language piece](/drive-home/choir-singing-in-foreign-languages/). This article owns the calendar stack, not the diction drill.
 
 **Multi-kid December collides on purpose.** Basketball tip-offs, club volleyball travel weekends, and wrestling season opens all flirt with the same three weeks. Put choir's dated stack on the shared calendar first, then negotiate conflicts in daylight instead of in the car line outside the auditorium.
 

@@ -176,7 +176,7 @@ Watch for kids mentioning it unprompted and teammates cheering shoutouts. Steady
 
 ## Recommended
 
-- [3 Step Postgame Talk: Car Ride Scripts](/blog/post-game-talk/)
-- [3 Postgame Scripts to Motivate Kids](/blog/motivating-kids-in-sports/)
-- [Parent Coaches: One Postgame Script](/blog/confidence-for-youth-athletes/)
-- [A Parent Code of Conduct Every Family Can Actually Follow](/blog/parent-code-of-conduct/)
+- [3 Step Postgame Talk: Car Ride Scripts](/drive-home/post-game-talk/)
+- [3 Postgame Scripts to Motivate Kids](/drive-home/motivating-kids-in-sports/)
+- [Parent Coaches: One Postgame Script](/drive-home/confidence-for-youth-athletes/)
+- [A Parent Code of Conduct Every Family Can Actually Follow](/game/parent-code-of-conduct/)

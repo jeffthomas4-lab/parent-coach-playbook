@@ -120,7 +120,7 @@ Total each column, then divide the expected total by the number of months until 
 
 If your monthly budget comfortably covers the expected-scenario contribution, sign up with confidence. If you can only hit the minimum, that's useful information, not a failure.
 
-It can mean a recreational league, a rec-to-club hybrid, or a conversation with the club about payment plans before you commit to the travel tier. [A copyable team budget template](/blog/team-budget-youth-sports/) is built around exactly this structure, so you're not starting from a blank spreadsheet.
+It can mean a recreational league, a rec-to-club hybrid, or a conversation with the club about payment plans before you commit to the travel tier. [A copyable team budget template](/game/team-budget-youth-sports/) is built around exactly this structure, so you're not starting from a blank spreadsheet.
 
 ## Where Can You Realistically Cut Costs?
 

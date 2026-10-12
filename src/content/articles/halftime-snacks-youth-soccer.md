@@ -129,7 +129,7 @@ For more ideas that travel well, see the [end-of-game snack guide](/team-parent/
 
 Send one text before the season: "Any allergies on the team I should know about before I sign up for snack duty?" That single question prevents a halftime scramble.
 
-On tournament days, pack a bigger cooler. For the rest of the day, use our [hydration by the numbers guide](/game/hydration-by-the-numbers/) and [post-game snack roundup](/blog/post-game-snacks-kids/).
+On tournament days, pack a bigger cooler. For the rest of the day, use our [hydration by the numbers guide](/game/hydration-by-the-numbers/) and [post-game snack roundup](/team-parent/post-game-snacks-kids/).
 
 ## 7. Why Simple Beats Fancy at Halftime
 

@@ -69,7 +69,7 @@ You do not need all of these in one practice. Pick two or three based on your gr
 - **Partner target challenge** (ages 10-14): adds light competitive pressure, which is exactly what game-day serving requires.
 - **Timed team target game** (ages 10-14): compresses reps into a countdown, which forces focus and rewards consistency over showing off.
 
-For a broader rotation once these feel easy, Parent Coach Desk's [collection of fun youth volleyball drills](/blog/youth-volleyball-drills/) has more variety to keep practice fresh.
+For a broader rotation once these feel easy, Parent Coach Desk's [collection of fun youth volleyball drills](/game/youth-volleyball-drills/) has more variety to keep practice fresh.
 
 ## How Should Serving Distance and Difficulty Progress?
 
@@ -117,7 +117,7 @@ Long lines waste reps. Split into stations of 3 to 4 players per ball, rotating 
 - Run a team target contest: each station tallies zone hits for 5 minutes, and the group with the most makes wins a small privilege, like picking the next warm-up game.
 - Try a ["must-make" progression](https://vereinsmanager.io/blog/engage-youth-athletes-in-clubs): players can't move back a step until they've earned it, which keeps struggling servers from getting stuck at a demoralizing distance.
 
-A written [practice plan template](/blog/youth-volleyball-practice-plan/) makes this rotation easy to repeat week to week without reinventing it every practice.
+A written [practice plan template](/game/youth-volleyball-practice-plan/) makes this rotation easy to repeat week to week without reinventing it every practice.
 
 ## How Do You Prevent Overuse Injuries While Practicing Serves?
 
@@ -182,6 +182,6 @@ There's no single fixed number. Add serving volume gradually, build in rest, and
 
 ## Recommended
 
-- [Youth Volleyball Drills: 15 Fun](/blog/youth-volleyball-drills/)
+- [Youth Volleyball Drills: 15 Fun](/game/youth-volleyball-drills/)
 - [First Season of Youth Volleyball: Real Parent Guide (2026)](/drive-there/first-season-of-youth-volleyball/)
 - [How to Build Confidence in Young Athletes](/team-parent/how-to-build-confidence-in-young-athletes/)

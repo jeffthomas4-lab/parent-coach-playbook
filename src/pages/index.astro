@@ -71,6 +71,19 @@ const pinnedFinal = pinned.length === 3
   ? pinned
   : all.filter(a => !railIds.has(a.id) && a.id !== featured?.id).slice(0, 3);
 
+
+// "Browse by section" (2026-10-12 indexing fix). The homepage linked to only
+// about a dozen articles, so most guides were reachable only through deep
+// archive pages. This band links each section hub plus its six newest pieces,
+// which gives crawlers a short path to the articles that matter most.
+const SECTION_LABELS: Record<string, string> = {
+  'drive-there': 'The drive there', 'game': 'During the game', 'drive-home': 'The drive home',
+  'team-parent': 'Team parents', 'decisions': 'Big decisions', 'body': 'Body and health',
+};
+const sectionBands = Object.keys(SECTION_LABELS)
+  .map(phase => ({ phase, label: SECTION_LABELS[phase], items: all.filter(a => a.data.phase === phase).slice(0, 6) }))
+  .filter(s => s.items.length > 0);
+
 // The "three drives" homepage section is specifically about the original
 // drive-there/game/drive-home phases — team-parent is a separate content
 // vertical with its own section elsewhere on this page, not a fourth drive.
@@ -571,6 +584,27 @@ const websiteSchema = {
       </div>
     </section>
   )}
+
+  {/* ── BROWSE BY SECTION ───────────────────────────────────────────────── */}
+  <section class="band band-surface">
+    <div class="container-px">
+      <p class="t-section mb-2">Browse by section</p>
+      <h2 class="t-display t-h2 max-w-3xl">Find the guide for <em>this week</em>.</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        {sectionBands.map((s) => (
+          <div>
+            <h3 class="t-eyebrow"><a href={`/${s.phase}/`} class="hover:text-accent">{s.label}</a></h3>
+            <ul class="mt-3 space-y-2">
+              {s.items.map((a) => (
+                <li><a href={`/${a.data.phase}/${a.id}/`} class="text-ink hover:text-accent leading-snug" set:html={renderTitle(a.data.title)} /></li>
+              ))}
+            </ul>
+            <a href={`/${s.phase}/`} class="t-cta text-sm mt-3 inline-block">All of {s.label.toLowerCase()} →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   {/* ── NEWSLETTER (single ask — lead magnet includes the Friday Letter signup) ── */}
   <LeadMagnetCTA />

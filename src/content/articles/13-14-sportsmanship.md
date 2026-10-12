@@ -55,7 +55,7 @@ That is the whole line. Kids who cross it learn the hard way.
 
 If your kid gets punished for arguing a call, keep the ride-home script short. "The official's call is the call. Next time, let it go."
 
-Do not litigate the call for them. Sideline patterns that bleed onto the field pair with [playing-time fairness](/drive-home/playing-time-fairness/).
+Do not litigate the call for them. Sideline patterns that bleed onto the field pair with [playing-time fairness](/game/playing-time-fairness/).
 
 ## Character vs intensity
 

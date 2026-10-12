@@ -234,7 +234,7 @@ Keep a daily symptom log. Write down the symptoms, the activity level, and a sho
 
 Volunteer coaches often run a season without a real concussion plan. Nobody handed them a checklist.
 
-Our [Parent Toolkit for youth sports safety](/blog/youth-sports-safety/) has five steps you can drop into a preseason parent packet. For contact sports, our guide on [football concussions and what parents need to know](/drive-there/football-concussion-what-parents-need-to-know/) covers sport-specific conversations to have before the pads go on.
+Our [Parent Toolkit for youth sports safety](/game/youth-sports-safety/) has five steps you can drop into a preseason parent packet. For contact sports, our guide on [football concussions and what parents need to know](/drive-there/football-concussion-what-parents-need-to-know/) covers sport-specific conversations to have before the pads go on.
 
 New to organized sports? Our [parents' guide to youth sports](/start-here/) covers season planning, tryouts, and talking with coaches in one place.
 
@@ -285,6 +285,6 @@ A healthcare provider. Which providers qualify depends on your state, so ask you
 
 ## Recommended
 
-- [Parent Toolkit: 5 Immediate Steps for Youth Sports Safety](/blog/youth-sports-safety/)
+- [Parent Toolkit: 5 Immediate Steps for Youth Sports Safety](/game/youth-sports-safety/)
 - [Football concussions: what youth sports parents need to know](/drive-there/football-concussion-what-parents-need-to-know/)
 - [The 10-Minute Parent Meeting Script Every Coach Can Use](/team-parent/10-minute-parent-meeting-script/)
