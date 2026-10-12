@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/cloudflare';
 import type { AdminAuthEnv } from './lib/admin-auth';
 import { enforceAdministrativeRequest } from './lib/admin-runtime-gate';
 import { withWorkerSecurityHeaders } from './lib/security-headers';
+import { articleRedirectFor } from './lib/article-redirect';
 import {
   handleBabyLoveWebhook,
   reconcileBabyLoveArticles,
@@ -32,7 +33,21 @@ export async function fetchWithAdminGate(
   }
   const authFailure = await enforceAdministrativeRequest(request, env);
   if (authFailure) return withWorkerSecurityHeaders(authFailure, url.pathname);
-  return astroWorker.fetch(request, env, context);
+  const response = await astroWorker.fetch(request, env, context);
+  if (response.status === 404 && (request.method === 'GET' || request.method === 'HEAD')) {
+    try {
+      const dest = await articleRedirectFor(url, (env as { ASSETS?: Fetcher }).ASSETS);
+      if (dest) {
+        return withWorkerSecurityHeaders(
+          new Response(null, { status: 301, headers: { Location: dest + url.search } }),
+          url.pathname,
+        );
+      }
+    } catch (e) {
+      console.error('article_redirect_lookup_failed', e);
+    }
+  }
+  return response;
 }
 
 // The admin-gated composition root is the Worker's real handler.
@@ -44,7 +59,7 @@ const rawHandler: WorkerHandler = { fetch: fetchWithAdminGate };
 // (getsentry/sentry-javascript #21901). This repo owns its entry, so
 // createInstrumentedHandler applies @sentry/cloudflare's withSentry ONLY when a
 // SENTRY_DSN secret is bound. With no DSN, requests bypass Sentry entirely and
-// run the raw admin-gated handler — a true pass-through (no waitUntil rebinding,
+// run the raw admin-gated handler â€” a true pass-through (no waitUntil rebinding,
 // no HEAD/OPTIONS bypass). withSentry captures exceptions from both the admin
 // gate and the Astro handler and rethrows them; the SDK binds the passed
 // ExecutionContext.waitUntil for post-response event flushing.
@@ -66,18 +81,18 @@ export async function scheduledBabyLoveReconciliation(
 
 // Competitor-intelligence sweep: prospect organization websites only. A
 // competitor_property run requires two separate human admin calls (propose,
-// then approve) — see src/pages/api/admin/intel/runs.ts and
+// then approve) â€” see src/pages/api/admin/intel/runs.ts and
 // runs/[id]/approve.ts. The scheduled path never calls runApprovedRun and
 // never touches a competitor-owned property; it calls runOrgSweep only, and
 // only when the feature is turned on for this environment.
 export async function runIntelOrgSweep(env: PcdIntegrationEnv, context: ExecutionContext): Promise<void> {
   if (!isFeatureEnabled(env)) return;
   // The ambient Cloudflare `Env` type this repo's tsconfig pulls in is
-  // deliberately empty (no project augments it — every route casts its own
+  // deliberately empty (no project augments it â€” every route casts its own
   // local env shape from `cfEnv` instead), so PcdIntegrationEnv carries no
   // typed `DB` field at all. runOrgSweep needs the whole env (not just DB)
   // to read its own policy vars, so this is a plain runtime-env assertion,
-  // not a narrowing of anything guarded above — this function is the
+  // not a narrowing of anything guarded above â€” this function is the
   // Worker's real scheduled handler, so DB is always bound in practice.
   const intelEnv = env as unknown as { DB: D1Database } & Record<string, unknown>;
   context.waitUntil(runOrgSweep(intelEnv).catch((error) => {
