@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T17:43:53.240Z",
+  "generatedAt": "2026-10-12T17:50:05.706Z",
   "count": 984,
   "links": [
     {
@@ -1378,7 +1378,8 @@
       "url": "https://projectplay.org/news/2025/2/24/project-play-survey-family-spending-on-youth-sports-rises-46-over-five-years",
       "sources": [
         "src/content/articles/how-much-does-youth-soccer-cost.md",
-        "src/content/articles/the-cost-of-travel-ball.md"
+        "src/content/articles/the-cost-of-travel-ball.md",
+        "src/content/articles/youth-sports-budget.md"
       ]
     },
     {
@@ -6273,7 +6274,8 @@
     {
       "url": "https://www.usyouthsoccer.org/wp-content/uploads/sites/160/2023/09/Development-of-a-Goalkeeper-The-progression-from-a-beginning-goalkeeper-to-a-college-goalkeeper.pdf",
       "sources": [
-        "src/content/articles/goalkeeper-drills-youth.md"
+        "src/content/articles/goalkeeper-drills-youth.md",
+        "src/content/articles/youth-goalie-drills.md"
       ]
     },
     {
