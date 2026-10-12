@@ -17,7 +17,7 @@
     "build:og:safe": "python3 scripts/build-og-images.py || echo 'OG image build skipped (python/Pillow unavailable). Existing committed cards in public/og/ will ship.'",
     "check:content-lengths": "node scripts/check-content-field-lengths.mjs --check",
     "clean": "node scripts/clean-build-cache.mjs",
-    "build": "npm run check:content-lengths && npm run report:editorial-refresh && npm run build:manifest && npm run build:info && npm run build:og:safe && astro build && node scripts/normalize-generated-wrangler.mjs",
+    "build": "npm run check:content-lengths && npm run check:truncated-summaries && npm run report:editorial-refresh && npm run build:manifest && npm run build:info && npm run build:og:safe && astro build && node scripts/normalize-generated-wrangler.mjs",
     "build:info": "node scripts/write-build-info.mjs",
     "build:clean": "npm run clean && npm run build",
     "build:production": "node scripts/build-production.mjs",
@@ -92,7 +92,8 @@
     "recovery:manifest": "node scripts/build-recovery-batch-manifest.mjs",
     "drill:staging-notification": "node scripts/run-staging-notification-drill.mjs --confirm",
     "audit:gate": "npm audit --audit-level=high",
-    "ci:release": "npm run audit:gate && npm run check:workflow-pins && npm run check:secrets && npm run check:protected-routes && npm run check:public-policy && npm run check:coverage && npm run check:directory-remediation && npm run check:public-intake && npm run check:affiliates && npm run check:affiliate-lifecycle && npm run check:editorial-refresh && npm run check:article-refresh-program && npm run check:article-refresh-content && npm run check:newsletter-proof && npm run check:social-stage && npm run check:agent-token-rollout && npm run check:caller-hashes && npm run check:root-organization && npm run check:company-os && npm run check:backup-proving-log && npm run check:release-evidence && npm run check:recovery-tabletop && npm run check:failure-isolation && npm run check:access-evidence && npm run check:trust-migration-rehearsal && npm run check:editorial-lifecycle-migration-rehearsal && npm run check:production-schema-compatibility && npm run check:staging-pcd-ops-rehearsal && npm run check:production-manifest && npm run check:built-links && npm run check:customer-artifact && npm run test:integration && npm run check"
+    "ci:release": "npm run audit:gate && npm run check:workflow-pins && npm run check:secrets && npm run check:protected-routes && npm run check:public-policy && npm run check:coverage && npm run check:directory-remediation && npm run check:public-intake && npm run check:affiliates && npm run check:affiliate-lifecycle && npm run check:editorial-refresh && npm run check:article-refresh-program && npm run check:article-refresh-content && npm run check:newsletter-proof && npm run check:social-stage && npm run check:agent-token-rollout && npm run check:caller-hashes && npm run check:root-organization && npm run check:company-os && npm run check:backup-proving-log && npm run check:release-evidence && npm run check:recovery-tabletop && npm run check:failure-isolation && npm run check:access-evidence && npm run check:trust-migration-rehearsal && npm run check:editorial-lifecycle-migration-rehearsal && npm run check:production-schema-compatibility && npm run check:staging-pcd-ops-rehearsal && npm run check:production-manifest && npm run check:built-links && npm run check:customer-artifact && npm run test:integration && npm run check",
+    "check:truncated-summaries": "node scripts/check-truncated-summaries.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.3",
