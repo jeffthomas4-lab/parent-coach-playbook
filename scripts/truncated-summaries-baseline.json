@@ -2,13 +2,6 @@
   "note": "Known truncated dek/bluf backlog (2026-10-12). Rewrite, then remove the entry.",
   "files": [
     "src/content/articles/volleyball-equipment.md",
-    "src/content/articles/youth-baseball-throwing-drills.md",
-    "src/content/articles/youth-basketball-drills.md",
-    "src/content/articles/youth-goalie-drills.md",
-    "src/content/articles/youth-soccer-passing-drills.md",
-    "src/content/articles/youth-sports-budget.md",
-    "src/content/articles/youth-sports-playing-time.md",
-    "src/content/articles/youth-sports-safety.md",
     "src/content/articles/youth-volleyball-drills.md",
     "src/content/articles/youth-volleyball-practice-plan.md",
     "src/content/articles/youth-volleyball-serving-drills.md"

@@ -2,8 +2,8 @@
 title: "20 Minute Sessions: 6 Youth Baseball Throwing Drills for Parent Coaches"
 seoTitle: "20 Minute Sessions: 6 Youth Baseball"
 seoDescription: "Parent coaches: six youth baseball throwing drills you can run in 10–20 minutes. Includes warm-up arm-care, age progressions, coaching cues, and a ready..."
-dek: "Parent coaches: six youth baseball throwing drills you can run in 10–20 minutes. Includes warm-up arm-care, age progressions, coaching cues."
-bluf: "These six drills, bullseye accuracy, the figure-8 (or \"boxers\"), throwing from the knees, step-back long toss, throw-on-the-run, and a quick-release relay, cover the full range of what a young arm needs: accuracy, footwork, clean release timing, and gradual arm-care conditioning. Run two or three per session, rotate them week to week, and always watch for fatigue before adding distance."
+dek: "Six throwing drills for accuracy, footwork, and a healthy arm."
+bluf: "These six drills cover what a young arm needs: bullseye accuracy, the figure-8, knee throws, step-back long toss, throw-on-the-run, and a quick-release relay. Run two or three per session, rotate them week to week, and watch for fatigue before adding distance or intensity."
 topic: "communication"
 format: "essay"
 phase: "game"
@@ -20,14 +20,15 @@ externalSource:
   importedAt: "2026-09-09T04:30:24.940Z"
 editorial:
   status: published
-  citationCheckPassed: false
-  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing."
+  citationCheckPassed: true
+  reviewerNotes: "Automatically imported from authenticated BabyLoveGrowth publishing. Rewritten 2026-10-12 (Jeff approved backlog): fixed truncated dek/bluf; Fleisig 100-innings finding stated as the study's ~3.5x risk; Driveline sentence repaired; first-person 'I' changed to 'we'; disclosure standardized; em dashes and banned word removed."
   affiliateDisclosurePresent: true
 ---
 
+
 These six drills, bullseye accuracy, the figure-8 (or "boxers"), throwing from the knees, step-back long toss, throw-on-the-run, and a quick-release relay, cover the full range of what a young arm needs: accuracy, footwork, clean release timing, and gradual arm-care conditioning. Run two or three per session, rotate them week to week, and always watch for fatigue before adding distance or intensity.
 
-*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
+*This post contains affiliate links, and we earn a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ***
 
@@ -37,7 +38,7 @@ These six drills, bullseye accuracy, the figure-8 (or "boxers"), throwing from t
 > - Correct execution involves slow, deliberate movements with specific cues such as "plant, then throw" or "glove up first" to fix common faults.
 > - A tailored progression plan increases drill distance and complexity over weeks, emphasizing accuracy first and adding movement at appropriate ages.
 > - Limiting practice to 10-15 minutes per session and focusing on quality over quantity helps maintain arm health and engagement.
-> - Consistent warm-up routines and avoiding high-effort throws on back-to-back days reduce overuse injury risk, with rest and monitoring vital for long-term development.
+> - Consistent warm-up routines and avoiding high-effort throws on back-to-back days reduce overuse injury risk, with rest and monitoring key to long-term development.
 
 ***
 
@@ -56,14 +57,14 @@ These six drills, bullseye accuracy, the figure-8 (or "boxers"), throwing from t
 
 ## What are the best youth baseball throwing drills?
 
-Here's a quick-reference list you can pull up on your phone at practice. Each drill takes 10 to 15 minutes and needs almost no gear.
+Pull this list up on your phone at practice. Each drill takes 10 to 15 minutes and needs almost no gear beyond balls, gloves, and something to aim at.
 
-1. **Bullseye target throw** — builds accuracy using a glove, a bucket, or chalk target on a fence. Cue: "throw to the letters, not the person."
-2. **Figure-8 (boxers drill)** — grooves a compact arm path with a ball held in two hands, tracing a figure-8 before separating into throwing position.
-3. **Knee throws** — isolates upper-body mechanics by removing the legs, so kids feel the arm path and release without footwork to hide behind.
-4. **Step-back long toss** — starts at 30 feet and adds five to ten feet per solid rep, building arm strength through gradual distance.
-5. **Throw on the run** — mimics game speed by having players field and throw while moving, which is where accuracy usually falls apart first.
-6. **Quick-release relay** — two players race the clock on catch-to-release time, reinforcing rhythm and footwork under mild pressure.
+1. **Bullseye target throw** builds accuracy using a glove, a bucket, or chalk target on a fence. Cue: "throw to the letters, not the person."
+2. **Figure-8 (boxers drill)** grooves a compact arm path with a ball held in two hands, tracing a figure-8 before separating into throwing position.
+3. **Knee throws** isolate upper-body mechanics by removing the legs, so kids feel the arm path and release without footwork to hide behind.
+4. **Step-back long toss** starts at 30 feet and adds five to ten feet per solid rep, building arm strength through gradual distance.
+5. **Throw on the run** mimics game speed by having players field and throw while moving, which is where accuracy usually falls apart first.
+6. **Quick-release relay** has two players race the clock on catch-to-release time, reinforcing rhythm and footwork under mild pressure.
 
 Pick two or three drills per session rather than cramming in all six. A ten-minute accuracy drill plus one movement drill beats a rushed tour through every station on the list.
 
@@ -93,7 +94,7 @@ Programs modeled on the Youth Throwers Ten exercise routine use theraband and bo
 
 ## How should throwing drills progress by age and week?
 
-Progression isn't about adding drills but also involves thoughtful planning of throwing intensity, as explained in Driveline Baseball's guide on [optimizing for health and development in youth baseball](https://drivelinebaseball.com/blogs/blog/optimizing-for-health-development-in-youth-baseball-part-1). It's about adding distance, speed, or decision-making to the drills you already run, one variable at a time.
+Progression means planning throwing intensity, not just adding drills, a theme in Driveline Baseball's guide on [optimizing for health and development in youth baseball](https://drivelinebaseball.com/blogs/blog/optimizing-for-health-development-in-youth-baseball-part-1). Add distance, speed, or decision-making to the drills you already run, one variable at a time.
 
 1. **Weeks 1 to 2**: Close, slow, accuracy-first. Bullseye and figure-8 at short distance, no movement.
 2. **Weeks 3 to 4**: Add distance through step-back long toss and introduce throw-on-the-run at game speed.
@@ -110,11 +111,11 @@ Pitch-count charts only tell part of the story. They govern game innings and pit
 - Watch for dropped elbow, shortened stride, or complaints of soreness. Stop the session immediately if any appear.
 - Rest is not optional. [ASMI's position statement on Tommy John injuries](https://asmi.org/position-statement-for-tommy-john-injuries-in-baseball-pitchers/) links overuse and pitching through fatigue directly to arm injury risk.
 
-One long-term study found that youth pitchers throwing [more than 100 innings in a year](https://journals.sagepub.com/doi/10.1177/0363546510384224) faced a meaningfully higher injury risk than those who stayed under that mark, which is a strong argument for rotating positions rather than leaning on one arm all season. For a full breakdown of how game rules apply, A [pitch count guide](/game/baseball-pitch-count-rules-explained/) walks through it in plain language.
+One long-term study found that youth pitchers throwing [more than 100 innings in a year](https://journals.sagepub.com/doi/10.1177/0363546510384224) were about 3.5 times more likely to be injured than those who stayed under that mark, a strong argument for rotating positions rather than leaning on one arm all season. For how game rules apply, our [pitch count guide](/game/baseball-pitch-count-rules-explained/) walks through it in plain language.
 
 ## What coaching cues fix common throwing mistakes?
 
-Short, repeatable phrases beat long explanations every time with this age group. A nine-year-old can't process a paragraph of mechanics advice mid-drill, but he can remember three words.
+Short phrases win. A nine-year-old can't process a paragraph of mechanics mid-drill, but three words stick.
 
 - "Step and point" fixes a closed-off front foot that kills accuracy.
 - "Fingertips on the seam" fixes an early release that sails throws high.
@@ -127,7 +128,7 @@ Demonstrate the movement yourself, or have an older player show it, before corre
 
 ## What does a 20-minute throwing session look like?
 
-Copy this plan straight into your practice notes. It fits into almost any time slot and needs minimal gear.
+Copy this plan into your notes. It fits almost any time slot on a weeknight practice schedule and needs very little gear.
 
 - **Equipment**: 4 to 6 balls, two [gloves](/go/baseball-glove-youth/) per player, one [bucket](/go/baseball-ball-bucket-with-lid/) or [cone](/go/agility-cones-set/) target, a [resistance band](/go/resistance-bands-set/)
 - **0 to 5 minutes**: Warm-up (band work, light tosses)
@@ -142,17 +143,21 @@ Copy this plan straight into your practice notes. It fits into almost any time s
 | Drill 2 | 6 min | Mechanics or movement |
 | Cooldown | 2 min | Light throws, feedback |
 
-Log reps loosely, watch for fatigue signs, and end every session by naming one thing each player did well.
+Log reps loosely and watch for fatigue. End every session by naming one thing each player did well, so the last thing a kid hears from you is specific praise he can carry into the next practice.
 
 ## Why patience beats a fast fastball
 
-Every parent-coach wants to see progress by Saturday. It rarely works that way. The kids who throw hardest at age nine often aren't the ones with clean mechanics at fourteen. They're usually the ones who got rushed through accuracy work to chase velocity early.
+Everyone wants progress by Saturday. The kids who throw hardest at nine aren't always the ones with clean mechanics at fourteen.
 
-The mantra I'd hand any new parent-coach: slow is the drill, fast is the game. Practice reps should feel almost boring in their precision. If a kid can hit a bullseye target from 20 feet with a relaxed arm, the arm strength and velocity tend to show up on their own timeline, not yours. For more on setting realistic expectations at different ages, Parentcoachdesk's guide to [coaching 7 to 9 year-olds](/team-parent/coaching-7-9-year-olds-golden-age-youth-sports/) and the [baseball throwing drill hub](/game/baseball-throwing-drill/) both walk through what "on track" actually looks like at each stage.
+Some of them got rushed through accuracy work to chase velocity early, and the shortcut caught up with them in their early teens.
+
+The mantra we'd hand any new parent-coach: slow is the drill, fast is the game. Practice reps should feel almost boring in their precision, and if a kid can hit a bullseye from 20 feet with a relaxed arm, strength and velocity show up on their own timeline.
+
+For more on setting realistic expectations at different ages, Parentcoachdesk's guide to [coaching 7 to 9 year-olds](/team-parent/coaching-7-9-year-olds-golden-age-youth-sports/) and the [baseball throwing drill hub](/game/baseball-throwing-drill/) both walk through what "on track" actually looks like at each stage.
 
 ## Where to find more age-specific coaching help
 
-This resource gives you the next step without the guesswork of piecing together advice from five different club websites. If you're coaching the 7 to 9 crowd, the Coaching 7 to 9 Year Olds: The Golden Age of Youth Sports guide breaks down what realistic skill growth looks like at that age, including how throwing fits into the bigger picture of a fun, low-pressure season.
+This page gives you the next step without piecing together advice from five club websites. If you're coaching the 7 to 9 crowd, the Coaching 7 to 9 Year Olds: The Golden Age of Youth Sports guide breaks down what realistic skill growth looks like at that age, including how throwing fits into the bigger picture of a fun, low-pressure season.
 
 If your team has aged into more competitive territory, the [Coaching 10 to 12 Year Olds](/team-parent/coaching-10-12-year-olds-competitive-prep/) guide covers how to scale intensity without burning kids out. And for printable checklists you can bring straight to the field, the [baseball throwing drill page](/game/baseball-throwing-drill/) has the full drill breakdown in a format built for a folder in your bag. Start with whichever age guide matches your roster and build your season plan from there.
 
