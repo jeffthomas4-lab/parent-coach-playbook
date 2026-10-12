@@ -1,15 +1,10 @@
 {
   "note": "Known truncated dek/bluf backlog (2026-10-12). Rewrite, then remove the entry.",
   "files": [
-    "src/content/articles/baseball-throwing-drill.md",
-    "src/content/articles/best-kids-shin-guards.md",
     "src/content/articles/coach-pitch-drills.md",
     "src/content/articles/coach-vs-kid-pitch.md",
-    "src/content/articles/coaching-your-own-kid-in-front-of-the-team.md",
     "src/content/articles/concussion-protocol-youth-sports.md",
-    "src/content/articles/crew-5am-different-clock-family.md",
     "src/content/articles/dealing-with-sports-parents.md",
-    "src/content/articles/drum-major-and-section-leader-the-real-odds.md",
     "src/content/articles/favoritism-coaching-your-child.md",
     "src/content/articles/flag-football-drills.md",
     "src/content/articles/goalkeeper-drills-youth.md",
