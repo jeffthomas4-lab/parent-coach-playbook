@@ -27,11 +27,11 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-10-11
   status: published
   factCheckGoodThrough: 2027-10-11
-  reviewerNotes: "Rewritten 2026-10-11 with Jeff's approval. The BabyLoveGrowth import had a truncated dek, a doubled 'a a' in two places, and claims the cited pages do not make (a USA Basketball training-to-competition ratio, an NFHS 3-to-4 minute station rule, provider sign-off at every concussion step). Same slug, title, hero and import data; all outbound links kept. USA Basketball youth guidelines (9-11: 45-75 min practices, 2 per week, 5 hours max) and NFHS 'Effective Practice Planning' (one minute of focus per year of age, post the plan, no single-file lines) re-read 2026-10-11. No /go/ affiliate links before or after."
+  reviewerNotes: "Rewritten 2026-10-11 with Jeff's approval. The BabyLoveGrowth import had a truncated dek, a doubled 'a a' in two places, and claims the cited pages do not make (a USA Basketball training-to-competition ratio, an NFHS 3-to-4 minute station rule, provider sign-off at every concussion step). Same slug, title, hero and import data; all outbound links kept. USA Basketball youth guidelines (9-11: 45-75 min practices, 2 per week, 5 hours max) and NFHS 'Effective Practice Planning' (one minute of focus per year of age, post the plan, no single-file lines) re-read 2026-10-11. Arnie babylove insert 2026-10-12: added FTC disclosure + 3 existing-catalog /go/ links (basketball-ball-rubber, agility-cones-set, scrimmage-pennies); 0 new affiliates.json entries; ASINs browser-verified live."
 ---
 
 Six o'clock on a Tuesday, one hoop, eleven fifth graders, and you have an hour. The worst thing you can do with that hour is a single-file layup line. Ten kids stand still while one shoots.
@@ -39,6 +39,8 @@ Six o'clock on a Tuesday, one hoop, eleven fifth graders, and you have an hour. 
 Here is a plan that keeps every player moving for 55 minutes. It fits [USA Basketball's youth guidelines](https://www.usab.com/youthguidelines), which set practice at 45 to 75 minutes, twice a week, for ages 9 to 11.
 
 And no drill runs past 11 minutes. [NFHS practice-planning guidance](https://nfhs.org/stories/effective-practice-planning) puts a kid's focus at roughly one minute per year of age, so an 11-year-old gets about 11 minutes before the drill goes stale.
+
+*This post contains affiliate links. We make a small amount when you buy through them. We only recommend products we use ourselves.*
 
 ## The 55-minute timeline
 
@@ -100,7 +102,7 @@ If you suspect one, the player sits for the rest of the day. No exceptions, no "
 
 ## Gear and helpers
 
-You need very little. A ball for every kid, a bag of cones, and two colors of pinnies cover the whole plan. Our [what to buy guide](/what-to-buy/) and [basketball hub](/sports/basketball/) list the basics and what they cost.
+You need very little. A [ball](/go/basketball-ball-rubber/) for every kid, a bag of [cones](/go/agility-cones-set/), and two colors of [pinnies](/go/scrimmage-pennies/) cover the whole plan. Our [what to buy guide](/what-to-buy/) and [basketball hub](/sports/basketball/) list the basics and what they cost.
 
 Some parent groups use a [team camera system](https://i-trx.com/post/why-every-team-parent-needs-a-youth-sports-camera) to capture scrimmage clips, and a [team communication plan](https://blog.rostersports.com/blog/communication-plan-sports-team) keeps practice times and changes in one place. Both are optional. A posted plan and a whistle matter more.
 

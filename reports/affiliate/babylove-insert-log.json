@@ -1748,6 +1748,26 @@
       "links_inserted": 0,
       "asins_verified": [],
       "note": "No named products in the article; nothing to insert. Dek/bluf truncated (flagged to Rex)."
+    },
+    {
+      "date": "2026-10-12",
+      "articleSlug": "basketball-practice-plan-u12",
+      "action": "insert-existing-catalog-links",
+      "details": "Gap-queue clearance from 2026-10-11. Scheduled 2026-10-12 10:10 PM PT run on DESKTOP (041b6bba). Inserted 3 existing-catalog /go/ links into Gear and helpers: basketball-ball-rubber (B0DHRCRTY5), agility-cones-set (B0CLNGGXBC), scrimmage-pennies (B0000BY937). Added AFFILIATES.md FTC disclosure before first link. Set editorial.affiliateDisclosurePresent true. 0 competitor storefront replacements (i-trx and rostersports are blog posts, not product SKUs; NFHS/USAB/CDC left protected). 0 new affiliates.json entries. 0 rewrites beyond light anchor wrapping on the existing gear sentence. No ASIN invented.",
+      "before": "You need very little. A ball for every kid, a bag of cones, and two colors of pinnies cover the whole plan.",
+      "after": "You need very little. A [ball](/go/basketball-ball-rubber/) for every kid, a bag of [cones](/go/agility-cones-set/), and two colors of [pinnies](/go/scrimmage-pennies/) cover the whole plan.",
+      "asin": "B0DHRCRTY5,B0CLNGGXBC,B0000BY937",
+      "browserVerification": "Live browser 2026-10-12 PT: B0DHRCRTY5 KUYOTQ Kids Youth Size 5 rubber basketball In Stock match yes; B0CLNGGXBC GHB Soccer Cones disc/agility set In Stock match yes; B0000BY937 Champion Sports Adult Mesh Practice Scrimmage Vest Red pack of 12 Add to Cart present (title says Adult; same catalog slug already used on youth-basketball-drills and other youth pages) match yes with adult-size caveat."
+    },
+    {
+      "date": "2026-10-12",
+      "articleSlug": "run-summary",
+      "action": "insertions-complete",
+      "details": "Scheduled 2026-10-12 ~10:10 PM PT on DESKTOP (041b6bba). No new Publish BabyLoveGrowth commits after ad65d8cc (switching-teams-youth-sports, already logged zero-product 2026-10-12). Cleared prior gap-queue for basketball-practice-plan-u12 with 3 existing-catalog links. Net: 3 insertions, 0 replacements, 0 new catalog entries, 1 light gear-sentence rewrite, disclosure added. No ASIN fabricated. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Three existing-catalog ASINs browser-verified live this run (see basketball-practice-plan-u12 entry)."
     }
   ]
 }
