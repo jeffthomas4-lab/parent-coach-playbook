@@ -6,12 +6,12 @@
   "consumer": "pcd-affiliate-replacement-sourcer (Arnie) -> pcd-affiliate-replacement-reviewer (Rita) -> pcd-affiliate-link-stager (Alfred)",
   "consumer_instructions": "Pipeline: Linda fills open items; Arnie works status=='open' (browser-verify, write resolution.*, set status='proposed'); Rita works status=='proposed' (auto-approve safe items -> status='approved' with approved_by/approved_at, or escalate absolute edge cases: leave proposed, set escalated_to_jeff + escalate_reason, upsert reports/edge-cases/pending.json for Rex); Alfred works status=='approved' only (stage affiliates.json + PR, set staged). Do NOT edit affiliates.json or deploy from Arnie/Rita. Jeff only handles Rita escalations via Rex daily desk.",
   "totals": {
-    "open": 2,
+    "open": 0,
     "proposed": 0,
     "approved": 0,
     "high_priority": 5,
     "medium_priority": 5,
-    "staged": 8
+    "staged": 10
   },
   "items": [
     {
@@ -217,13 +217,25 @@
       "product_intent": "Youth slip-in soccer shin guards from a name brand (Nike Charge class), sold with a sleeve, sized S/M/L by height",
       "suggested_search_query": "Nike youth Charge shin guards soccer",
       "priority": "high",
-      "status": "open",
+      "status": "staged",
       "placements": [
         "src/content/articles/best-kids-shin-guards.md"
       ],
       "detected_by": "linda-2026-10-12",
       "detected_at": "2026-10-12",
-      "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md"
+      "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B07SR4QDG6?tag=parentcoachpl-20",
+        "proposed_asin": "B07SR4QDG6",
+        "product_title": "Nike Kids Charge Shinguard (Little Kids/Big Kids)",
+        "verified": "curl-verified live Amazon listing 2026-10-13: add-to-cart present, $14.99, default variant \"Only 1 left in stock\"",
+        "note": "Jeff approved fixing the dead link directly on 2026-10-13 (skipping the Arnie/Rita queue). Staged, merged, and deployed in the same pass.",
+        "approved_by": "jeff-2026-10-13",
+        "approved_at": "2026-10-13",
+        "staged_at": "2026-10-13",
+        "staged_by": "alfred-pcd-2026-10-13",
+        "deployed_at": "2026-10-13"
+      }
     },
     {
       "slug": "soccer-shin-guards-ankle-youth",
@@ -236,14 +248,26 @@
       "product_intent": "Youth soccer shin guards with built-in ankle protection (stirrup/ankle sock style)",
       "suggested_search_query": "youth soccer shin guards with ankle protection",
       "priority": "medium",
-      "status": "open",
+      "status": "staged",
       "placements": [
         "src/content/articles/best-kids-shin-guards.md",
         "src/content/articles/the-13-year-olds-i-need-new-everything.md"
       ],
       "detected_by": "linda-2026-10-12",
       "detected_at": "2026-10-12",
-      "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md"
+      "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B0D6397DKW?tag=parentcoachpl-20",
+        "proposed_asin": "B0D6397DKW",
+        "product_title": "adidas Tiro Match Soccer Shin Guards (kids, attached ankle guard)",
+        "verified": "curl-verified live Amazon listing 2026-10-13: add-to-cart present, $11.94, default variant \"Only 1 left in stock\"",
+        "note": "Jeff approved fixing the dead link directly on 2026-10-13 (skipping the Arnie/Rita queue). Staged, merged, and deployed in the same pass.",
+        "approved_by": "jeff-2026-10-13",
+        "approved_at": "2026-10-13",
+        "staged_at": "2026-10-13",
+        "staged_by": "alfred-pcd-2026-10-13",
+        "deployed_at": "2026-10-13"
+      }
     }
   ]
 }
