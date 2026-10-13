@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T04:01:16.556Z",
+  "generatedAt": "2026-10-13T15:39:19.565Z",
   "count": 984,
   "links": [
     {
@@ -2593,12 +2593,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B00R2VBASG?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: soccer-shin-guards-ankle-youth)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B00S1BHHWY?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: lacrosse-arm-pads-youth)"
@@ -2792,12 +2786,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B07HVCX4YC?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: nike-youth-charge-shin-guards)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B07KFV9MFL?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: hockey-pads-starter)"
@@ -2819,6 +2807,12 @@
       "url": "https://www.amazon.com/dp/B07Q5V12XY?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: xc-running-gloves)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07SR4QDG6?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: nike-youth-charge-shin-guards)"
       ]
     },
     {
@@ -3173,6 +3167,12 @@
       "url": "https://www.amazon.com/dp/B0D2JHFYDH?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: soccer-cleats-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D6397DKW?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-shin-guards-ankle-youth)"
       ]
     },
     {
