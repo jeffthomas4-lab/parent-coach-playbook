@@ -14,7 +14,7 @@ publishedAt: 2026-10-12
 hero: /illustrations/cross-country-morning-starting-line.webp
 heroAlt: "Cross country runners lined up on a grass starting line in early morning light, mostly backs and profiles visible."
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
