@@ -1,16 +1,16 @@
 {
   "queue_version": 1,
   "generated_by": "pcd-link-health-monitor",
-  "generated_at": "2026-09-14",
-  "source_report": "reports/link-health/LINK_HEALTH_2026-09-14.md",
+  "generated_at": "2026-10-12",
+  "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md",
   "consumer": "pcd-affiliate-replacement-sourcer (Arnie) -> pcd-affiliate-replacement-reviewer (Rita) -> pcd-affiliate-link-stager (Alfred)",
   "consumer_instructions": "Pipeline: Linda fills open items; Arnie works status=='open' (browser-verify, write resolution.*, set status='proposed'); Rita works status=='proposed' (auto-approve safe items -> status='approved' with approved_by/approved_at, or escalate absolute edge cases: leave proposed, set escalated_to_jeff + escalate_reason, upsert reports/edge-cases/pending.json for Rex); Alfred works status=='approved' only (stage affiliates.json + PR, set staged). Do NOT edit affiliates.json or deploy from Arnie/Rita. Jeff only handles Rita escalations via Rex daily desk.",
   "totals": {
-    "open": 0,
+    "open": 2,
     "proposed": 0,
     "approved": 0,
-    "high_priority": 4,
-    "medium_priority": 4,
+    "high_priority": 5,
+    "medium_priority": 5,
     "staged": 8
   },
   "items": [
@@ -205,6 +205,45 @@
         "staged_at": "2026-09-17",
         "staged_by": "alfred-pcd-2026-09-17"
       }
+    },
+    {
+      "slug": "nike-youth-charge-shin-guards",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-shin-guards-nike-charge-youth",
+      "old_destination": "https://www.amazon.com/dp/B07HVCX4YC?tag=parentcoachpl-20",
+      "current_asin": "B07HVCX4YC",
+      "issue_type": "out-of-stock",
+      "current_resolves_to": "Nike Youth Charge shin guards: \"Currently unavailable. We don't know when or if this item will be back in stock.\" No cart. Browser-confirmed twice 2026-10-12. Was cleared 2026-09-26, so this is a repeat.",
+      "product_intent": "Youth slip-in soccer shin guards from a name brand (Nike Charge class), sold with a sleeve, sized S/M/L by height",
+      "suggested_search_query": "Nike youth Charge shin guards soccer",
+      "priority": "high",
+      "status": "open",
+      "placements": [
+        "src/content/articles/best-kids-shin-guards.md"
+      ],
+      "detected_by": "linda-2026-10-12",
+      "detected_at": "2026-10-12",
+      "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md"
+    },
+    {
+      "slug": "soccer-shin-guards-ankle-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-shin-guards-ankle",
+      "old_destination": "https://www.amazon.com/dp/B00R2VBASG?tag=parentcoachpl-20",
+      "current_asin": "B00R2VBASG",
+      "issue_type": "out-of-stock",
+      "current_resolves_to": "Vizari ankle shin guards: \"Currently unavailable\", no cart. Browser-confirmed twice 2026-10-12. Repeat offender (degraded 07-20, unavailable 08-17).",
+      "product_intent": "Youth soccer shin guards with built-in ankle protection (stirrup/ankle sock style)",
+      "suggested_search_query": "youth soccer shin guards with ankle protection",
+      "priority": "medium",
+      "status": "open",
+      "placements": [
+        "src/content/articles/best-kids-shin-guards.md",
+        "src/content/articles/the-13-year-olds-i-need-new-everything.md"
+      ],
+      "detected_by": "linda-2026-10-12",
+      "detected_at": "2026-10-12",
+      "source_report": "reports/link-health/LINK_HEALTH_2026-10-12.md"
     }
   ]
 }
