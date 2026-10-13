@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-12",
+  "updated_at": "2026-10-13",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -121,6 +121,17 @@
       "href": "reports/seo/gsc-review-2026-10-12-SKIPPED.md",
       "opened_at": "2026-10-12",
       "opened_by": "rex-pcd-2026-10-12"
+    },
+    {
+      "id": "penny-live-ready-for-jeff-labels-2026-10-13",
+      "source": "penny-editorial",
+      "status": "open",
+      "priority": "low",
+      "title": "17 live pages still carry status ready-for-jeff (7 flagSensitiveTopic)",
+      "why_human": "Live and in the sitemap, but editorial status never moved past ready-for-jeff, so there is no record of owner sign-off. 10 body/safety pages (sensitive: banned-substances-hs-college, drowning-rescue-and-monitoring, mental-health-crisis-conversation, pole-vault-helmet-debate, team-manager-parent-conduct, tiktok-privacy-settings, youth-cross-country-safety-briefing; plus off-season-conditioning-safety, pollen-allergic-conjunctivitis, water-polo-specific-safety) and 7 recruiting sport guides (baseball, basketball, hockey, lacrosse, soccer, softball, volleyball). Jeff: confirm they can be marked reviewed/published in /admin/editorial, or pull any for review. Surfaced once; not a publish block.",
+      "href": "src/content/body/ ; src/content/recruiting/",
+      "opened_at": "2026-10-13",
+      "opened_by": "rex-pcd-2026-10-13"
     }
   ]
 }
