@@ -1,8 +1,9 @@
 ---
 title: The 13-14 Bat Drop Weight Check
-dek: Understanding drop weight and when to upgrade.
-seoDescription: At thirteen and fourteen, your kid is getting stronger and faster.
-  The bat they used last year might be the wrong drop now.
+dek: Check the league stamp first, then the drop, then the swing.
+seoTitle: "Bat Drop Weight for 13U and 14U"
+seoDescription: "At 13 and 14, the right bat drop starts with the league rule. See what Little League, USSSA, and high school allow, plus a quick fit check before you buy."
+bluf: "Start with the league rule, not the drop. Little League Junior allows USA Baseball or BBCOR bats with a 2 5/8-inch barrel, USSSA caps 13U at drop-8 and sets BBCOR drop-3 as its 14U standard. Then pick the lightest legal bat your kid controls."
 topic: equipment
 format: note
 phase: drive-there
@@ -11,6 +12,7 @@ age: 13-14
 hero: "/illustrations/baseball-dugout-fence-quiet.webp"
 heroAlt: "A young player rests forearms against a dugout's chain-link fence in late afternoon, face turned away in profile, a worn glove on the bench behind."
 publishedAt: 2026-02-16
+updatedAt: 2026-10-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -20,36 +22,45 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-22
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-13
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-10-13: three H2s; bluf, seoTitle, dek added; league-first rules cited (Little League bat chart, 2026 USSSA by-laws, USA Baseball/NFHS 2028 change); unsourced $300-$450 range replaced with a dated Easton listing; 'bats don't expire' replaced with the USA Baseball decertified-bat check; linked usa-vs-usssa-bats and the-bat-your-kid-begged-for; affiliate flag corrected to true; destinations unchanged."
+  factCheckGoodThrough: 2027-10-13
+  affiliateDisclosurePresent: true
 ---
 
-At thirteen and fourteen, your kid is getting stronger and faster. The bat they used last year might be the wrong drop now. Drop is the difference between bat length and bat weight. A 30-inch, 20-ounce bat is a drop-10. The number matters.
+At thirteen and fourteen, your kid is getting stronger, and last spring's bat might be the wrong drop now. Drop is the bat's weight in ounces minus its length in inches. A 30-inch, 20-ounce bat is a drop-10, and a smaller drop number means a heavier bat.
 
-**The progression**
-Age eleven to twelve: drop-12 or drop-11. At thirteen, most move to drop-10 or drop-9. By fourteen, some move to drop-8. The stronger the kid, the lower the drop.
+## The league picks the bat before you do
 
-**How to know if it's time**
-If they're hitting line drives at the end of games instead of early, the bat might be too light. If they're lunging and can't catch up, it might be too heavy. Watch two games. Talk to the coach. They see it faster than anyone.
+[Little League's bat chart](https://www.littleleague.org/playing-rules/bat-information/) allows a USA Baseball-stamped bat or a BBCOR bat, 2 5/8-inch barrel maximum, in the Intermediate (50/70) and Junior divisions. Senior League requires BBCOR.
 
-**The test**
-Have them take their current bat. If they can hold it at chest height with one hand for ten seconds without shaking, it's probably still fine. If their arm shakes after three seconds, it's too heavy.
+Travel ball runs on different rules. The [2026 USSSA national by-laws](https://www.usssabaseball.org/images/USSSA_National_By-Laws_3-25-2026.pdf) cap 13U at drop-8 and make BBCOR drop-3 or wood the 14U national standard as of January 1, 2026, unless the event's state opted into a drop-5 exception. That drop-10 from 12U won't pass at a USSSA 13U event, so ask the tournament director before you buy.
 
-**What to buy**
-Easton, Louisville Slugger, Marucci. Those three build bats that last. Drop-10 through drop-8 depending on where he is. Two-piece composite bats are expensive and don't last long at this age because he's still growing. Hybrid bats (composite barrel, alloy handle) last longer and cost less. The [baseball gear guide](/what-to-buy/baseball/) has current picks by drop weight if you want a shortlist instead of a store aisle.
+High school is changing too. [USA Baseball says](https://www.usabaseball.com/bats/about) NFHS will allow USABat drop-4, drop-5, and drop-6 bats starting with the 2028 season, and BBCOR bats you already own stay legal indefinitely. The [USA and USSSA stamp guide](/game/usa-vs-usssa-bats/) has more.
 
-**The price**
-Expect three hundred to four-fifty. That's the actual range for a bat that will last two years. If you're spending more, you're buying cosmetics. If you're spending less, you're buying something that will break midseason.
+## How to know the drop is wrong
 
-**Used bats**
-Used drop-tens and drop-nines are everywhere. Someone's kid upgraded. If it's five years or newer, no visible damage, and it's half the price, buy it. Bats don't expire. They break or don't.
+If they're hitting line drives late in games instead of early, the bat might be too light. Lunging and arriving late on the fastball point the other way.
 
-**The window**
-January through March. Order before April camp. Not at the field before season starts.
+At home, have them hold the bat straight out at chest height with one hand. If the arm shakes after three seconds, the bat is heavier than they can control right now.
 
-One bat that fits him today beats three bats that are wrong.
+Then watch two games. Ask the coach, who sees the swing more than you do.
+
+## What to buy, and when
+
+They're still growing, so a bat bought at 13 has a season or two in it. Every BBCOR bat meets the same .50 performance limit, so the extra money mostly buys feel and finish.
+
+Prices vary. [Easton's 2026 Hype Fire BBCOR bat](https://easton.rawlings.com/product/E00714005.html) listed at $449.99 before a markdown to $349.99 this fall, and alloy models cost less. The [baseball gear guide](/what-to-buy/baseball/) has picks by drop weight, and [the bat your kid begged for](/drive-there/the-bat-your-kid-begged-for/) covers the wish-list conversation.
+
+Used bats are fine with three checks. The certification mark has to be permanent (USA Baseball doesn't accept stickers or decals), the barrel can't be cracked or dented, and the model can't be on [USA Baseball's decertified list](https://usabat.com/decertified-bats/).
+
+Shop January through March, before spring practice, not at the field on opening day.
+
+One bat that fits your kid today beats three bats that are wrong.
+
+*Updated October 13, 2026: added current league bat rules, a dated price listing, and the decertification check, replacing an unsourced $300 to $450 range and "bats don't expire."*
 
 ---
 

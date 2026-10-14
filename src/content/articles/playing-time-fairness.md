@@ -1,7 +1,9 @@
 ---
 title: Playing time. The fairness question every coach faces.
-dek: How to set it, explain it, and hold the line.
-seoDescription: "Playing time is the hardest question for volunteer coaches. Here's a clear philosophy for 8-10 year olds, how to explain it before the season starts, and what to say when a..."
+dek: Pick a policy, say it before the season, and hold the line.
+seoTitle: "Fair Playing Time for Ages 8 to 10"
+seoDescription: "Playing time is where volunteer coaches get in trouble. Set a half-the-game policy for ages 8 to 10, explain it before the season, and keep a simple log."
+bluf: "At 8 to 10, give every kid at least half of every game, the same floor AYSO writes into its rules. Announce the policy at the preseason parent meeting, track minutes, and when a parent pushes back, restate the policy once and stop talking."
 topic: the-hard-stuff
 format: note
 phase: game
@@ -10,6 +12,7 @@ age: 8-10
 hero: "/illustrations/bench-end-alone.webp"
 heroAlt: "A child sits alone at the far end of a bench, seen from behind and to the side, teammates loosely blurred in the middle distance."
 publishedAt: 2026-06-11
+updatedAt: 2026-10-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -19,60 +22,44 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-11
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-13
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-10-13: fact fix, the page said 'no less than a third' in one section and scripted 'at least half' in the next; now one half-the-game policy, cited to AYSO Everyone Plays (50 percent of every game). Three H2s; bluf, seoTitle, dek added; truncated seoDescription rewritten; '[Kid's name]' placeholders replaced; cut uncited 'kids who sit quit' and 'vast majority' claims; linked how-to-run-a-preseason-parent-meeting, when-a-parent-emails-about-playing-time, youth-sports-playing-time."
+  factCheckGoodThrough: 2027-10-13
+  affiliateDisclosurePresent: false
 ---
 
-Playing time is where most volunteer coaches get in trouble. Not because they're unfair. Because they're vague. Pick a policy before the season starts and say it out loud. The problems come later when you haven't.
+Playing time is where volunteer coaches get in trouble. Not because they're unfair. Because they're vague, and the problems show up later when nobody said the policy out loud.
 
-**The philosophy for this age**
+## The policy for this age
 
-At 8-10 years old, equal playing time is the right call. Full stop.
+At 8 to 10, near-equal playing time is the right call. Full stop. The kid on the bench today might be your best player in three years, and you won't know until then.
 
-The kids who play the most get the most development. The kids who sit get frustrated and quit. And the talent gap at this age is not real. The kid sitting the bench today might be your best player in three years. You don't know yet.
+Equal doesn't mean identical minute-for-minute. Our standard: every kid plays at least half of every game unless they're hurt, absent, or serving a consequence you already explained to the parents.
 
-"Equal" doesn't mean identical minute-for-minute. It means every kid plays a meaningful amount every game. A reasonable standard: no kid plays less than a third of the game unless they're hurt, absent, or there's a discipline issue you've already communicated to their parents.
+You won't be the only one using it. [AYSO's Everyone Plays rule](https://ayso.org/faqs-support/) requires every player on every team to play at least 50 percent of every game. [The fair rotation plan](/game/youth-sports-playing-time/) gets you there.
 
-**Set it at the parent meeting**
+## Say it before the season, then hold it
 
-The parent kickoff meeting is where this conversation happens. Before the season. When everyone can hear it together.
+The [preseason parent meeting](/team-parent/how-to-run-a-preseason-parent-meeting/) is where this lands, with every family hearing it together. Say it plainly: "Every kid plays at least half of every game, and starting spots aren't permanent."
 
-Say it plainly: "My policy is that every kid plays at least half of every game. I rotate the lineup. Starting spots are not permanent. If your kid is working hard in practice, they'll get their time."
+Then cover role changes: "If I move your kid to a new position, I'll tell your kid and I'll tell you first." Surprises cause the blowups.
 
-Then say what happens if a kid is struggling: "If I'm moving someone to a different position or adjusting their role, I'll tell your kid directly and I'll tell you. You won't find out at the game."
+A parent will still find you near the snack table after a rough game. Don't defend in the moment. Say, "I hear you, and I want to talk once the kids are with you."
 
-That last part matters. Surprises are what cause problems. Parents can handle almost anything if they knew it was coming.
+When you do talk, give one sentence: "At this age every kid gets at least half the game, your daughter is getting her share, and I'm going to keep rotating." Then stop talking. "I know it's hard to watch" is fine; "You're right, I'll change it" is not, unless you got it wrong.
 
-**When a parent challenges you mid-season**
+## When you did get it wrong
 
-It will happen. Someone's kid had a rough game and you made a substitution at a bad moment and now there's a parent waiting for you near the snack table.
+Busy game, sloppy rotation tracking, and a kid gets less than the policy promises. Own it. "I missed it last game, and she'll get extra time Saturday."
 
-Here's what you do: don't defend in the moment. Say "I hear you. Can we talk after the kids are with you?" Then actually follow up.
+Skip the speech and the promise that it'll never happen again.
 
-When you do talk, don't over-explain. One clear sentence: "My policy is equal playing time for this age group. [Kid's name] is getting their share, and I'm going to keep rotating." Then stop talking.
+Keep a simple log of who played and roughly how long, quarter by quarter or inning by inning. You won't show it to anyone. Drift happens quietly when nobody is counting, and the log keeps your calls honest.
 
-Don't apologize for the policy. You can be warm and still hold the line. "I know it's hard to watch" is a reasonable thing to say. "You're right, I'll adjust" is not, unless you actually got something wrong.
+If the complaint arrives by email instead, [when a parent emails about playing time](/drive-home/when-a-parent-emails-about-playing-time/) has the reply.
 
-**When you did get something wrong**
+Set the policy. Explain it once, out loud, before the first practice of the season. Then coach.
 
-Sometimes you actually did give a kid less time than the policy calls for. Busy game, distractions, bad rotation tracking.
-
-Own it. "I made an error last game. I'm going to make sure [kid's name] gets more time Saturday." That's it. No lengthy explanation. No promise that it'll never happen again.
-
-Parents respect accountability more than they respect perfection.
-
-**Document it if you need to**
-
-If you're getting pressure from a specific family, keep a simple log. Who played, what quarter, roughly how many minutes. Not because you'll show it to them. Because knowing you have it keeps your decisions grounded.
-
-And it keeps you honest. Nobody deliberately cheats on playing time. But if you're not tracking, you might not notice the drift.
-
-**The line worth holding**
-
-You're a volunteer. You're giving up your weekends. You're going to make judgment calls and some of them will be wrong.
-
-But if you set a fair policy and apply it consistently, the vast majority of parents will respect it. The ones who won't were going to be a problem either way.
-
-Set the policy. Explain it once, clearly, before the season starts. Then coach.
+*Updated October 13, 2026: fixed a mismatch between a one-third standard and a half-the-game script; the page now uses one half-the-game policy and cites AYSO's Everyone Plays rule.*
