@@ -1768,6 +1768,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "Three existing-catalog ASINs browser-verified live this run (see basketball-practice-plan-u12 entry)."
+    },
+    {
+      "date": "2026-10-14",
+      "articleSlug": "playing-up-age-group",
+      "action": "zero-product-skip",
+      "details": "Catch-up run 2026-10-14 ~9:35 AM PT on DESKTOP for the 10/13 night slot (machines offline). Article published 4f896619 is advice on playing up an age group. No specific buyable product is named; all 11 outbound links are governing-body, medical, research, or stats references (protected). One internal /what-to-buy/ link already present. Inserted nothing.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "n/a (no ASIN written)"
+    },
+    {
+      "date": "2026-10-14",
+      "articleSlug": "run-summary",
+      "action": "insertions-complete",
+      "details": "Catch-up for 10/13 night. 1 new BabyLove article since last run (playing-up-age-group), zero-product. Net: 0 insertions, 0 replacements, 0 new catalog entries. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "n/a"
     }
   ]
 }
