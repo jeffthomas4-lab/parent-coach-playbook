@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-13",
+  "updated_at": "2026-10-14",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -19,13 +19,16 @@
     {
       "id": "lonnie-send-ready-2026-10-08",
       "source": "lonnie-outreach",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "title": "6 send-ready Lonnie pitches need Jeff send click",
       "why_human": "Lonnie hard rule: only Jeff sends outreach and sets status sent. Five have verified addresses (WIAA jkesterson@wiaa.com, info@sowa.org, aleighsa.welch@piercecountywa.gov, info@adaptivesportsnw.org, PKS_CYA@seattle.gov). WA Youth Soccer needs one call to (253) 476-2237 for Keli Bitow email. All 6 still status=drafted in targets.json.",
       "href": "reports/seo/outreach/",
       "opened_at": "2026-10-08",
-      "opened_by": "rex-pcd-2026-10-08"
+      "opened_by": "rex-pcd-2026-10-08",
+      "resolved_at": "2026-10-14",
+      "resolved_by": "rex-2026-10-14 (Lonnie paused by Jeff until his season ends; not sent, reopen on resume)",
+      "paused": true
     },
     {
       "id": "penny-ready-for-jeff-news-2026-10-08",
@@ -132,6 +135,17 @@
       "href": "src/content/body/ ; src/content/recruiting/",
       "opened_at": "2026-10-13",
       "opened_by": "rex-pcd-2026-10-13"
+    },
+    {
+      "id": "cloudflare-always-https-2026-10-14",
+      "source": "credentials-accounts",
+      "status": "open",
+      "priority": "medium",
+      "title": "http://parentcoachdesk.com still serves 200 instead of redirecting to https",
+      "why_human": "Cloudflare dashboard setting (SSL/TLS > Edge Certificates > Always Use HTTPS). Agents do not change zone settings. Flagged in the 10/12 SEO indexing fix; rechecked 10/14, still 200.",
+      "href": "https://dash.cloudflare.com (parentcoachdesk.com zone)",
+      "opened_at": "2026-10-14",
+      "opened_by": "rex-2026-10-14"
     }
   ]
 }

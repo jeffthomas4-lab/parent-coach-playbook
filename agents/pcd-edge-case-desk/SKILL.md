@@ -1,8 +1,8 @@
 ---
 name: pcd-edge-case-desk
 description: Rex daily PCD edge-case desk. Surfaces only items that MUST have Jeff human review across affiliates, editorial, camps, deploys, outreach, BabyLove, safety, and Kit. Quiet when none. Does not approve or deploy.
-version: 1.0
-last_edited: 2026-10-07
+version: 1.1
+last_edited: 2026-10-14
 owner_workstream: Ops / owner desk
 action_class: Report
 risk: R1
@@ -37,7 +37,7 @@ Routine work is auto-handled by lane agents (Linda -> Arnie -> **Rita** -> Alfre
 | Editorial / Penny | Content `ready-for-jeff`, SENS / Red Wall holds, voice-rubric fails that block publish and need owner judgment |
 | Camps / Ranger | Staged Class C fixes awaiting approval (`reports/camps/CAMPS_REVIEW_*.md` not yet applied); deletes; threshold Class D changes |
 | Deploy / Dana | Active deploy hold Jeff must clear or confirm; smoke/rollback that needs owner decision; live≠main with hold |
-| Lonnie outreach | Pitches in `drafted` waiting send; Red Wall targets; any "needs Jeff" Slack-class item still open |
+| Lonnie outreach | **PAUSED 2026-10-14 (Jeff, until his season ends).** Do not list Lonnie pitches, sends, or outreach items. Resume only when Jeff says Lonnie is back on and this row is un-paused. |
 | BabyLove | Gap-queue items that ask for a **new** `affiliates.json` slug / product (not routine auto-insert) |
 | Safety / legal / privacy | Anything touching kids PII, medical claims, privacy/legal copy, counsel packets still open |
 | Kit / newsletter | Provider activation / proof still pending Jeff approval per launch matrix |
@@ -71,7 +71,7 @@ When unsure whether something is MUST-human: **include it once** with a short wh
 3. **`coordination/deploy-hold-state.json`** — active hold / consecutive held nights that need Jeff.
 4. **Penny holds** — drafts marked `ready-for-jeff` / SENS / Red Wall if cheap to find (content frontmatter or Penny's last Slack/report). Do not full-crawl the site every day; prefer known queues and recent agent reports.
 5. **`reports/camps/CAMPS_REVIEW_*.md`** — newest review with staged fixes not marked applied.
-6. **Lonnie** — `reports/seo/outreach/` drafted pitches awaiting Jeff send; Red Wall notes.
+6. **Lonnie** — PAUSED (see table). Skip `reports/seo/outreach/` entirely; do not read, list, or commit Lonnie files.
 7. **`reports/affiliate/babylove-gap-queue.json`** — only entries that explicitly need a new catalog slug decision (summarize count + 1–3 examples, not the whole history dump).
 8. **Kit / newsletter / launch** — if `coordination/LAUNCH-AUTHORIZATION-MATRIX.md` or known pending proof still blocks activation, one line.
 9. **Open Alfred PRs** only if they are waiting on Jeff merge *and* something about them is non-routine (otherwise Alfred/Dana lane is auto).
