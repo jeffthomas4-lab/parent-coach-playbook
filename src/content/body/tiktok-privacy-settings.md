@@ -26,7 +26,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-19
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Sensitive flagged. TikTok safety, FTC COPPA, Common Sense, NCMEC cited. Concrete settings instructions are the actionable piece."
 ---
 

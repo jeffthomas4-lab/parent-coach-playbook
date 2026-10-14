@@ -24,7 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-02-15
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "NSCA and AAP cited. The 'kids can lift safely' position is current consensus, contrary to older folk wisdom."
 ---
 

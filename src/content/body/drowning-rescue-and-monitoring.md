@@ -24,7 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-10
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Sensitive flagged. ARC, CDC, AAP cited. Clarifies the 'secondary drowning' myth while honoring the real post-event monitoring."
 ---
 

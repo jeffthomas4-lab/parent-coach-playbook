@@ -130,13 +130,16 @@
     {
       "id": "penny-live-ready-for-jeff-labels-2026-10-13",
       "source": "penny-editorial",
-      "status": "open",
+      "status": "resolved",
       "priority": "low",
       "title": "17 live pages still carry status ready-for-jeff (7 flagSensitiveTopic)",
       "why_human": "Live and in the sitemap, but editorial status never moved past ready-for-jeff, so there is no record of owner sign-off. 10 body/safety pages (sensitive: banned-substances-hs-college, drowning-rescue-and-monitoring, mental-health-crisis-conversation, pole-vault-helmet-debate, team-manager-parent-conduct, tiktok-privacy-settings, youth-cross-country-safety-briefing; plus off-season-conditioning-safety, pollen-allergic-conjunctivitis, water-polo-specific-safety) and 7 recruiting sport guides (baseball, basketball, hockey, lacrosse, soccer, softball, volleyball). Jeff: confirm they can be marked reviewed/published in /admin/editorial, or pull any for review. Surfaced once; not a publish block.",
       "href": "src/content/body/ ; src/content/recruiting/",
       "opened_at": "2026-10-13",
-      "opened_by": "rex-pcd-2026-10-13"
+      "opened_by": "rex-pcd-2026-10-13",
+      "resolved_at": "2026-10-14",
+      "resolved_by": "jeff-2026-10-14 9:43 AM PT ('reviewed all 17')",
+      "resolution": "Jeff reviewed all 17 live pages (incl. 7 sensitive). Editorial status ready-for-jeff -> published, jeffReviewedAt 2026-10-14 on 10 body + 7 recruiting files."
     },
     {
       "id": "cloudflare-always-https-2026-10-14",

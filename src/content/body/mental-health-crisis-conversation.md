@@ -26,7 +26,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-15
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Sensitive flagged. 988, AAP, AFSP, JED cited. Follows user-wellbeing guidance: no safety-assessment questions, no categorical confidentiality assurances, directs to professionals for crisis support."
 ---
 

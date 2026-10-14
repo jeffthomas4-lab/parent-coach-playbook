@@ -24,8 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
-  jeffReviewedAt: null
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Generic Editorial voice. Covers NLF/Trilogy circuit, the D3-heavy reality of college lax, the regional concentration, and post-2017 commit-window rules."
 ---
 
