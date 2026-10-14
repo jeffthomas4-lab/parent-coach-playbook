@@ -13,6 +13,8 @@ age: "all-ages"
 publishedAt: 2026-11-20
 featured: false
 draft: true
+hero: "/illustrations/backstage-before-recital.webp"
+heroAlt: "A parent fastens the back of a young dancer's lilac costume in a backstage dressing room lit by mirror bulbs."
 editorial:
   qualityGrade: 8
   originalityGrade: 8
