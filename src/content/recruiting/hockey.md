@@ -24,8 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
-  jeffReviewedAt: null
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Generic Editorial voice. Covers the juniors detour, the USHL pipeline, the small program footprint, and why D2 hockey effectively doesn't exist."
 ---
 

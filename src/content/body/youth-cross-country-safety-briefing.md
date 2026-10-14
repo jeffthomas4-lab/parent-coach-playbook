@@ -25,7 +25,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-08
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Sensitive flagged. USATF, AAOS, IOC RED-S, National Alliance for Eating Disorders cited. The RED-S risk for adolescent girls in distance running is well-documented."
 ---
 

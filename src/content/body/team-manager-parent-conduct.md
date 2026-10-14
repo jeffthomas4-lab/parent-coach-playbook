@@ -24,7 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-02-02
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Sensitive flagged. SafeSport, PCA, FTC COPPA cited. The team-manager role is widely underdocumented in youth-sports literature; framed practically."
 ---
 

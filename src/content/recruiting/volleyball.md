@@ -24,8 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
-  jeffReviewedAt: null
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Generic Editorial voice. Covers club season vs school season, the early-commit problem, and the height premium that drives D1."
 ---
 

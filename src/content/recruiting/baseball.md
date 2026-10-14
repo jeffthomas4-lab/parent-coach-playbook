@@ -22,8 +22,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
-  jeffReviewedAt: null
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Generic Editorial voice. Showcase economics, the equivalency math at D1, and the JUCO path most families don't know about."
 ---
 

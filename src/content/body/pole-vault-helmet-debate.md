@@ -24,7 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-29
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Sensitive flagged. NFHS, USATF cited. Honest about contested evidence."
 ---
 

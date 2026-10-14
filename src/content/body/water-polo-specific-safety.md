@@ -24,7 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-29
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "USA Water Polo, FINA, AAP cited. The underwater-contact and eye-injury patterns are the load-bearing risks."
 ---
 

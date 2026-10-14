@@ -24,8 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
-  jeffReviewedAt: null
-  status: ready-for-jeff
+  jeffReviewedAt: 2026-10-14
+  status: published
   reviewerNotes: "Generic Editorial voice. PGF and TC circuit context, scholarship math at every level, the early-commit trap that NCAA partially closed."
 ---
 
