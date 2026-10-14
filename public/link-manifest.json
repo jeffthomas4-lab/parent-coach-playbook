@@ -1,11 +1,17 @@
 {
-  "generatedAt": "2026-10-13T15:39:19.565Z",
-  "count": 984,
+  "generatedAt": "2026-10-14T16:34:29.990Z",
+  "count": 994,
   "links": [
     {
       "url": "http://cms.usssa.net/wp-content/uploads/sites/2/2026/09/26/USSSA-National-By-Laws.pdf",
       "sources": [
         "src/content/news/usssa-grade-exception-limit-2026.md"
+      ]
+    },
+    {
+      "url": "http://www.balletquadcities.com/nutcracker-auditions",
+      "sources": [
+        "src/content/articles/nutcracker-november-weekends-thanksgiving.md"
       ]
     },
     {
@@ -377,6 +383,12 @@
       ]
     },
     {
+      "url": "https://balletidaho.org/wp-content/uploads/2026/07/2026-Nutcracker-Handbook.pdf",
+      "sources": [
+        "src/content/articles/nutcracker-november-weekends-thanksgiving.md"
+      ]
+    },
+    {
       "url": "https://baseballpositive.com/plans-tee-ball/",
       "sources": [
         "src/content/articles/tee-ball-drills.md"
@@ -386,6 +398,12 @@
       "url": "https://battingleadoff.com/how-to-execute-rundown-baseball/",
       "sources": [
         "src/content/articles/coach-pitch-drills.md"
+      ]
+    },
+    {
+      "url": "https://betsyscore.com/blog/post-match-stats-worth-reviewing-after-every-game",
+      "sources": [
+        "src/content/articles/playing-up-age-group.md"
       ]
     },
     {
@@ -824,6 +842,12 @@
       ]
     },
     {
+      "url": "https://icoachkids.org/the-hub/holistic-development/understanding-growth-and-maturation-in-youth-sport",
+      "sources": [
+        "src/content/articles/playing-up-age-group.md"
+      ]
+    },
+    {
       "url": "https://ijspt.scholasticahq.com/article/29923-the-youth-throwers-ten-exercise-program-a-variation-of-an-exercise-series-for-enhanced-dynamic-shoulder-control-in-the-youth-overhead-throwing-atlet",
       "sources": [
         "src/content/articles/baseball-throwing-drill.md"
@@ -882,6 +906,12 @@
       "url": "https://journals.lww.com/nsca-jscr/fulltext/2009/08000/youth_resistance_training__updated_position.40.aspx",
       "sources": [
         "src/content/body/recovery-basics.md"
+      ]
+    },
+    {
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0355563",
+      "sources": [
+        "src/content/articles/playing-up-age-group.md"
       ]
     },
     {
@@ -1879,6 +1909,12 @@
       "url": "https://usavolleyball.org/wp-content/uploads/2025/03/2024-2025-USAV_Uniforms_Requirements.pdf",
       "sources": [
         "src/content/articles/volleyball-equipment.md"
+      ]
+    },
+    {
+      "url": "https://usavolleyball.org/wp-content/uploads/2026/01/2026-Boys-Championship-Manual-Final-as-of-Jan_15_2026.pdf.pdf",
+      "sources": [
+        "src/content/articles/playing-up-age-group.md"
       ]
     },
     {
@@ -3932,6 +3968,12 @@
       ]
     },
     {
+      "url": "https://www.civicdancecenter.com/nutcracker-rehearsals/",
+      "sources": [
+        "src/content/articles/nutcracker-november-weekends-thanksgiving.md"
+      ]
+    },
+    {
       "url": "https://www.cnn.com/2026/07/12/sport/youth-soccer-costs-united-states",
       "sources": [
         "src/content/articles/youth-sports-costs.md"
@@ -3984,6 +4026,12 @@
         "src/content/articles/how-to-net-a-soccer-goal.md",
         "src/content/articles/moving-a-soccer-goal-safely.md",
         "src/content/articles/post-game-field-breakdown-checklist.md"
+      ]
+    },
+    {
+      "url": "https://www.danceitup.com/nutcracker/nutcracker-information",
+      "sources": [
+        "src/content/articles/nutcracker-november-weekends-thanksgiving.md"
       ]
     },
     {
@@ -4227,6 +4275,7 @@
       "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Preventing-Overuse-Injuries.aspx",
       "sources": [
         "src/content/articles/playing-time-policy-youth.md",
+        "src/content/articles/playing-up-age-group.md",
         "src/content/articles/youth-volleyball-serving-drills.md"
       ]
     },
@@ -5072,6 +5121,12 @@
       "url": "https://www.olympic.org/athlete365/health/relative-energy-deficiency-in-sport/",
       "sources": [
         "src/content/body/eating-disorders-in-sport.md"
+      ]
+    },
+    {
+      "url": "https://www.open-access.bcu.ac.uk/11523/1/A%20multidisciplinary%20investigation%20into%20%E2%80%9Cplaying-up%E2%80%9D%20in%20academy%20football%20according%20to%20age%20phase.pdf",
+      "sources": [
+        "src/content/articles/playing-up-age-group.md"
       ]
     },
     {
@@ -6263,6 +6318,12 @@
         "src/content/articles/travel-soccer-costs.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usyouthsoccer.org/news/2025/03/05/us-youth-soccer-us-club-soccer-and-ayso-returning-to-seasonal-year-age-group-formation-in-2026/",
+      "sources": [
+        "src/content/articles/playing-up-age-group.md"
       ]
     },
     {
