@@ -117,13 +117,15 @@
     {
       "id": "nora-gsc-browser-2026-10-12",
       "source": "credentials-accounts",
-      "status": "open",
+      "status": "resolved",
       "priority": "low",
       "title": "Nora GSC report needs a signed-in browser run",
       "why_human": "No GSC API credential or script; prior reports came from a signed-in browser. Skipped this catch-up rather than script the signed-in session. Needs Jeff to open GSC or approve a browser run (last report 2026-10-05). Jeff 2026-10-12: he will run Nora in the browser himself.",
       "href": "reports/seo/gsc-review-2026-10-12-SKIPPED.md",
       "opened_at": "2026-10-12",
-      "opened_by": "rex-pcd-2026-10-12"
+      "opened_by": "rex-pcd-2026-10-12",
+      "resolved_at": "2026-10-14",
+      "resolved_by": "jeff-2026-10-14: GSC pull done 10/12 by PCD (sitemaps resubmitted, validation started; GSC validation emails 10/12 confirm)"
     },
     {
       "id": "penny-live-ready-for-jeff-labels-2026-10-13",
