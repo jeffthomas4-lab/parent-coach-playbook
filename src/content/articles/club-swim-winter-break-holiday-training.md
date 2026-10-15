@@ -13,6 +13,8 @@ age: "all-ages"
 publishedAt: 2026-11-24
 featured: false
 draft: true
+hero: "/illustrations/swimming-blocks-from-behind.webp"
+heroAlt: "Starting blocks at the deep end of an empty swim lane, viewed from behind."
 editorial:
   qualityGrade: 8
   originalityGrade: 8
