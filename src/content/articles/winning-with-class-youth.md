@@ -1,6 +1,6 @@
 ---
 title: "Youth Sports Parents: Win With Class, Report Injuries Without Penalty"
-seoTitle: "Youth Sports Parents: Win"
+seoTitle: "Win With Class: Youth Sports Parent Scripts"
 seoDescription: "Learn how praising effort, building a culture for concussion reporting, and using parent scripts can keep youth sports competitive and respectful."
 dek: "Winning with class means chasing results inside a mastery-based, safety-first culture. Start now: praise effort out loud, and make injury reporting a private, no-penalty habit."
 bluf: "Winning with class means chasing results inside a mastery-based, safety-first culture. Start now: praise effort out loud, and make injury reporting a private, no-penalty habit. Research from SHAPE America on dropout, USA Volleyball on coach-parent roles, and the CDC on safety backs this up."

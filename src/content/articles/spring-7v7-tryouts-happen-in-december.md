@@ -13,6 +13,8 @@ age: "15-plus"
 publishedAt: 2026-11-12
 featured: false
 draft: true
+hero: "/illustrations/guide-football-7v7-gear.webp"
+heroAlt: "Youth football 7v7 gear laid out for tryout season, photographed as a clean gear guide still."
 editorial:
   qualityGrade: 8
   originalityGrade: 8
