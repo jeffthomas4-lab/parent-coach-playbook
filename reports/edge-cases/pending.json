@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15",
+  "updated_at": "2026-10-19",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -147,10 +147,11 @@
       "status": "open",
       "priority": "medium",
       "title": "http://parentcoachdesk.com still serves 200 instead of redirecting to https",
-      "why_human": "Cloudflare dashboard setting (SSL/TLS > Edge Certificates > Always Use HTTPS). Agents do not change zone settings. Flagged in the 10/12 SEO indexing fix; rechecked 10/14, still 200.",
+      "why_human": "Cloudflare dashboard setting (SSL/TLS > Edge Certificates > Always Use HTTPS). Agents do not change zone settings. Flagged in the 10/12 SEO indexing fix; rechecked 10/14, 10/15, and 10/19 8:30 AM PT: http://parentcoachdesk.com/ still 200 (CF-Cache-Status HIT), while http://www.parentcoachdesk.com/ does 301 to https. If the toggle was turned on 10/12, it is not taking effect on the apex.",
       "href": "https://dash.cloudflare.com (parentcoachdesk.com zone)",
       "opened_at": "2026-10-14",
-      "opened_by": "rex-2026-10-14"
+      "opened_by": "rex-2026-10-14",
+      "last_checked": "2026-10-19"
     }
   ]
 }
