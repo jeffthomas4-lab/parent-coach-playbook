@@ -4,6 +4,7 @@ import type { AdminAuthEnv } from './lib/admin-auth';
 import { enforceAdministrativeRequest } from './lib/admin-runtime-gate';
 import { withWorkerSecurityHeaders } from './lib/security-headers';
 import { articleRedirectFor } from './lib/article-redirect';
+import { httpsRedirectFor } from './lib/https-redirect';
 import {
   handleBabyLoveWebhook,
   reconcileBabyLoveArticles,
@@ -28,6 +29,9 @@ export async function fetchWithAdminGate(
   context: ExecutionContext,
 ): Promise<Response> {
   const url = new URL(request.url);
+  // Security audit 2026-10-20 H3: plain http gets a 301 to https before anything else runs.
+  const toHttps = httpsRedirectFor(request, url);
+  if (toHttps) return withWorkerSecurityHeaders(toHttps, url.pathname);
   if (url.pathname === '/api/integrations/babylovegrowth/articles') {
     return withWorkerSecurityHeaders(await handleBabyLoveWebhook(request, env, context), url.pathname);
   }
