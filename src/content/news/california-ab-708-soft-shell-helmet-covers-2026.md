@@ -6,7 +6,7 @@ sport: "football"
 sourceUrl: "https://www.gov.ca.gov/2026/09/28/governor-newsom-signs-legislation-protecting-parents-rights-in-youth-football/"
 sourceLabel: "Office of the Governor of California (Sept. 28, 2026); AB 708, Chapter 732"
 publishedAt: 2026-10-19
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
