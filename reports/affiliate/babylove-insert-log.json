@@ -1838,6 +1838,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "n/a (no ASIN written)"
+    },
+    {
+      "date": "2026-10-21",
+      "articleSlug": "cutting-players-youth-teams",
+      "action": "zero-product-skip",
+      "details": "Published 2026-10-20 7:00 PM PT (commit 77d70542); not processed by the 10/20 run, picked up 10/21. Advice/scripts piece with reference links only and generic gear pointing to internal gear guides; no buyable product named. Gap-queued. Inserted zero affiliate links per babylove_auto_insert.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable; no product to verify."
+    },
+    {
+      "date": "2026-10-21",
+      "articleSlug": "run-summary",
+      "action": "insertions-complete",
+      "details": "Scheduled 2026-10-21 ~10:15 PM PT on DESKTOP (041b6bba). One new Publish BabyLoveGrowth commit since 87864a02: 77d70542 cutting-players-youth-teams, zero-product gap-queued. Net: 0 insertions, 0 replacements, 0 new catalog entries. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "n/a (no ASIN written)"
     }
   ]
 }
