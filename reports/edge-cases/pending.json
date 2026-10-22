@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-19",
+  "updated_at": "2026-10-21",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -152,6 +152,61 @@
       "opened_at": "2026-10-14",
       "opened_by": "rex-2026-10-14",
       "last_checked": "2026-10-19"
+    },
+    {
+      "id": "flo-batch8-review-2026-10-21",
+      "source": "penny-editorial",
+      "status": "open",
+      "priority": "medium",
+      "title": "Flo batch 8 refresh staged 10/13, still waiting for your review",
+      "why_human": "HUMAN GATE owns release. 9 articles refreshed, 1 hard hold (is-this-burnout-or-a-bad-week, mental-health standard) and a duplicate tournament-packing title to decide. Local branch flo/article-refresh-batch-8-2026-10-13 (32161372) merges clean with main. Batch 9 does not run until batch 8 is settled.",
+      "href": "flo/article-refresh-batch-8-2026-10-13:reports/editorial/article-refresh-runs/2026-10-13-batch8-abcd2514.md",
+      "opened_at": "2026-10-21",
+      "opened_by": "rex-pcd-2026-10-21"
+    },
+    {
+      "id": "security-prs-105-107-2026-10-21",
+      "source": "safety-legal-privacy",
+      "status": "open",
+      "priority": "medium",
+      "title": "Security PRs #105, #106, #107 open since 10/20",
+      "why_human": "PRs only; agents do not self-approve or merge. #105 http-to-https redirect at the Worker (H3), #106 repo exposure plan and OneDrive .env plan (H1/H2, plan only), #107 AGENTS.md evidence rules. Merging #105 to main triggers a Workers Builds deploy.",
+      "href": "https://github.com/jeffthomas4-lab/parent-coach-playbook/pulls",
+      "opened_at": "2026-10-21",
+      "opened_by": "rex-pcd-2026-10-21"
+    },
+    {
+      "id": "sunny-drafts-waiting-2026-10-21",
+      "source": "support",
+      "status": "open",
+      "priority": "low",
+      "title": "2 support reply drafts waiting on you",
+      "why_human": "Only Jeff sends. 10/20 outside story-idea pitch (thread 1a156aedff2682af) needs a policy call: does the Desk take outside story ideas? 9/29 partnership draft still unsent after 3 weeks.",
+      "href": "reports/support/TRIAGE_2026-10-21.md",
+      "opened_at": "2026-10-21",
+      "opened_by": "rex-pcd-2026-10-21"
+    },
+    {
+      "id": "sunny-registry-paused-2026-10-21",
+      "source": "credentials-accounts",
+      "status": "open",
+      "priority": "low",
+      "title": "Sunny reads paused in agent_registry; Sunny and Frida skills still describe the old Aug-Nov hold",
+      "why_human": "Manual 3.4 says maintenance is toggle-only and PCD_MAINTENANCE_MODE is off, but forge-command agent_registry has sunny = paused and both skills still say no work Aug-Nov. Kill-switch state is an owner call.",
+      "href": "automation/agents/sunny/SKILL.md",
+      "opened_at": "2026-10-21",
+      "opened_by": "rex-pcd-2026-10-21"
+    },
+    {
+      "id": "agent-runs-token-missing-2026-10-21",
+      "source": "credentials-accounts",
+      "status": "open",
+      "priority": "low",
+      "title": "PCD_AGENT_RUNS_TOKEN missing on DESKTOP",
+      "why_human": "No lane can write agent_runs rows (Flo, Frida, Sunny, Vera all logged locally only on 10/21). Owner-only secret setup; agents never request or handle the value.",
+      "href": "scripts/agent-run-client.mjs",
+      "opened_at": "2026-10-21",
+      "opened_by": "rex-pcd-2026-10-21"
     }
   ]
 }
