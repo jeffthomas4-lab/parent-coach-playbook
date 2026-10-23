@@ -5,7 +5,7 @@ category: "safety"
 sourceUrl: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB387"
 sourceLabel: "AB 387, Chapter 502 (Sept. 27, 2026); AB 310, Chapter 254 (Oct. 3, 2025)"
 publishedAt: 2026-10-22
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7

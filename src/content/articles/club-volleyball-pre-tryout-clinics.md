@@ -12,7 +12,7 @@ sport: "volleyball"
 age: "13-14"
 publishedAt: 2026-10-22
 featured: false
-draft: true
+draft: false
 hero: "/illustrations/volleyball-net-empty-gym.webp"
 heroAlt: "A volleyball net stretches across an empty gym court, shot from the floor at one post with light falling from high windows."
 editorial:
