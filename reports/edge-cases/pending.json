@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-22",
+  "updated_at": "2026-10-23",
   "items": [
     {
       "id": "lonnie-stalled-pitches-2026-10-08",
@@ -151,7 +151,7 @@
       "href": "https://dash.cloudflare.com (parentcoachdesk.com zone)",
       "opened_at": "2026-10-14",
       "opened_by": "rex-2026-10-14",
-      "last_checked": "2026-10-22"
+      "last_checked": "2026-10-23"
     },
     {
       "id": "flo-batch8-review-2026-10-21",
@@ -163,7 +163,7 @@
       "href": "flo/article-refresh-batch-8-2026-10-13:reports/editorial/article-refresh-runs/2026-10-13-batch8-abcd2514.md",
       "opened_at": "2026-10-21",
       "opened_by": "rex-pcd-2026-10-21",
-      "last_checked": "2026-10-22"
+      "last_checked": "2026-10-23"
     },
     {
       "id": "security-prs-105-107-2026-10-21",
@@ -175,7 +175,7 @@
       "href": "https://github.com/jeffthomas4-lab/parent-coach-playbook/pulls",
       "opened_at": "2026-10-21",
       "opened_by": "rex-pcd-2026-10-21",
-      "last_checked": "2026-10-22"
+      "last_checked": "2026-10-23"
     },
     {
       "id": "sunny-drafts-waiting-2026-10-21",
@@ -187,7 +187,7 @@
       "href": "reports/support/TRIAGE_2026-10-21.md",
       "opened_at": "2026-10-21",
       "opened_by": "rex-pcd-2026-10-21",
-      "last_checked": "2026-10-22"
+      "last_checked": "2026-10-23"
     },
     {
       "id": "sunny-registry-paused-2026-10-21",
@@ -199,7 +199,7 @@
       "href": "automation/agents/sunny/SKILL.md",
       "opened_at": "2026-10-21",
       "opened_by": "rex-pcd-2026-10-21",
-      "last_checked": "2026-10-22"
+      "last_checked": "2026-10-23"
     },
     {
       "id": "agent-runs-token-missing-2026-10-21",
@@ -211,7 +211,31 @@
       "href": "scripts/agent-run-client.mjs",
       "opened_at": "2026-10-21",
       "opened_by": "rex-pcd-2026-10-21",
-      "last_checked": "2026-10-22"
+      "last_checked": "2026-10-23"
+    },
+    {
+      "id": "pr-108-cardiac-close-2026-10-23",
+      "source": "penny-editorial",
+      "status": "open",
+      "priority": "low",
+      "title": "PR #108 (CA AB 310/AB 387 cardiac card) can be closed: the card is already live",
+      "why_human": "Penny published the draft directly on main (commit a5ac9093, live 200 at /news/california-ab-310-ab-387-cardiac-emergency-plans-2026/). The PR is a stale draft; closing it is yours.",
+      "href": "https://github.com/jeffthomas4-lab/parent-coach-playbook/pull/108",
+      "opened_at": "2026-10-23",
+      "opened_by": "rex-pcd-2026-10-23",
+      "last_checked": "2026-10-23"
+    },
+    {
+      "id": "ranger-s7-hold-mismatch-2026-10-22",
+      "source": "ranger-camps",
+      "status": "open",
+      "priority": "low",
+      "title": "Ranger S7 still held by skill text while manual 3.4 says toggle-only",
+      "why_human": "CAMPS_REVIEW_2026-10-22 flags a skill-vs-manual mismatch on the S7 hold. Soft owner call, same family as the Sunny/Frida kill-switch item.",
+      "href": "reports/camps/CAMPS_REVIEW_2026-10-22.md",
+      "opened_at": "2026-10-23",
+      "opened_by": "rex-pcd-2026-10-23",
+      "last_checked": "2026-10-23"
     }
   ]
 }
