@@ -1858,6 +1858,26 @@
       "after": null,
       "asin": null,
       "browserVerification": "n/a (no ASIN written)"
+    },
+    {
+      "date": "2026-10-23",
+      "articleSlug": "coaching-with-your-spouse",
+      "action": "zero-product-skip",
+      "details": "Published 2026-10-22 7:00 PM PT (commit 0159a2f7, BLG 1001545); the 10/22 ~10:15 PM run did not happen because DESKTOP was offline, so it was picked up in the 10/23 catch-up. Advice/relationship piece with research and reference links only; the gear section points to internal /what-to-buy/ guides and names no buyable product. Gap-queued. Inserted zero affiliate links per babylove_auto_insert.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "Not applicable; no product to verify."
+    },
+    {
+      "date": "2026-10-23",
+      "articleSlug": "run-summary",
+      "action": "insertions-complete",
+      "details": "Catch-up run 2026-10-23 ~10:55 AM PT on DESKTOP (041b6bba) for the missed 10/22 ~10:15 PM run. One new Publish BabyLoveGrowth commit since 77d70542: 0159a2f7 coaching-with-your-spouse, zero-product gap-queued. Net: 0 insertions, 0 replacements, 0 new catalog entries. affiliates.json untouched. Never ran wrangler.",
+      "before": null,
+      "after": null,
+      "asin": null,
+      "browserVerification": "n/a (no ASIN written)"
     }
   ]
 }
