@@ -10,6 +10,8 @@ phase: "drive-there"
 seasonPhase: "mid"
 sport: "martial-arts"
 age: "8-10"
+hero: "/illustrations/martial-arts-belts-hooks.webp"
+heroAlt: "Several worn practice belts hang from wall hooks in a training hall, plain fabric lit by soft window light."
 publishedAt: 2026-11-05
 featured: false
 draft: true
