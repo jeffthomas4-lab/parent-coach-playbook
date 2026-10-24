@@ -1,5 +1,5 @@
 ---
-title: Packing for a long tournament weekend
+title: What the team email leaves off the tournament packing list
 dek: Three games in two days. Here's the 18-item list the team email skips.
 seoTitle: "Tournament Packing List: 18 Items"
 seoDescription: "The team email covers uniforms and water bottles. This 18-item tournament packing list covers the rest, from a spare mouthguard to sunscreen and chargers."
@@ -26,7 +26,7 @@ editorial:
   sportLanguageCheckPassed: true
   claudeReviewedAt: 2026-10-13
   status: claude-reviewed
-  reviewerNotes: "Refresh 2026-10-13: three H2s; bluf, seoTitle added; dek shortened under 15 words and truncated seoDescription rewritten; sunscreen item now follows AAP HealthyChildren (broad-spectrum SPF 15 to 50, reapply every 2 hours); removed ibuprofen from the kit per SAFETY_EDITORIAL_STANDARDS (no treatment recommendations); seoTitle narrows to the 18-item list to separate it from the 11-12 page with the same title; linked packing-for-a-long-tournament-weekend, summer-tournament-heat-safety-packing-list, packing-food-for-the-travel-weekend."
+  reviewerNotes: "Refresh 2026-10-13: three H2s; bluf, seoTitle added; dek shortened under 15 words and truncated seoDescription rewritten; sunscreen item now follows AAP HealthyChildren (broad-spectrum SPF 15 to 50, reapply every 2 hours); removed ibuprofen from the kit per SAFETY_EDITORIAL_STANDARDS (no treatment recommendations); title changed 2026-10-23 (Jeff approved) to separate it from the 11-12 page packing-for-a-long-tournament-weekend, which kept the old shared title; seoTitle narrows to the 18-item list; linked packing-for-a-long-tournament-weekend, summer-tournament-heat-safety-packing-list, packing-food-for-the-travel-weekend."
   factCheckGoodThrough: 2027-10-13
   affiliateDisclosurePresent: false
 ---
