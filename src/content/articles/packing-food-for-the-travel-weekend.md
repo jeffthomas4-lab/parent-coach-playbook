@@ -1,9 +1,9 @@
 ---
 title: 'Packing food for the travel weekend'
-dek: Tournament weekends eat money in $14 sandwiches. The cooler approach saves hundreds
-  and feeds the team better.
-seoDescription: Three meals out a day, four people, three days. At tournament-venue
-  restaurant prices, that's $400 to $600 a weekend.
+dek: One grocery run and a real cooler cover most of the weekend's meals.
+seoTitle: "Packing Food for a Travel Tournament"
+seoDescription: "Six meals out on a tournament weekend adds up fast. One grocery run and a real cooler cover five of them. Here's the list, the menu, and the food-safety rules."
+bluf: "Do one grocery run before you leave, pack a hard cooler kept at 40°F or below, and plan the menu so the cooler covers five of the weekend's six meals. Pay for the Saturday team dinner and pack the post-game snack before you leave the hotel."
 topic: rec-vs-travel
 format: note
 phase: drive-there
@@ -12,6 +12,7 @@ age: all-ages
 hero: "/illustrations/tournament-schedule-paper.webp"
 heroAlt: "A printed weekend schedule grid lies on a car dashboard with a coffee cup in the holder, text soft and unreadable in early light."
 publishedAt: 2026-01-25
+updatedAt: 2026-10-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -21,118 +22,51 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-03-19
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-10-13
   status: claude-reviewed
-  reviewerNotes: ""
+  reviewerNotes: "Refresh 2026-10-13: three H2s; bluf, seoTitle added; dek shortened; fixed inconsistent meal and savings math (six meals on the road, five from the cooler) and removed the uncited 60-70 percent and season-total claims; removed uncited nutrition-timing ('within 30 minutes') and 'plays better' performance claims; added USDA cooler and leftovers guidance; removed unverified 48-quart capacity claim; linked food-on-the-road, tournament-day-food, post-game-snacks-kids."
+  factCheckGoodThrough: 2027-10-13
+  affiliateDisclosurePresent: false
 ---
 
-Three meals out a day, four people, three days. At tournament-venue restaurant prices, that's $400 to $600 a weekend. Across a season of eight tournaments, $3,200 to $4,800 just on food.
+Friday dinner through Sunday lunch is six meals on the road. Buy all six near a tournament venue for a family of four and the bill climbs every time you sit down.
 
-The cooler approach cuts that by 60 to 70 percent. The kid eats better too.
+One grocery run and a real cooler cover five of those meals. Pay for the sixth one, the Saturday team dinner, and enjoy every bite of it without doing the math.
 
-**The pre-trip shop**
+## The shop and the cooler
 
-Thursday or Friday morning. One grocery run. The list:
+Thursday night or Friday morning, one grocery run:
 
-A rotisserie chicken. Already cooked. Last for two days.
+- A rotisserie chicken, already cooked
+- Bread, deli meat, cheese, and condiments
+- Wraps or tortillas (they hold up in a cooler better than sliced bread)
+- Yogurt cups, cereal, and a carton of milk
+- Bananas, apples, and grapes
+- Granola bars and small bags of trail mix
+- A 24-pack of bottled water and a few sports drinks for after games
 
-Sandwich supplies. Bread, deli meat, cheese, condiments.
+Pack a hard cooler, not a soft lunch bag. The [sideline kit guide](/what-to-buy/sideline-kit/) has our picks, and a second, smaller cooler for drinks keeps the food cooler shut.
 
-Wraps and tortillas. The wrap is more durable than a sandwich for cooler life.
+Keep the food at 40°F or below. The [USDA's cooler guidance](https://www.usda.gov/about-usda/news/blog/check-your-steps-chill-how-pack-cooler-prevent-food-poisoning) says to put perishables back in the cooler within 2 hours, or within 1 hour when it's above 90°F, and an appliance thermometer takes the guessing out of it.
 
-Yogurt cups. Easy breakfast.
+## The three-day menu
 
-Granola bars. Twelve of them. The team will eat half.
+- Friday dinner: sandwiches in the car on the drive in
+- Saturday breakfast: cereal, milk, yogurt, and a banana in the hotel room
+- Saturday lunch: wraps, fruit, and trail mix at the field
+- Saturday dinner: the team dinner at a restaurant
+- Sunday breakfast: same as Saturday
+- Sunday lunch: the rest of the wraps and the chicken at the field
 
-Bananas, apples, grapes. Real fruit.
+USDA's [leftovers guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety) gives cooked leftovers 3 to 4 days cold, so a Thursday chicken lasts to Sunday lunch if it stays at 40°F. Use the hotel mini-fridge for the chicken and milk, and leave the cooler in the car for ice and water.
 
-Trail mix in small bags.
+Pack the post-game snack before you leave the hotel. Chocolate milk, a banana, and a peanut butter wrap mean nobody hunts for a drive-through between games. [Post-game snacks kids eat](/team-parent/post-game-snacks-kids/) has more ideas.
 
-A box of cereal. Some milk. For the hotel breakfast.
+## The math, and the meal to pay for
 
-Bottled water. A 24-pack.
+Our cooler shop runs $80 to $120, and the team dinner adds $60 to $100. Put your own local menu prices against six meals for four people and the gap shows up fast.
 
-Gatorade or electrolyte drinks. A 6-pack. Not for general drinking. For after games.
+Three or four families can split the load. One brings the chicken, one brings the wraps, one brings breakfast, and lunch in the parking lot becomes a team thing.
 
-**The cooler**
-
-A real cooler. Not a soft lunch bag. The [sideline kit guide](/what-to-buy/sideline-kit/) has the picks; the 48-quart hard cooler holds three days of food for a family of four.
-
-Plus a smaller cooler for the field. Holds the next two meals plus drinks.
-
-**The hotel kitchen access**
-
-Some hotels have a small kitchen or kitchenette. A microwave at minimum.
-
-If your hotel has one, you can heat the chicken, make eggs, do real meals. The savings compound.
-
-If your hotel only has a coffee maker, you adapt. Cold sandwiches and yogurt for breakfast. Wraps for lunch. The team dinner Saturday for the hot meal.
-
-**The actual menu, three days**
-
-Friday dinner. Drive in. Sandwiches in the car. Save the team dinner for Saturday.
-
-Saturday breakfast. Cereal, milk, yogurt, banana. In the hotel room.
-
-Saturday lunch. Wraps, fruit, trail mix. At the field.
-
-Saturday dinner. Team dinner at the restaurant. Eat normally. Don't try to save here.
-
-Sunday breakfast. Same as Saturday. Cereal, milk, yogurt.
-
-Sunday lunch. The last of the wraps and the rotisserie chicken. At the field.
-
-Sunday post-tournament. Drive home. Eat dinner at home.
-
-That's eight meals you would have bought out. You bought one.
-
-**The cost math**
-
-Cooler shop. $80 to $120.
-
-Saturday team dinner out. $60 to $100 for a family.
-
-Total food cost for the weekend. $140 to $220.
-
-Eating out. $400 to $600.
-
-Savings. $200 to $400 per weekend.
-
-**The post-game food**
-
-The most important meal nutritionally. Within 30 minutes of the final whistle.
-
-In the cooler. Chocolate milk. A banana. A peanut butter wrap. Or a ham and cheese sandwich.
-
-The kid eats it in the parking lot. By the time they're back in the hotel, recovery is already started.
-
-**The team manager hack**
-
-If three or four families coordinate, you can divide the cooler load. One family brings the rotisserie chicken. One brings the wraps. One brings the breakfast supplies. Cost shared.
-
-This also creates a small social ritual. Lunch in the parking lot becomes the team thing.
-
-**The hotel mini-fridge**
-
-Most hotel rooms have a mini-fridge. Use it. Move the chicken and the milk in. The cooler stays in the car for ice and bottled water.
-
-**The morning routine**
-
-Yogurt and banana for the kid before the game. Real food. Not a granola bar or a donut.
-
-The kid who eats real food before games plays better. The kid who eats hotel-bagel and gas-station-coffee plays slower.
-
-**The shorter version**
-
-One grocery run. One cooler. One kitchen-style setup. The rest of the weekend, you're not chasing food.
-
-Saves money. Saves time. Feeds the kid better. Reduces the parent-stress of finding restaurants near tournament venues.
-
-**The mistake parents make**
-
-Trying to do hotel-room meals for the team dinner. Don't. The team dinner is the social moment. Pay for that one.
-
-Save on the other six meals. Spend on the one. Total savings: $200 to $400.
-
-Multiply across the season. The tournament food budget that was $4,000 is now $1,500. The kid hasn't eaten any worse. The family budget breathes.
+Don't try to save on the team dinner. That's the social moment of the weekend. For the hours you're stuck at the venue, [tournament day food](/game/tournament-day-food/) and [food on the road](/game/food-on-the-road/) cover the rest.
