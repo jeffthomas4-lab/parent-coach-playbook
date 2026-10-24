@@ -13,7 +13,7 @@
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'ranger'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
 2. Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for a start with a UUID, agent `ranger`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
 3. **Check the backup clock.** Run the freshness check in "The backup watch" below (newest `backups/d1/activity-radar-*.sql` with a matching `.sha256`, age in days). Over 7 days, or no export at all, is a `needs_you` item this run, every run, until it is not.
-4. Check `PCD-OPERATING-MANUAL.md` section 3.4. **In maintenance mode (August through November), write nothing to `activity-radar`.** Skip the S7 write step entirely and log the run as `success` with a one-line summary noting maintenance mode held. S8 still runs, report-only.
+4. Check `PCD-OPERATING-MANUAL.md` section 3.4. Maintenance mode is the `PCD_MAINTENANCE_MODE` toggle only; there is no calendar hold (the August-through-November idle was removed 2026-08-01). **If the toggle is on, write nothing to `activity-radar`.** Skip the S7 write step entirely and log the run as `success` with a one-line summary noting maintenance mode held. S8 still runs, report-only. If the toggle is off, S7 runs normally in any month, with every cap and threshold below unchanged.
 5. Read `CAMPS_QUALITY_FRAMEWORK.md` before any S8 judgment, and `CAMPS_APPROVAL_THRESHOLD.md` before any S7 accept. Read them, do not recall them.
 
 ## S7: the nightly discovery and enrichment pass (Class D, capped)

@@ -10,7 +10,7 @@
 
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'frida'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
 2. Run `node scripts/agent-run-client.mjs preflight`, then call its exported `writeAgentRun()` with phase `start`, a UUID, agent `frida`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
-3. Check `PCD-OPERATING-MANUAL.md` section 3.4: if PCD is in maintenance mode (August through November), do not draft. Log the run as `success` with a one-line summary noting maintenance mode held and no letter was produced.
+3. Check `PCD-OPERATING-MANUAL.md` section 3.4. Maintenance mode is the `PCD_MAINTENANCE_MODE` toggle only; there is no calendar hold. If the toggle is on, do not draft. Log the run as `success` with a one-line summary noting maintenance mode held and no letter was produced. If it is off, draft normally in any month.
 3. Read every file in `reports/friday-letters/` before picking anything this week. This is the check against repeating an archive resurface: no piece resurfaced in the prior 8 weeks of letters on file goes back in this week.
 
 ## The weekly run (Class B, no Class A/C/D on this agent)

@@ -22,7 +22,7 @@ Never weaken the guard to get a run to pass. If the inbox is wrong, the correct 
 
 1. Read `SPEC.md`. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'sunny'`). If paused, stop and log a `partial` run explaining why.
 2. Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for a start with a UUID, agent `sunny`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
-3. Check `PCD-OPERATING-MANUAL.md` section 3.4. During maintenance mode (August through November) Sunny does not run: no triage, no drafts. Log `success` with a one-line summary noting maintenance mode held.
+3. Check `PCD-OPERATING-MANUAL.md` section 3.4. Maintenance mode is the `PCD_MAINTENANCE_MODE` toggle only; there is no calendar hold. If the toggle is on, Sunny does not run: no triage, no drafts. Log `success` with a one-line summary noting maintenance mode held. If it is off, run normally in any month.
 4. Read `About Me/About Me.txt` and `About Me/Anti AI Writing.txt` before drafting a word. These replies go out over Jeff's name.
 5. Read the last file in `reports/support/` so a thread already triaged is picked up rather than restarted.
 

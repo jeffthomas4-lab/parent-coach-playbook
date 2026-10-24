@@ -77,6 +77,8 @@ Clears on time and retention. S10 already shows "Running (draft only)" in the SO
 
 ## Maintenance-mode behavior
 
+**Updated 2026-10-23 (Jeff approved):** the automatic August-through-November idle was removed from manual section 3.4 on 2026-08-01. Maintenance mode now means only the `PCD_MAINTENANCE_MODE` toggle. When it is off, this runs normally in any month. The text below describes behavior only while the toggle is on.
+
 Per section 3.4 of the manual: during the fall idle (August through November) the Friday Letter holds. Section 3.4 names the Friday Letter explicitly as one of the workflows that "stop for the season," not one that degrades to report-only. That distinction matters here: Nora's GSC review and Ed's freshness audit are inherently read-only, so they have a report-only mode to fall back to. A newsletter draft is inherently an act of assembling and promoting new content, and during maintenance mode the editorial pipeline (S9) that would feed it is also paused, per the build plan's rule that maintenance is the default for every agent but Vera. With no new content shipping and no seasonal plan running, there is nothing honest for Frida to feature that week. Frida does not draft during maintenance mode. The scheduled task's Wednesday run logs a `success` status with a one-line summary noting maintenance mode held and no letter was produced, the same logging discipline Nora and Ed use for their own maintenance-mode runs. The only exceptions carried by section 3.4 are the year-round S4 deletion watch and critical infrastructure escalations (lapsed domain, failed payment, uptime, security); none of those are Frida's job.
 
 ---

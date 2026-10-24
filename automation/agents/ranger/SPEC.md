@@ -116,6 +116,8 @@ The Approval Matrix gives Ranger the roster's only Class D. Section 5.3 says the
 
 ## Maintenance-mode behavior
 
+**Updated 2026-10-23 (Jeff approved):** the automatic August-through-November idle was removed from manual section 3.4 on 2026-08-01. Maintenance mode now means only the `PCD_MAINTENANCE_MODE` toggle. When it is off, this runs normally in any month. The text below describes behavior only while the toggle is on.
+
 Per section 3.4 and Jeff's call of 2026-07-13 resolving Open Item 5: **S7's autonomous camp writes stop for the season.** Not degrade, not slow down. Stop. During August through November, Ranger writes nothing to `activity-radar`. That is the one call on this roster where maintenance mode removes a capability rather than a cadence, and the reason is that unattended production writes running for four months with nobody reading the accept rate is the exact shape of the risk section 5.3 names.
 
 S8 keeps running report-only, because a listing that expires in September is wrong on a live page a parent is reading in September. Fixes get staged and logged as `needs_you` items for the December close rather than applied. If a listing is actively wrong in a way that could send a family to a camp that does not exist, that is a `needs_you` item in-season, flagged the same run.

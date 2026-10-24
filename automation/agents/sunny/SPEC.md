@@ -88,6 +88,8 @@ The risk half is the real argument. PCD is a parent-facing site, so its inbound 
 
 ## Maintenance-mode behavior
 
+**Updated 2026-10-23 (Jeff approved):** the automatic August-through-November idle was removed from manual section 3.4 on 2026-08-01. Maintenance mode now means only the `PCD_MAINTENANCE_MODE` toggle. When it is off, this runs normally in any month. The text below describes behavior only while the toggle is on.
+
 Per section 3.4, Sunny holds during the fall idle. Every PCD workflow pauses or degrades between August and November, and inbound mail is the one place where "degrade to report-only" would be worse than stopping: a triage log nobody reads for four months is a list of unanswered people, and Jeff's inbox already shows him that list without an agent's help.
 
 So during the idle she does not run. The mail piles up in `jeff@parentcoachdesk.com` exactly as it does today, and Jeff answers what he wants to answer between practices. The two exceptions section 3.4 names are not hers: the deletion watch is Vera's and the infrastructure escalations are Barnabus's.
